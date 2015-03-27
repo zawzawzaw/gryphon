@@ -1,0 +1,959 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>
+<!--> 
+<html class="">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>Gryphon</title>
+	<meta name="description" content="Gryphon">
+	<meta name="keywords" content="Gryphon">
+
+	<!--#include virtual="inc/head.inc" -->	
+	
+	<link rel="stylesheet" href="css/intlTelInput.css">
+	<script src="js/plugins/intlTelInput.min.js"></script>
+</head>
+<body>
+	
+	<!--#include virtual="inc/header.inc" -->
+
+	<div id="content-wrapper" class="account">
+		<div class="account-details-saved">
+			<div class="image-text-content container">
+				<div class="row">
+					<div class="col-md-10">
+						<h1>Richard Claydeman’s account</h1>
+						<hr class="small">
+					</div>
+					<div id="action-col" class="col-md-2">
+						<a href="#" class="edit"><i class="fa fa-cog"></i> <span>Edit</span></a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2 col-sm-6 col-xs-6">
+						<div class="each-input">
+							<h2>MEMBER NO.</h2>
+							<p>Gryphon20150321</p>
+						</div>
+						
+						<div class="each-input">
+							<h2>GENDER</h2>
+							<p>Male</p>
+						</div>
+
+						<div class="each-input">
+							<h2>DATE OF BIRTH</h2>
+							<p>21 May 1990</p>
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-6 col-xs-6">
+						<div class="each-input">
+							<h2>email</h2>
+							<p><a href="mailto:richard@gryphon.com.sg" class="email">richard@gryphon.com.sg</a></p>
+						</div>
+						<div class="each-input">
+							<h2>password</h2>
+							<p>**********</p>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-6">
+						<div class="each-input">
+							<h2>address</h2>
+							<p>251 Pandon Loop #03-25, Singapore 128431</p>
+						</div>
+						<div class="each-input">
+							<h2>phone no.</h2>
+							<p>+65 97281958</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-12 col-xs-12">
+						<div class="each-input">
+							<h2>gryphon newsletters</h2>
+							<p>Be the first one to hear about our special offers, new arrivals, lastest news and trends and the other events.</p>
+							<a href="#" class="cta subscribe-btn">Subscribe</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="account-details">
+			<div class="image-text-content container">
+
+				<div class="row">
+					<div class="col-md-12">
+						<h1>Richard Claydeman’s account</h1>
+						<hr class="small">
+					</div>
+				</div>
+
+				<div class="row">
+					<form action="" name="memeber_info">
+						<div class="col-md-2 col-sm-6">
+							<div class="each-input">
+								<h2>MEMBER NO.</h2>
+								<p>Gryphon20150321</p>
+							</div>
+							
+							<div class="each-input">
+								<h2>LOYALTY POINT</h2>
+								<p class="loyalty-point">230 points</p>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6">
+							<div class="each-input">
+								<h2>GENDER</h2>
+								<input type="checkbox" name="gender">
+								<label class="checkbox-label" for="gender">
+									<span></span><p class="label-text">Female</p>
+								</label>
+								<input type="checkbox" name="gender">
+								<label class="checkbox-label" for="gender">
+									<span></span><p class="label-text">Male</p>
+								</label>
+							</div>
+							<div class="each-input">
+								<h2>DATE OF BIRTH</h2>
+								<div class="dropdown">
+									<select name="day" id="day">
+										<option value="day">Day</option>
+									</select>
+								</div>
+								<div class="dropdown">
+									<select name="month" id="month">
+										<option value="month">Month</option>
+									</select>
+								</div>
+								<div class="dropdown">
+									<select name="year" id="year">
+										<option value="year">Year</option>
+									</select>
+								</div>
+							</div>
+							<div class="each-input">
+								<h2>PHONE NO.</h2>
+								<!-- <div class="dropdown" class="country_code_dropdown">									
+									<select name="country_code" id="country_code">
+										<option value="44" selected>+44</option>
+										<option value="1">+1</option>				
+										<option value="376">+376</option>
+										<option value="244">+244</option>
+										<option value="1264">+1264</option>
+										<option value="1268">+1268</option>
+										<option value="599">+599</option>
+										<option value="54">+54</option>
+										<option value="374">+374</option>
+										<option value="297">+297</option>
+										<option value="247">+247</option>
+										<option value="61">+61</option>
+										<option value="43">+43</option>
+										<option value="994">+994</option>
+										<option value="1242">+1242</option>
+										<option value="973">+973</option>
+										<option value="880">+880</option>
+										<option value="1246">+1246</option>
+										<option value="375">+375</option>
+										<option value="32">+32</option>
+										<option value="501">+501</option>
+										<option value="229">+229</option>
+										<option value="1441">+1441</option>
+										<option value="975">+975</option>
+										<option value="591">+591</option>
+										<option value="387">+387</option>
+										<option value="267">+267</option>
+										<option value="55">+55</option>
+										<option value="673">+673</option>
+										<option value="359">+359</option>
+										<option value="226">+226</option>
+										<option value="257">+257</option>
+										<option value="855">+855</option>
+										<option value="237">+237</option>
+										<option value="1">+1</option>
+										<option value="238">+238</option>
+										<option value="1345">+1345</option>
+										<option value="236">+236</option>
+										<option value="56">+56</option>
+										<option value="86">+86</option>
+										<option value="57">+57</option>
+										<option value="269">+269</option>
+										<option value="242">+242</option>
+										<option value="682">+682</option>
+										<option value="506">+506</option>
+										<option value="385">+385</option>
+										<option value="53">+53</option>
+										<option value="90392">+90392</option>
+										<option value="357">+357</option>
+										<option value="42">+42</option>
+										<option value="45">+45</option>
+										<option value="2463">+2463</option>
+										<option value="253">+253</option>
+										<option value="1809">+1809</option>
+										<option value="1809">+1809</option>
+										<option value="593">+593</option>
+										<option value="20">+20</option>
+										<option value="353">+353</option>
+										<option value="503">+503</option>
+										<option value="240">+240</option>
+										<option value="291">+291</option>
+										<option value="372">+372</option>
+										<option value="251">+251</option>
+										<option value="500">+500</option>
+										<option value="298">+298</option>
+										<option value="679">+679</option>
+										<option value="358">+358</option>
+										<option value="33">+33</option>
+										<option value="594">+594</option>
+										<option value="689">+689</option>
+										<option value="241">+241</option>
+										<option value="220">+220</option>
+										<option value="7880">+7880</option>
+										<option value="49">+49</option>
+										<option value="233">+233</option>
+										<option value="350">+350</option>
+										<option value="30">+30</option>
+										<option value="299">+299</option>
+										<option value="1473">+1473</option>
+										<option value="590">+590</option>
+										<option value="671">+671</option>
+										<option value="502">+502</option>
+										<option value="224">+224</option>
+										<option value="245">+245</option>
+										<option value="592">+592</option>
+										<option value="509">+509</option>
+										<option value="504">+504</option>
+										<option value="852">+852</option>
+										<option value="36">+36</option>
+										<option value="354">+354</option>
+										<option value="91">+91</option>
+										<option value="62">+62</option>
+										<option value="98">+98</option>
+										<option value="964">+964</option>
+										<option value="972">+972</option>
+										<option value="39">+39</option>
+										<option value="225">+225</option>
+										<option value="1876">+1876</option>
+										<option value="81">+81</option>
+										<option value="962">+962</option>
+										<option value="7">+7</option>
+										<option value="254">+254</option>
+										<option value="686">+686</option>
+										<option value="850">+850</option>
+										<option value="82">+82</option>
+										<option value="965">+965</option>
+										<option value="996">+996</option>
+										<option value="856">+856</option>
+										<option value="371">+371</option>
+										<option value="961">+961</option>
+										<option value="266">+266</option>
+										<option value="231">+231</option>
+										<option value="218">+218</option>
+										<option value="417">+417</option>
+										<option value="370">+370</option>
+										<option value="352">+352</option>
+										<option value="853">+853</option>
+										<option value="389">+389</option>
+										<option value="261">+261</option>
+										<option value="265">+265</option>
+										<option value="60">+60</option>
+										<option value="960">+960</option>
+										<option value="223">+223</option>
+										<option value="356">+356</option>
+										<option value="692">+692</option>
+										<option value="596">+596</option>
+										<option value="222">+222</option>
+										<option value="269">+269</option>
+										<option value="52">+52</option>
+										<option value="691">+691</option>
+										<option value="373">+373</option>
+										<option value="377">+377</option>
+										<option value="976">+976</option>
+										<option value="1664">+1664</option>
+										<option value="212">+212</option>
+										<option value="258">+258</option>
+										<option value="95">+95</option>
+										<option value="264">+264</option>
+										<option value="674">+674</option>
+										<option value="977">+977</option>
+										<option value="31">+31</option>
+										<option value="687">+687</option>
+										<option value="64">+64</option>
+										<option value="505">+505</option>
+										<option value="227">+227</option>
+										<option value="234">+234</option>
+										<option value="683">+683</option>
+										<option value="672">+672</option>
+										<option value="670">+670</option>
+										<option value="47">+47</option>
+										<option value="968">+968</option>
+										<option value="680">+680</option>
+										<option value="507">+507</option>
+										<option value="675">+675</option>
+										<option value="595">+595</option>
+										<option value="51">+51</option>
+										<option value="63">+63</option>
+										<option value="48">+48</option>
+										<option value="351">+351</option>
+										<option value="1787">+1787</option>
+										<option value="974">+974</option>
+										<option value="262">+262</option>
+										<option value="40">+40</option>
+										<option value="7">+7</option>
+										<option value="250">+250</option>
+										<option value="378">+378</option>
+										<option value="239">+239</option>
+										<option value="966">+966</option>
+										<option value="221">+221</option>
+										<option value="381">+381</option>
+										<option value="248">+248</option>
+										<option value="232">+232</option>
+										<option value="65" selected>+65</option>
+										<option value="421">+421</option>
+										<option value="386">+386</option>
+										<option value="677">+677</option>
+										<option value="252">+252</option>
+										<option value="27">+27</option>
+										<option value="34">+34</option>
+										<option value="94">+94</option>
+										<option value="290">+290</option>
+										<option value="1869">+1869</option>
+										<option value="1758">+1758</option>
+										<option value="249">+249</option>
+										<option value="597">+597</option>
+										<option value="268">+268</option>
+										<option value="46">+46</option>
+										<option value="41">+41</option>
+										<option value="963">+963</option>
+										<option value="886">+886</option>
+										<option value="7">+7</option>
+										<option value="66">+66</option>
+										<option value="228">+228</option>
+										<option value="676">+676</option>
+										<option value="1868">+1868</option>
+										<option value="216">+216</option>
+										<option value="90">+90</option>
+										<option value="7">+7</option>
+										<option value="993">+993</option>
+										<option value="1649">+1649</option>
+										<option value="688">+688</option>
+										<option value="256">+256</option>
+										<option value="44">+44</option>
+										<option value="380">+380</option>
+										<option value="971">+971</option>
+										<option value="598">+598</option>
+										<option value="1">+1</option>
+										<option value="7">+7</option>
+										<option value="678">+678</option>
+										<option value="379">+379</option>
+										<option value="58">+58</option>
+										<option value="84">+84</option>
+										<option value="1284">+1284</option>
+										<option value="1340">+1340</option>
+										<option value="681">+681</option>
+										<option value="969">+969</option>
+										<option value="967">+967</option>
+										<option value="381">+381</option>
+										<option value="243">+243</option>
+										<option value="260">+260</option>
+										<option value="263">+263</option>
+									</select>									
+								</div> -->
+								<input type="text" name="phone_no" class="phone_no_input">
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6">
+							<div class="each-input">
+								<label for="email">Email</label>
+								<input type="text" name="email" >
+							</div>
+							<div class="each-input">
+								<label for="password">Current Password</label>
+								<input type="password" name="password" >
+							</div>
+							<div class="each-input">
+								<label for="new_password">Change Password</label>
+								<input type="password" name="new_password" >
+							</div>
+							<div class="each-input">
+								<label for="c_new_password">Confirm Password</label>
+								<input type="password" name="c_new_password" >
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-6">
+							<div class="each-input">
+								<label for="address">Address</label>
+								<input type="text" name="address_1" class="address_input">
+
+								<input type="text" name="address_2" class="address_input">
+							</div>
+							<div class="each-input">
+								<div class="column-1">
+									<label for="city">City</label>
+									<div class="dropdown">
+										<select name="city" id="city">
+											<option value="city">Singapore</option>
+										</select>
+									</div>
+								</div>
+								<div class="column-2">
+									<label for="state">State</label>
+									<div class="dropdown">
+										<select name="state" id="state">
+											<option value="state">N/A</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="each-input">
+								<div class="column-1">
+									<label for="country">Country</label>
+									<div class="dropdown">
+										<select name="country" id="country">
+											<option value="country">Singapore</option>
+										</select>
+									</div>
+								</div>
+								<div class="column-2">
+									<label for="postal_code">Postal Code</label>
+									<input type="text" name="postal_code">
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<hr class="dotted">
+				<div class="row">
+					<div class="col-md-6">
+						<input type="checkbox" name="newsletter">
+						<label class="checkbox-label" for="newsletter">
+							<span></span><p class="label-text">gryphon newsletters</p>
+						</label>
+						<p>Be the first one to hear about our special offers, new arrivals, lastest news and trends and the other events.</p>
+					</div>
+					<div class="col-md-6">
+						<a href="#" class="cta save-btn">Save Changes</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="order-history">
+			<div class="image-text-content container">
+				<div class="row order-history-heading">
+					<div class="col-md-6 col-sm-12 col-xs-12">
+						<h1>ORDER HISTORY</h1>
+						<hr class="small">
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+					</div>
+					<div class="col-md-5 col-sm-12 col-xs-12 col-md-offset-1">
+						<ul class="order-info">
+							<li><a href="#"><i class="question"></i><span>Gryphon FAQ</span></a></li>
+							<li><a href="#"><i class="delivery-info"></i><span>Delivery Information</span></a></li>
+							<li><a href="#"><i class="tracking"></i><span>Track Delivery</span></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 hidden-xs hidden-sm">
+						<hr class="order-headers-line">
+						<div class="row order-headers">
+							<div class="col-md-1 order-status"><h2>STATUS</h2></div>
+							<div class="col-md-1 order-no"><h2>ORDER NO.</h2></div>
+							<div class="col-md-1 order-date"><h2>DATE</h2></div>
+							<div class="col-md-9">
+								<div class="row">
+									<div class="col-md-4"><h2>PRODUCT</h2></div>
+									<div class="col-md-2"><h2>UNIT PRICE</h2></div>
+									<div class="col-md-2 order-qty"><h2>QTY</h2></div>
+									<div class="col-md-2"><h2>TOTAL</h2></div>
+									<div class="col-md-2"></div>
+								</div>
+							</div>
+						</div>
+						<hr class="order-headers-line">
+						<div class="row order-content">
+							<div class="col-md-12 orders">
+
+								<div class="row each-order">
+									<div class="col-md-12">
+										<div class="row order-details">
+											<div class="col-md-1 order-status"><i class="fa fa-spinner fa-spin"></i><span></span></div>
+											<div class="col-md-1 order-no"><p class="order_no">03012015</p></div>
+											<div class="col-md-1 order-date"><p class="date">03 Jan 2015</p></div>
+											<div class="col-md-9">
+												<div class="row each-product">
+													<div class="col-md-4"><p class="product">Jasmine Winter Flakes Tea</p></div>
+													<div class="col-md-2"><p class="price">S$ 38.00</p></div>
+													<div class="col-md-2 order-qty"><p>1</p></div>
+													<div class="col-md-2"><p class="price">S$ 38.00</p></div>
+													<div class="col-md-2"><a href="#" class="add-to-cart-btn"><i class="fa fa-plus"></i><span>Add to Cart</span></a></div>
+												</div>
+												<div class="row each-product">
+													<div class="col-md-4"><p class="product">Blueberry Yoghurt Fruit Tisane</p></div>
+													<div class="col-md-2"><p class="price">S$ 5.60</p></div>
+													<div class="col-md-2 order-qty"><p>2</p></div>
+													<div class="col-md-2"><p class="price">S$ 11.20</p></div>
+													<div class="col-md-2"><a href="#" class="add-to-cart-btn"><i class="fa fa-plus"></i><span>Add to Cart</span></a></div>
+												</div>
+												<div class="row each-product">
+													<div class="col-md-4"><p class="product">Sangria Fruit Tisane Tea</p></div>
+													<div class="col-md-2"><p class="price">S$ 5.60</p></div>
+													<div class="col-md-2 order-qty"><p>1</p></div>
+													<div class="col-md-2"><p class="price">S$ 5.60</p></div>
+													<div class="col-md-2"><a href="#" class="add-to-cart-btn"><i class="fa fa-plus"></i><span>Add to Cart</span></a></div>
+												</div>
+											</div>
+										</div>
+										
+										<hr class="dotted">
+										<div class="row extra-content-headers">
+											<div class="col-md-6">
+												<a href="#" class="view-detail"><i class="fa fa-chevron-down"></i><span>View Detail for Grand Total</span></a>
+											</div>
+											<div class="col-md-6">
+												<div class="row each-details">
+													<div class="col-md-4"><h2>Sub total</h2></div>
+													<div class="col-md-4 align-to-total"><h2 class="sub_total price">S$ 54.80</h2></div>
+													<div class="col-md-4"></div>
+												</div>
+											</div>
+										</div>
+										<div class="row extra-content">
+											<div class="col-md-6 col-md-offset-6 expanded">
+												<div class="row each-details">
+													<div class="col-md-4"><h2>shipping & handling</h2><span>— Local Delivery - Flat Rate</span></div>
+													<div class="col-md-4 align-to-total"><h2 class="shipping price">S$ 6.00</h2></div>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>Applied Discount Code</h2><span>— SHOPNOW2015</span></div>
+													<div class="col-md-4 align-to-total"><h2 class="minus applied_discount_code price">- S$ 15.20</h2></div>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>gift certificate</h2><span>— G6D7S6234L</span></div>
+													<div class="col-md-4 align-to-total"><h2 class="minus gift_certificate price">- S$ 50.00</h2></div>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>redeemed points</h2></div>
+													<div class="col-md-4 align-to-total"><h2 class="minus redeemed_points price">- S$ 2.00</h2></div>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>Tax</h2></div>
+													<div class="col-md-4 align-to-total"><h2 class="tax price">S$ 9.00</h2></div>
+												</div>
+												<div class="row">
+													<hr>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2 class="grand_total">grand total</h2></div>
+													<div class="col-md-4 align-to-total"><h2 class="grand_total price">S$ 99.80</h2></div>
+													<div class="col-md-4 align-to-button"><a href="#" class="reorder"><i class="fa fa-repeat"></i><span>Reorder</span></a></div>
+												</div>
+											</div>
+										</div>
+
+										<hr class="each-order">
+									</div>
+								</div>
+
+								<div class="row each-order">
+									<div class="col-md-12">
+										<div class="row order-details">
+											<div class="col-md-1 order-status"><i class="fa fa-smile-o"></i></div>
+											<div class="col-md-1 order-no"><p class="order_no">17112014</p></div>
+											<div class="col-md-1 order-date"><p class="date">17 Nov 2014</p></div>
+											<div class="col-md-9 order-products">
+												<div class="row each-product">
+													<div class="col-md-4"><p class="product">Jasmine Silver Clouds Green Tea</p></div>
+													<div class="col-md-2"><p class="price">S$ 28.00</p></div>
+													<div class="col-md-2 order-qty"><p>2</p></div>
+													<div class="col-md-2"><p class="price">S$ 56.00</p></div>
+													<div class="col-md-2"><a href="#" class="add-to-cart-btn"><i class="fa fa-plus"></i><span>Add to Cart</span></a></div>
+												</div>
+												<div class="row each-product">
+													<div class="col-md-4"><p class="product">Tomatino™ Caffeine-Free Tea</p></div>
+													<div class="col-md-2"><p class="price">S$ 16.60</p></div>
+													<div class="col-md-2 order-qty"><p>2</p></div>
+													<div class="col-md-2"><p class="price">S$ 33.20</p></div>
+													<div class="col-md-2"><a href="#" class="add-to-cart-btn"><i class="fa fa-plus"></i><span>Add to Cart</span></a></div>
+												</div>
+												<div class="row each-product">
+													<div class="col-md-4"><p class="product">Turkish Apple Fruit Tisane Tea</p></div>
+													<div class="col-md-2"><p class="price">S$ 5.60</p></div>
+													<div class="col-md-2 order-qty"><p>5</p></div>
+													<div class="col-md-2"><p class="price">S$ 28.00</p></div>
+													<div class="col-md-2"><a href="#" class="add-to-cart-btn"><i class="fa fa-plus"></i><span>Add to Cart</span></a></div>
+												</div>
+												<div class="row each-product">
+													<div class="col-md-4"><p class="product">Treasures</p></div>
+													<div class="col-md-2"><p class="price">S$ 16.60</p></div>
+													<div class="col-md-2 order-qty"><p>1</p></div>
+													<div class="col-md-2"><p class="price">S$ 16.60</p></div>
+													<div class="col-md-2"><a href="#" class="add-to-cart-btn"><i class="fa fa-plus"></i><span>Add to Cart</span></a></div>
+												</div>
+												<div class="row each-product">
+													<div class="col-md-4"><p class="product">Fruit Symphony Fruit Tisane Tea</p></div>
+													<div class="col-md-2"><p class="price">S$ 5.60</p></div>
+													<div class="col-md-2 order-qty"><p>2</p></div>
+													<div class="col-md-2"><p class="price">S$ 11.20</p></div>
+													<div class="col-md-2"><a href="#" class="add-to-cart-btn"><i class="fa fa-plus"></i><span>Add to Cart</span></a></div>
+												</div>
+											</div>
+										</div>
+
+										<hr class="dotted">
+										<div class="row extra-content-headers">
+											<div class="col-md-6">
+												<a href="#" class="view-detail"><i class="fa fa-chevron-down"></i><span>View Detail for Grand Total</span></a>
+											</div>
+											<div class="col-md-6">
+												<div class="row each-details">
+													<div class="col-md-4"><h2>Sub total</h2></div>
+													<div class="col-md-4 align-to-total"><h2 class="sub_total price">S$ 145.00</h2></div>
+													<div class="col-md-4 align-to-button"><a href="#" class="reorder"><i class="fa fa-repeat"></i><span>Reorder</span></a></div>
+												</div>
+											</div>
+										</div>
+										<div class="row extra-content">
+											<div class="col-md-6 col-md-offset-6 expanded">
+												<div class="row each-details">
+													<div class="col-md-4"><h2>shipping & handling</h2><span>— Local Delivery - Flat Rate</span></div>
+													<div class="col-md-4 align-to-total"><h2 class="shipping price">S$ 6.00</p></div>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>Applied Discount Code</h2><span>— SHOPNOW2015</span></div>
+													<div class="col-md-4 align-to-total"><h2 class="minus applied_discount_code price">- S$ 15.20</p></div>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>gift certificate</h2><span>— G6D7S6234L</span></div>
+													<div class="col-md-4 align-to-total"><h2 class="minus gift_certificate price">- S$ 50.00</p></div>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>redeemed points</h2></div>
+													<div class="col-md-4 align-to-total"><h2 class="minus redeemed_points price">- S$ 2.00</p></div>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>Tax</h2></div>
+													<div class="col-md-4 align-to-total"><h2 class="tax price">S$ 9.00</p></div>
+												</div>
+												<div class="row">
+													<hr>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>grand total</h2></div>
+													<div class="col-md-4 align-to-total"><h2 class="grand_total price">S$ 99.80</p></div>
+													<div class="col-md-4 align-to-button"><a href="#" class="reorder"><i class="fa fa-repeat"></i><span>Reorder</span></a></div>
+												</div>
+											</div>
+										</div>
+
+										<hr class="each-order">
+									</div>
+								</div>
+
+								<div class="row each-order">
+									<div class="col-md-12">
+										<div class="row order-details">
+											<div class="col-md-1 order-status"><i class="fa fa-smile-o"></i></div>
+											<div class="col-md-1 order-no"><p class="order_no">28092014</p></div>
+											<div class="col-md-1 order-date"><p class="date">28 Sep 2014</p></div>
+											<div class="col-md-9">
+												<div class="row each-product">
+													<div class="col-md-4"><p class="product">Lychee Black Tea</p></div>
+													<div class="col-md-2"><p class="price">S$ 16.60</p></div>
+													<div class="col-md-2 order-qty"><p>1</p></div>
+													<div class="col-md-2"><p class="price">S$ 16.60</p></div>
+													<div class="col-md-2"><a href="#" class="add-to-cart-btn"><i class="fa fa-plus"></i><span>Add to Cart</span></a></div>
+												</div>
+											</div>
+										</div>
+
+										<hr class="dotted">
+										<div class="row extra-content-headers">
+											<div class="col-md-6">
+												<a href="#" class="view-detail"><i class="fa fa-chevron-down"></i><span>View Detail for Grand Total</span></a>
+											</div>
+											<div class="col-md-6">
+												<div class="row each-details">
+													<div class="col-md-4"><h2>Sub total</h2></div>
+													<div class="col-md-4 align-to-total"><h2 class="sub_total price">S$ 16.60</h2></div>
+													<div class="col-md-4 align-to-button"><a href="#" class="reorder"><i class="fa fa-repeat"></i><span>Reorder</span></a></div>
+												</div>
+											</div>
+										</div>
+										<div class="row extra-content">
+											<div class="col-md-6 col-md-offset-6 expanded">
+												<div class="row each-details">
+													<div class="col-md-4"><h2>shipping & handling</h2><span>— Local Delivery - Flat Rate</span></div>
+													<div class="col-md-4 align-to-total"><h2 class="shipping price">S$ 6.00</h2></div>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>Applied Discount Code</h2><span>— SHOPNOW2015</span></div>
+													<div class="col-md-4 align-to-total"><h2 class="applied_discount_code">- S$ 15.20</h2></div>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>gift certificate</h2><span>— G6D7S6234L</span></div>
+													<div class="col-md-4 align-to-total"><h2 class="gift_certificate price">- S$ 50.00</h2></div>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>redeemed points</h2></div>
+													<div class="col-md-4 align-to-total"><h2 class="redeemed_points price">- S$ 2.00</h2></div>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>Tax</h2></div>
+													<div class="col-md-4 align-to-total"><h2 class="tax price">S$ 9.00</h2></div>
+												</div>
+												<div class="row">
+													<hr>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>grand total</h2></div>
+													<div class="col-md-4 align-to-total"><h2 class="grand_total price">S$ 99.80</h2></div>
+													<div class="col-md-4 align-to-button"><a href="#" class="reorder"><i class="fa fa-repeat"></i><span>Reorder</span></a></div>
+												</div>
+											</div>
+										</div>
+
+										<hr class="each-order">
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="gift-cards">
+			<div class="image-text-content container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1>GIFT CARDS</h1>
+						<hr class="small">
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="table-responsive">
+						  	<table id="gift-cards-tbl" class="table">
+						    	<thead>
+								    <tr>
+								        <th>CODE NO.</th>
+								        <th>EXPIRE DATE</th>
+								        <th>ORDER NO.</th>
+								        <th>DESCRIPTION</th>
+								        <th>AMOUNT</th>
+								        <th>STATUS</th>
+								    </tr>
+							    </thead>
+						      	<tbody>
+								    <tr>
+								        <td><p class="code_no">A22P25342M</p></td>
+								        <td><p class="expire_date">03 Jan 2015</p></td>
+								        <td><p class="order_no"></p></td>
+								        <td><p class="description">Purchased by Smantha</p></td>
+								        <td><p class="amount">S$ 100.00</p></td>
+								        <td><p class="status">Available</p></td>
+								    </tr>
+								    <tr>
+								        <td><p class="code_no">M374ls923S</p></td>
+								        <td><p class="expire_date">17 Nov 2014</p></td>
+								        <td><p class="order_no"></p></td>
+								        <td><p class="description">Purchased by Joanne Photobiz</p></td>
+								        <td><p class="amount">S$ 100.00</p></td>
+								        <td><p class="status">Available</p></td>
+								    </tr>
+								    <tr>
+								        <td><p class="code_no">g6d7s6234l</p></td>
+								        <td><p class="expire_date">28 Sep 2014</p></td>
+								        <td><p class="order_no">28092014</p></td>
+								        <td><p class="description">Welcoming gift for registering as member</p></td>
+								        <td><p class="amount">S$ 50.00</p></td>
+								        <td><p class="status redeemed">Redeemed</p></td>
+								    </tr>
+								</tbody>
+						  	</table>
+						</div>
+					</div>
+				</div>			
+			</div>
+		</div>
+
+		<div class="billing-and-shipping">
+			<div class="image-text-content container">
+				<div class="row">
+					<div class="col-md-6 billing-address">
+						<div class="row">
+							<div class="col-md-5">
+								<h1>billing Address</h1>
+								<hr class="small">					
+							</div>
+							<div class="col-md-5 col-md-offset-2">
+								<ul>
+									<li><a href="#" class="edit"><i class="fa fa-cog"></i> <span>Edit</span></a></li>
+									<li><a href="#" class="add_address"><i class="fa fa-plus"></i> <span>Add Address</span></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="billing-address-details">
+							<div class="row">
+								<div class="col-md-12">
+									<h2 class="title">Default Billing Address</h2>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+									<div class="each-billing-detail">
+										<h2>NAME</h2>
+										<p>Lorem Ipsum</p>
+									</div>
+									<div class="each-billing-detail">
+										<h2>phone no.</h2>
+										<p>+65 1234 5678</p>
+									</div>
+								</div>
+								<div class="col-md-8">
+									<div class="each-billing-detail">
+										<h2>ADDRESS</h2>
+										<p>251 Pandon Loop #03-25, Singapore 128431</p>
+									</div>
+									<div class="each-billing-detail">
+										<h2>EMAIL</h2>
+										<p><a href="mailto:loremipsum@gryphon.com.sg">loremipsum@gryphon.com.sg</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="table-responsive">
+								  	<table class="gift-cards-tbl" class="table">
+										<tbody>
+										    <tr>
+										        <td><p class="billing_address_no">BILLING ADDRESS 1</p></td>
+										        <td><p class="billing_address">251 Pandon Loop #03-25, Singa...</p></td>
+										        <td><a href="#" class="set_as_default_billing">Make default</a></td>
+										    </tr>
+										    <tr>
+										        <td><p class="billing_address_no">BILLING ADDRESS 2</p></td>
+										        <td><p class="billing_address">251 Pandon Loop #03-25, Singa...</p></td>
+										        <td><a href="#" class="set_as_default_billing">Make default</a></td>
+										    </tr>
+										</tbody>
+								  	</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 shipping-address">
+						<div class="row">
+							<div class="col-md-5">
+								<h1>Shipping Address</h1>
+								<hr class="small">					
+							</div>
+							<div class="col-md-5 col-md-offset-2">
+								<ul>
+									<li><a href="#" class="edit"><i class="fa fa-cog"></i><span>Edit</span></a></li>
+									<li><a href="#" class="add_address"><i class="fa fa-plus"></i><span>Add Address</span></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="shipping-address-details">
+							<div class="row">
+								<div class="col-md-12">
+									<h2 class="title">Default Shipping Address</h2>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+									<div class="each-shipping-detail">
+										<h2>NAME</h2>
+										<p>Lorem Ipsum</p>
+									</div>
+									<div class="each-shipping-detail">
+										<h2>phone no.</h2>
+										<p>+65 1234 5678</p>
+									</div>
+								</div>
+								<div class="col-md-8">
+									<div class="each-shipping-detail">
+										<h2>ADDRESS</h2>
+										<p>251 Pandon Loop #03-25, Singapore 128431</p>
+									</div>
+									<div class="each-shipping-detail">
+										<h2>EMAIL</h2>
+										<p><a href="mailto:loremipsum@gryphon.com.sg">loremipsum@gryphon.com.sg</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="table-responsive">
+								  	<table class="gift-cards-tbl" class="table">
+										<tbody>
+										    <tr>
+										        <td><p class="shipping_address_no">SHIPPING ADDRESS 1</p></td>
+										        <td><p class="shipping_address">251 Pandon Loop #03-25, Singa...</p></td>
+										        <td><a href="#" class="set_as_default_shipping">Make default</a></td>
+										    </tr>
+										    <tr>
+										        <td><p class="shipping_address_no">SHIPPING ADDRESS 2</p></td>
+										        <td><p class="shipping_address">251 Pandon Loop #03-25, Singa...</p></td>
+										        <td><a href="#" class="set_as_default_shipping">Make default</a></td>
+										    </tr>
+										</tbody>
+								  	</table>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- <div class="space100"></div> -->
+
+	<!--#include virtual="inc/footer.inc" -->
+
+	<script>
+	var initialLoad = true;
+	$(document).ready(function(){		
+	    $(window).on('scroll', function() {
+	        var scrollPos = $(window).scrollTop();
+	        
+	        if( ( scrollPos != 0 ) ) {
+	            console.log('scrolling')
+	            $('#header-wrapper').addClass('shadow');
+	        }       
+	        else if( ( scrollPos === 0 ) ) {
+	            $('#header-wrapper').removeClass('shadow');
+	        }
+	    });
+
+	    initialLoad = false;	    
+
+
+	    $(".phone_no_input").intlTelInput({
+	        //allowExtensions: true,
+	        //autoFormat: false,
+	        //autoHideDialCode: false,
+	        //autoPlaceholder: false,
+	        //defaultCountry: "auto",
+	        //ipinfoToken: "yolo",
+	        //nationalMode: false,
+	        //numberType: "MOBILE",
+	        //onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+	        //preferredCountries: ['cn', 'jp'],
+	        // utilsScript: "lib/libphonenumber/build/utils.js"
+      	});
+	});
+	</script>
+</body>
+</html>
