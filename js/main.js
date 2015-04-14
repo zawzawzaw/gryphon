@@ -174,4 +174,13 @@ $(document).ready(function(){
     $('.clear-all').on('click', function(e){
         $('input[type="checkbox"]').prop('checked', false);
     });
+
+    $('#new').click(function (e){
+        e.preventDefault();
+       $('link[href="css/style.css"]').attr('href','css/style2.css');
+    });
+    $('#original').click(function (e){
+        e.preventDefault();
+       $('link[href="css/style2.css"]').attr('href','css/style.css');
+    });
 });

@@ -23,6 +23,8 @@
 								<li><a href="#">SUBSCRIPTION</a></li>
 								<li><a href="#">DISCOVER TEA</a></li>
 								<li><a href="#">SPEICAL ORDER</a></li>
+								<li><a id="new" href="#new">New Theme</a></li>
+								<li><a id="original" href="#original">Original Theme</a></li>
 							</ul>
 						</div>
 						<div class="about-us-links links">
