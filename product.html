@@ -499,8 +499,21 @@
 	<!--#include virtual="inc/footer.inc" -->
 
 	<script>
-	$(document).ready(function(){
-		$('#header-wrapper').addClass('shadow');
+	var initialLoad = true;
+	$(document).ready(function(){		
+	    $(window).on('scroll', function() {
+	        var scrollPos = $(window).scrollTop();
+	        
+	        if( ( scrollPos != 0 ) ) {
+	            console.log('scrolling')
+	            $('#header-wrapper').addClass('shadow');
+	        }       
+	        else if( ( scrollPos === 0 ) ) {
+	            $('#header-wrapper').removeClass('shadow');
+	        }
+	    });
+
+	    initialLoad = false;
 	});
 	</script>
 

@@ -32,13 +32,15 @@ $(document).ready(function(){
     // });
 
     $('.account-details').find('.save-btn').on('click', function(e){
-        $('.account-details').slideToggle('slow');
-        $('.account-details-saved').slideToggle('slow');
+        $('.account-details-content').slideToggle('slow');
+        $('.account-details-saved-content').slideToggle('slow');
+        $('.edit').slideToggle('slow');
     });
 
     $('.account-details-saved').find('.edit').on('click', function(e){
-        $('.account-details-saved').slideToggle('slow');
-        $('.account-details').slideToggle('slow');
+        $('.account-details-saved-content').slideToggle('slow');
+        $('.account-details-content').slideToggle('slow');
+        $('.edit').slideToggle('slow');
     });
 
     $('.scroll-to-content').on('click', function(e){
