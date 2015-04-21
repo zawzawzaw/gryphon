@@ -1119,14 +1119,14 @@ background-position: center top;
       
       p.label-text {
         /*float: left;*/
-        .minion-pro-semibold-italic;
+        .gotham-medium;
         display: inline-block;
-        line-height: 18px;
+        line-height: 20px;
         color: @new-grey;
         vertical-align: top;
         height: 13px;
-        font-size: 13px;
-        letter-spacing: 0.03em;
+        font-size: 11px;
+        letter-spacing: 0.01em;
       }
       
     }
@@ -1236,7 +1236,7 @@ p {
   i {
     font-size: 12px;
     color: @dark-orange;
-    margin-right: 7px;
+    margin-right: 5px;
   }
 
   &:hover {
@@ -1250,14 +1250,6 @@ p {
   width: 1px;
   margin: 0 auto;
   margin-right: 50px;
-  @media all and (max-width: 992px) {
-    border-left: 0px;
-    border-bottom: 1px solid #ccc;
-    height: 1px;
-    width: 100%;
-    margin-bottom: 50px;
-    margin-top: 50px;
-  }
 }
 
 //   _        _ __   _____  _   _ _____ 
@@ -1884,6 +1876,7 @@ div.product {
   }
 
   .product-review {
+    margin-bottom: 120px;
 
     .image-text-content {
       h1 {
@@ -3880,15 +3873,16 @@ div.product {
 
 .cart {
   margin-top: 90px;
+  padding-bottom: 120px!important;
   @media all and (max-width: 992px) {
     margin-top: 60px;
   }
   .cart-breadcrumb {
     text-align: center;
     background-color: @skin;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    margin-bottom: 60px;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    margin-bottom: 61px;
 
     a {
       display: table;
@@ -3898,13 +3892,13 @@ div.product {
         margin-bottom: 15px;
       }
       i.no {
-        .gotham-medium;
+        .gotham-bold;
         background: #aaa;
         border-radius: 50%;
         width: 20px;
         /*height: 20px;*/
         display: inline-block;
-        font-size: 11px;
+        font-size: 12px;
         line-height: 14px;
         letter-spacing: 0.03em;
         color: @white;
@@ -3914,7 +3908,7 @@ div.product {
       }
       span {
         color: #aaa;
-        .minion-pro-semibold;
+        .minion-pro-regular;
         font-size: 13px;
         letter-spacing: 0.1em;
         margin-left: 10px;
@@ -4016,11 +4010,11 @@ div.product {
             padding-right: 0px;
             h2 {
               .gotham-medium;
-              font-size: 10px;
+              font-size: 9px;
               /*line-height: 38px;*/
               line-height: 25px;
               letter-spacing: 0.03em; 
-              color: @new-grey-2;
+              color: #777777;
             }
           }
         }
@@ -4048,8 +4042,8 @@ div.product {
               }
               
               p.product-title {
-                .minion-pro-semibold;
-                font-size: 12px;
+                .minion-pro-regular;
+                font-size: 13px;
                 line-height: 16px;
                 letter-spacing: 0.1em;
                 color: @dark-grey;
@@ -4059,7 +4053,7 @@ div.product {
               }
               p {
                 .minion-pro-medium;
-                font-size: 13px;
+                font-size: 12px;
                 line-height: 16px;
                 letter-spacing: 0.05em;
                 display: table-cell;
@@ -4115,12 +4109,10 @@ div.product {
     .action-container {
       margin-top: 100px;
       .back-btn {
-        .minion-pro-semibold-italic;
-        font-size: 13px;
-        line-height: 16px;
-        text-transform: none;
+        font-size: 11px;
+        line-height: 19px;
         letter-spacing: 0.03em;
-        color: @dark-grey;
+        color: #777777;
         vertical-align: middle;
         display: table-cell;
         height: 30px;
@@ -4139,9 +4131,9 @@ div.product {
         font-size: 11px;
         line-height: 16px;
         letter-spacing: 0.03em;
-        padding: 7px 30px;
+        padding: 8px 41px;
         background-color: @dark-grey;
-        color: @white;
+        color: @skin;
         text-transform: none;
         float: right;
         @media all and (max-width: 992px) {
@@ -4154,7 +4146,7 @@ div.product {
         }
       }
       .continue {
-        padding: 7px 30px;
+        padding: 7px 39px;
       }
     }
 
@@ -4195,7 +4187,7 @@ div.product {
         vertical-align: top;
         padding: .2em .6em .3em;
         p {
-          .minion-pro-semibold;
+          .minion-pro-regular;
           font-size: 13px;
           line-height: 16px;
           letter-spacing: 0.05em;
@@ -4218,7 +4210,7 @@ div.product {
         }  
         &.amount {
           p {
-            .minion-pro-semibold;
+            .minion-pro-regular;
             font-size: 13px;
             line-height: 16px;
             letter-spacing: 0.05em;
@@ -4271,7 +4263,7 @@ div.product {
     }
 
     .gift-service-wrapper {
-      margin-top: 0px;
+      margin-top: 97px;
     }
 
     .each-input {
@@ -4281,17 +4273,16 @@ div.product {
       label {
         color: @new-grey;
         text-transform: uppercase;
-        letter-spacing: 0.03em;
-        width: 150px;
-        margin-right: 20px;
+        width: 130px;
+        margin-right: 16px;
         span {
           line-height: 14px;
         }
       }
       input[type="text"] {
-        color: #464646;
+        color: #636363;
         width: 222px;
-        height: 30px;
+        height: 27px;
         background-color: @skin;
         border: none;
         padding-left: 10px;
@@ -4301,10 +4292,10 @@ div.product {
         .gotham-medium;
         font-size: 11px;
         line-height: 19px;
-        background-color: @dark-grey;
+        background-color: @new-grey;
         border: none;
-        height: 30px;      
-        width: 90px;
+        height: 27px;      
+        width: 80px;
         color: @white;
         margin-left: -4px;
         text-transform: none;
@@ -4313,11 +4304,11 @@ div.product {
         }
       }
       span.points {        
-        .minion-pro-semibold-italic;
-        font-size: 13px;
+        .minion-pro-medium-italic;
+        font-size: 12px;
         line-height: 14px;
         letter-spacing: 0.03em;
-        padding-left: 175px;
+        padding-left: 160px;
         color: @dark-orange;
         display: block;
         margin-top: 13px;
@@ -4328,12 +4319,12 @@ div.product {
         margin-right: 0px;
       }
       p.label-text {
-        .minion-pro-semibold-italic;
+        .gotham-medium;
         color: @dark-grey;
-        font-size: 13px;
-        line-height: 16px;
+        font-size: 11px;
+        line-height: 15px;
         height: auto;
-        text-transform: capitalize;        
+        text-transform: uppercase;        
       }
       textarea {
         margin-top: 10px;
@@ -4353,8 +4344,8 @@ div.product {
   }
 
   #billing_shipping {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 26px;
+    padding-right: 26px;
     hr {
       margin-top: 14px;  
     }    
@@ -4366,7 +4357,6 @@ div.product {
         margin-right: 59px;
         .gotham-medium;
         font-size: 10px;
-        letter-spacing: 0.03em;
         text-transform: uppercase;
         color: #707070;
       }
@@ -4396,20 +4386,20 @@ div.product {
 
     .delivery-rates {
       h2 {
-        .gotham-medium;
+        .gotham-bold;
         font-size: 15px;
         line-height: 20px;
         letter-spacing: 0.03em;
         margin-bottom: 17px;
-        color: @dark-grey;
+        color: @new-grey;
       }
       #delivery-rate-tbl {
         thead {
           tr {
             th {
               .gotham-medium;
-              font-size: 10px;              
-              line-height: 16px;
+              font-size: 9px;              
+              line-height: 22px;
               letter-spacing: 0.03em;
               border-top: 1px solid #ccc;
               border-bottom: 1px solid #ccc;
@@ -4425,11 +4415,8 @@ div.product {
               padding-bottom: 0px;
               padding-top: 17px;
               p {
-                .minion-pro-semibold-italic;
-                font-size: 13px;
                 color: @dark-orange;
                 text-align: center;
-                letter-spacing: 0.03em;
               }
             }
           }
@@ -4437,16 +4424,15 @@ div.product {
       }
       p {
         .gotham-book;
-        font-size: 11.5px;
-        line-height: 19px;
-        margin-bottom: 16px;
+        font-size: 11px;
+        line-height: 16px;
+        margin-bottom: 20px;
         color: @new-grey;
 
         span {
           color: @dark-orange;
-          .minion-pro-italic;
+          .gotham-book;
           font-style: italic;
-          font-size: 13px;
         }
       }
     }
@@ -4455,11 +4441,6 @@ div.product {
       margin-top: 100px;
       .back-btn {
         color: #777777;
-        .minion-pro-semibold-italic;
-        font-size: 13px;
-        line-height: 16px;
-        text-transform: none;
-        letter-spacing: 0.03em;
         vertical-align: middle;
         display: table-cell;
         height: 40px;
@@ -4468,7 +4449,7 @@ div.product {
         }
       }
       .proceed, .continue {
-        padding: 7px 30px;
+        padding: 11px 39px;
         background-color: @dark-grey;
         color: @skin;
         text-transform: none;
@@ -4478,7 +4459,7 @@ div.product {
         }
       }
       .continue {
-        padding: 7px 30px;
+        padding: 6px 30px;
       }
     }
   }
@@ -4539,7 +4520,7 @@ div.product {
 
   .first-content {
     padding: 50px 0;
-    background-color: @skin;   
+    background-color: #faf9f8;    
   }
 
   .account-details, .account-details-saved {    
@@ -5133,7 +5114,7 @@ div.product {
       }
     }
 
-    .billing-address, .shipping-address {
+    .billing-address, .shipping-address {      
       ul {
         text-align: right; 
         li {
@@ -5200,17 +5181,6 @@ div.product {
           }
         }
       }
-    }
-
-    .billing-address {
-      width: 45%;
-      display: inline-block;
-      margin-right: 4.5%;
-    }
-    .shipping-address {
-      width: 45%;
-      display: inline-block;
-      margin-left: 4.5%;
     }
     .gift-cards-tbl {
       width: 100%;
@@ -5648,10 +5618,6 @@ div.product {
       p {
         width: 640px;
         margin: 0 auto;
-
-        @media all and (max-width: 680px) {
-          width: auto;
-        }
       }
 
       .hotels {
@@ -5675,10 +5641,6 @@ div.product {
     hr {
       margin-left: 0px!important;
       margin-right: 0px!important;
-
-      @media all and (max-width: 1199px) {
-        margin: 15px auto!important;
-      }
     }
 
     img {
@@ -5723,10 +5685,6 @@ div.product {
       p {
         width: 640px;
         margin: 0 auto;
-
-        @media all and (max-width: 680px) {
-          width: auto;
-        }
       }
 
       .awards {
@@ -5775,15 +5733,16 @@ div.product {
         margin-right: 84px;
         text-align: center;      
 
-        &:nth-of-type(4n) {
+        &:nth-of-type(3n) {
           margin-right: 0px;
         }
 
         @media all and (max-width: 992px) {
           display: inline-block;
           /*width: 80%;        */
-          &:nth-of-type(4n) {
-            margin-right: 0px;
+          &:nth-of-type(3n) {
+            margin-right: 360px;
+            margin-top: 40px;
           }
           &:nth-of-type(2n) { 
             margin-right: 0px;
@@ -5826,9 +5785,6 @@ div.product {
           line-height: 16px;                
           color: @new-grey;
           width: 266px;
-          @media all and (max-width: 715px) {        
-            width: auto!important;
-          }
         }
 
         .no {
@@ -5905,7 +5861,7 @@ div.product {
 //////////////////////
 
 .trade-signup {
-  margin-top: 95px;
+  margin-top: 85px;
   padding-bottom: 85px!important;
   @media all and (max-width: 992px) {
     margin-top: 60px;
