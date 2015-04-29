@@ -838,7 +838,8 @@ background-position: center top;
               margin-left: 5px;
             }
             span {
-              vertical-align: top;
+              /*vertical-align: top;*/
+              vertical-align: middle;
             }
           }
         }
@@ -939,10 +940,10 @@ background-position: center top;
             left: -50%;
             h1 {
               .jacques-gilles;
-              font-size: 56px;
+              font-size: 70px;
               line-height: 66px;
               margin-top: 20px;
-              margin-bottom: 20px;
+              margin-bottom: 30px;
               text-transform: none;
               text-shadow: 0 1px 100px rgba(0, 0, 0, 1);
             }
@@ -1246,7 +1247,7 @@ p {
 
 .vertical-line {
   border-left: 1px solid #ccc;
-  height: 650px;
+  height: 770px;
   width: 1px;
   margin: 0 auto;
   margin-right: 50px;
@@ -1298,11 +1299,20 @@ div.home {
     padding-top: 70px;
     padding-bottom: 70px;
 
+    h1 {
+      .gotham-bold;
+      font-size: 17px;
+      line-height: 22px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
     p {
-      .gotham-medium;      
-      font-size: 12px;
+      .gotham-book;      
+      font-size: 13px;
       line-height: 24px;
       color: @new-grey;
+      margin: 0 25px;
     }
 
     hr.small {
@@ -1321,7 +1331,14 @@ div.home {
     .image-text-content {
       padding-top: 80px;
       padding-bottom: 50px;
-
+      
+      h1 {
+        .gotham-bold;
+        font-size: 17px;
+        line-height: 22px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
       .center-text {
         /*width: 228px;*/
         display: inline-block;
@@ -1387,6 +1404,13 @@ div.home {
       padding-top: 80px;
       padding-bottom: 80px;
 
+      h1 {
+       .gotham-bold;
+       font-size: 17px;
+       line-height: 22px;
+       letter-spacing: 0.05em;
+       text-transform: uppercase;
+      }
       .each-feature {
         display: inline-block;
         width: 170px;
@@ -1427,6 +1451,7 @@ div.home {
         text-transform: none;
         font-size: 14px;
         line-height: 16px;
+        letter-spacing: 0.03em;
         /*margin-top: 13px;*/
         margin-top: 35px;
       }
@@ -1439,6 +1464,14 @@ div.home {
     .image-text-content {
       padding-top: 80px;
       padding-bottom: 80px;
+
+      h1 {
+       .gotham-bold;
+       font-size: 17px;
+       line-height: 22px;
+       letter-spacing: 0.05em;
+       text-transform: uppercase;
+      }
 
       .vertical-center {
         padding-top: 20px;
@@ -1472,6 +1505,14 @@ div.home {
   #social {
     .image-text-content {
       padding-top: 80px;
+
+      h1 {
+       .gotham-bold;
+       font-size: 17px;
+       line-height: 22px;
+       letter-spacing: 0.05em;
+       text-transform: uppercase;
+      }
 
       .hashtag {
         .gotham-medium;
@@ -1780,6 +1821,7 @@ div.product {
     h2 {
       .gotham-medium;
       letter-spacing: 0.03em;
+      font-size: 14px;
       line-height: 20px;
       text-align: center;
       margin-bottom: 20px;
@@ -1891,6 +1933,10 @@ div.product {
         display: inline-block;
         margin-right: 10px;
         float: left;
+        .gotham-medium;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.03em;
       }
       .review-date {
         float: left;
@@ -2009,7 +2055,7 @@ div.product {
         h1 {
           float: none;
           .gotham-medium;
-          font-size: 13px;
+          font-size: 14px;
           line-height: 20px;
           letter-spacing: 0.03em;
         }
@@ -2174,6 +2220,27 @@ div.product {
         padding-left: 5px;
         padding-right: 5px;
 
+        label.checkbox-label {
+          display: inline-block;
+          margin-left: -17px;
+          position: relative;
+          vertical-align: top;
+            
+          p.label-text {
+            /*float: left;*/
+            .gotham-medium!important;
+            display: inline-block;
+            line-height: 18px!important;
+            color: @new-grey-2!important;
+            vertical-align: baseline!important;
+            height: 13px;
+            font-size: 10px!important;
+            text-transform: uppercase;
+            letter-spacing: 0.05em!important;
+          } 
+        }
+      
+
         &:nth-of-type(1) {
           border-top: 1px solid #ccc;
         }
@@ -2199,13 +2266,13 @@ div.product {
             float: left;
             /*width: 110px;*/
             width: 50%;            
-            padding-right: 10%;
+            padding-right: 5%;
           }
 
           .col-2 {
             float: left;
             width: 50%;            
-            padding-right: 5%;
+            padding-left: 5%;
           }
 
           input[type="checkbox"]+label span {
@@ -2306,8 +2373,9 @@ div.product {
 
         .item-count {
           .minion-pro-semibold-italic;
-          font-size: 12px;
-          line-height: 19px;          
+          font-size: 13px;
+          line-height: 19px;   
+          margin-left: 5px;       
           color: @dark-orange;
         }
 
@@ -2324,6 +2392,7 @@ div.product {
         }
         ul {
           display: inline-block;
+          margin-right: 5px;
           li {
             display: inline-block;
             font-size: 10px;
@@ -2335,11 +2404,12 @@ div.product {
             }
             a {
               .minion-pro-italic;
-              font-size: 11px;
+              font-size: 12px;
               line-height: 19px;
-              letter-spacing: 0.015em;
+              letter-spacing: 0.02em;
               color: @new-grey-2;
               text-transform: none;
+              margin: 0 5px;
               &:hover {
                 color: @dark-orange;
               }
@@ -2365,7 +2435,7 @@ div.product {
         position: relative;
         width: 23%;
         padding-top: 20px;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
         display: inline-block;
         vertical-align: top;        
         margin-right: 1%;
@@ -2518,7 +2588,7 @@ div.product {
 
         p {
           .gotham-medium;
-          font-size: 9px;
+          font-size: 10px;
           line-height: 16px;
           letter-spacing: 0.03em;
           text-transform: uppercase;
@@ -2527,10 +2597,11 @@ div.product {
         }
         p.price {
           .minion-pro-medium;
-          font-size: 12px;
+          font-size: 13px;
           line-height: 16px;
           letter-spacing: 0.05em;
           color: @new-grey;
+          margin-top: 10px;
         }
       }
 
@@ -2781,6 +2852,7 @@ div.product {
         .minion-pro-semibold-italic;
         font-size: 13px;
         line-height: 16px;
+        letter-spacing: 0.03em;
         text-transform: none;
       }
       input[type="checkbox"] {
@@ -3865,7 +3937,7 @@ div.product {
       line-height: 16px;
       letter-spacing: 0.03em;
       display: block;
-      margin-top: 44px; 
+      margin-top: 30px; 
       color: @dark-grey;
       text-transform: none;
       &:hover {
@@ -4235,6 +4307,7 @@ div.product {
       border-bottom: 1px dashed #ccc;
       padding-bottom: 18px;
       padding-top: 18px;
+      padding-left: 15px;
       max-width: 400px;
 
       &:first-child {
@@ -4249,16 +4322,20 @@ div.product {
         border-bottom: none;
         padding-bottom: 35px;
       }
+      .label {
+        width: 74%!important;
+      }
       p {
         font-size: 12px;
         .gotham-medium;
+        letter-spacing: 0.03em;
         text-transform: uppercase;
       }
       span {
         .gotham-book;
         font-size: 11px;  
         line-height: 22px;
-        color: #777777;
+        color: @new-grey;
         margin-top: 6px;
         display: block;          
       }
@@ -4337,11 +4414,14 @@ div.product {
         text-transform: capitalize;        
       }
       textarea {
+        .gotham-book;
+        font-size: 11.5px;
+        line-height: 19px;
         margin-top: 10px;
         border: none;
         background-color: @skin;
         width: 450px;
-        padding-left: 15px;
+        padding-left: 20px;
         padding-top: 15px;
         height: 128px;
         color: @new-grey;
@@ -5356,6 +5436,14 @@ div.product {
             margin-top: 30px;
             width: 100%;
           }
+          h1 {
+            .gotham-bold;
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 2px;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+          }
         }
       }
       .post-extra-content {
@@ -5619,25 +5707,29 @@ div.product {
           font-style: normal;
           line-height: 45px;
           text-transform: none;
-          margin-bottom: 12px;
+          margin-top: 10px;
+          margin-bottom: 25px;
           color: @white;
+          text-shadow: 0 1px 100px #000;
         }
 
         p {
           .gotham-medium;
-          font-size: 14px;
-          line-height: 18px;
+          font-size: 13px;
+          line-height: 22px;
           color: @white;
-          max-width: 500px;
+          max-width: 50%;
           margin: 0 auto;
           margin-top: 10px;
+          text-shadow: 0 1px 100px #000;
+          text-transform: uppercase;
         }
       }
     }
   }
 
   .first-content {    
-    padding-top: 70px;
+    padding-top: 80px;
 
     .center {
       text-align: center;
@@ -5647,7 +5739,7 @@ div.product {
       }
 
       p {
-        width: 640px;
+        width: 680px;
         margin: 0 auto;
 
         @media all and (max-width: 680px) {
@@ -5656,7 +5748,7 @@ div.product {
       }
 
       .hotels {
-        margin: 40px 0 60px;
+        margin: 40px 0 80px;
         .hotel {
           display: inline-block;
           width: 168px;
@@ -5668,7 +5760,7 @@ div.product {
   }
 
   .second-content {   
-    padding: 70px 0;
+    padding: 80px 0;
     .center {
       text-align: center;
     }
@@ -5713,7 +5805,7 @@ div.product {
 
   .third-content {
     background-color: @skin;
-    padding: 70px 0;
+    padding: 80px 0;
     .center {
       text-align: center;
 
@@ -5722,7 +5814,7 @@ div.product {
       }
 
       p {
-        width: 640px;
+        width: :;
         margin: 0 auto;
 
         @media all and (max-width: 680px) {
@@ -5742,7 +5834,7 @@ div.product {
   }
 
   .last-content {    
-    padding-top: 70px;
+    padding-top: 80px;
     .center {
       text-align: center;
     }    
@@ -5751,8 +5843,8 @@ div.product {
       display: inline-block;    
       width: 100%;
       vertical-align: top;
-      padding-top: 5px;    
-      margin-bottom: 40px;
+      padding-top: 10px;    
+      /*margin-bottom: 40px;*/
 
       @media all and (max-width: 1199px) {
         text-align: center;
@@ -5770,7 +5862,7 @@ div.product {
       .each-step {
         position: relative;
         /*width: 19.5%;        */      
-        margin-bottom: 36px;
+        margin-bottom: 50px;
         display: inline-block;
         vertical-align: top;        
         margin-right: 84px;
@@ -5823,6 +5915,7 @@ div.product {
           line-height: 16px;                
           color: @new-grey;
           width: 266px;
+          margin-top: 5px;
           @media all and (max-width: 715px) {        
             width: auto!important;
           }
@@ -5846,7 +5939,7 @@ div.product {
     }
 
     .ctas {
-      margin-top: 50px;
+      margin-top: 30px;
     }
 
     .trade-signup-btn {
@@ -5927,26 +6020,30 @@ div.product {
           font-style: normal;
           line-height: 45px;
           text-transform: none;
-          margin-bottom: 12px;
+          margin-top: 10px;
+          margin-bottom: 25px;
           color: @white;
+          text-shadow: 0 1px 100px #000;
         }
 
         p {
           .gotham-medium;
-          font-size: 14px;
-          line-height: 18px;
+          font-size: 13px;
+          line-height: 22px;
           color: @white;
-          max-width: 500px;
+          max-width: 50%;
           margin: 0 auto;
           margin-top: 10px;
+          text-shadow: 0 1px 100px #000;
+          text-transform: uppercase;
         }
       }
     }
   }
 
   .first-content {
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding-top: 80px;
+    padding-bottom: 80px;
     background-color: @skin;
 
     .center {
@@ -5973,7 +6070,7 @@ div.product {
   }
 
   .last-content {
-    padding-top: 70px;
+    padding-top: 80px;
 
     .inputs {
       margin-top: 15px;
@@ -5985,6 +6082,7 @@ div.product {
       label {
         font-size: 10px;
         line-height: 14px;
+        letter-spacing: 0.03em;
         width: 130px;
         margin-right: 27px;
         .gotham-medium;
@@ -6037,16 +6135,18 @@ div.product {
     .notice {
       h5 {
         .minion-pro-semibold-italic;
-        font-size: 11px;
+        font-size: 12px;
         line-height: 15px;
+        letter-spacing: 0.05em;
         color: @dark-orange;
       }
       p {
         .minion-pro-semibold-italic;
-        font-size: 11px;
+        font-size: 12px;
         line-height: 15px;
         letter-spacing: .03em;
-        color: @dark-grey;
+        color: @dark-orange;
+        margin-top: 2px;
         margin-bottom: 23px;
       }
     }
@@ -6056,11 +6156,11 @@ div.product {
       font-size: 11px;
       line-height: 16px;
       color: @white;
-      padding: 7px 14px;
+      padding: 7px 30px;
       background-color: @dark-grey;
       border: none;
       text-transform: none;      
-      margin-top: 70px;
+      margin-top: 30px;
       margin-left: auto;
       margin-right: 40px;
       display: block;
