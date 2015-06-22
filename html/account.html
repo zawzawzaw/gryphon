@@ -1,0 +1,737 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>
+<!--> 
+<html class="">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>Gryphon</title>
+	<meta name="description" content="Gryphon">
+	<meta name="keywords" content="Gryphon">
+
+	<!--#include virtual="inc/head.inc" -->	
+	
+	<link rel="stylesheet" href="css/intlTelInput.css">
+	<script src="js/plugins/intlTelInput.min.js"></script>
+</head>
+<body>
+	
+	<!--#include virtual="inc/header.inc" -->
+
+	<div id="content-wrapper" class="account">
+		<div class="first-content">
+			<div class="account-details-saved">
+				<div class="image-text-content container">
+					<div class="row">
+						<div class="col-md-10">
+							<h1>Richard Claydeman’s account</h1>
+							<hr class="small">
+						</div>
+						<div id="action-col" class="col-md-2">
+							<a href="#" class="edit"><i class="fa fa-cog"></i> <span>Edit</span></a>
+						</div>
+					</div>
+					<div class="row account-details-saved-content">
+						<div class="col-md-2 col-sm-6 col-xs-6">
+							<div class="each-input">
+								<h2>MEMBER NO.</h2>
+								<p>Gryphon20150321</p>
+							</div>
+							
+							<div class="each-input">
+								<h2>GENDER</h2>
+								<p>Male</p>
+							</div>
+
+							<div class="each-input">
+								<h2>DATE OF BIRTH</h2>
+								<p>21 May 1990</p>
+							</div>
+						</div>
+						<div class="col-md-2 col-sm-6 col-xs-6">
+							<div class="each-input">
+								<h2>email</h2>
+								<p><a href="mailto:richard@gryphon.com.sg" class="email">richard@gryphon.com.sg</a></p>
+							</div>
+							<div class="each-input">
+								<h2>password</h2>
+								<p>**********</p>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-6">
+							<div class="each-input">
+								<h2>address</h2>
+								<p>251 Pandon Loop #03-25, Singapore 128431</p>
+							</div>
+							<div class="each-input">
+								<h2>phone no.</h2>
+								<p>+65 97281958</p>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-12 col-xs-12">
+							<div class="each-input">
+								<h2>gryphon newsletters</h2>
+								<p>Be the first one to hear about our special offers, new arrivals, lastest news and trends and the other events.</p>
+								<a href="#" class="cta subscribe-btn">Subscribe</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="account-details">
+				<div class="image-text-content container">
+
+					<!-- <div class="row">
+						<div class="col-md-12">
+							<h1>Richard Claydeman’s account</h1>
+							<hr class="small">
+						</div>
+					</div> -->
+					
+					<div class="account-details-content">
+						<div class="row">
+						<form action="" name="memeber_info">
+						<div class="col-md-2 col-sm-6">
+							<div class="each-input">
+								<h2>MEMBER NO.</h2>
+								<p>Gryphon20150321</p>
+							</div>
+							
+							<div class="each-input">
+								<h2>LOYALTY POINT</h2>
+								<p class="loyalty-point">230 points</p>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6">
+							<div class="each-input">
+								<h2>GENDER</h2>
+								<input type="checkbox" name="gender">
+								<label class="checkbox-label" for="gender">
+									<span></span><p class="label-text">Female</p>
+								</label>
+								<input type="checkbox" name="gender">
+								<label class="checkbox-label" for="gender">
+									<span></span><p class="label-text">Male</p>
+								</label>
+							</div>
+							<div class="each-input">
+								<h2>DATE OF BIRTH</h2>
+								<div class="dropdown">
+									<select name="day" id="day">
+										<option value="day">Day</option>
+									</select>
+								</div>
+								<div class="dropdown">
+									<select name="month" id="month">
+										<option value="month">Month</option>
+									</select>
+								</div>
+								<div class="dropdown">
+									<select name="year" id="year">
+										<option value="year">Year</option>
+									</select>
+								</div>
+							</div>
+							<div class="each-input">
+								<h2>PHONE NO.</h2>							
+								<input type="text" name="phone_no" class="phone_no_input">
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6">
+							<div class="each-input">
+								<label for="email">Email</label>
+								<input type="text" name="email" >
+							</div>
+							<div class="each-input">
+								<label for="password">Current Password</label>
+								<input type="password" name="password" >
+							</div>
+							<div class="each-input">
+								<label for="new_password">Change Password</label>
+								<input type="password" name="new_password" >
+							</div>
+							<div class="each-input">
+								<label for="c_new_password">Confirm Password</label>
+								<input type="password" name="c_new_password" >
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-6">
+							<div class="each-input">
+								<label for="address">Address</label>
+								<input type="text" name="address_1" class="address_input">
+
+								<input type="text" name="address_2" class="address_input">
+							</div>
+							<div class="each-input">
+								<div class="column-1">
+									<label for="city">City</label>
+									<div class="dropdown">
+										<select name="city" id="city">
+											<option value="city">Singapore</option>
+										</select>
+									</div>
+								</div>
+								<div class="column-2">
+									<label for="state">State</label>
+									<div class="dropdown">
+										<select name="state" id="state">
+											<option value="state">N/A</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="each-input">
+								<div class="column-1">
+									<label for="country">Country</label>
+									<div class="dropdown">
+										<select name="country" id="country">
+											<option value="country">Singapore</option>
+										</select>
+									</div>
+								</div>
+								<div class="column-2">
+									<label for="postal_code">Postal Code</label>
+									<input type="text" name="postal_code">
+								</div>
+							</div>
+						</div>
+						</form>
+						</div>
+						<hr class="dotted">
+						<div class="row">
+						<div class="col-md-6">
+						<input type="checkbox" name="newsletter">
+						<label class="checkbox-label" for="newsletter">
+							<span></span><p class="label-text">gryphon newsletters</p>
+						</label>
+						<p>Be the first one to hear about our special offers, new arrivals, lastest news and trends and the other events.</p>
+						</div>
+						<div class="col-md-6">
+						<a href="#" class="cta save-btn">Save Changes</a>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="order-history">
+			<div class="image-text-content container">
+				<div class="row order-history-heading">
+					<div class="col-md-6 col-sm-12 col-xs-12">
+						<h1>ORDER HISTORY</h1>
+						<hr class="small">
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+					</div>
+					<div class="col-md-5 col-sm-12 col-xs-12 col-md-offset-1">
+						<ul class="order-info">
+							<li><a href="#"><i class="question"></i><span>Gryphon FAQ</span></a></li>
+							<li><a href="#"><i class="delivery-info"></i><span>Delivery Information</span></a></li>
+							<li><a href="#"><i class="tracking"></i><span>Track Delivery</span></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 hidden-xs hidden-sm">
+						<hr class="order-headers-line">
+						<div class="row order-headers">
+							<div class="col-md-1 order-status"><h2>STATUS</h2></div>
+							<div class="col-md-1 order-no"><h2>ORDER NO.</h2></div>
+							<div class="col-md-1 order-date"><h2>DATE</h2></div>
+							<div class="col-md-9">
+								<div class="row">
+									<div class="col-md-4"><h2>PRODUCT</h2></div>
+									<div class="col-md-2"><h2>UNIT PRICE</h2></div>
+									<div class="col-md-2 order-qty"><h2>QTY</h2></div>
+									<div class="col-md-2"><h2>TOTAL</h2></div>
+									<div class="col-md-2"></div>
+								</div>
+							</div>
+						</div>
+						<hr class="order-headers-line">
+						<div class="row order-content">
+							<div class="col-md-12 orders">
+
+								<div class="row each-order">
+									<div class="col-md-12">
+										<div class="row order-details">
+											<div class="col-md-1 order-status"><i class="fa fa-spinner fa-spin"></i><span></span></div>
+											<div class="col-md-1 order-no"><p class="order_no">03012015</p></div>
+											<div class="col-md-1 order-date"><p class="date">03 Jan 2015</p></div>
+											<div class="col-md-9">
+												<div class="row each-product">
+													<div class="col-md-4"><p class="product">Jasmine Winter Flakes Tea</p></div>
+													<div class="col-md-2"><p class="price">S$ 38.00</p></div>
+													<div class="col-md-2 order-qty"><p>1</p></div>
+													<div class="col-md-2"><p class="price">S$ 38.00</p></div>
+													<div class="col-md-2"><a href="#" class="add-to-cart-btn"><i class="fa fa-plus"></i><span>Add to Cart</span></a></div>
+												</div>
+												<div class="row each-product">
+													<div class="col-md-4"><p class="product">Blueberry Yoghurt Fruit Tisane</p></div>
+													<div class="col-md-2"><p class="price">S$ 5.60</p></div>
+													<div class="col-md-2 order-qty"><p>2</p></div>
+													<div class="col-md-2"><p class="price">S$ 11.20</p></div>
+													<div class="col-md-2"><a href="#" class="add-to-cart-btn"><i class="fa fa-plus"></i><span>Add to Cart</span></a></div>
+												</div>
+												<div class="row each-product">
+													<div class="col-md-4"><p class="product">Sangria Fruit Tisane Tea</p></div>
+													<div class="col-md-2"><p class="price">S$ 5.60</p></div>
+													<div class="col-md-2 order-qty"><p>1</p></div>
+													<div class="col-md-2"><p class="price">S$ 5.60</p></div>
+													<div class="col-md-2"><a href="#" class="add-to-cart-btn"><i class="fa fa-plus"></i><span>Add to Cart</span></a></div>
+												</div>
+											</div>
+										</div>
+										
+										<hr class="dotted">
+										<div class="row extra-content-headers">
+											<div class="col-md-6">
+												<a href="#" class="view-detail"><i class="fa fa-chevron-down"></i><span>View Detail for Grand Total</span></a>
+											</div>
+											<div class="col-md-6">
+												<div class="row each-details">
+													<div class="col-md-4"><h2>Sub total</h2></div>
+													<div class="col-md-4 align-to-total"><h2 class="sub_total price">S$ 54.80</h2></div>
+													<div class="col-md-4"></div>
+												</div>
+											</div>
+										</div>
+										<div class="row extra-content">
+											<div class="col-md-6 col-md-offset-6 expanded">
+												<div class="row each-details">
+													<div class="col-md-4"><h2>shipping & handling</h2><span>— Local Delivery - Flat Rate</span></div>
+													<div class="col-md-4 align-to-total"><h2 class="shipping price">S$ 6.00</h2></div>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>Applied Discount Code</h2><span>— SHOPNOW2015</span></div>
+													<div class="col-md-4 align-to-total"><h2 class="minus applied_discount_code price">- S$ 15.20</h2></div>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>gift certificate</h2><span>— G6D7S6234L</span></div>
+													<div class="col-md-4 align-to-total"><h2 class="minus gift_certificate price">- S$ 50.00</h2></div>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>redeemed points</h2></div>
+													<div class="col-md-4 align-to-total"><h2 class="minus redeemed_points price">- S$ 2.00</h2></div>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>Tax</h2></div>
+													<div class="col-md-4 align-to-total"><h2 class="tax price">S$ 9.00</h2></div>
+												</div>
+												<div class="row">
+													<hr>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2 class="grand_total">grand total</h2></div>
+													<div class="col-md-4 align-to-total"><h2 class="grand_total price">S$ 99.80</h2></div>
+													<div class="col-md-4 align-to-button"><a href="#" class="reorder"><i class="fa fa-repeat"></i><span>Reorder</span></a></div>
+												</div>
+											</div>
+										</div>
+
+										<hr class="each-order">
+									</div>
+								</div>
+
+								<div class="row each-order">
+									<div class="col-md-12">
+										<div class="row order-details">
+											<div class="col-md-1 order-status"><i class="fa fa-smile-o"></i></div>
+											<div class="col-md-1 order-no"><p class="order_no">17112014</p></div>
+											<div class="col-md-1 order-date"><p class="date">17 Nov 2014</p></div>
+											<div class="col-md-9 order-products">
+												<div class="row each-product">
+													<div class="col-md-4"><p class="product">Jasmine Silver Clouds Green Tea</p></div>
+													<div class="col-md-2"><p class="price">S$ 28.00</p></div>
+													<div class="col-md-2 order-qty"><p>2</p></div>
+													<div class="col-md-2"><p class="price">S$ 56.00</p></div>
+													<div class="col-md-2"><a href="#" class="add-to-cart-btn"><i class="fa fa-plus"></i><span>Add to Cart</span></a></div>
+												</div>
+												<div class="row each-product">
+													<div class="col-md-4"><p class="product">Tomatino™ Caffeine-Free Tea</p></div>
+													<div class="col-md-2"><p class="price">S$ 16.60</p></div>
+													<div class="col-md-2 order-qty"><p>2</p></div>
+													<div class="col-md-2"><p class="price">S$ 33.20</p></div>
+													<div class="col-md-2"><a href="#" class="add-to-cart-btn"><i class="fa fa-plus"></i><span>Add to Cart</span></a></div>
+												</div>
+												<div class="row each-product">
+													<div class="col-md-4"><p class="product">Turkish Apple Fruit Tisane Tea</p></div>
+													<div class="col-md-2"><p class="price">S$ 5.60</p></div>
+													<div class="col-md-2 order-qty"><p>5</p></div>
+													<div class="col-md-2"><p class="price">S$ 28.00</p></div>
+													<div class="col-md-2"><a href="#" class="add-to-cart-btn"><i class="fa fa-plus"></i><span>Add to Cart</span></a></div>
+												</div>
+												<div class="row each-product">
+													<div class="col-md-4"><p class="product">Treasures</p></div>
+													<div class="col-md-2"><p class="price">S$ 16.60</p></div>
+													<div class="col-md-2 order-qty"><p>1</p></div>
+													<div class="col-md-2"><p class="price">S$ 16.60</p></div>
+													<div class="col-md-2"><a href="#" class="add-to-cart-btn"><i class="fa fa-plus"></i><span>Add to Cart</span></a></div>
+												</div>
+												<div class="row each-product">
+													<div class="col-md-4"><p class="product">Fruit Symphony Fruit Tisane Tea</p></div>
+													<div class="col-md-2"><p class="price">S$ 5.60</p></div>
+													<div class="col-md-2 order-qty"><p>2</p></div>
+													<div class="col-md-2"><p class="price">S$ 11.20</p></div>
+													<div class="col-md-2"><a href="#" class="add-to-cart-btn"><i class="fa fa-plus"></i><span>Add to Cart</span></a></div>
+												</div>
+											</div>
+										</div>
+
+										<hr class="dotted">
+										<div class="row extra-content-headers">
+											<div class="col-md-6">
+												<a href="#" class="view-detail"><i class="fa fa-chevron-down"></i><span>View Detail for Grand Total</span></a>
+											</div>
+											<div class="col-md-6">
+												<div class="row each-details">
+													<div class="col-md-4"><h2>Sub total</h2></div>
+													<div class="col-md-4 align-to-total"><h2 class="sub_total price">S$ 145.00</h2></div>
+													<div class="col-md-4 align-to-button"><a href="#" class="reorder"><i class="fa fa-repeat"></i><span>Reorder</span></a></div>
+												</div>
+											</div>
+										</div>
+										<div class="row extra-content">
+											<div class="col-md-6 col-md-offset-6 expanded">
+												<div class="row each-details">
+													<div class="col-md-4"><h2>shipping & handling</h2><span>— Local Delivery - Flat Rate</span></div>
+													<div class="col-md-4 align-to-total"><h2 class="shipping price">S$ 6.00</p></div>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>Applied Discount Code</h2><span>— SHOPNOW2015</span></div>
+													<div class="col-md-4 align-to-total"><h2 class="minus applied_discount_code price">- S$ 15.20</p></div>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>gift certificate</h2><span>— G6D7S6234L</span></div>
+													<div class="col-md-4 align-to-total"><h2 class="minus gift_certificate price">- S$ 50.00</p></div>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>redeemed points</h2></div>
+													<div class="col-md-4 align-to-total"><h2 class="minus redeemed_points price">- S$ 2.00</p></div>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>Tax</h2></div>
+													<div class="col-md-4 align-to-total"><h2 class="tax price">S$ 9.00</p></div>
+												</div>
+												<div class="row">
+													<hr>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>grand total</h2></div>
+													<div class="col-md-4 align-to-total"><h2 class="grand_total price">S$ 99.80</p></div>
+													<div class="col-md-4 align-to-button"><a href="#" class="reorder"><i class="fa fa-repeat"></i><span>Reorder</span></a></div>
+												</div>
+											</div>
+										</div>
+
+										<hr class="each-order">
+									</div>
+								</div>
+
+								<div class="row each-order">
+									<div class="col-md-12">
+										<div class="row order-details">
+											<div class="col-md-1 order-status"><i class="fa fa-smile-o"></i></div>
+											<div class="col-md-1 order-no"><p class="order_no">28092014</p></div>
+											<div class="col-md-1 order-date"><p class="date">28 Sep 2014</p></div>
+											<div class="col-md-9">
+												<div class="row each-product">
+													<div class="col-md-4"><p class="product">Lychee Black Tea</p></div>
+													<div class="col-md-2"><p class="price">S$ 16.60</p></div>
+													<div class="col-md-2 order-qty"><p>1</p></div>
+													<div class="col-md-2"><p class="price">S$ 16.60</p></div>
+													<div class="col-md-2"><a href="#" class="add-to-cart-btn"><i class="fa fa-plus"></i><span>Add to Cart</span></a></div>
+												</div>
+											</div>
+										</div>
+
+										<hr class="dotted">
+										<div class="row extra-content-headers">
+											<div class="col-md-6">
+												<a href="#" class="view-detail"><i class="fa fa-chevron-down"></i><span>View Detail for Grand Total</span></a>
+											</div>
+											<div class="col-md-6">
+												<div class="row each-details">
+													<div class="col-md-4"><h2>Sub total</h2></div>
+													<div class="col-md-4 align-to-total"><h2 class="sub_total price">S$ 16.60</h2></div>
+													<div class="col-md-4 align-to-button"><a href="#" class="reorder"><i class="fa fa-repeat"></i><span>Reorder</span></a></div>
+												</div>
+											</div>
+										</div>
+										<div class="row extra-content">
+											<div class="col-md-6 col-md-offset-6 expanded">
+												<div class="row each-details">
+													<div class="col-md-4"><h2>shipping & handling</h2><span>— Local Delivery - Flat Rate</span></div>
+													<div class="col-md-4 align-to-total"><h2 class="shipping price">S$ 6.00</h2></div>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>Applied Discount Code</h2><span>— SHOPNOW2015</span></div>
+													<div class="col-md-4 align-to-total"><h2 class="applied_discount_code">- S$ 15.20</h2></div>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>gift certificate</h2><span>— G6D7S6234L</span></div>
+													<div class="col-md-4 align-to-total"><h2 class="gift_certificate price">- S$ 50.00</h2></div>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>redeemed points</h2></div>
+													<div class="col-md-4 align-to-total"><h2 class="redeemed_points price">- S$ 2.00</h2></div>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>Tax</h2></div>
+													<div class="col-md-4 align-to-total"><h2 class="tax price">S$ 9.00</h2></div>
+												</div>
+												<div class="row">
+													<hr>
+												</div>
+												<div class="row each-details">
+													<div class="col-md-4"><h2>grand total</h2></div>
+													<div class="col-md-4 align-to-total"><h2 class="grand_total price">S$ 99.80</h2></div>
+													<div class="col-md-4 align-to-button"><a href="#" class="reorder"><i class="fa fa-repeat"></i><span>Reorder</span></a></div>
+												</div>
+											</div>
+										</div>
+
+										<hr class="each-order">
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="gift-cards">
+			<div class="image-text-content container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1>GIFT CARDS</h1>
+						<hr class="small">
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="table-responsive">
+						  	<table id="gift-cards-tbl" class="table">
+						    	<thead>
+								    <tr>
+								        <th>CODE NO.</th>
+								        <th>EXPIRE DATE</th>
+								        <th>ORDER NO.</th>
+								        <th>DESCRIPTION</th>
+								        <th>AMOUNT</th>
+								        <th>STATUS</th>
+								    </tr>
+							    </thead>
+						      	<tbody>
+								    <tr>
+								        <td><p class="code_no">A22P25342M</p></td>
+								        <td><p class="expire_date">03 Jan 2015</p></td>
+								        <td><p class="order_no"></p></td>
+								        <td><p class="description">Purchased by Smantha</p></td>
+								        <td><p class="amount">S$ 100.00</p></td>
+								        <td><p class="status">Available</p></td>
+								    </tr>
+								    <tr>
+								        <td><p class="code_no">M374ls923S</p></td>
+								        <td><p class="expire_date">17 Nov 2014</p></td>
+								        <td><p class="order_no"></p></td>
+								        <td><p class="description">Purchased by Joanne Photobiz</p></td>
+								        <td><p class="amount">S$ 100.00</p></td>
+								        <td><p class="status">Available</p></td>
+								    </tr>
+								    <tr>
+								        <td><p class="code_no">g6d7s6234l</p></td>
+								        <td><p class="expire_date">28 Sep 2014</p></td>
+								        <td><p class="order_no">28092014</p></td>
+								        <td><p class="description">Welcoming gift for registering as member</p></td>
+								        <td><p class="amount">S$ 50.00</p></td>
+								        <td><p class="status redeemed">Redeemed</p></td>
+								    </tr>
+								</tbody>
+						  	</table>
+						</div>
+					</div>
+				</div>			
+			</div>
+		</div>
+
+		<div class="billing-and-shipping">
+			<div class="image-text-content container">
+				<div class="row">
+					<div class="col-md-6 billing-address">
+						<div class="row">
+							<div class="col-md-5">
+								<h1>billing Address</h1>
+								<hr class="small">					
+							</div>
+							<div class="col-md-5 col-md-offset-2">
+								<ul>
+									<li><a href="#" class="edit"><i class="fa fa-cog"></i> <span>Edit</span></a></li>
+									<li><a href="#" class="add_address"><i class="fa fa-plus"></i> <span>Add Address</span></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="billing-address-details">
+							<div class="row">
+								<div class="col-md-12">
+									<h2 class="title">Default Billing Address</h2>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+									<div class="each-billing-detail">
+										<h2>NAME</h2>
+										<p>Lorem Ipsum</p>
+									</div>
+									<div class="each-billing-detail">
+										<h2>phone no.</h2>
+										<p>+65 1234 5678</p>
+									</div>
+								</div>
+								<div class="col-md-8">
+									<div class="each-billing-detail">
+										<h2>ADDRESS</h2>
+										<p>251 Pandon Loop #03-25, Singapore 128431</p>
+									</div>
+									<div class="each-billing-detail">
+										<h2>EMAIL</h2>
+										<p><a href="mailto:loremipsum@gryphon.com.sg">loremipsum@gryphon.com.sg</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="table-responsive">
+								  	<table class="gift-cards-tbl" class="table">
+										<tbody>
+										    <tr>
+										        <td><p class="billing_address_no">BILLING ADDRESS 1</p></td>
+										        <td><p class="billing_address">251 Pandon Loop #03-25, Singa...</p></td>
+										        <td><a href="#" class="set_as_default_billing">Make default</a></td>
+										    </tr>
+										    <tr>
+										        <td><p class="billing_address_no">BILLING ADDRESS 2</p></td>
+										        <td><p class="billing_address">251 Pandon Loop #03-25, Singa...</p></td>
+										        <td><a href="#" class="set_as_default_billing">Make default</a></td>
+										    </tr>
+										</tbody>
+								  	</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 shipping-address">
+						<div class="row">
+							<div class="col-md-5">
+								<h1>Shipping Address</h1>
+								<hr class="small">					
+							</div>
+							<div class="col-md-5 col-md-offset-2">
+								<ul>
+									<li><a href="#" class="edit"><i class="fa fa-cog"></i><span>Edit</span></a></li>
+									<li><a href="#" class="add_address"><i class="fa fa-plus"></i><span>Add Address</span></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="shipping-address-details">
+							<div class="row">
+								<div class="col-md-12">
+									<h2 class="title">Default Shipping Address</h2>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+									<div class="each-shipping-detail">
+										<h2>NAME</h2>
+										<p>Lorem Ipsum</p>
+									</div>
+									<div class="each-shipping-detail">
+										<h2>phone no.</h2>
+										<p>+65 1234 5678</p>
+									</div>
+								</div>
+								<div class="col-md-8">
+									<div class="each-shipping-detail">
+										<h2>ADDRESS</h2>
+										<p>251 Pandon Loop #03-25, Singapore 128431</p>
+									</div>
+									<div class="each-shipping-detail">
+										<h2>EMAIL</h2>
+										<p><a href="mailto:loremipsum@gryphon.com.sg">loremipsum@gryphon.com.sg</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="table-responsive">
+								  	<table class="gift-cards-tbl" class="table">
+										<tbody>
+										    <tr>
+										        <td><p class="shipping_address_no">SHIPPING ADDRESS 1</p></td>
+										        <td><p class="shipping_address">251 Pandon Loop #03-25, Singa...</p></td>
+										        <td><a href="#" class="set_as_default_shipping">Make default</a></td>
+										    </tr>
+										    <tr>
+										        <td><p class="shipping_address_no">SHIPPING ADDRESS 2</p></td>
+										        <td><p class="shipping_address">251 Pandon Loop #03-25, Singa...</p></td>
+										        <td><a href="#" class="set_as_default_shipping">Make default</a></td>
+										    </tr>
+										</tbody>
+								  	</table>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- <div class="space100"></div> -->
+
+	<!--#include virtual="inc/footer.inc" -->
+
+	<script>
+	var initialLoad = true;
+	$(document).ready(function(){		
+	    $(window).on('scroll', function() {
+	        var scrollPos = $(window).scrollTop();
+	        
+	        if( ( scrollPos != 0 ) ) {
+	            console.log('scrolling')
+	            $('#header-wrapper').addClass('shadow');
+	        }       
+	        else if( ( scrollPos === 0 ) ) {
+	            $('#header-wrapper').removeClass('shadow');
+	        }
+	    });
+
+	    initialLoad = false;	    
+
+	    $(".phone_no_input").intlTelInput({
+	        //allowExtensions: true,
+	        //autoFormat: false,
+	        //autoHideDialCode: false,
+	        //autoPlaceholder: false,
+	        //defaultCountry: "auto",
+	        //ipinfoToken: "yolo",
+	        //nationalMode: false,
+	        //numberType: "MOBILE",
+	        //onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+	        //preferredCountries: ['cn', 'jp'],
+	        // utilsScript: "lib/libphonenumber/build/utils.js"
+      	});
+	});
+	</script>
+</body>
+</html>
