@@ -1,5 +1,0 @@
-M4n1cDB2015
-
-<username><![CDATA[magento_b]]></username><password><![CDATA[2xDVZ$9y1s]]></password><dbname><![CDATA[magento_5]]></dbname> 
-
-<username><![CDATA[gryphon_manic]]></username><password><![CDATA[M4n1cDB2015]]></password><dbname><![CDATA[gryphon]]></dbname>     
