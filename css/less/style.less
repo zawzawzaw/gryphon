@@ -838,7 +838,6 @@ background-position: center top;
               margin-left: 5px;
             }
             span {
-              /*vertical-align: top;*/
               vertical-align: middle;
             }
           }
@@ -917,7 +916,7 @@ background-position: center top;
 
     .slider-wrapper {
       /*margin-top: 107px;*/
-      margin-top: 85px;
+      //margin-top: 85px;//
       @media all and (max-width: 992px) {
         margin-top: 60px;
       } 
@@ -934,7 +933,7 @@ background-position: center top;
           width: 660px;
           position: absolute;
           left: 50%;
-          top: 30%;
+          top: 19%;
           div.caption-text {
             position: relative; 
             left: -50%;
@@ -1251,14 +1250,6 @@ p {
   width: 1px;
   margin: 0 auto;
   margin-right: 50px;
-  @media all and (max-width: 992px) {
-    border-left: 0px;
-    border-bottom: 1px solid #ccc;
-    height: 1px;
-    width: 100%;
-    margin-bottom: 50px;
-    margin-top: 50px;
-  }
 }
 
 //   _        _ __   _____  _   _ _____ 
@@ -1298,15 +1289,14 @@ div.home {
     text-align: center;
     padding-top: 70px;
     padding-bottom: 70px;
-
+    
     h1 {
-      .gotham-bold;
-      font-size: 17px;
-      line-height: 22px;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
+     .gotham-bold;
+     font-size: 17px;
+     line-height: 22px;
+     letter-spacing: 0.05em;
+     text-transform: uppercase;
     }
-
     p {
       .gotham-book;      
       font-size: 13px;
@@ -1333,11 +1323,11 @@ div.home {
       padding-bottom: 50px;
       
       h1 {
-        .gotham-bold;
-        font-size: 17px;
-        line-height: 22px;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
+       .gotham-bold;
+       font-size: 17px;
+       line-height: 22px;
+       letter-spacing: 0.05em;
+       text-transform: uppercase;
       }
       .center-text {
         /*width: 228px;*/
@@ -1403,14 +1393,13 @@ div.home {
     .image-text-content {
       padding-top: 80px;
       padding-bottom: 80px;
-
-      h1 {
-       .gotham-bold;
-       font-size: 17px;
-       line-height: 22px;
-       letter-spacing: 0.05em;
-       text-transform: uppercase;
-      }
+    h1 {
+     .gotham-bold;
+     font-size: 17px;
+     line-height: 22px;
+     letter-spacing: 0.05em;
+     text-transform: uppercase;
+    }
       .each-feature {
         display: inline-block;
         width: 170px;
@@ -1465,14 +1454,14 @@ div.home {
       padding-top: 80px;
       padding-bottom: 80px;
 
-      h1 {
-       .gotham-bold;
-       font-size: 17px;
-       line-height: 22px;
-       letter-spacing: 0.05em;
-       text-transform: uppercase;
-      }
-
+    h1 {
+     .gotham-bold;
+     font-size: 17px;
+     line-height: 22px;
+     letter-spacing: 0.05em;
+     text-transform: uppercase;
+    }
+    
       .vertical-center {
         padding-top: 20px;
         p {
@@ -1505,15 +1494,13 @@ div.home {
   #social {
     .image-text-content {
       padding-top: 80px;
-
-      h1 {
-       .gotham-bold;
-       font-size: 17px;
-       line-height: 22px;
-       letter-spacing: 0.05em;
-       text-transform: uppercase;
-      }
-
+    h1 {
+     .gotham-bold;
+     font-size: 17px;
+     line-height: 22px;
+     letter-spacing: 0.05em;
+     text-transform: uppercase;
+    }
       .hashtag {
         .gotham-medium;
         font-size: 12px;
@@ -2152,7 +2139,6 @@ div.product {
   .store-banner {
     background: url("../images/content/store-banner.jpg") no-repeat;
     background-size: cover;
-    height: 325px;
     .image-text-content {
       .caption {
         height: 261px;
@@ -2219,28 +2205,27 @@ div.product {
         padding-bottom: 8px;
         padding-left: 5px;
         padding-right: 5px;
-
+        
         label.checkbox-label {
           display: inline-block;
           margin-left: -17px;
           position: relative;
           vertical-align: top;
-            
-          p.label-text {
-            /*float: left;*/
-            .gotham-medium!important;
-            display: inline-block;
-            line-height: 18px!important;
-            color: @new-grey-2!important;
-            vertical-align: baseline!important;
-            height: 13px;
-            font-size: 10px!important;
-            text-transform: uppercase;
-            letter-spacing: 0.05em!important;
-          } 
-        }
-      
-
+              
+            p.label-text {
+              /*float: left;*/
+              .gotham-medium!important;
+              display: inline-block;
+              line-height: 18px!important;
+              color: @new-grey-2!important;
+              vertical-align: baseline!important;
+              height: 13px;
+              font-size: 10px!important;
+              text-transform: uppercase;
+              letter-spacing: 0.05em!important;
+              } 
+            }
+        
         &:nth-of-type(1) {
           border-top: 1px solid #ccc;
         }
@@ -2374,8 +2359,8 @@ div.product {
         .item-count {
           .minion-pro-semibold-italic;
           font-size: 13px;
-          line-height: 19px;   
-          margin-left: 5px;       
+          line-height: 19px;  
+          margin-left: 5px;
           color: @dark-orange;
         }
 
@@ -2625,7 +2610,7 @@ div.product {
 
       .load-more-btn {
         .gotham-medium;
-        font-size: 9px;
+        font-size: 9px!important;
         letter-spacing: 0.3em;
         text-transform: uppercase;
         font-size: 11px;
@@ -3815,7 +3800,6 @@ div.product {
   @media all and (max-width: 992px) {
     margin-top: 60px;
   }
-  padding-bottom: 120px!important;
   .collections-banner {
     background: url("../images/content/collections-banner.jpg") no-repeat;
     background-size: cover;
@@ -4323,7 +4307,7 @@ div.product {
         padding-bottom: 35px;
       }
       .label {
-        width: 74%!important;
+          width: 74%!important;
       }
       p {
         font-size: 12px;
@@ -5214,7 +5198,7 @@ div.product {
       }
     }
 
-    .billing-address, .shipping-address {
+    .billing-address, .shipping-address {      
       ul {
         text-align: right; 
         li {
@@ -5281,17 +5265,6 @@ div.product {
           }
         }
       }
-    }
-
-    .billing-address {
-      width: 45%;
-      display: inline-block;
-      margin-right: 4.5%;
-    }
-    .shipping-address {
-      width: 45%;
-      display: inline-block;
-      margin-left: 4.5%;
     }
     .gift-cards-tbl {
       width: 100%;
@@ -5683,7 +5656,6 @@ div.product {
 
 .trade {
   margin-top: 85px;
-  padding-bottom: 85px!important;
   @media all and (max-width: 992px) {
     margin-top: 60px;
   }
@@ -5741,10 +5713,6 @@ div.product {
       p {
         width: 680px;
         margin: 0 auto;
-
-        @media all and (max-width: 680px) {
-          width: auto;
-        }
       }
 
       .hotels {
@@ -5768,10 +5736,6 @@ div.product {
     hr {
       margin-left: 0px!important;
       margin-right: 0px!important;
-
-      @media all and (max-width: 1199px) {
-        margin: 15px auto!important;
-      }
     }
 
     img {
@@ -5814,12 +5778,8 @@ div.product {
       }
 
       p {
-        width: :;
+        width: 680px;
         margin: 0 auto;
-
-        @media all and (max-width: 680px) {
-          width: auto;
-        }
       }
 
       .awards {
@@ -5844,7 +5804,6 @@ div.product {
       width: 100%;
       vertical-align: top;
       padding-top: 10px;    
-      /*margin-bottom: 40px;*/
 
       @media all and (max-width: 1199px) {
         text-align: center;
@@ -5866,13 +5825,18 @@ div.product {
         display: inline-block;
         vertical-align: top;        
         margin-right: 84px;
-        text-align: center;              
+        text-align: center;      
+
+        &:nth-of-type(3n) {
+          margin-right: 0px;
+        }
 
         @media all and (max-width: 992px) {
           display: inline-block;
           /*width: 80%;        */
-          &:nth-of-type(4n) {
-            margin-right: 0px;
+          &:nth-of-type(3n) {
+            margin-right: 360px;
+            margin-top: 40px;
           }
           &:nth-of-type(2n) { 
             margin-right: 0px;
@@ -5916,9 +5880,6 @@ div.product {
           color: @new-grey;
           width: 266px;
           margin-top: 5px;
-          @media all and (max-width: 715px) {        
-            width: auto!important;
-          }
         }
 
         .no {
@@ -5983,8 +5944,8 @@ div.product {
     text-align: center;
     hr {
       margin: 0 auto;
-      margin-top: 15px;
-      margin-bottom: 20px;
+      margin-top: 30px;
+      margin-bottom: 80px;
     }
   }
 
@@ -5995,8 +5956,7 @@ div.product {
 //////////////////////
 
 .trade-signup {
-  margin-top: 95px;
-  padding-bottom: 85px!important;
+  margin-top: 85px;
   @media all and (max-width: 992px) {
     margin-top: 60px;
   }
