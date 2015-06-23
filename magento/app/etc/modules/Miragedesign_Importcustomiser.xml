@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Miragedesign_Importcustomiser>
+            <codePool>local</codePool>
+            <active>true</active>
+            <depends>
+                <Mage_Catalog />
+            </depends>
+        </Miragedesign_Importcustomiser>
+    </modules>
+</config>

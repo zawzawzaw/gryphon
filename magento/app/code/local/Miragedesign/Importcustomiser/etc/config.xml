@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Miragedesign Web Development
+ *
+ * @category    Miragedesign
+ * @package     Miragedesign_Importcustomiser
+ * @copyright   Copyright (c) 2011 Miragedesign (http://miragedesign.net)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <modules>
+        <Miragedesign_Importcustomiser>
+            <version>1.0.0</version>
+        </Miragedesign_Importcustomiser>
+    </modules>
+    <global>
+        <helpers>
+            <importcustomiser>
+                <class>Miragedesign_Importcustomiser_Helper</class>
+            </importcustomiser>
+        </helpers>
+        <blocks>
+            <importcustomiser>
+                <class>Miragedesign_Importcustomiser_Block</class>
+            </importcustomiser>
+        </blocks>
+        <models>
+            <importcustomiser>
+                <class>Miragedesign_Importcustomiser_Model</class>
+            </importcustomiser>
+        </models>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Miragedesign_Importcustomiser before="Mage_Adminhtml">Miragedesign_Importcustomiser_Adminhtml</Miragedesign_Importcustomiser>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <importcustomiser>
+                    <file>importcustomiser.xml</file>
+                </importcustomiser>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Miragedesign_Importcustomiser>
+                    <files>
+                        <default>Miragedesign_Importcustomiser.csv</default>
+                    </files>
+                </Miragedesign_Importcustomiser>
+            </modules>
+        </translate>
+    </adminhtml>
+</config>

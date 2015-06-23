@@ -1,0 +1,105 @@
+<config>
+    <tabs>
+        <j2t_all>
+            <label>J2T Modules</label>
+            <class>j2t-all-area</class>
+            <sort_order>100</sort_order>
+        </j2t_all>
+    </tabs>
+    <sections>
+        <rewardpoints translate="label comment" module="rewardpoints">
+            <tab>j2t_all</tab>
+            <groups>
+                <j2trewardbirthday translate="label comment" module="rewardpoints">
+                    <label>Birthday Points</label>
+                    <comment><![CDATA[Give points and send email to customers for their birthday.]]></comment>
+
+                    <frontend_type>text</frontend_type>
+                    <sort_order>50</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <birthday_points translate="label">
+                            <label>Points for birthday</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-zero-or-greater</validate>
+                            <comment><![CDATA[Points given to the customers for their birthday.]]></comment>
+                        </birthday_points>
+                        
+                        <prior_verification translate="label comment">
+                            <label>Prior verification</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-zero-or-greater validate-number required-entry</validate>
+                            <comment><![CDATA[Verify and send email before actual date of birth (in days).]]></comment>
+                        </prior_verification>
+                        
+                        <points_delay translate="label comment">
+                            <label>Availability delay</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>26</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-zero-or-greater</validate>
+                            <comment><![CDATA[Delaying the birthday points availability (use 0 for no-delay).]]></comment>
+                        </points_delay>
+                        
+                        <points_duration translate="label comment">
+                            <label>Validity duration</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>27</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-zero-or-greater validate-number required-entry</validate>
+                            <comment><![CDATA[Birthday points validity duration in days (use 0 for unlimited).]]></comment>
+                        </points_duration>
+                        
+                        <email_template translate="label">
+                            <label>Select email template (Birthday)</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_email_template</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </email_template>
+
+                        <email_identity translate="label">
+                            <label>Select email identity (Birthday)</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_email_identity</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </email_identity>
+                        
+                        <birthday_logs translate="label">
+                            <label>Activate logs</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Store observer birthday verification processes in var/log/j2trewardbirthday.log file (this file can be quite important, depending on your customer database).]]></comment>
+                        </birthday_logs>
+                        
+                    </fields>
+                </j2trewardbirthday>
+                
+            </groups>
+
+        </rewardpoints>
+    </sections>
+</config>

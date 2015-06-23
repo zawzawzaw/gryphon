@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Miragedesign_Rewardpointscustomiser>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Rewardpoints />
+            </depends>
+        </Miragedesign_Rewardpointscustomiser>
+    </modules>
+</config> 
