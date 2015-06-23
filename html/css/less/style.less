@@ -6277,7 +6277,354 @@ div#footer-wrapper {
 //////////////////////////////////////////////////////////////////
 
 
+//////////////////////
+// OUR STORY
+//////////////////////
 
+.our-story{
+  margin-top: 85px;
+  @media all and (max-width: 992px) {
+    margin-top: 60px;
+  }
+
+  .our-story-banner{
+    background: url("../images/content/our_story/our-story-banner.png") no-repeat;
+    background-size: cover;
+    .image-text-content {
+      .caption-container {
+        display: table;
+
+        .caption {
+          height: 325px;
+          display: table-cell;
+          vertical-align: middle;
+          text-align: center;
+          h1 {
+            .jacques-gilles;
+            font-size: 42px;
+            font-style: normal;
+            line-height: 45px;
+            text-transform: none;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            color: @white;
+            text-shadow: 0 1px 100px #000;
+          }
+          
+          p{
+            .gotham-medium;
+            font-size: 13px;
+            line-height: 22px;
+            color: @white;
+            max-width: 50%;
+            margin: 0 auto;
+            margin-top: 10px;
+            text-shadow: 0 1px 100px #000;
+            text-transform: uppercase;
+          }
+        }
+      }
+      
+    }
+  } // .our-story-banner
+
+  .main-content {
+
+    .first-content{
+      padding-top: 80px;
+
+      .center{
+        text-align: center;
+
+        hr {
+          margin: 0 auto;
+        }
+
+        p {
+          width: 680px;
+          margin: 0 auto;
+        }
+
+      }
+
+
+      .milestones{
+        margin-top: 40px;
+
+        position: relative;
+
+        .timeline{
+          width: 1180px;    // (300 x 4) - 20
+          height: 400px - 10px;
+          overflow: hidden;
+          position: relative;
+          margin: 0 auto;
+        }
+
+        .milestone-container{
+          font-size: 0;
+          width: 10000px;
+          text-align: left;
+
+          position: absolute;
+          top: 0px;
+          left: 0;
+        }
+
+        .milestone{
+          display: inline-block;
+          vertical-align: top;
+          width: 280px;
+          text-align: center;
+          margin-right: 20px;
+
+          cursor: pointer;
+
+          &:last-child{
+            margin-right: 0;
+          }
+
+          &.selected{
+            p{
+              color: @dark-orange;
+            }
+          }
+
+          img{
+            display: block;
+            width: 280px;
+            height: 220px;
+          }
+
+          h5{
+            width: 100%;
+            .minion-pro-semibold;
+            font-size: 14px;
+            line-height: 36px;
+            height: 36px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 11px;
+          }
+          p{
+            width: 100%;
+            .gotham-book;
+            font-size: 11px;
+            line-height: 16px;
+            color: @new-grey;
+            margin-bottom: 20px;
+            padding: 0 20px;
+          }
+        }
+
+        ul.circle-container{
+          font-size: 0;
+          width: 10000px;
+          text-align: left;
+          height: 26px;
+          position: absolute;
+          top: 242px;
+          left: 0;
+
+          li{
+            width: 280px;
+            text-align: center;
+            font-size: 10px;
+            height: 26px;
+            line-height: 26px;
+            color: #cccccc;
+            margin-right: 20px;
+            position: relative;
+            cursor: pointer;
+
+            .transition(0.4s);
+            &.selected{
+              color: @dark-orange;
+            }
+
+            &:last-child{
+              margin-right: 0;
+            }
+          }
+
+
+          .grey-line{
+            width: 100%;
+            height: 0;
+            border-top: 1px solid #cccccc;
+            position: absolute;
+            top: 12px;
+            left: 0;
+          }
+
+          .red-line{
+            width: 140px; // initial width
+            height: 0;
+            border-top: 1px solid @dark-orange;
+            position: absolute;
+            top: 12px;
+            left: 0;
+          }
+
+        }
+
+        .next-button, .prev-button{
+          position: absolute;
+          top: 100px;
+          width: 20px;
+          height: 20px;
+          line-height: 20px;
+          color: @dark-orange;
+
+          &:hover{
+            color: #cccccc;
+          }
+        }
+        .next-button{
+          right: -30px;
+        }
+        .prev-button{
+          left: -30px;
+        }
+
+      } // .milestones
+
+    } // .first-content
+
+    .second-content{
+      padding-top: 80px;
+      padding-bottom: 80px;
+      background-color: @skin;
+
+      .center {
+        text-align: center;
+
+        hr {
+          margin: 0 auto;
+        }
+
+        p {
+          width: 690px;
+          margin: 0 auto;
+          margin-bottom: 1em;
+
+          &:last-child{
+            margin-bottom: 0;
+          }
+        }
+
+      }
+    } // .second-content
+
+
+    .third-content{
+      margin-top: 80px;
+
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+
+      .text-content {
+        
+      }
+
+      hr.small {
+        @media all and (max-width: 1199px) {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }  
+
+      p {
+        .gotham-book;
+        font-size: 11.5px;
+        line-height: 19px;
+        color: @new-grey;
+        margin-bottom: 20px;
+      }
+
+      .awards{
+        margin-top: 26px;
+        margin-left: -12px;
+        margin-bottom: 31px;
+
+        .award{
+          display: inline-block;
+          vertical-align: top;
+
+          margin-right: 20px;
+        }
+      }
+
+    } // .third-content
+
+    .forth-content{
+      text-align: center;
+
+      padding-top: 45px;
+
+      hr {
+        margin: 0 auto;
+      }
+
+      .magazines{
+        font-size: 0;
+        padding: 0 60px;
+        padding-bottom: 75px;
+      }
+      .magazine{
+        display: inline-block;
+        vertical-align: top;
+        padding: 0 10px;
+      }
+
+      .ctas {
+        margin-top: 30px;
+      }
+
+      .our-story-collections-btn {
+        background-color: @dark-grey;
+        border: 0;
+        padding: 7px 30px;
+        color: #FFF;
+        text-transform: none;
+        font-size: 11px;
+        font-family: 'Gotham-Medium',Verdana,sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        margin-top: 20px;
+        margin-right: 33px;
+        margin-left: 33px;
+        display: inline-block;
+        &:hover {
+          background-color: @dark-orange;
+        }
+      }
+
+      .our-story-store-btn {
+        background-color: @dark-grey;
+        border: 0;
+        padding: 7px 30px;
+        color: #FFF;
+        text-transform: none;
+        font-size: 11px;
+        font-family: 'Gotham-Medium',Verdana,sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        margin-top: 20px;
+        display: inline-block;
+        &:hover {
+          background-color: @dark-orange;
+        }
+      }
+
+
+    } //.forth-content
+
+  } // .main-content
+
+} // .our-story
 
 
 
