@@ -1263,6 +1263,11 @@ p {
 .space30{ height: 30px; }
 .space40{ height: 40px; }
 .space50{ height: 50px; }
+
+.space60{ height: 60px; }
+.space70{ height: 70px; }
+.space80{ height: 80px; }
+.space90{ height: 90px; }
 .space100{ height: 100px; }
 .space200{ height: 200px; }
 .space400{ height: 400px; }
@@ -6904,6 +6909,217 @@ div#footer-wrapper {
 
 
 
+
+//////////////////////
+// SHIPPING INFO
+//////////////////////
+
+
+
+.shipping-info{
+  margin-top: 85px;
+  @media all and (max-width: 992px) {
+    margin-top: 60px;
+  }
+
+  .shipping-info-banner{
+    background: url("../images/content/shipping_info/shipping-info-banner.png") no-repeat;
+    background-size: cover;
+    .image-text-content {
+      .caption-container {
+        display: table;
+
+        .caption {
+          height: 325px;
+          display: table-cell;
+          vertical-align: middle;
+          text-align: center;
+          h1 {
+            .jacques-gilles;
+            font-size: 42px;
+            font-style: normal;
+            line-height: 45px;
+            text-transform: none;
+            margin-top: 10px;
+            //margin-bottom: 10px;
+            margin-bottom: 25px;
+            color: @white;
+            text-shadow: 0 1px 100px #000;
+          }
+          
+          p{
+            .gotham-medium;
+            font-size: 13px;
+            line-height: 22px;
+            color: @white;
+            max-width: 50%;
+            margin: 0 auto;
+            margin-top: 10px;
+            text-shadow: 0 1px 100px #000;
+            text-transform: uppercase;
+          }
+        }
+      }
+      
+    }
+  } // .shipping-info-banner
+
+  .main-content {
+    padding-top: 80px;
+
+    .shipping-col-1{
+      padding-right: 60px;
+      border-right: 1px solid #ccc;
+    }
+    .shipping-col-2{
+      padding-left: 60px;
+      padding-right: 30px;
+    }
+
+    hr.small {
+      @media all and (max-width: 1199px) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }  
+
+    hr.big {
+      border-bottom: 1px solid #eaeaea;
+      margin-top: 80px;
+      margin-bottom: 80px;
+
+    }
+
+    p {
+      .gotham-book;
+      font-size: 11.5px;
+      line-height: 19px;
+      color: @new-grey;
+      margin-bottom: 20px;
+    }
+
+    h5 {
+      .minion-pro-semibold;
+      font-size: 13px;
+      line-height: 18px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    span {
+      .minion-pro-italic;
+      font-size: 13px;
+      line-height: 16px;
+      color: @dark-orange;
+    }
+
+    a {
+      .minion-pro-semibold-italic;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 0.03em;
+      display: block;
+      margin-top: 30px; 
+      color: @dark-grey;
+      text-transform: none;
+      &:hover {
+        color: @dark-orange;
+      }
+    }
+
+    .disclaimer{
+      .minion-pro-semibold-italic;
+      font-size: 13px;
+      line-height: 16px;
+      color: @new-grey-2;
+
+      margin-top: -7px;
+      margin-left: 5px;
+    }
+
+    .table {
+
+      td {
+        border-color: #ccc!important;
+        padding-top: 13px!important;
+        padding-bottom: 11px!important;
+      }
+
+      .col-1 {
+        background-color: @skin;            
+        vertical-align: middle;
+        text-align: center;
+      }
+      .col-2 {
+        vertical-align: middle;
+        text-align: center;
+      }
+      .col-3{
+        text-align: center;
+      }
+      .col-4{
+        text-align: center;
+      }
+
+      .row-1{
+        td{
+          padding-top: 0px!important;
+          padding-bottom: 2px!important;
+        }
+      }
+
+      .row-4 {
+        border-bottom: 1px solid #cccccc;
+      }
+
+      p {
+        display: inline-block;
+
+        .gotham-book;
+        font-size: 11.5px;
+        line-height: 24px;
+        color: @new-grey;
+
+        margin-bottom: 0;
+        text-align: left;
+      }
+      p.title {
+        .gotham-medium;
+        color: #777;  
+        font-size: 10px;              
+        padding-left: 12px;
+        letter-spacing: 0.03em;
+
+        text-align: center;
+      }
+      p.delivery{
+        line-height: 16px;
+      }
+      p.price {            
+        .minion-pro-semibold;
+        color: @dark-orange;
+        font-size: 13px;
+        line-height: 24px;
+        letter-spacing: 0.05em;
+      }
+      p.country{
+        font-size: 9px;
+        line-height: 14px;
+        display: block;
+        text-align: center;
+        padding-top: 1px;
+      }
+      h5{
+        font-size: 15px;
+        line-height: 16px;
+        margin-bottom: 0;
+      }
+
+    } // table
+
+
+  }
+}
 
 //////////////////////////////////////////////////////////////////////////////////////
 //        _   _    ___ ____  _   _ ____     ____ ____ ____    _____ _   _ ____      //
