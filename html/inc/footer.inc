@@ -32,7 +32,7 @@
 							<hr class="small">
 							<ul>
 								<li><a href="#">our philosophy</a></li>
-								<li><a href="#">Gryphon Story</a></li>
+								<li><a href="our-story.html">Gryphon Story</a></li>
 								<li><a href="#">legacy</a></li>
 								<li><a href="#">awards & Media</a></li>
 								<li><a href="#">collection</a></li>
