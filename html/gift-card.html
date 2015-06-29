@@ -62,12 +62,17 @@
 								</div>
 								<div class="each-input">
 									<label for="gift_quantity">Quantity*</label>
-									<input type="text" name="gift_quantity" class="short" value="1">
-									<span>Earn 25 loyalty points with this product</span>
+
+									<div class="quantity-container" id="gift_quantity_container">
+										<div class="minus-button"></div>
+										<input type="text" name="gift_quantity" id="gift_quantity" class="short" value="1">
+										<div class="plus-button"></div>
+									</div>
+									<span class="orange">Earn 25 loyalty points</span>
 								</div>
 
 								<div class="each-input">
-									<label for="gift_quantity">Design Option</label>
+									<label for="gift_design_option">Design Option</label>
 									<div class="design-radio">
 										<input type="radio" name="gift_design_option" class="design-option-1" checked="checked" value="design 01">
 										<div class="radio-image">
@@ -101,7 +106,7 @@
 									<input type="text" name="gift_to_email_confirm">
 								</div>
 								<div class="each-input">
-									<label for="gift_message">message*</label>
+									<label for="gift_message" class="align-top">message*</label>
 									<textarea name="gift_message" id="gift_message" cols="30" rows="10" placeholder="Write your message here."></textarea>
 									<span id="message_characters_remaining">Characters Remainding: 200</span>
 								</div>
@@ -1060,8 +1065,21 @@
 					$('#gift-design-01').css({'display':'none'});
 					$('#gift-design-02').css({'display':'block'});
 				}
-
 			});
+
+			$("#gift_quantity_container .minus-button").click(function(){
+				var num = parseInt( $("#gift_quantity").val() )
+				num--;
+				num = num <= 0 ? 0 : num;
+				$("#gift_quantity").val("" + num);
+			});
+			$("#gift_quantity_container .plus-button").click(function(){
+				var num = parseInt( $("#gift_quantity").val() )
+				num++;
+				$("#gift_quantity").val("" + num);
+			});
+
+			
 
 		});
 	</script>

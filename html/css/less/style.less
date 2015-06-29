@@ -1699,7 +1699,7 @@ div.product {
 
 
           #gift-design-01{
-            
+
           }
           #gift-design-02{
             display: none;
@@ -1932,6 +1932,11 @@ div.product {
               .minion-pro-semibold-italic;
               vertical-align: middle!important;
             }          
+
+            &.align-top{
+              vertical-align: top;
+              margin-top: 7px;
+            }
           }
           label[for=message] {
             vertical-align: top;
@@ -2007,12 +2012,60 @@ div.product {
             }
           }
 
+          .quantity-container{
+            font-size: 0;
+            height: 27px;
+            display: inline-block;
+            vertical-align: top;
+
+            .plus-button,
+            .minus-button{
+              width: 16px;
+              height: 27px;
+              display: inline-block;
+              vertical-align: top;
+              background: #bcbbbb;
+
+              cursor: pointer;
+
+              .transition(0.2s);
+
+              &:before{
+                font: normal normal normal 14px/1 FontAwesome;
+                
+                display: block;
+                color: #ffffff;
+                font-size: 8px;
+                line-height: 27px;
+                text-align: center;
+              }
+
+              &:hover{
+                .opacity(0.6);
+              }
+            }
+
+
+            .plus-button:before{
+              content: "\f067";
+            }
+            .minus-button:before{
+              content: "\f068";
+            }
+
+            input[type="text"]{
+              text-align: center;
+              padding-left: 0;
+              padding-right: 3px;
+            }
+          }
+
 
           input[type="text"].short{
             width: 57px;
           }
 
-          input[type="text"].short + span{
+          span.orange{
             .minion-pro-medium-italic;
             font-size: 12px;
             line-height: 27px;
@@ -2032,6 +2085,10 @@ div.product {
               margin-right: 0px;
             }
           }
+
+
+          
+
           textarea {
             width: 280px;
             height: 130px;
@@ -7776,7 +7833,63 @@ div#footer-wrapper {
 //                                                          
 
 .contact-us{
-  margin-top: 85px;
+  margin-top: 160px;
+
+
+  .contact-us-col-1{
+    margin-right: -15px;
+
+    img{
+      display: block;
+      width: 100%;
+      padding-top: 5px;
+      padding-bottom: 13px;
+      display: block;
+
+    }
+
+    .each-input p{
+      .gotham-book !important;
+      font-size: 11.5px !important;
+      line-height: 19px !important;
+    }
+  }
+  .contact-us-col-2{
+    margin-left: -15px;
+    p{
+      margin-right: -200px;
+      margin-bottom: 25px;
+    }
+  }
+  .contact-us-col-3{
+    padding-top: 113px;
+  }
+
+  .contact-us-col-seperator{
+    .line{
+      height: 460px;
+      width: 0px;
+      margin: 0 auto;
+      border-right: 1px solid #ccc;
+    }
+  }
+
+
+  #contact-us-send-btn{
+    background-color: @dark-grey;
+    border: none;
+    padding: 7px 30px;
+    color: @white;
+    text-transform: none;
+    font-size: 11px;
+    .gotham-medium;
+    margin-top: 20px;
+
+    float: right;
+    &:hover {
+      background-color: @dark-orange;
+    }
+  }
 
   #contact-us-form{
     
