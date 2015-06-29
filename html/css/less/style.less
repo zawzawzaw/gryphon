@@ -1679,13 +1679,15 @@ div.product {
       width: 53%;
 
       border: 1px solid #cccccc;
-      height: 467px;
+      //height: 467px;
+      height: 747px;
 
 
       .vcenter{
         display: table;
         width: 100%;
-        height: 467px;
+        //height: 467px;
+        height: 747px;
 
         .vcenter2{
           display: table-cell;
@@ -1693,6 +1695,14 @@ div.product {
           img{
             display: block;
             margin: 0 auto;
+          }
+
+
+          #gift-design-01{
+            
+          }
+          #gift-design-02{
+            display: none;
           }
         }
 
@@ -1927,6 +1937,63 @@ div.product {
             vertical-align: top;
           }
 
+          ul.social-sharing{
+
+            width: 200px;
+            display: inline-block;
+
+            .instagram {
+              background: url(../images/icons/small/instagram.png) no-repeat !important;
+              width: 24px;
+              height: 24px;
+              display: inline-block;
+              &:hover {
+                background: url(../images/icons/small/instagram-hover.png) no-repeat !important;
+              }
+            }
+
+            .pintrest {
+              background: url(../images/icons/small/pintrest.png) no-repeat !important;
+              width: 24px;
+              height: 24px;
+              display: inline-block;
+              &:hover {
+                background: url(../images/icons/small/pintrest-hover.png) no-repeat !important;
+              }
+            }
+
+            .facebook {
+              background: url(../images/icons/small/facebook.png) no-repeat !important;
+              width: 24px;
+              height: 24px;
+              display: inline-block;
+              &:hover {
+                background: url(../images/icons/small/facebook-hover.png) no-repeat !important;
+              }
+            }
+
+            .twitter {
+              background: url(../images/icons/small/twitter.png) no-repeat !important;
+              width: 24px;
+              height: 24px;
+              display: inline-block;
+              &:hover {
+                background: url(../images/icons/small/twitter-hover.png) no-repeat !important;
+              }
+            }
+
+            li{
+              width: 24px - 7px;
+              display: inline-block;
+              vertical-align: top;
+              padding-top: 2px;
+
+              a{
+
+              }
+            }
+          }
+
           input[type="text"], input[type="password"], select, textarea {
             font-size: 11px; 
             .gotham-book;
@@ -1938,7 +2005,23 @@ div.product {
             @media all and (max-width: 470px) {
               width: 238px;
             }
-          }        
+          }
+
+
+          input[type="text"].short{
+            width: 57px;
+          }
+
+          input[type="text"].short + span{
+            .minion-pro-medium-italic;
+            font-size: 12px;
+            line-height: 27px;
+            color: @dark-orange;
+
+            height: 27px;
+            margin-left: 5px;
+            letter-spacing: 0.02em;
+          }
 
           .dropdown {
             margin-right: 10px;
@@ -1952,6 +2035,72 @@ div.product {
           textarea {
             width: 280px;
             height: 130px;
+          }
+
+          textarea + span{
+
+            &:before{
+              content: "";
+              display: inline-block;
+              width: 110px;
+              margin-right: 27px + 15px;
+            }
+
+            display: block;
+
+            .minion-pro-medium-italic;
+            font-size: 12px;
+            line-height: 16px;
+            color: @dark-orange;
+
+            letter-spacing: 0.02em;
+          }
+
+          .design-radio{
+            display: inline-block;
+            vertical-align: top;
+            width: 80px;
+            height: 80px;
+            position: relative;
+            left: -5px;
+
+            margin-right: 15px;
+
+
+            input[type=radio]{
+              width: 80px;
+              height: 80px;
+              position: absolute;
+              top: 0;
+              left: 0;
+              z-index: 20;
+              .opacity(0);
+
+              cursor: pointer;
+            }
+
+            .radio-image .selected{
+              display: none;
+            }
+
+            input[type="radio"]:checked + .radio-image{
+              .selected{
+                display: block;
+              }
+              .unselected{
+                display: none;
+              }
+            }
+
+            .radio-image, img{
+              width: 80px;
+              height: 80px;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+
+
           }
 
           // added by jairus
@@ -6602,9 +6751,17 @@ div#footer-wrapper {
 //////////////////////////////////////////////////////////////////
 
 
-//////////////////////
-// OUR STORY
-//////////////////////
+
+
+
+
+
+//     ___  _   _ ____    ____ _____ ___  ______   __
+//    / _ \| | | |  _ \  / ___|_   _/ _ \|  _ \ \ / /
+//   | | | | | | | |_) | \___ \ | || | | | |_) \ V / 
+//   | |_| | |_| |  _ <   ___) || || |_| |  _ < | |  
+//    \___/ \___/|_| \_\ |____/ |_| \___/|_| \_\|_|  
+//                                                   
 
 .our-story{
   margin-top: 85px;
@@ -6955,11 +7112,16 @@ div#footer-wrapper {
 
 
 
-//////////////////////
-// SHIPPING INFO
-//////////////////////
 
 
+
+
+//    ____  _   _ ___ ____  ____ ___ _   _  ____   ___ _   _ _____ ___  
+//   / ___|| | | |_ _|  _ \|  _ \_ _| \ | |/ ___| |_ _| \ | |  ___/ _ \ 
+//   \___ \| |_| || || |_) | |_) | ||  \| | |  _   | ||  \| | |_ | | | |
+//    ___) |  _  || ||  __/|  __/| || |\  | |_| |  | || |\  |  _|| |_| |
+//   |____/|_| |_|___|_|   |_|  |___|_| \_|\____| |___|_| \_|_|   \___/ 
+//                                                                      
 
 .shipping-info{
   margin-top: 85px;
@@ -7178,9 +7340,14 @@ div#footer-wrapper {
 
 
 
-//////////////////////
-// PRIVACY POLICY
-//////////////////////
+
+
+//    ____  ____  _____     ___    ______   __
+//   |  _ \|  _ \|_ _\ \   / / \  / ___\ \ / /
+//   | |_) | |_) || | \ \ / / _ \| |    \ V / 
+//   |  __/|  _ < | |  \ V / ___ \ |___  | |  
+//   |_|   |_| \_\___|  \_/_/   \_\____| |_|  
+//                                            
 
 .privacy{
   margin-top: 85px;
@@ -7386,11 +7553,14 @@ div#footer-wrapper {
 
 
 
-//////////////////////
-// SHIPPING INFO
-//////////////////////
 
 
+//    _____ _    ___  
+//   |  ___/ \  / _ \ 
+//   | |_ / _ \| | | |
+//   |  _/ ___ \ |_| |
+//   |_|/_/   \_\__\_\
+//                    
 
 .faq{
 
@@ -7591,6 +7761,149 @@ div#footer-wrapper {
       }
 
     }
+  }
+}
+
+
+
+
+
+//     ____ ___  _   _ _____  _    ____ _____   _   _ ____  
+//    / ___/ _ \| \ | |_   _|/ \  / ___|_   _| | | | / ___| 
+//   | |  | | | |  \| | | | / _ \| |     | |   | | | \___ \ 
+//   | |__| |_| | |\  | | |/ ___ \ |___  | |   | |_| |___) |
+//    \____\___/|_| \_| |_/_/   \_\____| |_|    \___/|____/ 
+//                                                          
+
+.contact-us{
+  margin-top: 85px;
+
+  #contact-us-form{
+    
+
+    .each-input {
+      position: relative;
+      margin-bottom: 20px;
+      label {
+        font-size: 10px;
+        line-height: 14px;
+        letter-spacing: 0.03em;
+        width: 130px;
+        margin-right: 27px;
+        .gotham-medium;
+        color: #636363;
+        text-transform: uppercase;
+        vertical-align: middle;
+        @media all and (max-width: 1200px) {
+          margin-right: 0px;
+        }
+
+        .label-text {
+          font-size: 12px;
+          line-height: 16px!important;
+          text-transform: none;
+          .minion-pro-semibold-italic;
+          vertical-align: middle!important;
+        }          
+      }
+      label[for=message] {
+        vertical-align: top;
+      }
+
+      input[type="text"], input[type="password"], select, textarea {
+        font-size: 11px; 
+        .gotham-book;
+        color: @new-grey;
+        background: @skin;
+        border: none;
+        padding: 5px 0 5px 15px;
+        width: 281px;
+        @media all and (max-width: 470px) {
+          width: 238px;
+        }
+      }        
+
+      .dropdown {
+        margin-right: 10px;
+        @media all and (max-width: 470px) {
+          margin-right: 0px;
+        }
+        &:nth-of-type(3) {
+          margin-right: 0px;
+        }
+      }
+      textarea {
+        width: 280px;
+        height: 130px;
+      }
+
+      // added by jairus
+      .dropdown-container{
+        width: 281px;
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 10px;
+        padding-right: 20px;
+
+        .col-md-4, .col-md-8,
+        .col-md-5, .col-md-7{
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+
+        .dropdown{
+          width: 100%;
+        }
+
+
+        .intl-tel-input{
+          .flag-dropdown, .selected-flag{
+            width: 100%;
+          }
+          .selected-flag .arrow{
+            left: auto;
+            content: '';
+            width:20px; 
+            height:20px;
+            background:url(../images/icons/dropdown.png) no-repeat 0px 11px;
+            position:absolute;
+            display:block;
+            right: 0px;
+            pointer-events:none;
+            top: 0px;
+            border: none;
+          }
+          input[type="text"]{
+            padding-left: 45px;
+          }
+        }
+
+        select{
+          width: 100%;
+        }
+        input[type="text"]{
+          width: 100%;
+        }
+
+        @media all and (max-width: 470px) {
+          width: 238px;
+        }
+
+      }
+
+      p{
+        .minion-pro-semibold-italic;
+        font-size: 11px;
+        line-height: 14px;
+        padding-right: 70px;
+        letter-spacing: 0.03em;
+      }
+
+    }
+
+
+
+    
   }
 }
 

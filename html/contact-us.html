@@ -29,31 +29,98 @@
           <div class="row">
             <div class="col-md-3">
               <h1>Gryphon tea company</h1>
-  address
 
-  251 Pandan Loop, Singapore 128431
+              <hr class="small">
 
-  OPERATING HOURS
+              <img src="" class="img-responsive">
 
-  Mondays to Fridays: 9am to 5pm
-  Closed on weekends and public holidays
+              <div class="each-input">
+                <label>address</label>
+                <p>251 Pandan Loop, Singapore 128431</p>
+              </div>
 
-  Phone number
+              <div class="each-input">
+                <label>OPERATING HOURS</label>
+                <p>Mondays to Fridays: 9am to 5pm <br>Closed on weekends and public holidays</p>
+              </div>
 
-  +65 6779 2948
-
-
+              <div class="each-input">
+                <label>Phone number</label>
+                <p>+65 6779 2948</p>
+              </div>
 
             </div>
             <div class="col-md-2">
+
             </div>
             <div class="col-md-3">
+              <div class="contact-us-col-2">
+                <h1>get in touch</h1>
+                <hr class="small">
+                <p>Send us an email should you have any inquiries or would like to share your tea experience with us. Your feedback matters a lot to us.</p>
+
+                <div class="each-input">
+                  <label for="name">name*</label>
+                  <input type="text" name="name" >
+                </div>
+
+                <div class="each-input">
+                  <label for="email">email address*</label>
+                  <input type="text" name="email" >
+                </div>
+
+                <div class="each-input">
+                  <label for="phone_no">phone number</label>
+
+                  <div class="dropdown-container">
+                    <div class="row">
+                      <div class="col-md-5">
+                        <input type="text" name="phone_no" class="phone_no_input">
+                      </div>
+                      <div class="col-md-7">
+                        <input type="text" name="phone_no_2">
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+
+
+
+
+              </div>
+
             </div>
             <div class="col-md-3">
+              <div class="contact-us-col-2">
+
+                <div class="each-input">
+                  <label for="name">type of enquiry</label>
+                  <div class="dropdown">
+                    <select name="role_within_organization" id="role_within_organization">
+                      <option value="">Choose the type</option>
+                      <option value="General Enquiry">General Enquiry</option>
+                      <option value="Online Order Enquiry">Online Order Enquiry</option>
+                      <option value="Business Enquiry">Business Enquiry</option>
+                      <option value="Media Enquiry">Media Enquiry</option>
+                    </select>
+                  </div>
+
+                </div>
+
+                <div class="each-input">
+                  <label for="message">message</label>
+                  <textarea name="message" id="" cols="30" rows="10" placeholder="Write your message here."></textarea>
+                </div>
+
+                <input type="submit" class="sign-up-btn cta" value="Send">
+
+              </div>
             </div>
 
           </div>
-          
+
         </form>
 
 
@@ -65,6 +132,20 @@
   <!-- <div class="space100"></div> -->
 
   <!--#include virtual="inc/footer.inc" -->
+
+  <link rel="stylesheet" href="css/intlTelInput.css">
+  <script src="js/plugins/intlTelInput.min.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $(".phone_no_input, .mobile_no_input").intlTelInput({
+        defaultCountry: 'sg',
+        nationalMode: false,
+        autoHideDialCode: false,
+        autoPlaceholder: false
+      });
+
+    });
+  </script>
 
   <script>
   var initialLoad = true;
