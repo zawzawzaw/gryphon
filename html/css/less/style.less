@@ -4039,7 +4039,7 @@ div.product {
     margin-top: 60px;
   }
   .collections-banner {
-    background: url("../images/content/collections-banner.jpg") no-repeat;
+    background: url("../images/content/collections-banner.png") no-repeat;
     background-size: cover;
     .image-text-content {
       .caption-container {
@@ -4073,22 +4073,42 @@ div.product {
   .main-content {
     margin-top: 80px;
 
+    img{
+      margin: 0 auto;
+      display: block;
+    }
+    /*
     img {
       display: inline-block;
       @media all and (max-width: 1199px) {      
         margin: 0 auto;
         display: block;
       }
-    }    
+    }
+    */   
+    
+    .collection-row{
+      margin-bottom: 70px;
+
+      &:last-child{
+        margin-bottom: 0px;
+      }
+
+    }
 
     .text-content {
+      margin-left: 40px;
+      margin-top: 26px;
+
       /*margin-left: 38px;*/
-      width: 40%;
-      margin-left: 70px;
-      display: inline-block;
-      vertical-align: top;
+      //width: 40%;
+      //margin-left: 70px;
+      
+      //display: inline-block;
+      //vertical-align: top;
       /*padding-top: 20px;*/
 
+      /*
       @media all and (max-width: 1199px) {
         width: 100%;
         display: block;
@@ -4099,6 +4119,7 @@ div.product {
       @media all and (max-width: 992px) {
         padding-top: 40px;
       }
+      */
     }  
 
     hr.small {
@@ -4159,7 +4180,8 @@ div.product {
       line-height: 16px;
       letter-spacing: 0.03em;
       display: block;
-      margin-top: 30px; 
+      //margin-top: 30px; 
+      margin-top: 42px; 
       color: @dark-grey;
       text-transform: none;
       &:hover {
@@ -7466,17 +7488,18 @@ div#footer-wrapper {
 
           &.open-version{
             .question{
-              max-height: 0;
-              .transition(0.5s, ease-out, 0s);
+              //max-height: 0;
+              .opacity(0);
+              .transition(0.4s, ease-out, 0s);
             }
             .answer{
               max-height: 500px;
-              .transition(0.4s, ease-out, 0.5s);
+              .transition(0.7s, ease-in, 0.4s);
             }
             .arrow-btn{
               top: 15px;
               color: @dark-orange;
-              .transition(0.4s, ease-out, 0.5s);
+              .transition(0.3s, ease-out, 0.4s);
               .rotation(180deg);
             }
           }
@@ -7485,10 +7508,10 @@ div#footer-wrapper {
 
 
           .question{
-            .transition(0.4s, ease-out, 0.5s);
-            max-height: 50px;
-            overflow: hidden;
-
+            .transition(0.7s, ease-out, 0.4s);
+            // max-height: 50px;
+            // overflow: hidden;
+            .opacity(1);
             cursor: pointer;
 
             p{
@@ -7506,6 +7529,8 @@ div#footer-wrapper {
             .transition(0.5s, ease-out, 0s);
             max-height: 0px;
             overflow: hidden;
+            margin-top: -10px;
+            margin-bottom: 10px;
             
             &:after{
               content: "";

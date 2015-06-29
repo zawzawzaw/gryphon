@@ -1,0 +1,89 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>
+<!--> 
+<html class="">
+<!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Gryphon</title>
+  <meta name="description" content="Gryphon">
+  <meta name="keywords" content="Gryphon">
+
+  <!--#include virtual="inc/head.inc" -->
+</head>
+<body>
+  
+  <!--#include virtual="inc/header.inc" -->
+
+  <div id="content-wrapper" class="contact-us">
+    
+    <div class="main-content">
+      <div class="image-text-content container">
+
+        <form id="contact-us-form" action="" method="POST">
+
+          <div class="row">
+            <div class="col-md-3">
+              <h1>Gryphon tea company</h1>
+  address
+
+  251 Pandan Loop, Singapore 128431
+
+  OPERATING HOURS
+
+  Mondays to Fridays: 9am to 5pm
+  Closed on weekends and public holidays
+
+  Phone number
+
+  +65 6779 2948
+
+
+
+            </div>
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+            </div>
+
+          </div>
+          
+        </form>
+
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- <div class="space100"></div> -->
+
+  <!--#include virtual="inc/footer.inc" -->
+
+  <script>
+  var initialLoad = true;
+  $(document).ready(function(){   
+      $(window).on('scroll', function() {
+          var scrollPos = $(window).scrollTop();
+          
+          if( ( scrollPos != 0 ) ) {
+              console.log('scrolling')
+              $('#header-wrapper').addClass('shadow');
+          }       
+          else if( ( scrollPos === 0 ) ) {
+              $('#header-wrapper').removeClass('shadow');
+          }
+      });
+
+      initialLoad = false;
+  });
+  </script>
+
+</body>
+</html>
