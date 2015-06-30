@@ -36,8 +36,31 @@
 						<div class="gift-card-img">
 							<div class="vcenter">
 								<div class="vcenter2">
-									<img src="images/content/product-gift-card-01.png" class="img-responsive" alt="product" id="gift-design-01">
-									<img src="images/content/product-gift-card-02.png" class="img-responsive" alt="product" id="gift-design-02">
+									<div id="gift-design-01">
+										<img src="images/content/product-gift-card-01-bg.png">
+										<div class="gifttext">
+											<div class="gifttext-intro">Dear Lorem Ipsum,  a special gift for you. <br>(from Sender’s Name — Optional)</div>
+											<div class="gifttext-title">gift card</div>
+											<div class="gifttext-amount">S$ <span class="gifttext-amount-number">100</span></div>
+											<div class="gifttext-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique lorem libero, sed elementum metus viverra sed. Suspendisse laoreet vestibulum nisl, non viverra dolor ultrices ut. Donec quis aliquet enim. Aenean id dignissim diam. Phasellus in sem et neque commodo pharetra.</div>
+											<div class="gifttext-code-title">gift card code</div>
+											<div class="gifttext-code">adp-e03c-bx2</div>
+											<div class="gifttext-disclaimer">Converting to cash is not allowed. <br>You can use the gift card code or redeem it to pay for your order at http://test.gryphontea.com/magento/.</div>
+										</div>
+									</div>
+									<div id="gift-design-02">
+										<img src="images/content/product-gift-card-02-bg.png">
+										<div class="gifttext">
+											<div class="gifttext-intro">Dear Lorem Ipsum,  a special gift for you. <br>(from Sender’s Name — Optional)</div>
+											<div class="gifttext-title">gift card</div>
+											<div class="gifttext-amount">S$ <span class="gifttext-amount-number">100</span></div>
+											<div class="gifttext-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique lorem libero, sed elementum metus viverra sed. Suspendisse laoreet vestibulum nisl, non viverra dolor ultrices ut. Donec quis aliquet enim. Aenean id dignissim diam. Phasellus in sem et neque commodo pharetra.</div>
+											<div class="gifttext-code-title">gift card code</div>
+											<div class="gifttext-code">adp-e03c-bx2</div>
+											<div class="gifttext-disclaimer">Converting to cash is not allowed. <br>You can use the gift card code or redeem it to pay for your order at http://test.gryphontea.com/magento/.</div>
+										</div>
+									</div>
+
 								</div>
 							</div>
 						</div>
@@ -1078,6 +1101,14 @@
 				num++;
 				$("#gift_quantity").val("" + num);
 			});
+
+			$("#gift_amount").change(function(){
+				var num = "" + $("#gift_amount").val();
+				$('.gifttext-amount-number').html(num);
+				
+			})
+
+			
 
 			
 
