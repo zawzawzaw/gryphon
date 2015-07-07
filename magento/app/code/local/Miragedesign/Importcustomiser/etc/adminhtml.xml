@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <catalog>
+                        <children>
+                            <importcustomiser translate="title" module="importcustomiser">
+                                <title>Import product relations</title>
+                                <sort_order>300</sort_order>
+                            </importcustomiser>
+                        </children>
+                    </catalog>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <catalog>
+            <children>
+                <importcustomiser translate="title" module="importcustomiser">
+                    <title>Import product relations</title>
+                    <sort_order>300</sort_order>
+                    <action>adminhtml/relations_import</action>
+                </importcustomiser>
+            </children>
+        </catalog>
+    </menu>
+</config>

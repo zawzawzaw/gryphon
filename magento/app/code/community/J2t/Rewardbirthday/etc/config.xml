@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <J2t_Rewardbirthday>
+            <version>1.0.0</version>
+            <depends>
+                <Mage_Customer />
+                <Mage_Checkout />
+            </depends>
+        </J2t_Rewardbirthday>
+    </modules>
+    <global>
+        <resources>
+            <j2trewardbirthday_setup>
+                <setup>
+                    <module>J2t_Rewardbirthday</module>
+                    <class>Mage_Core_Model_Resource_Setup</class>
+                </setup>
+                <connection><use>core_setup</use></connection>
+            </j2trewardbirthday_setup>
+            <j2trewardbirthday_write>
+                <connection><use>core_write</use></connection>
+            </j2trewardbirthday_write>
+            <j2trewardbirthday_read>
+                <connection><use>core_read</use></connection>
+            </j2trewardbirthday_read>
+        </resources>
+        
+        <models>
+            <j2trewardbirthday>
+                <class>J2t_Rewardbirthday_Model</class>
+                <resourceModel>j2trewardbirthday_mysql4</resourceModel>
+            </j2trewardbirthday>
+        </models>
+        
+        <template>
+            <email>
+                <rewardpoints_j2trewardbirthday_email_template translate="label" module="j2trewardbirthday">
+                    <label>J2T Reward points Birthday Email</label>
+                    <file>j2trewardbirthday.html</file>
+                    <type>html</type>
+                </rewardpoints_j2trewardbirthday_email_template>
+            </email>
+        </template>
+        
+        <blocks>
+            <j2trewardbirthday>
+                <class>J2t_Rewardbirthday_Block</class>
+            </j2trewardbirthday>
+        </blocks>
+        <helpers>
+            <j2trewardbirthday>
+                <class>J2t_Rewardbirthday_Helper</class>
+            </j2trewardbirthday>
+        </helpers>
+    </global>	
+	<frontend>
+            <translate>
+                <modules>
+                    <j2trewardbirthday>
+                        <files>
+                            <default>j2trewardbirthday.csv</default>
+                        </files>
+                    </j2trewardbirthday>
+                </modules>
+            </translate>
+        
+            <layout>
+                <updates>
+                    <j2trewardbirthday>
+                        <file>j2trewardbirthday.xml</file>
+                    </j2trewardbirthday>
+                </updates>
+            </layout>	
+	</frontend>
+	
+    <admin>
+        <routers>
+            <j2trewardbirthday>
+                <use>admin</use>
+                <args>
+                    <module>J2t_Rewardbirthday</module>
+                    <frontName>j2trewardbirthday</frontName>
+                </args>
+            </j2trewardbirthday>
+        </routers>
+
+    </admin>
+
+    <frontend>
+        <routers>
+            <j2trewardbirthday>
+                <use>standard</use>
+                <args>
+                    <module>RewardPoints</module>
+                    <frontName>j2trewardbirthday</frontName>
+                </args>
+            </j2trewardbirthday>
+        </routers>
+        
+        <!--<secure_url>
+            <j2trewardbirthday_index>/j2trewardbirthday/index</j2trewardbirthday_index>
+            <j2trewardshare_index>/j2trewardshare/index</j2trewardshare_index>
+        </secure_url>-->
+        
+    </frontend>
+
+
+    
+    <adminhtml>
+
+        <layout>
+            <updates>
+                <j2trewardbirthday>
+                    <file>j2trewardbirthday.xml</file>
+                </j2trewardbirthday>
+            </updates>
+        </layout>
+        
+        <translate>
+            <modules>
+                <j2trewardbirthday>
+                    <files>
+                        <default>j2trewardbirthday.csv</default>
+                    </files>
+                </j2trewardbirthday>
+            </modules>
+        </translate>
+
+    </adminhtml>
+    
+    <crontab>
+        <jobs>
+            <aggregate_j2trewardbirthday_data>
+                <schedule>
+                    <!-- mm hh jj MMM JJJ -->
+                    <!-- 0  1  *  *   *   -->
+                    <cron_expr>0 0 * * *</cron_expr>
+                    <!--<cron_expr>* * * * *</cron_expr>-->
+                </schedule>
+                <run><model>j2trewardbirthday/observer::aggregateBirthdayData</model></run>
+            </aggregate_j2trewardbirthday_data>
+        </jobs>
+    </crontab>
+
+    <default>
+        <rewardpoints>
+            <j2trewardbirthday>
+                <birthday_points>0</birthday_points>
+                <email_template>rewardpoints_j2trewardbirthday_email_template</email_template>
+                <email_identity>support</email_identity>
+                <birthday_logs>0</birthday_logs>
+                <prior_verification>0</prior_verification>
+                <points_duration>0</points_duration>
+                <points_delay>0</points_delay>
+            </j2trewardbirthday>
+        </rewardpoints>
+    </default>
+    
+</config>
+

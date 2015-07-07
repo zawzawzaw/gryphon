@@ -26,7 +26,7 @@
 					<div class="col-md-12 caption-container">
 						<div class="caption">
 							<h1>Partner With Gryphon</h1>
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is the industry's standard dummy.</p>
+							<p>We are always looking for new partners who share our love of quality tea and great customer experiences.</p>
 						</div>
 					</div>
 				</div>
@@ -65,8 +65,99 @@
 									</div>
 
 									<div class="each-input">
-										<label for="registration_number">registration number*</label>
+										<label for="registration_number">business registration number*</label>
 										<input type="text" name="registration_number" >
+									</div>
+
+									<div class="each-input">
+										<p>Business Registration Number: The unique number given to you when you register as an entity, or your existing ACRA registration number. <br>Note: optional for foreign companies.</p>
+									</div>
+
+									<div class="each-input">
+										<label>date of business registration*</label>
+
+										<div class="dropdown-container">
+											<div class="row">
+												<div class="col-md-4">
+													<div class="dropdown date-dropdown">
+														<select name="registration_date_day" id="registration_date_day">
+															<option value="1">1</option>
+															<option value="2">2</option>
+															<option value="3">3</option>
+															<option value="4">4</option>
+															<option value="5">5</option>
+															<option value="6">6</option>
+															<option value="7">7</option>
+															<option value="8">8</option>
+															<option value="9">9</option>
+															<option value="10">10</option>
+															<option value="11">11</option>
+															<option value="12">12</option>
+															<option value="13">13</option>
+															<option value="14">14</option>
+															<option value="15">15</option>
+															<option value="16">16</option>
+															<option value="17">17</option>
+															<option value="18">18</option>
+															<option value="19">19</option>
+															<option value="20">20</option>
+															<option value="21">21</option>
+															<option value="22">22</option>
+															<option value="23">23</option>
+															<option value="24">24</option>
+															<option value="25">25</option>
+															<option value="26">26</option>
+															<option value="27">27</option>
+															<option value="28">28</option>
+															<option value="29">29</option>
+															<option value="30">30</option>
+															<option value="31">31</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-md-4">
+													<div class="dropdown date-dropdown">
+														<select name="registration_date_month" id="registration_date_month">
+															<option value="1">Jan</option>
+															<option value="2">Feb</option>
+															<option value="3">Mar</option>
+															<option value="4">May</option>
+															<option value="5">Apr</option>
+															<option value="6">Jun</option>
+															<option value="7">Jul</option>
+															<option value="8">Aug</option>
+															<option value="9">Sep</option>
+															<option value="10">Oct</option>
+															<option value="11">Nov</option>
+															<option value="12">Dec</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-md-4">
+													<div class="dropdown date-dropdown">
+														<select name="registration_date_year" id="registration_date_year">
+															<option value="2000">2000</option>
+															<option value="2001">2001</option>
+															<option value="2002">2002</option>
+															<option value="2003">2003</option>
+															<option value="2004">2004</option>
+															<option value="2005">2005</option>
+															<option value="2006">2006</option>
+															<option value="2007">2007</option>
+															<option value="2008">2008</option>
+															<option value="2009">2009</option>
+															<option value="2010">2010</option>
+															<option value="2011">2011</option>
+															<option value="2012">2012</option>
+															<option value="2013">2013</option>
+															<option value="2014">2014</option>
+															<option value="2015">2015</option>
+														</select>
+													</div>
+												</div>
+
+											</div>
+										</div>
 									</div>
 
 									<div class="each-input">
@@ -74,10 +165,11 @@
 										<div class="dropdown">
 											<select name="type_of_establishment" id="type_of_establishment">
 												<option value="">Choose the type</option>
-												<option value="cafe">Cafe / Restaurant</option>
+												<option value="cafe">Cafe</option>
 												<option value="hotel">Hotel</option>
-												<option value="corporate">Corporate</option>
-												<option value="overseas">Overseas distribution</option>
+												<option value="restaurant">Restaurant</option>
+												<option value="retail">Retail</option>
+												<option value="wholesale">Wholesale</option>
 												<option value="others">Others</option>
 											</select>
 										</div>
@@ -131,14 +223,14 @@
 									</div>
 
 									<div class="each-input">
-										<label for="estimated_weekly_tea_usage">estimated weekly tea usage*</label>
+										<label for="estimated_weekly_tea_usage">estimate monthly tea usage by number of cups*</label>
 										<input type="text" name="estimated_weekly_tea_usage" >
 									</div>
 
 									<div class="each-input">
-										<label for="business_status">business status*</label>
-										<input type="text" name="business_status" >
+										<p>Estimated Monthly Tea Usage by Number of Cups: This gives us a more accurate gauge of how much tea you’ll need.</p>
 									</div>
+
 								</div>
 							</div>
 							<div class="col-md-1">
@@ -149,8 +241,15 @@
 								<hr class="small">
 								<div class="inputs">
 									<div class="each-input">
-										<label for="title">title*</label>
-										<input type="text" name="title" >
+										<label for="salutation">Salutation*</label>
+										<div class="dropdown">
+											<select name="salutation" id="salutation">
+												<option value="mr">Mr.</option>
+												<option value="ms">Ms.</option>
+												<option value="mrs">Mrs.</option>
+												<option value="dr">Dr.</option>
+											</select>
+										</div>
 									</div>
 
 									<div class="each-input">
@@ -176,17 +275,49 @@
 
 									<div class="each-input">
 										<label for="phone_no">phone number</label>
-										<input type="text" name="phone_no" >
+
+										<div class="dropdown-container">
+											<div class="row">
+												<div class="col-md-5">
+													<input type="text" name="phone_no" class="phone_no_input">
+												</div>
+												<div class="col-md-7">
+													<input type="text" name="phone_no_2">
+												</div>
+											</div>
+										</div>
+
 									</div>
 
 									<div class="each-input">
 										<label for="mobile_no">mobile number*</label>
-										<input type="text" name="mobile_no" >
+
+										<div class="dropdown-container">
+											<div class="row">
+												<div class="col-md-5">
+													<input type="text" name="mobile_no" class="mobile_no_input">
+												</div>
+												<div class="col-md-7">
+													<input type="text" name="mobile_no_2">
+												</div>
+											</div>
+										</div>
+
 									</div>
 
 									<div class="each-input">
 										<label for="role_within_organization">role within organization*</label>
-										<input type="text" name="role_within_organization" >
+										<div class="dropdown">
+											<select name="role_within_organization" id="role_within_organization">
+												<option value="">Choose the type</option>
+												<option value="management_owners">Management / Owners</option>
+												<option value="marketing_sales">Marketing / Sales</option>
+												<option value="restaurant">Restaurant</option>
+												<option value="operations">Operations</option>
+												<option value="purchasing">Purchasing</option>
+											</select>
+										</div>
+
 									</div>
 
 									<div class="each-input">
@@ -223,6 +354,21 @@
 	<!-- <div class="space100"></div> -->
 
 	<!--#include virtual="inc/footer.inc" -->
+
+
+	<link rel="stylesheet" href="css/intlTelInput.css">
+	<script src="js/plugins/intlTelInput.min.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".phone_no_input, .mobile_no_input").intlTelInput({
+				defaultCountry: 'sg',
+				nationalMode: false,
+				autoHideDialCode: false,
+				autoPlaceholder: false
+			});
+
+		});
+	</script>
 
 	<script>
 	var initialLoad = true;

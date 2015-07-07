@@ -1,0 +1,176 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>
+<!--> 
+<html class="">
+<!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Gryphon</title>
+  <meta name="description" content="Gryphon">
+  <meta name="keywords" content="Gryphon">
+
+  <!--#include virtual="inc/head.inc" -->
+</head>
+<body>
+  
+  <!--#include virtual="inc/header.inc" -->
+
+  <div id="content-wrapper" class="contact-us">
+    
+    <div class="main-content">
+      <div class="image-text-content container">
+
+        <form id="contact-us-form" action="" method="POST">
+
+          <div class="row">
+            <div class="col-md-3">
+
+              <div class="contact-us-col-1">
+                <h1>Gryphon tea company</h1>
+
+                <hr class="small">
+
+                <img src="images/content/contact-us.png" class="img-responsive">
+
+                <div class="each-input">
+                  <label>address</label>
+                  <p>251 Pandan Loop, Singapore 128431</p>
+                </div>
+
+                <div class="each-input">
+                  <label>OPERATING HOURS</label>
+                  <p>Mondays to Fridays: 9am to 5pm <br>Closed on weekends and public holidays</p>
+                </div>
+
+                <div class="each-input">
+                  <label>Phone number</label>
+                  <p>+65 6779 2948</p>
+                </div>
+              </div> <!-- contact-us-col-1 -->
+
+            </div>
+            <div class="col-md-2">
+              <div class="contact-us-col-seperator">
+                <div class="line"></div>
+              </div>
+
+            </div>
+            <div class="col-md-3">
+              <div class="contact-us-col-2">
+                <h1>get in touch</h1>
+                <hr class="small">
+                <p>Send us an email should you have any inquiries or would like to share your tea experience with us. Your feedback matters a lot to us.</p>
+
+                <div class="each-input">
+                  <label for="name">name*</label>
+                  <input type="text" name="name" >
+                </div>
+
+                <div class="each-input">
+                  <label for="email">email address*</label>
+                  <input type="text" name="email" >
+                </div>
+
+                <div class="each-input">
+                  <label for="phone_no">phone number</label>
+
+                  <div class="dropdown-container">
+                    <div class="row">
+                      <div class="col-md-5">
+                        <input type="text" name="phone_no" class="phone_no_input">
+                      </div>
+                      <div class="col-md-7">
+                        <input type="text" name="phone_no_2">
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+
+
+
+
+              </div> <!-- contact-us-col-2 -->
+
+            </div>
+            <div class="col-md-3">
+              <div class="contact-us-col-3">
+
+                <div class="each-input">
+                  <label for="name">type of enquiry</label>
+                  <div class="dropdown">
+                    <select name="role_within_organization" id="role_within_organization">
+                      <option value="">Choose the type</option>
+                      <option value="General Enquiry">General Enquiry</option>
+                      <option value="Online Order Enquiry">Online Order Enquiry</option>
+                      <option value="Business Enquiry">Business Enquiry</option>
+                      <option value="Media Enquiry">Media Enquiry</option>
+                    </select>
+                  </div>
+
+                </div>
+
+                <div class="each-input">
+                  <label for="message">message</label>
+                  <textarea name="message" id="" cols="30" rows="10" placeholder="Write your message here."></textarea>
+                </div>
+
+                <input type="submit" class="cta" value="Send" id="contact-us-send-btn">
+
+              </div> <!-- contact-us-col-3 -->
+            </div>
+
+          </div>
+
+        </form>
+
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- <div class="space100"></div> -->
+
+  <!--#include virtual="inc/footer.inc" -->
+
+  <link rel="stylesheet" href="css/intlTelInput.css">
+  <script src="js/plugins/intlTelInput.min.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $(".phone_no_input, .mobile_no_input").intlTelInput({
+        defaultCountry: 'sg',
+        nationalMode: false,
+        autoHideDialCode: false,
+        autoPlaceholder: false
+      });
+
+    });
+  </script>
+
+  <script>
+  var initialLoad = true;
+  $(document).ready(function(){   
+      $(window).on('scroll', function() {
+          var scrollPos = $(window).scrollTop();
+          
+          if( ( scrollPos != 0 ) ) {
+              console.log('scrolling')
+              $('#header-wrapper').addClass('shadow');
+          }       
+          else if( ( scrollPos === 0 ) ) {
+              $('#header-wrapper').removeClass('shadow');
+          }
+      });
+
+      initialLoad = false;
+  });
+  </script>
+
+</body>
+</html>
