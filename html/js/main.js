@@ -185,4 +185,26 @@ $(document).ready(function(){
         e.preventDefault();
        $('link[href="css/style2.css"]').attr('href','css/style.css');
     });
+
+    $('.product-image').hover(
+        function(){        
+            $('.cta-list').addClass('show');
+            $(this).find('.img').addClass('hover');
+        }, 
+        function() {
+            $('.cta-list').removeClass('show');
+            $(this).find('.img').removeClass('hover');
+        }
+    );
+
+    // $('.product-image cta-list a').hover(
+    //     function(){
+    //         $('.cta-list').addClass('show');
+    //         $('.product-image > a img').addClass('hover');
+    //     },
+    //     function(){
+    //         $('.cta-list').removeClass('show');
+    //         $('.product-image > a img').removeClass('hover');
+    //     }
+    // );
 });
