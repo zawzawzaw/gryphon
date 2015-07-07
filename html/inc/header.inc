@@ -91,24 +91,7 @@
 							</ul>
 						</nav>
 					</div>	
-					<div id="header-cta">
-						<div class="promo-image-text">
-							<div class="promo hidden-xs hidden-sm">
-								<img src="images/icons/header-img-1.png" class="promo-img" alt="header img">
-								<p>Get <span class="red">10%</span> off discount from your first purchase <br>until 17th of Jan with Promo Code: <span class="red">SHOPNOW</span></p>
-							</div>
-
-							<div class="cta">
-								<ul class="cta-list">
-									<li><a href="#" class="search"><span class="hidden-xs hidden-sm">Search</span></a></li>
-									<!-- <li><a href="store.html">Local Store</a></li> -->									
-									<li><a href="account.html" class="account"><span class="hidden-xs hidden-sm">Richard</span></a></li>
-									<li class="hidden-md hidden-lg"><hr class="divider"></li>
-									<li><a href="cart.html" class="cart"><span>$S 36.50 (2)</span></a></li>
-								</ul>
-							 </div>
-						</div>
-					</div>
+					
 				</div>
 			</div>
 		</header>

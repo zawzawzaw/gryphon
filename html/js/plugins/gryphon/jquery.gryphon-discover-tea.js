@@ -147,6 +147,9 @@ if (!Array.prototype.indexOf) {
     this.get_results_button = this.element.find("#get-results-button");
     this.get_results_button.click(this.on_get_results_button_click.bind(this));
 
+    // restart button click.
+    this.element.find(".discover-restart-button").click(this.on_restart_button_click.bind(this));
+
     this.init();
   }
 
@@ -227,12 +230,32 @@ if (!Array.prototype.indexOf) {
 
     create_results: function(){
 
+      this.is_question_01_disabled = true;
+      this.is_question_02_disabled = true;
+      this.is_question_03_disabled = true;
+      this.is_question_04_disabled = true;
+      this.is_question_05_disabled = true;
+
       console.log("this.question_01_answer: " + this.question_01_answer);
       console.log("this.question_02_answer: " + this.question_02_answer);
       console.log("this.question_03_answer: " + this.question_03_answer);
       console.log("this.question_04_answer: " + this.question_04_answer);
       console.log("this.question_05_answer: " + this.question_05_answer);
       //this.data_array.length
+      
+      this.question_01_buttons.addClass('disabled');
+      this.question_02_buttons.addClass('disabled');
+      this.question_03_buttons.addClass('disabled');
+      this.question_04_buttons.addClass('disabled');
+      this.question_05_buttons.addClass('disabled');
+
+      this.question_01_buttons.not(".selected").addClass('not-selected');
+      this.question_02_buttons.not(".selected").addClass('not-selected');
+      this.question_03_buttons.not(".selected").addClass('not-selected');
+      this.question_04_buttons.not(".selected").addClass('not-selected');
+      this.question_05_buttons.not(".selected").addClass('not-selected');
+
+      
 
       
 
@@ -356,12 +379,12 @@ if (!Array.prototype.indexOf) {
         '<div class="col-md-3">',
           '<div class="results-item" data-id="{id}" data-sku="{sku}">',
             '<div class="results-item-image">',
-              //'<img src="images/content/discover/_test_product_image.jpg">',
+              '<a href="{url}" target="_blank"></a>',
             '</div>',
-            '<h4>{name}</h4>',
+            '<a href="{url}" target="_blank"><h4>{name}</h4></a>',
             '<p>{category}</p>',
             '<div class="buttons">',
-              '<a class="zoom" href="{url}" target="_blank"></a>',
+              '<div class="zoom"></div>',
               '<div class="add"></div>',
             '</div>',
           '</div>',
@@ -453,6 +476,47 @@ if (!Array.prototype.indexOf) {
 
     },
 
+    reset_questions: function() {
+
+      this.is_question_01_disabled = false;
+      this.is_question_02_disabled = false;
+      this.is_question_03_disabled = false;
+      this.is_question_04_disabled = false;
+      this.is_question_05_disabled = false;
+
+      this.question_01_answer = "none";
+      this.question_02_answer = [];
+      this.question_03_answer = "none";
+      this.question_04_answer = [];
+      this.question_05_answer = "none";
+
+
+      this.question_01_buttons.removeClass('selected not-selected disabled');
+      this.question_02_buttons.removeClass('selected not-selected disabled');
+      this.question_03_buttons.removeClass('selected not-selected disabled');
+      this.question_04_buttons.removeClass('selected not-selected disabled');
+      this.question_05_buttons.removeClass('selected not-selected disabled');
+
+
+      this.question_02_element.slideUp(500);
+      this.question_03_element.slideUp(500);
+      this.question_04_element.slideUp(500);
+      this.question_05_element.slideUp(500);
+
+      this.question_02_gift_element.slideUp(500);
+
+      this.result_container_element.slideUp(500);
+
+
+      var header_height = $("#header-wrapper").height();
+      var target_y = this.question_01_element.offset().top - header_height;
+
+      TweenMax.delayedCall(0.6, this.scroll_to, [target_y], this);
+      //this.scroll_to(target_y);
+
+
+    },
+
 
 
     //    ____ ___ ____  ____  _        _ __   __     __     _    _   _ ___ __  __    _  _____ ___ ___  _   _ 
@@ -465,22 +529,56 @@ if (!Array.prototype.indexOf) {
 
     display_question_02: function(){
       this.question_02_element.slideDown(500);
+
+      var header_height = $("#header-wrapper").height();
+      var padding_top = 45;
+      var target_y = this.question_02_element.offset().top - header_height - padding_top;
+
+      console.log("target_y: " + target_y);
+      this.scroll_to(target_y);
     },
     display_question_02_gift: function(){
       this.question_02_gift_element.slideDown(500);
+
+      var header_height = $("#header-wrapper").height();
+      var padding_top = 45;
+      var target_y = this.question_02_gift_element.offset().top - header_height - padding_top;
+
+      console.log("target_y: " + target_y);
+      this.scroll_to(target_y);
     },
     
     display_question_03: function(){
       this.question_03_element.slideDown(500);
+
+      var header_height = $("#header-wrapper").height();
+      var padding_top = 45;
+      var target_y = this.question_03_element.offset().top - header_height - padding_top;
+      this.scroll_to(target_y);
     },
     display_question_04: function(){
       this.question_04_element.slideDown(500);
+
+      var header_height = $("#header-wrapper").height();
+      var padding_top = 45;
+      var target_y = this.question_04_element.offset().top - header_height - padding_top;
+      this.scroll_to(target_y);
     },
     display_question_05: function(){
       this.question_05_element.slideDown(500);
+
+      var header_height = $("#header-wrapper").height();
+      var padding_top = 45 + 200;
+      var target_y = this.question_05_element.offset().top - header_height - padding_top;
+      this.scroll_to(target_y);
     },
     display_results_question: function(){
       this.result_question_element.slideDown(500);
+
+      var header_height = $("#header-wrapper").height();
+      var padding_top = 0;
+      var target_y = this.question_05_element.offset().top - header_height - padding_top;
+      this.scroll_to(target_y);
     },
     display_results_container: function(){
       this.result_container_element.slideDown(500);
@@ -501,22 +599,22 @@ if (!Array.prototype.indexOf) {
     on_result_01_complete: function(event){
       var data = JSON.parse(event['responseText']);
       var image_str = '<img src="' + 'http://test.gryphontea.com/magento/media/catalog/product' + data.image + '">'
-      this.result_01_element.find('.results-item-image').append(image_str);
+      this.result_01_element.find('.results-item-image a').append(image_str);
     },
     on_result_02_complete: function(event){
       var data = JSON.parse(event['responseText']);
       var image_str = '<img src="' + 'http://test.gryphontea.com/magento/media/catalog/product' + data.image + '">'
-      this.result_02_element.find('.results-item-image').append(image_str);
+      this.result_02_element.find('.results-item-image a').append(image_str);
     },
     on_result_03_complete: function(event){
       var data = JSON.parse(event['responseText']);
       var image_str = '<img src="' + 'http://test.gryphontea.com/magento/media/catalog/product' + data.image + '">'
-      this.result_03_element.find('.results-item-image').append(image_str);
+      this.result_03_element.find('.results-item-image a').append(image_str);
     },
     on_result_04_complete: function(event){
       var data = JSON.parse(event['responseText']);
       var image_str = '<img src="' + 'http://test.gryphontea.com/magento/media/catalog/product' + data.image + '">'
-      this.result_04_element.find('.results-item-image').append(image_str);
+      this.result_04_element.find('.results-item-image a').append(image_str);
     },
 
     //        _ ____   ___  _   _   _______     _______ _   _ _____ ____  
@@ -558,6 +656,10 @@ if (!Array.prototype.indexOf) {
           this.display_question_02_gift();
         } else {
           this.display_question_02();
+
+          //this.display_question_03();
+          //this.display_question_04();
+          //this.display_question_05();
         }
 
       }
@@ -573,7 +675,21 @@ if (!Array.prototype.indexOf) {
 
         if (answer_index == -1) {
         
-          // select answer  
+          
+
+          if(this.question_02_answer.length <= 2){
+            target.addClass('selected');
+            this.question_02_answer[this.question_02_answer.length] = answer;
+          }
+
+          TweenMax.killDelayedCallsTo(this.display_question_03);
+          TweenMax.delayedCall(2, this.display_question_03, [], this);
+
+          //this.display_question_03();
+          
+          /*
+          
+          select answer  
           this.question_02_answer[this.question_02_answer.length] = answer;
 
           target.addClass('selected');
@@ -586,9 +702,10 @@ if (!Array.prototype.indexOf) {
             this.question_02_buttons.not('.selected').addClass('not-selected');
 
             this.is_question_02_disabled = true;
-            this.display_question_03();
+            // this.display_question_03();
 
           }
+          */
 
 
         } else {
@@ -612,10 +729,11 @@ if (!Array.prototype.indexOf) {
 
         console.log('Question 03: ' + this.question_03_answer);
 
-        this.question_03_buttons.addClass('disabled not-selected');
+        //this.question_03_buttons.addClass('disabled not-selected');
+        this.question_03_buttons.addClass('not-selected');
         target.removeClass('not-selected').addClass('selected');
 
-        this.is_question_03_disabled = true;
+        //this.is_question_03_disabled = true;
         this.display_question_04();
       }
 
@@ -630,7 +748,13 @@ if (!Array.prototype.indexOf) {
         var answer_index = this.question_04_answer.indexOf(answer);
 
         if (answer_index == -1) {
+
+          if(this.question_04_answer.length <= 2){
+            target.addClass('selected');
+            this.question_04_answer[this.question_04_answer.length] = answer;
+          }
         
+          /*
           // select answer  
           this.question_04_answer[this.question_04_answer.length] = answer;
 
@@ -647,7 +771,11 @@ if (!Array.prototype.indexOf) {
             this.display_question_05();
 
           }
-
+          */
+         
+          //this.display_question_05();
+          TweenMax.killDelayedCallsTo(this.display_question_05);
+          TweenMax.delayedCall(2, this.display_question_05, [], this);
 
         } else {
           // deselect answer
@@ -688,6 +816,13 @@ if (!Array.prototype.indexOf) {
       this.display_results_container();
     },
 
+    on_restart_button_click: function(event){
+      event.preventDefault();
+
+      this.reset_questions();
+
+    },
+
     //    _   _ _____ ___ _     
     //   | | | |_   _|_ _| |    
     //   | | | | | |  | || |    
@@ -713,7 +848,16 @@ if (!Array.prototype.indexOf) {
       return array;
 
 
+    },
+    scroll_to: function(num_param){
+
+      var target_y = num_param
+      var current_scroll = $(window).scrollTop();
+      var target_duration = Math.abs(  (target_y - current_scroll) / 800 );
+      TweenMax.to($(window), target_duration, {scrollTo:{y:target_y,autoKill: true}, ease:Quad.easeInOut});
+
     }
+
 
   };
 
