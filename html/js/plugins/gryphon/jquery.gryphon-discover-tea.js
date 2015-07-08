@@ -10,6 +10,13 @@ function nano(template, data) {
 
 
 
+if (!Array.prototype.diff) {
+  Array.prototype.diff = function(a) {
+    return this.filter(function(i) {return a.indexOf(i) < 0;});
+  };
+}
+
+
 // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
 
 // Production steps of ECMA-262, Edition 5, 15.4.4.14
@@ -119,16 +126,34 @@ if (!Array.prototype.indexOf) {
     this.is_question_04_disabled = false;
     this.is_question_05_disabled = false;
 
+    this.is_question_01_visible = true;
+    this.is_question_02_visible = false;
+    this.is_question_03_visible = false;
+    this.is_question_04_visible = false;
+    this.is_question_05_visible = false;
+
     this.question_01_answer = "none";
     this.question_02_answer = [];
     this.question_03_answer = "none";
     this.question_04_answer = [];
     this.question_05_answer = "none";
 
+    this.question_02_possible_answers = [];
+    this.question_04_possible_answers = [];
+
     this.result_01_element = null;
     this.result_02_element = null;
     this.result_03_element = null;
     this.result_04_element = null;
+
+    this.different_result_01_element = null;
+    this.different_result_02_element = null;
+    this.different_result_03_element = null;
+    this.different_result_04_element = null;
+
+
+    this.has_created_results = false;
+    this.has_no_similar = false;
 
 
     this.question_01_element = this.element.find("#discover-tea-question-01");
@@ -139,13 +164,23 @@ if (!Array.prototype.indexOf) {
 
     this.question_02_gift_element = this.element.find("#discover-tea-question-02-gift");
 
-    this.result_question_element = this.element.find("#discover-tea-result .results-item-top");
+    //this.result_question_element = this.element.find("#discover-tea-result .results-item-top");
+    this.result_monthly_element = this.element.find("#discover-tea-result .results-item-monthly");
     this.result_container_element = this.element.find("#discover-tea-result #results-item-container");
 
+
+    this.similar_aroma_container = this.result_container_element.find("#result-item-container-similar-aroma");
+
+    this.similar_container = this.result_container_element.find('#result-item-container-similar');
+    this.different_container = this.result_container_element.find('#result-item-container-different');    
+
+
+    //////this.aroma_similar_container = this.result_container_element.find('#result-item-container-similar-02');
+
+    //this.get_results_button = this.element.find("#get-results-button");
+    //this.get_results_button.click(this.on_get_results_button_click.bind(this));
     
 
-    this.get_results_button = this.element.find("#get-results-button");
-    this.get_results_button.click(this.on_get_results_button_click.bind(this));
 
     // restart button click.
     this.element.find(".discover-restart-button").click(this.on_restart_button_click.bind(this));
@@ -230,259 +265,432 @@ if (!Array.prototype.indexOf) {
 
     create_results: function(){
 
-      this.is_question_01_disabled = true;
-      this.is_question_02_disabled = true;
-      this.is_question_03_disabled = true;
-      this.is_question_04_disabled = true;
-      this.is_question_05_disabled = true;
+      if(this.has_created_results == false){
+        this.has_created_results = true;
 
-      console.log("this.question_01_answer: " + this.question_01_answer);
-      console.log("this.question_02_answer: " + this.question_02_answer);
-      console.log("this.question_03_answer: " + this.question_03_answer);
-      console.log("this.question_04_answer: " + this.question_04_answer);
-      console.log("this.question_05_answer: " + this.question_05_answer);
-      //this.data_array.length
-      
-      this.question_01_buttons.addClass('disabled');
-      this.question_02_buttons.addClass('disabled');
-      this.question_03_buttons.addClass('disabled');
-      this.question_04_buttons.addClass('disabled');
-      this.question_05_buttons.addClass('disabled');
+        this.is_question_01_disabled = true;
+        this.is_question_02_disabled = true;
+        this.is_question_03_disabled = true;
+        this.is_question_04_disabled = true;
+        //this.is_question_05_disabled = true;
 
-      this.question_01_buttons.not(".selected").addClass('not-selected');
-      this.question_02_buttons.not(".selected").addClass('not-selected');
-      this.question_03_buttons.not(".selected").addClass('not-selected');
-      this.question_04_buttons.not(".selected").addClass('not-selected');
-      this.question_05_buttons.not(".selected").addClass('not-selected');
+        console.log("this.question_01_answer: " + this.question_01_answer);
+        console.log("this.question_02_answer: " + this.question_02_answer);
+        console.log("this.question_03_answer: " + this.question_03_answer);
+        console.log("this.question_04_answer: " + this.question_04_answer);
+        console.log("this.question_05_answer: " + this.question_05_answer);
+        //this.data_array.length
+        
+        this.question_01_buttons.addClass('disabled');
+        this.question_02_buttons.addClass('disabled');
+        this.question_03_buttons.addClass('disabled');
+        this.question_04_buttons.addClass('disabled');
+        //this.question_05_buttons.addClass('disabled');
 
-      
+        this.question_01_buttons.not(".selected").addClass('not-selected');
+        this.question_02_buttons.not(".selected").addClass('not-selected');
+        this.question_03_buttons.not(".selected").addClass('not-selected');
+        this.question_04_buttons.not(".selected").addClass('not-selected');
+        //this.question_05_buttons.not(".selected").addClass('not-selected');
 
-      
+        var item_template = [
+          '<div class="col-md-3">',
+            '<div class="results-item" data-id="{id}" data-sku="{sku}">',
+              '<div class="results-item-image">',
+                '<a href="{url}" target="_blank"></a>',
+              '</div>',
+              '<a href="{url}" target="_blank"><h4>{name}</h4></a>',
+              '<p>{category}</p>',
+              '<div class="buttons">',
+                '<div class="zoom"></div>',
+                '<div class="add"></div>',
+              '</div>',
+            '</div>',
+          '</div>'
+        ].join('');
 
-      var result_01_array = [];
-      var result_02_array = [];
-      var result_03_array = [];
+        var result_01_array = [];
+        var result_02_array = [];
+        var result_03_array = [];
 
-      var data_object = null;
-      // no filter for question 1
-      
-      var category_index = 0;
-      var aroma_index = 0;
-      var aroma_index_inner = 0;
-      var data_aroma_array = [];
+        var data_object = null;
+        // no filter for question 1
+        
+        var category_index = 0;
+        var aroma_index = 0;
+        var aroma_index_inner = 0;
+        var data_aroma_array = [];
 
+        // filter 02
+        for (var i = 0, l = this.data_array.length; i < l; i++) {
+          data_object = this.data_array[i];
 
-      // filter 02
-      for (var i = 0, l = this.data_array.length; i < l; i++) {
-        data_object = this.data_array[i];
+          category_index = -1;
+          category_index = this.question_02_answer.indexOf(data_object.category);
 
-        category_index = -1;
-        category_index = this.question_02_answer.indexOf(data_object.category);
-
-        if (category_index != -1) {
-          result_01_array[result_01_array.length] = data_object;
-        }
-      }
-
-      // filter 03
-      for (var i = 0, l = result_01_array.length; i < l; i++) {
-        data_object = result_01_array[i];
-
-        if (data_object.type == this.question_03_answer) {
-          result_02_array[result_02_array.length] = data_object;
-        }
-      }
-
-      console.log('filter 04')
-      // filter 04
-      for (var i = 0, l = result_02_array.length; i < l; i++) {
-        data_object = result_02_array[i];
-        data_aroma_array = data_object.aroma;
-
-        aroma_index = -1;
-
-        for (var j = 0, jl = data_aroma_array.length ; j < jl ; j++) {
-
-          aroma_index_inner = this.question_04_answer.indexOf(data_aroma_array[j]);
-
-          if(aroma_index_inner != -1){
-            aroma_index = j;
+          if (category_index != -1) {
+            result_01_array[result_01_array.length] = data_object;
           }
         }
 
-        //console.log('data_object.aroma: ' + data_object.aroma)
+        // filter 03
+        for (var i = 0, l = result_01_array.length; i < l; i++) {
+          data_object = result_01_array[i];
 
-        aroma_index = this.question_04_answer.indexOf(data_object.aroma);
-
-        if (aroma_index != -1) {
-          result_03_array[result_03_array.length] = data_object;
-        }
-      }
-
-
-      console.log('result_01_array');
-      console.log(result_01_array);
-      console.log('result_02_array');
-      console.log(result_02_array);
-      console.log('result_03_array');
-      console.log(result_03_array);
-
-
-      //    ____  _   _  _____        __  ____  _____ ____  _   _ _   _____ ____  
-      //   / ___|| | | |/ _ \ \      / / |  _ \| ____/ ___|| | | | | |_   _/ ___| 
-      //   \___ \| |_| | | | \ \ /\ / /  | |_) |  _| \___ \| | | | |   | | \___ \ 
-      //    ___) |  _  | |_| |\ V  V /   |  _ <| |___ ___) | |_| | |___| |  ___) |
-      //   |____/|_| |_|\___/  \_/\_/    |_| \_\_____|____/ \___/|_____|_| |____/ 
-      //                                                                          
-      
-      /*
-      
-      var temp_template = [
-        '<div class="results-item col-md-2">',
-          '<h4>{name}</h4>',
-          '<p>category: {category}</p>',
-          '<p>type: {type}</p>',
-          '<p>aroma: {aroma}</p>',
-        '</div>'
-      ].join("");
-      
-      var str = "";
-      str += '<div class="col-md-12"><hr class="big"><h1>After Category Filter</h1><hr class="big"></div>';
-
-      for (var i = 0; i < result_01_array.length; i++) {
-        var item_str = nano(temp_template,result_01_array[i]);
-        str += item_str;
-      }
-
-      str += '<div class="col-md-12"><hr class="big"><h1>After Type Filter</h1> <hr class="big"></div>';
-      for (var i = 0; i < result_02_array.length; i++) {
-        var item_str = nano(temp_template,result_02_array[i]);
-        str += item_str;
-      }
-
-      str += '<div class="col-md-12"><hr class="big"><h1>After Aroma Filter</h1> <hr class="big"></div>';
-      
-      for (var i = 0; i < result_03_array.length; i++) {
-        var item_str = nano(temp_template,result_03_array[i]);
-        str += item_str;
-      }
-
-      if(result_03_array.length == 0){
-        str += '<div class="col-md-2">no results</div>';
-      }
-
-      this.result_container_element.append(str);
-      */
-      
-
-      var item_template = [
-        '<div class="col-md-3">',
-          '<div class="results-item" data-id="{id}" data-sku="{sku}">',
-            '<div class="results-item-image">',
-              '<a href="{url}" target="_blank"></a>',
-            '</div>',
-            '<a href="{url}" target="_blank"><h4>{name}</h4></a>',
-            '<p>{category}</p>',
-            '<div class="buttons">',
-              '<div class="zoom"></div>',
-              '<div class="add"></div>',
-            '</div>',
-          '</div>',
-        '</div>'
-      ].join('');
-
-
-
-
-
-      var final_results = [];
-      for (var i = 0, l=result_03_array.length; i < l; i++) {
-        final_results[final_results.length] = result_03_array[i];
-      }
-
-      final_results = this.shuffle(final_results);
-
-      if(final_results.length < 4){
-        var original_result_length = final_results.length;
-        for (var i = 0, l=result_02_array.length; i < l; i++) {
-          final_results[final_results.length] = result_02_array[i];
+          if (data_object.type == this.question_03_answer) {
+            result_02_array[result_02_array.length] = data_object;
+          }
         }
 
-        if(original_result_length == 1 || original_result_length == 0){
+        // filter 04
+        for (var i = 0, l = result_02_array.length; i < l; i++) {
+          data_object = result_02_array[i];
+          data_aroma_array = data_object.aroma;
+
+          aroma_index = -1;
+
+          for (var j = 0, jl = data_aroma_array.length ; j < jl ; j++) {
+
+            aroma_index_inner = this.question_04_answer.indexOf(data_aroma_array[j]);
+
+
+            if(aroma_index_inner != -1){
+              aroma_index = j;
+            }
+          }
+
+          //aroma_index = this.question_04_answer.indexOf(data_object.aroma);
+
+          if (aroma_index != -1) {
+            result_03_array[result_03_array.length] = data_object;
+          }
+        }
+
+        console.log('result_01_array');
+        console.log(result_01_array);
+        console.log('result_02_array');
+        console.log(result_02_array);
+        console.log('result_03_array');
+        console.log(result_03_array);
+
+        var final_results = [];
+        for (var i = 0, l=result_03_array.length; i < l; i++) {
+          final_results[final_results.length] = result_03_array[i];
+        }
+
+        final_results = this.shuffle(final_results);
+
+        if(final_results.length > 4){
+          final_results.splice(4,1000);
+        }
+
+        console.log('final_results:');
+        console.log(final_results);
+
+
+        if(final_results.length == 0){
+          this.has_no_similar = true;
+
+          // create aroma based.
+          final_results = [];
+
+          // filter 04
+          for (var i = 0, l = this.data_array.length; i < l; i++) {
+            data_object = this.data_array[i];
+            data_aroma_array = data_object.aroma;
+
+            aroma_index = -1;
+
+            for (var j = 0, jl = data_aroma_array.length ; j < jl ; j++) {
+
+              aroma_index_inner = this.question_04_answer.indexOf(data_aroma_array[j]);
+
+
+              if(aroma_index_inner != -1){
+                aroma_index = j;
+              }
+            }
+
+            //aroma_index = this.question_04_answer.indexOf(data_object.aroma);
+
+            if (aroma_index != -1) {
+              final_results[final_results.length] = data_object;
+            }
+          }
           final_results = this.shuffle(final_results);
+
+          if(final_results.length > 4){
+            final_results.splice(4,1000);
+          }
+
+
+
+
+        } else {
+          this.has_no_similar = false;
         }
 
-        final_results.splice(4,1000);
-      }
+        /*
+        if(final_results.length < 4){
+          var original_result_length = final_results.length;
+          for (var i = 0, l=result_02_array.length; i < l; i++) {
+            final_results[final_results.length] = result_02_array[i];
+          }
 
-      if(final_results.length < 4){
-        for (var i = 0, l=result_01_array.length; i < l; i++) {
-          final_results[final_results.length] = result_01_array[i];
-          final_results = this.shuffle(final_results);
+          if(original_result_length == 1 || original_result_length == 0){
+            final_results = this.shuffle(final_results);
+          }
+
+          final_results.splice(4,1000);
         }
 
-        final_results.splice(4,1000);
-      }
+        if(final_results.length < 4){
+          for (var i = 0, l=result_01_array.length; i < l; i++) {
+            final_results[final_results.length] = result_01_array[i];
+            final_results = this.shuffle(final_results);
+          }
 
-      console.log('final_results:');
-      console.log(final_results);
+          final_results.splice(4,1000);
+        }
+        */
 
-      var results_str_array = [];
-      
+        
 
-      for (var i = 0, l = final_results.length; i < l; i++) {
-        results_str_array[results_str_array.length] = nano(item_template, final_results[i]);
-      }
+        var results_str_array = [];
+        
 
-      results_str = results_str_array.join("");
+        for (var i = 0, l = final_results.length; i < l; i++) {
+          results_str_array[results_str_array.length] = nano(item_template, final_results[i]);
+        }
 
-      this.result_container_element.find('.row').append(results_str);
+        results_str = results_str_array.join("");
 
-      var result_element_array = this.result_container_element.find(".results-item");
+        this.similar_container.empty();
+        this.similar_container.append(results_str);
 
-      this.result_01_element = $(result_element_array[0]);
-      this.result_02_element = $(result_element_array[1]);
-      this.result_03_element = $(result_element_array[2]);
-      this.result_04_element = $(result_element_array[3]);
+        var result_element_array = this.similar_container.find(".results-item");
+
+        this.result_01_element = $(result_element_array[0]);
+        this.result_02_element = $(result_element_array[1]);
+        this.result_03_element = $(result_element_array[2]);
+        this.result_04_element = $(result_element_array[3]);
 
 
-      $.ajax({
-        type: 'GET',
-        data: {},
-        url: 'http://test.gryphontea.com/magento/discovertea/index?id=' + final_results[0].id,
-        complete: this.on_result_01_complete.bind(this)
-      });
+        
 
-      $.ajax({
-        type: 'GET',
-        data: {},
-        url: 'http://test.gryphontea.com/magento/discovertea/index?id=' + final_results[1].id,
-        complete: this.on_result_02_complete.bind(this)
-      });
+        if(this.result_01_element.length != 0){
+          $.ajax({
+            type: 'GET',
+            data: {},
+            url: 'http://test.gryphontea.com/magento/discovertea/index?id=' + final_results[0].id,
+            complete: this.on_result_01_complete.bind(this)
+          });
+        }
 
-      $.ajax({
-        type: 'GET',
-        data: {},
-        url: 'http://test.gryphontea.com/magento/discovertea/index?id=' + final_results[2].id,
-        complete: this.on_result_03_complete.bind(this)
-      });
+        if(this.result_02_element.length != 0){
+          $.ajax({
+            type: 'GET',
+            data: {},
+            url: 'http://test.gryphontea.com/magento/discovertea/index?id=' + final_results[1].id,
+            complete: this.on_result_02_complete.bind(this)
+          });
+        }
 
-      $.ajax({
-        type: 'GET',
-        data: {},
-        url: 'http://test.gryphontea.com/magento/discovertea/index?id=' + final_results[3].id,
-        complete: this.on_result_04_complete.bind(this)
-      });
+        if(this.result_03_element.length != 0){
+          $.ajax({
+            type: 'GET',
+            data: {},
+            url: 'http://test.gryphontea.com/magento/discovertea/index?id=' + final_results[2].id,
+            complete: this.on_result_03_complete.bind(this)
+          });
+        }
+
+        if(this.result_04_element.length != 0){
+          $.ajax({
+            type: 'GET',
+            data: {},
+            url: 'http://test.gryphontea.com/magento/discovertea/index?id=' + final_results[3].id,
+            complete: this.on_result_04_complete.bind(this)
+          });
+        }
+
+
+
+        //    ____ ___ _____ _____ _____ ____  _____ _   _ _____ 
+        //   |  _ \_ _|  ___|  ___| ____|  _ \| ____| \ | |_   _|
+        //   | | | | || |_  | |_  |  _| | |_) |  _| |  \| | | |  
+        //   | |_| | ||  _| |  _| | |___|  _ <| |___| |\  | | |  
+        //   |____/___|_|   |_|   |_____|_| \_\_____|_| \_| |_|  
+        //                                                       
+
+        var different_question_02_answer = this.question_02_possible_answers.diff(this.question_02_answer);
+        var different_question_03_answer = this.question_03_answer;
+        var different_question_04_answer = this.question_04_possible_answers.diff(this.question_04_answer);
+
+        console.log("different_question_02_answer");
+        console.log(different_question_02_answer);
+        console.log("different_question_03_answer");
+        console.log(different_question_03_answer);
+        console.log("different_question_04_answer");
+        console.log(different_question_04_answer);
+
+        var different_result_01_array = [];
+        var different_result_02_array = [];
+        var different_result_03_array = [];
+
+        // filter 02
+        for (var i = 0, l = this.data_array.length; i < l; i++) {
+          data_object = this.data_array[i];
+
+          category_index = -1;
+          category_index = different_question_02_answer.indexOf(data_object.category);
+
+          if (category_index != -1) {
+            different_result_01_array[different_result_01_array.length] = data_object;
+          }
+        }
+
+        // filter 03
+        for (var i = 0, l = different_result_01_array.length; i < l; i++) {
+          data_object = different_result_01_array[i];
+
+          if (data_object.type == different_question_03_answer) {
+            different_result_02_array[different_result_02_array.length] = data_object;
+          }
+        }
+
+        // filter 04
+        for (var i = 0, l = different_result_02_array.length; i < l; i++) {
+          data_object = different_result_02_array[i];
+          data_aroma_array = data_object.aroma;
+
+          aroma_index = -1;
+
+          for (var j = 0, jl = data_aroma_array.length ; j < jl ; j++) {
+
+            aroma_index_inner = different_question_04_answer.indexOf(data_aroma_array[j]);
+
+
+            if(aroma_index_inner != -1){
+              aroma_index = j;
+            }
+          }
+
+          //aroma_index = this.question_04_answer.indexOf(data_object.aroma);
+
+          if (aroma_index != -1) {
+            different_result_03_array[different_result_03_array.length] = data_object;
+          }
+        }
+
+        console.log('different_result_01_array');
+        console.log(different_result_01_array);
+        console.log('different_result_02_array');
+        console.log(different_result_02_array);
+        console.log('different_result_03_array');
+        console.log(different_result_03_array);
+
+
+        var different_final_results = [];
+        for (var i = 0, l=different_result_03_array.length; i < l; i++) {
+          different_final_results[different_final_results.length] = different_result_03_array[i];
+        }
+
+        different_final_results = this.shuffle(different_final_results);
+
+        if(different_final_results.length > 4){
+          different_final_results.splice(4,1000);
+        }
+
+        console.log('different_final_results:');
+        console.log(different_final_results);
+
+        var different_results_str_array = [];
+        
+
+        for (var i = 0, l = different_final_results.length; i < l; i++) {
+          different_results_str_array[different_results_str_array.length] = nano(item_template, different_final_results[i]);
+        }
+
+        var different_results_str = different_results_str_array.join("");
+
+        this.different_container.empty();
+        this.different_container.append(different_results_str);
+
+        var different_result_element_array = this.different_container.find(".results-item");
+
+        this.different_result_01_element = $(different_result_element_array[0]);
+        this.different_result_02_element = $(different_result_element_array[1]);
+        this.different_result_03_element = $(different_result_element_array[2]);
+        this.different_result_04_element = $(different_result_element_array[3]);
+
+        console.log('this.different_result_01_element');
+        console.log(this.different_result_01_element);
+
+        if(this.different_result_01_element.length != 0){
+          $.ajax({
+            type: 'GET',
+            data: {},
+            url: 'http://test.gryphontea.com/magento/discovertea/index?id=' + different_final_results[0].id,
+            complete: this.on_different_result_01_complete.bind(this)
+          });
+        }
+
+        if(this.different_result_02_element.length != 0){
+          $.ajax({
+            type: 'GET',
+            data: {},
+            url: 'http://test.gryphontea.com/magento/discovertea/index?id=' + different_final_results[1].id,
+            complete: this.on_different_result_02_complete.bind(this)
+          });
+          
+        }
+
+        if(this.different_result_03_element.length != 0){
+          $.ajax({
+            type: 'GET',
+            data: {},
+            url: 'http://test.gryphontea.com/magento/discovertea/index?id=' + different_final_results[2].id,
+            complete: this.on_different_result_03_complete.bind(this)
+          });
+          
+        }
+
+        if(this.different_result_04_element.length != 0){
+          $.ajax({
+            type: 'GET',
+            data: {},
+            url: 'http://test.gryphontea.com/magento/discovertea/index?id=' + different_final_results[3].id,
+            complete: this.on_different_result_04_complete.bind(this)
+          });
+        }
+
+
+        
+
+
+
+      } // this.has_created_results
+
 
     },
 
     reset_questions: function() {
+
+      this.has_created_results = false;
+      this.has_no_similar = false;
 
       this.is_question_01_disabled = false;
       this.is_question_02_disabled = false;
       this.is_question_03_disabled = false;
       this.is_question_04_disabled = false;
       this.is_question_05_disabled = false;
+
+      this.is_question_01_visible = true;
+      this.is_question_02_visible = false;
+      this.is_question_03_visible = false;
+      this.is_question_04_visible = false;
+      this.is_question_05_visible = false;
 
       this.question_01_answer = "none";
       this.question_02_answer = [];
@@ -506,6 +714,7 @@ if (!Array.prototype.indexOf) {
       this.question_02_gift_element.slideUp(500);
 
       this.result_container_element.slideUp(500);
+      this.result_monthly_element.slideUp(500);
 
 
       var header_height = $("#header-wrapper").height();
@@ -536,6 +745,8 @@ if (!Array.prototype.indexOf) {
 
       console.log("target_y: " + target_y);
       this.scroll_to(target_y);
+
+      this.is_question_02_visible = true;
     },
     display_question_02_gift: function(){
       this.question_02_gift_element.slideDown(500);
@@ -555,6 +766,25 @@ if (!Array.prototype.indexOf) {
       var padding_top = 45;
       var target_y = this.question_03_element.offset().top - header_height - padding_top;
       this.scroll_to(target_y);
+
+      this.is_question_03_visible = true;
+    },
+    hide_question_03: function(){
+      this.question_03_element.slideUp(500);
+      this.question_04_element.slideUp(500);
+      this.question_05_element.slideUp(500);
+
+      this.question_03_answer = "none";
+      this.question_04_answer = [];
+      this.question_05_answer = "none";
+
+      this.question_03_buttons.removeClass('selected not-selected disabled');
+      this.question_04_buttons.removeClass('selected not-selected disabled');
+      this.question_05_buttons.removeClass('selected not-selected disabled');
+
+      this.is_question_03_visible = false;
+      this.is_question_04_visible = false;
+      this.is_question_05_visible = false;
     },
     display_question_04: function(){
       this.question_04_element.slideDown(500);
@@ -563,6 +793,8 @@ if (!Array.prototype.indexOf) {
       var padding_top = 45;
       var target_y = this.question_04_element.offset().top - header_height - padding_top;
       this.scroll_to(target_y);
+
+      this.is_question_04_visible = true;
     },
     display_question_05: function(){
       this.question_05_element.slideDown(500);
@@ -571,7 +803,20 @@ if (!Array.prototype.indexOf) {
       var padding_top = 45 + 200;
       var target_y = this.question_05_element.offset().top - header_height - padding_top;
       this.scroll_to(target_y);
+
+      this.is_question_05_visible = true;
     },
+    hide_question_05: function(){
+      this.question_05_element.slideUp(500);
+
+      this.question_05_answer = "none";
+
+      this.question_05_buttons.removeClass('selected not-selected disabled');
+
+      this.is_question_05_visible = false;
+    },
+
+    /*
     display_results_question: function(){
       this.result_question_element.slideDown(500);
 
@@ -580,13 +825,51 @@ if (!Array.prototype.indexOf) {
       var target_y = this.question_05_element.offset().top - header_height - padding_top;
       this.scroll_to(target_y);
     },
-    display_results_container: function(){
-      this.result_container_element.slideDown(500);
-    },
-
     hide_results_question: function(){
       this.result_question_element.slideUp(500);
     },
+    */
+
+    display_results_container: function(){
+      this.result_container_element.slideDown(500);
+
+      var header_height = $("#header-wrapper").height();
+      var padding_top = 0;
+      var target_y = this.question_05_element.offset().top - header_height - padding_top;
+      this.scroll_to(target_y);
+    },
+    hide_results_container: function(){
+      this.result_container_element.slideUp(500);
+    },
+
+
+    display_results_montly: function(){
+      this.result_monthly_element.slideDown(500);
+
+      var header_height = $("#header-wrapper").height();
+      var padding_top = 0;
+      var target_y = this.question_05_element.offset().top - header_height - padding_top;
+      this.scroll_to(target_y);
+    },
+    hide_results_montly: function(){
+      this.result_monthly_element.slideUp(500);
+    },
+
+
+    show_similar: function(){
+      this.similar_container.slideDown(500);
+      this.different_container.slideUp(500);
+
+      if(this.has_no_similar == true){
+        this.similar_aroma_container.slideDown(500);
+      }
+    },
+    show_different: function(){
+      this.similar_container.slideUp(500);
+      this.different_container.slideDown(500);
+      this.similar_aroma_container.slideUp(500);
+    },
+    
 
 
     //       _    ____ ___   _______     _______ _   _ _____ ____  
@@ -617,6 +900,31 @@ if (!Array.prototype.indexOf) {
       this.result_04_element.find('.results-item-image a').append(image_str);
     },
 
+
+
+    on_different_result_01_complete: function(event){
+      var data = JSON.parse(event['responseText']);
+      var image_str = '<img src="' + 'http://test.gryphontea.com/magento/media/catalog/product' + data.image + '">'
+      this.different_result_01_element.find('.results-item-image a').append(image_str);
+    },
+    on_different_result_02_complete: function(event){
+      var data = JSON.parse(event['responseText']);
+      var image_str = '<img src="' + 'http://test.gryphontea.com/magento/media/catalog/product' + data.image + '">'
+      this.different_result_02_element.find('.results-item-image a').append(image_str);
+    },
+    on_different_result_03_complete: function(event){
+      var data = JSON.parse(event['responseText']);
+      var image_str = '<img src="' + 'http://test.gryphontea.com/magento/media/catalog/product' + data.image + '">'
+      this.different_result_03_element.find('.results-item-image a').append(image_str);
+    },
+    on_different_result_04_complete: function(event){
+      var data = JSON.parse(event['responseText']);
+      var image_str = '<img src="' + 'http://test.gryphontea.com/magento/media/catalog/product' + data.image + '">'
+      this.different_result_04_element.find('.results-item-image a').append(image_str);
+    },
+
+
+
     //        _ ____   ___  _   _   _______     _______ _   _ _____ ____  
     //       | / ___| / _ \| \ | | | ____\ \   / / ____| \ | |_   _/ ___| 
     //    _  | \___ \| | | |  \| | |  _|  \ \ / /|  _| |  \| | | | \___ \ 
@@ -629,6 +937,36 @@ if (!Array.prototype.indexOf) {
 
       console.log('on_json_load_complete');
       console.log(this.data_array);
+
+      var data_object = null;
+      var q2_index = -1;
+      var q4_index = -1;
+
+      for (var i = 0, l = this.data_array.length; i < l; i++) {
+        data_object = this.data_array[i];
+
+        q2_index = this.question_02_possible_answers.indexOf(data_object.category);
+        if (q2_index == -1) {
+          this.question_02_possible_answers[this.question_02_possible_answers.length] = "" + data_object.category;
+        }
+
+        for (var j = 0, jl = data_object.aroma.length; j < jl; j++) {
+          q4_index = this.question_04_possible_answers.indexOf(data_object.aroma[j]);
+          if(q4_index == -1){
+            this.question_04_possible_answers[this.question_04_possible_answers.length] = "" + data_object.aroma[j];
+          }
+        }
+
+      }
+
+      console.log('this.question_02_possible_answers');
+      console.log(this.question_02_possible_answers);
+
+      console.log('this.question_04_possible_answers');
+      console.log(this.question_04_possible_answers);
+
+
+      
     },
 
     //    __  __  ___  _   _ ____  _____   _______     _______ _   _ _____ ____  
@@ -680,10 +1018,32 @@ if (!Array.prototype.indexOf) {
           if(this.question_02_answer.length <= 2){
             target.addClass('selected');
             this.question_02_answer[this.question_02_answer.length] = answer;
+
+            var icon = target.find('.tea-category-image');
+
+            TweenMax.to(icon, 0.5, {scaleX: 1.05, scaleY: 1.05, ease: Back.easeOut});
+            TweenMax.to(icon, 0.2, {scaleX: 1.0, scaleY: 1.0, ease: Quart.easeIn, delay: 0.5});
           }
 
-          TweenMax.killDelayedCallsTo(this.display_question_03);
-          TweenMax.delayedCall(2, this.display_question_03, [], this);
+
+
+          if(this.question_02_answer.length == 3){
+
+
+            if(this.is_question_03_visible == false){
+              TweenMax.killDelayedCallsTo(this.display_question_03);
+              this.display_question_03();
+            }
+
+          } else {
+
+            if(this.is_question_03_visible == false){
+              TweenMax.killDelayedCallsTo(this.display_question_03);
+              TweenMax.delayedCall(2, this.display_question_03, [], this);
+            }
+
+          }
+
 
           //this.display_question_03();
           
@@ -710,8 +1070,16 @@ if (!Array.prototype.indexOf) {
 
         } else {
           // deselect answer
-          this.question_02_answer.splice(answer_index);
+          
+          this.question_02_answer.splice(answer_index, 1);
           target.removeClass('selected');
+
+          if(this.question_02_answer.length == 0){
+            TweenMax.killDelayedCallsTo(this.display_question_03);
+            this.hide_question_03();
+          }
+
+
         }
 
 
@@ -730,11 +1098,15 @@ if (!Array.prototype.indexOf) {
         console.log('Question 03: ' + this.question_03_answer);
 
         //this.question_03_buttons.addClass('disabled not-selected');
+        this.question_03_buttons.removeClass('selected');
         this.question_03_buttons.addClass('not-selected');
         target.removeClass('not-selected').addClass('selected');
 
         //this.is_question_03_disabled = true;
-        this.display_question_04();
+        if(this.is_question_04_visible == false){
+          this.display_question_04();
+        }
+
       }
 
     },
@@ -752,6 +1124,11 @@ if (!Array.prototype.indexOf) {
           if(this.question_04_answer.length <= 2){
             target.addClass('selected');
             this.question_04_answer[this.question_04_answer.length] = answer;
+
+            var icon = target.find('.icon');
+
+            TweenMax.to(icon, 0.5, {scaleX: 1.3, scaleY: 1.3, ease: Back.easeOut});
+            TweenMax.to(icon, 0.2, {scaleX: 1.0, scaleY: 1.0, ease: Quart.easeIn, delay: 0.5});
           }
         
           /*
@@ -773,14 +1150,28 @@ if (!Array.prototype.indexOf) {
           }
           */
          
-          //this.display_question_05();
-          TweenMax.killDelayedCallsTo(this.display_question_05);
-          TweenMax.delayedCall(2, this.display_question_05, [], this);
+          
+          if (this.question_04_answer.length == 3) {
+            
+            TweenMax.killDelayedCallsTo(this.display_question_05);
+            this.display_question_05();
+
+          } else {
+            TweenMax.killDelayedCallsTo(this.display_question_05);
+            TweenMax.delayedCall(2, this.display_question_05, [], this);
+            
+          }
+
 
         } else {
           // deselect answer
-          this.question_04_answer.splice(answer_index);
+          this.question_04_answer.splice(answer_index, 1);
           target.removeClass('selected');
+
+          if(this.question_04_answer.length == 0){
+            TweenMax.killDelayedCallsTo(this.display_question_05);
+            this.hide_question_05();
+          }
         }
 
 
@@ -798,15 +1189,49 @@ if (!Array.prototype.indexOf) {
 
         console.log('Question 05: ' + this.question_05_answer);
 
-        this.question_05_buttons.addClass('disabled not-selected');
+
+        //this.question_05_buttons.addClass('disabled not-selected');
+        
+        this.question_05_buttons.removeClass('selected');
+        this.question_05_buttons.addClass('not-selected');
         target.removeClass('not-selected').addClass('selected');
 
-        this.is_question_05_disabled = true;
-        this.display_results_question();
+        this.create_results();
+
+        switch(this.question_05_answer) {
+          case "similar":
+            this.show_similar();
+            this.display_results_container();
+            this.hide_results_montly();
+            break;
+          case "different":
+            this.show_different();
+            this.display_results_container();
+            this.hide_results_montly();
+            break;
+          case "monthly":
+            this.hide_results_container();
+            this.display_results_montly();
+            break;
+        }
+        
+
+        //this.is_question_05_disabled = true;
+        
+        /*
+        if(this.question_05_answer == "monthly"){
+          this.hide_results_question();
+          this.display_results_montly();
+
+        } else {
+          this.display_results_question();
+          this.hide_results_montly();
+        }
+        */
       }
     },
 
-
+    /*
     on_get_results_button_click: function(event) {
       event.preventDefault();
 
@@ -815,6 +1240,7 @@ if (!Array.prototype.indexOf) {
       this.create_results();
       this.display_results_container();
     },
+    */
 
     on_restart_button_click: function(event){
       event.preventDefault();

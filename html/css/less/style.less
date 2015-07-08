@@ -10386,8 +10386,20 @@ div#footer-wrapper {
 
 
     .first-content{
-      padding-top: 52px;
-      padding-bottom: 65px + 7px;
+
+      &:before{
+        content: "";
+        display: block;
+        height: 52px;
+      }
+      &:after{
+        content: "";
+        display: block;
+        height: 72px;
+      }
+
+      //padding-top: 52px;
+      //padding-bottom: 65px + 7px;
       background-color: @skin;
 
       .center {
@@ -10412,8 +10424,20 @@ div#footer-wrapper {
 
 
     .second-content{
-      padding-top: 65px + 6px;
-      padding-bottom: 65px - 20px;
+
+      &:before{
+        content: "";
+        display: block;
+        height: 71px;
+      }
+      &:after{
+        content: "";
+        display: block;
+        height: 45px;
+      }
+
+      //padding-top: 65px + 6px;
+      //padding-bottom: 65px - 20px;
 
       .for-who-container{
         font-size: 0;
@@ -10496,7 +10520,13 @@ div#footer-wrapper {
 
 
     .third-content{
-      padding-bottom: 65px - 19px;
+      //padding-bottom: 65px - 19px;
+      &:after{
+        content: "";
+        display: block;
+        height: 46px;
+      }
+
       display: none;
 
       .tea-category-top{
@@ -10652,7 +10682,12 @@ div#footer-wrapper {
 
 
     .forth-content{
-      padding-bottom: 65px - 20px;
+      &:after{
+        content: "";
+        display: block;
+        height: 45px;
+      }
+      //padding-bottom: 65px - 20px;
       display: none;
 
       .tea-type-top{
@@ -10790,7 +10825,14 @@ div#footer-wrapper {
     } // .forth-content
 
     .fifth-content{
-      padding-bottom: 25px - 7px;
+
+      &:after{
+        content: "";
+        display: block;
+        height: 18px;
+      }
+
+      //padding-bottom: 25px - 7px;
       display: none;
 
       .tea-aroma-top{
@@ -10831,6 +10873,8 @@ div#footer-wrapper {
         padding-top: 41px;
 
         cursor: pointer;
+
+        //-webkit-perspective: 1000;    // fix for font blurring...
 
         .transition(0.2s);
 
@@ -10908,8 +10952,19 @@ div#footer-wrapper {
 
     .sixth-content{
       background: @skin;
-      padding-top: 65px + 3px;
-      padding-bottom: 65px + 6px;
+      //padding-top: 65px + 3px;
+      //padding-bottom: 65px + 6px;
+
+      &:before{
+        content: "";
+        display: block;
+        height: 68px;
+      }
+      &:after{
+        content: "";
+        display: block;
+        height: 71px;
+      }
 
       display: none;
 
@@ -10955,6 +11010,8 @@ div#footer-wrapper {
 
         cursor: pointer;
         .transition(0.2s);
+
+
 
         h4{
           color: #464646;
@@ -11039,13 +11096,20 @@ div#footer-wrapper {
     .seventh-content{
       
 
-      .results-item-top{
+      .results-item-top,
+      .results-item-monthly{
         font-size: 0;
         text-align: center;
 
         display: none;
 
-        padding-top: 65px;
+        &:before{
+          content: "";
+          display: block;
+          height: 65px;
+        }
+
+        //padding-top: 65px;
 
         hr.small{
           margin-left: auto;
@@ -11054,6 +11118,40 @@ div#footer-wrapper {
 
       }
 
+      #result-item-container-similar-aroma{
+        display: none;
+        text-align: center;
+        hr.small{
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      #result-item-container-similar,
+      #result-item-container-different{
+        text-align: center;
+
+        .col-md-3{
+          float: none;
+          display: inline-block;
+          vertical-align: top;
+
+        }
+      }
+      #result-item-container-similar{
+        display: none;
+
+        h1{
+          .gotham-medium;
+          font-size: 15px;
+          line-height: 20px;
+          letter-spacing: 0.03em;
+          text-transform: uppercase;
+        }
+      }
+      #result-item-container-different{
+        display: none;
+      }
 
 
       #get-results-button{
@@ -11083,9 +11181,50 @@ div#footer-wrapper {
 
       }
 
+      .cta-container{
+        text-align: center;
+        font-size: 0;
+        padding-top: 80px;
+
+        .final-cta-button{
+          .gotham-medium;
+          font-size: 11px;
+          line-height: 16px;
+          color: @white;
+          padding: 7px 0px;
+          background-color: @dark-grey;
+          border: none;
+          text-transform: none;
+          text-align: center;
+
+          display: inline-block;
+          vertical-align: top;
+
+          width: 214px;
+          cursor: pointer;
+
+          margin-right: 58px;
+
+          &:last-child{
+            margin-right: 0px;
+          }
+
+          &:hover{
+            background-color: @dark-orange;
+          }
+        }
+      }
+
       #results-item-container{
         display: none; 
-        padding-top: 65px;
+        //padding-top: 65px;
+
+        &:before{
+          content: "";
+          display: block;
+          height: 65px;
+        }
+
       }
 
       .results-item{
@@ -11125,8 +11264,14 @@ div#footer-wrapper {
           margin: 0 auto;
           margin-bottom: 22px;
           width: 207px;
+
+          min-height: 140px;
+
           display: block;
 
+          a{
+            display: block;
+          }
           img{
             display: block;
             width: 100%;
