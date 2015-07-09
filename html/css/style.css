@@ -386,6 +386,12 @@ body {
 .slick-track {
   margin: 0 auto;
 }
+ul.messages {
+  border: 1px solid #ae4e0e !important;
+  color: #ae4e0e !important;
+  margin: 0 auto!important;
+  margin-bottom: 5px!important;
+}
 #page-wrapper {
   height: 100%;
   position: relative;
@@ -2149,14 +2155,22 @@ div.product .main-product .gift-card-img {
   border: 1px solid #cccccc;
   height: 747px;
 }
+div.product .main-product .gift-card-img .giftcard-product-media {
+  float: none!important;
+  width: auto!important;
+  height: auto!important;
+}
 div.product .main-product .gift-card-img .vcenter {
   display: table;
   width: 100%;
   height: 747px;
+  float: none!important;
 }
 div.product .main-product .gift-card-img .vcenter .vcenter2 {
   display: table-cell;
   vertical-align: middle;
+  position: static!important;
+  height: 100%!important;
 }
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01,
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 {
@@ -2175,12 +2189,16 @@ div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 img 
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext,
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext {
   position: absolute;
-  top: 114px;
+  top: 200px;
   left: 76px;
   width: 300px;
   height: 420px;
   text-align: center;
   color: #ffffff;
+}
+div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext.white,
+div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext.white {
+  color: #ae4e0e !important;
 }
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-intro,
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-intro {
@@ -2410,6 +2428,14 @@ div.product .main-product .gift-card-content hr.small {
   margin-top: 9px;
   margin-bottom: 14px;
 }
+div.product .main-product .gift-card-content .price {
+  font-family: "minion-pro", Verdana, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 28px;
+  letter-spacing: 0.1em;
+}
 div.product .main-product .gift-card-content .desc-title {
   font-family: 'Gotham-Bold', Verdana, sans-serif;
   font-weight: 500;
@@ -2433,9 +2459,51 @@ div.product .main-product .gift-card-content button.add-to-cart {
   font-weight: 200;
   font-style: normal;
   margin-top: 20px;
+  float: right;
 }
 div.product .main-product .gift-card-content button.add-to-cart:hover {
   background-color: #ae4e0e;
+}
+div.product .main-product .gift-card-content .italic {
+  font-family: "minion-pro", Verdana, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 13.5px;
+  line-height: 22px;
+}
+div.product .main-product .gift-card-content .ajax_msg {
+  float: right;
+  margin-top: 25px;
+  margin-right: 15px;
+  color: #ae4e0e;
+}
+div.product .main-product .gift-card-content #ajax_loader {
+  float: right;
+  margin-top: 26px;
+  margin-right: 8px;
+  vertical-align: top;
+  display: inline-block;
+}
+div.product .main-product .gift-card-content #ajax_loader img {
+  width: 20px;
+}
+div.product .main-product .gift-card-content .validation-advice {
+  margin-left: 140px;
+}
+div.product .main-product .gift-card-content p.j2t-loyalty-points {
+  font-family: "minion-pro", Verdana, sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 13px;
+  line-height: 19px;
+  color: #ae4e0e;
+  position: absolute;
+  top: -25px;
+  text-align: center;
+  width: 100%;
+  left: 5px;
+  text-transform: capitalize;
+  display: none;
 }
 div.product .main-product .gift-card-content .inputs {
   margin-top: 15px;
@@ -2538,7 +2606,7 @@ div.product .main-product .gift-card-content .inputs .each-input textarea {
   background: #f6f4f1;
   border: none;
   padding: 5px 0 5px 15px;
-  width: 281px;
+  width: 281px!important;
 }
 @media all and (max-width: 470px) {
   div.product .main-product .gift-card-content .inputs .each-input input[type="text"],
@@ -2597,7 +2665,7 @@ div.product .main-product .gift-card-content .inputs .each-input .quantity-conta
   padding-right: 3px;
 }
 div.product .main-product .gift-card-content .inputs .each-input input[type="text"].short {
-  width: 57px;
+  width: 57px!important;
 }
 div.product .main-product .gift-card-content .inputs .each-input span.orange {
   font-family: "minion-pro", Verdana, sans-serif;
@@ -2666,6 +2734,9 @@ div.product .main-product .gift-card-content .inputs .each-input .design-radio {
   position: relative;
   left: -5px;
   margin-right: 15px;
+}
+div.product .main-product .gift-card-content .inputs .each-input .design-radio.gift-active {
+  border: none!important;
 }
 div.product .main-product .gift-card-content .inputs .each-input .design-radio input[type=radio] {
   width: 80px;
@@ -2737,7 +2808,7 @@ div.product .main-product .gift-card-content .inputs .each-input .dropdown-conta
   padding-left: 45px;
 }
 div.product .main-product .gift-card-content .inputs .each-input .dropdown-container select {
-  width: 100%;
+  width: 100%!important;
 }
 div.product .main-product .gift-card-content .inputs .each-input .dropdown-container input[type="text"] {
   width: 100%;
@@ -5313,6 +5384,10 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .cart #confirmation .table tbody tr td .image-text-container p.product-title a:hover {
   color: #ae4e0e;
 }
+.cart #cart .table tbody tr td .image-text-container .item-options,
+.cart #confirmation .table tbody tr td .image-text-container .item-options {
+  display: none;
+}
 .cart #cart .table tbody tr td .image-text-container p,
 .cart #confirmation .table tbody tr td .image-text-container p {
   font-family: "minion-pro", Verdana, sans-serif;
@@ -5880,6 +5955,9 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   line-height: 16px;
   color: #464646;
 }
+.cart #confirmation .item-options {
+  display: none;
+}
 .cart #billing_shipping {
   padding-left: 50px;
   padding-right: 50px;
@@ -6090,6 +6168,38 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
     margin-top: 60px;
   }
 }
+.account .sidebar .block-content ul li {
+  background: none!important;
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 11px;
+  line-height: 21px;
+  letter-spacing: 0.05em;
+  padding: 5px 0px!important;
+  text-transform: uppercase;
+  color: #707070;
+}
+.account .sidebar .block-content ul li strong {
+  color: #707070;
+}
+.account .sidebar .block-content ul li.current {
+  color: #ae4e0e;
+}
+.account .sidebar .block-content ul li.current strong {
+  color: #ae4e0e;
+}
+.account .sidebar .block-content ul li a {
+  color: #707070;
+}
+.account .sidebar .block-content ul li a:hover {
+  color: #ae4e0e;
+  font-weight: bold;
+}
+.account .col-main {
+  border-left: 1px solid #ccc;
+  padding-left: 8.3%;
+}
 .account h1 {
   font-size: 15px;
   font-family: 'Gotham-Medium', Verdana, sans-serif;
@@ -6124,8 +6234,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   color: #ae4e0e;
 }
 .account .first-content {
-  padding: 50px 0;
-  background-color: #f6f4f1;
+  padding: 17px 0;
 }
 .account .account-details #action-col,
 .account .account-details-saved #action-col {
@@ -6160,6 +6269,15 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .account .account-details hr.small,
 .account .account-details-saved hr.small {
   /*margin-top: 15px;*/
+}
+.account .account-details .image-text-content,
+.account .account-details-saved .image-text-content {
+  position: relative;
+}
+.account .account-details .image-text-content #my-rewardpoints-table,
+.account .account-details-saved .image-text-content #my-rewardpoints-table {
+  position: absolute;
+  top: 185px;
 }
 .account .account-details .each-input,
 .account .account-details-saved .each-input {
@@ -6202,12 +6320,18 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   line-height: 19px;
   color: #464646;
 }
-.account .account-details .each-input a.email,
-.account .account-details-saved .each-input a.email {
+.account .account-details .each-input p.loyalty-point,
+.account .account-details-saved .each-input p.loyalty-point {
+  font-size: 18px!important;
+  line-height: 26px;
+  color: #ae4e0e;
+}
+.account .account-details .each-input a,
+.account .account-details-saved .each-input a {
   color: #464646;
 }
-.account .account-details .each-input a.email:hover,
-.account .account-details-saved .each-input a.email:hover {
+.account .account-details .each-input a:hover,
+.account .account-details-saved .each-input a:hover {
   color: #ae4e0e;
 }
 .account .account-details .each-input input[type="checkbox"],
@@ -6219,14 +6343,14 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .account .account-details .each-input input[type="password"],
 .account .account-details-saved .each-input input[type="password"] {
   height: 28px;
-  background-color: #ffffff;
+  background-color: #f6f4f1;
   border: none;
   padding-left: 11px;
   font-family: 'Gotham-Book', Verdana, sans-serif;
   font-weight: 200;
   font-style: normal;
   font-size: 11px;
-  width: 240px;
+  width: 100%;
   display: block;
   color: #252525;
 }
@@ -6240,6 +6364,10 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   width: 159px;
   margin-left: 82px;
 }
+.account .account-details .each-input .address select,
+.account .account-details-saved .each-input .address select {
+  width: 100%!important;
+}
 .account .account-details .each-input .intl-tel-input .flag-dropdown,
 .account .account-details-saved .each-input .intl-tel-input .flag-dropdown {
   display: block;
@@ -6247,7 +6375,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   width: 76px;
   height: 28px;
   padding: 1px;
-  background-color: #ffffff;
+  background-color: #f6f4f1;
   margin-right: 24px;
 }
 .account .account-details .each-input .intl-tel-input .selected-flag,
@@ -6266,7 +6394,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .account .account-details .each-input select,
 .account .account-details-saved .each-input select {
-  background-color: #ffffff;
+  background-color: #f6f4f1;
   border: none;
   width: 77px;
   height: 28px;
@@ -6292,7 +6420,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .account .account-details .each-input .address_input,
 .account .account-details-saved .each-input .address_input {
-  width: 333px!important;
+  width: 100%!important;
 }
 .account .account-details .each-input .address_input:nth-of-type(2),
 .account .account-details-saved .each-input .address_input:nth-of-type(2) {
@@ -6300,27 +6428,45 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .account .account-details .each-input .column-1,
 .account .account-details-saved .each-input .column-1 {
-  float: left;
-  margin-right: 20px;
+  display: inline-block;
+  width: 130px;
+  margin-right: 8px;
+}
+.account .account-details .each-input .column-1 input,
+.account .account-details-saved .each-input .column-1 input {
+  width: 100%!important;
 }
 .account .account-details .each-input .column-1 select,
 .account .account-details-saved .each-input .column-1 select {
-  width: 159px;
+  width: 100%;
+}
+.account .account-details .each-input .column-2,
+.account .account-details-saved .each-input .column-2 {
+  display: inline-block;
+  width: 134px;
 }
 .account .account-details .each-input .column-2 select,
 .account .account-details-saved .each-input .column-2 select {
-  width: 159px;
+  width: 100%;
 }
 .account .account-details .each-input .column-2 input,
 .account .account-details-saved .each-input .column-2 input {
-  width: 159px;
+  width: 100%;
+}
+.account .account-details .edit-address-form .each-input .field,
+.account .account-details-saved .edit-address-form .each-input .field {
+  margin-bottom: 25px;
+}
+.account .account-details .edit-address-form .each-input .field .additional-address,
+.account .account-details-saved .edit-address-form .each-input .field .additional-address {
+  margin-top: 48px;
 }
 .account .account-details .label-text,
 .account .account-details-saved .label-text {
   text-transform: uppercase;
-  font-family: 'Gotham-Medium', Verdana, sans-serif;
-  font-weight: 200;
-  font-style: normal;
+  font-family: 'Gotham-Medium', Verdana, sans-serif !important;
+  font-weight: 200 !important;
+  font-style: normal !important;
   font-size: 11px;
   line-height: 18px;
   letter-spacing: 0.03em;
@@ -6347,7 +6493,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   margin-top: 10px;
   padding: 7px 30px;
   background: #252525;
-  color: #ffffff;
+  color: #ffffff !important;
   text-transform: none;
   text-shadow: none;
 }
@@ -6362,7 +6508,9 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   background-color: #ae4e0e;
 }
 .account .account-details .save-btn,
-.account .account-details-saved .save-btn {
+.account .account-details-saved .save-btn,
+.account .account-details .cta,
+.account .account-details-saved .cta {
   font-family: 'Gotham-Medium', Verdana, sans-serif;
   font-weight: 200;
   font-style: normal;
@@ -6377,25 +6525,46 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   color: #ffffff;
   text-transform: none;
   text-shadow: none;
+  border: none;
 }
 @media all and (max-width: 992px) {
   .account .account-details .save-btn,
-  .account .account-details-saved .save-btn {
+  .account .account-details-saved .save-btn,
+  .account .account-details .cta,
+  .account .account-details-saved .cta {
     float: none;
     margin-top: 25px;
   }
 }
 .account .account-details .save-btn:hover,
-.account .account-details-saved .save-btn:hover {
+.account .account-details-saved .save-btn:hover,
+.account .account-details .cta:hover,
+.account .account-details-saved .cta:hover {
   background-color: #ae4e0e;
 }
+.account .account-details .save-btn,
+.account .account-details-saved .save-btn {
+  margin-right: 5px;
+}
+.account .account-details label.checkbox-label .label-text,
+.account .account-details-saved label.checkbox-label .label-text {
+  font-family: "minion-pro", Verdana, sans-serif !important;
+  font-weight: 500 !important;
+  font-style: italic !important;
+  font-weight: 600!important;
+  display: inline-block;
+  line-height: 18px!important;
+  color: #464646!important;
+  vertical-align: top;
+  height: 13px!important;
+  font-size: 13px!important;
+  letter-spacing: 0.03em!important;
+}
 .account .order-history {
+  padding: 20px 0px!important;
   /*padding-top: 131px;*/
   padding-top: 98px;
   padding-bottom: 121px;
-}
-.account .order-history .order-history-heading {
-  margin-bottom: 30px;
 }
 .account .order-history hr.small {
   /*margin-top: 15px;*/
@@ -6515,8 +6684,9 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .account .order-history .order-headers .order-no,
 .account .order-history .order-headers .order-date {
-  padding-left: 15px!important;
-  padding-right: 15px!important;
+  padding-left: 5px!important;
+  padding-right: 5px!important;
+  text-align: center;
 }
 .account .order-history .order-headers .order-qty {
   text-align: center;
@@ -6540,6 +6710,15 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .account .order-history .order-content .align-to-total {
   /*padding-left: 41px;*/
   padding-left: 116px;
+}
+.account .order-history .order-content .view-order-details .align-to-total {
+  padding-left: 93px;
+}
+.account .order-history .order-content .align-to-total-2 {
+  padding-left: 93px;
+}
+.account .order-history .order-content .extra-content .align-to-total {
+  padding-left: 55px;
 }
 .account .order-history .order-content .align-to-button {
   text-align: right;
@@ -6758,7 +6937,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   border-bottom: 1px solid #ccc;
 }
 .account .billing-and-shipping {
-  margin-top: 115px;
+  margin-top: 20px;
 }
 @media all and (max-width: 992px) {
   .account .billing-and-shipping .shipping-address {
