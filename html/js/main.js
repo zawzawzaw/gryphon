@@ -207,4 +207,6 @@ $(document).ready(function(){
     //         $('.product-image > a img').removeClass('hover');
     //     }
     // );
+
+    
 });
