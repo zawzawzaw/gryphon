@@ -11364,20 +11364,13 @@ div#footer-wrapper {
     .transition();
   }
 
-  #page-wrapper .slider-wrapper{
-    margin-top: 46px !important;
-
-
-  }
   
-}
+  
+} // @media (max-width: 991px)
 
 html{
   position: relative;
 }
-
-
-
 
 #mobile-header-wrapper{
   position: fixed;
@@ -11890,6 +11883,156 @@ html{
     }
   }
 }
+
+
+//    __  __  ___  ____ ___ _     _____    ____ _____ _   _ _____ ____      _    _     
+//   |  \/  |/ _ \| __ )_ _| |   | ____|  / ___| ____| \ | | ____|  _ \    / \  | |    
+//   | |\/| | | | |  _ \| || |   |  _|   | |  _|  _| |  \| |  _| | |_) |  / _ \ | |    
+//   | |  | | |_| | |_) | || |___| |___  | |_| | |___| |\  | |___|  _ <  / ___ \| |___ 
+//   |_|  |_|\___/|____/___|_____|_____|  \____|_____|_| \_|_____|_| \_\/_/   \_\_____|
+//                                                                                     
+
+@media (max-width: 991px) {
+  h1 {
+    .gotham-medium;
+    font-size: 11px;
+    line-height: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+
+  hr.small {
+    width: 17px !important;
+    border-top: 2px solid @dark-orange;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+  }
+  p {
+    .gotham-book;
+    font-size: 10px;
+    line-height: 18px;
+    color: @new-grey;
+    letter-spacing: 0.03em;
+  }
+}
+
+
+
+//    __  __  ___  ____ ___ _     _____   _   _  ___  __  __ _____   ____   _    ____ _____ 
+//   |  \/  |/ _ \| __ )_ _| |   | ____| | | | |/ _ \|  \/  | ____| |  _ \ / \  / ___| ____|
+//   | |\/| | | | |  _ \| || |   |  _|   | |_| | | | | |\/| |  _|   | |_) / _ \| |  _|  _|  
+//   | |  | | |_| | |_) | || |___| |___  |  _  | |_| | |  | | |___  |  __/ ___ \ |_| | |___ 
+//   |_|  |_|\___/|____/___|_____|_____| |_| |_|\___/|_|  |_|_____| |_| /_/   \_\____|_____|
+//                                                                                          
+
+
+@media (max-width: 991px) {
+
+  #page-wrapper .slider-wrapper{
+    margin-top: 46px !important;
+    height: 229px + 24px;              // plus height of marquee.
+  }
+
+  #page-wrapper .slider-wrapper{
+    div.item div.carousel-caption div.caption-text{
+      h1{
+        font-size: 18px;
+        line-height: 25px;
+        margin-top: -28px;
+        margin-bottom: 16px;
+      }
+      h3{
+        .gotham-medium;
+        font-size: 9px;
+        line-height: 13px;
+      }
+      a{
+        font-size: 6px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: @white;
+
+        background: transparent;
+        border: 1px solid @white;
+        padding: 1px 7px;
+        margin-top: 12px;
+
+      }
+    }
+  }
+
+
+  div.home{
+    .text-content{
+      padding-top: 32px;
+      padding-bottom: 34px;
+
+      h1{
+        .gotham-medium;
+        font-size: 11px;
+        line-height: 16px;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+      p{
+        .gotham-book;
+        font-size: 10px;
+        line-height: 17px;
+        color: @new-grey;
+        letter-spacing: 0.03em;
+
+        margin: 0 11px;
+      }
+      hr.small{
+        margin-bottom: 8px!important;
+      }
+    }
+
+    #popular-products{
+      .image-text-content{
+        padding-top: 30px;
+        padding-bottom: 0px;    // need to remove 42 more
+
+        h1{
+          .gotham-medium;
+          font-size: 11px;
+          line-height: 16px;
+          text-transform: uppercase;
+          letter-spacing: 0.03em;
+        }
+
+        .center-text{
+          margin-bottom: 0;
+          //width: 100px;
+
+          p.caption{
+            font-size: 12px;
+
+            margin-top: 17px;
+          }
+          p.caption-2{
+            margin-top: -3px;
+            margin-bottom: -3px;
+          }
+        }
+
+      }
+
+      
+      .slick-slider{
+        margin-bottom: 0;
+      }
+
+    } // #popular-products
+
+
+  } // div.home
+
+} // @media (max-width: 991px)
+
+
+
 
 
 //////////////////////////////////////////////////////////////////////////////////////

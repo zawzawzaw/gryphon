@@ -38,6 +38,13 @@
     this.menu_open_state = "close";
     this.account_open_state = "close";
 
+    this.window = $(window);
+
+    // move the element
+    $('body').prepend($("#mobile-header-wrapper"));
+
+    
+
     this.init();
   }
 
@@ -61,6 +68,8 @@
 
       //$(window).on('scroll', this.on_window_scroll.bind(this));
       //$("#page-wrapper").on('scroll', this.on_window_scroll.bind(this));
+      
+      this.window.resize(this.on_window_resize.bind(this));
 
     },
 
@@ -134,6 +143,19 @@
         this.initial_scroll = true;
         this.marquee_container.slideUp(500);
       }
+    },
+
+    on_window_resize: function(){
+      var window_width = this.window.width();
+
+
+      if(window_width <= 991){
+        // if mobile
+      } else {
+        // if desktop
+        this.close_menu();
+      }
+
     },
 
     //    __  __  ___  _   _ ____  _____   _______     _______ _   _ _____ 
