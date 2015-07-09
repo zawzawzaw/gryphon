@@ -1,4 +1,38 @@
-	<div id="footer-wrapper" class="fixed-footer"><!-- container-fluid -->
+	
+	<div id="mobile-footer-wrapper" class="visible-xs visible-sm">
+		
+		<div id="mobile-header-footer-copy" class="mobile-footer">
+			<h2>newsletter sign up</h2>
+			<hr class="small">
+			<p>By signing up the Gryphon newsletter, be the first one to hear about our special offers, new arrivals, latest news and trends and other events.</p>
+
+			<div class="search">
+				<input type="text" name="search" placeholder="Enter your email address" />
+				<button class="signup"><i class="fa fa-check"></i> <span>Sign up</span></button>
+			</div>
+
+			<hr class="dotted">
+
+			<h2>FOLLOW US</h2>
+			<hr class="small">
+			<ul class="share-ctas">
+				<li><a href="#" class="instagram"></a></li>
+				<li><a href="#" class="pintrest"></a></li>
+				<li><a href="#" class="twitter"></a></li>
+				<li><a href="#" class="facebook"></a></li>
+			</ul>
+
+			<div class="copywrite">
+				<h6>&copy; 2013 GRYPHON TEA COMPANY.</h6>
+				<p>All material on this site is copyrighted by Gryphon Tea Company. Gryphon Tea Company® is a registered trademark. No images or copy on this site may be used without written permission by Gryphon Tea Company.</p>	
+			</div>
+
+		</div>
+				
+	</div>
+
+
+	<div id="footer-wrapper" class="fixed-footer visible-md visible-lg"><!-- container-fluid -->
 		<div class="container">
 			<div class="row">
 				<div class="col-md-3">
@@ -69,7 +103,7 @@
 		</div>
 
 	</div>
-	<div id="copyright-wrapper" class="fixed-footer">
+	<div id="copyright-wrapper" class="fixed-footer visible-md visible-lg">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
