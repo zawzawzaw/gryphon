@@ -91,7 +91,15 @@ $quoteData= $quote->getData();
 
 			<div id="mobile-account">
 				<div id="mobile-account-header">
-					<p>Welcome, <span class="name">Richard</span></p>
+					<?php 
+					$session = Mage::getSingleton('customer/session');
+					if($session->isLoggedIn()) {
+					   $customer = $session->getCustomer();
+					   // echo $customer->getName();
+					   $customer_name = $customer->getFirstname();
+					}
+					?>						
+					<p><a href="#" class="account name"><?php echo (isset($customer_name)) ? 'Welcome, '.$customer_name : $this->__('Account'); ?></a></p>
 					<div id="mobile-account-expand-button"></div>
 				</div>
 				

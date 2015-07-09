@@ -35,11 +35,16 @@
     this.search_expand_expandable = this.element.find("#mobile-search-expand-container");
     this.cart_expand_expandable = this.element.find("#mobile-cart-expand-container");
 
+    
+
 
     this.initial_scroll = false;
 
     this.menu_open_state = "close";
     this.account_open_state = "close";
+
+    this.cart_open_state = "close";
+    this.search_open_state = "close";
 
     this.window = $(window);
 
@@ -74,6 +79,8 @@
         submenu_expandable_element.click(this.on_submenu_expandable_element_click.bind(this)); 
       }
 
+
+      $("#page-wrapper").click(this.on_page_wrapper_click.bind(this));
 
       //$(window).on('scroll', this.on_window_scroll.bind(this));
       //$("#page-wrapper").on('scroll', this.on_window_scroll.bind(this));
@@ -138,6 +145,40 @@
       }
     },
 
+    open_cart: function(){
+      if(this.cart_open_state != "open"){
+        this.cart_open_state = "open";
+
+        this.cart_expand_expandable.stop(0).slideDown(500);
+        $("html").addClass('mobile-black-menu-open');
+      }
+    },
+    close_cart: function(){
+      if(this.cart_open_state != "close"){
+        this.cart_open_state = "close";
+
+        this.cart_expand_expandable.stop(0).slideUp(500);
+        $("html").removeClass('mobile-black-menu-open');
+      }
+    },
+    open_search: function(){
+      if(this.search_open_state != "open"){
+        this.search_open_state = "open";
+
+        this.search_expand_expandable.stop(0).slideDown(500);
+        $("html").addClass('mobile-black-menu-open');
+      }
+    },
+    close_search: function(){
+      if(this.search_open_state != "close"){
+        this.search_open_state = "close";
+
+        this.search_expand_expandable.stop(0).slideUp(500);
+        $("html").removeClass('mobile-black-menu-open');
+      }
+    },
+
+
     //    _______     _______ _   _ _____ ____  
     //   | ____\ \   / / ____| \ | |_   _/ ___| 
     //   |  _|  \ \ / /|  _| |  \| | | | \___ \ 
@@ -174,15 +215,39 @@
     //   |_|  |_|\___/ \___/|____/|_____| |_____|  \_/  |_____|_| \_| |_|  
     //                                                                     
 
+    on_page_wrapper_click: function(event){
+      if (this.search_open_state == "open") {
+        this.close_search();
+      }
+      if (this.cart_open_state == "open") {
+        this.close_cart();
+      }
+    },
+
     on_search_button_click: function(event) {
       event.preventDefault();
 
-      this.search_expand_expandable.slideToggle(500);
+
+      if (this.search_open_state == "close") {
+        this.close_cart();
+        this.open_search();
+
+      } else {
+        this.close_search();
+      }
+      
+      
     },
     on_cart_button_click: function(event) {
       event.preventDefault();
 
-      this.cart_expand_expandable.slideToggle(500);
+      if (this.cart_open_state == "close") {
+        this.close_search();
+        this.open_cart();
+
+      } else {
+        this.close_cart();
+      }
     },
 
     on_menu_button_click: function(event){
