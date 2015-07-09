@@ -889,6 +889,7 @@ ul.messages {
   background-color: rgba(37, 37, 37, 0.7);
   padding: 15px 60px 15px 15px;
   text-align: left;
+  min-width: 140px;
 }
 #page-wrapper #header-cta .account-select li a {
   text-align: left;
@@ -6350,6 +6351,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   padding: 10px 20px;
+  text-align: center;
 }
 .account .col-main #reward-points-table tbody tr td {
   border-top: 1px dashed #ccc;
@@ -6359,9 +6361,13 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-style: normal;
   font-size: 11px;
   line-height: 19px;
+  text-align: center;
 }
 .account .col-main #reward-points-table tbody tr:last-child td {
   border-bottom: 1px solid #ccc;
+}
+.account .col-main .pager .amount {
+  margin-top: 14px;
 }
 .account .col-main .pager .limiter {
   margin-top: 10px;
@@ -6486,6 +6492,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .account .account-details-saved .image-text-content #my-rewardpoints-table {
   position: absolute;
   top: 185px;
+  margin-top: 0px;
 }
 .account .account-details .each-input,
 .account .account-details-saved .each-input {
@@ -6531,7 +6538,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .account .account-details .each-input p.loyalty-point,
 .account .account-details-saved .each-input p.loyalty-point {
   font-size: 18px!important;
-  line-height: 26px;
+  line-height: 0px;
   color: #ae4e0e;
 }
 .account .account-details .each-input a,
@@ -6873,6 +6880,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   line-height: 19px;
   letter-spacing: 0.03em;
   color: #707070;
+  text-align: center;
 }
 .account .order-history h2.minus {
   color: #777!important;
@@ -6889,6 +6897,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .account .order-history .order-headers .order-status {
   padding-left: 40px!important;
+  text-align: center;
 }
 .account .order-history .order-headers .order-no,
 .account .order-history .order-headers .order-date {
@@ -6920,17 +6929,17 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   padding-left: 116px;
 }
 .account .order-history .order-content .view-order-details .align-to-total {
-  padding-left: 93px;
+  padding-left: 115px;
 }
 .account .order-history .order-content .align-to-total-2 {
   padding-left: 93px;
 }
 .account .order-history .order-content .extra-content .align-to-total {
-  padding-left: 55px;
+  padding-left: 75px;
 }
 .account .order-history .order-content .align-to-button {
   text-align: right;
-  margin-left: -60px;
+  margin-left: -28px;
 }
 .account .order-history .order-content .orders .each-order hr.dotted {
   border-top: 1px dashed #ccc;
@@ -6957,6 +6966,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .account .order-history .order-content .orders .each-order .order-details .each-product p {
   font-size: 11px;
   line-height: 16px;
+  text-align: center;
   color: #464646;
   font-family: 'Gotham-Book', Verdana, sans-serif;
   font-weight: 200;
@@ -7001,6 +7011,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-size: 11px;
   line-height: 19px;
   color: #464646;
+  text-align: left;
 }
 .account .order-history .order-content .orders .each-order .extra-content-headers .each-details .price {
   font-family: "minion-pro", Verdana, sans-serif;
@@ -7053,6 +7064,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-size: 11px;
   line-height: 19px;
   color: #464646;
+  text-align: left;
 }
 .account .order-history .order-content .orders .each-order .extra-content .each-details h2.grand_total {
   color: #ae4e0e;
@@ -7110,10 +7122,12 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   padding: 10px 20px;
+  text-align: center;
 }
 .account .gift-cards #gift-cards-tbl tbody tr td {
   border-top: 1px dashed #ccc;
   padding: 20px;
+  text-align: center;
 }
 .account .gift-cards #gift-cards-tbl tbody tr td p.order_no {
   color: #ae4e0e;
@@ -12026,7 +12040,7 @@ html {
     height: 154px;
     overflow: hidden;
   }
-  div.home #feature-products .image-text-content #featured-product-img {
+  div.home #feature-products .image-text-content .product-image {
     display: none;
   }
   div.home #feature-products .image-text-content .each-feature {
