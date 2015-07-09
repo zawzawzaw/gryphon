@@ -44,6 +44,7 @@
                 <!--<action method="addJs"><script>lib/jquery/jquery-1.10.2.min.js</script></action>-->
 
                 <action method="addItem"><type>skin_js</type><name>js/vendors/bootstrap/bootstrap.min.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/plugins/fancybox/jquery.fancybox.pack.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/plugins/raty/jquery.raty.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/plugins/slick/slick.min.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/main.js</name></action>
@@ -87,6 +88,7 @@
                 <!-- Add stylesheets with media queries for use by modern browsers -->
                  <action method="addItem"><type>skin_css</type><name>css/vendors/bootstrap/bootstrap.min.css</name><params/></action>
                  <action method="addItem"><type>skin_css</type><name>css/vendors/bootstrap/bootstrap-theme.min.css</name></action>
+                 <action method="addItem"><type>skin_css</type><name>js/plugins/fancybox/jquery.fancybox.css</name></action>
                  <action method="addItem"><type>skin_css</type><name>css/plugins/slick-theme.css</name></action>
                  <action method="addItem"><type>skin_css</type><name>css/plugins/slick.css</name></action>
                  <action method="addItem"><type>skin_css</type><name>css/plugins/jquery.raty.css</name></action>
@@ -106,6 +108,7 @@
             <block type="page/html_notices" name="global_notices" as="global_notices" template="page/html/notices.phtml" />
 
             <block type="page/html_header" name="header" as="header">
+                <block type="directory/currency" name="currency_top" template="directory/currency-top.phtml"/>
                 <block type="page/template_links" name="top.links" as="topLinks"/>
                 <block type="page/switch" name="store_language" as="store_language" template="page/switch/languages.phtml"/>
                 <block type="core/text_list" name="top.menu" as="topMenu" translate="label">

@@ -38,8 +38,14 @@
 ?>
 <?php if ($_product->getImage() != 'no_selection' && $_product->getImage()): ?>
     <?php
-    $_img = '<img id="image" class="img-responsive" src="'.$this->helper('catalog/image')->init($_product, 'image').'" alt="'.$this->escapeHtml($this->getImageLabel()).'" title="'.$this->escapeHtml($this->getImageLabel()).'" />';
-    echo $_helper->productAttribute($_product, $_img, 'image');
+    foreach ($this->getGalleryImages() as $_image): ?>
+        <li>             
+            <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(700, 526); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>"/>             
+        </li>
+    <?php
+        // $_img = '<img id="image" class="img-responsive" src="'.$this->helper('catalog/image')->init($_product, 'image').'" alt="'.$this->escapeHtml($this->getImageLabel()).'" title="'.$this->escapeHtml($this->getImageLabel()).'" />';
+        // echo $_helper->productAttribute($_product, $_img, 'image');
+    endforeach;
     ?>
 <?php else: ?>
     <?php

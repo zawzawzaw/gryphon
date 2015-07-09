@@ -1,0 +1,45 @@
+<?php
+	/**
+	 * Cart total template
+	*/
+?>
+<?php $total = $this->getTotal() ?>
+<?php $codesArray = explode(',',$total->getGiftCodes()) ?>
+<?php if (count($codesArray)): ?>
+
+<?php $codesDiscountArray = explode(',',$total->getCodesDiscount()) ?>
+<?php $discounts = array_combine($codesArray,$codesDiscountArray) ?>
+
+<?php foreach($discounts as $code=>$value): ?>
+<div class="each-details">
+	<tr class="giftvoucher-total-code" style="display:none;">
+		<div class="a-right label discount" colspan="1">
+		<td colspan="<?php echo $this->getColspan(); ?>" style="<?php echo $total->getStyle() ?>" class="a-right">
+				<!-- <p><?php echo $total->getTitle() ?><p> -->
+				<p>GIFT CERTIFICATE</p>
+				<span>— <?php echo Mage::helper('giftvoucher')->getHiddenCode($code) ?></span>
+				<!--<a href="<?php echo $this->getUrl('giftvoucher/checkout/removegift',array('code'=>$code)) ?>" title="<?php echo $this->__('Remove') ?>">
+					<img src="<?php echo $this->getSkinUrl('images/btn_remove.gif') ?>" alt="<?php echo $this->__('Remove') ?>" style="margin-top:2px;" />
+				</a>-->
+			</td>
+		</div>
+		<div class="a-right value discount">
+			<td style="<?php echo $total->getStyle() ?>" class="a-right">
+				<p class="applied_discount_code minus"><?php echo $this->helper('checkout')->formatPrice(-$value) ?></p>
+			</td>
+		</div>
+	</tr>
+	<?php endforeach ?>
+
+	<?php else: ?>
+
+	<tr class="giftvoucher-total" onclick="toggleTotalCode()">
+	    <td colspan="<?php echo $this->getColspan(); ?>" style="<?php echo $total->getStyle() ?>" class="a-right">
+	        <?php echo $total->getTitle() ?>
+	    </td>
+	    <td style="<?php echo $total->getStyle() ?>" class="a-right">
+	        <?php echo $this->helper('checkout')->formatPrice($total->getValue()) ?>
+	    </td>
+	</tr>
+	<?php endif ?>
+</div>

@@ -37,12 +37,7 @@ $billingAddress = $this->getCustomer()->getPrimaryBillingAddress();
         <div class="each-input">
             <h2><?php echo $this->__('GENDER'); ?></h2>
             <p><?php echo ($this->getCustomer()->getGender()) ? $this->escapeHtml($this->helper('customercustomiser')->getGender($this->getCustomer())) : $this->__('None'); ?></p>
-        </div>
-
-        <div class="each-input">
-            <h2><?php echo $this->__('DATE OF BIRTH'); ?></h2>
-            <p><?php echo ($this->getCustomer()->getDob()) ? $this->escapeHtml($this->getCustomer()->getDob()) : $this->__('None'); ?></p>
-        </div>
+        </div>        
     </div>
     <div class="col-md-2 col-sm-6 col-xs-6">
         <div class="each-input">
@@ -52,6 +47,20 @@ $billingAddress = $this->getCustomer()->getPrimaryBillingAddress();
         <div class="each-input">
             <h2><?php echo $this->__('password'); ?></h2>
             <p><a href="<?php echo $this->getChangePasswordUrl() ?>"><?php echo $this->__('Change Password') ?></a></p>
+        </div>
+        <div class="each-input">
+            <h2><?php echo $this->__('DATE OF BIRTH'); ?></h2>
+            <?php 
+            if($this->getCustomer()->getDob()) {
+                $date = $this->getCustomer()->getDob();
+                $dob = new DateTime($date); 
+                $dob = $dob->format('Y-m-d');  
+                $dob = $this->escapeHtml($dob); 
+            }else {
+                $dob = $this->__('None');
+            }
+            ?>
+            <p><?php echo $dob; ?></p>
         </div>
     </div>
     <div class="col-md-3 col-sm-6 col-xs-6">

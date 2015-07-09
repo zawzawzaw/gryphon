@@ -34,7 +34,53 @@
 </div>
 <?php echo $this->getChildHtml('items_before'); ?>
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-3">
+        <div class="address-info">
+            <?php $billingCountry = Mage::getSingleton('checkout/session')->getQuote()->getBillingAddress()->getCountry(); ?>           
+            <?php $billingAddress = Mage::getSingleton('checkout/session')->getQuote()->getBillingAddress()->getData(); ?> 
+            <div class="billing-info">
+                <h5>Billing Address</h5>
+                <div class="address-details">
+                    <p class="title">NAME</p>
+                    <p><?php echo $billingAddress['firstname'] . ' ' . $billingAddress['lastname']; ?></p>
+                </div>
+                <div class="address-details">
+                    <p class="title">ADDRESS</p>
+                    <p><?php echo $billingAddress['street'] . ' ' . $billingAddress['city'] . ' ' . $billingAddress['postcode'] . ' ' . $billingCountry; ?></p>
+                </div>
+                <div class="address-details">
+                    <p class="title">EMAIL</p>
+                    <p><?php echo $billingAddress['email']; ?></p>
+                </div>
+                <div class="address-details">
+                    <p class="title">PHONE NUMBER</p>
+                    <p><?php echo $billingAddress['telephone']; ?></p>
+                </div>
+            </div>
+            <div class="shipping-info">
+                <?php $shippingCountry = Mage::getSingleton('checkout/session')->getQuote()->getBillingAddress()->getCountry(); ?>           
+                <?php $shippingAddress = Mage::getSingleton('checkout/session')->getQuote()->getBillingAddress()->getData(); ?> 
+                <h5>Shipping Address</h5>
+                <div class="address-details">
+                    <p class="title">NAME</p>
+                    <p><?php echo $shippingAddress['firstname'] . ' ' . $shippingAddress['lastname']; ?></p>
+                </div>
+                <div class="address-details">
+                    <p class="title">ADDRESS</p>
+                    <p><?php echo $shippingAddress['street'] . ' ' . $shippingAddress['city'] . ' ' . $shippingAddress['postcode'] . ' ' . $shippingCountry; ?></p>
+                </div>
+                <div class="address-details">
+                    <p class="title">EMAIL</p>
+                    <p><?php echo $shippingAddress['email']; ?></p>
+                </div>
+                <div class="address-details">
+                    <p class="title">PHONE NUMBER</p>
+                    <p><?php echo $shippingAddress['telephone']; ?></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9">
         <div class="table-responsive">
             <div id="checkout-review-table-wrapper">
                 <table class="data-table table" id="checkout-review-table">
@@ -93,8 +139,8 @@
     <?php echo $this->getChildHtml('agreements') ?>
     <div class="buttons-set row action-container" id="review-buttons-container">
         <div class="back-link col-md-4">
-            <p class="f-left edit-cart-wrapper"><?php echo $this->__('Forgot an Item?') ?> <a class="" href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('Edit Your Cart') ?></a></p>
-            <a class="cta back-btn" href="#" onclick="checkout.back(); return false;"><small>&laquo; </small><?php echo $this->__('Back') ?></a>
+            <p class="f-left edit-cart-wrapper"><a class="cta back-btn" href="<?php echo $this->getUrl('checkout/cart') ?>"><i class="fa fa-chevron-left"></i> <?php echo $this->__('did you forget any item?') ?></a></p>
+            <!-- <a class="cta back-btn" href="#" onclick="checkout.back(); return false;"><small>&laquo; </small><?php echo $this->__('Back') ?></a> -->
         </div>
         <div class="col-md-3 col-md-offset-5">
             <?php echo $this->getChildHtml('button') ?>

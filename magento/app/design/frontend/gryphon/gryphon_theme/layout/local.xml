@@ -128,6 +128,36 @@ One page checkout main layout
         </reference>
     </customer_account_index>
 
+    <!--
+    Layout for customer login page
+    -->
+    <customer_account_login>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <action method="unsetChild"><child>customer_form_login</child></action>
+            <block type="customer/form_login" name="customer_form_login" template="miragedesign/persistent/customer/form/login.phtml"></block>                                    
+        </reference>
+    </customer_account_login>
+
+    <!--
+    New customer registration
+    -->
+    <customer_account_create translate="label">
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <action method="unsetChild"><child>customer_form_register</child></action>
+            <block type="customer/form_register" name="customer_form_register" template="miragedesign/persistent/customer/form/register.phtml">
+                <block type="page/html_wrapper" name="customer.form.register.fields.before" as="form_fields_before" translate="label">
+                    <label>Form Fields Before</label>
+                </block>
+            </block>
+        </reference>
+    </customer_account_create>
+
     <customer_account_edit>
         <reference name="head">
             <action method="addItem"><type>skin_css</type><name>css/intlTelInput.css</name></action>
@@ -138,7 +168,9 @@ One page checkout main layout
         </reference>
         <reference name="my.account.wrapper">
             <action method="unsetChildren"></action>
-            <block type="customer/form_edit" name="customer_edit" template="miragedesign/customer/form/edit.phtml"/>
+            <block type="customer/form_edit" name="customer_edit" template="miragedesign/customer/form/edit.phtml">
+                <block type="core/template" name="customer_account_dashboard_top" as="top" />
+            </block>
         </reference>
     </customer_account_edit>
 
@@ -244,5 +276,55 @@ One page checkout main layout
             <action method="setTemplate"><template>miragedesign/catalog/product/view/type/default.phtml</template></action>
         </reference>
     </PRODUCT_TYPE_virtual>
+
+    <wordpress_homepage>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/1column.phtml</template>
+            </action>
+        </reference>
+        <reference name="wordpress_post_list">
+            <action method="setTemplate">
+                <template>wordpress/post/list.phtml</template>
+            </action>
+            <action method="setPostRendererTemplate">
+                <template>wordpress/post/list/renderer/default.phtml</template>
+            </action>
+        </reference>
+    </wordpress_homepage>
+
+    <!--
+    /**
+     * This works for all post types, including custom posts (except pages)
+     */
+    -->
+    <wordpress_post_view>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/1column.phtml</template>
+            </action>
+        </reference>
+        <reference name="wp.post.view">
+            <action method="setTemplate">
+                <template>wordpress/post/view.phtml</template>
+            </action>
+        </reference>
+    </wordpress_post_view>
+
+    <wordpress_category_view>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/1column.phtml</template>
+            </action>
+        </reference>
+        <reference name="wordpress_post_list">
+            <action method="setTemplate">
+                <template>wordpress/post/list.phtml</template>
+            </action>
+            <action method="setPostRendererTemplate">
+                <template>wordpress/post/list/renderer/default.phtml</template>
+            </action>
+        </reference>
+    </wordpress_category_view>
 
 </layout>

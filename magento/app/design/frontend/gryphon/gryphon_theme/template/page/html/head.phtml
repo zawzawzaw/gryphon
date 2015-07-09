@@ -52,6 +52,13 @@
 //]]>
 </script>
 <![endif]-->
+<?php $baseUrl = $this->getBaseUrl() ; ?>
+
+<script type="text/javascript">
+
+function getBaseUrl() { return '<?php echo $baseUrl; ?>'; } 
+
+</script>
 
 <?php echo $this->getCssJsHtml() ?>
 

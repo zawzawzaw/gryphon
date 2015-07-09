@@ -104,7 +104,7 @@
 <?php endif ?>
 
 <span class="pager-header"><?php echo $this->getPagerHtml() ?></span>
-<table class="data-table" id="<?php echo $this->getNameInLayout() ?>">
+<table class="data-table test" id="<?php echo $this->getNameInLayout() ?>">
     <colgroup>
         <?php foreach ($columns as $id => $column): ?>
             <col class="<?php echo $id ?>" style="<?php if (isset($column['align'])): ?>align:<?php echo $column['align'] ?>;<?php endif ?><?php if (isset($column['width'])): ?>width:<?php echo $column['width'] ?><?php endif ?>" />
@@ -123,7 +123,7 @@
                         <!---add by Sally-->
                         <span class="giftvoucher-grid-title-hidden"><?php echo $column['header'] ?></span>
                         <span class="giftvoucher-grid-detail">
-                            <!--end by Sally--->
+                            <!--end by Sally-->
                             <?php if (isset($column['searchable'])): ?>
                                 <div class="giftvoucher-grid-search-item"<?php if (isset($column['width']) && $column['width']): ?> style="width:<?php echo $column['width'] ?>;"<?php endif ?>>
                                     <?php $type = isset($column['type']) ? $column['type'] : '' ?>
@@ -197,10 +197,10 @@
                 <tr <?php if (($row->getCustomerCheckId() == $customer->getId() || $row->getCustomerEmail() == $customer->getEmail() ) && $row->getRecipientName()) { ?> class="gift-voucher-sent-friend" <?php } ?>>
                     <?php foreach ($columns as $id => $column): ?>
                         <td>
-                            <!--add by Sally--->
+                            <!--add by Sally-->
                             <span class="giftvoucher-grid-title-hidden"><?php echo $column['header'] ?></span>
                             <span class="giftvoucher-grid-detail">
-                                <!--end by Sally--->
+                                <!--end by Sally-->
                                 <?php if (isset($column['render']) && $column['render']): ?>
                                     <?php echo $this->fetchRender($column['render'], $row) ?>
                                 <?php else: ?>
@@ -246,7 +246,7 @@
                                             <?php echo $row->getData($column['index']) ?>
                                     <?php endswitch ?>
                                 <?php endif ?>
-                            </span><!--edit by Sally--->
+                            </span><!--edit by Sally-->
                         </td>
                     <?php endforeach ?>
                 </tr>

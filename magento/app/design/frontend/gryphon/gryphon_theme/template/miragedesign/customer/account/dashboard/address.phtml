@@ -32,7 +32,7 @@ $shippingCountryName = ($shippingAddress) ? Mage::getModel('directory/country')-
 $additionalAddresses = $this->getCustomer()->getAdditionalAddresses();
 ?>
 <div class="billing-and-shipping">
-    <div class="image-text-content container">
+    <div class="image-text-content">
         <div class="row">
             <div class="col-md-6 billing-address">
                 <div class="row">
@@ -87,7 +87,7 @@ $additionalAddresses = $this->getCustomer()->getAdditionalAddresses();
                     </div>
                 </div>
                 <?php if( $additionalAddresses ) : ?>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-md-12">
                         <div class="table-responsive">
                             <table class="gift-cards-tbl">
@@ -108,7 +108,7 @@ $additionalAddresses = $this->getCustomer()->getAdditionalAddresses();
                             </table>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <?php endif; ?>
             </div>
             <div class="col-md-6 shipping-address">
@@ -164,7 +164,7 @@ $additionalAddresses = $this->getCustomer()->getAdditionalAddresses();
                     </div>
                 </div>
                 <?php if( $additionalAddresses ) : ?>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-md-12">
                         <div class="table-responsive">
                             <table class="gift-cards-tbl">
@@ -185,7 +185,7 @@ $additionalAddresses = $this->getCustomer()->getAdditionalAddresses();
                             </table>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <?php endif; ?>
             </div>
         </div>

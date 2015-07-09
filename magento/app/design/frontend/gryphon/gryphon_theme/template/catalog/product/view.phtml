@@ -56,10 +56,18 @@ endif;
                 <div class="row">
                     <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
                     <div class="col-md-12">
+                        <?php if ($isGiftcardType) : ?>
+                        <div class="gift-card-img">
+                        <?php else: ?>
                         <div class="product-img-box product-img">
+                        <?php endif; ?>
                             <?php echo $this->getChildHtml('media') ?>
                         </div>
+                        <?php if ($isGiftcardType) : ?>
+                        <div class="gift-card-content">
+                        <?php else: ?>
                         <div class="product-content">
+                        <?php endif; ?>
                             <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
                             <hr class="small" />
                             <!-- <h1 class="price">S$ 78</h1> -->
@@ -71,16 +79,15 @@ endif;
                                 <div class="price"><?php echo $this->getPriceHtml($_product); ?></div>
                                 <?php echo $this->getChildHtml('bundle_prices') ?>
                                 <?php echo $this->getTierPriceHtml() ?>
-                            <?php endif; ?>
-
-                            <div class="desc">
-                                <?php echo $shortDescription; ?>
-                            </div>
+                            <?php endif; ?>                            
 
                             <?php if ($isGiftcardType) :?>
                                 <?php echo $this->getChildHtml('product_type_data') ?>
                             <?php else : ?>
-                            <div class="row">
+                            <div class="desc">
+                                <?php echo $shortDescription; ?>
+                            </div>
+                            <div class="row extra-info">
                                 <div class="col-md-6">
                                     <div class="set">
                                         <h5><?php echo $this->__('ingredients'); ?></h5>
@@ -110,7 +117,7 @@ endif;
                             </div>
                             <?php endif; ?>
 
-                            <div class="space30"></div>
+                            <!-- <div class="space30"></div> -->
 
                             <div class="row">
                                 <div class="col-md-12">
@@ -154,18 +161,39 @@ endif;
                                form.action = url;
                             }
                             var e = null;
-                            try {
-                                this.form.submit();
-                            } catch (e) {
+                            // try {
+                            //     this.form.submit();
+                            // } catch (e) {
+                            // }
+                            //Start of our new ajax code
+                            if(!url){
+                                url = jQuery('#product_addtocart_form').attr('action');
                             }
+                            var data = jQuery('#product_addtocart_form').serialize();
+                            data += '&isAjax=1';   
+                            jQuery('#ajax_loader').show();
+                            try {
+                                jQuery.ajax({
+                                      url: url,
+                                      dataType: 'json',
+                                      type : 'post',
+                                      data: data,
+                                      success: function(data){
+                                            jQuery('#ajax_loader').hide();
+                                            // alert(data.status + ": " + data.message);
+                                            jQuery('span.ajax_msg').html('Added to cart!').show().delay(5000).fadeOut();
+                                      }
+                                });
+                            } catch (e) {
+                            }            
                             this.form.action = oldUrl;
                             if (e) {
                                 throw e;
                             }
 
-                            if (button && button != 'undefined') {
-                                button.disabled = true;
-                            }
+                            // if (button && button != 'undefined') {
+                            //     button.disabled = true;
+                            // }
                         }
                     }.bind(productAddToCartForm);
 
@@ -196,30 +224,46 @@ endif;
         </div>
     </div>
 
-    <?php echo $this->getChildHtml('upsell_products') ?>
-
     <?php echo $this->getChildHtml('product.info.selections') ?>
+
+    <?php echo $this->getChildHtml('upsell_products') ?>    
 
     <div class="product-review">
         <div class="image-text-content container">
-            <div class="row">
-
-                <div class="product-collateral review-tbl col-md-6">
+            <div class="row">                                
                     <?php foreach ($this->getChildGroup('detailed_info', 'getChildHtml') as $alias => $html):?>
                         <?php if ($alias == 'reviews') :?>
-                        <div class="box-collateral row <?php echo "box-{$alias}"?>">
-                            <div class="col-md-12">
-                                <?php if ($title = $this->getChildData($alias, 'title')):?>
-                                    <h2><?php echo $this->escapeHtml($title); ?></h2>
-                                    <hr class="small"/>
-                                <?php endif;?>
-                                <?php echo $html; ?>
-                            </div>
-                        </div>
+                            <?php if ($title = $this->getChildData($alias, 'title')):?>
+                                <div class="product-collateral review-tbl col-md-6">
+                                    <div class="box-collateral row <?php echo "box-{$alias}"?>">
+                                        <div class="col-md-12">
+                                            <div class="review-title">
+                                                <h1><?php echo $this->escapeHtml('REVIEWS OF THE PRODUCT'); ?></h1>
+                                                <div class="static-stars">
+                                                    <?php echo $_product->getRatingSummary(); ?>
+                                                </div>
+                                                <hr class="small"/>
+                                            </div>
+                                            <div class="review-count-container">
+                                                <?php $review_count = $_product->getReviewsCount(); ?>
+                                                <span class="review-count"><?php echo (!empty($review_count)) ? $review_count : 0; ?> reviews</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <hr>
+                                        </div>
+                                    </div>                                    
+                                    <?php echo $html; ?>                                    
+                                </div>
+                            <?php endif;?>
+                            
                         <?php endif; ?>
                     <?php endforeach;?>
-                    <?php echo $this->getChildHtml('product_additional_data') ?>
-                </div>
+                    <div class="col-md-5 col-md-offset-1 write-review">
+                        <?php echo $this->getChildHtml('product_additional_data') ?>
+                    </div>
             </div>
         </div>
     </div>

@@ -37,18 +37,18 @@
 <?php $_hasAssociatedProducts = count($_associatedProducts) > 0; ?>
 <?php if ($this->displayProductStockStatus()): ?>
     <?php if ($_product->isAvailable() && $_hasAssociatedProducts): ?>
-        <h5 class="availability in-stock"><?php echo $this->__('Availability:') ?> <span class="italic"><?php echo $this->__('In stock') ?></span></h5>
+        <!-- <h5 class="availability in-stock"><?php echo $this->__('Availability:') ?> <span class="italic"><?php echo $this->__('In stock') ?></span></h5> -->
     <?php else: ?>
-        <h5 class="availability out-of-stock"><?php echo $this->__('Availability:') ?> <span class="italic"><?php echo $this->__('Out of stock') ?></span></h5>
+        <!-- <h5 class="availability out-of-stock"><?php echo $this->__('Availability:') ?> <span class="italic"><?php echo $this->__('Out of stock') ?></span></h5> -->
     <?php endif; ?>
 <?php endif; ?>
 <?php echo $this->getChildHtml('product_type_data_extra') ?>
 <div class="grouped-items clearfix">
 <div class="row col-md-12">
     <div class="row">
-        <div class="col-md-6"><h5><?php echo $this->__('PRODUCT'); ?></h5></div>
+        <div class="col-md-6"><h5><?php echo $this->__('WEIGHT'); ?></h5></div>
         <div class="col-md-3"><h5><?php echo $this->__('UNIT PRICE'); ?></h5></div>
-        <div class="col-md-3 order-qty"><h5><?php echo $this->__('QTY'); ?></h5></div>
+        <div class="col-md-3 order-qty"><h5><?php echo $this->__('QUANTITY'); ?></h5></div>
     </div>
 </div>
 <div class="row col-md-12">
@@ -57,7 +57,7 @@
         <?php $_finalPriceInclTax = $this->helper('tax')->getPrice($_item, $_item->getFinalPrice(), true) ?>
         <div class="row">
             <div class="col-md-6">
-                <div class="italic"><?php echo $this->escapeHtml($_item->getName()) ?></div>
+                <div class="italic"><?php preg_match('#\((.*?)\)#', $_item->getName(), $match); print $match[1]; ?></div>
             </div>
             <?php if ($this->getCanShowProductPrice($_product)): ?>
                 <div class="a-left col-md-3">
@@ -73,7 +73,9 @@
                 <div class="a-center col-md-3 order-qty">
                     <div class="italic">
                     <?php if ($_item->isSaleable()) : ?>
+                        <a href="#" class="minus"><i class="fa fa-minus"></i></a>
                         <input type="text" name="super_group[<?php echo $_item->getId() ?>]" maxlength="12" value="<?php echo $_item->getQty()*1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
+                        <a href="#" class="plus"><i class="fa fa-plus"></i></a>
                     <?php else: ?>
                         <p class="availability out-of-stock italic"><span><?php echo $this->__('Out of stock') ?></span></p>
                     <?php endif; ?>

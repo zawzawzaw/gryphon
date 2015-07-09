@@ -1,0 +1,136 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Top menu for store
+ *
+ * @see Mage_Page_Block_Html_Topmenu
+ */
+?>
+<?php $_menu = $this->getHtml('level-top') ?>
+
+<?php if($_menu): ?>
+    <nav id="nav-main">
+        <ul class="main-menu hidden-xs hidden-sm">        
+            <?php //echo $_menu; ?>
+			<?php
+			// TEA
+			$store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store');
+			$type_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Types');
+
+			/*Returns comma separated ids*/
+			$subcats = $type_category->getChildren();			
+
+			echo '<li>
+					<a href="'.$store_category->getUrl().'">TEA <i class="fa fa-chevron-down"></i></a>
+					<ul class="sub-menu">';
+
+			foreach(explode(',',$subcats) as $subCatid)
+			{
+			  	$_category = Mage::getModel('catalog/category')->load($subCatid);
+			  	if($_category->getIsActive())
+			  	{
+			    	$caturl     = $_category->getURL();
+			    	$catname     = $_category->getName();
+
+			    	echo '<li><a href="'.$caturl.'">'.$catname.'</a></li>';
+			    }
+			}
+
+			echo '</ul>
+			</li>';					
+			?>
+
+			<li>
+				<a href="teawear.html">TEAWARE</a>
+			</li>
+			<li>
+				<a href="gifts.html">GIFTS</a>
+			</li>
+			<li>
+				<a href="subscription.html">SUBSCRIPTION</a>
+			</li>
+			<li>
+				<a href="collections.html">COLLECTIONS</a>								
+			</li>
+			<li>
+				<a href="http://test.gryphontea.com/wp">BLOG</a>
+			</li>
+			<li>
+				<a href="trade.html">TRADE</a>
+			</li>
+        </ul>
+        <i class="fa fa-bars icon-font mobile-menu-btn hidden-md hidden-lg"></i>
+		<ul class="mobile-menu hidden-md hidden-lg">
+			<?php
+			// TEA
+			$store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store');
+			$type_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Types');
+
+			/*Returns comma separated ids*/
+			$subcats = $type_category->getChildren();			
+
+			echo '<li>
+					<a href="'.$store_category->getUrl().'">TEA <i class="fa fa-chevron-down"></i></a>
+					<ul class="sub-menu">';
+
+			foreach(explode(',',$subcats) as $subCatid)
+			{
+			  	$_category = Mage::getModel('catalog/category')->load($subCatid);
+			  	if($_category->getIsActive())
+			  	{
+			    	$caturl     = $_category->getURL();
+			    	$catname     = $_category->getName();
+
+			    	echo '<li><a href="'.$caturl.'">'.$catname.'</a></li>';
+			    }
+			}
+
+			echo '</ul>
+			</li>';					
+			?>
+			<li>
+				<a href="teawear.html">TEAWARE</a>
+			</li>
+			<li>
+				<a href="gifts.html">GIFTS</a>
+			</li>
+			<li>
+				<a href="subscription.html">SUBSCRIPTION</a>
+			</li>
+			<li>
+				<a href="collections.html">COLLECTIONS</a>
+			</li>
+			<li>
+				<a href="http://test.gryphontea.com/wp">BLOG</a>
+			</li>
+			<li>
+				<a href="trade.html">TRADE</a>
+			</li>
+		</ul>
+    </nav>
+<?php endif ?>

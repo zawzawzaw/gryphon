@@ -3741,7 +3741,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   color: #ae4e0e;
 }
 .sign-up {
-  margin-top: 85px;
+  margin-top: 80px;
   padding-bottom: 120px!important;
 }
 @media all and (max-width: 992px) {
@@ -11578,6 +11578,192 @@ html {
   position: relative;
   top: 14px;
   z-index: 20;
+}
+#main-mobile-header #mobile-search-expand-container {
+  display: none;
+  background: #ffffff;
+}
+#main-mobile-header #mobile-search-expand-container #search_mini_form {
+  padding: 30px 20px;
+}
+#main-mobile-header #mobile-search-expand-container #search_mini_form .input-box {
+  position: relative;
+}
+#main-mobile-header #mobile-search-expand-container #search_mini_form .input-box input[type="search"] {
+  /* Fallback for web browsers that don't support RGBa */
+  background-color: #252525;
+  /* RGBa with 0.6 opacity */
+  background-color: rgba(37, 37, 37, 0.7);
+  padding: 15px 16px;
+  text-align: left;
+  border: none;
+  color: #ffffff;
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 10px;
+  line-height: 24px;
+  letter-spacing: 0.05em;
+  width: 217px;
+  height: 41px;
+}
+#main-mobile-header #mobile-search-expand-container #search_mini_form .input-box button {
+  position: absolute;
+  top: 15px;
+  right: 13px;
+  border: none;
+  background: none;
+  background: url(../images/icons/go-button.png) no-repeat;
+  display: block;
+  width: 10px;
+  height: 10px;
+}
+#main-mobile-header #mobile-cart-expand-container {
+  display: none;
+  background: #ffffff;
+}
+#main-mobile-header #mobile-cart-expand-container .cart-preview-select {
+  background: #fff;
+  padding: 30px 20px;
+  width: 100%;
+}
+#main-mobile-header #mobile-cart-expand-container .cart-preview-select p a {
+  color: #ae4e0e;
+}
+#main-mobile-header #mobile-cart-expand-container .cart-preview-select p a:hover {
+  color: #545454;
+}
+#main-mobile-header #mobile-cart-expand-container .cart-preview-select h5 {
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: #252525;
+  text-align: left;
+}
+#main-mobile-header #mobile-cart-expand-container .cart-preview-select ul li {
+  display: inline-block;
+}
+#main-mobile-header #mobile-cart-expand-container .cart-preview-select ul.cart-header {
+  text-align: left;
+  border-top: 1px solid #d6d6d6;
+  border-bottom: 1px solid #d6d6d6;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-top: 15px;
+}
+#main-mobile-header #mobile-cart-expand-container .cart-preview-select ul.cart-header li {
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 9px;
+  line-height: 19px;
+  letter-spacing: 0.03em;
+  color: #464646;
+  width: 20%;
+  text-align: center;
+}
+#main-mobile-header #mobile-cart-expand-container .cart-preview-select ul.cart-header li:first-child {
+  width: 55%;
+  text-align: left;
+  padding-left: 21px;
+}
+#main-mobile-header #mobile-cart-expand-container .cart-preview-select ul.cart-content {
+  text-align: left;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+#main-mobile-header #mobile-cart-expand-container .cart-preview-select ul.cart-content li {
+  font-family: "minion-pro", Verdana, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.1em;
+  color: #252525;
+  width: 20%;
+  text-align: center;
+  text-transform: uppercase;
+}
+#main-mobile-header #mobile-cart-expand-container .cart-preview-select ul.cart-content li img {
+  vertical-align: middle;
+  display: inline-block;
+  width: 20%;
+}
+#main-mobile-header #mobile-cart-expand-container .cart-preview-select ul.cart-content li span {
+  vertical-align: middle;
+  display: inline-block;
+  width: 70%;
+  margin-left: 10px;
+  text-align: left;
+}
+#main-mobile-header #mobile-cart-expand-container .cart-preview-select ul.cart-content li:first-child {
+  width: 55%;
+}
+#main-mobile-header #mobile-cart-expand-container .cart-preview-select ul.cart-summary {
+  border-top: 1px solid #e1e1e1;
+  padding-top: 8px;
+}
+#main-mobile-header #mobile-cart-expand-container .cart-preview-select ul.cart-summary li {
+  width: 20%;
+  text-align: center;
+}
+#main-mobile-header #mobile-cart-expand-container .cart-preview-select ul.cart-summary li:first-child {
+  width: 55%;
+  text-align: left;
+}
+#main-mobile-header #mobile-cart-expand-container .cart-preview-select ul.cart-summary li:last-child {
+  text-align: left;
+  padding-left: 13px;
+}
+#main-mobile-header #mobile-cart-expand-container .cart-preview-select ul.cart-summary li span.total-items {
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  color: #777;
+}
+#main-mobile-header #mobile-cart-expand-container .cart-preview-select ul.cart-summary li span.sub-total {
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  color: #ae4e0e;
+}
+#main-mobile-header #mobile-cart-expand-container .cart-preview-select ul.cart-summary li span.sub-total-amount {
+  font-family: "minion-pro", Verdana, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.1em;
+  color: #ae4e0e;
+}
+#main-mobile-header #mobile-cart-expand-container .cart-preview-select div.cta-btns .continue-shopping {
+  float: left;
+}
+#main-mobile-header #mobile-cart-expand-container .cart-preview-select div.cta-btns .shopping-cart {
+  float: right;
+}
+#main-mobile-header #mobile-cart-expand-container .cart-preview-select div.cta-btns button {
+  background-color: #252525;
+  border: none;
+  padding: 7px 30px;
+  color: #ffffff;
+  text-transform: none;
+  font-size: 11px;
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  margin-top: 20px;
+}
+#main-mobile-header #mobile-cart-expand-container .cart-preview-select div.cta-btns button:hover {
+  background-color: #ae4e0e;
 }
 #main-mobile-header #mobile-expand-container {
   display: none;
