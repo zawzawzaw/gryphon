@@ -172,8 +172,7 @@ if (!Array.prototype.indexOf) {
     this.similar_aroma_container = this.result_container_element.find("#result-item-container-similar-aroma");
 
     this.similar_container = this.result_container_element.find('#result-item-container-similar');
-    this.different_container = this.result_container_element.find('#result-item-container-different');    
-
+    this.different_container = this.result_container_element.find('#result-item-container-different');
 
     //////this.aroma_similar_container = this.result_container_element.find('#result-item-container-similar-02');
 
@@ -301,10 +300,10 @@ if (!Array.prototype.indexOf) {
               '</div>',
               '<a href="{url}" target="_blank"><h4>{name}</h4></a>',
               '<p>{category}</p>',
-              '<div class="buttons">',
-                '<div class="zoom"></div>',
-                '<div class="add"></div>',
-              '</div>',
+              //'<div class="buttons">',
+                //'<div class="zoom"></div>',
+                //'<div class="add"></div>',
+              //'</div>',
             '</div>',
           '</div>'
         ].join('');
