@@ -19,7 +19,20 @@
                 <li class="wide each-input dropdown-address">
                     <label for="billing-address-select"><?php echo $this->__('Select a billing address from your address book or enter a new address.') ?></label>
                     <div class="input-box dropdown">
-                        <?php echo $this->getAddressesHtmlSelect('billing') ?>
+                        <?php //echo $this->getAddressesHtmlSelect('billing') ?>
+                        <div id="custAddress">
+                        <?php $customerId = Mage::getSingleton('customer/session')->getCustomer();?>    
+                        <?php $customer = Mage::getModel('customer/customer')->load($customerId->getId()); ?>
+                        <?php $data = array();?>
+                            <select name="billing_address_id" id="billing-address-select" class="address-select" title="">                                
+                                <option value="">New Address</option>                                                                                       
+                                <?php $i=0; foreach ($customer->getAddresses() as $address):?>                                
+                                    <?php $data = $address->toArray();?>
+                                    <?php $country_name = Mage::app()->getLocale()->getCountryTranslation($data['country_id']);?>                                    
+                                    <option <?php if($i==0): ?>selected="selected"<?php endif; ?> value="<?php echo $data['entity_id']; ?>"><?php echo $data['firstname'] . ' ' . $data['firstname'] . ', ' . $data['street'] . ', ' . $data['city'] . ', ' . $data['postcode']. ', ' . $country_name;  ?></option>
+                                <?php $i++; endforeach; ?>  
+                            </select>
+                         </div>                        
                     </div>
                 </li>
             <?php endif; ?>
@@ -190,7 +203,20 @@
                <li class="wide each-input dropdown-address">
                    <label for="shipping-address-select"><?php echo $this->__('Select a shipping address from your address book or enter a new address.') ?></label>
                    <div class="input-box dropdown">
-                       <?php echo $this->getAddressesHtmlSelect('shipping') ?>
+                       <?php //echo $this->getAddressesHtmlSelect('shipping') ?>
+                       <div id="custAddress">
+                        <?php $customerId = Mage::getSingleton('customer/session')->getCustomer();?>    
+                        <?php $customer = Mage::getModel('customer/customer')->load($customerId->getId()); ?>
+                        <?php $data = array();?>
+                            <select name="shipping_address_id" id="shipping-address-select" class="address-select" title="">                                
+                                <option value="">New Address</option>                                                                                       
+                                <?php $i=0; foreach ($customer->getAddresses() as $address):?>                                
+                                    <?php $data = $address->toArray();?>
+                                    <?php $country_name = Mage::app()->getLocale()->getCountryTranslation($data['country_id']);?>                                    
+                                    <option <?php if($i==0): ?>selected="selected"<?php endif; ?> value="<?php echo $data['entity_id']; ?>"><?php echo $data['firstname'] . ' ' . $data['firstname'] . ', ' . $data['street'] . ', ' . $data['city'] . ', ' . $data['postcode']. ', ' . $country_name;  ?></option>
+                                <?php $i++; endforeach; ?>  
+                            </select>
+                         </div>  
                    </div>
                </li>
             <?php endif ?>
@@ -313,7 +339,7 @@
         <div class="col-2 col-md-5 col-md-offset-1">
             <div id="billing_shipping">
                 <div class="delivery-rates">
-                    <h2><?php echo $this->__('LOCAL DELIVERY'); ?></h2>
+                    <h2><?php echo $this->__('DELIVERY'); ?></h2>
                     <div class="table-responsive">
                         <table id="delivery-rate-tbl" class="table">
                             <thead>
@@ -341,7 +367,7 @@
         </div>
     </div>
     <div class="buttons-set row action-container" id="billing-buttons-container">
-        <p class="required"><?php echo $this->__('* Required Fields') ?></p>
+        <!-- <p class="required"><?php echo $this->__('* Required Fields') ?></p> -->
         <div class="back-link col-md-4">
             <a class="cta back-btn" href="<?php echo $this->getUrl('/'); ?>"><i class="fa fa-chevron-left"></i> <?php echo $this->__('go back to continue shopping') ?></a>
         </div>
@@ -357,6 +383,8 @@
 //<![CDATA[
     var billing = new Billing('co-billing-form', '<?php echo $this->getUrl('checkout/onepage/getAddress') ?>address/', '<?php echo $this->getUrl('checkout/onepage/saveBilling') ?>');
     var billingForm = new VarienForm('co-billing-form');
+
+    var GetBillingAddressUrl = '<?php echo $this->getUrl('checkout/onepage/getAddress') ?>address/';
 
     //billingForm.setElementsRelation('billing:country_id', 'billing:region', '<?php echo $this->getUrl('directory/json/childRegion') ?>', '<?php echo $this->__('Select State/Province...') ?>');
     $('billing-address-select') && billing.newAddress(!$('billing-address-select').value);

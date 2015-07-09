@@ -1,0 +1,120 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Product list template
+ *
+ * @see Mage_Catalog_Block_Product_List
+ */
+?>
+<?php
+$continueSearch = $this->getRequest()->getParam('next_page');
+$google_crawl = Mage::getSingleton('catalogsearch/advanced')->getGoogleCrawler();
+
+$brand = Mage::getModel('eav/entity_attribute')->load(Mage::getResourceModel('eav/entity_attribute')
+                ->getIdByCode("catalog_product", "brand"));
+
+$options = $brand->getSource()->getAllOptions(FALSE);
+$arrBrands = array();
+foreach ($options as $idx => $option) {
+    $arrBrands[$option["value"]] = $option;
+    unset($options[$idx]);
+}
+
+
+if ($continueSearch) {
+	$productPerPage = 36;
+}
+else
+	$productPerPage = 36;
+?>
+<?php
+    if (Mage::getSingleton('catalogsearch/advanced')->getGoogleCrawler()) {
+        $_productCollection=$this->getLoadedProductCollection();
+        echo $this->getToolbarHtml();
+    } else {
+        $_productCollection=clone $this->getLoadedProductCollection();
+        $page = Mage::getSingleton('catalogsearch/advanced')->getNextPage();
+        if ($page) {
+            $_productCollection->clear()->setPage($page, $productPerPage)->load();
+            Mage::getSingleton("catalog/session")->setLastPage($_productCollection->getLastPageNumber());
+            if ($_productCollection->getLastPageNumber() < $page) {
+                exit();
+            }
+        } else {
+            $_productCollection->clear()->setPageSize($productPerPage)->load();
+            Mage::getSingleton("catalog/session")->setLastPage($_productCollection->getLastPageNumber());
+        }
+    }
+    $_helper = $this->helper('catalog/output');
+?>
+<?php if($_productCollection->count()): ?>
+<?php $i = 0;?>
+<div class="product_rack">
+    <ul>
+        <?php foreach ($_productCollection as $_product) { ?>
+        <?php
+            $_product = Mage::getModel("catalog/product")->load($_product->getId());
+            $tmp = $this->stripTags($_product->getName(), null, true);
+            $brandName = $_product->getAttributeText("brand");
+
+            //$brandId = Mage::getResourceModel('catalog/product')->getAttributeRawValue($_product->getId(), 'brand', 0);
+            $product_name = substr($tmp, 0, 6);
+            if (strlen($product_name) >= 6) $product_name .= "...";
+        ?>
+        <?php $i++?>
+        <li <?php if ($i % 2 == 0) echo "class=\"pro2\"";?>>
+            <?php
+                if ($google_crawl) {
+                    $url = Mage::getUrl("ajaxsearch/ajax/viewgoogle", array("productId" => $_product->getId()));
+                } else {
+                    $url = Mage::getUrl("ajaxsearch/ajax/view", array("productId" => $_product->getId()));
+                }
+            ?>
+            <a href="<?php echo $url?>" title="<?php echo $_product->getName()?>">
+                <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(100,116); ?>" alt="<?php echo $_product->getName()?>"/>
+                <?php echo $brandName; ?> <span><?php echo $this->getPriceHtml($_product, true) ?></span>
+            </a>
+        </li>
+        <?php if (($i % 6 == 0) && ($i < $_productCollection->count())) { ?>
+    </ul>
+</div>
+<div class="product_rack">
+    <ul>
+        <?php } ?>
+        <?php } ?>
+    </ul>
+</div>
+<?php endif; ?>
+<?php $params = Mage::getSingleton('catalogsearch/advanced')->getParams();?>
+
+<?php if($google_crawl): ?>
+    <?php foreach($arrBrands as $id => $arrAttr){
+        echo '<a href="'.Mage::getBaseUrl(). 'search/#!categoryId='. $params["categoryId"].'&brand='. $id .'">'. $arrAttr['label'] .'</a>';
+        echo ' <br/>';
+    } ?>
+<?php endif; ?>

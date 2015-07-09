@@ -33,7 +33,7 @@ $allowedShippingMethods = $this->helper('shippingcustomiser')->getAllowedShippin
     <p><?php echo $this->__('Sorry, no quotes are available for this order at this time.') ?></p>
 <?php else: ?>
     <div class="sp-methods delivery-rates">
-        <h2><?php echo $this->__('LOCAL DELIVERY'); ?></h2>
+        <h2><?php echo $this->__('DELIVERY'); ?></h2>
         <div class="table-responsive">
     <?php $shippingCodePrice = array(); ?>
     <?php $_sole = count($_shippingRateGroups) == 1; foreach ($_shippingRateGroups as $code => $_rates): ?>
@@ -49,7 +49,7 @@ $allowedShippingMethods = $this->helper('shippingcustomiser')->getAllowedShippin
                         <tr>
                             <th><?php echo $this->__('COUNTRY'); ?></th>
                             <th><?php echo $this->__('ESTIMATED DELIVERY TIME'); ?></th>
-                            <th><?php echo $_rate->getMethodTitle(); ?></th>
+                            <th><?php echo $this->__('RATE'); ?><?php //echo $_rate->getMethodTitle(); ?></th>
                         </tr>
                     </thead>
                     <tbody>

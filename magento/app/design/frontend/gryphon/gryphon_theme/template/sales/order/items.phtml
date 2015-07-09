@@ -86,28 +86,28 @@
                     <div class="col-md-6 col-md-offset-6 expanded open" style="display: none;">
                         <?php if ($_order->getShippingAmount()) :?>
                             <div class="row each-details">
-                                <div class="col-md-4"><h2><?php echo $this->__('shipping &amp; handling'); ?></h2><span>— <?php echo $_order->getShippingDescription(); ?></span></div>
-                                <div class="col-md-4 align-to-total"><h2 class="shipping price"><?php echo $_order->formatPrice($_order->getShippingAmount()); ?></h2></div>
+                                <div class="col-md-5"><h2><?php echo $this->__('shipping &amp; handling'); ?></h2><span>— <?php echo $_order->getShippingDescription(); ?></span></div>
+                                <div class="col-md-7 align-to-total"><h2 class="shipping price"><?php echo $_order->formatPrice($_order->getShippingAmount()); ?></h2></div>
                             </div>
                         <?php endif; ?>
                         <?php if ($_order->getCouponCode()) : ?>
                             <div class="row each-details">
-                                <div class="col-md-4"><h2><?php echo $this->__('Applied Discount Code'); ?></h2><span>— <?php echo $_order->getCouponCode(); ?></span></div>
-                                <div class="col-md-4 align-to-total"><h2 class="minus applied_discount_code price">- <?php echo $_order->formatPrice($_order->getDiscountAmount()); ?></h2></div>
+                                <div class="col-md-5"><h2><?php echo $this->__('Applied Discount Code'); ?></h2><span>— <?php echo $_order->getCouponCode(); ?></span></div>
+                                <div class="col-md-7 align-to-total"><h2 class="minus applied_discount_code price">- <?php echo $_order->formatPrice($_order->getDiscountAmount()); ?></h2></div>
                             </div>
                         <?php endif; ?>
                         <div class="row each-details">
-                            <div class="col-md-4"><h2>gift certificate</h2><span>— G6D7S6234L</span></div>
+                            <div class="col-md-5"><h2>gift certificate</h2><span>— G6D7S6234L</span></div>
                             <div class="col-md-4 align-to-total"><h2 class="minus gift_certificate price">- S$ 50.00</h2></div>
                         </div>
                         <div class="row each-details">
-                            <div class="col-md-4"><h2>redeemed points</h2></div>
-                            <div class="col-md-4 align-to-total"><h2 class="minus redeemed_points price">- S$ 2.00</h2></div>
+                            <div class="col-md-5"><h2>redeemed points</h2></div>
+                            <div class="col-md-7 align-to-total"><h2 class="minus redeemed_points price">- S$ 2.00</h2></div>
                         </div>
                         <?php if ($_order->getTaxAmount()): ?>
                             <div class="row each-details">
-                                <div class="col-md-4"><h2><?php echo $this->__('Tax'); ?></h2></div>
-                                <div class="col-md-4 align-to-total"><h2 class="tax price"><?php echo $_order->formatPrice($_order->getTaxAmount()); ?></h2></div>
+                                <div class="col-md-5"><h2><?php echo $this->__('Tax'); ?></h2></div>
+                                <div class="col-md-7 align-to-total"><h2 class="tax price"><?php echo $_order->formatPrice($_order->getTaxAmount()); ?></h2></div>
                             </div>
                         <?php endif; ?>
                         <div class="row">

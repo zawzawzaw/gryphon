@@ -36,7 +36,7 @@
     $_productCollection=$this->getLoadedProductCollection();
     $_helper = $this->helper('catalog/output');    
 ?>
-<div id="feature-products">
+<div id="feature-products-inside">
 
     <?php //echo $this->getToolbarHtml() ?>
     <div class="image-text-content container">
@@ -49,30 +49,32 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="row">
-                    <div class="col-md-12">                        
-                        <div class="each-feature">
-                            <img src="<?php echo $this->getSkinUrl('images/content/feature-1.png') ?>" class="img-responsive" alt="feature 1">
-                            <p>Sweet treats are just something many of us can’t live without!</p>
-                        </div>
-                        <div class="each-feature">
-                            <img src="<?php echo $this->getSkinUrl('images/content/feature-2.png') ?>" class="img-responsive" alt="feature 2">
-                            <p>It is hard to go wrong with a classic tea selection.</p>
-                        </div>
-                        <div class="each-feature">
-                            <img src="<?php echo $this->getSkinUrl('images/content/feature-3.png') ?>" class="img-responsive" alt="feature 3">
-                            <p>Get inspired to start the day strong with a cup of invigorating tea.</p>
-                        </div>                          
-                        <div class="each-feature">
-                            <img src="<?php echo $this->getSkinUrl('images/content/feature-4.png') ?>" class="img-responsive" alt="feature 4">
-                            <p>The perfect healthy antidote to help bring sound sleep.</p>
-                        </div>
-                        <div class="each-feature">
-                            <img src="<?php echo $this->getSkinUrl('images/content/feature-5.png') ?>" class="img-responsive" alt="feature 5">
-                            <p>The teas to aid in digestion while keeping you hydrated!</p>
-                        </div>
-                        <div class="each-feature">
-                            <img src="<?php echo $this->getSkinUrl('images/content/feature-1.png') ?>" class="img-responsive" alt="feature 6">
-                            <p>The perfect alibi to celebrate a warm and fuzzy Christmas!</p>
+                    <div class="col-md-12">   
+                        <div class="each-feature-container">                     
+                            <div class="each-feature">
+                                <img src="<?php echo $this->getSkinUrl('images/content/feature-1.png') ?>" class="img-responsive" alt="feature 1">
+                                <p>Sweet treats are just something many of us can’t live without!</p>
+                            </div>
+                            <div class="each-feature">
+                                <img src="<?php echo $this->getSkinUrl('images/content/feature-2.png') ?>" class="img-responsive" alt="feature 2">
+                                <p>It is hard to go wrong with a classic tea selection.</p>
+                            </div>
+                            <div class="each-feature">
+                                <img src="<?php echo $this->getSkinUrl('images/content/feature-3.png') ?>" class="img-responsive" alt="feature 3">
+                                <p>Get inspired to start the day strong with a cup of invigorating tea.</p>
+                            </div>                          
+                            <div class="each-feature">
+                                <img src="<?php echo $this->getSkinUrl('images/content/feature-4.png') ?>" class="img-responsive" alt="feature 4">
+                                <p>The perfect healthy antidote to help bring sound sleep.</p>
+                            </div>
+                            <div class="each-feature">
+                                <img src="<?php echo $this->getSkinUrl('images/content/feature-5.png') ?>" class="img-responsive" alt="feature 5">
+                                <p>The teas to aid in digestion while keeping you hydrated!</p>
+                            </div>
+                            <div class="each-feature">
+                                <img src="<?php echo $this->getSkinUrl('images/content/feature-1.png') ?>" class="img-responsive" alt="feature 6">
+                                <p>The perfect alibi to celebrate a warm and fuzzy Christmas!</p>
+                            </div>
                         </div>                        
                     </div>
                 </div>

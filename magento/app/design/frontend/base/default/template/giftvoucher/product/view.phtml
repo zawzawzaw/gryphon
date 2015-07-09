@@ -41,7 +41,7 @@ $timezone = $store->getConfig('general/locale/timezone');
     });
 //]]>
 </script>
-<div class="giftvoucher-product-info">
+<div class="giftvoucher-product-info test">
     <?php if ($_giftAmount['type'] == 'range'): ?>
         <p></p><p>
             <?php
@@ -50,7 +50,7 @@ $timezone = $store->getConfig('general/locale/timezone');
             ?>
             <label for="amount_range"><div style="float: left; width:100px"><?php echo $this->__('Enter value:') ?></div></label>
             <input id="amount_range" name="amount" class="input-text required-entry validate-greater-than-zero" onchange="validateInputRange(this);" value="<?php echo $_formData->getAmount() ?>" />
-            (<span class="price"><?php echo $_giftAmount['from_txt'] ?></span> -  <span class="price"><?php echo $_giftAmount['to_txt'] ?></span>)
+            (<span class="price test 1"><?php echo $_giftAmount['from_txt'] ?></span> -  <span class="price test"><?php echo $_giftAmount['to_txt'] ?></span>)
             <script type="text/javascript">
                 //<![CDATA[
                 var rateTax = <?php echo $rateTax ?>;

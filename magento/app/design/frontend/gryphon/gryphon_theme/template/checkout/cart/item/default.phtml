@@ -190,11 +190,13 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
     <?php endif; ?>
     <td class="a-center">
         <div class="image-text-container">
-            <p class="product-qty">
-                <input type="hidden" name="cart[<?php echo $_item->getId() ?>][qty]" value="<?php echo $this->getQty() ?>" size="4" title="<?php echo $this->__('Qty') ?>" class="input-text qty" maxlength="12" />
-                <a href="javascript:void(0)" class="minus"></a>
-                <span class="qty"><?php echo $this->getQty() ?></span>
-                <a href="javascript:void(0)" class="add"></a>
+            <p class="product-qty">                
+                <!--<a href="javascript:void(0)" class="minus"></a>-->
+                <a href="javascript:void(0)" class="minus"><i class="fa fa-minus"></i></a>
+                <input type="text" name="cart[<?php echo $_item->getId() ?>][qty]" value="<?php echo $this->getQty() ?>" size="4" title="<?php echo $this->__('Qty') ?>" class="input-text qty" maxlength="12" />
+                <a href="javascript:void(0)" class="plus"><i class="fa fa-plus"></i></a>  
+                <!--<span class="qty"><?php echo $this->getQty() ?></span>-->
+                <!--<a href="javascript:void(0)" class="add"></a>-->    
             </p>
         </div>
     </td>

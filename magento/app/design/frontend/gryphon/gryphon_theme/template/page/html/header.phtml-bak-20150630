@@ -1,0 +1,55 @@
+<?php
+$count = $this->helper('checkout/cart')->getSummaryCount();
+$quote = Mage::getModel('checkout/session')->getQuote();
+$quoteData= $quote->getData();
+?>
+<div id="header-wrapper" class=""><!-- container-fluid -->
+	<header id="main-header" class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="logo-wrapper hidden-xs hidden-sm visible-md visible-lg">
+					<a href="<?php echo $this->getUrl('') ?>" class="site-logo">
+						<img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>">
+					</a>
+				</div>
+				<div id="menu-wrapper">
+					<?php echo $this->getChildHtml('topMenu') ?>					
+				</div>	
+				<div id="header-cta">
+					<div class="promo-image-text">
+						<!-- <div class="promo hidden-xs hidden-sm">
+							<img src="<?php echo $this->getSkinUrl('images/icons/header-img-1.png') ?>" class="promo-img" alt="header img">
+							<p>Get <span class="red">10%</span> off discount from your first purchase <br>until 17th of Jan with Promo Code: <span class="red">SHOPNOW</span></p>
+						</div> -->
+
+						<div class="cta">
+							<ul class="cta-list">
+								<li>
+									<a href="#" class="search"><span class="hidden-xs hidden-sm">Search</span></a>									
+								</li>
+								<!-- <li><a href="store.html">Local Store</a></li> -->
+								<?php 
+								$session = Mage::getSingleton('customer/session');
+								if($session->isLoggedIn()) {
+								   $customer = $session->getCustomer();
+								   // echo $customer->getName();
+								   $customer_name = $customer->getFirstname();
+								}
+								?>						
+								<li><a href="<?php echo $this->helper('customer')->getAccountUrl(); ?>" class="account"><span class="hidden-xs hidden-sm"><?php echo (isset($customer_name)) ? $customer_name	 : $this->__('Account'); ?></span></a></li>
+								<li class="hidden-md hidden-lg"><hr class="divider"></li>
+                                <?php if ($count) :?>
+                                <li><a href="<?php echo $this->getUrl('checkout/cart'); ?>" class="cart"><span><?php echo Mage::helper('core')->currency($quoteData['subtotal']); ?> (<?php echo $count; ?>)</span></a></li>
+                            	<?php else: ?>
+                            	<li><a href="<?php echo $this->getUrl('checkout/cart'); ?>" class="cart"><span><?php echo $this->__('CART'); ?></span></a></li>
+                                <?php endif; ?>
+							</ul>
+						</div>
+						 <?php echo $this->getChildHtml('topSearch') ?>
+			            <?php echo $this->getChildHtml('currency_top') ?>			            
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+</div>

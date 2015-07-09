@@ -1,0 +1,36 @@
+<?php
+/**
+ * @category    Fishpig
+ * @package     Fishpig_Wordpress
+ * @license     http://fishpig.co.uk/license.txt
+ * @author      Ben Tideswell <help@fishpig.co.uk>
+ */
+?>
+<?php if ($post = $this->getPost()): ?>
+	<?php $tagString = $this->getTermsAsHtml($post, 'post_tag') ?>
+	<?php $categoryString = $this->getTermsAsHtml($post, 'category') ?>
+	<div class="row post-extra-content">
+		<div class="col-md-12">
+			<div class="category post-extra">
+				<h2>category</h2>
+				<p><?php echo $categoryString; ?></p>
+			</div>
+		
+			<div class="tags post-extra">
+				<h2>tags</h2>
+				<?php if ($tagString): ?>
+				<p><?php echo $tagString; ?></p>
+				<?php endif; ?>
+			</div>
+			
+			<div class="sharing post-extra">
+				<ul>
+					<li><a href="#" class="instagram"></a></li>
+					<li><a href="#" class="pintrest"></a></li>
+					<li><a href="#" class="twitter"></a></li>
+					<li><a href="#" class="facebook"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>	
+<?php endif; ?>

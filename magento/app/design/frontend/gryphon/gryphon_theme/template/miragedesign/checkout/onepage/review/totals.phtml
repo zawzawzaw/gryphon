@@ -34,9 +34,9 @@
     <?php echo $this->renderTotals(null, $_colspan); ?>
     <?php echo $this->renderTotals('footer', $_colspan); ?>
     <?php if ($this->needDisplayBaseGrandtotal()):?>
-    <div class="each-details">
+    <div class="each-details total-sgd">
         <div class="a-right label" colspan="<?php echo $_colspan; ?>">
-            <p><?php echo $this->helper('sales')->__('Your credit card will be charged for') ?></p>
+            <p><?php echo $this->helper('sales')->__('Total in SGD') ?></p>
         </div>
         <div class="a-right value">
             <p><?php echo $this->displayBaseGrandtotal() ?></p>

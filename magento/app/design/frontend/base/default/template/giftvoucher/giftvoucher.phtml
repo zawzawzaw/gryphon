@@ -6,11 +6,12 @@
 <div class="customer-account-giftcard">
     <div class="page-title">
         <h1><?php echo $this->__('Gift card') ?></h1>
+        <hr class="small">
     </div>
     <div class="balance">
         <div class="amount">
             <?php if (Mage::helper('giftvoucher')->getGeneralConfig('enablecredit')) { ?>
-                <?php echo $this->__('My credit balance: ') ?><span class="regular-price"><span><?php echo $this->getBalanceAccount() ?></span></span>
+                <p><?php echo $this->__('My credit balance: ') ?><span class="regular-price"><span><?php echo $this->getBalanceAccount() ?></span></span></p>
             <?php } ?>
             <button type="button" class="form-button button addredeem" onclick="setLocation('<?php echo $this->getUrl('giftvoucher/index/addredeem') ?>')">
                 <?php if (Mage::helper('giftvoucher')->getGeneralConfig('enablecredit')) { ?>

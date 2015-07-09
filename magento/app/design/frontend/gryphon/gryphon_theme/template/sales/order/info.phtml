@@ -33,7 +33,7 @@ $shippingAddress = $_order->getShippingAddress();
 $shippingCountryName = ($shippingAddress) ? Mage::getModel('directory/country')->load($shippingAddress->getCountryId())->getName() : '';
 ?>
 <div class="billing-and-shipping order-history">
-    <div class="image-text-content container">
+    <div class="image-text-content">
         <?php echo $this->getMessagesBlock()->toHtml() ?>
         <div class="row order-history-heading">
             <div class="page-title col-md-12">
@@ -63,7 +63,7 @@ $shippingCountryName = ($shippingAddress) ? Mage::getModel('directory/country')-
                 <p class="order-date"><?php echo $this->__('Order Date: %s', $this->formatDate($_order->getCreatedAtStoreDate(), 'long')) ?></p>
                 <br />
 
-                <div class="col-md-6 billing-address">
+                <div class="billing-address">
                     <div class="billing-address-details">
                         <div class="row">
                             <div class="col-md-12">
@@ -107,7 +107,7 @@ $shippingCountryName = ($shippingAddress) ? Mage::getModel('directory/country')-
                     </div>
                 </div>
 
-                <div class="col-md-6 shipping-address">
+                <div class="shipping-address">
                     <div class="shipping-address-details">
                         <?php if (!$_order->getIsVirtual()): ?>
                             <div class="row">
