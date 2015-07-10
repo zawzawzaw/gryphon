@@ -165,10 +165,11 @@ if (!Array.prototype.indexOf) {
     this.question_02_gift_element = this.element.find("#discover-tea-question-02-gift");
 
     //this.result_question_element = this.element.find("#discover-tea-result .results-item-top");
-    this.result_monthly_element = this.element.find("#discover-tea-result .results-item-monthly");
+    //this.result_monthly_element = this.element.find("#discover-tea-result .results-item-monthly");
     this.result_container_element = this.element.find("#discover-tea-result #results-item-container");
 
 
+    this.results_top_element = this.result_container_element.find(".results-item-top");
     this.similar_aroma_container = this.result_container_element.find("#result-item-container-similar-aroma");
 
     this.similar_container = this.result_container_element.find('#result-item-container-similar');
@@ -179,6 +180,8 @@ if (!Array.prototype.indexOf) {
     //this.get_results_button = this.element.find("#get-results-button");
     //this.get_results_button.click(this.on_get_results_button_click.bind(this));
     
+
+    this.subscription_element = this.element.find("#discover-tea-subscription");
 
 
     // restart button click.
@@ -299,7 +302,8 @@ if (!Array.prototype.indexOf) {
                 '<a href="{url}" target="_blank"></a>',
               '</div>',
               '<a href="{url}" target="_blank"><h4>{name}</h4></a>',
-              '<p>{category}</p>',
+              '<p></p>',
+              //'<p>{category}</p>',
               //'<div class="buttons">',
                 //'<div class="zoom"></div>',
                 //'<div class="add"></div>',
@@ -713,7 +717,7 @@ if (!Array.prototype.indexOf) {
       this.question_02_gift_element.slideUp(500);
 
       this.result_container_element.slideUp(500);
-      this.result_monthly_element.slideUp(500);
+      this.subscription_element.slideUp(500);
 
 
       var header_height = $("#header-wrapper").height();
@@ -836,12 +840,16 @@ if (!Array.prototype.indexOf) {
       var padding_top = 0;
       var target_y = this.question_05_element.offset().top - header_height - padding_top;
       this.scroll_to(target_y);
+
+      this.subscription_element.slideDown(500);
     },
     hide_results_container: function(){
       this.result_container_element.slideUp(500);
+      this.subscription_element.slideUp(500);
     },
 
 
+    /*
     display_results_montly: function(){
       this.result_monthly_element.slideDown(500);
 
@@ -853,19 +861,26 @@ if (!Array.prototype.indexOf) {
     hide_results_montly: function(){
       this.result_monthly_element.slideUp(500);
     },
-
+    */
 
     show_similar: function(){
       this.similar_container.slideDown(500);
       this.different_container.slideUp(500);
 
+      this.results_top_element.find('h1').html('similar to what I’ve been drinking');
+
       if(this.has_no_similar == true){
+        this.results_top_element.slideUp(500);
         this.similar_aroma_container.slideDown(500);
       }
     },
     show_different: function(){
       this.similar_container.slideUp(500);
       this.different_container.slideDown(500);
+
+      this.results_top_element.find('h1').html('different to what I’ve been drinking');
+
+      this.results_top_element.slideDown(500);
       this.similar_aroma_container.slideUp(500);
     },
     
@@ -882,21 +897,26 @@ if (!Array.prototype.indexOf) {
       var data = JSON.parse(event['responseText']);
       var image_str = '<img src="' + 'http://test.gryphontea.com/magento/media/catalog/product' + data.image + '">'
       this.result_01_element.find('.results-item-image a').append(image_str);
+      this.result_01_element.find('p').html("" + data.short_description);
+      
     },
     on_result_02_complete: function(event){
       var data = JSON.parse(event['responseText']);
       var image_str = '<img src="' + 'http://test.gryphontea.com/magento/media/catalog/product' + data.image + '">'
       this.result_02_element.find('.results-item-image a').append(image_str);
+      this.result_02_element.find('p').html("" + data.short_description);
     },
     on_result_03_complete: function(event){
       var data = JSON.parse(event['responseText']);
       var image_str = '<img src="' + 'http://test.gryphontea.com/magento/media/catalog/product' + data.image + '">'
       this.result_03_element.find('.results-item-image a').append(image_str);
+      this.result_03_element.find('p').html("" + data.short_description);
     },
     on_result_04_complete: function(event){
       var data = JSON.parse(event['responseText']);
       var image_str = '<img src="' + 'http://test.gryphontea.com/magento/media/catalog/product' + data.image + '">'
       this.result_04_element.find('.results-item-image a').append(image_str);
+      this.result_04_element.find('p').html("" + data.short_description);
     },
 
 
@@ -905,21 +925,25 @@ if (!Array.prototype.indexOf) {
       var data = JSON.parse(event['responseText']);
       var image_str = '<img src="' + 'http://test.gryphontea.com/magento/media/catalog/product' + data.image + '">'
       this.different_result_01_element.find('.results-item-image a').append(image_str);
+      this.different_result_01_element.find('p').html("" + data.short_description);
     },
     on_different_result_02_complete: function(event){
       var data = JSON.parse(event['responseText']);
       var image_str = '<img src="' + 'http://test.gryphontea.com/magento/media/catalog/product' + data.image + '">'
       this.different_result_02_element.find('.results-item-image a').append(image_str);
+      this.different_result_02_element.find('p').html("" + data.short_description);
     },
     on_different_result_03_complete: function(event){
       var data = JSON.parse(event['responseText']);
       var image_str = '<img src="' + 'http://test.gryphontea.com/magento/media/catalog/product' + data.image + '">'
       this.different_result_03_element.find('.results-item-image a').append(image_str);
+      this.different_result_03_element.find('p').html("" + data.short_description);
     },
     on_different_result_04_complete: function(event){
       var data = JSON.parse(event['responseText']);
       var image_str = '<img src="' + 'http://test.gryphontea.com/magento/media/catalog/product' + data.image + '">'
       this.different_result_04_element.find('.results-item-image a').append(image_str);
+      this.different_result_04_element.find('p').html("" + data.short_description);
     },
 
 
@@ -1201,16 +1225,16 @@ if (!Array.prototype.indexOf) {
           case "similar":
             this.show_similar();
             this.display_results_container();
-            this.hide_results_montly();
+            //this.hide_results_montly();
             break;
           case "different":
             this.show_different();
             this.display_results_container();
-            this.hide_results_montly();
+            //this.hide_results_montly();
             break;
           case "monthly":
             this.hide_results_container();
-            this.display_results_montly();
+            //this.display_results_montly();
             break;
         }
         

@@ -145,7 +145,7 @@
             <div class="col-md-6">
               <div class="tea-category-top">
                 <h6>Maximum 3</h6>
-                <h1>What are the tea/teas you drink at home?</h1>
+                <h1>What are tea do you drink at home?</h1>
                 <hr class="small">
                 <p>Description of the service which will help the customers to find the teas they want in few clicks. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean condimentum odio nibh, sed rhoncus justo vehicula. Vivamus facilisis ultricies lectus. Nullam finibus tortor.</p>
               </div>
@@ -306,6 +306,7 @@
 
               <div class="tea-aroma-container">
 
+
                 <div class="tea-aroma" data-aroma="citrus">
                   <div class="icon"></div>
                   <h4>Citrus</h4>
@@ -314,46 +315,31 @@
                   <div class="icon"></div>
                   <h4>Floral</h4>
                 </div>
-                <div class="tea-aroma" data-aroma="forrest">
-                  <div class="icon"></div>
-                  <h4>Forrest</h4>
-                </div>
                 <div class="tea-aroma" data-aroma="fruity">
                   <div class="icon"></div>
                   <h4>Fruity</h4>
                 </div>
-                <div class="tea-aroma" data-aroma="marine">
+                <div class="tea-aroma" data-aroma="caramelised">
                   <div class="icon"></div>
-                  <h4>Marine</h4>
-                </div>
-                <div class="tea-aroma" data-aroma="minty">
-                  <div class="icon"></div>
-                  <h4>Minty</h4>
+                  <h4>Caramelised</h4>
                 </div>
                 <div class="tea-aroma" data-aroma="plant">
                   <div class="icon"></div>
                   <h4>Plant</h4>
                 </div>
-                <div class="tea-aroma" data-aroma="smokey">
+                <div class="tea-aroma" data-aroma="wood and toast">
                   <div class="icon"></div>
-                  <h4>Smokey</h4>
+                  <h4>Wood & Toast</h4>
+                </div>
+                <div class="tea-aroma" data-aroma="earthy">
+                  <div class="icon"></div>
+                  <h4>Earthy</h4>
                 </div>
                 <div class="tea-aroma" data-aroma="spicy">
                   <div class="icon"></div>
                   <h4>Spicy</h4>
                 </div>
-                <div class="tea-aroma" data-aroma="sweet">
-                  <div class="icon"></div>
-                  <h4>Sweet</h4>
-                </div>
-                <div class="tea-aroma" data-aroma="toasty">
-                  <div class="icon"></div>
-                  <h4>Toasty</h4>
-                </div>
-                <div class="tea-aroma" data-aroma="woody">
-                  <div class="icon"></div>
-                  <h4>Woody</h4>
-                </div>
+
 
               </div>
               
@@ -389,19 +375,14 @@
 
               <div class="how-start-container">
                 <div class="how-start" data-how-start="similar">
-                  <div class="icon"></div>
                   <h4>Similar to what I’ve <br>been drinking</h4>
+                  <div class="get-button">View Results</div>
                 </div>
                 <div class="how-start" data-how-start="different">
-                  <div class="icon"></div>
                   <h4>Different to what I’ve <br>been drinking</h4>
+                  <div class="get-button">View Results</div>
                 </div>
                 
-                <div class="how-start" data-how-start="monthly">
-                  <div class="icon"></div>
-                  <h4>Something different <br>every month</h4>
-                </div>
-
               </div>
 
 
@@ -421,33 +402,27 @@
           <div class="row">
             <div class="col-md-12">
 
+              <!--
               <div class="results-item-top">
-
                 <h1>insert one-liner <br>before displaying results</h1>
                 <hr class="small">
                 <div id="get-results-button">Get Results</div>
-
               </div>
-
-              <div class="results-item-monthly">
-
-                <h1>insert one-liner <br>before displaying results</h1>
-                <hr class="small">
-                <div class="cta-container">
-                  <a href="subscription-form-artisan.html" target="_blank" class="final-cta-button">Subscribe Artisan Selection</a>
-                  <a href="subscription-form-gourmet.html" target="_blank" class="final-cta-button">Subscribe Gourmet Selection</a>
-                  <div class="final-cta-button discover-restart-button">Discover Tea Again</div>
-                </div>
-
-              </div>
+              -->
 
               <div id="results-item-container">
+
+                <div class="results-item-top">
+                  <h1>similar to what I’ve been drinking</h1>
+                  <hr class="small">
+                  <!-- <div class="space50"></div> -->
+                </div>
 
                 <div id="result-item-container-similar-aroma">
                   <h1>No Results</h1>
                   <hr class="small">
                   <p>Try these other products with the same aroma: </p>
-                  <div class="space50"></div>
+                  <!-- <div class="space50"></div> -->
                 </div>
 
                 <div class="row" id="result-item-container-similar">
@@ -503,7 +478,26 @@
       </div> <!-- .seventh-content -->
 
 
+      <div class="eighth-content"  id="discover-tea-subscription">
+        <div class="image-text-content container">
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
 
+              <hr class="big">
+
+              <h1>Gryphon tea subscription</h1>
+              <hr class="small">
+              <p>Try Something different every month! A convenient way to save money and time, our subscription service allows <br>you to enjoy a variety of teas at discounted prices, and have them helpfully delivered to your door every month.</p>
+
+              <img class="img-responsive" src="images/content/discover/subscribe.png">
+              <a href="subscription.html" class="subscribe-cta-button">Visit Subscription</a>
+              
+
+            </div>
+          </div>
+        </div>
+      </div>
 
       
 
@@ -525,7 +519,7 @@
     jQuery(document).ready(function($) {
 
       $('#gryphon-discover-tea-content').gryphon_discover_tea({
-        json: "json/discover-tea.json"
+        json: "json/discover-tea-2.json"
       });
     });
   </script>
