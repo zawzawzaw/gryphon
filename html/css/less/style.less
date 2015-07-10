@@ -1058,6 +1058,7 @@ ul.messages {
         background-color: rgba(37, 37, 37, 0.7);          
         padding: 15px 60px 15px 15px;
         text-align: left;
+        min-width: 140px;
         li {
           a {
             text-align: left;
@@ -3975,7 +3976,7 @@ div.product {
 //////////////////////
 
 .sign-up {
-  margin-top: 85px;
+  margin-top: 80px;
   padding-bottom: 120px!important;
   @media all and (max-width: 992px) {
     margin-top: 60px;
@@ -6462,6 +6463,7 @@ div.product {
             border-top: 1px solid #ccc;
             border-bottom: 1px solid #ccc;
             padding: 10px 20px;
+            text-align: center;
           }
         }
       }
@@ -6472,7 +6474,8 @@ div.product {
             padding: 20px;
             .gotham-book;
             font-size: 11px;
-            line-height: 19px;         
+            line-height: 19px;  
+            text-align: center;       
           }
           &:last-child {
             td {
@@ -6484,6 +6487,9 @@ div.product {
     }
 
     .pager {
+      .amount {
+        margin-top: 14px;
+      } 
       .limiter {
         margin-top: 10px;
         margin-bottom: 10px;
@@ -6615,6 +6621,7 @@ div.product {
       #my-rewardpoints-table {
         position: absolute;
         top: 185px;
+        margin-top: 0px;
       }      
     }
     .each-input {
@@ -6650,7 +6657,7 @@ div.product {
         color: @new-grey;
         &.loyalty-point { 
           font-size: 18px!important;
-          line-height: 26px;
+          line-height: 0px;
           color: @dark-orange;
         }
       }      
@@ -6942,6 +6949,7 @@ div.product {
       line-height: 19px;
       letter-spacing: 0.03em;
       color: #707070;
+      text-align: center;
       &.minus {
         color: #777!important;
       }
@@ -6959,6 +6967,7 @@ div.product {
     .order-headers {
       .order-status {
         padding-left: 40px!important;
+        text-align: center;
       }
       .order-no, .order-date {
         padding-left: 5px!important;
@@ -6994,7 +7003,8 @@ div.product {
 
       .view-order-details {
         .align-to-total {
-          padding-left: 93px;
+          // padding-left: 93px;
+          padding-left: 115px;
         }
       }
 
@@ -7004,13 +7014,13 @@ div.product {
 
       .extra-content {
         .align-to-total {
-          padding-left: 55px;
+          padding-left: 75px;
         }
       }
 
       .align-to-button {
         text-align: right;
-        margin-left: -60px;
+        margin-left: -28px;
       }
 
       .orders {
@@ -7037,7 +7047,8 @@ div.product {
               }
               p {
                 font-size: 11px; 
-                line-height: 16px;               
+                line-height: 16px;
+                text-align: center;               
                 color: @new-grey;
                 .gotham-book;                
               }
@@ -7079,6 +7090,7 @@ div.product {
                 font-size: 11px;
                 line-height: 19px;
                 color: @new-grey;
+                text-align: left;
               }
               .price {
                 .minion-pro-regular;
@@ -7131,6 +7143,7 @@ div.product {
                 font-size: 11px;
                 line-height: 19px;
                 color: @new-grey;
+                text-align: left;
                 &.grand_total {
                   color: @dark-orange;
                 }
@@ -7193,6 +7206,7 @@ div.product {
             border-top: 1px solid #ccc;
             border-bottom: 1px solid #ccc;
             padding: 10px 20px;
+            text-align: center;
           }
         }
       }
@@ -7201,6 +7215,7 @@ div.product {
           td {
             border-top: 1px dashed #ccc;
             padding: 20px;
+            text-align: center;
             p.order_no {
               color: @dark-orange;
             }
@@ -7248,14 +7263,14 @@ div.product {
         }
       }
     }
-    .pager {
+    .pager {      
       .limiter {
         margin-top: 10px;
         margin-bottom: 10px;
         p {
           display: inline-block;
         }
-      }
+      }      
       label {
         .gotham-medium;
         font-size: 9px;
@@ -12445,7 +12460,7 @@ html{
             color: #777;
           }
           span.sub-total {
-            .gotham-medium;
+            .gotham-medium; 
             font-size: 11px;
             line-height: 16px;
             letter-spacing: 0.03em;
@@ -13259,3 +13274,4 @@ html{
 //    \___/_/   \_\___|_| \_\\___/|____/   \____|____/____/  |_____|_| \_|____/     //
 //                                                                                  //
 //////////////////////////////////////////////////////////////////////////////////////
+
