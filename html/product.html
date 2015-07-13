@@ -44,8 +44,8 @@
 
 							<p class="desc">Imperial harvest of one of China's rarest teas. Only 5 kilograms are produced each year. It is a light bodied tea with mild notes of exotic fruit and chestnut</p>
 
-							<div class="row">
-								<div class="col-md-6">
+							<div class="row extra-info">
+								<div class="col-xs-6">
 									<div class="set">
 										<h5>ingredients</h5>
 										<span class="italic">Downy long buds</span>
@@ -66,7 +66,7 @@
 										</ul>
 									</div>
 								</div>
-								<div class="col-md-6">
+								<div class="col-xs-6">
 									<div class="set-2">
 										<h5>Steeping Suggestion</h5>
 										<ul class="steeping">
@@ -78,10 +78,12 @@
 								</div>
 							</div>
 
-							<div class="space30"></div>
+							<!-- <div class="space30"></div> -->
 
 							<div class="row">
 								<div class="col-md-12">
+
+									<!--
 									<div class="dropdown">
 										<select name="weight" id="weight">
 											<option value="">Weight</option>
@@ -96,6 +98,23 @@
 									<div class="cta-btn">
 										<button class="cta add-to-cart">Add to Cart</button>
 									</div>
+									-->	
+
+									<div class="add-to-cart">
+									  <div class="qty-wrapper">
+									    <h5>QUANTITY</h5>
+									    <a href="#" class="minus"><i class="fa fa-minus"></i></a>
+									    <input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" value="1" title="Qty" class="input-text qty" />
+									    <a href="#" class="plus"><i class="fa fa-plus"></i></a>            
+									  </div>
+
+									  <div class="cta-btn add-to-cart-buttons">
+									    <button type="button" title="Add to Cart" class="cta add-to-cart button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span>Add to Cart</span></span></button>
+									    <span id='ajax_loader' style='display:none'><img src='http://test.gryphontea.com/magento/skin/frontend/gryphon/gryphon_theme/images/content/opc-ajax-loader.gif'/></span>
+									    <span class="ajax_msg italic"></span>
+									  </div>
+									</div>
+
 								</div>
 							</div>
 						</div>				
@@ -208,7 +227,9 @@
 			<div class="image-text-content container">
 				<div class="row">
 					<div class="col-md-6">
-						<img src="images/content/product-collection.png" class="img-responsive" alt="">
+						<div class="product-collection-img">
+							<img src="images/content/product-collection.png" class="img-responsive" alt="">
+						</div>
 					</div>
 					<div class="col-md-5 col-md-offset-1 no-padding">
 						<div class="text-content">
@@ -472,6 +493,7 @@
 				      	</table> -->
 					</div>
 					<div class="col-md-5 col-md-offset-1 write-review">
+						<!--
 						<h1>Write Your own review</h1>
 						<hr class="small">
 
@@ -488,6 +510,103 @@
 						<textarea name="comments" id="comments" cols="30" rows="10" placeholder="Write the comments about this tea here."></textarea>
 
 						<button class="cta rate-btn">Submit</button>
+						-->
+
+
+
+
+
+
+						<div class="box-collateral box-reviews" id="customer-reviews">
+
+						  <div class="form-add">
+						    <h1>Write Your Own Review</h1>
+						    <hr class="small">
+						    <form action="http://test.gryphontea.com/magento/review/product/post/id/23/" method="post" id="review-form">
+						      <input name="form_key" type="hidden" value="5TMa2BoksT0Guiju" />
+						      <fieldset>
+						        <!-- <p>You're reviewing: <span>Assam Hazelbank TGFOP1 2nd Flush</span></p> -->
+						        <div class="rating-wrapper">                    
+						          <span id="input-message-box"></span>
+						          <table class="data-table" id="product-review-table">
+						            <col />
+						            <col width="1" />
+						            <col width="1" />
+						            <col width="1" />
+						            <col width="1" />
+						            <col width="1" />
+						            <thead>
+						              <tr>
+						                <th><label for="rate" style="margin-left:0px;">Rate <em class="required">*</em></label></th>
+						                <th><p class="nobr">1 star</p></th>
+						                <th><p class="nobr">2 stars</p></th>
+						                <th><p class="nobr">3 stars</p></th>
+						                <th><p class="nobr">4 stars</p></th>
+						                <th><p class="nobr">5 stars</p></th>
+						              </tr>
+						            </thead>
+						            <tbody>
+						              <tr>
+						                <th><p>Price</p></th>
+						                <td class="value"><input type="radio" name="ratings[3]" id="Price_1" value="11" class="radio" /></td>
+						                <td class="value"><input type="radio" name="ratings[3]" id="Price_2" value="12" class="radio" /></td>
+						                <td class="value"><input type="radio" name="ratings[3]" id="Price_3" value="13" class="radio" /></td>
+						                <td class="value"><input type="radio" name="ratings[3]" id="Price_4" value="14" class="radio" /></td>
+						                <td class="value"><input type="radio" name="ratings[3]" id="Price_5" value="15" class="radio" /></td>
+						              </tr>
+						              <tr>
+						                <th><p>Value</p></th>
+						                <td class="value"><input type="radio" name="ratings[2]" id="Value_1" value="6" class="radio" /></td>
+						                <td class="value"><input type="radio" name="ratings[2]" id="Value_2" value="7" class="radio" /></td>
+						                <td class="value"><input type="radio" name="ratings[2]" id="Value_3" value="8" class="radio" /></td>
+						                <td class="value"><input type="radio" name="ratings[2]" id="Value_4" value="9" class="radio" /></td>
+						                <td class="value"><input type="radio" name="ratings[2]" id="Value_5" value="10" class="radio" /></td>
+						              </tr>
+						              <tr>
+						                <th><p>Quality</p></th>
+						                <td class="value"><input type="radio" name="ratings[1]" id="Quality_1" value="1" class="radio" /></td>
+						                <td class="value"><input type="radio" name="ratings[1]" id="Quality_2" value="2" class="radio" /></td>
+						                <td class="value"><input type="radio" name="ratings[1]" id="Quality_3" value="3" class="radio" /></td>
+						                <td class="value"><input type="radio" name="ratings[1]" id="Quality_4" value="4" class="radio" /></td>
+						                <td class="value"><input type="radio" name="ratings[1]" id="Quality_5" value="5" class="radio" /></td>
+						              </tr>
+						            </tbody>
+						          </table>
+						          <label for="rate">Rate*</label><div class="stars"></div>
+						          <input type="hidden" name="validate_rating" class="validate-rating" value="" />
+						          <script type="text/javascript">decorateTable('product-review-table')</script>
+						        </div>
+						        <div class="input-box">
+						          <input type="text" name="nickname" id="nickname_field" class="input-text required-entry" placeholder="Nickname" value="" />
+						        </div>
+
+						        <div class="input-box">
+						          <input type="text" name="title" id="summary_field" class="input-text required-entry" placeholder="Summary of Your Review" value="" />
+						        </div>
+						        <div class="input-box">
+						          <textarea name="detail" id="review_field" cols="5" rows="3" class="required-entry" placeholder="Write the comments about this tea here."></textarea>
+						        </div>
+						      </fieldset>
+						      <div class="buttons-set">            
+						        <button type="submit" title="Submit Review" class="button cta rate-btn"><span><span>Submit</span></span></button>
+						      </div>
+						    </form>
+
+						  </div>
+						</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 					</div>
 				</div>
 			</div>
