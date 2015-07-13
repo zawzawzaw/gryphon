@@ -19,7 +19,7 @@ fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
+menu, nav, output, ruby, section, summary, 
 time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -5748,6 +5748,7 @@ div.product {
         display: inline-block;
         vertical-align: top;
         padding: .2em .6em .3em;
+        margin-left: 12px;
         p {
           .minion-pro-semibold;
           font-size: 13px;
@@ -6036,6 +6037,7 @@ div.product {
       } 
       .shipping-info {
         padding-top: 30px;
+        margin-top: 0px; 
         .address-details {
           margin-bottom: 10px;
         }
@@ -12032,6 +12034,8 @@ div#footer-wrapper {
       display: none;
 
       .transition(0.3s);
+      pointer-events: none;
+      display: none;
     }
   }
 
@@ -12131,6 +12135,7 @@ html{
   #page-wrapper{
     &:after{
       display: block;
+      .opacity(0.5);
     }
   }
 }
