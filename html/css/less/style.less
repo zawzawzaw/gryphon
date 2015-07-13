@@ -1058,7 +1058,7 @@ ul.messages {
         background-color: rgba(37, 37, 37, 0.7);          
         padding: 15px 60px 15px 15px;
         text-align: left;
-        min-width: 140px;
+        min-width: 150px;
         li {
           a {
             text-align: left;
@@ -8419,6 +8419,13 @@ div.product {
 div#footer-wrapper {
   padding-top: 32px;
 
+  .col-md-7 {
+    padding-left: 50px;
+  }
+  .col-md-2 {
+    float: right;
+  }
+
   .links-wrapper {
     @media all and (max-width: 999px) {
       margin-top: 20px;
@@ -8431,7 +8438,7 @@ div#footer-wrapper {
     vertical-align: top;
     /*margin-left: 94px;*/
     /*margin-left: 60px;*/
-    width: 30%;
+    width: 25%;
 
     @media all and (max-width: 1200px) {
       /*margin-left: 30px;*/
@@ -8448,6 +8455,19 @@ div#footer-wrapper {
 
     &:nth-of-type(1) {
       margin-left: 0px;
+    }
+
+    &.about-us-links {
+      width: 18%;
+    }
+    &.store-links {
+      width: 25%;
+    }
+    &.selections-links {
+      width: 27%;
+    }
+    &.selections-links {
+      width: 25%;
     }
   }
 

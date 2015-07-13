@@ -889,7 +889,7 @@ ul.messages {
   background-color: rgba(37, 37, 37, 0.7);
   padding: 15px 60px 15px 15px;
   text-align: left;
-  min-width: 140px;
+  min-width: 150px;
 }
 #page-wrapper #header-cta .account-select li a {
   text-align: left;
@@ -8351,6 +8351,12 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 div#footer-wrapper {
   padding-top: 32px;
 }
+div#footer-wrapper .col-md-7 {
+  padding-left: 50px;
+}
+div#footer-wrapper .col-md-2 {
+  float: right;
+}
 @media all and (max-width: 999px) {
   div#footer-wrapper .links-wrapper {
     margin-top: 20px;
@@ -8362,7 +8368,7 @@ div#footer-wrapper .links {
   vertical-align: top;
   /*margin-left: 94px;*/
   /*margin-left: 60px;*/
-  width: 30%;
+  width: 25%;
 }
 @media all and (max-width: 1200px) {
   div#footer-wrapper .links {
@@ -8380,6 +8386,18 @@ div#footer-wrapper .links {
 }
 div#footer-wrapper .links:nth-of-type(1) {
   margin-left: 0px;
+}
+div#footer-wrapper .links.about-us-links {
+  width: 18%;
+}
+div#footer-wrapper .links.store-links {
+  width: 25%;
+}
+div#footer-wrapper .links.selections-links {
+  width: 27%;
+}
+div#footer-wrapper .links.selections-links {
+  width: 25%;
 }
 @media all and (max-width: 580px) {
   div#footer-wrapper hr {
