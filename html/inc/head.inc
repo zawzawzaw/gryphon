@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="js/plugins/slick/slick.css" />
 <link rel="stylesheet" href="js/plugins/slick/slick-theme.css" />
 <link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/custom.css" />
 
 <!-- JS -->
 <script type="text/javascript" src="js/vendors/jquery/jquery-1.11.1.min.js"></script>
