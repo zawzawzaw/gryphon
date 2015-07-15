@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Miragedesign_Templates>
+            <active>true</active>
+            <codePool>local</codePool>          
+        </Miragedesign_Templates>
+    </modules>
+</config> 

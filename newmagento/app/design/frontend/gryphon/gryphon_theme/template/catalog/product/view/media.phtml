@@ -1,0 +1,100 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+/**
+ * Product media data template
+ *
+ * @see Mage_Catalog_Block_Product_View_Media
+ */
+
+/* @var $this Mage_Catalog_Block_Product_View_Media */
+?>
+<?php
+    $_product = $this->getProduct();
+    $_helper = $this->helper('catalog/output');
+?>
+<?php if ($_product->getImage() != 'no_selection' && $_product->getImage()): ?>
+    <?php if($_product->getTypeId() == 'tin'): ?>
+        <?php $_images = Mage::getModel('catalog/product')->load($_product->getId())->getMediaGalleryImages(); ?>
+
+        <div class="vcenter">
+            <div class="vcenter2">
+                <?php 
+                //if($_images): 
+                    $i=0;
+                    foreach($_images as $_image):    
+                        // print_r($_image->getData());                    
+                        $i++; 
+                        if($i==1): ?>
+                        <div id="treasure-design-front">
+                            <img src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail', $_image->getFile())->resize(500, 470); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel());?>" title="<?php $this->htmlEscape($_image->getLabel());?>" />
+                            <div class="treasuretext">
+                              <div class="treasuretext-name"></div>
+                            </div>
+                        </div>
+                    <?php 
+                        elseif($i==2): ?>
+                        <div id="treasure-design-side">
+                            <img src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail', $_image->getFile())->resize(500, 470); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel());?>" title="<?php $this->htmlEscape($_image->getLabel());?>" />
+                        </div>
+                    <?php 
+                        elseif($i==3): ?>
+                        <div id="treasure-design-back">
+                            <img src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail', $_image->getFile())->resize(500, 470); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel());?>" title="<?php $this->htmlEscape($_image->getLabel());?>" />
+                            <div class="treasuretext">
+                              <div class="treasuretext-message-container">
+                                <div class="treasuretext-message"></div>
+                              </div>
+                            </div>
+                        </div>
+                    <?php endif;
+                    endforeach;
+                //endif; ?>                                    
+            </div>
+        </div>
+
+        <div class="fa fa-chevron-right next-image-button"></div>
+        <div class="fa fa-chevron-left prev-image-button"></div>
+    <?php else: ?>
+        <?php
+        foreach ($this->getGalleryImages() as $_image): ?>
+            <li>             
+                <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(700, 526); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>"/>             
+            </li>
+        <?php
+            // $_img = '<img id="image" class="img-responsive" src="'.$this->helper('catalog/image')->init($_product, 'image').'" alt="'.$this->escapeHtml($this->getImageLabel()).'" title="'.$this->escapeHtml($this->getImageLabel()).'" />';
+            // echo $_helper->productAttribute($_product, $_img, 'image');
+        endforeach;
+        ?>
+    <?php endif; ?>
+<?php else: ?>
+    <?php
+    $_img = '<img class="img-responsive" src="'.$this->helper('catalog/image')->init($_product, 'image')->resize(700, 526).'" alt="'.$this->escapeHtml($this->getImageLabel()).'" title="'.$this->escapeHtml($this->getImageLabel()).'" />';
+    echo $_helper->productAttribute($_product, $_img, 'image');
+    ?>
+<?php endif; ?>
+
+<?php echo $this->getChildHtml('after'); ?>

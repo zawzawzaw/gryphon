@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Miragedesign_Shippingcustomiser>
+			<active>true</active>
+			<codePool>local</codePool>
+			<depends>
+				<Mage_Shipping />
+           	</depends>
+		</Miragedesign_Shippingcustomiser>
+	</modules>
+</config>

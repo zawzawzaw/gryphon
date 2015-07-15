@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+  <config>
+     <modules>
+        <Manic_Discovertea>
+          <version>1.0.0</version>
+        </Manic_Discovertea>
+     </modules>
+     <frontend>
+       <routers>
+          <routeurfrontend>
+              <use>standard</use>
+              <args>
+                 <module>Manic_Discovertea</module>
+                 <frontName>discovertea</frontName>
+              </args>
+           </routeurfrontend>
+       </routers>
+    </frontend>
+</config>

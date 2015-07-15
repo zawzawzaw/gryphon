@@ -1,0 +1,9 @@
+a:5:{i:0;s:332:"Error in file: "/var/www/vhosts/gryphontea.com/httpdocs/magento/app/code/local/Magestore/Giftvoucher/sql/giftvoucher_setup/mysql4-install-0.2.2.php" - SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'giftvoucher_setup' for key 'PRIMARY', query was: INSERT INTO `core_resource` (`code`, `version`) VALUES (?, ?)";i:1;s:1132:"#0 /var/www/vhosts/gryphontea.com/httpdocs/magento/app/code/core/Mage/Core/Model/Resource/Setup.php(645): Mage::exception('Mage_Core', 'Error in file: ...')
+#1 /var/www/vhosts/gryphontea.com/httpdocs/magento/app/code/core/Mage/Core/Model/Resource/Setup.php(421): Mage_Core_Model_Resource_Setup->_modifyResourceDb('install', '', '0.4.3')
+#2 /var/www/vhosts/gryphontea.com/httpdocs/magento/app/code/core/Mage/Core/Model/Resource/Setup.php(327): Mage_Core_Model_Resource_Setup->_installResourceDb('0.4.3')
+#3 /var/www/vhosts/gryphontea.com/httpdocs/magento/app/code/core/Mage/Core/Model/Resource/Setup.php(235): Mage_Core_Model_Resource_Setup->applyUpdates()
+#4 /var/www/vhosts/gryphontea.com/httpdocs/magento/app/code/core/Mage/Core/Model/App.php(417): Mage_Core_Model_Resource_Setup::applyAllUpdates()
+#5 /var/www/vhosts/gryphontea.com/httpdocs/magento/app/code/core/Mage/Core/Model/App.php(343): Mage_Core_Model_App->_initModules()
+#6 /var/www/vhosts/gryphontea.com/httpdocs/magento/app/Mage.php(684): Mage_Core_Model_App->run(Array)
+#7 /var/www/vhosts/gryphontea.com/httpdocs/magento/index.php(87): Mage::run('', 'store')
+#8 {main}";s:3:"url";s:77:"/magento/index.php/admin/cache/flushAll/key/c214193f1e7ef40d37674a8206fd3dc1/";s:11:"script_name";s:18:"/magento/index.php";s:4:"skin";s:7:"default";}

@@ -1,0 +1,129 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php  $_order = $this->getOrder() ?>
+
+<hr class="order-headers-line" />
+<div class="row order-headers">
+    <div class="col-md-1 order-status"><h2><?php echo $this->__('STATUS'); ?></h2></div>
+    <div class="col-md-1 order-no"><h2><?php echo $this->__('ORDER NO.'); ?></h2></div>
+    <div class="col-md-1 order-date"><h2><?php echo $this->__('DATE'); ?></h2></div>
+    <div class="col-md-9">
+        <div class="row">
+            <div class="col-md-4"><h2><?php echo $this->__('PRODUCT'); ?></h2></div>
+            <div class="col-md-2"><h2><?php echo $this->__('UNIT PRICE'); ?></h2></div>
+            <div class="col-md-2 order-qty"><h2><?php echo $this->__('QTY'); ?></h2></div>
+            <div class="col-md-2"><h2><?php echo $this->__('TOTAL'); ?></h2></div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</div>
+
+<hr class="order-headers-line" />
+
+<div class="row order-content">
+    <div class="col-md-12 orders">
+        <div class="row each-order">
+            <div class="col-md-12">
+
+                <div class="row order-details">
+                    <div class="col-md-1 order-status"><!--<i class="fa fa-spinner fa-spin"></i>--><span><?php echo $_order->getStatusLabel() ?></span></div>
+                    <div class="col-md-1 order-no"><p class="order_no"><?php echo $_order->getRealOrderId() ?></p></div>
+                    <div class="col-md-1 order-date"><p class="date"><?php echo $this->formatDate($_order->getCreatedAtStoreDate()) ?></p></div>
+                    <div class="col-md-9">
+                        <?php $_items = $_order->getItemsCollection(); ?>
+                        <?php foreach ($_items as $_item): ?>
+                            <?php if ($_item->getParentItem()) continue; ?>
+                            <?php //echo "<pre>";print_r($_item->getData());die(); ?>
+                            <div class="row each-product">
+                                <div class="col-md-4"><p class="product"><?php echo $this->escapeHtml($_item->getName()) ?></p></div>
+                                <div class="col-md-2"><p class="price"><?php echo $_order->formatPrice($_item->getPrice()*1) ?></p></div>
+                                <div class="col-md-2 order-qty"><p><?php echo $_item->getQtyOrdered()*1 ?></p></div>
+                                <div class="col-md-2"><p class="price"><?php echo $_order->formatPrice($_item->getRowTotal()*1) ?></p></div>
+                                <div class="col-md-2"></div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+
+                <hr class="dotted" />
+                <div class="row extra-content-headers">
+                    <div class="col-md-6">
+                        <a href="#" class="view-detail"><i class="fa fa-chevron-down"></i><span><?php echo $this->__('View Detail for Grand Total'); ?></span></a>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row each-details view-order-details">
+                            <div class="col-md-4"><h2><?php echo $this->__('Sub total'); ?></h2></div>
+                            <div class="col-md-4 align-to-total"><h2 class="sub_total price"><?php echo $_order->formatPrice($_order->getSubtotal()) ?></h2></div>
+                            <div class="col-md-4"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row extra-content">
+                    <div class="col-md-6 col-md-offset-6 expanded open" style="display: none;">
+                        <?php if ($_order->getShippingAmount()) :?>
+                            <div class="row each-details">
+                                <div class="col-md-4"><h2><?php echo $this->__('shipping &amp; handling'); ?></h2><span>— <?php echo $_order->getShippingDescription(); ?></span></div>
+                                <div class="col-md-4 align-to-total"><h2 class="shipping price"><?php echo $_order->formatPrice($_order->getShippingAmount()); ?></h2></div>
+                            </div>
+                        <?php endif; ?>
+                        <?php if ($_order->getCouponCode()) : ?>
+                            <div class="row each-details">
+                                <div class="col-md-4"><h2><?php echo $this->__('Applied Discount Code'); ?></h2><span>— <?php echo $_order->getCouponCode(); ?></span></div>
+                                <div class="col-md-4 align-to-total"><h2 class="minus applied_discount_code price">- <?php echo $_order->formatPrice($_order->getDiscountAmount()); ?></h2></div>
+                            </div>
+                        <?php endif; ?>
+                        <div class="row each-details">
+                            <div class="col-md-4"><h2>gift certificate</h2><span>— G6D7S6234L</span></div>
+                            <div class="col-md-4 align-to-total"><h2 class="minus gift_certificate price">- S$ 50.00</h2></div>
+                        </div>
+                        <div class="row each-details">
+                            <div class="col-md-4"><h2>redeemed points</h2></div>
+                            <div class="col-md-4 align-to-total"><h2 class="minus redeemed_points price">- S$ 2.00</h2></div>
+                        </div>
+                        <?php if ($_order->getTaxAmount()): ?>
+                            <div class="row each-details">
+                                <div class="col-md-4"><h2><?php echo $this->__('Tax'); ?></h2></div>
+                                <div class="col-md-4 align-to-total"><h2 class="tax price"><?php echo $_order->formatPrice($_order->getTaxAmount()); ?></h2></div>
+                            </div>
+                        <?php endif; ?>
+                        <div class="row">
+                            <hr />
+                        </div>
+                        <div class="row each-details">
+                            <div class="col-md-4"><h2 class="grand_total"><?php echo $this->__('grand total'); ?></h2></div>
+                            <div class="col-md-4 align-to-total"><h2 class="grand_total price"><?php echo $_order->formatPrice($_order->getGrandTotal()) ?></h2></div>
+                            <div class="col-md-4 align-to-button"><a href="<?php echo $this->helper('checkoutcustomiser')->getReorderUrl($_order) ?>" class="reorder"><i class="fa fa-repeat"></i><span><?php echo $this->__('Reorder'); ?></span></a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="each-order" />
+
+            </div>
+        </div>
+    </div>
+</div>

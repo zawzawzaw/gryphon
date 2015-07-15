@@ -1,0 +1,133 @@
+	<div id="mobile-footer-wrapper" class="visible-xs visible-sm">
+		
+		<div id="mobile-header-footer-copy" class="mobile-footer">
+			<h2>newsletter sign up</h2>
+			<hr class="small">
+			<p>By signing up the Gryphon Tea newsletter, be the first one to hear about our special offers, new arrivals, latest news and trends and other events.</p>
+
+			<div class="search">
+				<input type="text" name="search" placeholder="Enter your email address" />
+				<button class="signup"><i class="fa fa-check"></i> <span>Sign up</span></button>
+			</div>
+
+			<hr class="dotted">
+
+			<h2>FOLLOW US</h2>
+			<hr class="small">
+			<ul class="share-ctas">
+				<li><a href="#" class="instagram"></a></li>
+				<li><a href="#" class="pintrest"></a></li>
+				<li><a href="#" class="twitter"></a></li>
+				<li><a href="#" class="facebook"></a></li>
+			</ul>
+
+			<div class="copywrite">
+				<h6>&copy; 2013 GRYPHON TEA COMPANY.</h6>
+				<p>All material on this site is copyrighted by Gryphon Tea Company. Gryphon Tea Company® is a registered trademark. No images or copy on this site may be used without written permission by Gryphon Tea Company.</p>	
+			</div>
+
+		</div>
+				
+	</div>
+
+	<div id="footer-wrapper" class="visible-md visible-lg fixed-footer"><!-- container-fluid -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<h2>newsletter sign up</h2>
+					<hr class="small">
+					<p>By signing up the Gryphon Tea newsletter, be the first one to hear about our special offers, new arrivals, latest news and trends and other events.</p>
+
+					<div class="search">
+						<input type="text" name="search" placeholder="Enter your email address" />
+						<button class="signup"><i class="fa fa-check"></i> <span>Sign up</span></button>
+					</div>
+				</div>
+				<div class="col-md-7">
+					<div class="links-wrapper">
+						<div class="about-us-links links">
+							<h2>about us</h2>
+							<hr class="small">
+							<ul>
+								<li><a href="<?php echo $this->getUrl('our-story');?>">Our Story</a></li>
+								<li><a href="http://test.gryphontea.com/wp">Blog</a></li>
+								<li><a href="<?php echo $this->getUrl('careers');?>">Careers</a></li>
+								<li><a href="<?php echo $this->getUrl('trade'); ?>">Trade</a></li>
+								<li><a href="<?php echo $this->getUrl('discover-tea'); ?>">Discover Tea</a></li>
+								<li><a href="<?php echo $this->getUrl('faq'); ?>">FAQ</a></li>															
+								<li><a href="<?php echo $this->getUrl('contact-us'); ?>">Contact Us</a></li>															
+							</ul>
+						</div>
+						<div class="store-links links">
+							<h2>gryphon tea store</h2>
+							<hr class="small">
+							<ul>
+								<?php $store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store'); ?>
+								<li><a href="<?php echo $store_category->getUrl(); ?>">TEA</a></li>
+								<?php $pantry_products = Mage::getModel('catalog/category')->loadByAttribute('name', 'Pantry'); ?>
+								<li><a href="<?php echo $pantry_products->getUrl(); ?>">Pantry</a></li>
+								<?php $gifts_products = Mage::getModel('catalog/category')->loadByAttribute('name', 'gifts');	?>
+								<?php $gifts_products_data = $gifts_products->getData(); ?>
+								<li><a href="<?php echo $this->getUrl($gifts_products_data['url_path']); ?>">Gifts</a></li>
+							</ul>
+						</div>
+						<div class="selections-links links">
+							<h2>curated selections</h2>
+							<hr class="small">
+							<?php 
+							$collection_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Collections');
+
+							/*Returns comma separated ids*/
+							$subcats = $collection_category->getChildren();			
+							?>
+							<ul>
+								<?php foreach(explode(',',$subcats) as $subCatid): $_category = Mage::getModel('catalog/category')->load($subCatid); ?>
+									<?php if($_category->getIsActive()): ?>
+										<?php 
+										$caturl     = $_category->getURL();
+							    		$catname     = $_category->getName();
+										?>
+										<li><a href="<?php echo $caturl; ?>"><?php echo $catname; ?></a></li>
+									<?php endif; ?>									
+								<?php endforeach; ?>
+							</ul>
+						</div>
+						<div class="customer-service-link links">
+							<h2>Order Information</h2>
+							<hr class="small">
+							<ul>
+								<li><a href="<?php echo Mage::getUrl('customer/account/create'); ?>">Account Registration</a></li>
+								<li><a href="<?php echo $this->getUrl('rewards'); ?>">Rewards Program</a></li>
+								<li><a href="<?php echo $this->getUrl('shipping-info'); ?>">Shipping Information</a></li>
+								<li><a href="<?php echo $this->getUrl('privacy-policy'); ?>">Privacy Policy</a></li>
+								<li><a href="<?php echo $this->getUrl('terms-and-conditions'); ?>">Terms & Conditions</a></li>
+								<li><a href="http://www.trackntrace.com.sg/">Track Order</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<h2>FOLLOW US</h2>
+					<hr class="small">
+					<ul class="share-ctas">
+						<li><a href="#" class="instagram"></a></li>
+						<li><a href="#" class="pintrest"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="facebook"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div id="copyright-wrapper" class="visible-md visible-lg fixed-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<p>&copy; 2013 GRYPHON TEA COMPANY.</p>
+					<p>All material on this site is copyrighted by Gryphon Tea Company. Gryphon Tea Company® is a registered trademark. No images or copy on this site may be used without written permission by Gryphon Tea Company.</p>	
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!-- page wrapper end -->

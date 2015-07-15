@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Miragedesign_Customercustomiser>
+			<version>1.0.0</version>
+		</Miragedesign_Customercustomiser>
+	</modules>
+    <frontend>
+		<routers>
+            <customer>
+                <args>
+                    <modules>
+                        <Miragedesign_Customercustomiser before="Mage_Customer">Miragedesign_Customercustomiser</Miragedesign_Customercustomiser>
+                    </modules>
+                </args>
+            </customer>
+		</routers>
+        <layout>
+            <updates>
+                <customercustomiser>
+                    <file>customercustomiser.xml</file>
+                </customercustomiser>
+            </updates>
+        </layout>               
+    </frontend>   
+    <global>
+        <models>
+            <customercustomiser>
+                <class>Miragedesign_Customercustomiser_Model</class>
+            </customercustomiser>
+        </models>
+        <blocks>
+            <customercustomiser>
+                <class>Miragedesign_Customercustomiser_Block</class>
+            </customercustomiser>                               
+        </blocks>
+        <helpers>
+            <customercustomiser>
+                <class>Miragedesign_Customercustomiser_Helper</class>
+            </customercustomiser>
+        </helpers>
+    </global>
+</config> 

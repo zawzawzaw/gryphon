@@ -1,0 +1,421 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+/**
+ * Product view template
+ *
+ * @see Mage_Catalog_Block_Product_View
+ * @see Mage_Review_Block_Product_View
+ */
+?>
+<?php $_helper = $this->helper('catalog/output'); ?>
+<?php $_product = $this->getProduct(); ?>
+<?php
+$isGiftcardType = $this->helper('catalogcustomiser')->isGiftcardType($_product);
+
+if ($_product->getShortDescription()):
+    $shortDescription = $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description');
+endif; 
+?>
+<div id="content-wrapper" class="product">
+    <div class="main-product">
+        <div class="image-text-content container">
+            <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+                <?php echo $this->getBlockHtml('formkey') ?>                    
+                <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+                <input type="hidden" name="related_product" id="related-products-field" value="" />
+                
+                <div class="row">
+                    <div class="col-md-12">                            
+                        <?php echo $this->getLayout()->getBlock('breadcrumbs')->toHtml(); ?>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
+                    <div class="col-md-12">
+                        <?php if ($isGiftcardType) : ?>
+                        <div class="gift-card-img">
+                        <?php elseif($_product->getTypeId() == 'tin'): ?>
+                        <div class="treasure-design-img">
+                        <?php else: ?>
+                        <div class="product-img-box product-img">
+                        <?php endif; ?>
+                            <?php echo $this->getChildHtml('media') ?>
+                        </div>
+                        <?php if ($isGiftcardType || $_product->getTypeId() == 'tin') : ?>
+                        <div class="gift-card-content">                        
+                        <?php else: ?>
+                        <div class="product-content">
+                        <?php endif; ?>
+                            <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+                            <hr class="small" />
+                            <!-- <h1 class="price">S$ 78</h1> -->
+                            <?php if ($this->canEmailToFriend()): ?>
+                                <p class="email-friend"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><?php echo $this->__('Email to a Friend') ?></a></p>
+                            <?php endif; ?>
+
+                            <?php if (!$isGiftcardType) :?>
+                                <div class="price"><?php echo $this->getPriceHtml($_product); ?></div>
+                                <?php echo $this->getChildHtml('bundle_prices') ?>
+                                <?php echo $this->getTierPriceHtml() ?>
+                            <?php endif; ?>                            
+
+                            <?php if ($isGiftcardType) :?>
+                                <?php echo $this->getChildHtml('product_type_data') ?>
+                            <?php else : ?>                            
+                                <?php if( $_product->getTypeId() !== 'tin' ): ?>
+                                <div class="desc">
+                                    <?php echo $shortDescription; ?>
+                                </div>
+                                <div class="row extra-info">
+                                    <div class="col-md-6">
+                                        <div class="set">
+                                            <h5><?php echo $this->__('ingredients'); ?></h5>
+                                            <span class="italic"><?php echo $_product->getIngredients(); ?></span>
+                                        </div>
+
+                                        <div class="set">
+                                            <h5><?php echo $this->__('Type of product'); ?></h5>
+                                            <span class="italic"><?php echo $this->helper('catalogcustomiser')->getTypesCategory($_product); ?></span>
+                                        </div>
+
+                                        <div class="set">
+                                            <h5><?php echo $this->__('Share with'); ?></h5>
+                                            <?php echo $this->getChildHtml('sharing') ?>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="set-2">
+                                            <h5><?php echo $this->__('Steeping Suggestion'); ?></h5>
+                                            <ul class="steeping">
+                                                <li><i class="spoon"></i> <span class="italic"><?php echo $_product->getAmountOfWater(); ?></span></li>
+                                                <li><i class="temperature"></i> <span class="italic temperature"><?php echo $_product->getTemperature(); ?></span></li>
+                                                <li><i class="time"></i> <span class="italic time"><?php echo $_product->getTime(); ?></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php else: ?>
+                                <h2 class="desc-title"></h2>
+                                <p class="desc">
+                                    <?php echo $shortDescription; ?>
+                                </p>
+                                <?php endif; ?>
+                            <?php endif; ?>
+
+                            <!-- <div class="space30"></div> -->
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <?php echo $this->getChildHtml('product_type_availability'); ?>
+
+                                    <!-- get product options -->
+                                    <?php echo $this->getChildHtml('other');?>                                   
+
+                                    <?php if( $_product->getTypeId() == 'tin' ): ?>
+                                        <div class="inputs">
+
+                                            <div class="each-input">
+                                              <label for="treasure_quantity">Quantity*</label>
+
+                                              <div class="quantity-container" id="treasure_quantity_container">
+                                                <div class="minus-button minus"></div>
+                                                <input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" value="<?php echo max($this->getProductDefaultQty() * 1, 1) ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty short" />
+                                                <!-- <input type="text" name="treasure_quantity" id="treasure_quantity" class="short" value="1"> -->
+                                                <div class="plus-button plus"></div>                    
+                                              </div>
+                                              <!-- <span class="orange">Earn 25 loyalty points</span> -->
+                                            </div>
+                                            
+                                            <!-- <div class="each-input">
+                                              <label for="treasure_recipient_name">Recipient Name*</label>
+                                              <input type="text" name="treasure_recipient_name" id="treasure_recipient_name">
+                                              <span id="recipient_name_characters_remaining">Characters Remainding: 25</span>
+                                            </div>
+                                            
+                                            <div class="each-input">
+                                              <label for="treasure_message" class="align-top">message*</label>
+                                              <textarea name="treasure_message" id="treasure_message" cols="30" rows="10" placeholder="Write your message here."></textarea>
+                                              <span id="message_characters_remaining">Characters Remainding: 200</span>
+                                            </div>
+
+
+                                            <div class="each-input">
+                                              <label for="treasure_ribbon">Ribbon Colour*</label>
+                                              <div class="dropdown">
+                                                <select name="treasure_ribbon" id="gift_amount">
+                                                  <option value="textured dark brown">No Ribbon</option>
+                                                  <option value="textured dark brown">Textured Dark Brown</option>
+                                                </select>
+                                              </div>
+                                            </div>
+
+                                             -->
+                                            
+                                            <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                                            <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+                                            <?php endif;?>       
+
+                                             <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                                                <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
+                                            <?php endif;?>
+                                            
+                                        </div>    
+                                        <?php if (!$this->hasOptions()):?>
+                                            <div class="add-to-box">
+                                                <?php if($_product->isSaleable()): ?>
+                                                    <?php echo $this->getChildHtml('addtocart') ?>
+                                                <?php endif; ?>
+                                                <?php echo $this->getChildHtml('addto') ?>
+                                            </div>
+                                            <?php echo $this->getChildHtml('extra_buttons') ?>
+                                        <?php elseif (!$_product->isSaleable()): ?>
+                                            <div class="add-to-box">
+                                                <?php echo $this->getChildHtml('addto') ?>
+                                            </div>
+                                        <?php endif; ?>  
+
+
+                                          
+
+                                    <?php else: ?>
+                                         <?php if (!$this->hasOptions()):?>
+                                            <div class="add-to-box">
+                                                <?php if($_product->isSaleable()): ?>
+                                                    <?php echo $this->getChildHtml('addtocart') ?>
+                                                <?php endif; ?>
+                                                <?php echo $this->getChildHtml('addto') ?>
+                                            </div>
+                                            <?php echo $this->getChildHtml('extra_buttons') ?>
+                                        <?php elseif (!$_product->isSaleable()): ?>
+                                            <div class="add-to-box">
+                                                <?php echo $this->getChildHtml('addto') ?>
+                                            </div>
+                                        <?php endif; ?>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </div>              
+                    </div>
+                </div>
+            </form>
+            <script type="text/javascript">
+                //<![CDATA[
+                    var productAddToCartForm = new VarienForm('product_addtocart_form');
+                    productAddToCartForm.submit = function(button, url) {
+                        if (this.validator.validate()) {
+                            var form = this.form;
+                            var oldUrl = form.action;
+
+                            if (url) {
+                               form.action = url;
+                            }
+                            var e = null;
+                            // try {
+                            //     this.form.submit();
+                            // } catch (e) {
+                            // }
+                            //Start of our new ajax code
+                            if(!url){
+                                url = jQuery('#product_addtocart_form').attr('action');
+                            }
+                            var data = jQuery('#product_addtocart_form').serialize();
+                            data += '&isAjax=1';   
+                            jQuery('#ajax_loader').show();
+                            try {
+                                jQuery.ajax({
+                                      url: url,
+                                      dataType: 'json',
+                                      type : 'post',
+                                      data: data,
+                                      success: function(data){
+                                            jQuery('#ajax_loader').hide();
+                                            // alert(data.status + ": " + data.message);
+                                            jQuery('span.ajax_msg').html('Added to cart!').show().delay(5000).fadeOut();
+                                      }
+                                });
+                            } catch (e) {
+                            }        
+                            //End of our new ajax code    
+                            this.form.action = oldUrl;
+                            if (e) {
+                                throw e;
+                            }
+
+                            // if (button && button != 'undefined') {
+                            //     button.disabled = true;
+                            // }
+                        }
+                    }.bind(productAddToCartForm);
+
+                    productAddToCartForm.submitLight = function(button, url){
+                        if(this.validator) {
+                            var nv = Validation.methods;
+                            delete Validation.methods['required-entry'];
+                            delete Validation.methods['validate-one-required'];
+                            delete Validation.methods['validate-one-required-by-name'];
+                            // Remove custom datetime validators
+                            for (var methodName in Validation.methods) {
+                                if (methodName.match(/^validate-datetime-.*/i)) {
+                                    delete Validation.methods[methodName];
+                                }
+                            }
+
+                            if (this.validator.validate()) {
+                                if (url) {
+                                    this.form.action = url;
+                                }
+                                this.form.submit();
+                            }
+                            Object.extend(Validation.methods, nv);
+                        }
+                    }.bind(productAddToCartForm);
+                //]]>
+                </script>
+                <?php if ($isGiftcardType || $_product->getTypeId() == 'tin') : ?>
+                <script>
+                jQuery(document).ready(function(){
+
+                    var face_index = 0;
+
+                    function show_index( index_param ){
+
+                        face_index = index_param;
+
+                        var face_array = [
+                          jQuery("#treasure-design-front"),
+                          jQuery("#treasure-design-back"),
+                          jQuery("#treasure-design-side")
+                          //jQuery(".treasure-design-img #treasure-design-side")
+                        ];
+
+                        var face_element = null;
+
+                        for (var i = 0, l = face_array.length; i < l; i++) {
+
+                          face_element = jQuery(face_array[i]);
+
+                          if (i == index_param) {
+                            face_element.show(0);
+                          } else {
+                            face_element.hide(0);
+                          }
+                        }
+                        
+                    }
+
+                    jQuery(".treasure-design-img .next-image-button").click(function(){
+                        console.log('next')
+                        var target_index = face_index + 1;
+                        target_index = target_index > 2 ? 0 : target_index;
+                        show_index(target_index);
+
+                    }.bind(this));
+
+                    jQuery(".treasure-design-img .prev-image-button").click(function(){
+                        var target_index = face_index - 1;
+                        target_index = target_index < 0 ? 2 : target_index;
+                        show_index(target_index);
+                    }.bind(this));
+
+
+                    jQuery(".treasure_recipient_name").keyup(function(event) {
+                        var str = "" + jQuery(".treasure_recipient_name").val();
+                        var remaining = 25 - str.length;
+                        if(str.length > 25){
+                          str = str.substring(0, 25);
+                          jQuery(".treasure_recipient_name").val(str);
+                          remaining = 0;
+                        }
+
+                        jQuery("#recipient_name_characters_remaining").html('Characters Remainding: ' + remaining);
+                        jQuery("#treasure-design-front .treasuretext-name").html(str);
+
+                    });
+
+                    jQuery(".treasure_message").keyup(function(event) {
+                        var str = "" + jQuery(".treasure_message").val();
+                        var remaining = 200 - str.length;
+                        if(str.length > 200){
+                          str = str.substring(0, 200);
+                          jQuery(".treasure_message").val(str);
+                          remaining = 0;
+                        }
+
+                        jQuery("#message_characters_remaining").html('Characters Remainding: ' + remaining);
+                        jQuery("#treasure-design-back .treasuretext-message").html(str);
+                    });
+                });
+                    
+                </script>
+            <?php endif; ?>
+        </div>
+    </div>
+
+    <?php echo $this->getChildHtml('product.info.selections') ?>
+
+    <?php echo $this->getChildHtml('upsell_products') ?>    
+
+    <div class="product-review">
+        <div class="image-text-content container">
+            <div class="row">                                
+                    <?php foreach ($this->getChildGroup('detailed_info', 'getChildHtml') as $alias => $html):?>
+                        <?php if ($alias == 'reviews') :?>
+                            <?php if ($title = $this->getChildData($alias, 'title')):?>
+                                <div class="product-collateral review-tbl col-md-6">
+                                    <div class="box-collateral row <?php echo "box-{$alias}"?>">
+                                        <div class="col-md-12">
+                                            <div class="review-title">
+                                                <h1><?php echo $this->escapeHtml('REVIEWS OF THE PRODUCT'); ?></h1>
+                                                <div class="static-stars">
+                                                    <?php echo $_product->getRatingSummary(); ?>
+                                                </div>
+                                                <hr class="small"/>
+                                            </div>
+                                            <div class="review-count-container">
+                                                <?php $review_count = $_product->getReviewsCount(); ?>
+                                                <span class="review-count"><?php echo (!empty($review_count)) ? $review_count : 0; ?> reviews</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <hr>
+                                        </div>
+                                    </div>                                    
+                                    <?php echo $html; ?>                                    
+                                </div>
+                            <?php endif;?>
+                            
+                        <?php endif; ?>
+                    <?php endforeach;?>
+                    <div class="col-md-5 col-md-offset-1 write-review">
+                        <?php echo $this->getChildHtml('product_additional_data') ?>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

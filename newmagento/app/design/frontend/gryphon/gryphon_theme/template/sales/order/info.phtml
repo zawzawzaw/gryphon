@@ -1,0 +1,164 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php /** @var $this Mage_Sales_Block_Order_Info */ ?>
+<?php
+$_order = $this->getOrder();
+$billingAddress = $_order->getBillingAddress();
+$billingCountryName = ($billingAddress) ? Mage::getModel('directory/country')->load($billingAddress->getCountryId())->getName() : '';
+$shippingAddress = $_order->getShippingAddress();
+$shippingCountryName = ($shippingAddress) ? Mage::getModel('directory/country')->load($shippingAddress->getCountryId())->getName() : '';
+?>
+<div class="billing-and-shipping order-history">
+    <div class="image-text-content">
+        <?php echo $this->getMessagesBlock()->toHtml() ?>
+        <div class="row order-history-heading">
+            <div class="page-title col-md-12">
+                <h1><?php echo $this->__('Order #%s - %s', $_order->getRealOrderId(), $_order->getStatusLabel()) ?></h1>
+                <hr class="small" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 hidden-xs hidden-sm">
+                <?php echo $this->getStatusHistoryRssUrl($_order) ?>
+                <div class="order-info">
+                    <h2><?php echo $this->__('About This Order:') ?></h2>
+                    <div>
+                        <?php $_links = $this->getLinks(); ?>
+                        <div id="order-info-tabs">
+                        <?php foreach ($_links as $_link): ?>
+                            <?php if($_link->getUrl()): ?>
+                                <p><a href="<?php echo $_link->getUrl() ?>"><?php echo $_link->getLabel() ?></a></p>
+                            <?php else: ?>
+                                <p class="current"><?php echo $_link->getLabel() ?></p>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                        </div>
+                        <script type="text/javascript">decorateGeneric($('order-info-tabs').select('LI'),['first','last']);</script>
+                    </div>
+                </div>
+                <p class="order-date"><?php echo $this->__('Order Date: %s', $this->formatDate($_order->getCreatedAtStoreDate(), 'long')) ?></p>
+                <br />
+
+                <div class="billing-address">
+                    <div class="billing-address-details">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2 class="title"><?php echo $this->__('Billing Address') ?></h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="each-billing-detail">
+                                    <h2><?php echo $this->__('NAME'); ?></h2>
+                                    <p><?php echo implode(' ', array($billingAddress->getLastname(), $billingAddress->getFirstname())); ?></p>
+                                </div>
+                                <div class="each-billing-detail">
+                                    <h2><?php echo $this->__('phone no.'); ?></h2>
+                                    <p><?php echo $billingAddress->getTelephone(); ?></p>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="each-billing-detail">
+                                    <h2><?php echo $this->__('ADDRESS'); ?></h2>
+                                    <p><?php echo implode(' ', array(implode(' ', $billingAddress->getStreet()), $billingAddress->getCity(), $billingCountryName, $billingAddress->getPostcode())); ?></p>
+                                </div>
+                                <div class="each-billing-detail">
+                                    <h2><?php echo $this->__('EMAIL'); ?></h2>
+                                    <p><a href="mailto:<?php echo $_order->getCustomerEmail(); ?>"><?php echo $_order->getCustomerEmail(); ?></a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2 class="title"><?php echo $this->__('Payment Method') ?></h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="each-shipping-detail">
+                                    <p><?php echo strip_tags($this->getPaymentInfoHtml()); ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shipping-address">
+                    <div class="shipping-address-details">
+                        <?php if (!$_order->getIsVirtual()): ?>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2 class="title"><?php echo $this->__('Shipping Address') ?></h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="each-shipping-detail">
+                                        <h2><?php echo $this->__('NAME'); ?></h2>
+                                        <p><?php echo implode(' ', array($shippingAddress->getLastname(), $shippingAddress->getFirstname())); ?></p>
+                                    </div>
+                                    <div class="each-shipping-detail">
+                                        <h2><?php echo $this->__('phone no.'); ?></h2>
+                                        <p><?php echo $shippingAddress->getTelephone(); ?></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="each-shipping-detail">
+                                        <h2><?php echo $this->__('ADDRESS'); ?></h2>
+                                        <p><?php echo implode(' ', array(implode(' ', $shippingAddress->getStreet()), $shippingAddress->getCity(), $shippingCountryName, $shippingAddress->getPostcode())); ?></p>
+                                    </div>
+                                    <div class="each-shipping-detail">
+                                        <h2><?php echo $this->__('EMAIL'); ?></h2>
+                                        <p><a href="mailto:<?php echo $_order->getEmail(); ?>"><?php echo $_order->getEmail(); ?></a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2 class="title"><?php echo $this->__('Shipping Method') ?></h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="each-shipping-detail">
+                                        <?php if ($_order->getShippingDescription()): ?>
+                                            <p><?php echo strip_tags(($_order->getShippingDescription())) ?></p>
+                                        <?php else: ?>
+                                            <p><?php echo $this->helper('sales')->__('No shipping information available'); ?></p>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

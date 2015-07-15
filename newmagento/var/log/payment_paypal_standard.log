@@ -1,0 +1,589 @@
+2015-05-28T16:47:09+00:00 DEBUG (7): Array
+(
+    [request] => Array
+        (
+            [business] => ****
+            [invoice] => 145000009
+            [currency_code] => SGD
+            [paymentaction] => sale
+            [return] => http://test.gryphontea.com/magento/paypal/standard/success/
+            [cancel_return] => http://test.gryphontea.com/magento/paypal/standard/cancel/
+            [notify_url] => http://test.gryphontea.com/magento/paypal/ipn/
+            [bn] => Magento_Cart_Community
+            [item_name] => Madison Island
+            [lc] => en_US
+            [charset] => utf-8
+            [amount] => 21.60
+            [tax] => 0.00
+            [shipping] => 5.00
+            [discount_amount] => 0.00
+            [item_number_1] => ART0011
+            [item_name_1] => Chamomile Dream Caffeine-Free Tea
+            [quantity_1] => 1
+            [amount_1] => 16.60
+            [item_number_2] => Flat Rate - Fixed
+            [item_name_2] => Shipping
+            [quantity_2] => 1
+            [amount_2] => 5.00
+            [cmd] => _cart
+            [upload] => 1
+            [tax_cart] => 0.00
+            [discount_amount_cart] => 0.00
+            [city] => Singapore
+            [country] => SG
+            [email] => ngocdbcn@gmail.com
+            [first_name] => Test
+            [last_name] => Tester
+            [zip] => 12312
+            [state] => 
+            [address1] => 123 Wall Street
+            [address2] => 
+            [address_override] => 1
+        )
+
+    [__pid] => 3368
+)
+
+2015-05-29T02:16:49+00:00 DEBUG (7): Array
+(
+    [request] => Array
+        (
+            [business] => ****
+            [invoice] => 145000010
+            [currency_code] => SGD
+            [paymentaction] => sale
+            [return] => http://test.gryphontea.com/magento/paypal/standard/success/
+            [cancel_return] => http://test.gryphontea.com/magento/paypal/standard/cancel/
+            [notify_url] => http://test.gryphontea.com/magento/paypal/ipn/
+            [bn] => Magento_Cart_Community
+            [item_name] => Madison Island
+            [lc] => en_US
+            [charset] => utf-8
+            [amount] => 43.00
+            [tax] => 0.00
+            [shipping] => 5.00
+            [discount_amount] => 0.00
+            [item_number_1] => GC0021
+            [item_name_1] => Assam Hazelbank TGFOP1 2nd Flush
+            [quantity_1] => 1
+            [amount_1] => 38.00
+            [item_number_2] => Flat Rate - Fixed
+            [item_name_2] => Shipping
+            [quantity_2] => 1
+            [amount_2] => 5.00
+            [cmd] => _cart
+            [upload] => 1
+            [tax_cart] => 0.00
+            [discount_amount_cart] => 0.00
+            [city] => sadasd
+            [country] => SG
+            [email] => eads@rest.com
+            [first_name] => rwatr
+            [last_name] => rwadesd
+            [zip] => 12344566
+            [state] => sadasd
+            [address1] => wewasd
+            [address2] => 
+            [address_override] => 1
+        )
+
+    [__pid] => 2387
+)
+
+2015-05-29T02:22:26+00:00 DEBUG (7): Array
+(
+    [request] => Array
+        (
+            [business] => ****
+            [invoice] => 145000011
+            [currency_code] => SGD
+            [paymentaction] => sale
+            [return] => http://test.gryphontea.com/magento/paypal/standard/success/
+            [cancel_return] => http://test.gryphontea.com/magento/paypal/standard/cancel/
+            [notify_url] => http://test.gryphontea.com/magento/paypal/ipn/
+            [bn] => Magento_Cart_Community
+            [item_name] => Madison Island
+            [lc] => en_US
+            [charset] => utf-8
+            [amount] => 43.00
+            [tax] => 0.00
+            [shipping] => 5.00
+            [discount_amount] => 0.00
+            [item_number_1] => GC0021
+            [item_name_1] => Assam Hazelbank TGFOP1 2nd Flush
+            [quantity_1] => 1
+            [amount_1] => 38.00
+            [item_number_2] => Flat Rate - Fixed
+            [item_name_2] => Shipping
+            [quantity_2] => 1
+            [amount_2] => 5.00
+            [cmd] => _cart
+            [upload] => 1
+            [tax_cart] => 0.00
+            [discount_amount_cart] => 0.00
+            [city] => asdasdasd
+            [country] => SG
+            [email] => asdasd@rest.com
+            [first_name] => resdfs
+            [last_name] => sfsddasd
+            [zip] => 12345673
+            [state] => sxzxadaDSA
+            [address1] => dasdasdsadasd
+            [address2] => 
+            [address_override] => 1
+        )
+
+    [__pid] => 3628
+)
+
+2015-05-29T03:59:04+00:00 DEBUG (7): Array
+(
+    [request] => Array
+        (
+            [business] => ****
+            [invoice] => 145000012
+            [currency_code] => SGD
+            [paymentaction] => sale
+            [return] => http://test.gryphontea.com/magento/paypal/standard/success/
+            [cancel_return] => http://test.gryphontea.com/magento/paypal/standard/cancel/
+            [notify_url] => http://test.gryphontea.com/magento/paypal/ipn/
+            [bn] => Magento_Cart_Community
+            [item_name] => Madison Island
+            [lc] => en_US
+            [charset] => utf-8
+            [amount] => 21.60
+            [tax] => 0.00
+            [shipping] => 5.00
+            [discount_amount] => 0.00
+            [item_number_1] => ART0007
+            [item_name_1] => Contessa Grey Black Tea
+            [quantity_1] => 1
+            [amount_1] => 16.60
+            [item_number_2] => Flat Rate - Fixed
+            [item_name_2] => Shipping
+            [quantity_2] => 1
+            [amount_2] => 5.00
+            [cmd] => _cart
+            [upload] => 1
+            [tax_cart] => 0.00
+            [discount_amount_cart] => 0.00
+            [city] => Singapore
+            [country] => SG
+            [email] => ngocdbcn@gmail.com
+            [first_name] => Test
+            [last_name] => Tester
+            [zip] => 12312
+            [state] => 
+            [address1] => 123 Wall Street
+            [address2] => 
+            [address_override] => 1
+        )
+
+    [__pid] => 4902
+)
+
+2015-05-29T07:41:53+00:00 DEBUG (7): Array
+(
+    [request] => Array
+        (
+            [business] => ****
+            [invoice] => 145000013
+            [currency_code] => SGD
+            [paymentaction] => sale
+            [return] => http://test.gryphontea.com/magento/paypal/standard/success/
+            [cancel_return] => http://test.gryphontea.com/magento/paypal/standard/cancel/
+            [notify_url] => http://test.gryphontea.com/magento/paypal/ipn/
+            [bn] => Magento_Cart_Community
+            [item_name] => Madison Island
+            [lc] => en_US
+            [charset] => utf-8
+            [amount] => 21.60
+            [tax] => 0.00
+            [shipping] => 5.00
+            [discount_amount] => 0.00
+            [item_number_1] => ART0011
+            [item_name_1] => Chamomile Dream Caffeine-Free Tea
+            [quantity_1] => 1
+            [amount_1] => 16.60
+            [item_number_2] => Flat Rate - Fixed
+            [item_name_2] => Shipping
+            [quantity_2] => 1
+            [amount_2] => 5.00
+            [cmd] => _cart
+            [upload] => 1
+            [tax_cart] => 0.00
+            [discount_amount_cart] => 0.00
+            [city] => sadasd
+            [country] => SG
+            [email] => sadsa@sadasd.com
+            [first_name] => asdas
+            [last_name] => sadasd
+            [zip] => 123456432
+            [state] => dasdasdwaD
+            [address1] => asdasd
+            [address2] => 
+            [address_override] => 1
+        )
+
+    [__pid] => 26934
+)
+
+2015-05-29T08:00:41+00:00 DEBUG (7): Array
+(
+    [request] => Array
+        (
+            [business] => ****
+            [invoice] => 145000014
+            [currency_code] => SGD
+            [paymentaction] => sale
+            [return] => http://test.gryphontea.com/magento/paypal/standard/success/
+            [cancel_return] => http://test.gryphontea.com/magento/paypal/standard/cancel/
+            [notify_url] => http://test.gryphontea.com/magento/paypal/ipn/
+            [bn] => Magento_Cart_Community
+            [item_name] => Madison Island
+            [lc] => en_US
+            [charset] => utf-8
+            [amount] => 43.00
+            [tax] => 0.00
+            [shipping] => 5.00
+            [discount_amount] => 0.00
+            [item_number_1] => GC0014
+            [item_name_1] => Beauty of the East
+            [quantity_1] => 1
+            [amount_1] => 38.00
+            [item_number_2] => Flat Rate - Fixed
+            [item_name_2] => Shipping
+            [quantity_2] => 1
+            [amount_2] => 5.00
+            [cmd] => _cart
+            [upload] => 1
+            [tax_cart] => 0.00
+            [discount_amount_cart] => 0.00
+            [city] => wesdsdfsd
+            [country] => SG
+            [email] => asasas@hashas.com
+            [first_name] => assa
+            [last_name] => asasas
+            [zip] => 121212123214314`1212
+            [state] => saadasdasASsa
+            [address1] => asasas
+            [address2] => 
+            [address_override] => 1
+        )
+
+    [__pid] => 30818
+)
+
+2015-06-02T13:54:10+00:00 DEBUG (7): Array
+(
+    [request] => Array
+        (
+            [business] => ****
+            [invoice] => 145000015
+            [currency_code] => SGD
+            [paymentaction] => sale
+            [return] => http://test.gryphontea.com/magento/paypal/standard/success/
+            [cancel_return] => http://test.gryphontea.com/magento/paypal/standard/cancel/
+            [notify_url] => http://test.gryphontea.com/magento/paypal/ipn/
+            [bn] => Magento_Cart_Community
+            [item_name] => Madison Island
+            [lc] => en_US
+            [charset] => utf-8
+            [amount] => 43.00
+            [tax] => 0.00
+            [shipping] => 5.00
+            [discount_amount] => 0.00
+            [item_number_1] => GC0021
+            [item_name_1] => Assam Hazelbank TGFOP1 2nd Flush
+            [quantity_1] => 1
+            [amount_1] => 38.00
+            [item_number_2] => Flat Rate - Fixed
+            [item_name_2] => Shipping
+            [quantity_2] => 1
+            [amount_2] => 5.00
+            [cmd] => _cart
+            [upload] => 1
+            [tax_cart] => 0.00
+            [discount_amount_cart] => 0.00
+            [city] => singapore
+            [country] => SG
+            [email] => may@babypixie.com
+            [first_name] => m
+            [last_name] => c
+            [zip] => 128431
+            [state] => 
+            [address1] => 251 pandan loop
+            [address2] => 
+            [address_override] => 1
+        )
+
+    [__pid] => 11955
+)
+
+2015-06-02T16:32:30+00:00 DEBUG (7): Array
+(
+    [request] => Array
+        (
+            [business] => ****
+            [invoice] => 145000016
+            [currency_code] => SGD
+            [paymentaction] => sale
+            [return] => http://test.gryphontea.com/magento/paypal/standard/success/
+            [cancel_return] => http://test.gryphontea.com/magento/paypal/standard/cancel/
+            [notify_url] => http://test.gryphontea.com/magento/paypal/ipn/
+            [bn] => Magento_Cart_Community
+            [item_name] => Madison Island
+            [lc] => en_US
+            [charset] => utf-8
+            [amount] => 43.00
+            [tax] => 0.00
+            [shipping] => 5.00
+            [discount_amount] => 0.00
+            [item_number_1] => GC0021
+            [item_name_1] => Assam Hazelbank TGFOP1 2nd Flush
+            [quantity_1] => 1
+            [amount_1] => 38.00
+            [item_number_2] => Flat Rate - Fixed
+            [item_name_2] => Shipping
+            [quantity_2] => 1
+            [amount_2] => 5.00
+            [cmd] => _cart
+            [upload] => 1
+            [tax_cart] => 0.00
+            [discount_amount_cart] => 0.00
+            [city] => asdasfds
+            [country] => SG
+            [email] => testes@test.com
+            [first_name] => test
+            [last_name] => tes
+            [zip] => 123454432
+            [state] => asdsad
+            [address1] => 12asdasd
+            [address2] => 
+            [address_override] => 1
+        )
+
+    [__pid] => 13859
+)
+
+2015-06-02T18:00:59+00:00 DEBUG (7): Array
+(
+    [request] => Array
+        (
+            [business] => ****
+            [invoice] => 145000017
+            [currency_code] => SGD
+            [paymentaction] => sale
+            [return] => http://test.gryphontea.com/magento/paypal/standard/success/
+            [cancel_return] => http://test.gryphontea.com/magento/paypal/standard/cancel/
+            [notify_url] => http://test.gryphontea.com/magento/paypal/ipn/
+            [bn] => Magento_Cart_Community
+            [item_name] => Madison Island
+            [lc] => en_US
+            [charset] => utf-8
+            [amount] => 86.00
+            [tax] => 0.00
+            [shipping] => 10.00
+            [discount_amount] => 0.00
+            [item_number_1] => GC0021
+            [item_name_1] => Assam Hazelbank TGFOP1 2nd Flush
+            [quantity_1] => 2
+            [amount_1] => 38.00
+            [item_number_2] => Flat Rate - Fixed
+            [item_name_2] => Shipping
+            [quantity_2] => 1
+            [amount_2] => 10.00
+            [cmd] => _cart
+            [upload] => 1
+            [tax_cart] => 0.00
+            [discount_amount_cart] => 0.00
+            [city] => sadsa
+            [country] => SG
+            [email] => testes@wad.com
+            [first_name] => tesr
+            [last_name] => testse
+            [zip] => 121212332412
+            [state] => dcscsc
+            [address1] => adsadsa
+            [address2] => 
+            [address_override] => 1
+        )
+
+    [__pid] => 2265
+)
+
+2015-06-03T09:09:37+00:00 DEBUG (7): Array
+(
+    [request] => Array
+        (
+            [business] => ****
+            [invoice] => 145000018
+            [currency_code] => SGD
+            [paymentaction] => sale
+            [return] => http://test.gryphontea.com/magento/paypal/standard/success/
+            [cancel_return] => http://test.gryphontea.com/magento/paypal/standard/cancel/
+            [notify_url] => http://test.gryphontea.com/magento/paypal/ipn/
+            [bn] => Magento_Cart_Community
+            [item_name] => Madison Island
+            [lc] => en_US
+            [charset] => utf-8
+            [amount] => 21.60
+            [tax] => 0.00
+            [shipping] => 5.00
+            [discount_amount] => 0.00
+            [item_number_1] => ART0011
+            [item_name_1] => Chamomile Dream Caffeine-Free Tea
+            [quantity_1] => 1
+            [amount_1] => 16.60
+            [item_number_2] => Flat Rate - Fixed
+            [item_name_2] => Shipping
+            [quantity_2] => 1
+            [amount_2] => 5.00
+            [cmd] => _cart
+            [upload] => 1
+            [tax_cart] => 0.00
+            [discount_amount_cart] => 0.00
+            [city] => Singapore
+            [country] => SG
+            [email] => ngocdbcn@gmail.com
+            [first_name] => Test
+            [last_name] => Tester
+            [zip] => 12312
+            [state] => 
+            [address1] => 123 Wall Street
+            [address2] => 
+            [address_override] => 1
+        )
+
+    [__pid] => 4185
+)
+
+2015-06-03T09:38:57+00:00 DEBUG (7): Array
+(
+    [request] => Array
+        (
+            [business] => ****
+            [invoice] => 145000019
+            [currency_code] => SGD
+            [paymentaction] => sale
+            [return] => http://test.gryphontea.com/magento/paypal/standard/success/
+            [cancel_return] => http://test.gryphontea.com/magento/paypal/standard/cancel/
+            [notify_url] => http://test.gryphontea.com/magento/paypal/ipn/
+            [bn] => Magento_Cart_Community
+            [item_name] => Madison Island
+            [lc] => en_US
+            [charset] => utf-8
+            [amount] => 43.00
+            [tax] => 0.00
+            [shipping] => 5.00
+            [discount_amount] => 0.00
+            [item_number_1] => GC0021
+            [item_name_1] => Assam Hazelbank TGFOP1 2nd Flush
+            [quantity_1] => 1
+            [amount_1] => 38.00
+            [item_number_2] => Flat Rate - Fixed
+            [item_name_2] => Shipping
+            [quantity_2] => 1
+            [amount_2] => 5.00
+            [cmd] => _cart
+            [upload] => 1
+            [tax_cart] => 0.00
+            [discount_amount_cart] => 0.00
+            [city] => asdsad
+            [country] => SG
+            [email] => sadasd@dadsa.com
+            [first_name] => sad
+            [last_name] => sadas
+            [zip] => 12234325
+            [state] => sdasdads
+            [address1] => sadsadasd
+            [address2] => 
+            [address_override] => 1
+        )
+
+    [__pid] => 24057
+)
+
+2015-06-20T04:13:55+00:00 DEBUG (7): Array
+(
+    [request] => Array
+        (
+            [business] => ****
+            [invoice] => 145000020
+            [currency_code] => SGD
+            [paymentaction] => sale
+            [return] => http://test.gryphontea.com/magento/paypal/standard/success/
+            [cancel_return] => http://test.gryphontea.com/magento/paypal/standard/cancel/
+            [notify_url] => http://test.gryphontea.com/magento/paypal/ipn/
+            [bn] => Magento_Cart_Community
+            [item_name] => Madison Island
+            [lc] => en_US
+            [charset] => utf-8
+            [amount] => 59.00
+            [tax] => 0.00
+            [shipping] => 6.00
+            [discount_amount] => 0.00
+            [item_number_1] => GC0014
+            [item_name_1] => Beauty of the East
+            [quantity_1] => 1
+            [amount_1] => 38.00
+            [item_number_2] => testGiftCard
+            [item_name_2] => Test Gift Card
+            [quantity_2] => 1
+            [amount_2] => 15.00
+            [item_number_3] => FLAT RATE (SGD) - FLAT RATE (SGD)
+            [item_name_3] => Shipping
+            [quantity_3] => 1
+            [amount_3] => 6.00
+            [cmd] => _cart
+            [upload] => 1
+            [tax_cart] => 0.00
+            [discount_amount_cart] => 0.00
+            [city] => Singapore
+            [country] => SG
+            [email] => nik.insane@gmail.com
+            [first_name] => nik
+            [last_name] => nik
+            [zip] => 427797
+            [state] => 
+            [address1] => 80 Joo Chiat Place
+            [address2] => 
+            [address_override] => 1
+        )
+
+    [__pid] => 31434
+)
+
+2015-06-20T04:21:20+00:00 DEBUG (7): Array
+(
+    [request] => Array
+        (
+            [business] => ****
+            [invoice] => 145000021
+            [currency_code] => SGD
+            [paymentaction] => sale
+            [return] => http://test.gryphontea.com/magento/paypal/standard/success/
+            [cancel_return] => http://test.gryphontea.com/magento/paypal/standard/cancel/
+            [notify_url] => http://test.gryphontea.com/magento/paypal/ipn/
+            [bn] => Magento_Cart_Community
+            [item_name] => Madison Island
+            [lc] => en_US
+            [charset] => utf-8
+            [amount] => 15.00
+            [tax] => 0.00
+            [shipping] => 0.00
+            [discount_amount] => 0.00
+            [item_number_1] => testGiftCard
+            [item_name_1] => Test Gift Card
+            [quantity_1] => 1
+            [amount_1] => 15.00
+            [cmd] => _cart
+            [upload] => 1
+            [tax_cart] => 0.00
+            [discount_amount_cart] => 0.00
+            [no_shipping] => 1
+        )
+
+    [__pid] => 702
+)
+

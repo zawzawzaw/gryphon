@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Miragedesign Web Development
+ *
+ * @category    Miragedesign
+ * @package     Miragedesign_Shippingcustomiser
+ * @copyright   Copyright (c) 2011 Miragedesign (http://miragedesign.net)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+*/
+
+-->
+<config>
+    <modules>
+        <Miragedesign_Shippingcustomiser>
+            <version>1.0.0</version>
+        </Miragedesign_Shippingcustomiser>
+    </modules>
+    <global>
+        <blocks>
+            <shippingcustomiser>
+                <class>Miragedesign_Shippingcustomiser_Block</class>
+            </shippingcustomiser>
+        </blocks>
+        <helpers>
+            <shippingcustomiser>
+                <class>Miragedesign_Shippingcustomiser_Helper</class>
+            </shippingcustomiser>
+        </helpers>
+        <models>
+            <shippingcustomiser>
+                <class>Miragedesign_Shippingcustomiser_Model</class>
+                <resourceModel>shippingcustomiser_mysql4</resourceModel>
+            </shippingcustomiser>
+            <shippingcustomiser_mysql4>
+                <class>Miragedesign_Shippingcustomiser_Model_Mysql4</class>
+                <entities>
+                    <customrate>
+                        <table>shipping_shippingcustomiser</table>
+                    </customrate>
+                </entities>
+            </shippingcustomiser_mysql4>
+        </models>
+        <resources>
+            <shippingcustomiser_setup>
+                <setup>
+                    <module>Miragedesign_Shippingcustomiser</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+                <shippingcustomiser_write>
+                    <connection>
+                        <use>core_write</use>
+                    </connection>
+                </shippingcustomiser_write>
+                <shippingcustomiser_read>
+                    <connection>
+                        <use>core_read</use>
+                    </connection>
+                </shippingcustomiser_read>
+            </shippingcustomiser_setup>
+        </resources>
+        <sales>
+            <shipping>
+                <carriers>
+                    <shippingcustomiser>
+                        <class>Miragedesign_Shippingcustomiser_Model_Carrier_Customrate</class>
+                    </shippingcustomiser>
+                </carriers>
+            </shipping>
+        </sales>
+        <helpers>
+            <shippingcustomiser>
+                <class>Miragedesign_Shippingcustomiser_Helper</class>
+            </shippingcustomiser>
+        </helpers>
+    </global>
+    <frontend>
+        <routers>
+            <shippingcustomiser>
+                <use>standard</use>
+                <args>
+                    <module>Miragedesign_Shippingcustomiser</module>
+                    <frontName>shippingcustomiser</frontName>
+                </args>
+            </shippingcustomiser>
+        </routers>
+        <translate>
+            <modules>
+                <Miragedesign_Shippingcustomiser>
+                    <files>
+                        <default>Miragedesign_Shippingcustomiser.csv</default>
+                    </files>
+                </Miragedesign_Shippingcustomiser>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <shippingcustomiser>
+                    <file>shippingcustomiser.xml</file>
+                </shippingcustomiser>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Miragedesign_Shippingcustomiser before="Mage_Adminhtml">Miragedesign_Shippingcustomiser</Miragedesign_Shippingcustomiser>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <translate>
+            <modules>
+                <Miragedesign_Shippingcustomiser>
+                    <files>
+                        <default>Miragedesign_Shippingcustomiser.csv</default>
+                    </files>
+                </Miragedesign_Shippingcustomiser>
+            </modules>
+        </translate>
+    </adminhtml>
+    <default>
+        <carriers>
+            <customrate>
+                <condition_name>package_weight</condition_name>
+                <active>0</active>
+                <title>Gryphontea Shipping Method</title>
+                <include_virtual_price>1</include_virtual_price>
+                <sallowspecific>0</sallowspecific>
+                <allow_free_shipping_promotions>1</allow_free_shipping_promotions>
+                <show_only_free>0</show_only_free>
+                <flatrate_shipping_text>Gryphontea Flat Rate Shipping</flatrate_shipping_text>
+                <flatrate_shipping_delivery_time>8-24 working days</flatrate_shipping_delivery_time>
+                <free_method_text>Gryphontea Free Shipping</free_method_text>
+                <free_method_delivery_time>8-24 working days</free_method_delivery_time>
+                <free_shipping_threshold>60</free_shipping_threshold>
+                <model>shippingcustomiser/carrier_customrate</model>
+                <name>CustomRate</name>
+                <specificerrmsg>This shipping method is currently unavailable. If you would like to ship using this shipping method, please contact us.</specificerrmsg>
+                <include_free_ship_items>0</include_free_ship_items>
+            </customrate>
+        </carriers>
+    </default>
+</config>

@@ -1,0 +1,229 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+$hasAddress = ($this->helper('customercustomiser')->getAddress()) ? true : false;
+$city = ($hasAddress) ? $this->helper('customercustomiser')->getAddress()->getCity() : '';
+$postcode = ($hasAddress) ? $this->helper('customercustomiser')->getAddress()->getPostcode() : '';
+$regionId = ($hasAddress) ? $this->helper('customercustomiser')->getAddress()->getRegionId() : '';
+$region = ($hasAddress) ? $this->helper('customercustomiser')->getAddress()->getRegion() : '';
+$street = ($hasAddress) ? $this->helper('customercustomiser')->getAddress()->getStreet(1) : '';
+$telephone = ($hasAddress) ? $this->helper('customercustomiser')->getAddress()->getTelephone() : '';
+?>
+<div class="first-content">
+    <div class="account-details-saved">
+        <div class="image-text-content">
+
+            <?php echo $this->getMessagesBlock()->toHtml() ?>
+
+            <div class="account-details-content">
+                <form action="<?php echo $this->getUrl('customer/account/editPost') ?>" method="post" id="form-validate" autocomplete="off">
+                <div class="row">
+                    <div class="page-title col-md-12">
+                        <h1><?php echo $this->__('Edit Account Information') ?></h1>
+                        <hr class="small" />
+                    </div>
+                    <?php echo $this->getBlockHtml('formkey')?>
+                    <!-- <div class="col-md-2 col-sm-6">
+                        <div class="each-input">
+                            <h2>MEMBER NO.</h2>
+                            <p>Gryphon20150321</p>
+                        </div>            
+                    </div> -->
+                    <div class="col-md-4 col-sm-6">
+                        <?php $_gender = $this->getLayout()->createBlock('customer/widget_gender') ?>
+                        <?php if ($_gender->isEnabled()): ?>
+                            <div class="each-input">
+                                <?php
+                                    echo $_gender->setGender($this->getCustomer()->getGender())
+                                        ->setTemplate('miragedesign/customer/widget/gender.phtml')
+                                        ->toHtml()
+                                ?>
+                            </div>
+                        <?php endif ?>
+                        <?php $_dob = $this->getLayout()->createBlock('customer/widget_dob') ?>
+                        <?php if ($_dob->isEnabled()): ?>
+                            <div class="each-input">
+                                <?php
+                                    echo $_dob->setDate($this->getCustomer()->getDob())
+                                        ->setTemplate('miragedesign/customer/widget/dob.phtml')
+                                        ->toHtml()
+                                ?>
+                            </div>
+                        <?php endif ?>
+                        <?php $_taxvat = $this->getLayout()->createBlock('customer/widget_taxvat') ?>
+                        <?php if ($_taxvat->isEnabled()): ?>
+                            <div class="each-input">
+                                <div class="intl-tel-input">
+                                    <?php echo $_taxvat->setTaxvat($this->getCustomer()->getTaxvat())->toHtml() ?>
+                                </div>
+                            </div>
+                        <?php endif ?>
+                        <div class="each-input">
+                            <label for="telephone" class="required"><em>*</em><?php echo $this->__('PHONE NO.'); ?></label>
+                            <div class="intl-tel-input">
+                                <input type="text" name="telephone" value="<?php echo $this->escapeHtml($telephone) ?>" title="<?php echo $this->__('Telephone') ?>" class="input-text phone_no_input <?php echo $this->helper('customer/address')->getAttributeValidationClass('telephone') ?>" id="telephone" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <?php
+                            echo $this->getLayout()->createBlock('customer/widget_name')->setObject($this->getCustomer())
+                                ->setTemplate('miragedesign/customer/widget/name.phtml')
+                                ->toHtml()
+                        ?>
+                        <div class="each-input">
+                            <label for="email" class="required"><em>*</em><?php echo $this->__('Email Address') ?></label>
+                            <input type="text" name="email" id="email" value="<?php echo $this->escapeHtml($this->getCustomer()->getEmail()) ?>" title="<?php echo $this->__('Email') ?>" class="input-text required-entry validate-email" />
+                        </div>
+                        <input type="checkbox" name="change_password" id="change_password" value="1" onclick="setPasswordForm(this.checked)" title="<?php echo $this->__('Change Password') ?>"<?php if($this->getCustomer()->getChangePassword()==1): ?> checked="checked"<?php endif; ?> class="checkbox" />
+                        <label class="checkbox-label" for="change_password">
+                            <span></span><p class="label-text"><?php echo $this->__('Change Password') ?></p>
+                        </label>
+                        <div style="display: none;">
+                            <div>
+                                <div>
+                                    <div class="each-input">
+                                        <label for="current_password" class="required"><em>*</em><?php echo $this->__('Current Password') ?></label>
+                                        <input type="text" class="input-text no-display" name="dummy" id="dummy" />
+                                        <input type="password" title="<?php echo $this->__('Current Password') ?>" class="input-text" name="current_password" id="current_password" />
+                                    </div>
+                                    <div class="each-input">
+                                        <label for="password" class="required"><em>*</em><?php echo $this->__('Change Password') ?></label>
+                                        <input type="password" title="<?php echo $this->__('Change Password') ?>" class="input-text validate-password" name="password" id="password" />
+                                    </div>
+                                    <div class="each-input">
+                                        <label for="confirmation" class="required"><em>*</em><?php echo $this->__('Confirm Password') ?></label>
+                                        <input type="password" title="<?php echo $this->__('Confirm New Password') ?>" class="input-text validate-cpassword" name="confirmation" id="confirmation" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="each-input">
+                            <?php $_streetValidationClass = $this->helper('customer/address')->getAttributeValidationClass('street'); ?>
+                            <label for="address" class="required"><em>*</em><?php echo $this->__('Address'); ?></label>
+                            <input type="text" name="street[]" id="street_1" value="<?php echo $this->escapeHtml($street); ?>" class="address_input <?php echo $_streetValidationClass ?>" />
+                            <?php $_streetValidationClass = trim(str_replace('required-entry', '', $_streetValidationClass)); ?>
+                            <?php for ($_i = 2, $_n = $this->helper('customer/address')->getStreetLines(); $_i <= $_n; $_i++): ?>
+                                <input type="text" name="street[]" value="<?php echo ($hasAddress) ? $this->escapeHtml($this->helper('customercustomiser')->getAddress()->getStreet($_i)) : '' ?>" title="<?php echo $this->__('Street Address %s', $_i) ?>" id="street_<?php echo $_i ?>" class="input-text address_input <?php echo $_streetValidationClass ?>" />
+                            <?php endfor; ?>
+                        </div>
+                        <div class="each-input">
+                            <div class="column-1">
+                                <label for="city" class="required"><em>*</em><?php echo $this->__('City'); ?></label>
+                                <input type="text" name="city" value="<?php echo $this->escapeHtml($city) ?>"  title="<?php echo $this->__('City') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('city') ?>" id="city" />
+                            </div>
+                            <div class="column-2">
+                                <label for="country" class="required"><em>*</em><?php echo $this->__('Country'); ?></label>
+                                <div class="dropdown">
+                                    <?php echo $this->helper('customercustomiser')->getCountryHtmlSelect() ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="each-input">
+                            <div class="column-1">
+                                <label for="postcode" class="required"><em>*</em><?php echo $this->__('Postal Code'); ?></label>
+                                <input type="text" name="postcode" id="postcode" value="<?php echo $this->escapeHtml($postcode) ?>" title="<?php echo $this->__('Zip/Postal Code') ?>" id="zip" class="input-text validate-zip-international <?php echo $this->helper('customer/address')->getAttributeValidationClass('postcode') ?>" />
+                            </div>
+                            <div class="column-2">
+                                <label for="region_id"><?php echo $this->__('State'); ?></label>
+                                <div class="dropdown">
+                                    <select id="region_id" name="region_id" title="<?php echo $this->__('State/Province') ?>" class="validate-select" style="display:none;">
+                                        <option value=""><?php echo $this->__('Please select region, state or province') ?></option>
+                                    </select>
+                                    <script type="text/javascript">
+                                        //<![CDATA[
+                                        $('region_id').setAttribute('defaultValue',  "<?php echo $regionId; ?>");
+                                        //]]>
+                                    </script>
+                                    <input type="text" id="region" name="region" value="<?php echo $this->escapeHtml($region); ?>"  title="<?php echo $this->__('State/Province') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('region') ?>" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="dotted">
+                <div class="row">
+                    <div class="col-md-9">
+                        <input type="checkbox" name="is_subscribed" id="subscription" value="1" title="<?php echo $this->__('Sign up for our newsletter') ?>" class="input-text" <?php if($this->helper('customercustomiser')->getIsSubscribed()): ?> checked="checked"<?php endif; ?> />
+                        <label class="checkbox-label" for="subscription">
+                            <span></span><p class="label-text"><?php echo $this->__('gryphon newsletters'); ?></p>
+                        </label>
+                        <?php if( $this->helper('customercustomiser')->getIsSubscribed() ): ?>
+                            <p><?php echo $this->__("You are currently subscribed to our newsletter.") ?></p>
+                        <?php else: ?>
+                            <p><?php echo $this->__('Be the first one to hear about our special offers, new arrivals, lastest news and trends and the other events.'); ?></p>
+                        <?php endif; ?>
+                        <!-- <p class="back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p> -->
+                    </div>
+                    <div class="col-md-3">
+                        <button type="submit" title="<?php echo $this->__('Save Changes') ?>" class="button cta save-btn"><span><span><?php echo $this->__('Save Changes') ?></span></span></button>
+                    </div>
+                </div>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var dataForm = new VarienForm('form-validate', true);
+    jQuery('#form-validate').submit(function(ev) {
+        ev.preventDefault(); // to stop the form from submitting;
+        if (dataForm.validator &&  dataForm.validator.validate()) {
+            jQuery("#telephone").val(jQuery("#telephone").intlTelInput("getNumber"))
+            dataForm.submit();
+        }
+    });
+    function setPasswordForm(arg){
+        if(arg){
+            $('current_password').up(3).show();
+            $('current_password').addClassName('required-entry');
+            $('password').addClassName('required-entry');
+            $('confirmation').addClassName('required-entry');
+
+        }else{
+            $('current_password').up(3).hide();
+            $('current_password').removeClassName('required-entry');
+            $('password').removeClassName('required-entry');
+            $('confirmation').removeClassName('required-entry');
+        }
+    }
+
+    // setPasswordForm(true);
+
+    <?php if($this->getCustomer()->getChangePassword()): ?>
+        setPasswordForm(true);
+    <?php endif; ?>
+
+    var customerRegionUpdater = new CustomRegionUpdater('country_id', 'region', 'region_id', <?php echo $this->helper('directory')->getRegionJson() ?>, undefined, 'postcode');
+//]]>
+</script>

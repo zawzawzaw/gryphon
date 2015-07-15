@@ -1,0 +1,9 @@
+<?xml version = "1.0"?>
+<config>
+  	<modules>
+    	<Manic_Discovertea>
+        	<active>true</active>
+        	<codePool>local</codePool>
+     	</Manic_Discovertea>
+   	</modules>
+</config>
