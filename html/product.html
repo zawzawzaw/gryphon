@@ -44,6 +44,8 @@
 
 							<p class="desc">Imperial harvest of one of China's rarest teas. Only 5 kilograms are produced each year. It is a light bodied tea with mild notes of exotic fruit and chestnut</p>
 
+
+
 							<div class="row extra-info">
 								<div class="col-xs-6">
 									<div class="set">
@@ -100,19 +102,21 @@
 									</div>
 									-->	
 
-									<div class="add-to-cart">
-									  <div class="qty-wrapper">
-									    <h5>QUANTITY</h5>
-									    <a href="#" class="minus"><i class="fa fa-minus"></i></a>
-									    <input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" value="1" title="Qty" class="input-text qty" />
-									    <a href="#" class="plus"><i class="fa fa-plus"></i></a>            
-									  </div>
+									<div class="add-to-box">
+										<div class="add-to-cart">
+										  <div class="qty-wrapper">
+										    <h5>QUANTITY</h5>
+										    <a href="#" class="minus"><i class="fa fa-minus"></i></a>
+										    <input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" value="1" title="Qty" class="input-text qty" />
+										    <a href="#" class="plus"><i class="fa fa-plus"></i></a>            
+										  </div>
 
-									  <div class="cta-btn add-to-cart-buttons">
-									    <button type="button" title="Add to Cart" class="cta add-to-cart button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span>Add to Cart</span></span></button>
-									    <span id='ajax_loader' style='display:none'><img src='http://test.gryphontea.com/magento/skin/frontend/gryphon/gryphon_theme/images/content/opc-ajax-loader.gif'/></span>
-									    <span class="ajax_msg italic"></span>
-									  </div>
+										  <div class="cta-btn add-to-cart-buttons">
+										    <button type="button" title="Add to Cart" class="cta add-to-cart button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span>Add to Cart</span></span></button>
+										    <span id='ajax_loader' style='display:none'><img src='http://test.gryphontea.com/magento/skin/frontend/gryphon/gryphon_theme/images/content/opc-ajax-loader.gif'/></span>
+										    <span class="ajax_msg italic"></span>
+										  </div>
+										</div>
 									</div>
 
 								</div>
@@ -392,6 +396,15 @@
 							</div>
 						</div>	
 
+
+						<div class="visible-sm visible-xs">
+							<div class="mobile-write-review-cta">
+
+								<button class="write-review-cta" id="view-all-review-button">Show All</button>
+								<button class="write-review-cta" id="write-own-review-button">Write Review</button>
+							</div>
+						</div>
+
 						<!-- <table class="table">
 					        <thead>
 				          		<tr>
@@ -616,6 +629,12 @@
 	<!-- <div class="space100"></div> -->
 
 	<!--#include virtual="inc/footer.inc" -->
+
+
+	<script type="text/javascript">
+		// if(mobile)
+		$('.main-product .product-content p.desc').after($('.main-product .product-content .add-to-box'));
+	</script>
 
 	<script>
 	var initialLoad = true;
