@@ -48,7 +48,7 @@
     <div class="main-content">
         <div class="image-text-content container">
             <div class="row account-login<?php if (!$this->helper('customer')->isRegistrationAllowed()) echo ' login-only' ?>">
-                <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="login-form" class="scaffold-form sign-up-form">
+                <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="login-form" class="scaffold-form login-form">
                     <?php echo $this->getBlockHtml('formkey'); ?>
                     <div class="col-md-5 first-col">
                         <h1><?php if ($this->helper('customer')->isRegistrationAllowed()): ?>

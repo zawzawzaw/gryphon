@@ -122,7 +122,7 @@
                 <div class="col-2 each-input">
                 </div>
             </div>
-            <div class="totals col-md-5 col-md-offset-1">
+            <div class="totals col-md-6">
                 <?php echo $this->getChildHtml('totals'); ?>
             </div>
         </div>
@@ -152,11 +152,20 @@
             <p class="f-left edit-cart-wrapper"><a class="cta back-btn" href="#" onclick="checkout.back(); return false;"><i class="fa fa-chevron-left"></i> <?php echo $this->__('back to billing & shipping') ?></a></p>
             <!-- <a class="cta back-btn" href="#" onclick="checkout.back(); return false;"><small>&laquo; </small><?php echo $this->__('Back') ?></a> -->
         </div>
-        <div class="col-md-3 col-md-offset-5">
+        <div class="col-md-5 col-md-offset-3">
             <?php echo $this->getChildHtml('button') ?>
             <span class="please-wait" id="review-please-wait" style="display:none;">
                 <img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>" alt="<?php echo $this->__('Submitting order information...') ?>" title="<?php echo $this->__('Submitting order information...') ?>" class="v-middle" /> <?php echo $this->__('Submitting order information...') ?>
             </span>
+            <div class="we-accept">
+                <p>We Accept:</p>
+                <ul>
+                    <li><i class="discover"></i></li>
+                    <li><i class="visa"></i></li>
+                    <li><i class="american-express"></i></li>
+                    <li><i class="master-card"></i></li>
+                </ul>
+            </div>
         </div>
     </div>
     <script type="text/javascript">

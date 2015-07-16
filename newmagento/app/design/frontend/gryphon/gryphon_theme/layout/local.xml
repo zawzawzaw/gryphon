@@ -144,10 +144,13 @@ One page checkout main layout
     <customer_account_login>
         <reference name="root">
             <action method="setTemplate"><template>page/1column.phtml</template></action>
-        </reference>
+        </reference>        
         <reference name="content">
             <action method="unsetChild"><child>customer_form_login</child></action>
-            <block type="customer/form_login" name="customer_form_login" template="miragedesign/persistent/customer/form/login.phtml"></block>                                    
+            <block type="customer/form_login" name="customer_form_login" template="miragedesign/persistent/customer/form/login.phtml">                                    
+                <block type="persistent/form_remember" name="persistent.remember.me" template="miragedesign/persistent/customer/form/remember/remember_me.phtml" />
+                <!-- <block type="core/template" name="persistent.remember.me.tooltip" template="miragedesign/persistent/customer/form/remember/remember_me_tooltip.phtml" /> -->
+            </block>
         </reference>
     </customer_account_login>
 

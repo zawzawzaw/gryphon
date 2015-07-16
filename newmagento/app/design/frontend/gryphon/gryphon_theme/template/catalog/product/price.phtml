@@ -428,7 +428,7 @@ $_specialPriceStoreLabel = $this->getProductAttribute('special_price')->getStore
     <?php if ($price): ?>
         <p<?php if ($showMinPrice): ?> class="minimal-price"<?php endif ?>>
             <?php if ($showMinPrice): ?>
-                <span class="price-label"><?php echo $this->__('Starting at:') ?></span>
+                <span class="price-label"><?php echo $this->__('From:') ?></span>
             <?php endif ?>
             <?php if ($_taxHelper->displayBothPrices()): ?>
                 <span class="price-excluding-tax">

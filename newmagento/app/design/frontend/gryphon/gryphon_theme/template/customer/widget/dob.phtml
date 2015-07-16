@@ -62,11 +62,12 @@ NOTE: Regarding styles - if we leave it this way, we'll move it to boxes.css
         </select>
     </div>
     <div class="dob-month dropdown">
+        <?php $monthText = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']; ?>
         <select name="<?php echo $this->getFieldName('month'); ?>" id="<?php echo $this->getFieldId('month'); ?>">
             <option value=""><?php echo $this->__('Month'); ?></option>
             <?php for ($i = 1; $i <= 12; $i++): ?>
                 <?php $month = (strlen($i) == 1) ? "0".$i : $i; ?>
-                <option value="<?php echo $month; ?>" <?php echo ($i==$this->getMonth()) ? "selected" : ""; ?>><?php echo $month; ?></option>
+                <option value="<?php echo $month; ?>" <?php echo ($i==$this->getMonth()) ? "selected" : ""; ?>><?php echo $monthText[$i-1]; ?></option>
             <?php endfor; ?>
         </select>
     </div>
@@ -79,14 +80,7 @@ NOTE: Regarding styles - if we leave it this way, we'll move it to boxes.css
             <?php endfor; ?>
         </select>
     </div>
-    <div class="points dob-points">
-        <div class="left">
-            <div class="pts"><span class="no">80</span><span class="text">points</span></div>
-        </div>
-        <div class="right">
-            <span class="pts-text">For your birthday!</span>
-        </div>
-    </div>
+    <div class="clearfix"></div>    
     <div class="dob-full" style="display:none;">
         <input type="hidden" id="<?php echo $this->getFieldId('dob')?>" name="<?php echo $this->getFieldName('dob')?>" />
     </div>
@@ -120,13 +114,23 @@ NOTE: Regarding styles - if we leave it this way, we'll move it to boxes.css
     function setDayDrop(dyear, dmonth, dday) {
         var year  = dyear.options[dyear.selectedIndex].value;
         var month = dmonth.options[dmonth.selectedIndex].value;
-        var day   = dday.options[dday.selectedIndex].value;
+        var day   = dday.options[dday.selectedIndex].value;        
         var days  = (year == '' || month == '') ? 31 : daysInMonth(month,year);
 
         dday.options.length = 0;
         dday.options[dday.options.length] = new Option('Day','Day');
         for (var i = 1; i <= days; i++){
-            dday.options[dday.options.length] = new Option(i,i);
+            if(i<10) {
+                console.log(i);
+                dday.options[dday.options.length] = new Option('0'+i,'0'+i);
+            }
+            else
+                dday.options[dday.options.length] = new Option(i,i);
+        }
+        // var day = parseInt(day, 10);
+        console.log(day)
+        if(day && day <= days) {
+            dday.value = day;
         }
     }
 

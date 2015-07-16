@@ -245,6 +245,8 @@ strong {
       -ms-appearance: @appearance;
        -o-appearance: @appearance;
           appearance: @appearance;
+         text-indent: 0.01px;
+       text-overflow: '';
 }
 
 
@@ -559,6 +561,14 @@ ul.messages {
   margin: 0 auto!important;
   margin-bottom: 5px!important;
   padding-left: 7px;
+}
+
+.dropdown {
+  select {
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+  }
 }
 
 
@@ -2323,7 +2333,7 @@ div.product {
 
       border: 1px solid #cccccc;
       //height: 467px;
-      height: 747px;
+      height: 700px;
 
       .giftcard-product-media {
         float: none!important;;
@@ -2336,7 +2346,7 @@ div.product {
         display: table;
         width: 100%;
         //height: 467px;
-        height: 747px;
+        height: 700px;
         float: none!important;
 
         .vcenter2{
@@ -2380,6 +2390,10 @@ div.product {
                 letter-spacing: -0.02em;
 
                 height: 65px + 8px;
+                .dear {
+                  font-size: 20px;
+                  margin-bottom: 4px;
+                }
               }
               .gifttext-title{
                 .minion-pro-medium;
@@ -2400,7 +2414,7 @@ div.product {
               }
               .gifttext-copy{
                 .gotham-book;
-                font-size: 9px;
+                font-size: 11px;
                 line-height: 18px;
                 letter-spacing: 0.05em;
 
@@ -4076,31 +4090,22 @@ div.product {
       }
     }
 
-    .sign-up-form {
-      // margin-top: 41px;
-
-      /*.first-col {
-        label {
-          width: 88px;
-          margin-right: 76px;
-        }
-      }*/      
-      .first-half {
-        margin-bottom: 60px;
-        .each-input {
-          &:last-child {
-            margin-bottom: 0px;
-          }
-        }
+    .account-create {
+      h1 {
+        text-align: center;
       }
-      .second-half {
-        margin-bottom: 60px;
+      hr {
+        margin: 0 auto;
       }
-
-      .form-instructions {
-        margin-bottom: 41px;
+      p {
+        text-align: center;
       }
+    }
 
+    .login-form {      
+      p.form-instructions {
+        margin-bottom: 41px;  
+      }
       .each-input {
         position: relative;
         margin-bottom: 20px;
@@ -4108,10 +4113,11 @@ div.product {
           font-size: 10px;
           line-height: 22px;
           width: 135px;
-          margin-right: 27px;
+          // margin-right: 27px;
           .gotham-medium;
           color: #636363;
           text-transform: uppercase;
+          margin-right: 27px;
           @media all and (max-width: 1200px) {
             margin-right: 0px;
           }
@@ -4122,6 +4128,7 @@ div.product {
             text-transform: none;
             .minion-pro-semibold-italic;
             vertical-align: middle!important;
+            text-align: left;
           }          
         }
 
@@ -4130,15 +4137,18 @@ div.product {
           font-size: 13px;
           line-height: 16px!important;
           color: @dark-grey;
-          margin-left: 60px;
+          // margin-left: 60px;
           &:hover {
             color: @dark-orange;
-          }
+          } 
         }
 
-        input[type="checkbox"]+label span {
-          vertical-align: middle;
-        }
+        .remember-me-box {
+          display: inline-block;
+          .label-text {
+            vertical-align: top!important;
+          }
+        }        
 
         input[type="text"], input[type="password"], select {
           font-size: 11px; 
@@ -4147,37 +4157,13 @@ div.product {
           background: @skin;
           border: none;
           padding: 5px 0 5px 15px;
-        }        
-        
-        label.checkbox-label {
-          width: auto!important;
-          @media all and (max-width: 471px) {
-            width: 170px;
-            margin-bottom: 13px;
-          }
         }
         input[type="text"], input[type="password"] {
-          width: 276px;
+          width: 295px;
           @media all and (max-width: 470px) {
             width: 238px;
           }
-        }
-        .dropdown {
-          margin-right: 10px;
-          @media all and (max-width: 470px) {
-            margin-right: 0px;
-          }
-          &:nth-of-type(3) {
-            margin-right: 0px;
-          }
-        }
-        select {
-          /*width: 238px;*/
-          width: 82px;
-          @media all and (max-width: 470px) {
-            width: 76px;
-          }          
-        }
+        }        
       }
       .ctas {
         margin-top: 64px;
@@ -4216,6 +4202,201 @@ div.product {
         text-transform: none;
         /*float: right;
         margin-top: 130px;*/
+        &:hover {
+          background-color: @dark-orange;
+        }
+      }
+    }
+
+    .sign-up-form {      
+      margin: 0 auto;
+      width: 60%;
+      margin-top: 41px;
+      text-align: center;
+
+      /*.first-col {
+        label {
+          width: 88px;
+          margin-right: 76px;
+        }
+      }*/      
+      .first-half {
+        display: inline-block;
+        width: 50%;
+        vertical-align: top;
+        // margin-bottom: 60px;
+        .each-input {
+          &:last-child {
+            margin-bottom: 0px;
+          }
+        }
+      }
+      .second-half {
+        display: inline-block;
+        width: 49%;
+        vertical-align: top;
+        // margin-bottom: 60px;
+        .each-input {
+          // float: right;
+        }
+      }
+
+      .form-instructions {
+        margin-bottom: 41px;
+      }
+
+      .each-input {
+        position: relative;
+        margin-bottom: 20px;
+        label {
+          font-size: 10px;
+          line-height: 22px;
+          // width: 135px;
+          // margin-right: 27px;
+          .gotham-medium;
+          color: #636363;
+          text-transform: uppercase;
+          display: block;
+          text-align: left;
+          @media all and (max-width: 1200px) {
+            margin-right: 0px;
+          }
+
+          .label-text {
+            font-size: 12px;
+            line-height: 16px!important;
+            text-transform: none;
+            .minion-pro-semibold-italic;
+            vertical-align: middle!important;
+            text-align: left;
+          }          
+        }
+
+        .forgot-password {
+          .minion-pro-semibold-italic;
+          font-size: 13px;
+          line-height: 16px!important;
+          color: @dark-grey;
+          margin-left: 60px;
+          &:hover {
+            color: @dark-orange;
+          }
+        }
+
+        .gender-input {
+          text-align: left;
+          label.checkbox-label {
+            top: 0px;
+            left: -15px;
+            p {
+              margin-bottom: 3px;
+              width: 50px;
+            }
+          }
+        }
+
+        input[type="checkbox"]+label span {
+          vertical-align: middle;
+        }
+
+        input[type="text"], input[type="password"], select {
+          font-size: 11px; 
+          .gotham-book;
+          color: @new-grey;
+          background: @skin;
+          border: none;
+          padding: 5px 0 5px 15px;
+          display: block;
+        }        
+
+        input[type="checkbox"] {
+          position: relative;
+          top: 0px;
+          left: 0px;
+          display: block;
+        }
+        
+        label.checkbox-label {
+          width: auto!important;
+          margin-left: 0px!important;
+          position: relative;         
+          top: -18px;
+          @media all and (max-width: 471px) {
+            width: 170px;
+            margin-bottom: 13px;
+          }
+          p {
+            width: 85%;
+          }
+        }
+        input[type="text"], input[type="password"] {
+          width: 295px;
+          @media all and (max-width: 470px) {
+            width: 238px;
+          }
+        }
+        .dropdown {
+          margin-right: 25px;
+          float: left;
+          @media all and (max-width: 470px) {
+            margin-right: 0px;
+          }
+          &:nth-of-type(3) {
+            margin-right: 0px;
+          }
+        }
+        select {
+          /*width: 238px;*/
+          width: 82px;
+          @media all and (max-width: 470px) {
+            width: 76px;
+          }          
+        }
+      }
+      .buttons-set {
+        text-align: left;
+        margin-top: 63px;
+      }
+      .ctas {
+        margin-top: 64px;
+        .or {
+          .minion-pro-semibold-italic;
+          font-size: 12px;
+          line-height: 16px;
+          margin: 0 23px;
+          color: @dark-grey;
+        }
+      }
+      .links {
+        margin-top: 28px;
+      }
+      .sign-in-facebook {
+        background: url(../images/icons/facebook-2.png) no-repeat 26px 9px;
+        padding: 7px!important;
+        padding-left: 40px!important;
+        padding-right: 30px!important;
+        @media all and (max-width: 471px) {
+          background-position: 12px 8px;
+          padding: 7px 25px!important;
+        }
+      }
+      .sign-in-btn {        
+        padding: 7px 30px!important;
+        @media all and (max-width: 471px) {
+          padding: 7px 20px!important;
+        }
+      }
+      .sign-up-btn, .sign-in-btn, .sign-in-facebook {
+        background-color: @dark-grey;
+        padding: 7px 30px;
+        color: @white;
+        border: none;
+        text-transform: none;
+        /*float: right;
+        margin-top: 130px;*/
+        &:hover {
+          background-color: @dark-orange;
+        }
       }
       .back-link {
         .minion-pro-semibold-italic;
@@ -4228,22 +4409,22 @@ div.product {
       }
       .read-more {
         display: inline-block;
-        float: right;
+        // float: right;
         .minion-pro-semibold-italic;
         font-size: 13px;
         line-height: 16px;
         letter-spacing: 0.03em;
         text-transform: none;
       }
-      input[type="checkbox"] {
-        top: 2px!important;
-        left: 2px!important;
-      }
-      label.checkbox-label {
-        vertical-align: middle;
-        margin-left: -17px!important;
-        margin-right: 27px;
-      }
+      // input[type="checkbox"] {
+      //   top: 2px!important;
+      //   left: 2px!important;
+      // }
+      // label.checkbox-label {
+      //   vertical-align: middle;
+      //   margin-left: -17px!important;
+      //   margin-right: 27px;
+      // }
       label span:after {  
         font-size: 17px;
       }      
@@ -4251,13 +4432,17 @@ div.product {
     .left, .right {
       display: inline-block;
     }
+    .all-points {
+      margin-top: 60px;
+    }
     .dob-points, .email-points, .newsletter-points {
       display: table;
-      position: absolute;
-      top: -3px;
-      right: -65px;
+      margin-bottom: 16px;
+      // position: absolute;
+      // top: -3px;
+      // right: -65px;
       @media all and (max-width: 992px) {
-        right: 190px;
+        // right: 190px;
       }
 
       @media all and (max-width: 780px) {
@@ -4267,7 +4452,7 @@ div.product {
       }
       .right {
         display: table-cell;
-        width: 50px;
+        // width: 50px;
         vertical-align: middle;
         line-height: 11px;
         padding-left: 6px;
@@ -4286,7 +4471,7 @@ div.product {
         margin-left: 140px;
       }
       .right {                
-        width: 90px;        
+        // width: 90px;        
       }
     }
     .newsletter-points {
@@ -4302,7 +4487,7 @@ div.product {
         margin-left: 140px;
       }
       .right {                
-        width: 105px;        
+        // width: 105px;        
       }
     }
     .pts {
@@ -5779,9 +5964,79 @@ div.product {
         &:hover {
           background-color: @dark-orange;
         }
-      }
+      }     
       .continue {
         padding: 7px 30px;
+        margin-bottom: 28px;
+        i.paypal {
+          display: inline-block;
+          background: url(../images/icons/paypal.png) no-repeat;            
+          width: 55px;
+          height: 16px;
+          vertical-align: middle;
+          margin-left: 5px;
+        }
+      }
+      .please-wait {
+        float: right;
+        margin-right: 15px;
+      }
+      .we-accept {
+        clear: both;
+        display: block;
+        text-align: right;
+        p {
+          display: inline-block;
+          text-align: left;
+          .minion-pro-semibold-italic;
+          font-size: 13px;
+          line-height: 16px;
+          letter-spacing: 0.03em;
+          color: @new-grey;
+          margin-right: 10px;
+        }
+        ul {
+          display: inline-block;
+          text-align: right;
+          vertical-align: middle;
+          li {
+            display: inline-block;
+            margin: 0px;
+            padding: 0px;
+            margin-right: 7px;
+            &:last-child {
+              margin-right: 0px;
+            }
+            i.discover {
+              background: url(../images/icons/discover.png) no-repeat;
+              display: inline-block;
+              width: 36px;
+              height: 24px;
+              margin: 0px;
+            }
+            i.visa {
+              background: url(../images/icons/visa.png) no-repeat;
+              display: inline-block;
+              width: 36px;
+              height: 24px;
+              margin: 0px;
+            }
+            i.american-express {
+              background: url(../images/icons/american-express.png) no-repeat;
+              display: inline-block;
+              width: 36px;
+              height: 24px;
+              margin: 0px;
+            }
+            i.master-card {
+              background: url(../images/icons/master.png) no-repeat;
+              display: inline-block;
+              width: 36px;
+              height: 24px;
+              margin: 0px;
+            }
+          }
+        }
       }
     }
 
@@ -5909,7 +6164,8 @@ div.product {
         color: @dark-orange;
       }
       .value {
-        margin-left: 0px;
+        // margin-left: 0px;
+        margin-left: 15px;
       }
        
     }
@@ -6300,6 +6556,11 @@ div.product {
         color: #777;
       }
     }    
+
+    .please-wait {
+      float: right;
+      margin-right: 10px;
+    }
   }
 
   #checkout-success {
@@ -6749,6 +7010,7 @@ div.product {
           color: @dark-orange;
         }
       }
+
       input[type="checkbox"] {
         /*top: -6px!important;*/
       }
@@ -6817,6 +7079,11 @@ div.product {
       }
       .label-text {
         margin-top: -3px;
+      }
+      .gender-input {
+        .label-text {
+          margin-top: 0px;
+        }
       }
       .country_code_dropdown {
         display: inline-block;

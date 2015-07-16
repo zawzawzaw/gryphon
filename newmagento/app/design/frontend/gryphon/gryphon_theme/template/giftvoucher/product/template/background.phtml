@@ -24,7 +24,7 @@ else
 
         <div id="gift-design-01">
             <div id="gifttext" class="gifttext giftcard-style-color">
-                <div class="gifttext-intro">Dear <span class="giftcard-send-to" id='giftcard-to'>&nbsp;</span>,  a special gift for you. <br>(from <span class="giftcard-send-from" id='giftcard-from' >&nbsp;<?php echo Mage::helper('customer')->isLoggedIn() ? Mage::helper('customer')->getCustomerName() : ''; ?></span>)</div>
+                <div class="gifttext-intro"><div class="dear">Dear <span class="giftcard-send-to" id='giftcard-to'></span>,</div> a special gift for you. <br>(from <span class="giftcard-send-from" id='giftcard-from' >&nbsp;<?php echo Mage::helper('customer')->isLoggedIn() ? Mage::helper('customer')->getCustomerName() : ''; ?></span>)</div>
                 <div class="gifttext-title">gift card</div>
                 <div class="gifttext-amount"><span class="gifttext-amount-number giftcard-price-change">$100</span></div>
                 <div class="gifttext-copy giftcard-custom-message"></div>

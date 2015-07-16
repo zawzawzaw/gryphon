@@ -404,6 +404,7 @@ Varien.Tabs.prototype = {
 Varien.DateElement = Class.create();
 Varien.DateElement.prototype = {
     initialize: function(type, content, required, format) {
+        console.log('hi')
         if (type == 'id') {
             // id prefix
             this.day    = $(content + 'day');
@@ -442,6 +443,9 @@ Varien.DateElement.prototype = {
             day   = parseInt(this.day.value, 10)   || 0,
             month = parseInt(this.month.value, 10) || 0,
             year  = parseInt(this.year.value, 10)  || 0;
+            console.log(day)
+            console.log(month)
+            console.log(year)
         if (this.day.value.strip().empty()
             && this.month.value.strip().empty()
             && this.year.value.strip().empty()
