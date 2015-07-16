@@ -1,0 +1,1189 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>
+<!--> 
+<html class="">
+<!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Gryphon</title>
+  <meta name="description" content="Gryphon">
+  <meta name="keywords" content="Gryphon">
+
+  <!--#include virtual="inc/head.inc" -->
+</head>
+<body>
+  
+  <!--#include virtual="inc/header.inc" -->
+
+  <div id="content-wrapper" class="cart">
+    <div class="cart-breadcrumb">
+      <div class="text-content container">
+        <div class="row">
+          <div class="col-xs-4"><a href="#cart" class="active" role="tab" data-toggle="tab"><i class="no">1</i><span>Shopping Cart</span></a></div>
+          <div class="col-xs-4"><a href="#billing_shipping" role="tab" data-toggle="tab"><i class="no">2</i><span>Billing & Shipping Address</span></a></div>
+          <div class="col-xs-4"><a href="#confirmation" role="tab" data-toggle="tab"><i class="no">3</i><span>Order Confirmation</span></a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="image-text-content container">
+        <div class="tab-content">
+
+          <!--
+          <div role="tabpanel" class="tab-pane active" id="cart">
+          </div>
+          -->
+
+          <!-- 
+             __  __    _    ____ _____ _   _ _____ ___     ____    _    ____ _____   _   _ _____ __  __ _     
+            |  \/  |  / \  / ___| ____| \ | |_   _/ _ \   / ___|  / \  |  _ \_   _| | | | |_   _|  \/  | |    
+            | |\/| | / _ \| |  _|  _| |  \| | | || | | | | |     / _ \ | |_) || |   | |_| | | | | |\/| | |    
+            | |  | |/ ___ \ |_| | |___| |\  | | || |_| | | |___ / ___ \|  _ < | |   |  _  | | | | |  | | |___ 
+            |_|  |_/_/   \_\____|_____|_| \_| |_| \___/   \____/_/   \_\_| \_\|_|   |_| |_| |_| |_|  |_|_____|
+                                                                                                              
+           -->
+
+          <div role="tabpanel" class="tab-pane active" id="cart">
+            <div class="row">
+              <div class="col-md-6">
+                <h1>Shopping Cart</h1>
+                <hr class="small">
+                <p>The product items in shopping cart will be disposed after 24 hours.</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="table-responsive">
+                  <form action="http://test.gryphontea.com/magento/checkout/cart/updatePost/" method="post">
+                    <input name="form_key" type="hidden" value="SKZ8aYm1Gqp3Qo8Q">
+                    <table id="shopping-cart-table" class="data-table cart-table table">
+                      <colgroup>
+                        <col width="1">
+                        <col>
+                        <col width="1">
+                        <col width="1">
+                        <col width="1">
+                        <col width="1">
+                        <col width="1">
+                      </colgroup>
+                    <thead>
+                      <tr class="first last">
+                        <th colspan="2" rowspan="1"><h2>Product</h2></th>
+                        <th class="a-center" width="10%" colspan="1"><h2>Unit Price</h2></th>
+                        <th width="10%" rowspan="1" class="a-center"><h2>Quantity</h2></th>
+                        <th class="a-center" colspan="1"><h2>Subtotal</h2></th>
+                        <th rowspan="1" class="a-center">&nbsp;</th>
+                      </tr>
+                    </thead>
+                    <tfoot>
+                      <tr class="first last">
+                        <td class="a-left">
+                        </td>
+                        <td colspan="50" class="a-right last">
+                          <button type="submit" name="update_cart_action" value="update_qty" title="Update Shopping Cart" class="button btn-update"><span><span><i class="fa fa-refresh"></i> Update Shopping Cart</span></span></button>
+                          <button type="submit" name="update_cart_action" value="empty_cart" title="Clear Shopping Cart" class="button btn-empty" id="empty_cart_button"><span><span><i class="trash"></i> Clear All Products</span></span></button>
+
+                        </td>
+                      </tr>
+                    </tfoot>
+                    <tbody>
+                      <tr class="first odd">
+                        <td colspan="2">
+                          <div class="image-text-container">
+                            <div class="img-container">
+                              <a href="http://test.gryphontea.com/magento/gold-muscato-208.html" title="Gold Muscato (50 gr)" class="product-image"><img src="http://test.gryphontea.com/magento/media/catalog/product/cache/1/thumbnail/58x80/9df78eab33525d08d6e5fb8d27136e95/i/m/img_0360-gold-muscato.jpg" width="58" height="80" alt="Gold Muscato (50 gr)"></a>            </div>
+                              <p class="product-title">
+                                <a href="http://test.gryphontea.com/magento/gold-muscato-208.html">Gold Muscato (50 gr)</a>
+                              </p>
+                            </div>
+                          </td>
+
+
+                          <td class="a-right" style="text-align:center;">
+                            <div class="image-text-container">
+                              <p class="product-price">
+                                <span class="cart-price">
+                                  <span class="price">$17.50</span>                
+                                </span>
+
+                              </p>
+                            </div>
+                          </td>
+                          <!-- inclusive price starts here -->
+                          <td class="a-center">
+                            <div class="image-text-container">
+                              <p class="product-qty">                
+
+                                <a href="javascript:void(0)" class="minus"><i class="fa fa-minus"></i></a>
+                                <input type="text" name="cart[2724][qty]" value="1" size="4" title="Qty" class="input-text qty" maxlength="12">
+                                <a href="javascript:void(0)" class="plus"><i class="fa fa-plus"></i></a>  
+
+                              </p>
+                            </div>
+                          </td>
+
+                          <!--Sub total starts here -->
+                          <td class="a-right" style="text-align:center;">
+                            <div class="image-text-container">
+                              <p class="product-price">
+                                <span class="cart-price">
+
+                                  <span class="price">$17.50</span>                            
+                                </span>
+                              </p>
+                            </div>
+                          </td>
+                          <td class="a-center last">
+                            <div class="image-text-container last-image-text-container">
+                              <a href="http://test.gryphontea.com/magento/checkout/cart/delete/id/2724/uenc/aHR0cDovL3Rlc3QuZ3J5cGhvbnRlYS5jb20vbWFnZW50by9jaGVja291dC9jYXJ0Lw,,/" title="Remove item" class="btn-remove btn-remove2 delete"></a>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="even">
+                          <td colspan="2">
+                            <div class="image-text-container">
+                              <div class="img-container">
+                                <a href="http://test.gryphontea.com/magento/gold-muscato-208.html" title="Gold Muscato (100 gr)" class="product-image"><img src="http://test.gryphontea.com/magento/media/catalog/product/cache/1/thumbnail/58x80/9df78eab33525d08d6e5fb8d27136e95/i/m/img_0360-gold-muscato.jpg" width="58" height="80" alt="Gold Muscato (100 gr)"></a>            </div>
+                                <p class="product-title">
+                                  <a href="http://test.gryphontea.com/magento/gold-muscato-208.html">Gold Muscato (100 gr)</a>
+                                </p>
+                              </div>
+                            </td>
+
+
+                            <td class="a-right" style="text-align:center;">
+                              <div class="image-text-container">
+                                <p class="product-price">
+                                  <span class="cart-price">
+                                    <span class="price">$35.00</span>                
+                                  </span>
+
+                                </p>
+                              </div>
+                            </td>
+                            <!-- inclusive price starts here -->
+                            <td class="a-center">
+                              <div class="image-text-container">
+                                <p class="product-qty">                
+
+                                  <a href="javascript:void(0)" class="minus"><i class="fa fa-minus"></i></a>
+                                  <input type="text" name="cart[2725][qty]" value="2" size="4" title="Qty" class="input-text qty" maxlength="12">
+                                  <a href="javascript:void(0)" class="plus"><i class="fa fa-plus"></i></a>  
+
+                                </p>
+                              </div>
+                            </td>
+
+                            <!--Sub total starts here -->
+                            <td class="a-right" style="text-align:center;">
+                              <div class="image-text-container">
+                                <p class="product-price">
+                                  <span class="cart-price">
+
+                                    <span class="price">$70.00</span>                            
+                                  </span>
+                                </p>
+                              </div>
+                            </td>
+                            <td class="a-center last">
+                              <div class="image-text-container last-image-text-container">
+                                <a href="http://test.gryphontea.com/magento/checkout/cart/delete/id/2725/uenc/aHR0cDovL3Rlc3QuZ3J5cGhvbnRlYS5jb20vbWFnZW50by9jaGVja291dC9jYXJ0Lw,,/" title="Remove item" class="btn-remove btn-remove2 delete"></a>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="odd">
+                            <td colspan="2">
+                              <div class="image-text-container">
+                                <div class="img-container">
+                                  <a href="http://test.gryphontea.com/magento/gold-muscato-208.html" title="Gold Muscato (200 gr) -10% Off" class="product-image"><img src="http://test.gryphontea.com/magento/media/catalog/product/cache/1/thumbnail/58x80/9df78eab33525d08d6e5fb8d27136e95/i/m/img_0360-gold-muscato.jpg" width="58" height="80" alt="Gold Muscato (200 gr) -10% Off"></a>            </div>
+                                  <p class="product-title">
+                                    <a href="http://test.gryphontea.com/magento/gold-muscato-208.html">Gold Muscato (200 gr) -10% Off</a>
+                                  </p>
+                                </div>
+                              </td>
+
+
+                              <td class="a-right" style="text-align:center;">
+                                <div class="image-text-container">
+                                  <p class="product-price">
+                                    <span class="cart-price">
+                                      <span class="price">$63.00</span>                
+                                    </span>
+
+                                  </p>
+                                </div>
+                              </td>
+                              <!-- inclusive price starts here -->
+                              <td class="a-center">
+                                <div class="image-text-container">
+                                  <p class="product-qty">                
+
+                                    <a href="javascript:void(0)" class="minus"><i class="fa fa-minus"></i></a>
+                                    <input type="text" name="cart[2726][qty]" value="2" size="4" title="Qty" class="input-text qty" maxlength="12">
+                                    <a href="javascript:void(0)" class="plus"><i class="fa fa-plus"></i></a>  
+
+                                  </p>
+                                </div>
+                              </td>
+
+                              <!--Sub total starts here -->
+                              <td class="a-right" style="text-align:center;">
+                                <div class="image-text-container">
+                                  <p class="product-price">
+                                    <span class="cart-price">
+
+                                      <span class="price">$126.00</span>                            
+                                    </span>
+                                  </p>
+                                </div>
+                              </td>
+                              <td class="a-center last">
+                                <div class="image-text-container last-image-text-container">
+                                  <a href="http://test.gryphontea.com/magento/checkout/cart/delete/id/2726/uenc/aHR0cDovL3Rlc3QuZ3J5cGhvbnRlYS5jb20vbWFnZW50by9jaGVja291dC9jYXJ0Lw,,/" title="Remove item" class="btn-remove btn-remove2 delete"></a>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr class="even">
+                              <td colspan="2">
+                                <div class="image-text-container">
+                                  <div class="img-container">
+                                    <a href="http://test.gryphontea.com/magento/lily-of-the-field.html" title="Lily of the Field" class="product-image"><img src="http://test.gryphontea.com/magento/media/catalog/product/cache/1/thumbnail/58x80/9df78eab33525d08d6e5fb8d27136e95/i/m/img_0425-lily-of-the-field.jpg" width="58" height="80" alt="Lily of the Field"></a>            </div>
+                                    <p class="product-title">
+                                      <a href="http://test.gryphontea.com/magento/lily-of-the-field.html">Lily of the Field</a>
+                                    </p>
+                                  </div>
+                                </td>
+
+
+                                <td class="a-right" style="text-align:center;">
+                                  <div class="image-text-container">
+                                    <p class="product-price">
+                                      <span class="cart-price">
+                                        <span class="price">$16.60</span>                
+                                      </span>
+
+                                    </p>
+                                  </div>
+                                </td>
+                                <!-- inclusive price starts here -->
+                                <td class="a-center">
+                                  <div class="image-text-container">
+                                    <p class="product-qty">                
+
+                                      <a href="javascript:void(0)" class="minus"><i class="fa fa-minus"></i></a>
+                                      <input type="text" name="cart[2727][qty]" value="3" size="4" title="Qty" class="input-text qty" maxlength="12">
+                                      <a href="javascript:void(0)" class="plus"><i class="fa fa-plus"></i></a>  
+
+                                    </p>
+                                  </div>
+                                </td>
+
+                                <!--Sub total starts here -->
+                                <td class="a-right" style="text-align:center;">
+                                  <div class="image-text-container">
+                                    <p class="product-price">
+                                      <span class="cart-price">
+
+                                        <span class="price">$49.80</span>                            
+                                      </span>
+                                    </p>
+                                  </div>
+                                </td>
+                                <td class="a-center last">
+                                  <div class="image-text-container last-image-text-container">
+                                    <a href="http://test.gryphontea.com/magento/checkout/cart/delete/id/2727/uenc/aHR0cDovL3Rlc3QuZ3J5cGhvbnRlYS5jb20vbWFnZW50by9jaGVja291dC9jYXJ0Lw,,/" title="Remove item" class="btn-remove btn-remove2 delete"></a>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr class="last odd">
+                                <td colspan="2">
+                                  <div class="image-text-container">
+                                    <div class="img-container">
+                                      <a href="http://test.gryphontea.com/magento/templetree-lotus.html" title="Templetree Lotus" class="product-image"><img src="http://test.gryphontea.com/magento/media/catalog/product/cache/1/thumbnail/58x80/9df78eab33525d08d6e5fb8d27136e95/_/m/_mg_7085-templetreel.jpg" width="58" height="80" alt="Templetree Lotus"></a>            </div>
+                                      <p class="product-title">
+                                        <a href="http://test.gryphontea.com/magento/templetree-lotus.html">Templetree Lotus</a>
+                                      </p>
+                                    </div>
+                                  </td>
+
+
+                                  <td class="a-right" style="text-align:center;">
+                                    <div class="image-text-container">
+                                      <p class="product-price">
+                                        <span class="cart-price">
+                                          <span class="price">$16.60</span>                
+                                        </span>
+
+                                      </p>
+                                    </div>
+                                  </td>
+                                  <!-- inclusive price starts here -->
+                                  <td class="a-center">
+                                    <div class="image-text-container">
+                                      <p class="product-qty">                
+                                        <!--<a href="javascript:void(0)" class="minus"></a>-->
+                                        <a href="javascript:void(0)" class="minus"><i class="fa fa-minus"></i></a>
+                                        <input type="text" name="cart[2728][qty]" value="5" size="4" title="Qty" class="input-text qty" maxlength="12">
+                                        <a href="javascript:void(0)" class="plus"><i class="fa fa-plus"></i></a>  
+                                        <!--<span class="qty">5</span>-->
+                                        <!--<a href="javascript:void(0)" class="add"></a>-->    
+                                      </p>
+                                    </div>
+                                  </td>
+
+                                  <!--Sub total starts here -->
+                                  <td class="a-right" style="text-align:center;">
+                                    <div class="image-text-container">
+                                      <p class="product-price">
+                                        <span class="cart-price">
+
+                                          <span class="price">$83.00</span>                            
+                                        </span>
+                                      </p>
+                                    </div>
+                                  </td>
+                                  <td class="a-center last">
+                                    <div class="image-text-container last-image-text-container">
+                                      <a href="http://test.gryphontea.com/magento/checkout/cart/delete/id/2728/uenc/aHR0cDovL3Rlc3QuZ3J5cGhvbnRlYS5jb20vbWFnZW50by9jaGVja291dC9jYXJ0Lw,,/" title="Remove item" class="btn-remove btn-remove2 delete"></a>
+                                    </div>
+                                  </td>
+                                </tr>
+                      </tbody>
+                    </table>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="cart-collaterals row" id="confirmation">
+              <div class="col2-set col-md-6">
+
+                <div class="each-input"></div>
+
+                <div class="each-input">
+                  <div class="discount-codes box discount" id="rewardFormArea">
+                    <!-- <h2>Reward points</h2> -->
+                    <div class="rewards_point_cart">
+                      This shopping cart is worth 347 loyalty point(s).                    
+                    </div>
+                  </div>
+                </div>
+
+                <div class="each-input">
+                  <form id="discount-coupon-form" action="http://test.gryphontea.com/magento/checkout/cart/couponPost/" method="post">
+                    <label for="coupon_code">Discount Code</label>
+                    <input type="hidden" name="remove" id="remove-coupone" value="0">
+                    <input type="text" class="input-text" id="coupon_code" name="coupon_code" value="">    
+                    <button type="button" title="Apply Coupon" class="button apply cta" onclick="discountForm.submit(false)" value="Apply Coupon"><span><span>Apply</span></span></button>
+                  </form>
+
+                  <form id="discount-giftcard-form" action="http://test.gryphontea.com/magento/giftvoucher/checkout/giftcardPost/" method="post">
+                    <div class="discount">
+                      <!-- <h2>Gift Card</h2> -->
+                      <div class="discount-form">
+
+                        <dl id="giftvoucher_container" style="">
+                          <dt class="giftvoucher" style="display:none;">
+                            <input type="checkbox" name="giftvoucher" id="giftvoucher" value="1" onclick="showCartGiftCardInput(this)" checked="checked">
+                            <label for="giftvoucher" style="font-weight: bold; color: #666;">Use Gift Card to check out</label>
+                          </dt>
+                          <dd class="giftvoucher">
+                            <div class="form-list" id="payment_form_giftvoucher">
+                              <div class="giftvoucher-description">
+                              </div>
+                              <div id="giftvoucher_message">
+                              </div>
+                              <div id="giftvoucher-custom-code">
+                                <label for="giftvoucher_code">GIFT CERTIFICATE</label>
+                                <input type="text" title="Gift Card Code" class="input-text" id="giftvoucher_code" name="giftvoucher_code">
+
+                                <button class="form-button-alt button cta apply apply_giftcard" type="button">
+                                  <span><span>Apply</span></span>
+                                </button>           
+                              </div>
+
+                              <div style="color: #A70101;font-size: 11px;font-weight: bold;line-height: 13px;" id="giftcard_notice"></div>       
+                              <div style="display:none;">
+                                To check your Gift card information, please click <a target="_blank" href="http://test.gryphontea.com/magento/giftvoucher/index/check/">here</a>.                                                    </div>
+                              </div>
+                            </dd>
+                            <dt style="display: none;"></dt>
+                            <dd id="giftcard_shoppingcart_apply" style="display:none;">
+                              <ul>
+                                <li>
+                                  <div class="input-box">
+                                   <!--<button type="submit" class="button">-->
+                                   <button type="button" class="button validation-passed" onclick="check_giftcode()">
+                                    <span><span>Apply Gift Card</span></span>
+                                  </button>
+                                </div>
+                              </li>
+                              <p></p>
+                            </ul>
+                          </dd>
+                          <dt style="display: none;"></dt>
+                          <dd id="giftcard_shoppingcart_reloading" style="display:none;">
+                            <p style="font-weight: normal; font-style: italic;">
+                              <img src="http://test.gryphontea.com/magento/skin/frontend/rwd/default/images/opc-ajax-loader.gif" alt="Loading..." title="Refreshing cart, please wait..." class="v-middle">
+                              Refreshing cart, please wait...
+                            </p>
+                          </dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </form>
+
+                </div>
+
+              </div>
+
+              <div class="totals col-md-4 col-md-offset-2">
+                <div id="shopping-cart-totals-table-test">
+                  <div class="each-details test">
+                    <div style="" class="a-right label subtotal" colspan="1">
+                      <p>Subtotal</p>
+                    </div>
+                    <div style="" class="a-right value subtotal">
+                      <p class="sub_total">$346.30</p>
+                    </div>
+                  </div>
+
+                  <div class="each-details">
+                    <div style="" class="a-right label">
+                      <p>Tax</p>
+                    </div>
+                    <div style="" class="a-right value">
+                        <p class="tax">$28.57</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div> <!-- cart-collaterals -->
+
+
+            <div class="row action-container">
+                <div class="col-md-12">
+                  <ul class="checkout-types"><li><button type="button" style="border:0;" title="Proceed to Checkout" class="button btn-proceed-checkout btn-checkout proceed cta " onclick="window.location='http://test.gryphontea.com/magento/checkout/onepage/';"><span><span>Proceed to Checkout</span></span></button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+
+
+          <!-- 
+             ____ ___ _     _     ___ _   _  ____   ____  _   _ ___ ____  ____ ___ _   _  ____ 
+            | __ )_ _| |   | |   |_ _| \ | |/ ___| / ___|| | | |_ _|  _ \|  _ \_ _| \ | |/ ___|
+            |  _ \| || |   | |    | ||  \| | |  _  \___ \| |_| || || |_) | |_) | ||  \| | |  _ 
+            | |_) | || |___| |___ | || |\  | |_| |  ___) |  _  || ||  __/|  __/| || |\  | |_| |
+            |____/___|_____|_____|___|_| \_|\____| |____/|_| |_|___|_|   |_|  |___|_| \_|\____|
+                                                                                               
+           -->
+
+
+          <div role="tabpanel" class="tab-pane" id="billing_shipping">
+            <div class="tab-content">
+  <div class="opc" id="checkoutSteps">
+    <div role="tabpanel" class="tab-pane section allow" id="opc-login">
+      <div class="step-title" style="display: none;">
+        <span class="number">1</span>
+        <h2>Checkout Method</h2>
+        <a href="#">Edit</a>
+      </div>
+      <div id="checkout-step-login" class="step a-item" style="display:none;">
+        <div class="col2-set">
+
+
+          <div class="col-1">
+            <h3>Checkout as a Guest or Register</h3>
+            <p class="description">Register with us for future convenience:</p>
+            <ul class="form-list">
+              <li class="control">
+                <input type="radio" name="checkout_method" id="login:guest" value="guest" checked="checked" class="radio"><label for="login:guest">Checkout as Guest</label>
+              </li>
+              <li class="control">
+                <input type="radio" name="checkout_method" id="login:register" value="register" class="radio">
+                <label for="login:register">Register and Checkout</label>
+              </li>
+            </ul>
+            <div class="buttons-set">
+              <p class="required">&nbsp;</p>
+              <button id="onepage-guest-register-button" type="button" class="button" onclick="checkout.setMethod();"><span><span>Continue</span></span></button>
+            </div>
+          </div>
+
+
+          <div class="col-2">
+            <h3>Returning Customers</h3>
+            <form id="login-form" action="http://test.gryphontea.com/magento/customer/account/loginPost/" method="post">
+              <div class="fieldset">
+                <input name="form_key" type="hidden" value="psXeQdKO2pr4hlNC">
+                <p class="description">Sign in to speed up your checkout process</p>
+                <p class="required">* Required Fields</p>
+                <ul class="form-list">
+                  <li>
+                    <label for="login-email" class="required"><em>*</em>Email Address</label>
+                    <div class="input-box">
+                      <input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" class="input-text required-entry validate-email" id="login-email" name="login[username]" value="">
+                    </div>
+                  </li>
+                  <li>
+                    <label for="login-password" class="required"><em>*</em>Password</label>
+                    <div class="input-box">
+                      <input type="password" class="input-text validate-password required-entry" id="login-password" name="login[password]">
+                    </div>
+                  </li>
+                  <li>
+                    <a href="http://test.gryphontea.com/magento/customer/account/forgotpassword/" class="f-left">Forgot your password?</a>
+                  </li>
+                </ul>
+                <div class="remember-me-popup">
+                  <div class="remember-me-popup-head">
+                    <h3>What's this?</h3>
+                    <a href="#" class="remember-me-popup-close" title="Close">Close</a>
+                  </div>
+                  <div class="remember-me-popup-body">
+                    <p>Checking "Remember Me" will let you access your shopping cart on this computer when you are logged out</p>
+                    <div class="remember-me-popup-close-button a-right">
+                      <a href="#" class="remember-me-popup-close button" title="Close"><span>Close</span></a>
+                    </div>
+                  </div>
+                </div>
+                <input name="context" type="hidden" value="checkout">
+              </div>
+
+            </form>
+            <div class="buttons-set">
+              <button type="submit" class="button" onclick="onepageLogin(this)"><span><span>Login</span></span></button>
+            </div>
+          </div>
+
+
+        </div> <!-- col2-set -->
+
+
+      </div> <!-- checkout-step-login -->
+    </div> <!-- tabpanel -->
+
+
+    <div role="tabpanel" class="tab-pane section allow active" id="opc-billing">
+      <div class="step-title" style="display: none;">
+        <span class="number">2</span>
+        <h2>Billing Information</h2>
+        <a href="#">Edit</a>
+      </div>
+
+      <div id="checkout-step-billing" class="step a-item">
+        <form id="co-billing-form" action="">
+          <div class="col2-set row">
+            <div class="col-1 col-md-6 billing_address">
+              <h1>Billing Address</h1>
+              <hr class="small">
+
+              <ul class="form-list">
+                <li id="billing-new-address-form">
+                  <input type="hidden" name="billing[address_id]" value="" id="billing:address_id">
+                  <ul>
+                    <li class="fields">
+                      <!-- <div class="customer-name"> -->
+                      <div class="each-input test">
+                        <label for="billing:firstname" class="required">First Name<em>*</em></label>
+                        <input type="text" id="billing:firstname" name="billing[firstname]" value="" title="First Name" maxlength="255" class="input-text required-entry">        
+                      </div>
+                      <div class="each-input">
+                        <label for="billing:lastname" class="required">Last Name<em>*</em></label>        
+                        <input type="text" id="billing:lastname" name="billing[lastname]" value="" title="Last Name" maxlength="255" class="input-text required-entry">        
+                      </div>
+                      <!-- </div> -->
+                    </li>
+                    <li class="fields">
+                      <div class="field each-input">
+                        <label for="billing:company">Company</label>
+                        <div class="input-box">
+                          <input type="text" id="billing:company" name="billing[company]" value="" title="Company" class="input-text ">
+                        </div>
+                      </div>
+                      <div class="field each-input">
+                        <label for="billing:email" class="required"><em>*</em>Email Address</label>
+                        <div class="input-box">
+                          <input type="text" name="billing[email]" id="billing:email" value="" title="Email Address" class="input-text validate-email required-entry">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="fields each-input">
+                      <label for="billing:street1" class="required"><em>*</em>Address</label>
+                      <div class="input-box">
+                        <input type="text" title="Street Address" name="billing[street][]" id="billing:street1" value="" class="input-text  required-entry">
+                      </div>
+                    </li>
+                    <li class="fields each-input">
+                      <label></label>
+                      <div class="input-box">
+                        <input type="text" title="Street Address 2" name="billing[street][]" id="billing:street2" value="" class="input-text ">
+                      </div>
+                    </li>
+                    <li class="fields">
+                      <div class="field each-input">
+                        <label for="billing:city" class="required"><em>*</em>City</label>
+                        <div class="input-box">
+                          <input type="text" title="City" name="billing[city]" value="" class="input-text  required-entry" id="billing:city">
+                        </div>
+                      </div>
+                      <div class="field each-input">
+                        <label for="billing:postcode" class="required"><em>*</em>Zip/Postal Code</label>
+                        <div class="input-box">
+                          <input type="text" title="Zip/Postal Code" name="billing[postcode]" id="billing:postcode" value="" class="input-text validate-zip-international  required-entry">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="fields">
+                      <div class="field each-input">
+                        <label for="billing:country_id" class="required"><em>*</em>Country</label>
+                        <div class="dropdown">
+                          <select name="billing[country_id]" id="billing:country_id" class="validate-select" title="Country"><option value=""> </option><option value="AF">Afghanistan</option></select>                            </div>
+                        </div>
+                        <div class="field each-input">
+                          <label for="billing:region_id" class=""><em style="display: none;">*</em>State/Province</label>
+                          <div class="input-box">
+                            <select id="billing:region_id" name="billing[region_id]" title="State/Province" class="" style="display: none;" defaultvalue="">
+                              <option value="">Please select region, state or province</option>
+                            </select>
+
+                            <input type="text" id="billing:region" name="billing[region]" value="" title="State/Province" class="input-text">
+                          </div>
+                        </div>
+                      </li>
+                      <li class="fields">
+                        <div class="field each-input">
+                          <label for="billing:telephone" class="required"><em>*</em>Telephone</label>
+                          <div class="input-box">
+                            <input type="text" name="billing[telephone]" value="" title="Telephone" class="input-text  required-entry" id="billing:telephone">
+                          </div>
+                        </div>
+                        <div class="field each-input">
+                          <label for="billing:fax">Fax</label>
+                          <div class="input-box">
+                            <input type="text" name="billing[fax]" value="" title="Fax" class="input-text " id="billing:fax">
+                          </div>
+                        </div>
+                      </li>
+
+
+
+                      <li class="fields" id="register-customer-password" style="display: none;">
+                        <div class="field each-input">
+                          <label for="billing:customer_password" class="required"><em>*</em>Password</label>
+                          <div class="input-box">
+                            <input type="password" name="billing[customer_password]" id="billing:customer_password" title="Password" class="input-text required-entry validate-password">
+                          </div>
+                        </div>
+                        <div class="field each-input">
+                          <label for="billing:confirm_password" class="required"><em>*</em>Confirm Password</label>
+                          <div class="input-box">
+                            <input type="password" name="billing[confirm_password]" title="Confirm Password" id="billing:confirm_password" class="input-text required-entry validate-cpassword">
+                          </div>
+                        </div>
+                      </li>
+                      <li class="no-display"><input type="hidden" name="billing[save_in_address_book]" value="1"></li>
+                    </ul>
+
+                    <div class="remember-me-popup">
+                      <div class="remember-me-popup-head">
+                        <h3>What's this?</h3>
+                        <a href="#" class="remember-me-popup-close" title="Close">Close</a>
+                      </div>
+                      <div class="remember-me-popup-body">
+                        <p>Checking "Remember Me" will let you access your shopping cart on this computer when you are logged out</p>
+                        <div class="remember-me-popup-close-button a-right">
+                          <a href="#" class="remember-me-popup-close button" title="Close"><span>Close</span></a>
+                        </div>
+                      </div>
+                    </div>
+
+                  </li>
+                </ul>
+              </div>
+
+
+
+              <div class="col-2 col-md-5 col-md-offset-1">
+                <h1>Shipping Address</h1>
+                <hr class="small">
+
+                <ul class="form-list">
+                  <li class="control same-as-billing">
+                    <input type="checkbox" name="shipping[same_as_billing]" id="shipping:same_as_billing" value="1" title="Use Billing Address" onclick="shipping.setSameAsBilling(this.checked)" class="checkbox">
+                    <label class="checkbox-label" for="shipping:same_as_billing">
+                      <span></span><p class="label-text">If shipping address is same as billing address, tick here.</p>
+                    </label>
+                  </li>
+                  <li id="shipping-new-address-form">
+                    <input type="hidden" name="shipping[address_id]" value="" id="shipping:address_id">
+                    <ul>
+                      <li class="fields">
+                        <!-- <div class="customer-name"> -->
+                        <div class="each-input test">
+                          <label for="shipping:firstname" class="required">First Name<em>*</em></label>
+                          <input type="text" id="shipping:firstname" name="shipping[firstname]" value="" title="First Name" maxlength="255" class="input-text required-entry" onchange="shipping.setSameAsBilling(false)">        
+                        </div>
+                        <div class="each-input">
+                          <label for="shipping:lastname" class="required">Last Name<em>*</em></label>        
+                          <input type="text" id="shipping:lastname" name="shipping[lastname]" value="" title="Last Name" maxlength="255" class="input-text required-entry" onchange="shipping.setSameAsBilling(false)">        
+                        </div>
+                        <!-- </div> -->
+                      </li>
+                      <li class="fields">
+                        <div class="fields each-input">
+                          <label for="shipping:company">Company</label>
+                          <div class="input-box">
+                            <input type="text" id="shipping:company" name="shipping[company]" value="" title="Company" class="input-text " onchange="shipping.setSameAsBilling(false);">
+                          </div>
+                        </div>
+                      </li>
+                      <li class="fields each-input">
+                        <label for="shipping:street1" class="required"><em>*</em>Address</label>
+                        <div class="input-box">
+                          <input type="text" title="Street Address" name="shipping[street][]" id="shipping:street1" value="" class="input-text  required-entry" onchange="shipping.setSameAsBilling(false);">
+                        </div>
+                      </li>
+                      <li class="fields each-input">
+                        <label></label>
+                        <div class="input-box">
+                          <input type="text" title="Street Address 2" name="shipping[street][]" id="shipping:street2" value="" class="input-text " onchange="shipping.setSameAsBilling(false);">
+                        </div>
+                      </li>
+                      <li class="fields">
+                        <div class="field each-input">
+                          <label for="shipping:city" class="required"><em>*</em>City</label>
+                          <div class="input-box">
+                            <input type="text" title="City" name="shipping[city]" value="" class="input-text  required-entry" id="shipping:city" onchange="shipping.setSameAsBilling(false);">
+                          </div>
+                        </div>
+                        <div class="field each-input">
+                          <label for="shipping:postcode" class="required"><em>*</em>Zip/Postal Code</label>
+                          <div class="input-box">
+                            <input type="text" title="Zip/Postal Code" name="shipping[postcode]" id="shipping:postcode" value="" class="input-text validate-zip-international  required-entry" onchange="shipping.setSameAsBilling(false);">
+                          </div>
+                        </div>
+                      </li>
+                      <li class="fields">
+                        <div class="field each-input">
+                          <label for="shipping:country_id" class="required"><em>*</em>Country</label>
+                          <div class="dropdown">
+                            <select name="shipping[country_id]" id="shipping:country_id" class="validate-select" title="Country" onchange="if(window.shipping)shipping.setSameAsBilling(false);"><option value=""> </option><option value="AF">Afghanistan</option></select>                                </div>
+                          </div>
+                          <div class="field each-input">
+                            <label for="shipping:region" class=""><em style="display: none;">*</em>State/Province</label>
+                            <div class="input-box">
+                              <select id="shipping:region_id" name="shipping[region_id]" title="State/Province" class="" style="display: none;" defaultvalue="">
+                                <option value="">Please select region, state or province</option>
+                              </select>
+
+                              <input type="text" id="shipping:region" name="shipping[region]" value="" title="State/Province" class="input-text">
+                            </div>
+                          </div>
+                        </li>
+                        <li class="fields">
+                          <div class="field each-input">
+                            <label for="shipping:telephone" class="required"><em>*</em>Telephone</label>
+                            <div class="input-box">
+                              <input type="text" name="shipping[telephone]" value="" title="Telephone" class="input-text  required-entry" id="shipping:telephone" onchange="shipping.setSameAsBilling(false);">
+                            </div>
+                          </div>
+                          <div class="field each-input">
+                            <label for="shipping:fax">Fax</label>
+                            <div class="input-box">
+                              <input type="text" name="shipping[fax]" value="" title="Fax" class="input-text " id="shipping:fax" onchange="shipping.setSameAsBilling(false);">
+                            </div>
+                          </div>
+                        </li>
+                        <li class="no-display"><input type="hidden" name="shipping[save_in_address_book]" value="1"></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+
+              </div> <!-- col2-set -->
+
+              <input type="hidden" name="md_shipping_method" id="md_shipping_method" value="customrate_customrate_free">
+            </form>
+
+
+            <div class="row">
+              <div class="col-1 col-md-6"></div>
+              <div class="col-2 col-md-5 col-md-offset-1">
+                <div id="billing_shipping">
+                  <div class="sp-methods delivery-rates">
+                    <h2>DELIVERY</h2>
+                    <div class="table-responsive">
+                      <table id="delivery-rate-tbl" class="table">
+                        <thead>
+                          <tr>
+                            <th>COUNTRY</th>
+                            <th>ESTIMATED DELIVERY TIME</th>
+                            <th>RATE</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><p class="country">Singapore</p></td>
+                            <td><p class="delivery_time">2-3 working days</p></td>
+                            <td>
+                              <div style="display:none;">
+                                <span class="no-display"><input name="shipping_method" type="radio" value="customrate_customrate_free" id="s_method_customrate_customrate_free" checked="checked"></span>
+                                <label for="s_method_customrate_customrate_free">FREE SHIPPING                                                                                                                                    <span class="price">$0.00</span>                                                                                    </label>
+                              </div>
+                              <p class="flat_rate">
+                                <span class="price">$0.00</span>                                                                    </p>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <p>All local orders are delivered with registered postage.</p>
+                      <p>All products are shipped directly from Singapore. Please allow 5 to 7 working days on top of the estimated delivery time for us to process your order.</p>
+                      <p>Please expect slight delays for orders shipped during peak seasons. <br><span>— Chinese New Year, Christmas etc.</span></p>    
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="buttons-set row action-container" id="billing-buttons-container">
+                <!-- <p class="required">* Required Fields</p> -->
+                <div class="back-link col-md-4">
+                  <a class="cta back-btn" href="http://test.gryphontea.com/magento/"><i class="fa fa-chevron-left"></i> go back to continue shopping</a>
+                </div>
+                <div class="col-md-4 col-md-offset-4">
+                  <button type="button" title="Continue" class="button continue cta" onclick="billing.save()"><span><span>Continue</span></span></button>
+                  <span class="please-wait" id="billing-please-wait" style="display:none;">
+                    <img src="http://test.gryphontea.com/magento/skin/frontend/rwd/default/images/opc-ajax-loader.gif" alt="Loading next step..." title="Loading next step..." class="v-middle"> Loading next step...            </span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+
+
+          <div role="tabpanel" class="tab-pane section" id="opc-shipping_method">
+            <div class="step-title" style="display: none;">
+              <span class="number">3</span>
+              <h2>Shipping Method</h2>
+              <a href="#">Edit</a>
+            </div>
+            <div id="checkout-step-shipping_method" class="step a-item" style="display:none;">
+              <form id="co-shipping-method-form" action="">
+                <div id="checkout-shipping-method-load">
+                 <!-- Content loaded dynamically -->
+               </div>
+
+               <div id="onepage-checkout-shipping-method-additional-load">
+
+               </div>
+               <div class="buttons-set" id="shipping-method-buttons-container">
+                <p class="back-link"><a href="#" onclick="checkout.back(); return false;"><small>« </small>Back</a></p>
+                <button type="button" class="button" onclick="shippingMethod.save()"><span><span>Continue</span></span></button>
+                <span id="shipping-method-please-wait" class="please-wait" style="display:none;">
+                  <img src="http://test.gryphontea.com/magento/skin/frontend/rwd/default/images/opc-ajax-loader.gif" alt="Loading next step..." title="Loading next step..." class="v-middle"> Loading next step...        </span>
+                </div>
+              </form>
+            </div>
+          </div>
+
+
+          
+          <div role="tabpanel" class="tab-pane section" id="opc-payment">
+            <div class="step-title" style="display: none;">
+              <span class="number">4</span>
+              <h2>Payment Information</h2>
+              <a href="#">Edit</a>
+            </div>
+            <div id="checkout-step-payment" class="step a-item" style="display:none;">
+
+              <form action="" id="co-payment-form">
+                <div class="row">
+                  <div class="col-md-12">
+                    <h1>Payment Method</h1>
+                    <hr class="small">
+                    <input name="payment[method]" type="hidden" value="paypal_standard" checked="checked">
+                    <dl class="sp-methods" id="checkout-payment-method-load">
+                     <!-- Content dynamically loaded. Content from the methods.phtml is loaded during the ajax call -->
+                   </dl>
+                 </div>
+               </div>
+             </form>
+             <div class="tool-tip" id="payment-tool-tip" style="display:none;">
+              <div class="btn-close"><a href="#" id="payment-tool-tip-close" title="Close">Close</a></div>
+              <div class="tool-tip-content"><img src="http://test.gryphontea.com/magento/skin/frontend/base/default/images/cvv.gif" alt="Card Verification Number Visual Reference" title="Card Verification Number Visual Reference"></div>
+            </div>
+            <div class="buttons-set row action-container" id="payment-buttons-container">
+              <p class="required">* Required Fields</p>
+              <div class="back-link col-md-4">
+                <a class="cta back-btn" href="#" onclick="checkout.back(); return false;"><small>« </small>Back</a>
+              </div>
+              <div class="col-md-3 col-md-offset-5">
+                <button type="button" class="button continue cta" onclick="payment.save()"><span><span>Continue</span></span></button>
+                <span class="please-wait" id="payment-please-wait" style="display:none;">
+                  <img src="http://test.gryphontea.com/magento/skin/frontend/rwd/default/images/opc-ajax-loader.gif" alt="Loading next step..." title="Loading next step..." class="v-middle"> Loading next step...        </span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane section" id="opc-review">
+            <div class="step-title" style="display: none;">
+              <span class="number">5</span>
+              <h2>Order Review</h2>
+              <a href="#">Edit</a>
+            </div>
+            <div id="checkout-step-review" class="step a-item" style="display:none;">
+              <div class="order-review" id="checkout-review-load">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          </div>         
+
+
+          <!--
+          <div role="tabpanel" class="tab-pane" id="billing_shipping">
+            <div class="row">
+              <div class="col-md-6 billing_address">
+                <h1>BILLING ADDRESS</h1>
+                <hr class="small">
+
+                <form action="" name="billing" id="billing">
+                </form>
+              </div>
+              <div class="col-md-5 col-md-offset-1">
+                <h1>SHIPPING ADDRESS</h1>
+                <hr class="small">
+                
+                <input type="checkbox" name="newsletter">
+                <label class="checkbox-label" for="newsletter">
+                  <span></span><p class="label-text">If shipping address is same as billing address, tick here.</p>
+                </label>
+
+                <form action="" name="shipping" id="shipping">
+                </form>
+
+                <div class="delivery-rates">
+                  <h2>LOCAL DELIVERY</h2>
+                  <div class="table-responsive">
+                      <table id="delivery-rate-tbl" class="table">
+                        <thead>
+                          <tr>
+                              <th>COUNTRY</th>
+                              <th>ESTIMATED DELIVERY TIME</th>
+                              <th>FLAT RATE (SGD)</th>
+                          </tr>
+                        </thead>
+                          <tbody>
+                          <tr>
+                              <td><p class="country">Singapore</p></td>
+                              <td><p class="delivery_time">2 to 3 working days</p></td>
+                              <td><p class="flat_rate">S$ 6.00</p></td>
+                          </tr>
+                      </tbody>
+                      </table>
+                  </div>
+
+                  <p>All local orders are delivered with registered postage.</p>
+
+                  <p>All products are shipped directly from Singapore. Please allow 5 to 7 working days on top of the estimated delivery time for us to process your order.</p>
+
+                  <p>Please expect slight delays for orders shipped during peak seasons. <br>
+                  <span>— Chinese New Year, Christmas etc.</span></p>
+                </div>
+              </div>
+            </div>
+            <div class="row action-container">
+              <div class="col-md-4">                
+                <a href="#" class="cta back-btn"><i class="fa fa-chevron-left"></i> go back to shopping cart</a>
+              </div>
+              <div class="col-md-3 col-md-offset-5">
+                <a href="#" class="continue cta">Continue</a>
+              </div>
+            </div>
+              
+          </div>
+          -->
+
+
+
+
+          <!-- 
+              ____ ___  _   _ _____ ___ ____  __  __    _  _____ ___ ___  _   _ 
+             / ___/ _ \| \ | |  ___|_ _|  _ \|  \/  |  / \|_   _|_ _/ _ \| \ | |
+            | |  | | | |  \| | |_   | || |_) | |\/| | / _ \ | |  | | | | |  \| |
+            | |__| |_| | |\  |  _|  | ||  _ <| |  | |/ ___ \| |  | | |_| | |\  |
+             \____\___/|_| \_|_|   |___|_| \_\_|  |_/_/   \_\_| |___\___/|_| \_|
+                                                                                
+           -->
+
+
+          <div role="tabpanel" class="tab-pane" id="confirmation">
+          </div>
+
+
+          <!-- 
+              ____ ___  _   _ _____ ___ ____  __  __    _  _____ ___ ___  _   _   _____ _   _ ____  
+             / ___/ _ \| \ | |  ___|_ _|  _ \|  \/  |  / \|_   _|_ _/ _ \| \ | | | ____| \ | |  _ \ 
+            | |  | | | |  \| | |_   | || |_) | |\/| | / _ \ | |  | | | | |  \| | |  _| |  \| | | | |
+            | |__| |_| | |\  |  _|  | ||  _ <| |  | |/ ___ \| |  | | |_| | |\  | | |___| |\  | |_| |
+             \____\___/|_| \_|_|   |___|_| \_\_|  |_/_/   \_\_| |___\___/|_| \_| |_____|_| \_|____/ 
+                                                                                                    
+           -->
+
+        </div>
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="space100"></div> -->
+
+  <!--#include virtual="inc/footer.inc" -->
+
+  <script>
+  var initialLoad = true;
+  $(document).ready(function(){   
+      $(window).on('scroll', function() {
+          var scrollPos = $(window).scrollTop();
+          
+          if( ( scrollPos != 0 ) ) {
+              console.log('scrolling')
+              $('#header-wrapper').addClass('shadow');
+          }       
+          else if( ( scrollPos === 0 ) ) {
+              $('#header-wrapper').removeClass('shadow');
+          }
+      });
+
+      initialLoad = false;
+
+      // cart
+
+      $('.add').on('click',function(){
+          var $qty=$(this).closest('p').find('.qty');
+          var currentVal = parseInt($qty.text());
+          if (!isNaN(currentVal)) {
+              $qty.text(currentVal + 1);
+          }
+      });
+      $('.minus').on('click',function(){
+          var $qty=$(this).closest('p').find('.qty');
+          var currentVal = parseInt($qty.text());
+          if (!isNaN(currentVal) && currentVal > 0) {
+              $qty.text(currentVal - 1);
+          }
+      });
+
+      function deleteItem() {
+        if (confirm("Are you sure?")) {
+            return true;
+        }
+        return false;
+    }
+
+      $('.delete').on('click', function(e){
+        e.preventDefault();
+        if(deleteItem()==true) {
+          $(this).parent().parent().parent('tr').hide('slow', function(e){
+            $(this).remove();
+          }); 
+        }
+        
+      });
+  });
+  </script>
+
+
+  <script type="text/javascript">
+  
+    jQuery(document).ready(function($) {
+
+      function update_mobile_cart(href){
+        var arr = $('#content-wrapper .cart-breadcrumb a[data-toggle="tab"]');
+        var element = null;
+        var element_href = "";
+        var has_passed = false;
+
+        arr.addClass('fake-active');
+
+
+        for (var i = 0, l = arr.length; i < l; i++) {
+          element = $(arr[i]);
+          element_href = "" + element.attr('href');
+
+          if(has_passed == false){
+            if(element_href == href) {
+              has_passed = true;
+            }
+          } else{
+            element.removeClass('fake-active');
+          }
+
+        }
+
+      }
+
+      update_mobile_cart('#cart');
+
+      $('#content-wrapper .cart-breadcrumb a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        var href = $(this).attr('href');
+        update_mobile_cart(href);
+      });
+
+
+
+      ////////////////////////
+      
+
+      // update shopping cart html
+      var arr = $('#shopping-cart-table tbody tr');
+      var table_row = null;
+      var col_1 = null;
+      var col_3 = null;
+      var new_image_container = null;
+      for (var i = 0, l = arr.length; i < l; i++) {
+        table_row = $(arr[i]);
+        col_1 = table_row.find('td:first-child');
+        col_3 = table_row.find('td:nth-child(3)');
+        new_image_container = $('<div class="image-text-container-2"></div>');
+        new_image_container.append(col_1.find('.img-container').clone());
+        new_image_container.append(table_row.find('.product-title').clone());
+        new_image_container.append($(table_row.find('.product-price')[0]).clone());
+
+        col_1.prepend(new_image_container);
+        col_3.append(table_row.find('.last-image-text-container'));
+
+        console.log('row!');
+      }
+
+
+    });
+  </script>
+
+  <script type="text/javascript">
+
+  </script>
+</body>
+</html>

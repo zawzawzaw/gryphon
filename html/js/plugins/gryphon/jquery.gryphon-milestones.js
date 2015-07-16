@@ -1,5 +1,7 @@
 /**
  * Gryphon Milestone
+ *
+ * also works for mobile
  * 
  * @author Jairus
  */
@@ -49,6 +51,10 @@
 
     this.init();
 
+
+    this.hammertime = new Hammer(this.element[0], {});
+    this.hammertime.on('swipeleft', this.on_swipe_left.bind(this));
+    this.hammertime.on('swiperight', this.on_swipe_right.bind(this));
 
 
     this.highlight_index(0);
@@ -184,7 +190,31 @@
       
     },
 
+    next_page: function(){
+      this.auto_play = false;
 
+      var target_index = this.current_page_index + 1;
+      target_index = target_index >= this.max_page ? this.max_page : target_index;
+      this.goto_page(target_index);
+
+      var current_page_max_index = this.max_col * target_index
+      if (this.current_index < current_page_max_index) {
+        this.highlight_index(current_page_max_index);
+      }
+    },
+    prev_page: function(){
+      this.auto_play = false;
+
+      var target_index = this.current_page_index - 1;
+      target_index = target_index <= 0 ? 0 : target_index;
+      this.goto_page(target_index);
+
+
+      var current_page_max_index = this.max_col * (target_index + 1) - 1;
+      if (this.current_index > current_page_max_index) {
+        this.highlight_index(current_page_max_index);
+      }
+    },
 
     //    _______     _______ _   _ _____ ____  
     //   | ____\ \   / / ____| \ | |_   _/ ___| 
@@ -198,6 +228,8 @@
       var window_width = this.element.width();
 
       this.max_col = Math.floor(window_width / this.item_width );
+      this.max_col = this.max_col <= 0 ? 1 : this.max_col;
+
       this.max_page = Math.ceil(this.milestone_array.length / this.max_col) - 1;        // minus 1 because arrays count starting from 0;
 
       this.page_width = (this.max_col * this.item_width) - this.settings['gutter'];
@@ -207,31 +239,13 @@
     },
     on_prev_button_click: function(event){
       event.preventDefault();
-      this.auto_play = false;
-
-      var target_index = this.current_page_index - 1;
-      target_index = target_index <= 0 ? 0 : target_index;
-      this.goto_page(target_index);
-
-
-      var current_page_max_index = this.max_col * (target_index + 1) - 1;
-      if (this.current_index > current_page_max_index) {
-        this.highlight_index(current_page_max_index);
-      }
-
+      
+      this.prev_page();
     },
     on_next_button_click: function(event){
       event.preventDefault();
-      this.auto_play = false;
-
-      var target_index = this.current_page_index + 1;
-      target_index = target_index >= this.max_page ? this.max_page : target_index;
-      this.goto_page(target_index);
-
-      var current_page_max_index = this.max_col * target_index
-      if (this.current_index < current_page_max_index) {
-        this.highlight_index(current_page_max_index);
-      }
+      
+      this.next_page();
     },
 
     on_milestone_click: function(event){
@@ -253,6 +267,12 @@
 
       this.highlight_index(index);
 
+    },
+    on_swipe_left: function(event){
+      this.next_page();
+    },
+    on_swipe_right: function(event){
+      this.prev_page();
     }
 
   };

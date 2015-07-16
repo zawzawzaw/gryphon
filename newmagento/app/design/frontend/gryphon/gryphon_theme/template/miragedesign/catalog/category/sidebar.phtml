@@ -13,6 +13,52 @@ $allCategories = $this->getCategories();
 $splitColumnNumber = $this->getSplitColumnNumber();
 $currentCategory = Mage::registry('current_category');
 ?>
+<div class="side-bar-mobile">
+    <form action="" id="ajax-filter-form-mobile" name="ajax-filter-form-mobile">
+        <div id="store-filter-button-container">
+            <div class="store-filter-button" id="gryphon-store-sort-by-button">Sort By</div>
+            <div class="store-filter-button" id="gryphon-store-refine-button">Refine</div>
+        </div>
+
+        <div id="store-sort-expandable-container">        
+
+        </div> <!-- store-sort-expandable-container -->
+
+        <div id="store-filter-expandable-container">
+
+            <div id="store-filter-expandable-checkboxes">
+                
+                
+                    
+            </div> <!-- store-filter-expandable-checkboxes -->
+
+
+            <div id="store-filter-expandable-title-container">
+                <ul></ul>
+            
+
+            </div>
+
+            <div id="store-filter-expandable-cta-container">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <a class="store-filter-expandable-cta-button" id="gryphon-store-clear-all-filter-button">Clear All</a>
+                    </div>
+                    <div class="col-xs-6">
+                        <a class="store-filter-expandable-cta-button" id="gryphon-store-apply-filter-button">Apply</a>
+                    </div>
+                </div>
+            </div> <!-- store-filter-expandable-cta-container -->
+            
+        </div> <!-- store-filter-expandable-container -->
+
+        <div id="store-filter-detail-container">        
+
+
+        </div> <!-- store-filter-detail-container -->
+    </form>
+
+</div>
 <div class="side-bar">
     <h1><?php echo $this->__('REFINE BY'); ?></h1>
     <a href="javascript:void(0)" class="clear-all"><?php echo $this->__('Clear All'); ?></a>
@@ -52,7 +98,7 @@ $currentCategory = Mage::registry('current_category');
                 $category = $categoryData['category'];
                 $subCategories = $categoryData['subCategories'];
             ?>
-            <div class="each-filter-section">
+            <div class="each-filter-section has-subsection">
                 <div class="title">
                     <a id="cat-<?php echo $category->getId(); ?>" href="#col-cat-<?php echo $category->getId(); ?>" class="load-more">
                         <h2><?php echo $category->getName(); ?></h2><i class="fa fa-chevron-up"></i>
@@ -91,10 +137,50 @@ $currentCategory = Mage::registry('current_category');
     </div>
 
 </div>
-<script type="text/javascript">
-    //<![CDATA[
+<script type="text/javascript">    
     var AJAXBASE_URL = "<?php echo Mage::getUrl() ?>";
     var AJAXSEARCH_URL = "<?php echo Mage::getUrl("ajaxsearch/ajax/result") ?>";
-    var ajaxSearch = new Ajaxsearch("ajax-filter-form");
-    //]]>
+    var ajaxSearch;
+    var ajaxSearchMobile;
+    jQuery(document).ready(function($) {
+        $('#content-wrapper.store .side-bar-mobile').gryphon_mobile_store_sidebar();
+        //<![CDATA[        
+        ajaxSearch = new Ajaxsearch("ajax-filter-form");
+        ajaxSearchMobile = new Ajaxsearchmobile("ajax-filter-form-mobile");
+
+
+        $('#ajax-filter-form input.ajaxsearch').click(function() {
+            ajaxSearch.submit();
+        });
+        $('#ajax-filter-form .clear-all').click(function() {
+            ajaxSearch.reset();
+        });
+        $('#ajax-filter-form .all-products').on('click', '.load-more-products', function() {
+            if ($('#cur_p').size()) {
+                var curPage = $('#cur_p').val();
+                ajaxSearch.more(parseInt(curPage) + 1);
+            }
+        });
+
+        //////////
+
+        // $('#ajax-filter-form-mobile input.ajaxsearch').click(function() {
+        //     ajaxSearchMobile.submit();
+        // });
+        $('#gryphon-store-apply-filter-button, .store-filter-detail-apply-button').click(function(){
+            ajaxSearchMobile.submit();
+        })
+
+        $('#gryphon-store-clear-all-filter-button, .store-filter-detail-clear-button').click(function() {
+            ajaxSearchMobile.reset();
+        });
+        $('#ajax-filter-form-mobile .all-products').on('click', '.load-more-products', function() {
+            if ($('#cur_p').size()) {
+                var curPage = $('#cur_p').val();
+                ajaxSearchMobile.more(parseInt(curPage) + 1);
+            }
+        });
+        //]]>
+    });
+
 </script>

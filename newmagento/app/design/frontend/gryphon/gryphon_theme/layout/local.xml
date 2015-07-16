@@ -231,6 +231,7 @@ One page checkout main layout
         <reference name="head">
             <action method="addItem"><type>skin_js</type><name>js/miragedesign/navigation.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/inside-pages.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/plugins/gryphon/jquery.gryphon-mobile-store-sidebar.js</name></action>
         </reference>
         <reference name="category.products">
             <block type="catalogcustomiser/sidebar" name="category.sidebar" template="miragedesign/catalog/category/sidebar.phtml" />
@@ -240,6 +241,7 @@ One page checkout main layout
     <catalog_category_layered>
         <reference name="head">
             <action method="addItem"><type>skin_js</type><name>js/miragedesign/navigation.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/plugins/gryphon/jquery.gryphon-mobile-store-sidebar.js</name></action>
         </reference>
         <reference name="category.products">
             <block type="catalogcustomiser/sidebar" name="category.sidebar" template="miragedesign/catalog/category/sidebar.phtml" />

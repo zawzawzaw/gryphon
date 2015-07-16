@@ -77,7 +77,8 @@
 
       for (var i = 0, l = this.submenu_expandable_elements.length; i < l; i++) {
         submenu_expandable_element = $(this.submenu_expandable_elements[i]);
-        submenu_expandable_element.click(this.on_submenu_expandable_element_click.bind(this)); 
+        console.log(submenu_expandable_element)
+        $(submenu_expandable_element.find("a")[0]).click(this.on_submenu_expandable_element_click.bind(this)); 
       }
 
 
@@ -291,8 +292,10 @@
     on_submenu_expandable_element_click: function(event){
       event.preventDefault();
 
+      console.log('click')
+
       var target = $(event.currentTarget);
-      var submenu = target.find('.sub-menu');
+      var submenu = target.parent().find('.sub-menu');
 
       // close others
       this.submenu_expandable_elements.removeClass('expanded');

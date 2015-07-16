@@ -90,80 +90,126 @@ $quoteData= $quote->getData();
 		<div id="mobile-expand-container">
 
 			<div id="mobile-account">
-				<div id="mobile-account-header">
-					<?php 
-					$session = Mage::getSingleton('customer/session');
-					if($session->isLoggedIn()) {
-					   $customer = $session->getCustomer();
-					   // echo $customer->getName();
-					   $customer_name = $customer->getFirstname();
-					}
-					?>						
-					<p><a href="#" class="account name"><?php echo (isset($customer_name)) ? 'Welcome, '.$customer_name : $this->__('Account'); ?></a></p>
-					<div id="mobile-account-expand-button"></div>
-				</div>
-				
-				<ul>
-					<li><a href="">account information</a></li>
-					<li><a href="">address book</a></li>
-					<li><a href="">order history</a></li>
-					<li><a href="">gift card</a></li>
-					<li><a href="">reward points</a></li>
-					<li><a href="">refer friend</a></li>
-				</ul>
+				<?php 
+				$session = Mage::getSingleton('customer/session');
+				if($session->isLoggedIn()): ?>											
+					<div id="mobile-account-header">
+						<?php 
+						$session = Mage::getSingleton('customer/session');
+						if($session->isLoggedIn()) {
+						   $customer = $session->getCustomer();
+						   // echo $customer->getName();
+						   $customer_name = $customer->getFirstname();
+						}
+						?>						
+						<p><a href="#" class="account name"><?php echo (isset($customer_name)) ? 'Welcome, '.$customer_name : $this->__('Account'); ?></a></p>
+						<div id="mobile-account-expand-button"></div>
+					</div>
+					
+					<ul>
+						<li><a href="#">account information</a></li>
+						<li><a href="#">address book</a></li>
+						<li><a href="#">order history</a></li>
+						<li><a href="#">gift card</a></li>
+						<li><a href="#">reward points</a></li>
+						<li><a href="#">refer friend</a></li>
+					</ul>
+				<?php else: ?>
+					<div id="mobile-account-header">					
+						<p><a href="<?php echo Mage::helper('customer')->getLoginUrl(); ?>">Log In</a> | <a href="<?php echo Mage::getUrl('customer/account/create'); ?>">Register</a></p>
+						<div id="mobile-account-expand-button"></div>
+					</div>
+				<?php endif; ?>
 				
 			</div> <!-- mobile-account -->
 
 			<div class="mobile-submenu">
 				<div class="mobile-submenu-header">Gryphon Store</div>
 				<ul>
-					<li class="has-sub-menu">
-						<a href="#">Tea</a>
-						<ul class="sub-menu">
-				      <li><a href="store.html">Black</a></li>
-				      <li><a href="store.html">White</a></li>
-				      <li><a href="store.html">Green</a></li>
-				      <li><a href="store.html">Yellow</a></li>
-				      <li><a href="store.html">Oolong</a></li>
-				      <li><a href="store.html">Pu-erh</a></li>
-				      <li><a href="store.html">Rooibos</a></li>
-				      <li><a href="store.html">Tisane</a></li>
-				      <li><a href="store.html">Herbs</a></li>
-				    </ul>
+					<?php
+					// TEA
+					$store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store');
+					$type_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Types');
+
+					/*Returns comma separated ids*/
+					$subcats = $type_category->getChildren();			
+
+					echo '<li class="has-sub-menu">
+							<a href="'.$store_category->getUrl().'">TEA</a>
+							<ul class="sub-menu">';
+
+					foreach(explode(',',$subcats) as $subCatid)
+					{
+					  	$_category = Mage::getModel('catalog/category')->load($subCatid);
+					  	if($_category->getIsActive())
+					  	{
+					    	$caturl     = $_category->getURL();
+					    	$catname     = $_category->getName();
+
+					    	echo '<li><a href="'.$caturl.'">'.$catname.'</a></li>';
+					    }
+					}
+
+					echo '</ul>
+					</li>';					
+					?>
+					<?php
+					// PANTRY
+					$pantry_products = Mage::getModel('catalog/category')->loadByAttribute('name', 'Pantry');					
+					?>
+					<li>
+						<a href="<?php echo $pantry_products->getUrl(); ?>">PANTRY</a>
 					</li>
-					<li><a href="#">Pantry</a></li>
-					<li class="has-sub-menu">
-						<a href="#">Gifts</a>
-						<ul class="sub-menu">
-							<li><a href="#">Gift Card</a></li>
-							<li><a href="#">Treasure Tin</a></li>
-						</ul>
+					<?php
+					// PANTRY
+					$gifts_products = Mage::getModel('catalog/category')->loadByAttribute('name', 'Gifts')->getProductCollection()
+					 	->addAttributeToSelect('*') // add all attributes - optional
+					 	->addAttributeToFilter('status', 1) // enabled
+					 	->addAttributeToFilter('visibility', 4) //visibility in catalog,search
+					 	->setOrder('price', 'ASC');			
+
+					$gifts_products_data = $gifts_products->getData();
+					?>					
+					<li>
+						<?php $gifts_products = Mage::getModel('catalog/category')->loadByAttribute('name', 'gifts');	?>
+						<?php $gifts_products_data = $gifts_products->getData(); ?>
+						<a href="<?php echo $this->getUrl($gifts_products_data['url_path']); ?>">GIFTS</a>
 					</li>
-					<li><a href="#">Subscription</a></li>
-					<li><a href="#">Trade</a></li>
+					<li>
+						<a href="<?php echo $this->getUrl('subscription');?>">SUBSCRIPTION</a>
+					</li>									
+					<li>
+						<a href="<?php echo $this->getUrl('trade'); ?>">TRADE</a>
+					</li>					
 				</ul>
 			</div>
 
 			<div class="mobile-submenu">
 				<div class="mobile-submenu-header">About Gryphon</div>
 				<ul>
-					<li><a href="">Collections</a></li>
-					<li><a href="">Blog</a></li>
-					<li><a href="">Discover tea</a></li>
-					<li><a href="">Our story</a></li>
-					<li><a href="">Careers</a></li>
+					<li>
+						<a href="<?php echo $this->getUrl('collections');?>">COLLECTIONS</a>								
+					</li>
+					<li>
+						<a href="http://test.gryphontea.com/wp">BLOG</a>
+					</li>
+					<li><a href="<?php echo $this->getUrl('discover-tea'); ?>">Discover Tea</a></li>
+					<li><a href="<?php echo $this->getUrl('our-story');?>">Our Story</a></li>
+					<li><a href="<?php echo $this->getUrl('careers');?>">Careers</a></li>
 				</ul>
 			</div>
 
 			<div class="mobile-submenu">
 				<div class="mobile-submenu-header">Customer Service</div>
 				<ul>
-					<li><a href="">contact us</a></li>
-					<li><a href="">faq &amp; help</a></li>
-					<li><a href="">shipping information</a></li>
-					<li><a href="">track order</a></li>
-					<li><a href="">terms &amp; conditions</a></li>
-					<li><a href="">privacy policy</a></li>
+															
+
+					<li><a href="<?php echo $this->getUrl('contact-us'); ?>">Contact Us</a></li>															
+					<li><a href="<?php echo $this->getUrl('faq'); ?>">FAQ</a></li>
+					<li><a href="<?php echo $this->getUrl('shipping-info'); ?>">Shipping Information</a></li>
+					<li><a href="http://www.trackntrace.com.sg/">Track Order</a></li>
+					<li><a href="<?php echo $this->getUrl('terms-and-conditions'); ?>">Terms & Conditions</a></li>
+					<li><a href="<?php echo $this->getUrl('privacy-policy'); ?>">Privacy Policy</a></li>
 				</ul>
 			</div>
 
