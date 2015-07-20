@@ -4183,8 +4183,10 @@ div.product {
       }
       .ctas {
         margin-top: 64px;
-        @media all and (max-width: 470px) {
-          width: 100%;
+        button {
+          @media all and (max-width: 470px) {
+            width: 100%;
+          }
         }
         .or {
           .minion-pro-semibold-italic;
@@ -4194,6 +4196,11 @@ div.product {
           color: @dark-grey;
           @media all and (max-width: 470px) {
             width: 100%;
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 23px;
+            margin-bottom: 23px;
           }
         }
       }
@@ -4227,6 +4234,12 @@ div.product {
         &:hover {
           background-color: @dark-orange;
         }
+        @media all and (max-width: 470px) {
+          padding: 7px 30px!important;
+          width: 100%;
+          display: block;
+          text-align: center;
+        }
       }
     }
 
@@ -4235,6 +4248,10 @@ div.product {
       width: 60%;
       margin-top: 41px;
       text-align: center;
+
+      @media all and (max-width: 992px) {
+        width: 100%;
+      }
 
       /*.first-col {
         label {
@@ -4245,6 +4262,9 @@ div.product {
       .first-half {
         display: inline-block;
         width: 50%;
+        @media all and (max-width: 992px) {
+          width: 100%;
+        }
         vertical-align: top;
         // margin-bottom: 60px;
         .each-input {
@@ -4256,6 +4276,9 @@ div.product {
       .second-half {
         display: inline-block;
         width: 49%;
+        @media all and (max-width: 992px) {
+          width: 100%;
+        }
         vertical-align: top;
         // margin-bottom: 60px;
         .each-input {
@@ -4354,14 +4377,14 @@ div.product {
         input[type="text"], input[type="password"] {
           width: 295px;
           @media all and (max-width: 470px) {
-            width: 238px;
+            width: 100%;
           }
         }
         .dropdown {
           margin-right: 25px;
           float: left;
           @media all and (max-width: 470px) {
-            margin-right: 0px;
+            margin-right: 15px;
           }
           &:nth-of-type(3) {
             margin-right: 0px;
@@ -4371,7 +4394,7 @@ div.product {
           /*width: 238px;*/
           width: 82px;
           @media all and (max-width: 470px) {
-            width: 76px;
+            width: 108px;
           }          
         }
       }
@@ -4397,14 +4420,14 @@ div.product {
         padding: 7px!important;
         padding-left: 40px!important;
         padding-right: 30px!important;
-        @media all and (max-width: 471px) {
+        @media all and (max-width: 470px) {
           background-position: 12px 8px;
           padding: 7px 25px!important;
         }
       }
       .sign-in-btn {        
         padding: 7px 30px!important;
-        @media all and (max-width: 471px) {
+        @media all and (max-width: 470px) {
           padding: 7px 20px!important;
         }
       }
@@ -4418,6 +4441,10 @@ div.product {
         margin-top: 130px;*/
         &:hover {
           background-color: @dark-orange;
+        }
+        @media all and (max-width: 470px) {
+          width: 100%;
+          padding: 7px 30px!important;
         }
       }
       .back-link {
@@ -4456,6 +4483,10 @@ div.product {
     }
     .all-points {
       margin-top: 60px;
+      @media all and (max-width: 992px) {
+        margin-top: 0px;
+        margin-bottom: 30px;
+      }
     }
     .dob-points, .email-points, .newsletter-points {
       display: table;
@@ -4470,7 +4501,8 @@ div.product {
       @media all and (max-width: 780px) {
         position: static;
         margin-top: 15px;
-        margin-left: 140px;
+        margin-left: 0px;
+
       }
       .right {
         display: table-cell;
@@ -4490,7 +4522,7 @@ div.product {
       @media all and (max-width: 780px) {
         position: static;
         margin-top: 15px;
-        margin-left: 140px;
+        margin-left: 0px;
       }
       .right {                
         // width: 90px;        
@@ -4506,7 +4538,7 @@ div.product {
       @media all and (max-width: 780px) {
         position: static;
         margin-top: 15px;
-        margin-left: 140px;
+        margin-left: 0px;
       }
       .right {                
         // width: 105px;        
@@ -7297,6 +7329,12 @@ div.product {
         letter-spacing: 0.03em!important;
       }
 
+    }
+  }
+
+  .edit-address-form {
+    input {
+      width: 100%!important;
     }
   }
 

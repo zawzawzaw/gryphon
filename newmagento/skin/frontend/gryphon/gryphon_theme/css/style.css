@@ -3948,7 +3948,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   margin-top: 64px;
 }
 @media all and (max-width: 470px) {
-  .sign-up .main-content .login-form .ctas {
+  .sign-up .main-content .login-form .ctas button {
     width: 100%;
   }
 }
@@ -3964,6 +3964,11 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 @media all and (max-width: 470px) {
   .sign-up .main-content .login-form .ctas .or {
     width: 100%;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 23px;
+    margin-bottom: 23px;
   }
 }
 .sign-up .main-content .login-form .links {
@@ -4005,6 +4010,16 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .sign-up .main-content .login-form .sign-in-facebook:hover {
   background-color: #ae4e0e;
 }
+@media all and (max-width: 470px) {
+  .sign-up .main-content .login-form .sign-up-btn,
+  .sign-up .main-content .login-form .sign-in-btn,
+  .sign-up .main-content .login-form .sign-in-facebook {
+    padding: 7px 30px!important;
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+}
 .sign-up .main-content .sign-up-form {
   margin: 0 auto;
   width: 60%;
@@ -4017,10 +4032,20 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
         }
       }*/
 }
+@media all and (max-width: 992px) {
+  .sign-up .main-content .sign-up-form {
+    width: 100%;
+  }
+}
 .sign-up .main-content .sign-up-form .first-half {
   display: inline-block;
   width: 50%;
   vertical-align: top;
+}
+@media all and (max-width: 992px) {
+  .sign-up .main-content .sign-up-form .first-half {
+    width: 100%;
+  }
 }
 .sign-up .main-content .sign-up-form .first-half .each-input:last-child {
   margin-bottom: 0px;
@@ -4029,6 +4054,11 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   display: inline-block;
   width: 49%;
   vertical-align: top;
+}
+@media all and (max-width: 992px) {
+  .sign-up .main-content .sign-up-form .second-half {
+    width: 100%;
+  }
 }
 .sign-up .main-content .sign-up-form .form-instructions {
   margin-bottom: 41px;
@@ -4130,7 +4160,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 @media all and (max-width: 470px) {
   .sign-up .main-content .sign-up-form .each-input input[type="text"],
   .sign-up .main-content .sign-up-form .each-input input[type="password"] {
-    width: 238px;
+    width: 100%;
   }
 }
 .sign-up .main-content .sign-up-form .each-input .dropdown {
@@ -4139,7 +4169,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 @media all and (max-width: 470px) {
   .sign-up .main-content .sign-up-form .each-input .dropdown {
-    margin-right: 0px;
+    margin-right: 15px;
   }
 }
 .sign-up .main-content .sign-up-form .each-input .dropdown:nth-of-type(3) {
@@ -4151,7 +4181,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 @media all and (max-width: 470px) {
   .sign-up .main-content .sign-up-form .each-input select {
-    width: 76px;
+    width: 108px;
   }
 }
 .sign-up .main-content .sign-up-form .buttons-set {
@@ -4179,7 +4209,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   padding-left: 40px!important;
   padding-right: 30px!important;
 }
-@media all and (max-width: 471px) {
+@media all and (max-width: 470px) {
   .sign-up .main-content .sign-up-form .sign-in-facebook {
     background-position: 12px 8px;
     padding: 7px 25px!important;
@@ -4188,7 +4218,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .sign-up .main-content .sign-up-form .sign-in-btn {
   padding: 7px 30px!important;
 }
-@media all and (max-width: 471px) {
+@media all and (max-width: 470px) {
   .sign-up .main-content .sign-up-form .sign-in-btn {
     padding: 7px 20px!important;
   }
@@ -4208,6 +4238,14 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .sign-up .main-content .sign-up-form .sign-in-btn:hover,
 .sign-up .main-content .sign-up-form .sign-in-facebook:hover {
   background-color: #ae4e0e;
+}
+@media all and (max-width: 470px) {
+  .sign-up .main-content .sign-up-form .sign-up-btn,
+  .sign-up .main-content .sign-up-form .sign-in-btn,
+  .sign-up .main-content .sign-up-form .sign-in-facebook {
+    width: 100%;
+    padding: 7px 30px!important;
+  }
 }
 .sign-up .main-content .sign-up-form .back-link {
   font-family: "minion-pro", Verdana, sans-serif;
@@ -4240,6 +4278,12 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .sign-up .main-content .all-points {
   margin-top: 60px;
 }
+@media all and (max-width: 992px) {
+  .sign-up .main-content .all-points {
+    margin-top: 0px;
+    margin-bottom: 30px;
+  }
+}
 .sign-up .main-content .dob-points,
 .sign-up .main-content .email-points,
 .sign-up .main-content .newsletter-points {
@@ -4252,7 +4296,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   .sign-up .main-content .newsletter-points {
     position: static;
     margin-top: 15px;
-    margin-left: 140px;
+    margin-left: 0px;
   }
 }
 .sign-up .main-content .dob-points .right,
@@ -4276,7 +4320,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   .sign-up .main-content .email-points {
     position: static;
     margin-top: 15px;
-    margin-left: 140px;
+    margin-left: 0px;
   }
 }
 .sign-up .main-content .newsletter-points {
@@ -4292,7 +4336,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   .sign-up .main-content .newsletter-points {
     position: static;
     margin-top: 15px;
-    margin-left: 140px;
+    margin-left: 0px;
   }
 }
 .sign-up .main-content .pts {
@@ -7209,6 +7253,9 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-size: 11px!important;
   line-height: 18px!important;
   letter-spacing: 0.03em!important;
+}
+.account .edit-address-form input {
+  width: 100%!important;
 }
 .account .order-history {
   padding: 20px 0px!important;
