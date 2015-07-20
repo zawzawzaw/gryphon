@@ -104,15 +104,15 @@ $quoteData= $quote->getData();
 						?>						
 						<p><a href="#" class="account name"><?php echo (isset($customer_name)) ? 'Welcome, '.$customer_name : $this->__('Account'); ?></a></p>
 						<div id="mobile-account-expand-button"></div>
-					</div>
-					
+					</div>					
 					<ul>
-						<li><a href="#">account information</a></li>
-						<li><a href="#">address book</a></li>
-						<li><a href="#">order history</a></li>
-						<li><a href="#">gift card</a></li>
-						<li><a href="#">reward points</a></li>
-						<li><a href="#">refer friend</a></li>
+						<li><a href="<?php echo Mage::getUrl('customer/account/'); ?>">account information</a></li>
+						<li><a href="<?php echo Mage::getUrl('customer/address/'); ?>">address book</a></li>
+						<li><a href="<?php echo Mage::getUrl('sales/order/history/'); ?>">order history</a></li>
+						<li><a href="<?php echo Mage::getUrl('giftvoucher/index/index'); ?>">gift card</a></li>
+						<li><a href="<?php echo Mage::getUrl('rewardpoints/index/points/'); ?>">reward points</a></li>
+						<li><a href="<?php echo Mage::getUrl('rewardpoints/index/referral/'); ?>">refer friend</a></li>
+						<li><a href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>">log out</a></li>
 					</ul>
 				<?php else: ?>
 					<div id="mobile-account-header">					

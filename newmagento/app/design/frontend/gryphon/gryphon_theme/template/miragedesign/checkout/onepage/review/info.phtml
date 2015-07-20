@@ -23,6 +23,45 @@
  * @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
+function isMobile()  
+{  
+    $regex_match = "/(nokia|iphone|android|motorola|^mot\-|softbank|foma|docomo|kddi|up\.browser|up\.link|"  
+                 . "htc|dopod|blazer|netfront|helio|hosin|huawei|novarra|CoolPad|webos|techfaith|palmsource|"  
+                 . "blackberry|alcatel|amoi|ktouch|nexian|samsung|^sam\-|s[cg]h|^lge|ericsson|philips|sagem|wellcom|bunjalloo|maui|"  
+                 . "symbian|smartphone|mmp|midp|wap|phone|windows ce|iemobile|^spice|^bird|^zte\-|longcos|pantech|gionee|^sie\-|portalmmm|"  
+                 . "jig\s browser|hiptop|^ucweb|^benq|haier|^lct|opera\s*mobi|opera\*mini|320x320|240x320|176x220"  
+                 . ")/i";  
+
+    if (preg_match($regex_match, strtolower($_SERVER['HTTP_USER_AGENT']))) {  
+        return TRUE;  
+    }  
+
+    if ((strpos(strtolower($_SERVER['HTTP_ACCEPT']),'application/vnd.wap.xhtml+xml') > 0) or ((isset($_SERVER['HTTP_X_WAP_PROFILE']) or isset($_SERVER['HTTP_PROFILE'])))) {  
+        return TRUE;  
+    }      
+
+    $mobile_ua = strtolower(substr($_SERVER['HTTP_USER_AGENT'], 0, 4));  
+    $mobile_agents = array(  
+        'w3c ','acs-','alav','alca','amoi','audi','avan','benq','bird','blac',  
+        'blaz','brew','cell','cldc','cmd-','dang','doco','eric','hipt','inno',  
+        'ipaq','java','jigs','kddi','keji','leno','lg-c','lg-d','lg-g','lge-',  
+        'maui','maxo','midp','mits','mmef','mobi','mot-','moto','mwbp','nec-',  
+        'newt','noki','oper','palm','pana','pant','phil','play','port','prox',  
+        'qwap','sage','sams','sany','sch-','sec-','send','seri','sgh-','shar',  
+        'sie-','siem','smal','smar','sony','sph-','symb','t-mo','teli','tim-',  
+        'tosh','tsm-','upg1','upsi','vk-v','voda','wap-','wapa','wapi','wapp',  
+        'wapr','webc','winw','winw','xda ','xda-');  
+
+    if (in_array($mobile_ua,$mobile_agents)) {  
+        return TRUE;  
+    }  
+
+    if (isset($_SERVER['ALL_HTTP']) && strpos(strtolower($_SERVER['ALL_HTTP']),'OperaMini') > 0) {  
+        return TRUE;  
+    }  
+
+    return FALSE;  
+}  
 ?>
 <div id="confirmation">
 <div class="row">
@@ -157,7 +196,7 @@
             <span class="please-wait" id="review-please-wait" style="display:none;">
                 <img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>" alt="<?php echo $this->__('Submitting order information...') ?>" title="<?php echo $this->__('Submitting order information...') ?>" class="v-middle" /> <?php echo $this->__('Submitting order information...') ?>
             </span>
-            <div class="we-accept">
+            <div class="we-accept we-are-here">
                 <p>We Accept:</p>
                 <ul>
                     <li><i class="discover"></i></li>
@@ -173,5 +212,72 @@
         review = new Review('<?php echo $this->getUrl('checkout/onepage/saveOrder', array('form_key' => Mage::getSingleton('core/session')->getFormKey())) ?>', '<?php echo $this->getUrl('checkout/onepage/success') ?>', $('checkout-agreements'));
     //]]>
     </script>
+    <?php if(isMobile()==true): ?>
+    <script type="text/javascript">
+      
+        jQuery(document).ready(function($) {
+
+          // function update_mobile_cart(href){
+          //   var arr = $('#content-wrapper .cart-breadcrumb a[data-toggle="tab"]');
+          //   var element = null;
+          //   var element_href = "";
+          //   var has_passed = false;
+
+          //   arr.addClass('fake-active');
+
+
+          //   for (var i = 0, l = arr.length; i < l; i++) {
+          //     element = $(arr[i]);
+          //     element_href = "" + element.attr('href');
+
+          //     if(has_passed == false){
+          //       if(element_href == href) {
+          //         has_passed = true;
+          //       }
+          //     } else{
+          //       element.removeClass('fake-active');
+          //     }
+
+          //   }
+
+          // }
+
+          // update_mobile_cart('#cart');
+
+          // $('#content-wrapper .cart-breadcrumb a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+          //   var href = $(this).attr('href');
+          //   update_mobile_cart(href);
+          // });
+
+
+
+          ////////////////////////
+          
+
+          // update shopping cart html
+          var arr = $('#checkout-review-table-wrapper tbody tr');
+          var table_row = null;
+          var col_1 = null;
+          var col_3 = null;
+          var new_image_container = null;
+          for (var i = 0, l = arr.length; i < l; i++) {
+            table_row = $(arr[i]);
+            col_1 = table_row.find('td:first-child');
+            col_3 = table_row.find('td:nth-child(3)');
+            new_image_container = $('<div class="image-text-container-2"></div>');
+            new_image_container.append(col_1.find('.img-container').clone());
+            new_image_container.append(table_row.find('.product-title').clone());
+            new_image_container.append($(table_row.find('.product-price')[0]).clone());
+
+            col_1.prepend(new_image_container);
+            col_3.append(table_row.find('.last-image-text-container'));
+
+            console.log('row!');
+          }
+
+
+        });
+      </script>
+      <?php endif; ?>
 </div>
 </div>

@@ -30,7 +30,7 @@
  * @var $test Mage_Customer_Block_Address_Book
  */
 ?>
-<div class="billing-and-shipping">
+<div class="billing-and-shipping" style="margin-top:0px;">
     <div class="image-text-content">
         <?php echo $this->getMessagesBlock()->toHtml() ?>
 
@@ -40,13 +40,13 @@
         </div> -->
 
         <div class="row">
-            <div class="col-md-7 billing-address">
+            <div class="col-md-8 billing-address">
                 <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-md-5 col-sm-5 col-xs-6">
                         <h1><?php echo $this->__('billing Address'); ?></h1>
                         <hr class="small" />
                     </div>
-                    <div class="col-md-5 col-md-offset-2">
+                    <div class="col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-2 col-xs-6">
                         <ul>
                             <?php if($_pAddsses = Mage::getSingleton('customer/session')->getCustomer()->getDefaultBilling()): ?>
                                 <li><a href="<?php echo $this->getAddressEditUrl(Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses)) ?>" class="edit"><i class="fa fa-cog"></i> <span><?php echo $this->__('Edit') ?></span></a></li>
@@ -119,13 +119,13 @@
                     </div>
                 <?php endif ?>
             </div>
-            <div class="col-md-7 shipping-address" style="margin-top:100px;">
+            <div class="col-md-8 shipping-address" style="margin-top:100px;">
                 <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-md-5 col-sm-5 col-xs-6">
                         <h1><?php echo $this->__('Shipping Address'); ?></h1>
                         <hr class="small" />
                     </div>
-                    <div class="col-md-5 col-md-offset-2">
+                    <div class="col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-2 col-xs-6">
                         <ul>
                             <?php if($_pAddsses = Mage::getSingleton('customer/session')->getCustomer()->getDefaultShipping()): ?>
                                 <li><a href="<?php echo $this->getAddressEditUrl(Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses)) ?>" class="edit"><i class="fa fa-cog"></i><span>Edit</span></a></li>

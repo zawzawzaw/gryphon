@@ -1,0 +1,157 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?> 
+<div id="content-wrapper" class="contact-us">
+  <div class="main-content">
+    <div class="image-text-content container">
+        <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>   
+        <form action="<?php echo $this->getUrl('contacts/index/post') ?>" id="contact-us-form" method="post">
+
+            <div class="row">
+
+                <div class="col-md-3">
+                  <div class="contact-us-col-1">
+                    <h1>Gryphon tea company</h1>
+
+                    <hr class="small">
+
+                    <img src="<?php echo $this->getSkinUrl('images/content/contact-us.png'); ?>" class="img-responsive">
+
+                    <div class="each-input">
+                      <label>address</label>
+                      <p>251 Pandan Loop, Singapore 128431</p>
+                    </div>
+
+                    <div class="each-input">
+                      <label>OPERATING HOURS</label>
+                      <p>Mondays to Fridays: 9am to 5pm <br>Closed on weekends and public holidays</p>
+                    </div>
+
+                    <div class="each-input">
+                      <label>Phone number</label>
+                      <p>+65 6779 2948</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-2">
+                  <div class="contact-us-col-seperator">
+                    <div class="line"></div>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="contact-us-col-2">
+                    <h1>get in touch</h1>
+                    <hr class="small">
+                    <p>Send us an email should you have any inquiries or would like to share your tea experience with us. Your feedback matters a lot to us.</p>
+
+                    <div class="each-input">
+                      <label for="name" class="required"><?php echo Mage::helper('contacts')->__('Name') ?><em>*</em></label>
+                      <input name="name" id="name" title="<?php echo Mage::helper('contacts')->__('Name') ?>" value="<?php echo $this->escapeHtml($this->helper('contacts')->getUserName()) ?>" class="input-text required-entry" type="text" />
+                    </div>
+
+                    <div class="each-input">
+                        <label for="email" class="required"><?php echo Mage::helper('contacts')->__('Email Address') ?><em>*</em></label>
+                        <input name="email" id="email" title="<?php echo Mage::helper('contacts')->__('Email') ?>" value="<?php echo $this->escapeHtml($this->helper('contacts')->getUserEmail()) ?>" class="input-text required-entry validate-email" type="text" />
+                    </div>
+
+                    <div class="each-input">              
+                      <label for="telephone"><?php echo Mage::helper('contacts')->__('Phone Number') ?></label>
+
+                      <div class="dropdown-container">
+                        <div class="row">
+                          <div class="col-md-5">
+                            <input type="text" name="phone_no" class="phone_no_input">
+                          </div>
+                          <div class="col-md-7">
+                            <input type="text" name="phone_no_2">
+                          </div>
+                          <input name="telephone" id="telephone" title="<?php echo Mage::helper('contacts')->__('Telephone') ?>" value="" class="input-text" type="hidden" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="contact-us-col-3">
+                    <div class="each-input">
+                        <label for="name">type of enquiry</label>
+                        <div class="dropdown">
+                            <select name="role_within_organization" id="role_within_organization">
+                                <option value="">Choose the type</option>
+                                <option value="General Enquiry">General Enquiry</option>
+                                <option value="Online Order Enquiry">Online Order Enquiry</option>
+                                <option value="Business Enquiry">Business Enquiry</option>
+                                <option value="Media Enquiry">Media Enquiry</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="each-input">
+                        <label for="comment" class="required"><?php echo Mage::helper('contacts')->__('Message') ?><em>*</em></label>
+                        <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Write your message here." title="<?php echo Mage::helper('contacts')->__('Message') ?>" class="required-entry input-text"></textarea>                
+                    </div>
+                    
+                    <input type="text" name="hideit" id="hideit" value="" style="display:none !important;" />
+                    <button type="submit" class="cta" id="contact-us-send-btn" title="<?php echo Mage::helper('contacts')->__('Submit') ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Send') ?></span></span></button>
+                  </div>
+                </div>
+
+            </div>
+        </form>
+        <script type="text/javascript">
+        //<![CDATA[
+            var contactForm = new VarienForm('contact-us-form', true);
+        //]]>
+        </script>
+        <script type="text/javascript">
+            jQuery(document).ready(function($) {
+              $(".phone_no_input, .mobile_no_input").intlTelInput({
+                defaultCountry: 'sg',
+                nationalMode: false,
+                autoHideDialCode: false,
+                autoPlaceholder: false
+              });
+              var $phone_no = $("input[name='phone_no']");
+              var $phone_no_2 = $("input[name='phone_no_2']");
+              var $telephone = $("#telephone");
+              $phone_no.on('change', function() {
+                    var finalNo = $(this).val() + ' ' + $phone_no_2.val();
+                    $telephone.val(finalNo);
+              });
+
+              $phone_no_2.keyup(function() {
+                    var finalNo = $phone_no.val() + ' ' + $(this).val();
+                    $telephone.val(finalNo);
+              });
+
+            });
+        </script>
+    </div>
+  </div>
+</div>

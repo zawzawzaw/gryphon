@@ -66,6 +66,28 @@
     decorateTable('checkout-review-table');
     truncateOptions();
 //]]>
+
+jQuery(document).ready(function(){
+    var arr = $('#checkout-review-table-wrapper tbody tr');
+      var table_row = null;
+      var col_1 = null;
+      var col_3 = null;
+      var new_image_container = null;
+      for (var i = 0, l = arr.length; i < l; i++) {
+        table_row = $(arr[i]);
+        col_1 = table_row.find('td:first-child');
+        col_3 = table_row.find('td:nth-child(3)');
+        new_image_container = $('<div class="image-text-container-2"></div>');
+        new_image_container.append(col_1.find('.img-container').clone());
+        new_image_container.append(table_row.find('.product-name').clone());
+        new_image_container.append($(table_row.find('.product-price')[0]).clone());
+
+        col_1.prepend(new_image_container);
+        col_3.append(table_row.find('.last-image-text-container'));
+
+        console.log('row!');
+      }
+})
 </script>
 <div id="checkout-review-submit">
     <?php echo $this->getChildHtml('agreements') ?>

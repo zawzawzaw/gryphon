@@ -34,13 +34,13 @@ $additionalAddresses = $this->getCustomer()->getAdditionalAddresses();
 <div class="billing-and-shipping">
     <div class="image-text-content">
         <div class="row">
-            <div class="col-md-6 billing-address">
+            <div class="col-md-8 billing-address">
                 <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-md-5 col-sm-5 col-xs-6">
                         <h1><?php echo $this->__('billing Address'); ?></h1>
                         <hr class="small">
                     </div>
-                    <div class="col-md-5 col-md-offset-2">
+                    <div class="col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-2 col-xs-6">
                         <ul>
                             <?php if( $billingAddress instanceof Varien_Object ) : ?>
                                 <li><a href="<?php echo $this->getPrimaryBillingAddressEditUrl() ?>" class="edit"><i class="fa fa-cog"></i> <span><?php echo $this->__('Edit') ?></span></a></li>
@@ -87,7 +87,7 @@ $additionalAddresses = $this->getCustomer()->getAdditionalAddresses();
                     </div>
                 </div>
                 <?php if( $additionalAddresses ) : ?>
-                <!-- <div class="row">
+                <div class="row">
                     <div class="col-md-12">
                         <div class="table-responsive">
                             <table class="gift-cards-tbl">
@@ -108,16 +108,16 @@ $additionalAddresses = $this->getCustomer()->getAdditionalAddresses();
                             </table>
                         </div>
                     </div>
-                </div> -->
+                </div>
                 <?php endif; ?>
             </div>
-            <div class="col-md-6 shipping-address">
+            <div class="col-md-8 shipping-address">
                 <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-md-5 col-sm-5 col-xs-6">
                         <h1><?php echo $this->__('Shipping Address'); ?></h1>
                         <hr class="small">
                     </div>
-                    <div class="col-md-5 col-md-offset-2">
+                    <div class="col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-2 col-xs-6">
                         <ul>
                             <?php if( $shippingAddress instanceof Varien_Object ) : ?>
                                 <li><a href="<?php echo $this->getPrimaryShippingAddressEditUrl() ?>" class="edit"><i class="fa fa-cog"></i><span>Edit</span></a></li>
@@ -164,7 +164,7 @@ $additionalAddresses = $this->getCustomer()->getAdditionalAddresses();
                     </div>
                 </div>
                 <?php if( $additionalAddresses ) : ?>
-                <!-- <div class="row">
+                <div class="row">
                     <div class="col-md-12">
                         <div class="table-responsive">
                             <table class="gift-cards-tbl">
@@ -185,7 +185,7 @@ $additionalAddresses = $this->getCustomer()->getAdditionalAddresses();
                             </table>
                         </div>
                     </div>
-                </div> -->
+                </div>
                 <?php endif; ?>
             </div>
         </div>
