@@ -2180,6 +2180,13 @@ div.product .main-product .gift-card-img .vcenter .vcenter2 {
   vertical-align: middle;
   position: static!important;
   height: 100%!important;
+  background-size: 448px 617px;
+}
+@media all and (max-width: 990px) {
+  div.product .main-product .gift-card-img .vcenter .vcenter2 {
+    background-size: auto auto;
+    background-position: 50% 50%;
+  }
 }
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01,
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 {
@@ -2188,6 +2195,12 @@ div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 {
   position: relative;
   width: 448px;
   height: 617px;
+}
+@media all and (max-width: 990px) {
+  div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01,
+  div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 {
+    width: 100%;
+  }
 }
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01 img,
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 img {
@@ -2205,6 +2218,15 @@ div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gif
   text-align: center;
   color: #ffffff;
 }
+@media all and (max-width: 990px) {
+  div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext,
+  div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext {
+    left: 5px;
+    width: 100%;
+    height: auto;
+    top: 40%;
+  }
+}
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext.white,
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext.white {
   color: #ae4e0e !important;
@@ -2219,10 +2241,24 @@ div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gif
   letter-spacing: -0.02em;
   height: 73px;
 }
+@media all and (max-width: 990px) {
+  div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-intro,
+  div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-intro {
+    font-size: 8px;
+    line-height: 10px;
+    height: 42px;
+  }
+}
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-intro .dear,
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-intro .dear {
   font-size: 20px;
   margin-bottom: 4px;
+}
+@media all and (max-width: 990px) {
+  div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-intro .dear,
+  div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-intro .dear {
+    font-size: 10px;
+  }
 }
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-title,
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-title {
@@ -2235,6 +2271,13 @@ div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gif
   text-transform: uppercase;
   margin-bottom: -1px;
 }
+@media all and (max-width: 990px) {
+  div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-title,
+  div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-title {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-amount,
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-amount {
   font-family: "minion-pro", Verdana, sans-serif;
@@ -2245,6 +2288,14 @@ div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gif
   letter-spacing: 0.01em;
   margin-bottom: 25px;
 }
+@media all and (max-width: 990px) {
+  div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-amount,
+  div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-amount {
+    font-size: 25px;
+    line-height: 25px;
+    margin-bottom: 5px;
+  }
+}
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-copy,
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-copy {
   font-family: 'Gotham-Book', Verdana, sans-serif;
@@ -2254,6 +2305,12 @@ div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gif
   line-height: 18px;
   letter-spacing: 0.05em;
   height: 113px;
+}
+@media all and (max-width: 990px) {
+  div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-copy,
+  div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-copy {
+    height: 55px;
+  }
 }
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-code-title,
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-code-title {
@@ -2266,6 +2323,13 @@ div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gif
   letter-spacing: 0.06em;
   margin-bottom: -2px;
 }
+@media all and (max-width: 990px) {
+  div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-code-title,
+  div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-code-title {
+    font-size: 6px;
+    line-height: 11px;
+  }
+}
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-code,
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-code {
   font-family: 'Gotham-Bold', Verdana, sans-serif;
@@ -2277,6 +2341,14 @@ div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gif
   letter-spacing: 0.2em;
   margin-bottom: 32px;
 }
+@media all and (max-width: 990px) {
+  div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-code,
+  div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-code {
+    font-size: 8px;
+    line-height: 11px;
+    margin-bottom: 16px;
+  }
+}
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-disclaimer,
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-disclaimer {
   font-family: "minion-pro", Verdana, sans-serif;
@@ -2285,6 +2357,14 @@ div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gif
   font-size: 12px;
   line-height: 15px;
   color: #d98d54;
+}
+@media all and (max-width: 990px) {
+  div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-disclaimer,
+  div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-disclaimer {
+    width: 185px;
+    text-align: center;
+    margin: 0 auto;
+  }
 }
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 {
   display: none;
@@ -2423,6 +2503,11 @@ div.product .main-product .gift-card-content {
   padding-left: 5px;
   padding-right: 50px;
   padding-top: 15px;
+}
+@media all and (max-width: 990px) {
+  div.product .main-product .gift-card-content {
+    padding-right: 0px;
+  }
 }
 @media all and (max-width: 1099px) {
   div.product .main-product .gift-card-content {
@@ -2611,6 +2696,16 @@ div.product .main-product .gift-card-content .inputs .each-input ul.social-shari
   vertical-align: top;
   padding-top: 2px;
 }
+@media all and (max-width: 990px) {
+  div.product .main-product .gift-card-content .inputs .each-input .dropdown {
+    width: 96%;
+  }
+}
+@media all and (max-width: 470px) {
+  div.product .main-product .gift-card-content .inputs .each-input .dropdown {
+    width: 92%;
+  }
+}
 div.product .main-product .gift-card-content .inputs .each-input input[type="text"],
 div.product .main-product .gift-card-content .inputs .each-input input[type="password"],
 div.product .main-product .gift-card-content .inputs .each-input select,
@@ -2626,12 +2721,12 @@ div.product .main-product .gift-card-content .inputs .each-input textarea {
   width: 281px!important;
   vertical-align: top;
 }
-@media all and (max-width: 470px) {
+@media all and (max-width: 990px) {
   div.product .main-product .gift-card-content .inputs .each-input input[type="text"],
   div.product .main-product .gift-card-content .inputs .each-input input[type="password"],
   div.product .main-product .gift-card-content .inputs .each-input select,
   div.product .main-product .gift-card-content .inputs .each-input textarea {
-    width: 238px;
+    width: 100%!important;
   }
 }
 div.product .main-product .gift-card-content .inputs .each-input .quantity-container {
@@ -2727,6 +2822,12 @@ div.product .main-product .gift-card-content .inputs .each-input textarea + span
   width: 110px;
   margin-right: 42px;
 }
+@media all and (max-width: 990px) {
+  div.product .main-product .gift-card-content .inputs .each-input textarea + span:before {
+    width: auto;
+    margin-right: 0px;
+  }
+}
 div.product .main-product .gift-card-content .inputs .each-input #message_characters_remaining {
   display: block;
   font-family: "minion-pro", Verdana, sans-serif;
@@ -2811,6 +2912,12 @@ div.product .main-product .gift-card-content .inputs .each-input .dropdown-conta
   margin-left: 10px;
   padding-right: 20px;
 }
+@media all and (max-width: 990px) {
+  div.product .main-product .gift-card-content .inputs .each-input .dropdown-container {
+    width: 100%;
+    display: block;
+  }
+}
 div.product .main-product .gift-card-content .inputs .each-input .dropdown-container .col-md-4,
 div.product .main-product .gift-card-content .inputs .each-input .dropdown-container .col-md-8,
 div.product .main-product .gift-card-content .inputs .each-input .dropdown-container .col-md-5,
@@ -2820,6 +2927,16 @@ div.product .main-product .gift-card-content .inputs .each-input .dropdown-conta
 }
 div.product .main-product .gift-card-content .inputs .each-input .dropdown-container .dropdown {
   width: 100%;
+}
+@media all and (max-width: 990px) {
+  div.product .main-product .gift-card-content .inputs .each-input .dropdown-container .dropdown {
+    width: 96%;
+  }
+}
+@media all and (max-width: 990px) {
+  div.product .main-product .gift-card-content .inputs .each-input .dropdown-container .dropdown:last-child {
+    width: 88%;
+  }
 }
 div.product .main-product .gift-card-content .inputs .each-input .dropdown-container .intl-tel-input .flag-dropdown,
 div.product .main-product .gift-card-content .inputs .each-input .dropdown-container .intl-tel-input .selected-flag {
@@ -2860,6 +2977,9 @@ div.product .main-product .gift-card-content .inputs .each-input p {
   line-height: 14px;
   padding-right: 70px;
   letter-spacing: 0.03em;
+}
+div.product .main-product .gift-card-content #calendar-day_to_send {
+  display: none;
 }
 div.product .similar-product h2 {
   font-family: 'Gotham-Medium', Verdana, sans-serif;
@@ -3948,7 +4068,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   margin-top: 64px;
 }
 @media all and (max-width: 470px) {
-  .sign-up .main-content .login-form .ctas {
+  .sign-up .main-content .login-form .ctas button {
     width: 100%;
   }
 }
@@ -3964,6 +4084,11 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 @media all and (max-width: 470px) {
   .sign-up .main-content .login-form .ctas .or {
     width: 100%;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 23px;
+    margin-bottom: 23px;
   }
 }
 .sign-up .main-content .login-form .links {
@@ -4005,6 +4130,16 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .sign-up .main-content .login-form .sign-in-facebook:hover {
   background-color: #ae4e0e;
 }
+@media all and (max-width: 470px) {
+  .sign-up .main-content .login-form .sign-up-btn,
+  .sign-up .main-content .login-form .sign-in-btn,
+  .sign-up .main-content .login-form .sign-in-facebook {
+    padding: 7px 30px!important;
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+}
 .sign-up .main-content .sign-up-form {
   margin: 0 auto;
   width: 60%;
@@ -4017,10 +4152,20 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
         }
       }*/
 }
+@media all and (max-width: 992px) {
+  .sign-up .main-content .sign-up-form {
+    width: 100%;
+  }
+}
 .sign-up .main-content .sign-up-form .first-half {
   display: inline-block;
   width: 50%;
   vertical-align: top;
+}
+@media all and (max-width: 992px) {
+  .sign-up .main-content .sign-up-form .first-half {
+    width: 100%;
+  }
 }
 .sign-up .main-content .sign-up-form .first-half .each-input:last-child {
   margin-bottom: 0px;
@@ -4029,6 +4174,11 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   display: inline-block;
   width: 49%;
   vertical-align: top;
+}
+@media all and (max-width: 992px) {
+  .sign-up .main-content .sign-up-form .second-half {
+    width: 100%;
+  }
 }
 .sign-up .main-content .sign-up-form .form-instructions {
   margin-bottom: 41px;
@@ -4130,7 +4280,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 @media all and (max-width: 470px) {
   .sign-up .main-content .sign-up-form .each-input input[type="text"],
   .sign-up .main-content .sign-up-form .each-input input[type="password"] {
-    width: 238px;
+    width: 100%;
   }
 }
 .sign-up .main-content .sign-up-form .each-input .dropdown {
@@ -4139,7 +4289,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 @media all and (max-width: 470px) {
   .sign-up .main-content .sign-up-form .each-input .dropdown {
-    margin-right: 0px;
+    margin-right: 15px;
   }
 }
 .sign-up .main-content .sign-up-form .each-input .dropdown:nth-of-type(3) {
@@ -4151,7 +4301,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 @media all and (max-width: 470px) {
   .sign-up .main-content .sign-up-form .each-input select {
-    width: 76px;
+    width: 108px;
   }
 }
 .sign-up .main-content .sign-up-form .buttons-set {
@@ -4179,7 +4329,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   padding-left: 40px!important;
   padding-right: 30px!important;
 }
-@media all and (max-width: 471px) {
+@media all and (max-width: 470px) {
   .sign-up .main-content .sign-up-form .sign-in-facebook {
     background-position: 12px 8px;
     padding: 7px 25px!important;
@@ -4188,7 +4338,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .sign-up .main-content .sign-up-form .sign-in-btn {
   padding: 7px 30px!important;
 }
-@media all and (max-width: 471px) {
+@media all and (max-width: 470px) {
   .sign-up .main-content .sign-up-form .sign-in-btn {
     padding: 7px 20px!important;
   }
@@ -4208,6 +4358,14 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .sign-up .main-content .sign-up-form .sign-in-btn:hover,
 .sign-up .main-content .sign-up-form .sign-in-facebook:hover {
   background-color: #ae4e0e;
+}
+@media all and (max-width: 470px) {
+  .sign-up .main-content .sign-up-form .sign-up-btn,
+  .sign-up .main-content .sign-up-form .sign-in-btn,
+  .sign-up .main-content .sign-up-form .sign-in-facebook {
+    width: 100%;
+    padding: 7px 30px!important;
+  }
 }
 .sign-up .main-content .sign-up-form .back-link {
   font-family: "minion-pro", Verdana, sans-serif;
@@ -4240,6 +4398,12 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .sign-up .main-content .all-points {
   margin-top: 60px;
 }
+@media all and (max-width: 992px) {
+  .sign-up .main-content .all-points {
+    margin-top: 0px;
+    margin-bottom: 30px;
+  }
+}
 .sign-up .main-content .dob-points,
 .sign-up .main-content .email-points,
 .sign-up .main-content .newsletter-points {
@@ -4252,7 +4416,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   .sign-up .main-content .newsletter-points {
     position: static;
     margin-top: 15px;
-    margin-left: 140px;
+    margin-left: 0px;
   }
 }
 .sign-up .main-content .dob-points .right,
@@ -4276,7 +4440,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   .sign-up .main-content .email-points {
     position: static;
     margin-top: 15px;
-    margin-left: 140px;
+    margin-left: 0px;
   }
 }
 .sign-up .main-content .newsletter-points {
@@ -4292,7 +4456,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   .sign-up .main-content .newsletter-points {
     position: static;
     margin-top: 15px;
-    margin-left: 140px;
+    margin-left: 0px;
   }
 }
 .sign-up .main-content .pts {
@@ -6712,6 +6876,49 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .account .col-main .invite-friends {
   margin-bottom: 10px;
 }
+.account .col-main .referral-table {
+  text-align: left;
+  width: 45%;
+}
+@media all and (max-width: 992px) {
+  .account .col-main .referral-table {
+    width: 100%;
+  }
+}
+.account .col-main .referral-table .pager {
+  margin: 0px;
+  text-align: center;
+}
+.account .col-main #referred-friends-table {
+  margin: 30px 0px;
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+.account .col-main #referred-friends-table thead tr th {
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 11px;
+  line-height: 19px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 20px;
+  text-align: center;
+}
+.account .col-main #referred-friends-table tbody tr td {
+  border-top: 1px dashed #ccc;
+  padding: 20px;
+  font-family: 'Gotham-Book', Verdana, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 11px;
+  line-height: 19px;
+  text-align: center;
+}
+.account .col-main #referred-friends-table tbody tr:last-child td {
+  border-bottom: 1px solid #ccc;
+}
 .account .col-main .buttons-set {
   margin-top: 10px;
 }
@@ -7210,6 +7417,9 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   line-height: 18px!important;
   letter-spacing: 0.03em!important;
 }
+.account .edit-address-form input {
+  width: 100%!important;
+}
 .account .order-history {
   padding: 20px 0px!important;
   /*padding-top: 131px;*/
@@ -7599,6 +7809,11 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .account .gift-cards #gift-cards-tbl {
   margin-top: 30px;
 }
+@media all and (max-width: 990px) {
+  .account .gift-cards #gift-cards-tbl thead .giftvoucher-grid-title {
+    display: table-row;
+  }
+}
 .account .gift-cards #gift-cards-tbl thead tr th {
   font-family: 'Gotham-Medium', Verdana, sans-serif;
   font-weight: 200;
@@ -7640,6 +7855,11 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .account .gift-cards #gift-cards-tbl tbody tr td p.status.redeemed {
   color: #ae4e0e;
+}
+@media all and (max-width: 880px) {
+  .account .gift-cards #gift-cards-tbl tbody tr td .giftvoucher-grid-detail {
+    margin-left: 0px!important;
+  }
 }
 .account .gift-cards #gift-cards-tbl tbody tr td .print {
   display: none;

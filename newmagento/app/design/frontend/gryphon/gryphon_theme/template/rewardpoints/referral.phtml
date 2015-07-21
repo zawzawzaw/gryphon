@@ -193,29 +193,33 @@
     </div>
     <?php $_referred = $this->getReferred();?>
     <?php if($_referred->getSize()): ?>
-    <?php echo $this->getPagerHtml() ?>
-    <table cellspacing="0" class="data-table" id="referred-friends-table">
-        <thead>
-            <tr>
-                <?php ?><th><?php echo $this->__('Full Name') ?></th><?php ?>
-                <th><?php echo $this->__('Email') ?></th>
-                <!--<th><?php echo $this->__('Registered?') ?></th>-->
-                <th><?php echo $this->__('First order?') ?></th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php $_odd = ''; ?>
-            <?php foreach ($_referred as $_friend): ?>
-                <tr>
-                    <?php ?><td><?php echo $_friend->getRewardpoints_referral_name() ?></td><?php ?>
-                    <td><?php echo $_friend->getRewardpoints_referral_email() ?></td>
-                    <!--<td><?php echo $_friend->getRewardpoints_referral_child_id() ? $this->__('yes') : $this->__('no') ?></td>-->
-                    <td class="a-right"><?php echo $_friend->getRewardpoints_referral_status() ? $this->__('yes') : $this->__('no') ?></td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-    <?php echo $this->getPagerHtml() ?>
+    <div class="referral-table">
+        <?php echo $this->getPagerHtml() ?>
+        <div class="table-responsive">
+            <table cellspacing="0" class="data-table" id="referred-friends-table">
+                <thead>
+                    <tr>
+                        <?php ?><th><?php echo $this->__('Full Name') ?></th><?php ?>
+                        <th><?php echo $this->__('Email') ?></th>
+                        <!--<th><?php echo $this->__('Registered?') ?></th>-->
+                        <th><?php echo $this->__('First order?') ?></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $_odd = ''; ?>
+                    <?php foreach ($_referred as $_friend): ?>
+                        <tr>
+                            <?php ?><td><?php echo $_friend->getRewardpoints_referral_name() ?></td><?php ?>
+                            <td><?php echo $_friend->getRewardpoints_referral_email() ?></td>
+                            <!--<td><?php echo $_friend->getRewardpoints_referral_child_id() ? $this->__('yes') : $this->__('no') ?></td>-->
+                            <td class="a-right"><?php echo $_friend->getRewardpoints_referral_status() ? $this->__('yes') : $this->__('no') ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+        <?php echo $this->getPagerHtml() ?>
+    </div>
     <?php else: ?>
         <p><?php echo $this->__('You haven\'t invited any friend.'); ?></p>
     <?php endif ?>
