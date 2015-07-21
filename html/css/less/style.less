@@ -9854,8 +9854,119 @@ div#footer-wrapper {
 }
 
 
+//    ____  ____  _____     ___    ______   __  __  __  ___  ____ ___ _     _____ 
+//   |  _ \|  _ \|_ _\ \   / / \  / ___\ \ / / |  \/  |/ _ \| __ )_ _| |   | ____|
+//   | |_) | |_) || | \ \ / / _ \| |    \ V /  | |\/| | | | |  _ \| || |   |  _|  
+//   |  __/|  _ < | |  \ V / ___ \ |___  | |   | |  | | |_| | |_) | || |___| |___ 
+//   |_|   |_| \_\___|  \_/_/   \_\____| |_|   |_|  |_|\___/|____/___|_____|_____|
+//                                                                                
+
+@media (max-width: 991px) {
+  .privacy{
+    margin-top: 83px !important;
+    padding-bottom: 0px !important;
+
+    .privacy-banner{
+      background: url("../images/content/privacy-banner.png") no-repeat;
+      background-size: cover;
+      background-position-y: 100%;
+
+      .image-text-content{
+        .caption-container{
+          display: block;
+          height: 125px;
+
+          .caption{
+            height: 125px;
+
+            text-align: center;
+            color: @white;
+            display: block;
+            padding-top: 22px;
+
+            h1{
+              font-size: 21px;
+              line-height: 22px;
+              margin-bottom: 17px;
+            }
+
+            p{
+              color: @white;
+              .gotham-medium;
+              font-size: 10px;
+              line-height: 15px;
+              padding: 0 30px;
+            }
+          }
+        }
+      }
+    }
+    .main-content {
+
+      > .space80{
+        display: none;
+      }
+
+      h1{
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: .03em;
+      }
+      p{
+        font-size: 12px;
+        line-height: 21px;
+        letter-spacing: 0.0em;
+        padding: 0 5px;
+      }
+      hr.small{
+        margin-top: 6px!important;
+        margin-bottom: 8px!important;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      ol{
+        li{
+          padding-right: 0px;
+
+          &:last-child{
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      .space40{
+        height: 4px + 24px;
+      }
+
+      .intro-content{
+        padding-top: 34px;
+        padding-bottom: 34px;
+
+        .center{
+          p{
+            width: auto;
+          }
+        }
+      }
+      .privacy-col-1{
+        padding: 0;
+        border: none;
+
+        padding-top: 34px;
+      }
+      .privacy-col-2{
+        padding: 0;
+        border: none;
+
+        padding-top: 48px;
+        padding-bottom: 65px;
+      }
 
 
+
+    }
+  }
+} // @media (max-width: 991px)
 
 
 
@@ -10891,6 +11002,241 @@ div#footer-wrapper {
 
 
 
+//    __  __  ___  ____ ___ _     _____    ____    _    ____  _____ _____ ____  ____  
+//   |  \/  |/ _ \| __ )_ _| |   | ____|  / ___|  / \  |  _ \| ____| ____|  _ \/ ___| 
+//   | |\/| | | | |  _ \| || |   |  _|   | |     / _ \ | |_) |  _| |  _| | |_) \___ \ 
+//   | |  | | |_| | |_) | || |___| |___  | |___ / ___ \|  _ <| |___| |___|  _ < ___) |
+//   |_|  |_|\___/|____/___|_____|_____|  \____/_/   \_\_| \_\_____|_____|_| \_\____/ 
+//                                                                                    
+
+
+@media (max-width: 991px) {
+  .careers{
+    .careers-banner{
+      background: url("../images/content/careers/careers-banner.png") no-repeat;
+      background-size: cover;
+      background-position-y: 100%;
+
+      .image-text-content{
+        .caption-container{
+          display: block;
+          height: 225px;
+
+          .caption{
+            height: 225px;
+
+            text-align: center;
+            color: @white;
+            display: block;
+            padding-top: 22px;
+
+            h1{
+              font-size: 21px;
+              line-height: 22px;
+              margin-bottom: 17px;
+            }
+
+            p{
+              color: @white;
+              .gotham-medium;
+              font-size: 10px;
+              line-height: 15px;
+              padding: 0 30px;
+              max-width: none;
+            }
+          }
+        }
+      }
+    }
+    .main-content {
+
+      h1{
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: .03em;
+      }
+      p{
+        font-size: 12px;
+        line-height: 21px;
+        letter-spacing: 0.0em;
+        padding: 0 5px;
+      }
+      hr.small{
+        margin-top: 6px!important;
+        margin-bottom: 8px!important;
+      }
+
+
+      .first-content{
+        padding-top: 34px;
+        padding-bottom: 34px;
+
+        .center{
+          p{
+            width: auto;
+          }
+        }
+      } // .first-content
+      .second-content{
+        padding-top: 34px;
+        padding-bottom: 0px;
+        //padding-bottom: 34px;
+
+        .reasons{
+          padding-top: 23px;
+        }
+        
+        .reason{
+          margin-bottom: 34px;
+        }
+
+      } // .second-content
+      .third-content{
+        margin-top: 34px;
+        margin-bottom: 34px;
+
+        .image-text-content{
+          padding-bottom: 34px;
+        }
+
+        #career-display-item-container{
+          padding-top: 24px;
+        }
+        .career-display-item{
+          display: block;
+          width: 100%;
+          margin-bottom: 17px;
+
+          &:last-child{
+            margin-bottom: 0;
+          }
+        }
+
+        .career-display-item-single{
+          display: block;
+          width: 100%;
+          height: auto;
+          padding-bottom: 20px;
+          margin-bottom: 0;
+
+          p{
+            margin-bottom: 20px;
+          }
+          ul{
+            li{
+              padding-left: 30px;
+              padding-right: 30px;
+            }
+          }
+          .responsibilities-col{
+            margin-bottom: 34px;
+          }
+          .requirements-col{
+            padding-bottom: 77px;
+          }
+        }
+        .career-display-item-none{
+          display: block;
+          width: 100%;
+          height: auto;
+          padding-bottom: 50px;
+          margin-bottom: 0;
+        }
+
+        #careers-fullscreen-display{
+          //display: block;
+          position: relative;
+          height: auto;
+          margin-top: 34px;
+
+          .black-bg{
+            display: none;
+          }
+
+          .career-display-item-single{
+            position: relative;
+            top: 0px;
+            left: 0;
+            width: 100%;
+            height: auto;
+            margin-left: 0;
+            margin-top: 0;
+
+            
+
+
+          }
+        }
+
+
+      } // .third-content
+
+      .forth-content{
+        .application-form-banner{
+          width: 100%;
+          margin-bottom: 34px - 10px;
+        }
+        #application-form{
+          .application-form-col-1,
+          .application-form-col-2{
+            padding: 0px;
+          }
+          .application-form-col-2{
+            padding-bottom: 65px - 20px;
+          }
+
+          .intl-tel-input{
+            margin-bottom: 20px;
+          }
+
+
+          .each-input .dropdown-container{
+            .col-md-4, .col-md-8,
+            .col-md-5, .col-md-7{
+              padding-left: 15px;
+              padding-right: 15px;
+            }
+          }
+        }
+        .each-input{
+
+          
+
+          p{
+            padding: 0 5px;
+          }
+          label{
+            width: 100%;
+            display: block;
+            font-size: 11px;
+            margin-bottom: 5px;
+          }
+          input[type=text],
+          select{
+            width: 100%;
+            height: 28px;
+          }
+          textarea{
+            width: 100%;
+          }
+          div.dropdown{
+            width: 100%;
+          }
+          .dropdown-container{
+            width: 100%;
+            margin-left: 0px;
+            padding-right: 0px;
+          }
+          .input-box{
+            display: block;
+          }
+        }
+      }
+
+    } // .main-content
+  } // .careers
+} // @media (max-width: 991px)
+
 
 
 //    ____  _______        ___    ____  ____  ____  
@@ -11388,6 +11734,130 @@ div#footer-wrapper {
 
   }
 }
+
+//    __  __  ___  ____ ___ _     _____   ____  _______        ___    ____  ____  ____  
+//   |  \/  |/ _ \| __ )_ _| |   | ____| |  _ \| ____\ \      / / \  |  _ \|  _ \/ ___| 
+//   | |\/| | | | |  _ \| || |   |  _|   | |_) |  _|  \ \ /\ / / _ \ | |_) | | | \___ \ 
+//   | |  | | |_| | |_) | || |___| |___  |  _ <| |___  \ V  V / ___ \|  _ <| |_| |___) |
+//   |_|  |_|\___/|____/___|_____|_____| |_| \_\_____|  \_/\_/_/   \_\_| \_\____/|____/ 
+//                                                                                      
+
+
+@media (max-width: 991px) {
+  .rewards{
+    .rewards-banner{
+      background: url("../images/content/rewards/rewards-banner.png") no-repeat;
+      background-size: cover;
+      background-position-y: 100%;
+
+      .image-text-content{
+        .caption-container{
+          display: block;
+          height: 225px;
+
+          .caption{
+            height: 225px;
+
+            text-align: center;
+            color: @white;
+            display: block;
+            padding-top: 22px;
+
+            h1{
+              font-size: 21px;
+              line-height: 22px;
+              margin-bottom: 17px;
+            }
+
+            p{
+              color: @white;
+              .gotham-medium;
+              font-size: 10px;
+              line-height: 15px;
+              padding: 0 30px;
+              max-width: none;
+            }
+          }
+        }
+      }
+    }
+
+    .main-content {
+
+      h1{
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: .03em;
+      }
+      p{
+        font-size: 12px;
+        line-height: 21px;
+        letter-spacing: 0.0em;
+        padding: 0 5px;
+      }
+      hr.small{
+        margin-top: 6px!important;
+        margin-bottom: 8px!important;
+      }
+
+      .first-content{
+        .banner-image-text {
+          padding-top: 34px;
+          padding-bottom: 34px;
+        }
+        .description{
+          max-width: none;
+          margin-bottom: 34px;
+        }
+        .steps{
+          margin-top: 0;
+          .each-step{
+            display: block;
+            margin: 0;
+            margin-bottom: 34px;
+            img{
+              margin-bottom: 20px;
+            }
+
+            &:last-child{
+              margin-bottom: 0;
+            }
+            
+            p{
+              width: auto;
+
+              font-size: 12px;
+              line-height: 21px;
+              letter-spacing: 0.0em;
+            }
+          }
+        }
+      } // .first-content
+
+      .second-content{
+        padding-top: 34px;
+
+        .second-content-top{
+          margin-bottom: 30px;
+        }
+        .reasons{
+          padding-bottom: 34px;
+          margin: 0;
+          margin-bottom: 34px;
+        }
+      } // .second-content
+    }
+
+
+  } // .rewards
+
+} // @media (max-width: 991px)
+
+
+
+
+
+
 
 
 
