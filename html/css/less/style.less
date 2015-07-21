@@ -2354,6 +2354,12 @@ div.product {
           vertical-align: middle;
           position: static!important;
           height: 100%!important;
+          background-size: 448px 617px;
+
+          @media all and (max-width: 990px) {
+            background-size: auto auto;
+            background-position: 50% 50%;
+          }
 
           #gift-design-01,
           #gift-design-02{
@@ -2363,6 +2369,10 @@ div.product {
 
             width: 448px;
             height: 617px;
+
+            @media all and (max-width: 990px) {
+              width: 100%;
+            }
 
             img{
               position: absolute;
@@ -2379,6 +2389,13 @@ div.product {
               text-align: center;
               color: @white;
 
+              @media all and (max-width: 990px) {
+                left: 5px;
+                width: 100%;
+                height: auto;
+                top: 40%;
+              }
+
               &.white {
                 color: @dark-orange !important;
               }
@@ -2390,9 +2407,17 @@ div.product {
                 letter-spacing: -0.02em;
 
                 height: 65px + 8px;
+                @media all and (max-width: 990px) {
+                  font-size: 8px;
+                  line-height: 10px;                  
+                  height: 42px;
+                }
                 .dear {
                   font-size: 20px;
                   margin-bottom: 4px;
+                  @media all and (max-width: 990px) {
+                    font-size: 10px;   
+                  }
                 }
               }
               .gifttext-title{
@@ -2403,6 +2428,10 @@ div.product {
                 text-transform: uppercase;
 
                 margin-bottom: -1px;
+                @media all and (max-width: 990px) {
+                  font-size: 10px;
+                  line-height: 14px;
+                }
               }
               .gifttext-amount{
                 .minion-pro-regular;
@@ -2411,6 +2440,11 @@ div.product {
                 letter-spacing: 0.01em;
 
                 margin-bottom: 25px;
+                @media all and (max-width: 990px) {
+                  font-size: 25px;
+                  line-height: 25px;
+                  margin-bottom: 5px;
+                }
               }
               .gifttext-copy{
                 .gotham-book;
@@ -2419,6 +2453,9 @@ div.product {
                 letter-spacing: 0.05em;
 
                 height: 113px;
+                @media all and (max-width: 990px) {
+                  height: 55px;
+                }
               }
               .gifttext-code-title{
                 .gotham-bold;
@@ -2428,6 +2465,10 @@ div.product {
                 letter-spacing: 0.06em;
 
                 margin-bottom: -2px;
+                @media all and (max-width: 990px) {
+                  font-size: 6px;
+                  line-height: 11px;
+                }
               }
               .gifttext-code{
                 .gotham-bold;
@@ -2437,12 +2478,22 @@ div.product {
                 letter-spacing: 0.2em;
 
                 margin-bottom: 32px;
+                @media all and (max-width: 990px) {
+                  font-size: 8px;
+                  line-height: 11px;
+                  margin-bottom: 16px;
+                }
               }
               .gifttext-disclaimer{
                 .minion-pro-semibold-italic;
                 font-size: 12px;
                 line-height: 15px;
                 color: #d98d54;
+                @media all and (max-width: 990px) {
+                  width: 185px;
+                  text-align: center;
+                  margin: 0 auto;
+                }
               }
             }
 
@@ -2607,10 +2658,14 @@ div.product {
       padding-right: 50px;
       padding-top: 15px;
 
+      @media all and (max-width: 990px) {
+        padding-right: 0px;
+      }
+
       @media all and (max-width: 1099px) {
         margin: 0 auto;        
         width: 100%;
-      }
+      }      
 
       h1 {
         .minion-pro-medium;
@@ -2806,6 +2861,15 @@ div.product {
             }
           }
 
+          .dropdown {
+            @media all and (max-width: 990px) {
+              width: 96%;
+            }
+            @media all and (max-width: 470px) {
+              width: 92%;
+            }
+          }
+
           input[type="text"], input[type="password"], select, textarea {
             font-size: 11px; 
             .gotham-book;
@@ -2815,8 +2879,8 @@ div.product {
             padding: 5px 0 5px 15px;
             width: 281px!important;
             vertical-align: top;
-            @media all and (max-width: 470px) {
-              width: 238px;
+            @media all and (max-width: 990px) {
+              width: 100%!important;
             }
           }
 
@@ -2909,6 +2973,10 @@ div.product {
               display: inline-block;
               width: 110px;
               margin-right: 27px + 15px;
+              @media all and (max-width: 990px) {
+                width: auto;
+                margin-right: 0px;
+              }
             }
 
             display: block;
@@ -2926,7 +2994,7 @@ div.product {
               content: "";
               display: inline-block;
               width: 110px;
-              margin-right: 27px + 15px;
+              margin-right: 27px + 15px;              
             }
             display: block;
             .minion-pro-medium-italic;
@@ -3017,6 +3085,11 @@ div.product {
             margin-left: 10px;
             padding-right: 20px;
 
+            @media all and (max-width: 990px) {
+              width: 100%;
+              display: block;
+            }
+
             .col-md-4, .col-md-8,
             .col-md-5, .col-md-7{
               padding-left: 5px;
@@ -3025,6 +3098,14 @@ div.product {
 
             .dropdown{
               width: 100%;
+              @media all and (max-width: 990px) {
+                width: 96%;
+              }
+              &:last-child {
+                @media all and (max-width: 990px) {
+                  width: 88%;
+                }
+              }
             }
 
 
@@ -3072,6 +3153,10 @@ div.product {
           }
 
         }
+      }
+
+      #calendar-day_to_send {
+        display: none;
       }
     }
  
@@ -6849,6 +6934,55 @@ div.product {
       margin-bottom: 10px;
     }
 
+    .referral-table {
+      text-align: left;
+      width: 45%;
+      @media all and (max-width: 992px) {
+        width: 100%;
+      }
+      .pager {
+        margin: 0px;
+        text-align: center;
+      }
+    }
+
+    #referred-friends-table {
+      margin: 30px 0px;
+      display: block;
+      text-align: center;
+      width: 100%;
+      thead {
+        tr {
+          th {
+            .gotham-medium;
+            font-size: 11px;
+            line-height: 19px;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            padding: 10px 20px;
+            text-align: center;
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            border-top: 1px dashed #ccc;
+            padding: 20px;
+            .gotham-book;
+            font-size: 11px;
+            line-height: 19px;  
+            text-align: center;       
+          }
+          &:last-child {
+            td {
+              border-bottom: 1px solid #ccc;
+            }
+          }          
+        }
+      }
+    }
+
     .buttons-set {
       margin-top: 10px;
     }
@@ -7719,6 +7853,11 @@ div.product {
     #gift-cards-tbl {
       margin-top: 30px;
       thead {
+        @media all and (max-width: 990px) {
+          .giftvoucher-grid-title {
+            display: table-row;
+          }
+        }
         tr {
           th {
             .gotham-medium;
@@ -7731,7 +7870,7 @@ div.product {
           }
         }
       }
-      tbody {
+      tbody {        
         tr {
           td {
             border-top: 1px dashed #ccc;
@@ -7757,6 +7896,11 @@ div.product {
               /*.gotham-medium;*/              
               &.redeemed {
                 color: @dark-orange;
+              }
+            }
+            @media all and (max-width: 880px) {
+              .giftvoucher-grid-detail {
+                margin-left: 0px!important;
               }
             }
             .print {
