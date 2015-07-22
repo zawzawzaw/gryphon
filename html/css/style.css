@@ -11619,7 +11619,7 @@ div#footer-wrapper .search button:hover {
     margin-bottom: 34px;
   }
   .rewards .main-content .first-content .steps .each-step img {
-    margin-bottom: 20px;
+    margin-bottom: 13px;
   }
   .rewards .main-content .first-content .steps .each-step:last-child {
     margin-bottom: 0;
@@ -11634,12 +11634,66 @@ div#footer-wrapper .search button:hover {
     padding-top: 34px;
   }
   .rewards .main-content .second-content .second-content-top {
-    margin-bottom: 30px;
+    margin-bottom: 24px;
   }
   .rewards .main-content .second-content .reasons {
-    padding-bottom: 34px;
+    padding-bottom: 14px;
     margin: 0;
     margin-bottom: 34px;
+  }
+  .rewards .main-content .second-content .reasons .reason {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  .rewards .main-content .second-content .reasons .reason p {
+    padding-top: 102px;
+  }
+  .rewards .main-content .second-content .additional-top {
+    margin-bottom: 13px;
+  }
+  .rewards .main-content .second-content .additional-item-container {
+    padding-bottom: 18px;
+  }
+  .rewards .main-content .second-content .additional-item-container .additional-item {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  .rewards .main-content .second-content .additional-bottom {
+    padding-top: 0;
+    padding-bottom: 38px;
+  }
+  .rewards .main-content .third-content {
+    padding-top: 34px;
+    padding-bottom: 46px;
+  }
+  .rewards .main-content .third-content .image-text-content {
+    border-bottom: none;
+  }
+  .rewards .main-content .third-content .faq-item-container {
+    margin-top: 14px;
+    margin-bottom: -15px;
+    padding-bottom: 0;
+  }
+  .rewards .main-content .third-content .faq-item-container .faq-item .answer {
+    font-size: 12px;
+    line-height: 21px;
+    letter-spacing: 0.0em;
+    padding: 0 5px;
+  }
+  .rewards .main-content .third-content .faq-item-container .faq-item .disclaimer {
+    font-size: 12px;
+    line-height: 21px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .rewards .main-content .forth-content {
+    padding-bottom: 45px;
+  }
+  .rewards .main-content .forth-content hr.small {
+    margin-bottom: 15px!important;
+  }
+  .rewards .main-content .forth-content ol li {
+    padding-left: 25px;
   }
 }
 .discover {
@@ -12607,6 +12661,239 @@ div#footer-wrapper .search button:hover {
 }
 .discover .main-content .eighth-content .subscribe-cta-button:hover {
   background-color: #ae4e0e;
+}
+@media (max-width: 991px) {
+  .discover .discover-banner {
+    background: url("../images/content/discover/discover-banner.png") no-repeat;
+    background-size: cover;
+    background-position-y: 100%;
+  }
+  .discover .discover-banner .image-text-content .caption-container {
+    display: block;
+    height: 225px;
+  }
+  .discover .discover-banner .image-text-content .caption-container .caption {
+    height: 225px;
+    text-align: center;
+    color: #ffffff;
+    display: block;
+    padding-top: 22px;
+  }
+  .discover .discover-banner .image-text-content .caption-container .caption h1 {
+    font-size: 21px;
+    line-height: 22px;
+    margin-bottom: 17px;
+  }
+  .discover .discover-banner .image-text-content .caption-container .caption p {
+    color: #ffffff;
+    font-family: 'Gotham-Medium', Verdana, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 10px;
+    line-height: 15px;
+    padding: 0 30px;
+    max-width: none;
+  }
+  .discover .main-content h1 {
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: .03em;
+  }
+  .discover .main-content p {
+    font-size: 12px;
+    line-height: 21px;
+    letter-spacing: 0.0em;
+    padding: 0 5px;
+  }
+  .discover .main-content hr.small {
+    margin-top: 6px!important;
+    margin-bottom: 8px!important;
+  }
+  .discover .main-content hr.big {
+    margin-top: 34px;
+    margin-bottom: 34px;
+  }
+  .discover .main-content .first-content:before {
+    height: 30px;
+  }
+  .discover .main-content .first-content:after {
+    height: 32px;
+  }
+  .discover .main-content .second-content:before {
+    height: 38px;
+  }
+  .discover .main-content .second-content:after {
+    height: 0px;
+  }
+  .discover .main-content .second-content .for-who-container {
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-bottom: 1px;
+  }
+  .discover .main-content .second-content .for-who {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .discover .main-content .second-content .for-who:last-child {
+    margin-bottom: 0;
+  }
+  .discover .main-content .second-content .for-who h4 {
+    margin-bottom: 12px;
+  }
+  .discover .main-content .second-content .for-who p {
+    margin-bottom: 14px;
+  }
+  .discover .main-content .second-content .for-who .proceed-button {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .discover .main-content .third-content:after {
+    height: 0px;
+  }
+  .discover .main-content .third-content .space10 {
+    display: none;
+  }
+  .discover .main-content .third-content .tea-category-top {
+    padding-bottom: 13px;
+  }
+  .discover .main-content .third-content .tea-category-top h6 {
+    margin-top: -9px;
+  }
+  .discover .main-content .third-content .tea-category-container {
+    padding-bottom: 0;
+    margin-bottom: -24px;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  .discover .main-content .third-content .tea-category {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  .discover .main-content .third-content-gift .gift-item {
+    margin-top: -5px;
+    padding-bottom: 34px;
+  }
+  .discover .main-content .third-content-gift .gift-item .gift-item-image {
+    margin-bottom: 0;
+  }
+  .discover .main-content .third-content-gift .gift-item .gift-item-image img {
+    width: 100%;
+    height: auto;
+  }
+  .discover .main-content .third-content-gift .gift-item hr.small {
+    margin-bottom: 21px!important;
+  }
+  .discover .main-content .third-content-gift .space50 {
+    height: 0;
+  }
+  .discover .main-content .third-content-gift .gift-cart-button {
+    margin-bottom: 65px;
+  }
+  .discover .main-content .forth-content:after {
+    height: 0px;
+  }
+  .discover .main-content .forth-content .space10 {
+    display: none;
+  }
+  .discover .main-content .forth-content .tea-type-container {
+    padding-bottom: 0px;
+    margin-bottom: -4px;
+  }
+  .discover .main-content .forth-content .tea-type {
+    display: block;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 26px;
+  }
+  .discover .main-content .forth-content .tea-type .tea-type-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 12px;
+  }
+  .discover .main-content .forth-content .tea-type .tea-type-image img {
+    width: 100%;
+    height: auto;
+  }
+  .discover .main-content .fifth-content:after {
+    height: 39px;
+  }
+  .discover .main-content .fifth-content .tea-aroma-top {
+    padding-bottom: 10px;
+  }
+  .discover .main-content .fifth-content .tea-aroma-top h6 {
+    margin-top: -9px;
+  }
+  .discover .main-content .fifth-content .tea-aroma-container {
+    padding: 0;
+    margin: 0 -20px;
+    margin-bottom: -20px;
+  }
+  .discover .main-content .fifth-content .tea-aroma {
+    width: 130px;
+    margin-bottom: 20px;
+  }
+  .discover .main-content .sixth-content:before {
+    height: 34px;
+  }
+  .discover .main-content .sixth-content:after {
+    height: 14px;
+  }
+  .discover .main-content .sixth-content .how-start-top h1 {
+    margin-bottom: 0;
+  }
+  .discover .main-content .sixth-content .how-start-container {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .discover .main-content .sixth-content .how-start {
+    display: block;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  .discover .main-content .seventh-content .cta-container {
+    padding-top: 14px;
+    padding-bottom: 0px;
+  }
+  .discover .main-content .seventh-content .cta-container .final-cta-button {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .discover .main-content .seventh-content .cta-container .final-cta-button:last-child {
+    margin-bottom: 0;
+  }
+  .discover .main-content .seventh-content #results-item-container:before {
+    height: 34px;
+  }
+  .discover .main-content .seventh-content .results-item {
+    margin-bottom: 20px;
+  }
+  .discover .main-content .seventh-content .results-item p {
+    font-size: 12px;
+    line-height: 21px;
+    letter-spacing: 0.0em;
+    padding: 0 5px;
+  }
+  .discover .main-content .eighth-content h1 {
+    padding-top: 0px;
+  }
+  .discover .main-content .eighth-content .subscribe-cta-button {
+    margin-top: 34px;
+    margin-bottom: 34px;
+  }
 }
 @media (max-width: 991px) {
   html,
