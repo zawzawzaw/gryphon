@@ -62,7 +62,7 @@
             e.preventDefault();
 
             var $loadmore = $(this);
-            var link = $loadmore.attr('href');
+            var link = $loadmore.attr('href');            
             $(link).slideToggle('slow', function(){
                 if($(link).css('display') !== 'none')
                     $loadmore.find('i').removeClass('fa-chevron-down').addClass('fa-chevron-up');

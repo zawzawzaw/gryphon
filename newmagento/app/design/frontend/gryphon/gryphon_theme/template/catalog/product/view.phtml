@@ -86,38 +86,45 @@ endif;
                             <?php if ($isGiftcardType) :?>
                                 <?php echo $this->getChildHtml('product_type_data') ?>
                             <?php else : ?>                            
-                                <?php if( $_product->getTypeId() !== 'tin' ): ?>
+                                <?php 
+                                $catIds = $_product->getCategoryIds(); 
+                                foreach ($catIds as $category_id) { $_cat = Mage::getModel('catalog/category')->load($category_id) ;
+                                    $catNames[] = $_cat->getName();
+                                }
+                                if( $_product->getTypeId() !== 'tin' ): ?>
                                 <div class="desc">
                                     <?php echo $shortDescription; ?>
                                 </div>
-                                <div class="row extra-info">
-                                    <div class="col-xs-6">
-                                        <div class="set">
-                                            <h5><?php echo $this->__('ingredients'); ?></h5>
-                                            <span class="italic"><?php echo $_product->getIngredients(); ?></span>
-                                        </div>
+                                    <?php if(in_array('Pantry', $catNames) == FALSE ): ?>
+                                        <div class="row extra-info">
+                                            <div class="col-xs-6">
+                                                <div class="set">
+                                                    <h5><?php echo $this->__('ingredients'); ?></h5>
+                                                    <span class="italic"><?php echo $_product->getIngredients(); ?></span>
+                                                </div>
 
-                                        <div class="set">
-                                            <h5><?php echo $this->__('Type of product'); ?></h5>
-                                            <span class="italic"><?php echo $this->helper('catalogcustomiser')->getTypesCategory($_product); ?></span>
-                                        </div>
+                                                <div class="set">
+                                                    <h5><?php echo $this->__('Type of product'); ?></h5>
+                                                    <span class="italic"><?php echo $this->helper('catalogcustomiser')->getTypesCategory($_product); ?></span>
+                                                </div>
 
-                                        <div class="set">
-                                            <h5><?php echo $this->__('Share with'); ?></h5>
-                                            <?php echo $this->getChildHtml('sharing') ?>
+                                                <div class="set">
+                                                    <h5><?php echo $this->__('Share with'); ?></h5>
+                                                    <?php echo $this->getChildHtml('sharing') ?>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <div class="set-2">
+                                                    <h5><?php echo $this->__('Steeping Suggestion'); ?></h5>
+                                                    <ul class="steeping">
+                                                        <li><i class="spoon"></i> <span class="italic"><?php echo $_product->getAmountOfWater(); ?></span></li>
+                                                        <li><i class="temperature"></i> <span class="italic temperature"><?php echo $_product->getTemperature(); ?></span></li>
+                                                        <li><i class="time"></i> <span class="italic time"><?php echo $_product->getTime(); ?></span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <div class="set-2">
-                                            <h5><?php echo $this->__('Steeping Suggestion'); ?></h5>
-                                            <ul class="steeping">
-                                                <li><i class="spoon"></i> <span class="italic"><?php echo $_product->getAmountOfWater(); ?></span></li>
-                                                <li><i class="temperature"></i> <span class="italic temperature"><?php echo $_product->getTemperature(); ?></span></li>
-                                                <li><i class="time"></i> <span class="italic time"><?php echo $_product->getTime(); ?></span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
+                                    <?php endif; ?>
                                 <?php else: ?>
                                 <h2 class="desc-title"></h2>
                                 <p class="desc">

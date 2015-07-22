@@ -12,7 +12,94 @@
 $allCategories = $this->getCategories();
 $splitColumnNumber = $this->getSplitColumnNumber();
 $currentCategory = Mage::registry('current_category');
-?>
+$current_category_data = $currentCategory->getData();
+$allowCategoriesIDs = $this->getAllowCategoires();
+
+//print_r($current_category_data);
+
+// if(in_array($current_category_data['entity_id'], $allowCategoriesIDs) || in_array($current_category_data['parent_id'], $allowCategoriesIDs) || $current_category_data['url_key']=="store"): ?>
+<div class="side-bar">
+    <h1><?php echo $this->__('REFINE BY'); ?></h1>
+    <a href="javascript:void(0)" class="clear-all"><?php echo $this->__('Clear All'); ?></a>
+    <hr class="small" />
+
+    <form action="" id="ajax-filter-form" name="ajax-filter-form">
+        <?php if($current_category_data['url_key']=="store"): ?>
+        <div class="each-filter-section">
+            <div class="all-inputs">
+                <div class="each-input">
+                    <input type="checkbox" name="is_new" id="is_new" value="1" class="ajaxsearch" />
+                    <label class="checkbox-label" for="is_new">
+                        <span></span><p class="label-text"><?php echo $this->__('New'); ?></p>
+                    </label>
+                </div>
+                <div class="each-input">
+                    <input type="checkbox" name="is_featured" id="is_featured" class="ajaxsearch" value="1" />
+                    <label class="checkbox-label" for="is_featured">
+                        <span></span><p class="label-text"><?php echo $this->__('Featured'); ?></p>
+                    </label>
+                </div>
+                <div class="each-input">
+                    <input type="checkbox" name="is_best_selling" id="is_best_selling" class="ajaxsearch" value="1" />
+                    <label class="checkbox-label" for="is_best_selling">
+                        <span></span><p class="label-text"><?php echo $this->__('Best Selling'); ?></p>
+                    </label>
+                </div>
+                <div class="each-input">
+                    <input type="checkbox" name="is_promotion" id="is_promotion" class="ajaxsearch" value="1" />
+                    <label class="checkbox-label" for="product_category">
+                        <span></span><p class="label-text"><?php echo $this->__('Promotion'); ?></p>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
+        <?php foreach ($allCategories as $categoryId => $categoryData): ?>
+            <?php
+                $category = $categoryData['category'];
+                $subCategories = $categoryData['subCategories'];
+                $splitColumnNumber = 19;
+            ?>
+            <!-- <input type="hidden" value="<?php echo $category->getName(); ?> <?php echo $category->getId(); ?>"> -->
+            <?php if($category->getId() == $current_category_data['entity_id'] || $category->getId() == $current_category_data['parent_id'] || $current_category_data['url_key']=="store"): ?>
+                <div class="each-filter-section has-subsection">
+                    <div class="title">
+                        <a id="cat-<?php echo $category->getId(); ?>" href="#col-cat-<?php echo $category->getId(); ?>" class="load-more">
+                            <h2><?php echo $category->getName(); ?></h2><i class="fa fa-chevron-up"></i>
+                        </a>
+                        <div class="clear"></div>
+                    </div>
+                    <?php if ($number = count($subCategories)): ?>
+                    <div id="col-cat-<?php echo $category->getId(); ?>" class="all-inputs">
+                        <?php $i = 1; $average = $number / 2; $pass = false; ?>
+                        <?php if ($number >= $splitColumnNumber): ?><div class="col-1"><?php endif; ?>                    
+                        <?php foreach($subCategories as $subCategory) :?>
+                            <div class="each-input">
+                                <input class="ajaxsearch" id="sub-cat-<?php echo $subCategory->getId(); ?>" type="checkbox" name="categoryId[]" <?php if ($currentCategory && $currentCategory->getId() == $subCategory->getId()) :?>checked="checked"<?php endif; ?> value="<?php echo $subCategory->getId(); ?>" />
+                                <label class="checkbox-label" for="collection_type">
+                                    <span></span><p class="label-text"><?php echo $subCategory->getName(); ?></p>
+                                </label>
+                            </div>
+                            <?php if ($number >= $splitColumnNumber && !$pass && !($i%$average)): $pass = true; ?></div><div class="col-2"><?php endif; ?>                        
+                            <?php $i++; ?>
+                        <?php endforeach; ?>
+                        <?php if ($number >= $splitColumnNumber && ($i == $number + 1)): ?></div><div class="clear"></div><?php $i++; ?><?php endif; ?>                    
+                    </div>
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </form>
+
+    <div class="info">
+        <ul>
+            <li><a href="#"><i class="question"></i><span><?php echo $this->__('Gryphon FAQ'); ?></span></a></li>
+            <li><a href="#"><i class="delivery-info"></i><span><?php echo $this->__('Delivery Information'); ?></span></a></li>
+            <li><a href="#"><i class="tracking"></i><span><?php echo $this->__('Track Delivery'); ?></span></a></li>
+        </ul>
+    </div>
+
+</div>
 <div class="side-bar-mobile">
     <form action="" id="ajax-filter-form-mobile" name="ajax-filter-form-mobile">
         <div id="store-filter-button-container">
@@ -59,91 +146,16 @@ $currentCategory = Mage::registry('current_category');
     </form>
 
 </div>
-<div class="side-bar">
-    <h1><?php echo $this->__('REFINE BY'); ?></h1>
-    <a href="javascript:void(0)" class="clear-all"><?php echo $this->__('Clear All'); ?></a>
-    <hr class="small" />
-
-    <form action="" id="ajax-filter-form" name="ajax-filter-form">
-        <div class="each-filter-section">
-            <div class="all-inputs">
-                <div class="each-input">
-                    <input type="checkbox" name="is_new" id="is_new" value="1" class="ajaxsearch" />
-                    <label class="checkbox-label" for="is_new">
-                        <span></span><p class="label-text"><?php echo $this->__('New'); ?></p>
-                    </label>
-                </div>
-                <div class="each-input">
-                    <input type="checkbox" name="is_featured" id="is_featured" class="ajaxsearch" value="1" />
-                    <label class="checkbox-label" for="is_featured">
-                        <span></span><p class="label-text"><?php echo $this->__('Featured'); ?></p>
-                    </label>
-                </div>
-                <div class="each-input">
-                    <input type="checkbox" name="is_best_selling" id="is_best_selling" class="ajaxsearch" value="1" />
-                    <label class="checkbox-label" for="is_best_selling">
-                        <span></span><p class="label-text"><?php echo $this->__('Best Selling'); ?></p>
-                    </label>
-                </div>
-                <div class="each-input">
-                    <input type="checkbox" name="is_promotion" id="is_promotion" class="ajaxsearch" value="1" />
-                    <label class="checkbox-label" for="product_category">
-                        <span></span><p class="label-text"><?php echo $this->__('Promotion'); ?></p>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <?php foreach ($allCategories as $categoryId => $categoryData): ?>
-            <?php
-                $category = $categoryData['category'];
-                $subCategories = $categoryData['subCategories'];
-            ?>
-            <div class="each-filter-section has-subsection">
-                <div class="title">
-                    <a id="cat-<?php echo $category->getId(); ?>" href="#col-cat-<?php echo $category->getId(); ?>" class="load-more">
-                        <h2><?php echo $category->getName(); ?></h2><i class="fa fa-chevron-up"></i>
-                    </a>
-                    <div class="clear"></div>
-                </div>
-                <?php if ($number = count($subCategories)): ?>
-                <div id="col-cat-<?php echo $category->getId(); ?>" class="all-inputs">
-                    <?php $i = 1; $average = $number / 2; $pass = false; ?>
-                    <?php /*if ($number >= $splitColumnNumber): ?><div class="col-1"><?php endif;*/ ?>
-                    <?php if ($number >= 19): ?><div class="col-1"><?php endif; ?>
-                    <?php foreach($subCategories as $subCategory) :?>
-                        <div class="each-input">
-                            <input class="ajaxsearch" id="sub-cat-<?php echo $subCategory->getId(); ?>" type="checkbox" name="categoryId[]" <?php if ($currentCategory && $currentCategory->getId() == $subCategory->getId()) :?>checked="checked"<?php endif; ?> value="<?php echo $subCategory->getId(); ?>" />
-                            <label class="checkbox-label" for="collection_type">
-                                <span></span><p class="label-text"><?php echo $subCategory->getName(); ?></p>
-                            </label>
-                        </div>
-                        <?php if ($number >= $splitColumnNumber && !$pass && !($i%$average)): $pass = true; ?></div><div class="col-2"><?php endif; ?>
-                        <?php $i++; ?>
-                    <?php endforeach; ?>
-                    <?php /*if ($number >= $splitColumnNumber && ($i == $number + 1)): ?></div><div class="clear"></div><?php $i++; ?><?php endif;*/ ?>
-                    <?php if ($number >= 19 && ($i == $number + 1)): ?></div><div class="clear"></div><?php $i++; ?><?php endif; ?>
-                </div>
-                <?php endif; ?>
-            </div>
-        <?php endforeach; ?>
-    </form>
-
-    <div class="info">
-        <ul>
-            <li><a href="#"><i class="question"></i><span><?php echo $this->__('Gryphon FAQ'); ?></span></a></li>
-            <li><a href="#"><i class="delivery-info"></i><span><?php echo $this->__('Delivery Information'); ?></span></a></li>
-            <li><a href="#"><i class="tracking"></i><span><?php echo $this->__('Track Delivery'); ?></span></a></li>
-        </ul>
-    </div>
-
-</div>
+<?php //endif; ?>
 <script type="text/javascript">    
     var AJAXBASE_URL = "<?php echo Mage::getUrl() ?>";
     var AJAXSEARCH_URL = "<?php echo Mage::getUrl("ajaxsearch/ajax/result") ?>";
     var ajaxSearch;
     var ajaxSearchMobile;
     jQuery(document).ready(function($) {
-        $('#content-wrapper.store .side-bar-mobile').gryphon_mobile_store_sidebar();
+        <?php if(in_array($current_category_data['entity_id'], $allowCategoriesIDs) || in_array($current_category_data['parent_id'], $allowCategoriesIDs) || $current_category_data['url_key']=="store"): ?> 
+            $('#content-wrapper.store .side-bar-mobile').gryphon_mobile_store_sidebar();
+        <?php endif; ?>
         //<![CDATA[        
         ajaxSearch = new Ajaxsearch("ajax-filter-form");
         ajaxSearchMobile = new Ajaxsearchmobile("ajax-filter-form-mobile");
@@ -167,6 +179,7 @@ $currentCategory = Mage::registry('current_category');
         // $('#ajax-filter-form-mobile input.ajaxsearch').click(function() {
         //     ajaxSearchMobile.submit();
         // });
+        <?php if(in_array($current_category_data['entity_id'], $allowCategoriesIDs) || in_array($current_category_data['parent_id'], $allowCategoriesIDs) || $current_category_data['url_key']=="store"): ?> 
         $('#gryphon-store-apply-filter-button, .store-filter-detail-apply-button').click(function(){
             ajaxSearchMobile.submit();
         })
@@ -175,11 +188,13 @@ $currentCategory = Mage::registry('current_category');
             ajaxSearchMobile.reset();
         });
         $('#ajax-filter-form-mobile .all-products').on('click', '.load-more-products', function() {
+            console.log($('#cur_p').size())
             if ($('#cur_p').size()) {
                 var curPage = $('#cur_p').val();
                 ajaxSearchMobile.more(parseInt(curPage) + 1);
             }
         });
+        <?php endif; ?>
         //]]>
     });
 

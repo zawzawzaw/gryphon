@@ -10,14 +10,14 @@
 
 class Miragedesign_Catalogcustomiser_Block_Sidebar extends Mage_Core_Block_Template
 {
-    const SPLIT_COLUMN_NUMBER = 6;
+    const SPLIT_COLUMN_NUMBER = 19;
 
     public function getCategories()
     {
         $allCategories = array();
         $parentCategory = Mage::getModel('catalog/category')->load(56); // Root Store category
         $categories = $parentCategory->getChildrenCategories();
-        $allowedCategoryIds = array(4, 5, 6, 7, 88, 93, 98); // Only Collections, Types, Region, Caffeine Level, Moods, Aroma & Proficiency allowed
+        $allowedCategoryIds = array(4, 5, 6, 7, 88, 93, 98, 107); // Only Collections, Types, Region, Caffeine Level, Moods, Aroma & Proficiency allowed
 
         foreach ($categories as $category) {
             if (in_array($category->getId(), $allowedCategoryIds)) {
@@ -35,5 +35,9 @@ class Miragedesign_Catalogcustomiser_Block_Sidebar extends Mage_Core_Block_Templ
     public function getSplitColumnNumber()
     {
         return self::SPLIT_COLUMN_NUMBER;
+    }
+
+    public function getAllowCategoires() {
+        return array(4, 5, 6, 7, 88, 93, 98, 107);
     }
 }
