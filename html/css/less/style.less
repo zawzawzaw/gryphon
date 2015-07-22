@@ -3602,14 +3602,16 @@ div.product {
 
 .store {
   // margin-top: 85px;
-  margin-top: 60px;
+  // margin-top: 60px;
+  margin-top: 80px;
   padding-bottom: 120px!important;
   @media all and (max-width: 992px) {
     margin-top: 60px;
   }
-  .store-banner {
-    background: url("../images/content/store-banner.jpg") no-repeat;
+  .store-banner, .gifts-banner, .pantry-banner {
+    background: url("../images/content/store-banner.jpg") no-repeat center;
     background-size: cover;
+    height: 325px!important;
     .image-text-content {
       .caption {
         height: 261px;
@@ -3623,6 +3625,7 @@ div.product {
           line-height: 45px;
           text-transform: none;
           margin-bottom: 12px;
+          color: @white;
         }
 
         p {
@@ -3632,6 +3635,22 @@ div.product {
 
         }
       }
+    }    
+  }
+  .gifts-banner {
+    background: url("../images/content/gifts-banner.jpg") no-repeat center!important;
+    background-size: cover!important;
+
+    h1 {
+      color: @white;
+    }
+  }
+  .pantry-banner {
+    background: url("../images/content/pantry-banner.jpg") no-repeat center!important;
+    background-size: cover!important;
+
+    h1 {
+      color: @white;
     }
   }
 
@@ -3671,6 +3690,15 @@ div.product {
         margin-top: 11px;
       }
 
+      p.title-desc {
+        border-top: 1px solid #ccc;        
+        padding: 20px 5px;        
+      }
+
+      #ajax-filter-form {
+        border-top: 1px solid #ccc;
+      }
+
       .each-filter-section {
         border-bottom: 1px solid #ccc;
         padding-top: 20px;
@@ -3699,7 +3727,7 @@ div.product {
             }
         
         &:nth-of-type(1) {
-          border-top: 1px solid #ccc;
+          // border-top: 1px solid #ccc;
         }
 
         .title {
@@ -3723,7 +3751,7 @@ div.product {
             float: left;
             /*width: 110px;*/
             width: 50%;            
-            padding-right: 5%;
+            padding-right: 5%; 
           }
 
           .col-2 {
@@ -8598,7 +8626,7 @@ div.product {
 //////////////////////
 
 .trade {
-  margin-top: 85px;
+  margin-top: 60px;
   @media all and (max-width: 992px) {
     margin-top: 60px;
   }
@@ -10923,8 +10951,8 @@ div#footer-wrapper {
     }
     .contact-us-col-1{
       margin-right: 0;
-      padding-bottom: 34px - 20px;
-      margin-bottom: 34px;
+      padding-bottom: 34px - 20px; 
+      margin-bottom: 34px; 
       border-bottom: 1px solid #ccc;
 
       img{
@@ -12570,7 +12598,7 @@ div#footer-wrapper {
 
 
 .discover{
-  margin-top: 85px;
+  margin-top: 60px;
 
   @media all and (max-width: 992px) {
     margin-top: 60px;

@@ -1,4 +1,19 @@
-
+(function($){
+    $(function() {
+        // $('input.ajaxsearch').click(function() {
+        //     ajaxSearch.submit();
+        // });
+        // $('.clear-all').click(function() {
+        //     ajaxSearch.reset();
+        // });
+        $('.all-products').on('click', '.load-more-products', function() {
+            if ($('#cur_p').size()) {
+                var curPage = $('#cur_p').val();
+                ajaxSearch.more(parseInt(curPage) + 1);
+            }
+        });
+    });
+})(jQuery);
 
 Ajaxsearch = function (formId) {
     this.formId = formId;

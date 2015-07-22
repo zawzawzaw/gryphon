@@ -43,23 +43,34 @@
 			$type_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Types');
 
 			/*Returns comma separated ids*/
-			$subcats = $type_category->getChildren();			
+			// $subcats = $type_category->getChildren();		
+			$subcategories = $type_category->getChildrenCategories();									
 
 			echo '<li>
 					<a href="'.$store_category->getUrl().'">TEA <i class="fa fa-chevron-down"></i></a>
 					<ul class="sub-menu">';
 
-			foreach(explode(',',$subcats) as $subCatid)
-			{
-			  	$_category = Mage::getModel('catalog/category')->load($subCatid);
-			  	if($_category->getIsActive())
+			// foreach(explode(',',$subcats) as $subCatid)
+			// {
+			//   	$_category = Mage::getModel('catalog/category')->load($subCatid);
+			//   	if($_category->getIsActive())
+			//   	{
+			//     	$caturl     = $_category->getURL();
+			//     	$catname     = $_category->getName();
+
+			//     	echo '<li><a href="'.$caturl.'">'.$catname.'</a></li>';
+			//     }
+			// }
+
+			foreach($subcategories as $_category) {
+				if($_category->getIsActive())
 			  	{
 			    	$caturl     = $_category->getURL();
 			    	$catname     = $_category->getName();
 
 			    	echo '<li><a href="'.$caturl.'">'.$catname.'</a></li>';
 			    }
-			}
+			}	
 
 			echo '</ul>
 			</li>';					
@@ -113,7 +124,7 @@
 				<a href="<?php echo $this->getUrl('collections');?>">COLLECTIONS</a>								
 			</li>
 			<li>
-				<a href="http://test.gryphontea.com/wp">BLOG</a>
+				<a href="http://test.gryphontea.com/magento/wp">BLOG</a>
 			</li>
 			<li>
 				<a href="<?php echo $this->getUrl('trade'); ?>">TRADE</a>

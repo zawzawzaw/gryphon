@@ -15,13 +15,24 @@ $currentCategory = Mage::registry('current_category');
 $current_category_data = $currentCategory->getData();
 $allowCategoriesIDs = $this->getAllowCategoires();
 
-//print_r($current_category_data);
+// print_r($current_category_data);
 
 // if(in_array($current_category_data['entity_id'], $allowCategoriesIDs) || in_array($current_category_data['parent_id'], $allowCategoriesIDs) || $current_category_data['url_key']=="store"): ?>
-<div class="side-bar">
+<div class="side-bar">    
+    <?php if($current_category_data['url_key']=='gifts' || $current_category_data['url_key']=='pantry'): ?>
+    <h1><?php echo $this->__($current_category_data['name']); ?></h1>
+    <a href="javascript:void(0)" class="clear-all"><?php echo $this->__('Clear All'); ?></a>
+    <hr class="small" />
+    <p class="title-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet optio eligendi tenetur nam at, eaque! Ex voluptatum doloribus sapiente laborum nobis hic aut. Culpa 
+    tempora, harum velit minus! Facere, impedit!</p>
+    <?php else: ?>
     <h1><?php echo $this->__('REFINE BY'); ?></h1>
     <a href="javascript:void(0)" class="clear-all"><?php echo $this->__('Clear All'); ?></a>
     <hr class="small" />
+    <?php endif; ?>
+    
+
+    
 
     <form action="" id="ajax-filter-form" name="ajax-filter-form">
         <?php if($current_category_data['url_key']=="store"): ?>
@@ -100,6 +111,7 @@ $allowCategoriesIDs = $this->getAllowCategoires();
     </div>
 
 </div>
+<?php if($current_category_data['url_key']!=="gifts"): ?>
 <div class="side-bar-mobile">
     <form action="" id="ajax-filter-form-mobile" name="ajax-filter-form-mobile">
         <div id="store-filter-button-container">
@@ -146,6 +158,7 @@ $allowCategoriesIDs = $this->getAllowCategoires();
     </form>
 
 </div>
+<?php endif; ?>
 <?php //endif; ?>
 <script type="text/javascript">    
     var AJAXBASE_URL = "<?php echo Mage::getUrl() ?>";
@@ -167,12 +180,6 @@ $allowCategoriesIDs = $this->getAllowCategoires();
         $('#ajax-filter-form .clear-all').click(function() {
             ajaxSearch.reset();
         });
-        $('#ajax-filter-form .all-products').on('click', '.load-more-products', function() {
-            if ($('#cur_p').size()) {
-                var curPage = $('#cur_p').val();
-                ajaxSearch.more(parseInt(curPage) + 1);
-            }
-        });
 
         //////////
 
@@ -186,13 +193,6 @@ $allowCategoriesIDs = $this->getAllowCategoires();
 
         $('#gryphon-store-clear-all-filter-button, .store-filter-detail-clear-button').click(function() {
             ajaxSearchMobile.reset();
-        });
-        $('#ajax-filter-form-mobile .all-products').on('click', '.load-more-products', function() {
-            console.log($('#cur_p').size())
-            if ($('#cur_p').size()) {
-                var curPage = $('#cur_p').val();
-                ajaxSearchMobile.more(parseInt(curPage) + 1);
-            }
         });
         <?php endif; ?>
         //]]>

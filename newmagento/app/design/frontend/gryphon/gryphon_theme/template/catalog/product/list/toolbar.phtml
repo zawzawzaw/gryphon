@@ -36,8 +36,8 @@
         Mage::getSingleton("catalog/session")->setCurPage($this->getCollection()->getCurPage());
         Mage::getSingleton("catalog/session")->setLastPage($this->getCollection()->getLastPageNumber());
     ?>
-    <input type="hidden" name="cur_p" id="cur_p" class="cur_p" value="<?php echo $this->getCollection()->getCurPage(); ?>" />
-    <input type="hidden" name="last_p" id="last_p" class="last_p" value="<?php echo $this->getCollection()->getLastPageNumber(); ?>" />
+    <input type="hidden" name="cur_p" id="cur_p" class="" value="<?php echo $this->getCollection()->getCurPage(); ?>" />
+    <input type="hidden" name="last_p" id="last_p" class="" value="<?php echo $this->getCollection()->getLastPageNumber(); ?>" />
 
     <div class="controls">
         <div class="item-count-wrapper">
