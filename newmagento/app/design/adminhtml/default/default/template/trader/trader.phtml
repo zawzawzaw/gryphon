@@ -1,0 +1,73 @@
+<div class="entry-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend">Trader Discount Settings</h4>
+    </div> 
+    <fieldset id="grop_fields">
+        <div id="catalog_category_products">
+
+            <div class="grid">
+                <div>
+                    <table cellspacing="0" cellpadding="0" width="100%" id="catalog_category_products_table">
+                        <thead>
+                            <tr class="headings" style="color: #2D444F;font-weight:bold">
+                                <td> 
+                                    <span class="sort-title">Trader Group</span>
+                                </td>
+                                <td> 
+                                    <span class="sort-title">Discount Given (In Percent)</span>
+                                </td> 
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($this->_group_list as $_website): ?> 
+                                <?php
+
+                                $categoryid = Mage::getSingleton('catalog/layer')->getCurrentCategory()->getId();
+                                $collection = Mage::getModel('catalog/category')->getCollection()
+                                        ->addAttributeToFilter('is_active', 1) //only active categories
+                                        ->addAttributeToFilter('parent_id', $categoryid);
+                                $model = Mage::getModel('trader/trader')
+                                        ->getCollection()
+                                        ->addFieldToFilter('category_id', array('eq' => $categoryid))
+                                        ->addFieldToFilter('customer_grp_id', array('eq' => $_website->getCustomerGroupId()));
+                                $data = $model->getData();
+                                if(isset($data[0])){
+                                    $is_applied_to_sub_cat = $data[0]['apply_to_sub_cat'];
+                                    $data[0]['discount'] ? $discount = $data[0]['discount'] : $discount = "0.00";
+                                } else{
+                                    $is_applied_to_sub_cat = "No";
+                                    $discount = "0.00";
+                                }
+                                ?>
+                                <tr>
+                                    <td style="width:50%"> 
+                                        <label for="customer_group_<?php echo $_website->getCustomerGroupId() ?>"><?php echo $this->escapeHtml($_website->getCustomerGroupCode()) ?></label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="customer_group_discount[<?php echo $_website->getCustomerGroupId() ?>]" value="<?php echo $discount ?>"/> %
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                    <?php
+
+                    if($collection->getSize() >= 1){
+                        ?><br/><strong>
+                            <input type="checkbox" name="applytosubcats" value=""/> Apply to sub-categories also?</strong>
+                        <?php
+
+                        if($is_applied_to_sub_cat == "Yes"){
+                            ?><br/><strong>Discount already applied to sub-categories during last update.</strong>
+                                <?php
+
+                            }
+                        }
+                        ?>
+
+                </div>
+
+            </div></div>
+
+    </fieldset>
+</div>
