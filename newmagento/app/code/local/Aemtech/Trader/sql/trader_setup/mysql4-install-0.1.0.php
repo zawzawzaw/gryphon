@@ -297,7 +297,7 @@ try {
     $installer->addAttribute('customer', 'type_of_mkt_sup_provided', array(
         'label' => 'Type of Marketing support provided',
         'type' => 'varchar',
-        'input' => 'text',
+        'input' => 'textarea',
         'position' => 113,
         'source' => '',
         'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
@@ -331,7 +331,7 @@ try {
             ->save();
 
     $installer->addAttribute('customer', 'tenure_of_contract_from', array(
-        'label' => 'Tenure of Contract from',
+        'label' => 'Tenure of Contract From',
         'input' => 'date',
         'type' => 'datetime',
        'position' => 115, 
@@ -349,7 +349,7 @@ try {
             ->save();
 
     $installer->addAttribute('customer', 'tenure_of_contract_to', array(
-        'label' => 'To',
+        'label' => 'Tenure of Contract To',
         'input' => 'date',
         'position' => 116,
         'type' => 'datetime',
