@@ -224,7 +224,7 @@
                     <input type="checkbox" name="shipping[same_as_billing]" id="shipping:same_as_billing" value="1"<?php if($this->getAddress()->getSameAsBilling()): ?> checked="checked"<?php endif; ?> title="<?php echo $this->__('Use Billing Address') ?>" onclick="shipping.setSameAsBilling(this.checked)" class="checkbox" />
                     <label class="checkbox-label" for="shipping:same_as_billing">
                         <span></span><p class="label-text"><?php echo $this->__('If shipping address is same as billing address, tick here.') ?></p>
-                    </label>
+                    </label>                    
                 </li>
                 <li id="shipping-new-address-form"<?php if ($this->customerHasAddresses()): ?> style="display:none;"<?php endif ?>>
                     <input type="hidden" name="shipping[address_id]" value="<?php echo $this->getAddress()->getId() ?>" id="shipping:address_id" />
@@ -358,8 +358,8 @@
                             </tbody>
                         </table>
                     </div>
-                    <p>All local orders are delivered with registered postage.</p>
-                    <p>All products are shipped directly from Singapore. Please allow 5 to 7 working days on top of the estimated delivery time for us to process your order.</p>
+                    <p>All local orders are delivered via Singapore Post registered mail or Speedpost depending on size of order.</p>
+                    <p>All products are shipped directly from Singapore. Please allow 3 to 5 working days on top of the estimated delivery time for us to process your order.</p>
                     <p>Please expect slight delays for orders shipped during peak seasons. <br />
                         <span>— Chinese New Year, Christmas etc.</span></p>
                 </div>
@@ -369,7 +369,7 @@
     <div class="buttons-set row action-container" id="billing-buttons-container">
         <!-- <p class="required"><?php echo $this->__('* Required Fields') ?></p> -->
         <div class="back-link col-md-4">
-            <a class="cta back-btn" href="<?php echo $this->getUrl('/'); ?>"><i class="fa fa-chevron-left"></i> <?php echo $this->__('go back to continue shopping') ?></a>
+            <a class="cta back-btn" href="<?php echo $this->getUrl('store.html'); ?>"><i class="fa fa-chevron-left"></i> <?php echo $this->__('go back to continue shopping') ?></a>
         </div>
         <div class="col-md-4 col-md-offset-4">
             <button type="button" title="<?php echo $this->__('Continue') ?>" class="button continue cta" onclick="billing.save()"><span><span><?php echo $this->__('Continue') ?></span></span></button>

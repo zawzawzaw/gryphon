@@ -44,6 +44,7 @@ endif;
     <div class="main-product">
         <div class="image-text-content container">
             <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+                <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
                 <?php echo $this->getBlockHtml('formkey') ?>                    
                 <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
                 <input type="hidden" name="related_product" id="related-products-field" value="" />
@@ -53,8 +54,7 @@ endif;
                         <?php echo $this->getLayout()->getBlock('breadcrumbs')->toHtml(); ?>
                     </div>
                 </div>
-                <div class="row">
-                    <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
+                <div class="row">                    
                     <div class="col-md-12">
                         <?php if ($isGiftcardType) : ?>
                         <div class="gift-card-img">
@@ -229,6 +229,13 @@ endif;
                     </div>
                 </div>
             </form>
+            <script>
+            jQuery(document).ready(function(e){
+                if(jQuery('.messages').html()!= undefined) {
+                    jQuery('#messages_product_view').html('<ul class="messages">'+jQuery('.messages').html()+'</ul>');                
+                }
+            });
+            </script>
             <script type="text/javascript">
                 //<![CDATA[
                     var productAddToCartForm = new VarienForm('product_addtocart_form');
@@ -335,7 +342,6 @@ endif;
                     }
 
                     jQuery(".treasure-design-img .next-image-button").click(function(){
-                        console.log('next')
                         var target_index = face_index + 1;
                         target_index = target_index > 2 ? 0 : target_index;
                         show_index(target_index);
@@ -374,9 +380,8 @@ endif;
 
                         jQuery("#message_characters_remaining").html('Characters Remainding: ' + remaining);
                         jQuery("#treasure-design-back .treasuretext-message").html(str);
-                    });
-                });
-                    
+                    });                    
+                }); 
                 </script>
             <?php endif; ?>
         </div>

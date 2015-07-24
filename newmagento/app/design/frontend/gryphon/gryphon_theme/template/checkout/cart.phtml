@@ -84,7 +84,9 @@ function isMobile()
 
     <div class="main-content">
         <div class="image-text-content container">
-            <?php echo $this->getMessagesBlock()->toHtml() ?>
+            <div class="row">
+                <div class="col-md-12"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
+            </div>
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="cart">
                     <div class="row">
@@ -198,11 +200,12 @@ function isMobile()
                                 <?php /* Extensions placeholder */ ?>
                                 <?php echo $this->getChildHtml('checkout.cart.extra') ?>
                             </div>
-                            <div class="each-input">
-                                <?php echo $this->getBlockHtml('coupon_points'); ?>
-                            </div>
+                            
                             <div class="each-input">
                                 <?php echo $this->getChildHtml('coupon') ?>
+                            </div>
+                            <div class="each-input">
+                                <?php echo $this->getBlockHtml('coupon_points'); ?>
                             </div>
                                 <?php if (false && !$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?>
                         </div>

@@ -35,14 +35,16 @@
     <!-- <dd<?php if ($_option->decoratedIsLast){?> class="last"<?php }?>> -->
         <!-- <div class="input-box"> -->
         <?php if ($_option->getType() == Mage_Catalog_Model_Product_Option::OPTION_TYPE_FIELD): ?>
-            <input type="text" onchange="opConfig.reloadPrice()" id="options_<?php echo $_option->getId() ?>_text" class="<?php if($product->getTypeID()=='tin'): ?>treasure_recipient_name<?php endif; ?> input-text<?php echo $_option->getIsRequire() ? ' required-entry' : '' ?> <?php echo $_option->getMaxCharacters() ? ' validate-length maximum-length-'.$_option->getMaxCharacters() : '' ?> product-custom-option" name="options[<?php echo $_option->getId() ?>]" value="<?php echo $this->escapeHtml($this->getDefaultValue()) ?>" />
+            <input type="text" onchange="opConfig.reloadPrice()" id="options_<?php echo $_option->getId() ?>_text" class="<?php if($product->getTypeID()=='tin'): ?>treasure_recipient_name<?php endif; ?> input-text<?php echo $_option->getIsRequire() ? ' required-entry' : '' ?> <?php echo $_option->getMaxCharacters() ? ' validate-length maximum-length-'.$_option->getMaxCharacters() : '' ?> product-custom-option" name="options[<?php echo $_option->getId() ?>]" value="<?php echo $this->escapeHtml($this->getDefaultValue()) ?>" />            
+            <div class="positional-msg recipient_name_characters_remaining-msg">Appears on Front</div>
             <?php if ($_option->getMaxCharacters()): ?>
                 <span id="recipient_name_characters_remaining" class="note"><?php echo Mage::helper('catalog')->__('Characters Remainding:')?> <strong><?php echo $_option->getMaxCharacters() ?></strong></span>
-            <?php endif; ?>
+            <?php endif; ?>            
         <?php elseif ($_option->getType() == Mage_Catalog_Model_Product_Option::OPTION_TYPE_AREA): ?>
-            <textarea id="options_<?php echo $_option->getId() ?>_text" onchange="opConfig.reloadPrice()" class="<?php if($product->getTypeID()=='tin'): ?>treasure_message<?php endif; ?> <?php echo $_option->getIsRequire() ? ' required-entry' : '' ?> <?php echo $_option->getMaxCharacters() ? ' validate-length maximum-length-'.$_option->getMaxCharacters() : '' ?> product-custom-option" name="options[<?php echo $_option->getId() ?>]" rows="5" cols="25"><?php echo $this->escapeHtml($this->getDefaultValue()) ?></textarea>
+            <textarea id="options_<?php echo $_option->getId() ?>_text" onchange="opConfig.reloadPrice()" class="<?php if($product->getTypeID()=='tin'): ?>treasure_message<?php endif; ?> <?php echo $_option->getIsRequire() ? ' required-entry' : '' ?> <?php echo $_option->getMaxCharacters() ? ' validate-length maximum-length-'.$_option->getMaxCharacters() : '' ?> product-custom-option" name="options[<?php echo $_option->getId() ?>]" rows="5" cols="25"><?php echo $this->escapeHtml($this->getDefaultValue()) ?></textarea>            
+            <div class="positional-msg message_characters_remaining-msg">Appears on Back</div>
             <?php if ($_option->getMaxCharacters()): ?>
-                <span id="message_characters_remaining" class="note"><?php echo Mage::helper('catalog')->__('Characters Remainding:')?> <strong><?php echo $_option->getMaxCharacters() ?></strong></span>
+                <span id="message_characters_remaining" class="note"><?php echo Mage::helper('catalog')->__('Characters Remainding:')?> <strong><?php echo $_option->getMaxCharacters() ?></strong></span>            
             <?php endif; ?>
         <?php endif; ?>
         

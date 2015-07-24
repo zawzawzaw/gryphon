@@ -199,13 +199,14 @@
 
                 <?php else:?>
                     <label for="coupon_code">REDEEM POINTS</label>
-                    <input <?php if($point_details['full_use']):?>type="text"<?php else:?>type="text"<?php endif;?> value="<?php if($point_details['full_use']):?><?php echo $point_details['max_use'];?><?php endif;?>"  name="points_to_be_used" class="input-text" />
+                    <input <?php if($point_details['full_use']):?>type="text"<?php else:?>type="text"<?php endif;?> value=""  name="points_to_be_used" class="input-text" />
                 <?php endif;?>
                 <?php if($this->getCustomerPoints() > 0) : ?>
                 <!-- <div class="buttons-set"> -->
                     <button class="form-button-alt button cta apply" value="<?php echo $this->__('Apply Points') ?>" onclick="discountFormPoints2.submit(false)" type="button">
                         <span><span><?php echo $this->__('Apply') ?></span></span>
                     </button>
+                    <span class="points">Accumulated Points : <?php echo $point_details['max_use'];?></span>
                 <!-- </div> -->
                 <?php endif;?>
                 <?php elseif($this->getCustomerPoints() > 0): ?>
@@ -234,13 +235,17 @@
             <?php endif;?>
             <?php echo $login_extra_box;?>
             <?php if ($points_currently_used > 0):?>
-            <p class="used-points-msg"><?php echo $this->__('You are currently using %d point(s) of your %d loyalty point(s) available.', $points_currently_used, $this->getCustomerPoints()); ?></p>
+            <!-- <p class="used-points-msg"><?php echo $this->__('You are currently using %d point(s) of your %d loyalty point(s) available.', $points_currently_used, $this->getCustomerPoints()); ?></p> -->
             <?php endif;?>
             <!-- <div class="buttons-set"> -->
                 <label for="coupon_code">REDEEM POINTS</label>
-                <input <?php if($point_details['full_use']):?>type="text"<?php else:?>type="text"<?php endif;?> value="<?php if($point_details['full_use']):?><?php echo $point_details['max_use'];?><?php endif;?>"  name="points_to_be_used" class="input-text" />
+                <input <?php if($point_details['full_use']):?>type="text"<?php else:?>type="text"<?php endif;?> value=""  name="points_to_be_used" class="input-text" />
                 <button class="form-button-alt button cta apply" type="button" onclick="discountFormPoints2.submit(false)" value="<?php echo $this->__('Remove Points') ?>"><span><span><?php echo $this->__('Remove Points') ?></span></span></button>
             <!-- </div> -->
+            <?php if ($points_currently_used > 0):?>
+                <?php $left_over = $point_details['max_use'] - $points_currently_used; ?>
+            <?php endif;?>
+            <span class="points">Accumulated Points : <?php echo (isset($left_over)) ? $left_over : $point_details['max_use'];?></span>
         </fieldset>
     </form>
     <?php endif;?>

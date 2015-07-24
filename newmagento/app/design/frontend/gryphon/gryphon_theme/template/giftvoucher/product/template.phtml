@@ -66,7 +66,10 @@ if ($_product->getTypeId() == 'giftvoucher'):
                                 if ($count % 4 == 0) {
                                     echo '<div id="div-bound-' . $template['giftcard_template_id'] . '-' . $count . '" style="display:none">';
                                 }
-                                $url = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'giftvoucher/template/images/' . $image_url_position . $image;
+                                // $url = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'giftvoucher/template/images/' . $image_url_position . $image;
+                                $no = $count;
+                                $no += 1;
+                                $url = $this->getskinUrl('images/content/design_0'.$no.'.png');                                
                                 echo '<div id="div-image-for-' . $template['giftcard_template_id'] . '-' . $count . '" class="design-radio" style="" onclick="changeSelectImages(' . $count . ')">';
                                     echo '<div class="radio-image">';
                                         echo '<img id="image-for-' . $template['giftcard_template_id'] . '-' . $count . '" src="' . $url . '" width=' . $image_type_show_width . ' height=' . $image_type_show_height . ' alt="image giftcard" style="display:inline; border: 1px solid white; margin-top: ' . $image_type_show_padding . '">';
@@ -241,21 +244,36 @@ if ($_product->getTypeId() == 'giftvoucher'):
                         image_old = 'image-for-' + templates[template_id].giftcard_template_id + '-' + image_id;
                         $('div-' + image_old).addClassName('gift-active');
 
-                        var first = "<?php echo $this->getskinUrl('images/content/design_01_ticked.png'); ?>";
+                        
+                        var first = "<?php echo $this->getskinUrl('images/content/design_01_ticked.png'); ?>";                        
                         var second = "<?php echo $this->getskinUrl('images/content/design_02_ticked.png'); ?>";                        
+                        var third = "<?php echo $this->getskinUrl('images/content/design_03_ticked.png'); ?>";                        
 
 
-                        $('div-image-for-' + templates[template_id].giftcard_template_id + '-' + image_id).down('.egcSwatch-arrow').show();
+                        $('div-image-for-' + templates[template_id].giftcard_template_id + '-' + image_id).down('.egcSwatch-arrow').show();                        
 
-                        if(image_id==1) {
-                            $('gifttext').addClassName('white');
-                            $('div-image-for-' + templates[template_id].giftcard_template_id + '-' + image_id).down('.egcSwatch-arrow').src = second;                       
-                        }else {
+                        if(image_id==0) {                            
+                            $('div-image-for-' + templates[template_id].giftcard_template_id + '-' + image_id).down('.egcSwatch-arrow').src = first; 
                             $('gifttext').removeClassName('white');  
-                            $('div-image-for-' + templates[template_id].giftcard_template_id + '-' + image_id).down('.egcSwatch-arrow').src = first;                     
-                        }
+                        }else if(image_id==1) {                            
+                            $('div-image-for-' + templates[template_id].giftcard_template_id + '-' + image_id).down('.egcSwatch-arrow').src = second; 
+                            $('gifttext').addClassName('white');  
+                        }else {                            
+                            $('div-image-for-' + templates[template_id].giftcard_template_id + '-' + image_id).down('.egcSwatch-arrow').src = third; 
+                            $('gifttext').addClassName('white');  
+                        }                    
                                         
                         image = $(image_old).src;
+                        var url = [];
+                        <?php foreach ($images as $i => $image): ?>
+                        url[<?php echo $i; ?>] = "<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'giftvoucher/template/images/' . $image; ?>";
+                        <?php endforeach; ?>
+
+                        image = url[image_id];
+
+                        
+                        // console.log(image_id);
+                        // console.log(image);
 
                         $(template_show_id).down('.giftcard-change-image').style.backgroundImage = 'url(' + image + ')';
 

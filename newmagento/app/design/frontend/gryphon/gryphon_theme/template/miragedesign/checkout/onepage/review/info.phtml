@@ -72,8 +72,54 @@ function isMobile()
     </div>
 </div>
 <?php echo $this->getChildHtml('items_before'); ?>
-<div class="row">    
-    <div class="col-md-9 col-md-push-3">
+<div class="row">   
+    <div class="col-md-3">
+        <div class="address-info">
+            <?php $billingCountry = Mage::getSingleton('checkout/session')->getQuote()->getBillingAddress()->getCountry(); ?>           
+            <?php $billingAddress = Mage::getSingleton('checkout/session')->getQuote()->getBillingAddress()->getData(); ?> 
+            <div class="billing-info">
+                <h5>Billing Address</h5>
+                <div class="address-details">
+                    <p class="title">NAME</p>
+                    <p><?php echo $billingAddress['firstname'] . ' ' . $billingAddress['lastname']; ?></p>
+                </div>
+                <div class="address-details">
+                    <p class="title">ADDRESS</p>
+                    <p><?php echo $billingAddress['street'] . ' ' . $billingAddress['city'] . ' ' . $billingAddress['postcode'] . ' ' . $billingCountry; ?></p>
+                </div>
+                <div class="address-details">
+                    <p class="title">EMAIL</p>
+                    <p><?php echo $billingAddress['email']; ?></p>
+                </div>
+                <div class="address-details">
+                    <p class="title">PHONE NUMBER</p>
+                    <p><?php echo $billingAddress['telephone']; ?></p>
+                </div>
+            </div>
+            <div class="shipping-info">
+                <?php $shippingCountry = Mage::getSingleton('checkout/session')->getQuote()->getBillingAddress()->getCountry(); ?>           
+                <?php $shippingAddress = Mage::getSingleton('checkout/session')->getQuote()->getBillingAddress()->getData(); ?> 
+                <h5>Shipping Address</h5>
+                <div class="address-details">
+                    <p class="title">NAME</p>
+                    <p><?php echo $shippingAddress['firstname'] . ' ' . $shippingAddress['lastname']; ?></p>
+                </div>
+                <div class="address-details">
+                    <p class="title">ADDRESS</p>
+                    <p><?php echo $shippingAddress['street'] . ' ' . $shippingAddress['city'] . ' ' . $shippingAddress['postcode'] . ' ' . $shippingCountry; ?></p>
+                </div>
+                <div class="address-details">
+                    <p class="title">EMAIL</p>
+                    <p><?php echo $shippingAddress['email']; ?></p>
+                </div>
+                <div class="address-details">
+                    <p class="title">PHONE NUMBER</p>
+                    <p><?php echo $shippingAddress['telephone']; ?></p>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <div class="col-md-9">
         <div class="table-responsive">
             <div id="checkout-review-table-wrapper">
                 <table class="data-table table" id="checkout-review-table">
@@ -120,52 +166,7 @@ function isMobile()
             </div>
         </div>
     </div>
-    <div class="col-md-3 col-md-pull-9">
-        <div class="address-info">
-            <?php $billingCountry = Mage::getSingleton('checkout/session')->getQuote()->getBillingAddress()->getCountry(); ?>           
-            <?php $billingAddress = Mage::getSingleton('checkout/session')->getQuote()->getBillingAddress()->getData(); ?> 
-            <div class="billing-info">
-                <h5>Billing Address</h5>
-                <div class="address-details">
-                    <p class="title">NAME</p>
-                    <p><?php echo $billingAddress['firstname'] . ' ' . $billingAddress['lastname']; ?></p>
-                </div>
-                <div class="address-details">
-                    <p class="title">ADDRESS</p>
-                    <p><?php echo $billingAddress['street'] . ' ' . $billingAddress['city'] . ' ' . $billingAddress['postcode'] . ' ' . $billingCountry; ?></p>
-                </div>
-                <div class="address-details">
-                    <p class="title">EMAIL</p>
-                    <p><?php echo $billingAddress['email']; ?></p>
-                </div>
-                <div class="address-details">
-                    <p class="title">PHONE NUMBER</p>
-                    <p><?php echo $billingAddress['telephone']; ?></p>
-                </div>
-            </div>
-            <div class="shipping-info">
-                <?php $shippingCountry = Mage::getSingleton('checkout/session')->getQuote()->getBillingAddress()->getCountry(); ?>           
-                <?php $shippingAddress = Mage::getSingleton('checkout/session')->getQuote()->getBillingAddress()->getData(); ?> 
-                <h5>Shipping Address</h5>
-                <div class="address-details">
-                    <p class="title">NAME</p>
-                    <p><?php echo $shippingAddress['firstname'] . ' ' . $shippingAddress['lastname']; ?></p>
-                </div>
-                <div class="address-details">
-                    <p class="title">ADDRESS</p>
-                    <p><?php echo $shippingAddress['street'] . ' ' . $shippingAddress['city'] . ' ' . $shippingAddress['postcode'] . ' ' . $shippingCountry; ?></p>
-                </div>
-                <div class="address-details">
-                    <p class="title">EMAIL</p>
-                    <p><?php echo $shippingAddress['email']; ?></p>
-                </div>
-                <div class="address-details">
-                    <p class="title">PHONE NUMBER</p>
-                    <p><?php echo $shippingAddress['telephone']; ?></p>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 </div>
 <!-- <div class="cart-collaterals row" id="confirmation">
     <div class="col2-set col-md-6">

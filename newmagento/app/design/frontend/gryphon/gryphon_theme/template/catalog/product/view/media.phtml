@@ -79,16 +79,40 @@
         <div class="fa fa-chevron-right next-image-button"></div>
         <div class="fa fa-chevron-left prev-image-button"></div>
     <?php else: ?>
+        <div class="carousel">
+            <div class="carousel-inner">
         <?php
+        $i = 1;
         foreach ($this->getGalleryImages() as $_image): ?>
-            <li>             
+            <div class="item <?php if($i==1): ?>active<?php endif; ?>">
                 <img class="img-responsive" src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(700, 526); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>"/>             
-            </li>
+            </div>
         <?php
             // $_img = '<img id="image" class="img-responsive" src="'.$this->helper('catalog/image')->init($_product, 'image').'" alt="'.$this->escapeHtml($this->getImageLabel()).'" title="'.$this->escapeHtml($this->getImageLabel()).'" />';
             // echo $_helper->productAttribute($_product, $_img, 'image');
+            $i++;
         endforeach;
         ?>
+            </div>
+        </div>
+
+        <div class="fa fa-chevron-right next-image-button"></div>
+        <div class="fa fa-chevron-left prev-image-button"></div>    
+        <script>
+        jQuery(document).ready(function($){
+            $('.carousel').carousel({
+                interval: false
+            });
+            $('.next-image-button').click(function(e){
+                e.preventDefault();
+                $('.carousel').carousel('next');
+            });
+            $('.prev-image-button').click(function(e){
+                e.preventDefault();
+                $('.carousel').carousel('prev');
+            });            
+        });
+        </script>
     <?php endif; ?>
 <?php else: ?>
     <?php

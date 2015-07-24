@@ -295,6 +295,48 @@
             }
         }, '.cta-list');  
 
+        $('#popular-products').on({
+            mouseenter: function() {
+                console.log($(this).data('slick-index'))
+                $(this).find('.cta-list').addClass('show');
+                $(this).find('img').addClass('hover');
+            },
+            mouseleave: function() {
+                $(this).find('.cta-list').removeClass('show');
+                $(this).find('img').removeClass('hover');
+            }
+        }, '.center-text');   
+
+        $('#popular-products').on({
+            mouseenter: function() {
+                $(this).parent().find('img').addClass('hover');
+            },
+            mouseleave: function() {                
+                $(this).parent().find('img').removeClass('hover');
+            }
+        }, '.cta-list'); 
+
+        $('#feature-products-inside').on({
+            mouseenter: function() {
+                console.log($(this).data('slick-index'))
+                $(this).find('.cta-list').addClass('show');
+                $(this).find('img').addClass('hover');
+            },
+            mouseleave: function() {
+                $(this).find('.cta-list').removeClass('show');
+                $(this).find('img').removeClass('hover');
+            }
+        }, '.each-feature');   
+
+        $('#feature-products-inside').on({
+            mouseenter: function() {
+                $(this).parent().find('img').addClass('hover');
+            },
+            mouseleave: function() {                
+                $(this).parent().find('img').removeClass('hover');
+            }
+        }, '.cta-list');  
+
         // header menus
         $('.cta-list .currency').on('click', function() {
             $('.currency-select').toggle();
@@ -437,6 +479,5 @@
                     $that.find('i').removeClass('fa-chevron-up').addClass('fa-chevron-down');
             });
         });
-
     });
 })(jQuery);

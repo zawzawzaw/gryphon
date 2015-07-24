@@ -35,10 +35,16 @@
 <?php if ($this->canApplyMsrp()): ?>
     <div class="cart-msrp-totals"><?php echo $this->__('ORDER TOTAL WILL BE DISPLAYED BEFORE YOU SUBMIT THE ORDER'); ?></div>
 <?php else: ?>
-    <div id="shopping-cart-totals-table-test">
+	
+    <div id="shopping-cart-totals-table">
         <!--<tfoot>
-            <?php //echo $this->renderTotals('footer'); ?>
+            <?php echo $this->renderTotals('footer'); ?>
         </tfoot>-->
-            <?php echo $this->renderTotals(); ?>
+            <?php //echo $this->renderTotals(); ?>
+
+            <?php $_colspan = $this->helper('tax')->displayCartBothPrices() ? 5 : 3; ?>
+		    <?php echo $this->renderTotals(null, $_colspan); ?>
+		    <?php echo $this->renderTotals('footer', $_colspan); ?>    
+
     </div>
 <?php endif; ?>

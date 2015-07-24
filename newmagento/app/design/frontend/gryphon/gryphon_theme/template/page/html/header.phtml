@@ -255,6 +255,9 @@ $quoteData= $quote->getData();
 	</header>
 </div>
 <div id="header-wrapper" class="visible-md visible-lg"><!-- container-fluid -->
+	<div class="marquee">
+		<p>Get 10% off discount from your first purchase until 17th of jan with promo code: shopnow</p>
+	</div>
 	<header id="main-header" class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -283,7 +286,27 @@ $quoteData= $quote->getData();
 						<div class="cta">
 							<ul class="cta-list">
 								<li>
-									<a href="#" class="currency"><span class="hidden-xs hidden-sm"><i class="fa fa-dollar"></i>Currency</span></a>									
+									<a href="#" class="currency"><span class="hidden-xs hidden-sm">	
+									<?php $currency_code = Mage::app()->getStore()->getCurrentCurrencyCode(); ?>																	
+									<?php if($currency_code=='SGD'): ?>
+										<i class="currency-icon">S</i><i class="fa fa-dollar"></i>
+									<?php elseif($currency_code=='AUD'): ?>
+										<i class="currency-icon">A</i><i class="fa fa-dollar"></i>
+									<?php elseif($currency_code=='HKD'): ?>
+										<i class="currency-icon">HK</i><i class="fa fa-dollar"></i>
+									<?php elseif($currency_code=='JPY'): ?>
+										<i class="fa fa-jpy"></i>
+									<?php elseif($currency_code=='EUR'): ?>
+										<i class="fa fa-eur"></i>
+									<?php elseif($currency_code=='GBP'): ?>
+										<i class="fa fa-gbp"></i>
+									<?php elseif($currency_code=='CNY'): ?>
+										<i class="fa fa-cny"></i>
+									<?php elseif($currency_code=='MYR'): ?>
+										<i class="currency-icon">MYR</i>
+									<?php else: ?>
+										<i class="fa fa-dollar"></i>
+									<?php endif; ?> Currency</span></a>									
 								</li>
 								<li>
 									<a href="#" class="search"><span class="hidden-xs hidden-sm">Search</span></a>									

@@ -1,10 +1,21 @@
 <?php if (($_products = $this->getProductCollection()) && $_products->getSize()): ?>
-<div class=" most_viewed">
-<div class="mv_title"><?php echo $this->__('These Products Are Popular Right Now!') ?></div>
+
 <?php $_collectionSize = 5;//count($_products->getItems()); echo $_collectionSize; ?>
-<ul class="products-grid" id="products-grid-table">
+
 <?php $i=1; foreach ($_products->getItems() as $_product): ?>
-    <li id="td_<?php echo $i;?>" <?php if($i%5==0 or $i==$_collectionSize){echo 'class="last"';} ?> >
+    <div class="center-text">
+        <a href="<?php echo $_product->getProductUrl() ?>">
+            <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(150, 150); ?>" alt="tea <?php echo $i ?>">
+            <p class="caption"><?php echo $this->htmlEscape($_product->getName()) ?></p>
+            <?php $product_data = $_product->getData(); ?>
+            <p class="caption-2"><?php echo Mage::helper('core/string')->truncate($product_data['short_description'], 50); ?></p>        
+        </a>
+        <ul class="cta-list">
+            <li><a href="<?php echo $_product->getProductUrl() ?>"><img src="<?php echo $this->getSkinUrl('images/icons/magnifying-glass.png'); ?>" alt="magnifying glass"></a></li>
+            <li><a href="<?php echo $this->getAddToCartUrl($_product) ?>"><img src="<?php echo $this->getSkinUrl('images/icons/plus-sign.png'); ?>" alt="plus sign"></a></li>
+        </ul>
+    </div>
+    <!-- <li id="td_<?php echo $i;?>" <?php if($i%5==0 or $i==$_collectionSize){echo 'class="last"';} ?> >
         <div id="cont_<?php echo $i;?>">        
             <a class="product-image" href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>">
                 <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(135); ?>" width="135" height="135" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" />
@@ -32,8 +43,10 @@
                 </ul>
             </div>
         </div>
-    </li>
+    </li> -->
 <?php $i++; endforeach; $kol = $_collectionSize; ?>
-</ul>
-</div>
+
+
+
+
 <?php endif; ?>
