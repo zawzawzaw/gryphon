@@ -4,7 +4,7 @@
 
 <?php $i=1; foreach ($_products->getItems() as $_product): ?>
     <div class="center-text">
-        <a href="<?php echo $_product->getProductUrl() ?>">
+        <a href="<?php echo $_product->getProductUrl() ?>" class="product-img">
             <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(150, 150); ?>" alt="tea <?php echo $i ?>">
             <p class="caption"><?php echo $this->htmlEscape($_product->getName()) ?></p>
             <?php $product_data = $_product->getData(); ?>

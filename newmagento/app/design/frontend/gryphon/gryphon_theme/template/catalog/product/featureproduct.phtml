@@ -98,7 +98,7 @@
                                     <?php $_imgSize = 150; ?>
                                     <?php $product_data = $_product->getData(); ?>
                                     <div class="each-feature">
-                                        <a href="<?php echo $_product->getProductUrl() ?>">
+                                        <a href="<?php echo $_product->getProductUrl() ?>" class="product-img">
                                             <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->constrainOnly(false)->keepAspectRatio(true)->keepFrame(true)->resize($_imgSize, $_imgSize); ?>" class="img-responsive" alt="feature <?php echo $key + 1; ?>">
                                             <p class="caption"><?php echo $this->htmlEscape($_product->getName()) ?></p>
                                             <p><?php echo Mage::helper('core/string')->truncate($product_data['short_description'], 50); ?></p>
