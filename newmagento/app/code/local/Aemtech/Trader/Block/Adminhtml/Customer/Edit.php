@@ -50,7 +50,7 @@ class Aemtech_Trader_Block_Adminhtml_Customer_Edit extends Mage_Adminhtml_Block_
         $currentcustomergroup = Mage::registry('current_customer')->getGroupId();
         $getparams = $this->getRequest()->getParams();
         if(in_array($currentcustomergroup, $grps) || isset($getparams['fromdd'])){
-            $backurl = $this->getUrl('trader/trader/index');
+            $backurl = $this->getUrl('adminhtml/trader/index');
         } else{
             $backurl = $this->getUrl('adminhtml/customer/index');
         }

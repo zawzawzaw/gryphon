@@ -32,16 +32,14 @@
  * @package    Mage_Adminhtml
  * @author      Magento Core Team <core@magentocommerce.com>
  */
-class Aemtech_Trader_Block_Adminhtml_Customer_Edit_Tab_Account extends Mage_Adminhtml_Block_Customer_Edit_Tab_Account
-{
+class Aemtech_Trader_Block_Adminhtml_Customer_Edit_Tab_Account extends Mage_Adminhtml_Block_Customer_Edit_Tab_Account {
 
     /**
      * Initialize form
      *
      * @return Mage_Adminhtml_Block_Customer_Edit_Tab_Account
      */
-    public function initForm()
-    {
+    public function initForm() {
         $form = new Varien_Data_Form();
         $form->setHtmlIdPrefix('_account');
         $form->setFieldNameSuffix('account');
@@ -59,21 +57,22 @@ class Aemtech_Trader_Block_Adminhtml_Customer_Edit_Tab_Account extends Mage_Admi
         ));
 
         $attributes = $customerForm->getAttributes();
-        foreach($attributes as $attribute){
+
+        foreach ($attributes as $attribute) {
             /* @var $attribute Mage_Eav_Model_Entity_Attribute */
             $attribute->setFrontendLabel(Mage::helper('customer')->__($attribute->getFrontend()->getLabel()));
             $attribute->unsIsVisible();
         }
 
         $postparams = Mage::app()->getFrontController()->getRequest()->getParams();
-        if(isset($postparams['fromdd'])){
-            if($postparams['fromdd'] == "true"){
-                $backurl = $this->getUrl('trader/trader/index');
+        if (isset($postparams['fromdd'])) {
+            if ($postparams['fromdd'] == "true") {
+                $backurl = $this->getUrl('adminhtml/trader/index');
                 $eventElem = $fieldset->addField('fromdd', 'hidden', array(
                     'label' => Mage::helper('trader')->__('Is From Trader Discount?'),
                     'name' => 'fromdd',
                     'id' => 'fromdd',
-                    'value'=>$backurl)); 
+                    'value' => $backurl));
             }
         }
 
@@ -85,15 +84,15 @@ class Aemtech_Trader_Block_Adminhtml_Customer_Edit_Tab_Account extends Mage_Admi
                         ->setDisableAutoGroupChangeAttribute($customerForm->getAttribute($disableAutoGroupChangeAttributeName))
                         ->setDisableAutoGroupChangeAttributeValue($customer->getData($disableAutoGroupChangeAttributeName)));
 
-        if($customer->getId()){
+        if ($customer->getId()) {
             $form->getElement('website_id')->setDisabled('disabled');
             $form->getElement('created_in')->setDisabled('disabled');
-        } else{
+        } else {
             $fieldset->removeField('created_in');
             $form->getElement('website_id')->addClass('validate-website-has-store');
 
             $websites = array();
-            foreach(Mage::app()->getWebsites(true) as $website){
+            foreach (Mage::app()->getWebsites(true) as $website) {
                 $websites[$website->getId()] = !is_null($website->getDefaultStore());
             }
             $prefix = $form->getHtmlIdPrefix();
@@ -128,40 +127,40 @@ class Aemtech_Trader_Block_Adminhtml_Customer_Edit_Tab_Account extends Mage_Admi
 //        }
 
         $customerStoreId = null;
-        if($customer->getId()){
+        if ($customer->getId()) {
             $customerStoreId = Mage::app()->getWebsite($customer->getWebsiteId())->getDefaultStore()->getId();
         }
 
         $prefixElement = $form->getElement('prefix');
-        if($prefixElement){
+        if ($prefixElement) {
             $prefixOptions = $this->helper('customer')->getNamePrefixOptions($customerStoreId);
-            if(!empty($prefixOptions)){
+            if (!empty($prefixOptions)) {
                 $fieldset->removeField($prefixElement->getId());
                 $prefixField = $fieldset->addField($prefixElement->getId(), 'select', $prefixElement->getData(), $form->getElement('group_id')->getId()
                 );
                 $prefixField->setValues($prefixOptions);
-                if($customer->getId()){
+                if ($customer->getId()) {
                     $prefixField->addElementValues($customer->getPrefix());
                 }
             }
         }
 
         $suffixElement = $form->getElement('suffix');
-        if($suffixElement){
+        if ($suffixElement) {
             $suffixOptions = $this->helper('customer')->getNameSuffixOptions($customerStoreId);
-            if(!empty($suffixOptions)){
+            if (!empty($suffixOptions)) {
                 $fieldset->removeField($suffixElement->getId());
                 $suffixField = $fieldset->addField($suffixElement->getId(), 'select', $suffixElement->getData(), $form->getElement('lastname')->getId()
                 );
                 $suffixField->setValues($suffixOptions);
-                if($customer->getId()){
+                if ($customer->getId()) {
                     $suffixField->addElementValues($customer->getSuffix());
                 }
             }
         }
 
-        if($customer->getId()){
-            if(!$customer->isReadonly()){
+        if ($customer->getId()) {
+            if (!$customer->isReadonly()) {
                 // Add password management fieldset
                 $newFieldset = $form->addFieldset(
                         'password_fieldset', array('legend' => Mage::helper('customer')->__('Password Management'))
@@ -177,9 +176,9 @@ class Aemtech_Trader_Block_Adminhtml_Customer_Edit_Tab_Account extends Mage_Admi
 
                 // Prepare customer confirmation control (only for existing customers)
                 $confirmationKey = $customer->getConfirmation();
-                if($confirmationKey || $customer->isConfirmationRequired()){
+                if ($confirmationKey || $customer->isConfirmationRequired()) {
                     $confirmationAttribute = $customer->getAttribute('confirmation');
-                    if(!$confirmationKey){
+                    if (!$confirmationKey) {
                         $confirmationKey = $customer->getRandomConfirmationKey();
                     }
                     $element = $fieldset->addField('confirmation', 'select', array(
@@ -190,7 +189,7 @@ class Aemtech_Trader_Block_Adminhtml_Customer_Edit_Tab_Account extends Mage_Admi
 
                     // Prepare send welcome email checkbox if customer is not confirmed
                     // no need to add it, if website ID is empty
-                    if($customer->getConfirmation() && $customer->getWebsiteId()){
+                    if ($customer->getConfirmation() && $customer->getWebsiteId()) {
                         $fieldset->addField('sendemail', 'checkbox', array(
                             'name' => 'sendemail',
                             'label' => Mage::helper('customer')->__('Send Welcome Email after Confirmation')
@@ -199,7 +198,7 @@ class Aemtech_Trader_Block_Adminhtml_Customer_Edit_Tab_Account extends Mage_Admi
                     }
                 }
             }
-        } else{
+        } else {
             $newFieldset = $form->addFieldset(
                     'password_fieldset', array('legend' => Mage::helper('customer')->__('Password Management'))
             );
@@ -219,7 +218,7 @@ class Aemtech_Trader_Block_Adminhtml_Customer_Edit_Tab_Account extends Mage_Admi
                 'id' => 'sendemail',
             ));
             $customer->setData('sendemail', '1');
-            if(!Mage::app()->isSingleStoreMode()){
+            if (!Mage::app()->isSingleStoreMode()) {
                 $fieldset->addField('sendemail_store_id', 'select', array(
                     'label' => $this->helper('customer')->__('Send From'),
                     'name' => 'sendemail_store_id',
@@ -234,9 +233,9 @@ class Aemtech_Trader_Block_Adminhtml_Customer_Edit_Tab_Account extends Mage_Admi
         $sendEmail = $form->getElement($sendEmailId);
 
         $prefix = $form->getHtmlIdPrefix();
-        if($sendEmail){
+        if ($sendEmail) {
             $_disableStoreField = '';
-            if(!$isSingleMode){
+            if (!$isSingleMode) {
                 $_disableStoreField = "$('{$prefix}sendemail_store_id').disabled=(''==this.value || '0'==this.value);";
             }
             $sendEmail->setAfterElementHtml(
@@ -253,17 +252,83 @@ class Aemtech_Trader_Block_Adminhtml_Customer_Edit_Tab_Account extends Mage_Admi
             );
         }
 
-        if($customer->isReadonly()){
-            foreach($customer->getAttributes() as $attribute){
+        if ($customer->isReadonly()) {
+            foreach ($customer->getAttributes() as $attribute) {
                 $element = $form->getElement($attribute->getAttributeCode());
-                if($element){
+                if ($element) {
                     $element->setReadonly(true, true);
                 }
             }
         }
-
+        $traderFields = $form->getElement('tenure_of_contract_to');
+        $postparams = Mage::app()->getFrontController()->getRequest()->getParams();
+         
+        $traderFields->setAfterElementHtml('<script type="text/javascript" src = "http://code.jquery.com/jquery-2.1.1.js"></script>
+        <script type="text/javascript">
+        //< ![CDATA[
+        $j = jQuery.noConflict();
+        $j(document).ready(function(){ 
+        $j("#_accountgroup_id").on("change", function(){
+            
+            showHideTraderAttrs();
+        });
+        
+        showHideTraderAttrs();
+        
+        function showHideTraderAttrs(){
+            
+            var customergroup = $j("#_accountgroup_id").val();
+            var customergroupname = $j("#_accountgroup_id  option:selected").text();
+            
+            var groupids = ["6","7","8","9"]; 
+            //if(-1 == groupids.indexOf(customergroup)){
+            if(-1 == customergroupname.toLowerCase().indexOf("trader")){
+                $j("#_accountisactivated").parent().parent().hide();
+                $j("#_accountcompanyname").parent().parent().hide();
+                $j("#_accountregistrationnumber").parent().parent().hide();
+                $j("#_accountregistration_date_day").parent().parent().hide();
+                $j("#_accountregistration_date_month").parent().parent().hide();
+                $j("#_accountregistration_date_year").parent().parent().hide();
+                $j("#_accounttype_of_establishment").parent().parent().hide();
+                $j("#_accountrole_within_organization").parent().parent().hide();
+                $j("#_accountwebsite").parent().parent().hide();
+                $j("#_accounttea_consumption").parent().parent().hide();
+                $j("#_accountsecurity_question").parent().parent().hide();
+                $j("#_accountanswer").parent().parent().hide();
+                $j("#_accountmessage").parent().parent().hide();
+                $j("#_accounttype_of_mkt_sup_provided").parent().parent().hide();
+                $j("#_accountdofcontract").parent().parent().hide();
+                $j("#_accounttenure_of_contract_from").parent().parent().hide();
+                $j("#_accounttenure_of_contract_to").parent().parent().hide();
+            } else {
+                $j("#_accountisactivated").parent().parent().css("display","table-row");
+                $j("#_accountcompanyname").parent().parent().css("display","table-row");
+                $j("#_accountregistrationnumber").parent().parent().css("display","table-row");
+                $j("#_accountregistration_date_day").parent().parent().css("display","table-row");
+                $j("#_accountregistration_date_month").parent().parent().css("display","table-row");
+                $j("#_accountregistration_date_year").parent().parent().css("display","table-row");
+                $j("#_accounttype_of_establishment").parent().parent().css("display","table-row");
+                $j("#_accountrole_within_organization").parent().parent().css("display","table-row");
+                $j("#_accountwebsite").parent().parent().css("display","table-row");
+                $j("#_accounttea_consumption").parent().parent().css("display","table-row");
+                $j("#_accountsecurity_question").parent().parent().css("display","table-row");
+                $j("#_accountanswer").parent().parent().css("display","table-row");
+                $j("#_accountmessage").parent().parent().css("display","table-row");
+                $j("#_accounttype_of_mkt_sup_provided").parent().parent().css("display","table-row");
+                $j("#_accountdofcontract").parent().parent().css("display","table-row");
+                $j("#_accounttenure_of_contract_from").parent().parent().css("display","table-row");
+                $j("#_accounttenure_of_contract_to").parent().parent().css("display","table-row");
+            }
+        }
+        });
+        //]]>
+        </script>');
         $form->setValues($customer->getData());
         $this->setForm($form);
+
+        //rearrange the attributes
+        //rearrange the attributes
+
         return $this;
     }
 

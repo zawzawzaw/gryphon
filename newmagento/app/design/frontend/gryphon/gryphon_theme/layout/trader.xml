@@ -25,7 +25,7 @@
                     <reference name="head">
                         <action method="addJs"><file>mage/captcha.js</file></action>
                     </reference>
-                    <action method="setFormId"><formId>user_create</formId></action>
+                    <action method="setFormId"><formId>trader_register</formId></action>
                     <action method="setImgWidth"><width>230</width></action>
                     <action method="setImgHeight"><width>50</width></action>
                 </block>

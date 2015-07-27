@@ -30,19 +30,51 @@
     <adminhtml_index_login>
         <reference name="form.additional.info">
             <block type="captcha/captcha" name="captcha">
-                <action method="setFormId"><formId>backend_login</formId></action>
-                <action method="setImgWidth"><width>226</width></action>
-                <action method="setImgHeight"><width>50</width></action>
+                <action method="setFormId">
+                    <formId>backend_login</formId>
+                </action>
+                <action method="setImgWidth">
+                    <width>226</width>
+                </action>
+                <action method="setImgHeight">
+                    <width>50</width>
+                </action>
             </block>
         </reference>
     </adminhtml_index_login>
     <adminhtml_index_forgotpassword>
         <reference name="form.additional.info">
             <block type="captcha/captcha" name="captcha">
-                <action method="setFormId"><formId>backend_forgotpassword</formId></action>
-                <action method="setImgWidth"><width>226</width></action>
-                <action method="setImgHeight"><width>50</width></action>
+                <action method="setFormId">
+                    <formId>backend_forgotpassword</formId>
+                </action>
+                <action method="setImgWidth">
+                    <width>226</width>
+                </action>
+                <action method="setImgHeight">
+                    <width>50</width>
+                </action>
             </block>
         </reference>
     </adminhtml_index_forgotpassword>
+    <traderregister>
+        <reference name="traderregister">
+            <block type="core/text_list" name="form.additional.info">
+                <block type="captcha/captcha" name="captcha">
+                    <reference name="head">
+                        <action method="addJs"><file>mage/captcha.js</file></action>
+                    </reference>
+                    <action method="setFormId">
+                        <formId>trader-register</formId>
+                    </action>
+                    <action method="setImgWidth">
+                        <width>230</width>
+                    </action>
+                    <action method="setImgHeight">
+                        <width>50</width>
+                    </action>
+                </block>
+            </block>
+        </reference>
+    </traderregister>
 </layout>

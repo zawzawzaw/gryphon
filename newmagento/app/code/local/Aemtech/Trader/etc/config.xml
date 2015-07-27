@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Aemtech_Trader>
-            <version>0.1.0</version>
+            <version>0.1.1</version>
         </Aemtech_Trader>
     </modules>
     <frontend>
@@ -175,15 +175,7 @@
                         <method>saveCategoryData</method>
                     </category_category_observer> 
                 </observers>
-            </catalog_category_save_commit_after>
-            <controller_action_predispatch_customer_account_createpost>
-                <observers>
-                    <captcha>
-                        <class>trader/Observer</class>
-                        <method>checkUserCreate</method>
-                    </captcha>
-                </observers>
-            </controller_action_predispatch_customer_account_createpost> 
+            </catalog_category_save_commit_after> 
         </events> 
         <fieldsets>
             <customer_account> 
@@ -208,4 +200,15 @@
             </email>
         </template>
     </global>
+    <default> 
+        <captcha  translate="label"> 
+            <frontend>
+                <areas>
+                    <trader_register>
+                        <label>Trader Register</label>
+                    </trader_register>
+                </areas>
+            </frontend>
+        </captcha>
+    </default>
 </config>

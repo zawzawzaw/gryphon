@@ -1169,6 +1169,17 @@ class Rewardpoints_Model_Observer extends Mage_Core_Model_Abstract {
 
     public function recordPointsUponRegistration($observer){
         $customerId = $observer->getEvent()->getCustomer()->getEntityId();
+		
+		$groupname = '';
+		if(Mage::getSingleton('customer/session')->isLoggedIn()) {
+			$customerData = $observer->getEvent()->getCustomer();
+			$customerGroupId = $customerData->getGroupId();
+			$groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();
+		}
+		if($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium')
+		{
+			return '';
+		}
         
         if (Mage::helper('rewardpoints')->isModuleActive()){
             
