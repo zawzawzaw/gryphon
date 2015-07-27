@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<layout>
+    <default>
+        <reference name="head">
+            <action method="addCss">
+                <file>aemtech/trader/trader.css</file>
+            </action>
+        </reference>
+    </default>
+    <trader_adminhtml_trader_index> 
+        <reference name="content">
+            <block type="trader/adminhtml_trader" name="trader.discounts" template="trader/trader.phtml"/>
+        </reference>
+    </trader_adminhtml_trader_index>
+    <adminhtml_customer_edit> 
+        <reference name="customer_edit_tab_view">
+            <action method="setTemplate">
+                <template>trader/tab/view.phtml</template>
+            </action>
+        </reference>
+        <reference name="customer_edit_tab_addresses">
+            <action method="setTemplate">
+                <template>trader/tab/addresses.phtml</template>
+            </action>
+        </reference>
+    </adminhtml_customer_edit>
+</layout>

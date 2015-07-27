@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Aemtech_Trader>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Aemtech_Trader>
+    </modules>
+</config> 

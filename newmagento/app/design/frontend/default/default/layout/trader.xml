@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+     <customer_account_login> 
+        <reference name="customer_form_login">
+            <action method="setTemplate"><template>trader/customer/form/login.phtml</template></action> 
+        </reference>
+    </customer_account_login> 
+     
+    <trader_index_index>
+        <label>Customer Account Creation Form</label>
+        <!-- Mage_Customer -->
+        <remove name="right"/>
+        <remove name="left"/>
+
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <action method="setTemplate"><template>trader/trader.phtml</template></action>
+            <block type="trader/customer_trader" name="customer_trader" template="trader/trader.phtml" />
+        </reference>
+        <reference name="customer_trader">
+            <block type="core/text_list" name="form.additional.info">
+                <block type="captcha/captcha" name="captcha">
+                    <reference name="head">
+                        <action method="addJs"><file>mage/captcha.js</file></action>
+                    </reference>
+                    <action method="setFormId"><formId>user_create</formId></action>
+                    <action method="setImgWidth"><width>230</width></action>
+                    <action method="setImgHeight"><width>50</width></action>
+                </block>
+            </block>
+        </reference>
+    </trader_index_index>
+</layout> 
