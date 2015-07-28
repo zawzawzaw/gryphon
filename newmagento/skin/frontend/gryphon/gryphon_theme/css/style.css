@@ -1021,7 +1021,7 @@ ul.messages {
 }
 #page-wrapper #header-cta .cart-preview-select ul.cart-summary li {
   width: 20%;
-  text-align: center;
+  text-align: left;
 }
 #page-wrapper #header-cta .cart-preview-select ul.cart-summary li:first-child {
   width: 55%;
@@ -1029,7 +1029,7 @@ ul.messages {
 }
 #page-wrapper #header-cta .cart-preview-select ul.cart-summary li:last-child {
   text-align: left;
-  padding-left: 13px;
+  padding-left: 6px;
 }
 #page-wrapper #header-cta .cart-preview-select ul.cart-summary li span.total-items {
   font-family: 'Gotham-Medium', Verdana, sans-serif;
@@ -6542,7 +6542,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   color: #ae4e0e;
 }
 .cart #confirmation .each-details .value {
-  margin-left: 15px;
+  margin-left: 12px;
 }
 .cart #confirmation .review-totals .label {
   width: 77%!important;
@@ -6956,10 +6956,6 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   float: right;
   margin-right: 10px;
 }
-.cart #checkout-step-billing .remember-me-box,
-.cart #checkout-step-shipping .remember-me-box {
-  display: none;
-}
 .cart #checkout-success {
   text-align: center;
   width: 615px;
@@ -7003,11 +6999,49 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .cart #checkout-success button.continue:hover {
   background-color: #ae4e0e;
 }
+.cart #co-billing-form .intl-tel-input .flag-dropdown,
+.cart #co-billing-form .intl-tel-input .selected-flag {
+  width: 100%;
+}
+.cart #co-billing-form .intl-tel-input .selected-flag .arrow {
+  left: auto;
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: url(../images/icons/dropdown.png) no-repeat 0px 11px;
+  position: absolute;
+  display: block;
+  right: 0px;
+  pointer-events: none;
+  top: 0px;
+  border: none;
+}
+.cart #co-billing-form .intl-tel-input input[type="text"] {
+  padding-left: 45px;
+}
+.cart #co-billing-form #billing_phone_no,
+.cart #co-billing-form #shipping_phone_no,
+.cart #co-billing-form #billing_fax_no,
+.cart #co-billing-form #shipping_fax_no {
+  width: 100px!important;
+  padding-left: 45px;
+}
+.cart #co-billing-form #billing_phone_no_2,
+.cart #co-billing-form #shipping_phone_no_2,
+.cart #co-billing-form #billing_fax_no_2,
+.cart #co-billing-form #shipping_fax_no_2 {
+  width: 162px;
+  display: inline-block;
+  margin-left: 8px;
+}
+.cart #co-billing-form .hide-input {
+  display: none;
+}
 .checkout-onepage-success {
   padding-top: 60px;
 }
 .account {
-  margin-top: 85px!important;
+  margin-top: 115px!important;
   /*padding-bottom: 85px!important;*/
   padding-bottom: 120px!important;
 }

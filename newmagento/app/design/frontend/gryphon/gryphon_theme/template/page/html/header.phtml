@@ -38,7 +38,7 @@ $quoteData= $quote->getData();
 				<?php 
 					$cart = Mage::getModel('checkout/cart')->getQuote();
 					$cartQty = $this->helper('checkout/cart')->getSummaryCount();
-					$cartTotal = $this->helper('checkout/cart')->getQuote()->getGrandTotal();
+					$cartTotal = Mage::getSingleton('checkout/cart')->getQuote()->getSubtotal();
 				?>
 				<?php if ($cartQty>0): ?>							        
 					    
@@ -53,14 +53,14 @@ $quoteData= $quote->getData();
 					    $productName = $item->getProduct()->getName();
 					    $productPrice = $item->getProduct()->getPrice();
 					    $productQty = $item->getQty();
-					    $priceInclVat = $item->getRowTotalInclTax();
+					    $price = $item->getRowTotal();
 					    $productImage = Mage::helper('catalog/image')->init($item->getProduct(), 'thumbnail');
 					    
 					?>
 					<ul class="cart-content">							
 						<li><img src="<?php echo $productImage; ?>" alt=""><span><?php echo $productName; ?></span></li>
 						<li><?php echo $productQty; ?></li>
-						<li><?php echo Mage::helper('core')->currency($priceInclVat, true, false); ?></li>
+						<li><?php echo Mage::helper('core')->formatPrice($price, true); ?></li>
 					</ul>
 					<?php
 					}
@@ -72,11 +72,11 @@ $quoteData= $quote->getData();
 				            <?php echo '<li><span class="total-items">'.$cartQty.' ITEMS</span></li>'; ?>
 				        <?php endif; ?>
 				        <li><span class="sub-total">SUB TOTAL</span></li>									
-				        <li><span class="sub-total-amount"><?php echo Mage::helper('core')->currency($cartTotal, true, false); ?></span></li>							
+				        <li><span class="sub-total-amount"><?php echo Mage::helper('core')->formatPrice($cartTotal, true); ?></span></li>							
 					</ul>
 
 					<div class="cta-btns">
-						<a href="<?php echo $this->getUrl('store');?>" class="continue-shopping"><button type="button" class="cta button"><span><span>Back to Shopping</span></span></button></a>
+						<a href="<?php echo $this->getUrl('store.html');?>" class="continue-shopping"><button type="button" class="cta button"><span><span>Back to Shopping</span></span></button></a>
       						<a href="<?php echo $this->getUrl('checkout/cart'); ?>" class="shopping-cart"><button type="button" class="cta button"><span><span>Shopping Cart</span></span></button></a>
 					</div>
 				<?php else: ?>
@@ -344,7 +344,7 @@ $quoteData= $quote->getData();
 							<?php 
 								$cart = Mage::getModel('checkout/cart')->getQuote();
 								$cartQty = $this->helper('checkout/cart')->getSummaryCount();
-								$cartTotal = $this->helper('checkout/cart')->getQuote()->getGrandTotal();
+								$cartTotal = Mage::getSingleton('checkout/cart')->getQuote()->getSubtotal();
 							?>
 							<?php if ($cartQty>0): ?>							        
 								    
@@ -359,14 +359,14 @@ $quoteData= $quote->getData();
 								    $productName = $item->getProduct()->getName();
 								    $productPrice = $item->getProduct()->getPrice();
 								    $productQty = $item->getQty();
-								    $priceInclVat = $item->getRowTotalInclTax();
+								    $price = $item->getRowTotal();
 								    $productImage = Mage::helper('catalog/image')->init($item->getProduct(), 'thumbnail');
 								    
 								?>
 								<ul class="cart-content">							
 									<li><img src="<?php echo $productImage; ?>" alt=""><span><?php echo $productName; ?></span></li>
 									<li><?php echo $productQty; ?></li>
-									<li><?php echo Mage::helper('core')->currency($priceInclVat, true, false); ?></li>
+									<li><?php echo Mage::helper('core')->formatPrice($price, true); ?></li>
 								</ul>
 								<?php
 								}
@@ -378,11 +378,11 @@ $quoteData= $quote->getData();
 							            <?php echo '<li><span class="total-items">'.$cartQty.' ITEMS</span></li>'; ?>
 							        <?php endif; ?>
 							        <li><span class="sub-total">SUB TOTAL</span></li>									
-							        <li><span class="sub-total-amount"><?php echo Mage::helper('core')->currency($cartTotal, true, false); ?></span></li>							
+							        <li><span class="sub-total-amount"><?php echo Mage::helper('core')->formatPrice($cartTotal, true); ?></span></li>							
 								</ul>
 
 								<div class="cta-btns">
-									<a href="<?php echo $this->getUrl('store');?>" class="continue-shopping"><button type="button" class="cta button"><span><span>Back to Shopping</span></span></button></a>
+									<a href="<?php echo $this->getUrl('store.html');?>" class="continue-shopping"><button type="button" class="cta button"><span><span>Back to Shopping</span></span></button></a>
             						<a href="<?php echo $this->getUrl('checkout/cart'); ?>" class="shopping-cart"><button type="button" class="cta button"><span><span>Shopping Cart</span></span></button></a>
 								</div>
 							<?php else: ?>

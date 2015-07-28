@@ -31,7 +31,7 @@
 <?php if ($this->includeTax() && $this->getTotalExclTax()>=0):?>
 <div class="each-details">
     <div style="<?php echo $this->getStyle() ?>" class="a-right label grandtotal" colspan="<?php echo $this->getColspan(); ?>">
-        <strong><?php echo $this->helper('tax')->__('Grand Total Excl. Tax')?></strong>
+        <strong><?php echo $this->helper('tax')->__('Total Excl. Tax')?></strong>
     </div>
     <div style="<?php echo $this->getStyle() ?>" class="a-right value grandtotal">
         <strong><?php echo $this->helper('checkout')->formatPrice($this->getTotalExclTax()) ?></strong>
@@ -40,7 +40,7 @@
 <?php echo $this->renderTotals('taxes', $this->getColspan()); ?>
 <div class="each-details">
     <div style="<?php echo $this->getStyle() ?>" class="a-right label grandtotal" colspan="<?php echo $this->getColspan(); ?>">
-        <strong><?php echo $this->helper('tax')->__('Grand Total Incl. Tax')?></strong>
+        <strong><?php echo $this->helper('tax')->__('Total Incl. Tax')?></strong>
     </div>
     <div style="<?php echo $this->getStyle() ?>" class="a-right value grandtotal">
         <strong><?php echo $this->helper('checkout')->formatPrice($this->getTotal()->getValue()) ?></strong>
@@ -49,7 +49,7 @@
 <?php else:?>
 <div class="each-details grand-total">
     <div style="<?php echo $this->getStyle() ?>" class="a-right label grandtotal" colspan="<?php echo $this->getColspan(); ?>">
-        <p><?php echo $this->getTotal()->getTitle() ?></p>
+        <p><?php //echo $this->getTotal()->getTitle() ?>TOTAL</p>
     </div>
     <div style="<?php echo $this->getStyle() ?>" class="a-right value grandtotal">
         <p><?php echo strip_tags($this->helper('checkout')->formatPrice($this->getTotal()->getValue())) ?></p>

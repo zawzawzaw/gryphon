@@ -526,7 +526,19 @@ Shipping.prototype = {
             shippingRegionUpdater.update();
             $('shipping:region_id').value = $('billing:region_id').value;
             $('shipping:region').value = $('billing:region').value;
-            //shippingForm.elementChildLoad($('shipping:country_id'), this.setRegionValue.bind(this));
+
+            $('shipping_phone_no_2').value = $('billing_phone_no_2').value;
+
+            var countryCode = jQuery("#billing_phone_no").intlTelInput("getSelectedCountryData");           
+            jQuery("#shipping_phone_no").intlTelInput("selectCountry", countryCode.iso2);           
+            
+
+            $('shipping_fax_no_2').value = $('billing_fax_no_2').value;
+
+            var countryCode = jQuery("#billing_fax_no").intlTelInput("getSelectedCountryData");           
+            jQuery("#shipping_fax_no").intlTelInput("selectCountry", countryCode.iso2);           
+            
+            
         } else {
             $('shipping-address-select').value = $('billing-address-select').value;
         }

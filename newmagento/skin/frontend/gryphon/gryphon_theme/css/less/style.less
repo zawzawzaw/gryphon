@@ -1199,14 +1199,14 @@ ul.messages {
           padding-top: 8px;
           li {
             width: 20%;
-            text-align: center;
+            text-align: left;
             &:first-child {
               width: 55%;
               text-align: left;
             }  
             &:last-child {
               text-align: left;
-              padding-left: 13px;
+              padding-left: 6px;
             }
             span.total-items {
               .gotham-medium;
@@ -6595,7 +6595,7 @@ div.product {
       }
       .value {
         // margin-left: 0px;
-        margin-left: 15px;
+        margin-left: 12px;
       }
        
     }
@@ -6648,7 +6648,7 @@ div.product {
         border: none;
         padding-left: 20px;
         text-transform: uppercase;
-      }
+      }      
       button.apply {
         .gotham-medium;
         font-size: 11px;
@@ -6998,7 +6998,7 @@ div.product {
     }
 
     .remember-me-box {
-      display: none;
+      // display: none;
     }
   }
 
@@ -7042,6 +7042,42 @@ div.product {
       }
     }
   }
+
+  #co-billing-form {
+    .intl-tel-input{
+      .flag-dropdown, .selected-flag{
+        width: 100%;
+      }
+      .selected-flag .arrow{
+        left: auto;
+        content: '';
+        width:20px; 
+        height:20px;
+        background:url(../images/icons/dropdown.png) no-repeat 0px 11px;
+        position:absolute;
+        display:block;
+        right: 0px;
+        pointer-events:none;
+        top: 0px;
+        border: none;
+      }
+      input[type="text"]{
+        padding-left: 45px;
+      }
+    }
+    #billing_phone_no, #shipping_phone_no, #billing_fax_no, #shipping_fax_no {
+      width: 100px!important;
+      padding-left: 45px;
+    }
+    #billing_phone_no_2, #shipping_phone_no_2, #billing_fax_no_2, #shipping_fax_no_2 {
+      width: 162px;
+      display: inline-block;
+      margin-left: 8px;
+    }
+    .hide-input {
+      display: none;
+    }
+  }
 }
 
 .checkout-onepage-success {
@@ -7054,7 +7090,7 @@ div.product {
 //////////////////////
 
 .account {
-  margin-top: 85px!important;
+  margin-top: 115px!important;
   /*padding-bottom: 85px!important;*/
   padding-bottom: 120px!important;
   @media all and (max-width: 992px) {
