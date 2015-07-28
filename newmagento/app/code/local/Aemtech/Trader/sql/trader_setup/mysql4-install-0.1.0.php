@@ -12,7 +12,7 @@ try {
         'type' => 'int',
         'input' => 'select',
         'label' => 'Is Activated',
-        'position' => 100,
+        'sort_order' => 100,
         'source' => 'eav/entity_attribute_source_boolean',
         'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
         'required' => false,
@@ -37,7 +37,7 @@ try {
     $installer->addAttribute('customer', 'companyname', array(
         'label' => 'Company Name',
         'type' => 'varchar',
-        'position' => 101,
+        'sort_order' => 101,
         'input' => 'text',
         'source' => '',
         'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
@@ -56,8 +56,8 @@ try {
     $installer->addAttribute('customer', 'registrationnumber', array(
         'label' => 'Business Registration Number',
         'type' => 'varchar',
-        'input' => 'text', 
-        'position' => 102,
+        'input' => 'text',
+        'sort_order' => 102,
         'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
         'required' => false,
         'user_defined' => true,
@@ -75,8 +75,8 @@ try {
     $installer->addAttribute('customer', 'registration_date_day', array(
         'type' => 'int',
         'input' => 'select',
-        'position' => 103,
-        'label' => 'Bussiness Registration Day', 
+        'sort_order' => 103,
+        'label' => 'Bussiness Registration Day',
         'source' => 'eav/entity_attribute_source_table',
         'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
         'required' => false,
@@ -98,15 +98,15 @@ try {
     $installer->addAttribute('customer', 'registration_date_month', array(
         'type' => 'int',
         'input' => 'select',
-        'position' => 104,
-        'label' => 'Bussiness Registration Month', 
+        'sort_order' => 104,
+        'label' => 'Bussiness Registration Month',
         'source' => 'eav/entity_attribute_source_table',
         'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
         'required' => false,
         'user_defined' => true,
         'option' => array(
             'values' =>
-            array(1=>'Jan', 2=>'Feb', 3=>'Mar', 4=>'Apr', 5=>'May', 6=>'June', 7=>'July', 8=>'Aug', 9=>'Sep', 10=>'Oct', 11=>'Nov', 12=>'Dec')
+            array(1 => 'Jan', 2 => 'Feb', 3 => 'Mar', 4 => 'Apr', 5 => 'May', 6 => 'June', 7 => 'July', 8 => 'Aug', 9 => 'Sep', 10 => 'Oct', 11 => 'Nov', 12 => 'Dec')
         ),
     ));
 
@@ -120,8 +120,8 @@ try {
     $installer->addAttribute('customer', 'registration_date_year', array(
         'type' => 'int',
         'input' => 'select',
-        'position' => 105,
-        'label' => 'Bussiness Registration Year', 
+        'sort_order' => 105,
+        'label' => 'Bussiness Registration Year',
         'source' => 'eav/entity_attribute_source_table',
         'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
         'required' => false,
@@ -142,8 +142,8 @@ try {
     $installer->addAttribute('customer', 'type_of_establishment', array(
         'type' => 'varchar',
         'input' => 'select',
-        'position' => 106,
-        'label' => 'Type of Establishment', 
+        'sort_order' => 106,
+        'label' => 'Type of Establishment',
         'source' => 'eav/entity_attribute_source_table',
         'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
         'required' => false,
@@ -171,7 +171,7 @@ try {
     $installer->addAttribute('customer', 'role_within_organization', array(
         'type' => 'varchar',
         'input' => 'select',
-        'position' => 107,
+        'sort_order' => 107,
         'label' => 'Role within Organization',
         'source' => 'eav/entity_attribute_source_table',
         'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
@@ -199,7 +199,7 @@ try {
     $installer->addAttribute('customer', 'website', array(
         'label' => 'Website',
         'type' => 'varchar',
-        'position' => 108,
+        'sort_order' => 108,
         'input' => 'text',
         'source' => '',
         'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
@@ -218,7 +218,7 @@ try {
         'label' => 'Estimated Monthly Tea Consumption (Number of Cups)',
         'type' => 'int',
         'input' => 'text',
-        'position' => 109,
+        'sort_order' => 109,
         'source' => '',
         'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
         'required' => false,
@@ -235,7 +235,7 @@ try {
     $installer->addAttribute('customer', 'security_question', array(
         'type' => 'varchar',
         'input' => 'select',
-        'position' => 110,
+        'sort_order' => 110,
         'label' => 'Security Question',
         'source' => 'eav/entity_attribute_source_table',
         'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
@@ -261,7 +261,7 @@ try {
     $installer->addAttribute('customer', 'answer', array(
         'label' => 'Answer',
         'type' => 'varchar',
-        'position' => 111,
+        'sort_order' => 111,
         'input' => 'text',
         'source' => '',
         'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
@@ -280,7 +280,7 @@ try {
         'label' => 'Message / Enquiry',
         'type' => 'text',
         'input' => 'textarea',
-        'position' => 112,
+        'sort_order' => 112,
         'source' => '',
         'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
         'required' => false,
@@ -298,7 +298,7 @@ try {
         'label' => 'Type of Marketing support provided',
         'type' => 'varchar',
         'input' => 'textarea',
-        'position' => 113,
+        'sort_order' => 113,
         'source' => '',
         'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
         'required' => false,
@@ -316,7 +316,7 @@ try {
         'label' => 'Date of contract',
         'input' => 'date',
         'type' => 'datetime',
-        'position' => 114,
+        'sort_order' => 114,
         'source' => 'eav/entity_attribute_backend_datetime',
         'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
         'required' => false,
@@ -334,7 +334,7 @@ try {
         'label' => 'Tenure of Contract From',
         'input' => 'date',
         'type' => 'datetime',
-       'position' => 115, 
+        'sort_order' => 115,
         'backend' => 'eav/entity_attribute_backend_datetime',
         'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
         'required' => false,
@@ -351,7 +351,7 @@ try {
     $installer->addAttribute('customer', 'tenure_of_contract_to', array(
         'label' => 'Tenure of Contract To',
         'input' => 'date',
-        'position' => 116,
+        'sort_order' => 116,
         'type' => 'datetime',
         'backend' => 'eav/entity_attribute_backend_datetime',
         'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
@@ -365,12 +365,12 @@ try {
                 'customer_account_edit', 'customer_account_create', 'adminhtml_customer'
             ))
             ->save();
-    
+
     $installer->addAttribute('customer_address', 'mobile_no_2', array(
         'label' => 'Mobile Number',
         'type' => 'varchar',
         'input' => 'text',
-        'position' => 118,
+        'sort_order' => 118,
         'source' => '',
         'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
         'required' => false,
@@ -383,11 +383,11 @@ try {
                 'customer_account_edit', 'customer_account_create', 'adminhtml_customer'
             ))
             ->save();
-    
+
     $installer->addAttribute('customer', 'istrader', array(
         'type' => 'int',
         'input' => 'select',
-        'position' => 130,
+        'sort_order' => 130,
         'label' => 'Is Trader',
         'source' => 'eav/entity_attribute_source_table',
         'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,

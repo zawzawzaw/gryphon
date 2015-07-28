@@ -42,8 +42,12 @@ class Rewardpoints_Block_Adminhtml_Customer_Edit_Tabs extends Mage_Adminhtml_Blo
     {
         $block = $this->getParentBlock();
         $res =  Mage::getSingleton('admin/session')->isAllowed('admin/customer/rewardpoints');
-        $customer = Mage::registry('current_customer');
-        if ($customer->getId() && $res){
+        $customer = Mage::registry('current_customer');		
+		
+		$customerGroupId = $customer->getGroupId();
+		$groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();		
+		
+        if ($customer->getId() && $res && ($groupname!='Trader-Temp' && $groupname!='Trader-Regular' && $groupname!='Trader-Priority'&& $groupname!='Trader-Premium')){
             $block->addTab('rewardpoints', array(
                 'label'     => Mage::helper('rewardpoints')->__('Reward Points'),
                 'class'     => 'j2trewardpoints',

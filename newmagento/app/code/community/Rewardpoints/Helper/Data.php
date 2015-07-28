@@ -416,6 +416,17 @@ class Rewardpoints_Helper_Data extends Mage_Core_Helper_Abstract {
     
     
     public function getProductPointsText($product, $noCeil = false, $from_list = false, $customer_group_id = null){
+		$groupname = '';
+		if(Mage::getSingleton('customer/session')->isLoggedIn()) {
+			$customerData = Mage::getSingleton('customer/session')->getCustomer();
+			$customerGroupId = $customerData->getGroupId();
+			$groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();
+		}
+		if($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium')
+		{
+			return '';
+		}
+		
         $math_method = Mage::getStoreConfig(self::XML_PATH_POINT_MATH_GATHER, Mage::app()->getStore()->getId());
         /*if ($math_method == 1 || $math_method == 2){
             $noCeil = true;

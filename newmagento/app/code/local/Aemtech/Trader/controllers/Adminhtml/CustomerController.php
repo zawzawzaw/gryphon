@@ -234,7 +234,7 @@ class Aemtech_Trader_Adminhtml_CustomerController extends Mage_Adminhtml_Custome
         }
         $params = $this->getRequest()->getParams('fromdd');
         if(isset($params['fromdd']) && $params['fromdd'] == "1"){
-            $this->_redirect('trader/trader/index');
+            $this->_redirect('adminhtml/trader/index');
         } else{
             $this->_redirect('*/*/index');
         }
@@ -262,7 +262,7 @@ class Aemtech_Trader_Adminhtml_CustomerController extends Mage_Adminhtml_Custome
         }
         $params = $this->getRequest()->getParams('fromdd');
         if(isset($params['fromdd']) && $params['fromdd'] == "1"){
-            $this->_redirect('trader/trader/index');
+            $this->_redirect('adminhtml/trader/index');
         } else{
             $this->_redirect('*/*/index');
         }
@@ -291,7 +291,7 @@ class Aemtech_Trader_Adminhtml_CustomerController extends Mage_Adminhtml_Custome
 
         $params = $this->getRequest()->getParams('fromdd');
         if(isset($params['fromdd']) && $params['fromdd'] == "1"){
-            $this->_redirect('trader/trader/index');
+            $this->_redirect('adminhtml/trader/index');
         } else{
             $this->_redirect('*/*/index');
         }
@@ -321,7 +321,7 @@ class Aemtech_Trader_Adminhtml_CustomerController extends Mage_Adminhtml_Custome
 
         $params = $this->getRequest()->getParams('fromdd');
         if(isset($params['fromdd']) && $params['fromdd'] == "1"){
-            $this->_redirect('trader/trader/index');
+            $this->_redirect('adminhtml/trader/index');
         } else{
             $this->_redirect('*/*/index');
         }
@@ -343,7 +343,7 @@ class Aemtech_Trader_Adminhtml_CustomerController extends Mage_Adminhtml_Custome
         }
         $params = $this->getRequest()->getParams('fromdd');
         if(isset($params['fromdd']) && $params['fromdd'] == "true"){
-            $this->_redirect('trader/trader/index');
+            $this->_redirect('adminhtml/trader/index');
         } else{
             $this->_redirect('*/customer');
         }

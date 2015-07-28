@@ -11,55 +11,53 @@
  *
  * @author niranjan
  */
-class Aemtech_Trader_Model_Observer
-{
+class Aemtech_Trader_Model_Observer {
 
-    public function saveCategoryData($observer)
-    {
+    public function saveCategoryData($observer) {
         $catIDs = "";
         $category = $observer->getEvent()->getDataObject()->getId();
         $postparams = Mage::app()->getFrontController()->getRequest()->getParams();
 
         //Mage::log($category);
         //Mage::log($postparams);
-        if(isset($postparams['applytosubcats'])){
+        if (isset($postparams['applytosubcats'])) {
             $applyToSubCat = "Yes";
-        } else{
+        } else {
             $applyToSubCat = "No";
         }
         $catIDs = $category . ",";
-        if($applyToSubCat == 'Yes'){
+        if ($applyToSubCat == 'Yes') {
             $collection = Mage::getModel('catalog/category')->getCollection()
                     ->addAttributeToFilter('is_active', 1) //only active categories
                     ->addAttributeToFilter('parent_id', $category);
-            foreach($collection as $subcategory){
+            foreach ($collection as $subcategory) {
                 $catIDs .= $subcategory->getId() . ",";
             }
             $catIDs = substr($catIDs, 0, strlen($catIDs) - 1);
-        } else{
+        } else {
             $catIDs = $category;
         }
 
-        foreach($postparams['customer_group_discount'] as $key => $value){
+        foreach ($postparams['customer_group_discount'] as $key => $value) {
             $rulename = "Aemtech_DD_" . $catIDs . "_" . $key;
-            if((float) $value == 0){
+            if ((float) $value == 0) {
                 $ruleid = $this->checkIfRuleExists($key, $value, $catIDs);
-                if($ruleid >= 1){
+                if ($ruleid >= 1) {
                     $ruleDef = $this->getRuleDefinition($ruleid);
-                    if($catIDs == $ruleDef['catinids']){
+                    if ($catIDs == $ruleDef['catinids']) {
                         $this->removeCR($ruleid);
-                    } else{
+                    } else {
                         $this->addNotInCatToCR($ruleid, $catIDs, $rulename);
                     }
                     $this->removeTrader($catIDs, $key);
                 }
-            } else{
+            } else {
 
 
                 $ruleId = $this->createCRule($rulename, $key, $value, $catIDs);
                 $subcatlist = explode(",", $catIDs);
-                if(count($subcatlist) >= 2){
-                    foreach($subcatlist as $value1){
+                if (count($subcatlist) >= 2) {
+                    foreach ($subcatlist as $value1) {
                         $model = Mage::getModel('trader/trader')
                                 ->setCategoryId($value1)
                                 ->setCustomerGrpId($key)
@@ -69,7 +67,7 @@ class Aemtech_Trader_Model_Observer
                                 ->setUpdateTime(now())
                                 ->save();
                     }
-                } else{
+                } else {
                     $model = Mage::getModel('trader/trader')
                             ->setCategoryId($category)
                             ->setCustomerGrpId($key)
@@ -86,44 +84,40 @@ class Aemtech_Trader_Model_Observer
         //save the data for trader discount
     }
 
-    protected function removeTrader($categoryid, $customergrpid)
-    {
-        if(strpos($categoryid, ",")){
-            $catids = explode(",",$categoryid);
-            foreach($catids as $catids){
+    protected function removeTrader($categoryid, $customergrpid) {
+        if (strpos($categoryid, ",")) {
+            $catids = explode(",", $categoryid);
+            foreach ($catids as $catids) {
                 $model = Mage::getModel('trader/trader')->getCollection()
-                        ->addFieldToFilter('category_id', array('eq' => $catids))
-                        ->addFieldToFilter('customer_grp_id', array('eq' => $customergrpid))->getFirstItem();
+                                ->addFieldToFilter('category_id', array('eq' => $catids))
+                                ->addFieldToFilter('customer_grp_id', array('eq' => $customergrpid))->getFirstItem();
                 Mage::log($model->getSelect());
                 $model->delete();
             }
         }
     }
 
-    protected function removeCR($ruleid)
-    {
+    protected function removeCR($ruleid) {
         $CatalogPriceRule = Mage::getModel('catalogrule/rule')->getCollection()
                         ->addFieldToFilter('rule_id', $ruleid)->getFirstItem();
         $CatalogPriceRule->delete();
         $CatalogPriceRule->applyAll();
     }
 
-    protected function checkIfRuleExists($customergrpid, $discount, $categoryid)
-    {
+    protected function checkIfRuleExists($customergrpid, $discount, $categoryid) {
         $model = Mage::getModel('trader/trader')->getCollection()
                 ->addFieldToFilter('category_id', array('in' => explode(",", $categoryid)))
                 ->addFieldToFilter('customer_grp_id', array('eq' => $customergrpid));
-        if(count($model)){
-            foreach($model as $value){
+        if (count($model)) {
+            foreach ($model as $value) {
                 return $value->getPriceRuleId();
             }
-        } else{
+        } else {
             return 0;
         }
     }
 
-    protected function getRuleDefinition($ruleId)
-    {
+    protected function getRuleDefinition($ruleId) {
         $CatalogPriceRule = Mage::getModel('catalogrule/rule')->load($ruleId);
         $ruleDef = array(
             'name' => $CatalogPriceRule->getName(),
@@ -132,13 +126,12 @@ class Aemtech_Trader_Model_Observer
         return $ruleDef;
     }
 
-    protected function addNotInCatToCR($ruleid, $catid, $rulename)
-    {
+    protected function addNotInCatToCR($ruleid, $catid, $rulename) {
         $CatalogPriceRule = Mage::getModel('catalogrule/rule')->getCollection()
                         ->addFieldToFilter('rule_id', $ruleid)->getFirstItem();
-        if($CatalogPriceRule->getName() == $rulename){
+        if ($CatalogPriceRule->getName() == $rulename) {
             $CatalogPriceRule->delete();
-        } else{
+        } else {
             $catCondition = Mage::getModel('catalogrule/rule_condition_product')
                     ->setType('catalogrule/rule_condition_product')
                     ->setAttribute('category_ids')
@@ -151,10 +144,9 @@ class Aemtech_Trader_Model_Observer
         }
     }
 
-    protected function createCRule($rulename, $customergrpid, $discount, $categoryid)
-    {
+    protected function createCRule($rulename, $customergrpid, $discount, $categoryid) {
         $ruleid = $this->checkIfRuleExists($customergrpid, $discount, $categoryid);
-        if($ruleid >= 1){
+        if ($ruleid >= 1) {
             $this->addNotInCatToCR($ruleid, $categoryid, $rulename);
             $this->removeTrader($categoryid, $customergrpid);
         }
@@ -184,13 +176,12 @@ class Aemtech_Trader_Model_Observer
                 ->setAggrigator('all')
                 ->setOperator('()')
                 ->setValue($categoryid);
-        try{
+        try {
             $CatalogPriceRule->getConditions()->addCondition($catCondition);
             $CatalogPriceRule->save();
             $CatalogPriceRule->applyAll();
             return $CatalogPriceRule->getId();
-        }
-        catch(Exception $e){
+        } catch (Exception $e) {
             Mage::getSingleton('core/session')->addError(Mage::helper('catalog')->__($e->getMessage()));
             return;
         }
@@ -202,23 +193,23 @@ class Aemtech_Trader_Model_Observer
      * @param Varien_Event_Observer $observer
      * @return Mage_Captcha_Model_Observer
      */
-    public function checkUserCreate($observer)
-    {
-        $formId = 'user_create';
+    public function checkUserCreate($observer) {
+        $formId = 'trader_register';
         $captchaModel = Mage::helper('captcha')->getCaptcha($formId);
-        if($captchaModel->isRequired()){
+        if ($captchaModel->isRequired()) {
             $controller = $observer->getControllerAction();
             $postparams = Mage::app()->getFrontController()->getRequest()->getParams();
             $formtype = $postparams['formtype'];
-            if(!$captchaModel->isCorrect($this->_getCaptchaString($controller->getRequest(), $formId))){
+            $userCaptcha = $this->_getCaptchaString($controller->getRequest(), $formId);
+            if (!$captchaModel->isCorrect($userCaptcha)) {
                 //Mage::getSingleton('customer/session')->addError(Mage::helper('captcha')->__('Incorrect CAPTCHA.'));
                 $controller->setFlag('', Mage_Core_Controller_Varien_Action::FLAG_NO_DISPATCH, true);
                 Mage::getSingleton('customer/session')->setCustomerFormData($controller->getRequest()->getPost());
-                $session = Mage::getSingleton("core/session");
+                $session = Mage::getSingleton("customer/session");
                 $session->addError("Incorrect Captcha");
-                if($formtype == "trader"){
+                if ($formtype == "trader") {  
                     $controller->getResponse()->setRedirect(Mage::getUrl('trader'));
-                } else{
+                } else {
                     $controller->getResponse()->setRedirect(Mage::getUrl('*/*/create'));
                 }
             }
@@ -233,14 +224,12 @@ class Aemtech_Trader_Model_Observer
      * @param string $formId
      * @return string
      */
-    protected function _getCaptchaString($request, $formId)
-    {
+    protected function _getCaptchaString($request, $formId) {
         $captchaParams = $request->getPost(Mage_Captcha_Helper_Data::INPUT_NAME_FIELD_VALUE);
         return $captchaParams[$formId];
     }
 
-    public function customerSaveBefore($observer)
-    {
+    public function customerSaveBefore($observer) {
         $customer = $observer->getRequest();
         $customerdata = Mage::app()->getRequest()->getPost();
         $customerID = $customerdata['customer_id'];
@@ -253,8 +242,7 @@ class Aemtech_Trader_Model_Observer
         Mage::getSingleton('core/session')->setRSPLDDPresaveCustdata(json_encode($custdata));
     }
 
-    public function customerSaveAfter($observer)
-    {
+    public function customerSaveAfter($observer) {
         $customer = $observer->getRequest();
         $customerdata = Mage::app()->getRequest()->getPost();
         $customerID = $customerdata['customer_id'];
@@ -271,13 +259,13 @@ class Aemtech_Trader_Model_Observer
                         ->addFieldToFilter('customer_group_id', array('gt' => 0))
                         ->addFieldToFilter('customer_group_code', array('in' => array('Trader-Temp', 'Trader-Regular', 'Trader-Priority', 'Trader-Premium')))
                         ->load()->toArray();
-        foreach($groups['items'] as $value){
+        foreach ($groups['items'] as $value) {
             $tradergrps[] = $value['customer_group_id'];
         }
-        if($presaveCustData->isactivated == 0 && $postsaveCustData['isactivated'] == 1){
+        if ($presaveCustData->isactivated == 0 && $postsaveCustData['isactivated'] == 1) {
             //customer has been activated
             //check if the customer is from trader groups
-            if(in_array($presaveCustData->groupid, $tradergrps)){
+            if (in_array($presaveCustData->groupid, $tradergrps)) {
                 //yes the customer modified is trader group so need to send activation email.
                 $customerModel->sendTraderActivatedEmail();
             }
