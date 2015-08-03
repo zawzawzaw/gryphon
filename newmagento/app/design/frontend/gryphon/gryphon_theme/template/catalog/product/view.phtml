@@ -44,6 +44,7 @@ endif;
     <div class="main-product">
         <div class="image-text-content container">
             <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+                <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
                 <?php echo $this->getBlockHtml('formkey') ?>                    
                 <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
                 <input type="hidden" name="related_product" id="related-products-field" value="" />
@@ -53,8 +54,7 @@ endif;
                         <?php echo $this->getLayout()->getBlock('breadcrumbs')->toHtml(); ?>
                     </div>
                 </div>
-                <div class="row">
-                    <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
+                <div class="row">                    
                     <div class="col-md-12">
                         <?php if ($isGiftcardType) : ?>
                         <div class="gift-card-img">
@@ -77,10 +77,12 @@ endif;
                                 <p class="email-friend"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><?php echo $this->__('Email to a Friend') ?></a></p>
                             <?php endif; ?>
 
-                            <?php if (!$isGiftcardType) :?>
-                                <div class="price"><?php echo $this->getPriceHtml($_product); ?></div>
-                                <?php echo $this->getChildHtml('bundle_prices') ?>
-                                <?php echo $this->getTierPriceHtml() ?>
+                            <?php if (!$isGiftcardType) :?> 
+                                <?php if (count($_tierPrices) <= 0): ?>
+                                    <div class="price"><?php echo $this->getPriceHtml($_product); ?></div>
+                                    <?php echo $this->getChildHtml('bundle_prices') ?>
+                                    <?php //echo $this->getTierPriceHtml() ?>
+                                <?php endif; ?> 
                             <?php endif; ?>                            
 
                             <?php if ($isGiftcardType) :?>
@@ -229,8 +231,44 @@ endif;
                     </div>
                 </div>
             </form>
+            <script>
+            jQuery(document).ready(function(e){
+                if(jQuery('.messages').html()!= undefined) {
+                    jQuery('#messages_product_view').html('<ul class="messages">'+jQuery('.messages').html()+'</ul>');                
+                }
+            });
+            </script>
             <script type="text/javascript">
                 //<![CDATA[
+
+                    function do_update() {
+                        jQuery.ajax({
+                            url: '<?php echo $this->getUrl("discovertea/index/cartpreview"); ?>',
+                            dataType: 'json',
+                            type : 'getJSON',
+                            success: function(data){
+
+                                jQuery('.cart-preview-content').html('');
+                                jQuery.each(data.cart_items, function(key,value){
+
+                                    jQuery('.cart-preview-content').append('<ul class="cart-content"><li><img src="'+value.image+'" alt=""><span>'+value.name+'</span></li><li>'+value.qty+'</li><li>'+value.price+'</li></ul>');
+
+                                    jQuery('.cart-summary').find('.total-items-count').html(data.cart_qty);
+                                    jQuery('.cart-summary').find('.sub-total-amount').html(data.cart_total);
+
+                                });
+
+                                jQuery('.cart-header').show();
+                                jQuery('.cart-summary').show();
+                                jQuery('.cta-btns').show();
+                                jQuery('.cart-preview-select').show();
+                                jQuery('.cart-summary-data').find('.price').html(data.cart_total);
+                                jQuery('.cart-summary-data').find('.count').html(data.cart_qty);
+                                jQuery('.cart-summary-data span').html('<span class="price">'+data.cart_total+'</span> (<span class="count">'+data.cart_qty+'</span>)');
+                            }
+                        });
+                    }
+
                     var productAddToCartForm = new VarienForm('product_addtocart_form');
                     productAddToCartForm.submit = function(button, url) {
                         if (this.validator.validate()) {
@@ -261,6 +299,9 @@ endif;
                                       success: function(data){
                                             jQuery('#ajax_loader').hide();
                                             // alert(data.status + ": " + data.message);
+
+                                            do_update();
+
                                             jQuery('span.ajax_msg').html('Added to cart!').show().delay(5000).fadeOut();
                                       }
                                 });
@@ -335,7 +376,6 @@ endif;
                     }
 
                     jQuery(".treasure-design-img .next-image-button").click(function(){
-                        console.log('next')
                         var target_index = face_index + 1;
                         target_index = target_index > 2 ? 0 : target_index;
                         show_index(target_index);
@@ -374,9 +414,8 @@ endif;
 
                         jQuery("#message_characters_remaining").html('Characters Remainding: ' + remaining);
                         jQuery("#treasure-design-back .treasuretext-message").html(str);
-                    });
-                });
-                    
+                    });                    
+                }); 
                 </script>
             <?php endif; ?>
         </div>
