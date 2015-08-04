@@ -43,18 +43,9 @@
                 <entities>
                     <product_index>
                         <table>groupscatalog_product_idx</table>
-                    </product_index>
-                    <category_index>
-                        <table>groupscatalog_category_idx</table>
-                    </category_index>
+                    </product_index>                    
                 </entities>
-            </netzarbeiter_groupscatalog2_resource>
-            <!-- rewrite the category flat resource model to filter the flat catalog queries -->
-            <catalog_resource>
-                <rewrite>
-                    <category_flat>Netzarbeiter_GroupsCatalog2_Model_Catalog_Resource_Category_Flat</category_flat>
-                </rewrite>
-            </catalog_resource>
+            </netzarbeiter_groupscatalog2_resource>           
             <!-- rewrite the catalogseach fulltext collection to add the filter to the getSelectCountSql() method -->
             <catalogsearch_resource>
                 <rewrite>
@@ -68,8 +59,7 @@
                 </rewrite>
             </wishlist_resource>
             <sitemap_resource>
-                <rewrite>
-                    <catalog_category>Netzarbeiter_GroupsCatalog2_Model_Sitemap_Resource_Catalog_Category</catalog_category>
+                <rewrite>                    
                     <catalog_product>Netzarbeiter_GroupsCatalog2_Model_Sitemap_Resource_Catalog_Product</catalog_product>
                 </rewrite>
             </sitemap_resource>
@@ -92,10 +82,7 @@
                 <!-- The code is limited to 30 characters, that is why I leave out the namespace prefix here -->
                 <groupscatalog2_product>
                     <model>netzarbeiter_groupscatalog2/indexer_product</model>
-                </groupscatalog2_product>
-                <groupscatalog2_category>
-                    <model>netzarbeiter_groupscatalog2/indexer_category</model>
-                </groupscatalog2_category>
+                </groupscatalog2_product>               
             </indexer>
         </index>
         <netzarbeiter_groupscatalog2>
@@ -141,17 +128,8 @@
                         <method>catalogProductCollectionLoadBefore</method>
                     </netzarbeiter_groupscatalog2>
                 </observers>
-            </catalog_product_collection_apply_limitations_after>
-            
-            <catalog_category_collection_load_before>
-                <observers>
-                    <netzarbeiter_groupscatalog2>
-                        <type>singleton</type>
-                        <model>netzarbeiter_groupscatalog2/observer</model>
-                        <method>catalogCategoryCollectionLoadBefore</method>
-                    </netzarbeiter_groupscatalog2>
-                </observers>
-            </catalog_category_collection_load_before>
+            </catalog_product_collection_apply_limitations_after>            
+           
             <catalog_product_load_after>
                 <observers>
                     <netzarbeiter_groupscatalog2>
@@ -160,16 +138,7 @@
                         <method>catalogProductLoadAfter</method>
                     </netzarbeiter_groupscatalog2>
                 </observers>
-            </catalog_product_load_after>
-            <catalog_category_load_after>
-                <observers>
-                    <netzarbeiter_groupscatalog2>
-                        <type>singleton</type>
-                        <model>netzarbeiter_groupscatalog2/observer</model>
-                        <method>catalogCategoryLoadAfter</method>
-                    </netzarbeiter_groupscatalog2>
-                </observers>
-            </catalog_category_load_after>
+            </catalog_product_load_after>            
             <catalog_product_collection_before_add_count_to_categories>
                 <observers>
                     <netzarbeiter_groupscatalog2>
@@ -200,16 +169,7 @@
         </events>
     </frontend>
     <adminhtml>
-        <events>
-            <catalog_category_save_after>
-                <observers>
-                    <netzarbeiter_groupscatalog2>
-                        <type>model</type>
-                        <model>netzarbeiter_groupscatalog2/observer</model>
-                        <method>catalogCategorySaveAfter</method>
-                    </netzarbeiter_groupscatalog2>
-                </observers>
-            </catalog_category_save_after>
+        <events>            
             <customer_group_save_after>
                 <observers>
                     <netzarbeiter_groupscatalog2>
@@ -227,16 +187,7 @@
                         <method>controllerActionPredispatchAdminhtmlCatalogProductEdit</method>
                     </netzarbeiter_groupscatalog>
                 </observers>
-            </controller_action_predispatch_adminhtml_catalog_product_edit>
-            <controller_action_predispatch_adminhtml_catalog_category_edit>
-                <observers>
-                    <netzarbeiter_groupscatalog>
-                        <type>model</type>
-                        <class>netzarbeiter_groupscatalog2/observer</class>
-                        <method>controllerActionPredispatchAdminhtmlCatalogCategoryEdit</method>
-                    </netzarbeiter_groupscatalog>
-                </observers>
-            </controller_action_predispatch_adminhtml_catalog_category_edit>
+            </controller_action_predispatch_adminhtml_catalog_product_edit>           
         </events>
         <translate>
             <modules>

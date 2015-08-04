@@ -78,11 +78,11 @@ endif;
                             <?php endif; ?>
 
                             <?php if (!$isGiftcardType) :?> 
-                                <?php if (count($_tierPrices) <= 0): ?>
+                                <?php //if (count($_tierPrices) <= 0): ?>
                                     <div class="price"><?php echo $this->getPriceHtml($_product); ?></div>
                                     <?php echo $this->getChildHtml('bundle_prices') ?>
                                     <?php //echo $this->getTierPriceHtml() ?>
-                                <?php endif; ?> 
+                                <?php //endif; ?> 
                             <?php endif; ?>                            
 
                             <?php if ($isGiftcardType) :?>
