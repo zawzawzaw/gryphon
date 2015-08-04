@@ -47,10 +47,11 @@
                                 <label>
                                     <?php echo $this->__('Store Credits') ?>
                                 </label>                                
-                                <input class="input-text" type="text" value="<?php echo $this->getUseGiftCreditAmount() ?>" title="<?php echo $this->__('Credit') ?>" name="credit_amount" />                     
+                                <input class="input-text" type="text" value="<?php //echo $this->getUseGiftCreditAmount() ?>" title="<?php echo $this->__('Credit') ?>" name="credit_amount" />                     
                                 <button class="form-button-alt button cta apply apply_giftcard" type="button">
                                     <span><span><?php echo $this->__('Apply') ?></span></span>
-                                </button>           
+                                </button>    
+                                <span class="points"><?php echo $this->__('Accumulated Credits : %s', $this->formatBalance($_customerCredit, true)) ?></span>       
                             </div>
                             <div style="color: #A70101;padding-left: 174px;margin-top: 7px;font-size: 11px;font-weight: bold;line-height: 13px; display:none" id="giftcredit_notice"><?php echo $this->__('Please change amount')?></div>
                             <br />
@@ -131,7 +132,7 @@
                             <?php endif; ?>
                         </div>
                         <?php if (count($_giftCards)): ?>
-                            <div>
+                            <!-- <div>
                                 <label for="<?php echo $_code ?>_existed_code"><?php echo $this->__('or select from your existing Gift Card code(s)') ?></label>
                                 <div class="input-box">
                                     <select title="<?php echo $this->__('Existed Gift Card Code') ?>" class="input-select" id="<?php echo $_code ?>_existed_code" name="existed_giftvoucher_code" <?php if (!Mage::helper('giftvoucher')->isAvailableToAddCode()) echo 'disabled="true"' ?>>
@@ -141,7 +142,7 @@
                                         <?php endforeach ?>
                                     </select>
                                 </div>
-                            </div>
+                            </div> -->
                         <?php endif ?>    
                         <div style="color: #A70101;font-size: 11px;font-weight: bold;line-height: 13px;" id="giftcard_notice"></div>       
                         <div style="display:none;">

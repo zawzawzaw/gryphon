@@ -238,6 +238,35 @@ endif;
             </script>
             <script type="text/javascript">
                 //<![CDATA[
+
+                    function do_update() {
+                        jQuery.ajax({
+                            url: '<?php echo $this->getUrl("discovertea/index/cartpreview"); ?>',
+                            dataType: 'json',
+                            type : 'getJSON',
+                            success: function(data){
+
+                                jQuery('.cart-preview-content').html('');
+                                jQuery.each(data.cart_items, function(key,value){
+
+                                    jQuery('.cart-preview-content').append('<ul class="cart-content"><li><img src="'+value.image+'" alt=""><span>'+value.name+'</span></li><li>'+value.qty+'</li><li>'+value.price+'</li></ul>');
+
+                                    jQuery('.cart-summary').find('.total-items-count').html(data.cart_qty);
+                                    jQuery('.cart-summary').find('.sub-total-amount').html(data.cart_total);
+
+                                });
+
+                                jQuery('.cart-header').show();
+                                jQuery('.cart-summary').show();
+                                jQuery('.cta-btns').show();
+                                jQuery('.cart-preview-select').show();
+                                jQuery('.cart-summary-data').find('.price').html(data.cart_total);
+                                jQuery('.cart-summary-data').find('.count').html(data.cart_qty);
+                                jQuery('.cart-summary-data span').html('<span class="price">'+data.cart_total+'</span> (<span class="count">'+data.cart_qty+'</span>)');
+                            }
+                        });
+                    }
+
                     var productAddToCartForm = new VarienForm('product_addtocart_form');
                     productAddToCartForm.submit = function(button, url) {
                         if (this.validator.validate()) {
@@ -268,6 +297,9 @@ endif;
                                       success: function(data){
                                             jQuery('#ajax_loader').hide();
                                             // alert(data.status + ": " + data.message);
+
+                                            do_update();
+
                                             jQuery('span.ajax_msg').html('Added to cart!').show().delay(5000).fadeOut();
                                       }
                                 });

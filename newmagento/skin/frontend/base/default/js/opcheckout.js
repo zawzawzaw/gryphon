@@ -259,6 +259,8 @@ Checkout.prototype = {
     },
 
     setStepResponse: function(response){
+        console.log(response);
+
         if (response.update_section) {
             $('checkout-'+response.update_section.name+'-load').update(response.update_section.html);
         }
@@ -385,6 +387,7 @@ Billing.prototype = {
     },
 
     resetLoadWaiting: function(transport){
+        console.log(transport)
         checkout.setLoadWaiting(false);
         document.body.fire('billing-request:completed', {transport: transport});
     },
@@ -394,6 +397,7 @@ Billing.prototype = {
      There are 3 options: error, redirect or html with shipping options.
      */
     nextStep: function(transport){
+        console.log('here')
         if (transport && transport.responseText){
             try{
                 response = eval('(' + transport.responseText + ')');

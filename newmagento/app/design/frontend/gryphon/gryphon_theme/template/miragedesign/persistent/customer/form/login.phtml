@@ -47,6 +47,7 @@
     </div>
     <div class="main-content">
         <div class="image-text-content container">
+            <?php echo $this->getMessagesBlock()->toHtml() ?>
             <div class="row account-login<?php if (!$this->helper('customer')->isRegistrationAllowed()) echo ' login-only' ?>">
                 <form action="<?php echo $this->getUrl("trader/customer_account/") ?>loginpost/" method="post" id="login-form" class="scaffold-form login-form">
                     <?php echo $this->getBlockHtml('formkey'); ?>
@@ -56,8 +57,7 @@
                             <?php else: ?>
                                 <?php echo $this->__('Login'); ?>
                             <?php endif; ?></h1>
-                        <hr class="small">
-                        <?php echo $this->getMessagesBlock()->toHtml() ?>
+                        <hr class="small">                        
                         <?php if ($this->helper('customer')->isRegistrationAllowed()): ?>
                             <div class="content">
                                 <h2><?php echo $this->__('New Here?') ?></h2>

@@ -64,7 +64,7 @@
                     <?php foreach ($_orders as $_order): ?>
 
                     <div class="row order-details">
-                        <div class="col-md-1 col-sm-1 col-xs-1 order-status"><span><?php if($_order->getStatusLabel=='Complete'): ?><i class="fa fa-smile-o"></i><?php else: ?><i class="fa fa-smile-o"></i><?php endif; ?></span></div>
+                        <div class="col-md-1 col-sm-1 col-xs-1 order-status"><span><?php if($_order->getStatusLabel()=='Complete'): ?><i class="fa fa-smile-o"></i><?php else: ?><i class="fa fa-spinner fa-spin"></i><?php endif; ?></span></div>
                         <div class="col-md-1 col-sm-2 col-xs-2 order-no"><p class="order_no"><?php echo $_order->getRealOrderId() ?></p></div>
                         <div class="col-md-1 col-sm-2 col-xs-2 order-date"><p class="date"><?php echo $this->formatDate($_order->getCreatedAtStoreDate()) ?></p></div>
                         <div class="col-md-9 col-sm-6 col-xs-6">
@@ -92,7 +92,7 @@
                             <div class="row each-details view-order-details">
                                 <div class="col-md-4 col-sm-8 col-xs-8"><h2><?php echo $this->__('Sub total'); ?></h2></div>
                                 <div class="col-md-4 col-sm-4 col-xs-4 align-to-total"><h2 class="sub_total price"><?php echo $_order->formatPrice($_order->getSubtotal()) ?></h2></div>
-                                <div class="col-md-4 hidden-sm hidden-xs"><a class="add-to-cart-btn" href="<?php echo $this->getViewUrl($_order) ?>"><span><?php echo $this->__('View Order') ?></span></a></div>
+                                <div class="col-md-4 hidden-sm hidden-xs"><!-- <a class="add-to-cart-btn" href="<?php //echo $this->getViewUrl($_order) ?>"><span><?php //echo $this->__('View Order') ?></span></a> --></div>
                             </div>
                         </div>
                     </div>
@@ -110,14 +110,14 @@
                                 <div class="col-md-7 col-sm-7 col-xs-7 align-to-total"><h2 class="minus applied_discount_code price">- <?php echo $_order->formatPrice($_order->getDiscountAmount()); ?></h2></div>
                             </div>
                             <?php endif; ?>
-                            <div class="row each-details">
+                            <!-- <div class="row each-details">
                                 <div class="col-md-5 col-sm-5 col-xs-5"><h2>gift certificate</h2><span>— G6D7S6234L</span></div>
                                 <div class="col-md-7 col-sm-7 col-xs-7 align-to-total"><h2 class="minus gift_certificate price">- S$ 50.00</h2></div>
                             </div>
                             <div class="row each-details">
                                 <div class="col-md-5 col-sm-5 col-xs-5"><h2>redeemed points</h2></div>
                                 <div class="col-md-7 col-sm-7 col-xs-7 align-to-total"><h2 class="minus redeemed_points price">- S$ 2.00</h2></div>
-                            </div>
+                            </div> -->
                             <?php if ($_order->getTaxAmount()): ?>
                             <div class="row each-details">
                                 <div class="col-md-5 col-sm-5 col-xs-5"><h2><?php echo $this->__('Tax'); ?></h2></div>

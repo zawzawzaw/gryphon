@@ -8,7 +8,19 @@
             <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(150, 150); ?>" alt="tea <?php echo $i ?>">
             <p class="caption"><?php echo $this->htmlEscape($_product->getName()) ?></p>
             <?php $product_data = $_product->getData(); ?>
-            <p class="caption-2"><?php echo Mage::helper('core/string')->truncate($product_data['short_description'], 50); ?></p>        
+            <!-- <p class="caption-2"><?php //echo Mage::helper('core/string')->truncate($product_data['short_description'], 50); ?></p>         -->
+            <?php
+            $categoryIds = $_product->getCategoryIds();
+            if(count($categoryIds) ){
+                foreach ($categoryIds as $key => $categoryId) {
+                    $_category = Mage::getModel('catalog/category')->load($categoryId);
+                    $parent_category = Mage::getModel('catalog/category')->load($categoryId)->getParentCategory();    
+                    if($parent_category->getId()==5) { ?>
+                        <p><?php echo $_category->getName(); ?></p>
+            <?php   }
+                }
+            }
+            ?>
         </a>
         <ul class="cta-list">
             <li><a href="<?php echo $_product->getProductUrl() ?>"><img src="<?php echo $this->getSkinUrl('images/icons/magnifying-glass.png'); ?>" alt="magnifying glass"></a></li>

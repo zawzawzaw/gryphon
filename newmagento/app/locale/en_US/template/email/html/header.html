@@ -5,41 +5,50 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 </head>
-<body>
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
 {{var non_inline_styles}}
 <!-- Begin wrapper table -->
-<table width="100%" cellpadding="0" cellspacing="0" border="0" id="background-table">
-    <tr>
-        <td valign="top" class="container-td" align="center">
-            <table cellpadding="0" cellspacing="0" border="0" align="center" class="container-table">
-                <tr>
-                    <td>
-                        <table cellpadding="0" cellspacing="0" border="0" class="logo-container">
-                            <tr>
-                                <td class="logo">
-                                    <a href="{{store url=""}}">
-                                        <img
-                                            {{if logo_width}}
-                                            width="{{var logo_width}}"
-                                            {{else}}
-                                            width="165"
-                                            {{/if}}
-
-                                            {{if logo_height}}
-                                            height="{{var logo_height}}"
-                                            {{else}}
-                                            height="48"
-                                            {{/if}}
-
-                                            src="{{var logo_url}}"
-                                            alt="{{var logo_alt}}"
-                                            border="0"/>
-                                    </a>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td valign="top" class="top-content">
-                    <!-- Begin Content -->
+    <!-- HEADER -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td>
+                <div align="center" style="padding: 0px 15px 0px 15px;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="600" class="wrapper">
+                        <!-- LOGO/PREHEADER TEXT -->
+                        <tr>
+                            <td style="padding: 28px 0px 30px 0px; border-bottom:1px solid #ccc;" class="logo">
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    <tr>
+                                        <td align="center">
+                                            <a href="#" target="_blank" style="float:none;">
+                                                <img alt="Logo" src="http://clients.manic.com.sg/gryphon/emailer/images/logo-1.jpg" width="156" height="42" style="display: block; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px;" border="0">
+                                            </a>
+                                        </td>
+                                    </tr>                                
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0px" class="menu mobile-hide">
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    <tr>
+                                        <td align="center" class="mobile-hide">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                <tr style="font-size: 11px; line-height: 14px; letter-spacing: 0.03em; font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; color:#464646;">                                                
+                                                    <td align="center" width="20%"><a href="{{store url=''}}" style="display:inline-block; padding: 15px 0; color: #464646; text-decoration: none;">TEA</a></td>
+                                                    <td align="center" width="20%"><a href="{{store url='store/pantry.html'}}" style="display:inline-block; padding: 15px 0; color: #464646; text-decoration: none;">PANTRY</a></td>
+                                                    <td align="center" width="20%"><a href="{{store url='store/gifts.html'}}" style="display:inline-block; padding: 15px 0; color: #464646; text-decoration: none;">GIFTS</a></td>
+                                                    <td align="center" width="20%"><a href="{{store url='subscription'}}" style="display:inline-block; padding: 15px 0; color: #464646; text-decoration: none;">SUBSCRIPTION</a></td>
+                                                    <td align="center" width="20%"><a href="{{store url='wp'}}" style="display:inline-block; padding: 15px 0; color: #464646; text-decoration: none;">BLOG</a></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>

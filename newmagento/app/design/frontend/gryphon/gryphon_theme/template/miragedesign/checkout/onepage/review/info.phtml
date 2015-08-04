@@ -165,6 +165,25 @@ function isMobile()
                 <?php echo $this->getChildHtml('totals'); ?>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="action-container">
+                    <?php echo $this->getChildHtml('button') ?>
+                    <span class="please-wait" id="review-please-wait" style="display:none;">
+                        <img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>" alt="<?php echo $this->__('Submitting order information...') ?>" title="<?php echo $this->__('Submitting order information...') ?>" class="v-middle" /> <?php echo $this->__('Submitting order information...') ?>
+                    </span>
+                    <div class="we-accept we-are-here">
+                        <p>We Accept:</p>
+                        <ul>
+                            <li><i class="discover"></i></li>
+                            <li><i class="visa"></i></li>
+                            <li><i class="american-express"></i></li>
+                            <li><i class="master-card"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
 </div>
@@ -193,19 +212,7 @@ function isMobile()
             <!-- <a class="cta back-btn" href="#" onclick="checkout.back(); return false;"><small>&laquo; </small><?php echo $this->__('Back') ?></a> -->
         </div>
         <div class="col-md-5 col-md-offset-3">
-            <?php echo $this->getChildHtml('button') ?>
-            <span class="please-wait" id="review-please-wait" style="display:none;">
-                <img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>" alt="<?php echo $this->__('Submitting order information...') ?>" title="<?php echo $this->__('Submitting order information...') ?>" class="v-middle" /> <?php echo $this->__('Submitting order information...') ?>
-            </span>
-            <div class="we-accept we-are-here">
-                <p>We Accept:</p>
-                <ul>
-                    <li><i class="discover"></i></li>
-                    <li><i class="visa"></i></li>
-                    <li><i class="american-express"></i></li>
-                    <li><i class="master-card"></i></li>
-                </ul>
-            </div>
+            
         </div>
     </div>
     <script type="text/javascript">

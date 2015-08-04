@@ -6,6 +6,7 @@
         </reference>
         <reference name="content">
             <block type="checkout/onepage_shipping_method_available" name="checkout.onepage.shippingmethod.available" template="miragedesign/checkout/onepage/shipping_method/available.phtml"/>
+            <!-- <block type="checkout/onepage_shipping_method_available" name="checkout.onepage.shippingmethod.additional" template="miragedesign/checkout/onepage/shipping_method/additional.phtml"/> -->
         </reference>
     </shippingcustomiser_index_ajaxgetshipping>
 </layout>

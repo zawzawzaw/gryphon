@@ -1,0 +1,28 @@
+<?php 
+$collection_categories = Mage::getModel('catalog/category')->loadByAttribute('name', 'Collections')->getChildrenCategories();
+foreach($collection_categories as $collection_category):
+	$_category = Mage::getModel('catalog/category')->load($collection_category->getId());
+	$caturl     = $_category->getURL();
+	$catname     = $_category->getName();
+	$catdesc     = $_category->getDescription();
+	$catimgurl     = $_category->getImageUrl();
+?>
+	<div class="row collection-row">
+		
+		<div class="col-md-7">
+			<img src="<?php echo $catimgurl; ?>" class="img-responsive" alt="<?php echo $catname; ?> image">
+		</div>
+
+		<div class="col-md-5">
+			<div class="text-content">
+				<h1><?php echo $catname; ?></h1>
+				<hr class="small">
+				
+				<?php echo $catdesc; ?>				
+
+				<a href='<?php echo $caturl; ?>' class="cta read-more"><i class="fa fa-arrow-right"></i> Visit Tea Store</a>
+			</div>
+		</div>
+
+	</div>								
+<?php endforeach; ?>

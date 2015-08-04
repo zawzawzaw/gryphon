@@ -3,7 +3,7 @@
 		<div id="mobile-header-footer-copy" class="mobile-footer">
 			<h2>newsletter sign up</h2>
 			<hr class="small">
-			<p>By signing up the Gryphon Tea newsletter, be the first one to hear about our special offers, new arrivals, latest news and trends and other events.</p>
+			<p>Join our Gryphon Tea Family and be the first to learn about our latest news, and enjoy exclusive deals and invites to events</p>
 
 			<div class="search">
 				<input type="text" name="search" placeholder="Enter your email address" />
@@ -15,10 +15,12 @@
 			<h2>FOLLOW US</h2>
 			<hr class="small">
 			<ul class="share-ctas">
-				<li><a href="#" class="instagram"></a></li>
-				<li><a href="#" class="pintrest"></a></li>
-				<li><a href="#" class="twitter"></a></li>
-				<li><a href="#" class="facebook"></a></li>
+				<li><a href="https://instagram.com/gryphontea/" target="_blank" class="instagram"></a></li>
+				<li><a href="https://www.pinterest.com/gryphontea/" target="_blank" class="pintrest"></a></li>
+				<li><a href="https://www.facebook.com/gryphonteacompany" target="_blank" class="facebook"></a></li>
+				<li><a href="https://www.linkedin.com/company/gryphon-tea-company" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+				<li><a href="https://www.youtube.com/channel/UCrKNQcT3PHO-o_vQBMUlH8Q" target="_blank" class="youtube"><i class="fa fa-youtube"></i></a></li>
+				<li><a href="https://plus.google.com/+Gryphonteacompany/posts" target="_blank" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
 			</ul>
 
 			<div class="copywrite">
@@ -36,7 +38,7 @@
 				<div class="col-md-3">
 					<h2>newsletter sign up</h2>
 					<hr class="small">
-					<p>By signing up the Gryphon Tea newsletter, be the first one to hear about our special offers, new arrivals, latest news and trends and other events.</p>
+					<p>Join our Gryphon Tea Family and be the first to learn about our latest news, and enjoy exclusive deals and invites to events</p>
 
 					<div class="search">
 						<input type="text" name="search" placeholder="Enter your email address" />
@@ -49,17 +51,17 @@
 							<h2>about us</h2>
 							<hr class="small">
 							<ul>
+								<li><a href="<?php echo $this->getUrl('faq'); ?>">FAQ</a></li>															
 								<li><a href="<?php echo $this->getUrl('our-story');?>">Our Story</a></li>
 								<li><a href="http://test.gryphontea.com/magento/wp">Blog</a></li>
 								<li><a href="<?php echo $this->getUrl('careers');?>">Careers</a></li>
 								<li><a href="<?php echo $this->getUrl('trade'); ?>">Trade</a></li>
-								<li><a href="<?php echo $this->getUrl('discover-tea'); ?>">Discover Tea</a></li>
-								<li><a href="<?php echo $this->getUrl('faq'); ?>">FAQ</a></li>															
+								<li><a href="<?php echo $this->getUrl('discover-tea'); ?>">Discover Tea</a></li>								
 								<li><a href="<?php echo $this->getUrl('contact-us'); ?>">Contact Us</a></li>															
 							</ul>
 						</div>
 						<div class="store-links links">
-							<h2>gryphon tea store</h2>
+							<h2>tea store</h2>
 							<hr class="small">
 							<ul>
 								<?php $store_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Store'); ?>
@@ -69,26 +71,29 @@
 								<?php $gifts_products = Mage::getModel('catalog/category')->loadByAttribute('name', 'gifts');	?>
 								<?php $gifts_products_data = $gifts_products->getData(); ?>
 								<li><a href="<?php echo $this->getUrl($gifts_products_data['url_path']); ?>">Gifts</a></li>
+								<li><a href="<?php echo $this->getUrl('store-locator'); ?>">Store Locator</a></li>
 							</ul>
 						</div>
 						<div class="selections-links links">
-							<h2>curated selections</h2>
+							<h2>Collections</h2>
 							<hr class="small">
 							<?php 
-							$collection_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Collections');
+							// $collection_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Collections');
 
 							/*Returns comma separated ids*/
-							$subcats = $collection_category->getChildren();			
+							// $subcats = $collection_category->getChildren();			
+							?>
+							<?php 
+							$collection_categories = Mage::getModel('catalog/category')->loadByAttribute('name', 'Collections')->getChildrenCategories();							
 							?>
 							<ul>
-								<?php foreach(explode(',',$subcats) as $subCatid): $_category = Mage::getModel('catalog/category')->load($subCatid); ?>
-									<?php if($_category->getIsActive()): ?>
-										<?php 
+								<?php foreach($collection_categories as $collection_category):
+										$_category = Mage::getModel('catalog/category')->load($collection_category->getId());
 										$caturl     = $_category->getURL();
-							    		$catname     = $_category->getName();
-										?>
-										<li><a href="<?php echo $caturl; ?>"><?php echo $catname; ?></a></li>
-									<?php endif; ?>									
+										$catname     = $_category->getName();
+										$catdesc     = $_category->getDescription();
+										$catimgurl     = $_category->getImageUrl(); ?>									
+										<li><a href="<?php echo $caturl; ?>"><?php echo $catname; ?></a></li>								
 								<?php endforeach; ?>
 							</ul>
 						</div>
@@ -110,10 +115,26 @@
 					<h2>FOLLOW US</h2>
 					<hr class="small">
 					<ul class="share-ctas">
-						<li><a href="#" class="instagram"></a></li>
-						<li><a href="#" class="pintrest"></a></li>
-						<li><a href="#" class="twitter"></a></li>
-						<li><a href="#" class="facebook"></a></li>
+						<li><a href="https://instagram.com/gryphontea/" target="_blank" class="instagram"></a></li>
+						<li><a href="https://www.pinterest.com/gryphontea/" target="_blank" class="pintrest"></a></li>
+						<li><a href="https://www.facebook.com/gryphonteacompany" target="_blank" class="facebook"></a></li>
+						<li><a href="https://www.linkedin.com/company/gryphon-tea-company" target="_blank" class="linkedin"><i class="fa fa-linkedin" style="
+"></i></a></li>
+						<li><a href="https://www.youtube.com/channel/UCrKNQcT3PHO-o_vQBMUlH8Q" target="_blank" class="youtube"><i class="fa fa-youtube" style="
+"></i></a></li>
+						<li><a href="https://plus.google.com/+Gryphonteacompany/posts" target="_blank" class="google-plus"><i class="fa fa-google-plus" style="
+"></i></a></li>
+					</ul>
+					<h2>STORE LOCATOR</h2>
+					<hr class="small">
+					<ul class="store-locator-links">
+						<li><a href="<?php echo $this->getUrl('store-locator'); ?>?location=central">Central</a></li>
+						<li><a href="<?php echo $this->getUrl('store-locator'); ?>?location=east">East</a></li>
+						<li><a href="<?php echo $this->getUrl('store-locator'); ?>?location=west">West</a></li>						
+					</ul>
+					<ul class="store-locator-links">
+						<li><a href="<?php echo $this->getUrl('store-locator'); ?>?location=north">North</a></li>
+						<li><a href="<?php echo $this->getUrl('store-locator'); ?>?location=south">South</a></li>
 					</ul>
 				</div>
 			</div>

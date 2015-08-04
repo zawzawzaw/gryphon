@@ -39,6 +39,7 @@ One page checkout main layout
             <action method="addItem"><type>skin_css</type><name>css/intlTelInput.css</name></action>
             <action method="addItem"><type>skin_js</type><name>js/plugins/intlTelInput.min.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/plugins/lib/libphonenumber/build/utils.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/plugins/jquery.blockUI.js</name></action>
         </reference>
         <reference name="root">
             <action method="setTemplate"><template>page/1column.phtml</template></action>
@@ -90,10 +91,15 @@ One page checkout main layout
         </reference>
         <reference name="root">
             <action method="setTemplate"><template>miragedesign/checkout/onepage/shipping_method/available.phtml</template></action>
+            <action method="setTemplate"><template>miragedesign/checkout/onepage/shipping_method/additional.phtml</template></action>
         </reference>
     </checkout_onepage_shippingmethod>
 
     <customer_account>
+        <reference name="head">            
+            <action method="addItem"><type>skin_js</type><name>js/inside-pages.js</name></action>
+        </reference>
+
         <reference name="root">
             <action method="setTemplate"><template>page/2columns-right.phtml</template></action>
         </reference>
@@ -126,6 +132,9 @@ One page checkout main layout
     </customer_account>
 
     <customer_account_index>
+        <reference name="head">            
+            <action method="addItem"><type>skin_js</type><name>js/inside-pages.js</name></action>
+        </reference>
         <reference name="root">
             <action method="setTemplate"><template>page/2columns-right.phtml</template></action>
         </reference>
@@ -156,6 +165,19 @@ One page checkout main layout
             </block>
         </reference>
     </customer_account_login>
+    
+    <!--
+    Layout for customer forgot password
+    -->
+    <customer_account_forgotpassword>        
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>            
+        </reference>
+        <reference name="content">
+            <action method="unsetChild"><child>forgotPassword</child></action>
+            <block type="customer/account_forgotpassword" name="forgotPassword" template="miragedesign/persistent/customer/form/forgotpassword.phtml" />
+        </reference>
+    </customer_account_forgotpassword>
 
     <!--
     New customer registration
@@ -181,6 +203,7 @@ One page checkout main layout
             <action method="addItem"><type>skin_js</type><name>js/plugins/lib/libphonenumber/build/utils.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/miragedesign/regionupdater.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/miragedesign/telephone.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/inside-pages.js</name></action>
         </reference>
         <reference name="my.account.wrapper">
             <action method="unsetChildren"></action>
@@ -193,6 +216,7 @@ One page checkout main layout
     <customer_address_form>
         <reference name="head">
             <action method="addItem"><type>skin_js</type><name>js/miragedesign/regionupdater.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/inside-pages.js</name></action>
         </reference>
         <reference name="customer_address_edit">
             <action method="setTemplate"><template>miragedesign/customer/address/edit.phtml</template></action>
@@ -218,6 +242,9 @@ One page checkout main layout
     </sales_order_history>
 
     <customer_address_index>
+        <reference name="head">            
+            <action method="addItem"><type>skin_js</type><name>js/inside-pages.js</name></action>
+        </reference>
         <reference name="address_book">
             <action method="setTemplate"><template>miragedesign/customer/address/book.phtml</template></action>
         </reference>
@@ -250,6 +277,36 @@ One page checkout main layout
             <block type="catalogcustomiser/sidebar" name="category.sidebar" template="miragedesign/catalog/category/sidebar.phtml" />
         </reference>
     </catalog_category_layered>
+
+    <catalogsearch_result_index>
+        <label>Quick Search Form</label>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>js/miragedesign/navigation.js</name></action>            
+        </reference>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>        
+        <reference name="content">
+            <action method="unsetChild"><child>search.result</child></action>
+            <block type="catalogsearch/result" name="search.result" template="catalogsearch/result.phtml">
+                
+                <block type="catalog/product_list" name="search_result_list" template="catalog/product/list.phtml">
+                    <block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
+                        <block type="page/html_pager" name="product_list_toolbar_pager"/>
+                    </block>
+                    <action method="addColumnCountLayoutDepend"><layout>empty</layout><count>6</count></action>
+                    <action method="addColumnCountLayoutDepend"><layout>one_column</layout><count>5</count></action>
+                    <action method="addColumnCountLayoutDepend"><layout>two_columns_left</layout><count>4</count></action>
+                    <action method="addColumnCountLayoutDepend"><layout>two_columns_right</layout><count>4</count></action>
+                    <action method="addColumnCountLayoutDepend"><layout>three_columns</layout><count>3</count></action>
+                    <action method="setToolbarBlockName"><name>product_list_toolbar</name></action>
+                </block>
+                <action method="setListOrders"/>
+                <action method="setListModes"/>
+                <action method="setListCollection"/>
+            </block>
+        </reference>
+    </catalogsearch_result_index>
 
     <review_product_view>        
         <reference name="root">

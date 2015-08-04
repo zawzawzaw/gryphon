@@ -95,13 +95,25 @@
                         <?php else: ?>
                             <div class="each-feature-container <?php if(isMobile()==true): ?>slick<?php endif; ?>">
                                 <?php foreach ($_productCollection as $key => $_product): ?>                
-                                    <?php $_imgSize = 150; ?>
-                                    <?php $product_data = $_product->getData(); ?>
+                                    <?php 
+                                    $_imgSize = 150;
+                                    $categoryIds = $_product->getCategoryIds();
+                                    ?>
                                     <div class="each-feature">
                                         <a href="<?php echo $_product->getProductUrl() ?>" class="product-img">
                                             <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->constrainOnly(false)->keepAspectRatio(true)->keepFrame(true)->resize($_imgSize, $_imgSize); ?>" class="img-responsive" alt="feature <?php echo $key + 1; ?>">
-                                            <p class="caption"><?php echo $this->htmlEscape($_product->getName()) ?></p>
-                                            <p><?php echo Mage::helper('core/string')->truncate($product_data['short_description'], 50); ?></p>
+                                            <p class="caption"><?php echo $this->htmlEscape($_product->getName()) ?></p>                                            
+                                            <?php 
+                                            if(count($categoryIds) ){
+                                                foreach ($categoryIds as $key => $categoryId) {
+                                                    $_category = Mage::getModel('catalog/category')->load($categoryId);
+                                                    $parent_category = Mage::getModel('catalog/category')->load($categoryId)->getParentCategory();    
+                                                    if($parent_category->getId()==5) { ?>
+                                                        <p><?php echo $_category->getName(); ?></p>
+                                            <?php   }
+                                                }
+                                            }
+                                            ?>                                            
                                         </a>
                                         <ul class="cta-list">
                                             <li><a href="<?php echo $_product->getProductUrl() ?>"><img src="<?php echo $this->getSkinUrl('images/icons/magnifying-glass.png'); ?>" alt="magnifying glass"></a></li>

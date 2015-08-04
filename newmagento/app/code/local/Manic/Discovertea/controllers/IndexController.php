@@ -17,7 +17,8 @@ class Manic_Discovertea_IndexController extends Mage_Core_Controller_Front_Actio
  		echo json_encode($allProducts, JSON_UNESCAPED_SLASHES); 		    
 	}
 
-	public function connectAction() {
+	public function connectAction() {		
+
 		//Basic parameters that need to be provided for oAuth authentication
 	    //on Magento
 	    $params = array(
@@ -78,4 +79,41 @@ class Manic_Discovertea_IndexController extends Mage_Core_Controller_Front_Actio
 
 	    return;
 	}
+
+	public function cartpreviewAction() {
+   		
+		$cart = Mage::getModel('checkout/cart')->getQuote();
+		$cartQty =  Mage::helper('checkout/cart')->getSummaryCount();
+		$cartTotal = Mage::getSingleton('checkout/cart')->getQuote()->getSubtotal();
+
+		$all_items = array();
+		
+		if ($cartQty>0):
+			foreach ($cart->getAllItems() as $key => $item):
+			    $productId = $item->getProduct()->getId();
+			    $productName = $item->getProduct()->getName();
+			    $productPrice = Mage::helper('core')->formatPrice($item->getProduct()->getPrice(), true);
+			    $productQty = $item->getQty();
+			    $price = $item->getRowTotal();
+			    $productImage = $item->getProduct()->getData();	
+
+			    $product_data = Mage::getModel('catalog/product')->load($productId);			    
+
+			    $all_items[$productId]['id'] = $productId;
+			    $all_items[$productId]['name'] = $productName;
+			    $all_items[$productId]['price'] = $productPrice;
+			    $all_items[$productId]['qty'] = $productQty;			    
+			    $all_items[$productId]['row_price'] = Mage::helper('core')->formatPrice($price, true);
+			    $all_items[$productId]['image'] = $product_data->getImageUrl();
+
+			endforeach;  											
+		endif;
+		
+		$all_cart_data['cart_qty'] = $cartQty;
+		$all_cart_data['cart_total'] = Mage::helper('core')->formatPrice($cartTotal, true);
+		$all_cart_data['cart_items'] = $all_items;
+
+		echo json_encode($all_cart_data, JSON_UNESCAPED_SLASHES);
+
+	}	
 }

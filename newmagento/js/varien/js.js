@@ -403,8 +403,7 @@ Varien.Tabs.prototype = {
 
 Varien.DateElement = Class.create();
 Varien.DateElement.prototype = {
-    initialize: function(type, content, required, format) {
-        console.log('hi')
+    initialize: function(type, content, required, format) {        
         if (type == 'id') {
             // id prefix
             this.day    = $(content + 'day');

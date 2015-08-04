@@ -38,10 +38,10 @@
 
                     <hr class="small">
 
-                    <img src="<?php echo $this->getSkinUrl('images/content/contact-us.png'); ?>" class="img-responsive">
+                    <img src="<?php echo $this->getSkinUrl('images/content/contact-us.jpg'); ?>" class="img-responsive">
 
                     <div class="each-input">
-                      <label>address</label>
+                      <label>Office Address</label>
                       <p>251 Pandan Loop, Singapore 128431</p>
                     </div>
 
@@ -67,11 +67,17 @@
                   <div class="contact-us-col-2">
                     <h1>get in touch</h1>
                     <hr class="small">
-                    <p>Send us an email should you have any inquiries or would like to share your tea experience with us. Your feedback matters a lot to us.</p>
+                    <p>Send us an email should you have any inquiries or would like to share your tea experience. Your feedback matters a lot to us.</p>
 
                     <div class="each-input">
-                      <label for="name" class="required"><?php echo Mage::helper('contacts')->__('Name') ?><em>*</em></label>
-                      <input name="name" id="name" title="<?php echo Mage::helper('contacts')->__('Name') ?>" value="<?php echo $this->escapeHtml($this->helper('contacts')->getUserName()) ?>" class="input-text required-entry" type="text" />
+                      <label for="name" class="required"><?php echo Mage::helper('contacts')->__('First Name') ?><em>*</em></label>
+                      <input name="first_name" id="first_name" title="<?php echo Mage::helper('contacts')->__('Name') ?>" value="" class="input-text" type="text" />
+                      <input name="name" id="name" title="<?php echo Mage::helper('contacts')->__('Name') ?>" value="<?php echo $this->escapeHtml($this->helper('contacts')->getUserName()) ?>" class="input-text required-entry" type="hidden" />
+                    </div>
+
+                    <div class="each-input">
+                      <label for="name" class="required"><?php echo Mage::helper('contacts')->__('Last Name') ?><em>*</em></label>
+                      <input name="last_name" id="last_name" title="<?php echo Mage::helper('contacts')->__('Name') ?>" value="" class="input-text" type="text" />
                     </div>
 
                     <div class="each-input">
@@ -137,6 +143,15 @@
                 autoHideDialCode: false,
                 autoPlaceholder: false
               });
+
+              $('#first_name').on('change', function(e){
+                $('#name').val($(this).val() + ' ' + $('#last_name').val());
+              });
+
+              $('#last_name').on('change', function(e){
+                $('#name').val($('#first_name').val() + ' ' + $(this).val());
+              });
+
               var $phone_no = $("input[name='phone_no']");
               var $phone_no_2 = $("input[name='phone_no_2']");
               var $telephone = $("#telephone");
@@ -146,6 +161,11 @@
               });
 
               $phone_no_2.keyup(function() {
+                    var finalNo = $phone_no.val() + ' ' + $(this).val();
+                    $telephone.val(finalNo);
+              });
+
+              $phone_no_2.on('change', function() {
                     var finalNo = $phone_no.val() + ' ' + $(this).val();
                     $telephone.val(finalNo);
               });

@@ -104,9 +104,9 @@ $allowCategoriesIDs = $this->getAllowCategoires();
 
     <div class="info">
         <ul>
-            <li><a href="#"><i class="question"></i><span><?php echo $this->__('Gryphon FAQ'); ?></span></a></li>
-            <li><a href="#"><i class="delivery-info"></i><span><?php echo $this->__('Delivery Information'); ?></span></a></li>
-            <li><a href="#"><i class="tracking"></i><span><?php echo $this->__('Track Delivery'); ?></span></a></li>
+            <li><a href="<?php echo $this->getUrl('faq'); ?>"><i class="question"></i><span><?php echo $this->__('Gryphon FAQ'); ?></span></a></li>
+            <li><a href="<?php echo $this->getUrl('shipping-info'); ?>"><i class="delivery-info"></i><span><?php echo $this->__('Delivery Information'); ?></span></a></li>
+            <li><a href="http://www.trackntrace.com.sg/" target="_blank"><i class="tracking"></i><span><?php echo $this->__('Track Delivery'); ?></span></a></li>
         </ul>
     </div>
 

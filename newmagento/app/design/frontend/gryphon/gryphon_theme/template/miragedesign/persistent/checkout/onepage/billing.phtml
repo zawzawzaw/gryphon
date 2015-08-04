@@ -399,8 +399,38 @@
             </span>
         </div>
     </div>    
+
+    <div id="question" style="display:none; cursor: default">         
+        <a href="<?php echo Mage::helper('customer')->getLoginUrl(); ?>" id="yes"><button class="cta continue">Sign in to your account</button></a>
+        <a href="#" id="no"><button class="cta continue">Continue as guest</button></a>
+    </div> 
 <script>
     jQuery(document).ready(function($){         
+
+        <?php if(!$this->isCustomerLoggedIn()): ?>
+        $.blockUI({ 
+            message: $('#question'),             
+            css: { 
+                padding:        '30px', 
+                margin:         0, 
+                width:          '30%', 
+                top:            '40%', 
+                left:           '35%', 
+                textAlign:      'center', 
+                color:          '#000', 
+                border:         '0px', 
+                backgroundColor:'#fff', 
+                cursor:         'wait' 
+            },
+        });         
+ 
+        $('#no').click(function(e) {
+            e.preventDefault();
+            $.unblockUI(); 
+            return false; 
+        }); 
+        <?php endif; ?>
+
         function setAllPhoneFaxInputs($telephone, $phone_no, $phone_no_2, type) {
             $phone_no.intlTelInput({
                 defaultCountry: 'sg',
@@ -416,6 +446,11 @@
             });
 
             $phone_no_2.keyup(function() {
+                var finalNo = $phone_no.val() + $(this).val();
+                $telephone.val(finalNo);
+            });
+
+            $phone_no_2.on('change', function() {
                 var finalNo = $phone_no.val() + $(this).val();
                 $telephone.val(finalNo);
             });

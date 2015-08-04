@@ -322,9 +322,9 @@ $quoteData= $quote->getData();
 								<li><a href="#" class="account"><span class="hidden-xs hidden-sm"><?php echo (isset($customer_name)) ? $customer_name	 : $this->__('Account'); ?></span></a></li>
 								<li class="hidden-md hidden-lg"><hr class="divider"></li>
                                 <?php if ($count) :?>
-                                <li><a href="#" class="cart"><span><?php echo Mage::helper('core')->currency($quoteData['subtotal']); ?> (<?php echo $count; ?>)</span></a></li>
+                                <li><a href="#" class="cart cart-summary-data"><span><?php echo Mage::helper('core')->currency($quoteData['subtotal']); ?> (<span class="count"><?php echo $count; ?></span>)</span></a></li>
                             	<?php else: ?>
-                            	<li><a href="#" class="cart"><span><?php echo $this->__('CART'); ?></span></a></li>
+                            	<li><a href="#" class="cart cart-summary-data"><span><?php echo $this->__('CART'); ?></span></a></li>
                                 <?php endif; ?>
 							</ul>
 						</div>
@@ -341,6 +341,7 @@ $quoteData= $quote->getData();
 						<?php endif; ?>
 						<div class="cart-preview-select">
 							<h5><img src="<?php echo $this->getSkinUrl('images/icons/cart.png'); ?>" alt=""> SHOPPING CART</h5>
+
 							<?php 
 								$cart = Mage::getModel('checkout/cart')->getQuote();
 								$cartQty = $this->helper('checkout/cart')->getSummaryCount();
@@ -354,39 +355,58 @@ $quoteData= $quote->getData();
 									<li>SUB TOTAL</li>
 								</ul>
 								
-								<?php								
-								foreach ($cart->getAllItems() as $item) {
-								    $productName = $item->getProduct()->getName();
-								    $productPrice = $item->getProduct()->getPrice();
-								    $productQty = $item->getQty();
-								    $price = $item->getRowTotal();
-								    $productImage = Mage::helper('catalog/image')->init($item->getProduct(), 'thumbnail');
-								    
-								?>
-								<ul class="cart-content">							
-									<li><img src="<?php echo $productImage; ?>" alt=""><span><?php echo $productName; ?></span></li>
-									<li><?php echo $productQty; ?></li>
-									<li><?php echo Mage::helper('core')->formatPrice($price, true); ?></li>
-								</ul>
-								<?php
-								}
-								?>
+								<div class="cart-preview-content">
+									<?php								
+									foreach ($cart->getAllItems() as $item) {
+									    $productName = $item->getProduct()->getName();
+									    $productPrice = $item->getProduct()->getPrice();
+									    $productQty = $item->getQty();
+									    $price = $item->getRowTotal();
+									    $productImage = Mage::helper('catalog/image')->init($item->getProduct(), 'thumbnail');
+									    
+									?>
+									<ul class="cart-content">							
+										<li><img src="<?php echo $productImage; ?>" alt=""><span><?php echo $productName; ?></span></li>
+										<li><?php echo $productQty; ?></li>
+										<li><?php echo Mage::helper('core')->formatPrice($price, true); ?></li>
+									</ul>
+									<?php
+									}
+									?>
+								</div>
+
 								<ul class="cart-summary">								
 							        <?php if ($cartQty==1): ?>
-							            <?php echo '<li><span class="total-items">1 ITEM</span></li>'; ?>
+							            <?php echo '<li><span class="total-items"><span class="total-items-count">1</span> ITEM</span></li>'; ?>
 							        <?php else: ?>
-							            <?php echo '<li><span class="total-items">'.$cartQty.' ITEMS</span></li>'; ?>
+							            <?php echo '<li><span class="total-items"><span class="total-items-count">'.$cartQty.'</span> ITEMS</span></li>'; ?>
 							        <?php endif; ?>
 							        <li><span class="sub-total">SUB TOTAL</span></li>									
 							        <li><span class="sub-total-amount"><?php echo Mage::helper('core')->formatPrice($cartTotal, true); ?></span></li>							
-								</ul>
+								</ul>							
 
 								<div class="cta-btns">
 									<a href="<?php echo $this->getUrl('store.html');?>" class="continue-shopping"><button type="button" class="cta button"><span><span>Back to Shopping</span></span></button></a>
             						<a href="<?php echo $this->getUrl('checkout/cart'); ?>" class="shopping-cart"><button type="button" class="cta button"><span><span>Shopping Cart</span></span></button></a>
 								</div>
 							<?php else: ?>
-								<p>Your cart is empty. <a href="<?php echo $this->getUrl('checkout/cart'); ?>">Click here to go to cart anyway.</a></p>
+								<ul class="cart-header" style="display:none;">
+									<li>PRODUCT</li>
+									<li>QTY</li>
+									<li>SUB TOTAL</li>
+								</ul>
+								<div class="cart-preview-content">
+									<p>Your cart is empty. <a href="<?php echo $this->getUrl('checkout/cart'); ?>">Click here to go to cart anyway.</a></p>	
+								</div>
+								<ul class="cart-summary" style="display:none;">	
+									<li><span class="total-items"><span class="total-items-count">1</span> ITEM</span></li>
+									<li><span class="sub-total">SUB TOTAL</span></li>									
+									<li><span class="sub-total-amount"></span></li>							
+								</ul>
+								<div class="cta-btns" style="display:none;">
+									<a href="<?php echo $this->getUrl('store.html');?>" class="continue-shopping"><button type="button" class="cta button"><span><span>Back to Shopping</span></span></button></a>
+            						<a href="<?php echo $this->getUrl('checkout/cart'); ?>" class="shopping-cart"><button type="button" class="cta button"><span><span>Shopping Cart</span></span></button></a>
+								</div>
 							<?php endif; ?>
 							
 						</div>

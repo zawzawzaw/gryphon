@@ -74,8 +74,9 @@
         $('.expanded').hide();
         $('.view-detail').on('click', function(e){
             e.preventDefault();
+            console.log('view-detail');
             // $(this).find('span').text('Hide Detail for Grand Total');
-            $(this).parent().parent().parent().find('.expanded').slideToggle("slow").addClass('open');
+            $(this).parent().parent().next().find('.expanded').slideToggle("slow").addClass('open');
         });
 
         var baseurl = getBaseUrl();
