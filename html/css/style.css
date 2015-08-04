@@ -4143,12 +4143,12 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   position: relative;
   margin-top: 20px;
 }
-.store .main-content .all-products .each-product .product-image a,
-.store .main-content .all-search-products .each-product .product-image a {
+.store .main-content .all-products .each-product .product-image-container,
+.store .main-content .all-search-products .each-product .product-image-container {
   position: relative;
 }
-.store .main-content .all-products .each-product .product-image a img,
-.store .main-content .all-search-products .each-product .product-image a img {
+.store .main-content .all-products .each-product .product-image-container a img,
+.store .main-content .all-search-products .each-product .product-image-container a img {
   -webkit-transition: all 0.2s ease-out 0s;
   -moz-transition: all 0.2s ease-out 0s;
   -o-transition: all 0.2s ease-out 0s;
@@ -4161,8 +4161,27 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   filter: alpha(opacity=100);
   /*filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0'); */
 }
-.store .main-content .all-products .each-product .product-image a img.hover,
-.store .main-content .all-search-products .each-product .product-image a img.hover {
+.store .main-content .all-products .each-product .product-image-container a span,
+.store .main-content .all-search-products .each-product .product-image-container a span {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  display: block;
+  background: rgba(37, 37, 37, 0.3);
+  padding-top: 4px;
+  padding-bottom: 4px;
+  color: #ffffff;
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 11px;
+  line-height: 30px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.store .main-content .all-products .each-product .product-image-container a img.hover,
+.store .main-content .all-search-products .each-product .product-image-container a img.hover {
   -webkit-transition: all 0.2s ease-out 0s;
   -moz-transition: all 0.2s ease-out 0s;
   -o-transition: all 0.2s ease-out 0s;
@@ -6946,7 +6965,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   color: #ae4e0e;
   display: block;
   margin-top: 13px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 .cart #confirmation .each-input label.checkbox-label {
   width: auto;

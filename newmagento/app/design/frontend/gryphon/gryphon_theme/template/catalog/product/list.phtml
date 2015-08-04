@@ -48,9 +48,9 @@
     <div class="row">
         <div class="col-md-12">
             <div class="products" id="products_list">
-            <?php foreach ($_productCollection as $_product): ?>
+            <?php foreach ($_productCollection as $_product): ?>                  
                 <div class="each-product">
-                    <div class="product-image">
+                    <div class="product-image-container">
                         <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image">
                             <?php /* Based on the native RWD styling, product images are displayed at a max of ~400px wide when viewed on a
                                     one column page layout with four product columns from a 1280px viewport. For bandwidth reasons,
@@ -63,6 +63,15 @@
                                  src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false)->resize($_imgSize); ?>" 
                                  alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>"
                                  class="img-responsive img" />
+                            <?php if($_product->getAttributeText('is_featured')=="Yes"): ?>
+                                <span class="product-tag">Featured</span>
+                            <?php elseif($_product->getAttributeText('is_new')=="Yes"): ?>
+                                <span class="product-tag">New</span>
+                            <?php elseif($_product->getAttributeText('is_best_selling')=="Yes"): ?>
+                                <span class="product-tag">Best Selling</span>
+                            <?php elseif($_product->getAttributeText('is_promotion')=="Yes"): ?>
+                                <span class="product-tag">Promotion</span>
+                            <?php endif; ?>
                         </a>
                         <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
                         <?php echo $this->getBlockHtml('formkey') ?>                    

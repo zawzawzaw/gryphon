@@ -44,7 +44,8 @@
 
 			/*Returns comma separated ids*/
 			// $subcats = $type_category->getChildren();		
-			$subcategories = $type_category->getChildrenCategories();									
+			$subcategories = $type_category->getChildrenCategories();
+
 
 			echo '<li>
 					<a href="'.$store_category->getUrl().'">TEA <i class="fa fa-chevron-down"></i></a>
@@ -67,8 +68,8 @@
 			  	{
 			    	$caturl     = $_category->getURL();
 			    	$catname     = $_category->getName();
-
-			    	echo '<li><a href="'.$caturl.'">'.$catname.'</a></li>';
+			    	if($catname!='gifts' && $catname!='pantry') 
+			    		echo '<li><a href="'.$caturl.'">'.$catname.'</a></li>';
 			    }
 			}	
 
