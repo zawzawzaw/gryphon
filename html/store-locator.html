@@ -1,0 +1,898 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>
+<!--> 
+<html class=""> 
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>Gryphon</title>
+	<meta name="description" content="Gryphon">
+	<meta name="keywords" content="Gryphon">
+
+	<!--#include virtual="inc/head.inc" -->
+</head>
+<body>
+	
+	<!--#include virtual="inc/header.inc" -->
+
+	<!-- jPList core js and css  -->
+	<script src="js/plugins/jplist/jplist.core.min.js"></script>		
+
+	<!-- jPList toggle bundle -->
+	<script src="js/plugins/jplist/jplist.filter-toggle-bundle.min.js"></script>
+
+	<!-- Sort Bundle -->			
+	<script src="js/plugins/jplist/jplist.sort-bundle.min.js"></script>
+	
+
+	<style>
+	.keywords {
+		display: none;
+	}
+	</style>
+
+	<!-- jPList start -->
+	<script>
+	jQuery('document').ready(function($){
+	
+		$('#store-locations').jplist({				
+			itemsBox: '.list' 
+			,itemPath: '.list-item' 
+			,panelPath: '.jplist-panel'	
+		});
+	});
+	</script>
+
+	<div id="content-wrapper" class="store store-locator">
+
+		<div class="main-content">
+			<div class="image-text-content container">
+				<div class="row">
+					<div id="store-locations" class="col-md-12">	
+
+						<div class="side-bar">
+							<h1>REFINE BY</h1>
+							<hr class="small">
+							
+							<div class="jplist-panel each-filter-section">
+								<!-- hidden sort control -->
+						      	<div 
+						         	class="hidden" 
+						         	data-control-type="default-sort" 
+						         	data-control-name="sort" 
+						         	data-control-action="sort"
+
+						        	data-path=".title" 
+						         	data-order="asc" 
+						         	data-type="text">
+						      	</div>	
+								<div class="all-inputs jplist-group"
+								   data-control-type="checkbox-text-filter"
+								   data-control-action="filter"
+								   data-control-name="keywords"
+								   data-path=".keywords"
+								   data-logic="or">
+									<div class="each-input">
+										<input type="checkbox" name="product_category" id="central" value="central">
+										<label class="checkbox-label" for="product_category">
+											<span></span><p class="label-text">central</p>
+										</label>
+									</div>
+									<div class="each-input">
+										<input type="checkbox" name="product_category" id="east" value="east">
+										<label class="checkbox-label" for="product_category">
+											<span></span><p class="label-text">east</p>
+										</label>
+									</div>
+									<div class="each-input">
+										<input type="checkbox" name="product_category" id="west" value="west">
+										<label class="checkbox-label" for="product_category">
+											<span></span><p class="label-text">west</p>
+										</label>
+									</div>
+									<div class="each-input">
+										<input type="checkbox" name="product_category" id="north" value="north">
+										<label class="checkbox-label" for="product_category">
+											<span></span><p class="label-text">north</p>
+										</label>
+									</div>
+								</div>
+							</div>
+
+							<div class="info">
+								<p class="notice"><span>**</span><span>Denotes locations retailing full <br> Artisan Selection</span></p>
+							</div>
+
+						</div>
+
+						<div class="locations-container">
+
+							<div class="locations">
+								
+								<div class="row">
+									<div class="list col-md-12">
+                
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">COLD STORAGE <br> ANCHORPOINT</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>370 Alexandra Road <br>
+					                      #B1-03/07Anchorpoint <br>
+					                      Singapore 159953</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6479 3242</p>
+					                      <p class="keywords">west</p>
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">COLD STORAGE <br> CENTREPOINT</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>176 Orchard Road, #B1-14  <br>
+					                      Centrepoint, Singpaore238843</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6737 4222</p>
+					                      <p class="keywords">central</p>
+
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">COLD STORAGE <br> CHANGI CITY POINT</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>5 Changi Business Park CTR 1 <br>
+					                      #B1-08/11 Changi City Point <br>
+					                      Singapore 486038</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6636 1897</p>
+					                      <p class="keywords">east</p>
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">COLD STORAGE <br> CHINA SQUARE</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>18 CROSS STREET <br>
+					                      #B1-03/04 CHINA SQUARE CENTRAL <br>
+					                      SINGAPORE 048423</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6438 5262</p>
+					                      <p class="keywords">central</p>
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">COLD STORAGE <br> CLUNY COURT</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>501 BUKIT TIMAH ROAD
+					                      #01-02 CLUNY COURT
+					                      SINGAPORE 259760</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6763 0939 / 6763 0815</p>
+					                      <p class="keywords">central</p>
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">COLD STORAGE <br> COMPASS POINT</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>1 SENGKANG SQUARE <br>
+					                      #B1-38 COMPASS POINT SHOPPING CENTRE <br>
+					                      SINGAPORE 545078</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6384 9303</p>
+					                      <p class="keywords">east</p>
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">COLD STORAGE <br> GREAT WORLD CITY</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>1 KIM SENG PROMENADE <br>
+					                      #01-18/19 <br>
+					                      GREAT WORLD CITY <br>
+					                      SINGAPORE 237994</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6735 4730</p>
+					                      <p class="keywords">central</p>
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">COLD STORAGE <br> TAKASHIMAYA</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>391A ORCHARD ROAD <br>
+					                      #B2-01-1 NGEE ANN CITY <br>
+					                      SINGAPORE 238872</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6735 1266 / 6735 1275 / 6735 1276</p>
+					                      <p class="keywords">central</p>
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">COLD STORAGE <br> UNITED SQUARE</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>101 THOMSON ROAD <br>
+					                      #B1-52 <br>
+					                      SINGAPORE 307591</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6250 9690</p>
+					                      <p class="keywords">north</p>
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">COLD STORAGE <br> VIVOCITY</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>1 HARBOURFRONT WALK <br>
+					                      #01-23B VIVOCITY <br>
+					                      SINGAPORE 098585</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6275 4770</p>
+					                      <p class="keywords">south</p>
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">COLD STORAGE <br> WEST COAST PLAZA</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>154 WEST COAST ROAD <br>
+					                      #B1-19 WEST COAST PLAZA <br>
+					                      SINGAPORE 127371</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6872 4733</p>
+					                      <p class="keywords">west</p>
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">COLD STORAGE <br> SPECIALTY SOMERSET 313</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>313 ORCHARD ROAD <br>
+					                      #B3-28/29/30 <br>
+					                      SINGAPORE 238895</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 66340255</p>
+					                      <p class="keywords">central</p>
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">CRATE AND BARREL <br> ION ORCHARD</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>#04-21/22, #03-25 <br>
+					                      2 ORCHARD TURN <br>
+					                      SINGAPORE 238801</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6634 4222</p>
+					                      <p class="keywords">central</p>
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">CRATE AND BARREL <br> ORCHARD GATEWAY</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>#B2-01 TO #03-07 <br>
+					                      277 ORCHARD RD. <br>
+					                      SINGAPORE 238858</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6634 8488</p>
+					                      <p class="keywords">central</p>
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">CULINA PTE LTD**</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>BLK 8, DEMPSEY ROAD <br>
+					                      #01-13 DEMPSEY HILL <br>
+					                      SINGAPORE 247696</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6474 7338</p>
+					                      <p class="keywords">central</p>
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">EURACO FINE FOODS PTE LTD**</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>BLK 219 HENDERSON ROAD <br>
+					                      #04-01 HENDERSON INDUSTRIAL PARK <br>
+					                      SINGAPORE 155956</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6276 5433</p>
+					                      <p class="keywords">south</p>
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">COLD STORAGE <br> GUTHRIE HOUSE</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>1 FIFTH AVENUE <br>
+					                      #01-05 GUTHRIE HOUSE <br>
+					                      SINGAPORE 268802</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6463 3411</p>
+					                      <p class="keywords">central</p>
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">COLD STORAGE <br> HOLLAND VILLAGE</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>211 HOLLAND AVENUE <br> 
+					                      #01-05 HOLLAND SHOPPING CENTRE <br>
+					                      SINGAPORE 278967</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6468 5566</p>
+					                      <p class="keywords">west</p>
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">COLD STORAGE <br> JCUBE</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>2 JURONG EAST CENTRAL 1 <br>
+					                      #B1-12 JCUBE <br>
+					                      SINGAPORE 609731</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6684 4126 / 6684 4217</p>
+					                      <p class="keywords">west</p>
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">COLD STORAGE <br> JELITA</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>293 HOLLAND ROAD <br>
+					                      #01-01 <br>
+					                      JELITA SHOPPING CENTRE <br>
+					                      SINGAPORE 278628</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6469 3877</p>
+					                      <p class="keywords">west</p>
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">COLD STORAGE <br> KALLANG LEISURE PARK</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>5 STADIUM WALK <br>
+					                      #B1-01/05 LEISURE PARK <br>
+					                      SINGAPORE 397693</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6242 0818</p>
+					                      <p class="keywords">east</p>
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">COLD STORAGE <br> NORTHPOINT</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>930, YISHUN AVE 2 <br>
+					                      NORTHPOINT SHOPPING CENTRE <br>
+					                      #B1-0910/11/12 <br>
+					                      SINGAPORE 769096</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6756 7100</p>
+					                      <p class="keywords">north</p>
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">COLD STORAGE <br> ONE NORTH</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>1 FUSIONOPOLIS WAY <br>
+					                      #B2-10 CONNEXIS <br>
+					                      SINGAPORE 138632</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6467 3226</p>
+					                      <p class="keywords">west</p>
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">COLD STORAGE <br> PARKWAY PARADE</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>80 MARINE PARADE ROAD <br>
+					                      #B1-84 PARKWAY PARADE <br>
+					                      SINGAPORE 449269</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6344 9011</p>
+					                      <p class="keywords">east</p>
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">COLD STORAGE <br> RAIL MALL</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>464-486 JALAN ASAS UPPER BUKIT TIMAH ROAD <br>
+					                      SINGAPORE 678077</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6763 1639</p>
+					                      <p class="keywords">central</p>
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">COLD STORAGE <br> SENTOSA COVE</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>1 COVE AVENUE <br>
+					                      #02-07/10 SENTOSA ARRIVAL PLAZA <br>
+					                      SINGAPORE 098537</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6274 9132</p>
+					                      <p class="keywords">south</p>
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">COLD STORAGE <br> STAR VISTA</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>1 VISTA EXCHANGE GREEN <br>
+					                      #B1-02/35/36 THE STAR VISTA <br>
+					                      SINGAPORE 138617</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6694 3224 / 6694 3229</p>
+					                      <p class="keywords">west</p>
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">FOUR SEASONS GOURMET MARKET</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>Marina Bay Link Mall <br>
+					                      #B2-44-50 <br>
+					                      Singapore 018984</p>                      
+					                      <p class="keywords">central</p>
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">ISETAN SCOTTS SUPERMARKET**</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>350 Orchard Road <br>
+					                      Shaw Centre, Basement 1 <br>
+					                      Singapore 238868</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6733 1111</p> 
+					                      <p class="keywords">central</p>                  
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">ISETAN WESTGATE SUPERMARKET**</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>3 Gateway Drive <br>
+					                      Westgate, Basement 2 <br>
+					                      Singapore 608532</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6896 7777</p> 
+					                      <p class="keywords">west</p>                  
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">JASONS MARKET PLACE</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>252 North Bridge Road <br>
+					                      #B1-01 Raffles City Shopping Centre <br>
+					                      Singapore 179103</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6336 2676</p> 
+					                      <p class="keywords">central</p>                  
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">JASONS, THE GOURMET MARKET</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>1 Claymore Drive <br>
+					                      #01-01 Orchard Towers <br>
+					                      Singapore 229594</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6235 4355</p> 
+					                      <p class="keywords">central</p>                  
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">JASONS, THE GOURMET GROCER</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>2 Orchard Turn <br>
+					                      #B4-17 ION Orchard <br>
+					                      Singapore 238801</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6509 1322</p> 
+					                      <p class="keywords">central</p>                  
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">JASONS, THE GOURMET GROCER</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>31 Ocean Way <br>
+					                      #01-26/27 Quayside Isle <br>
+					                      Singapore 098375</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6268 9986</p> 
+					                      <p class="keywords">south</p>                  
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">MARKETPLACE KATONG</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>112 East Coast Road <br>
+					                      #B1-14 112 Katong <br>
+					                      Singapore 428802</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6636 3094</p> 
+					                      <p class="keywords">east</p>                  
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">MARKETPLACE PARAGON</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>290 Orchard Road <br>
+					                      #B1-21/22 Paragon <br>
+					                      Singapore 238859</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6738 2798</p> 
+					                      <p class="keywords">central</p>                  
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">MARKETPLACE TANGLIN</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>163 Tanglin Road <br>
+					                      #B1-02/03 Tanglin Mall <br>
+					                      Singapore 247933</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6734 0105</p> 
+					                      <p class="keywords">central</p>                  
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">NTUC FINEST SUPERMARKET</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>301 Upper Thomson Road #03-37/38 <br>
+					                      Thomson Plaza <br>
+					                      Singapore 574408</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6454 7738</p> 
+					                      <p class="keywords">north</p>                  
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">NTUC FINEST SUPERMARKET</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>No. 1 Jalan Anak Bukit <br>
+					                      B1-01 & B2-01 <br>
+					                      Bukit Timah Plaza <br>
+					                      Singapore 588996</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6468 8415</p> 
+					                      <p class="keywords">central</p>                  
+					                      
+					                    </div>  
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">NTUC FINEST SUPERMARKET</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>3155 Commonwealth Avenue West <br>
+					                      #B1-12/13/14 <br>
+					                      The Clementi Mall <br>
+					                      Singapore 129588</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6659 4437 </p>
+					                      <p class="keywords">west</p>                   
+					                      
+					                    </div>  
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">NTUC FINEST SUPERMARKET</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>6 Marine Parade Central <br>
+					                      Singapore 449411</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6348 0826</p> 
+					                      <p class="keywords">east</p>                  
+					                      
+					                    </div>  
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">NTUC FINEST SUPERMARKET</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>2 Tampines Central 5 #B1/07/08/17 <br>
+					                      Century Square <br>
+					                      Singapore 529509</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6587 0167</p> 
+					                      <p class="keywords">east</p>                  
+					                      
+					                    </div>  
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">NTUC FINEST SUPERMARKET</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>1 Maju Avenue <br>
+					                      # B1-11 to 14, # B1-K09 <br>
+					                      Serangoon Garden Village <br>
+					                      Singapore 556679</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6634 2038</p> 
+					                      <p class="keywords">east</p>                  
+					                      
+					                    </div> 
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">NTUC FINEST SUPERMARKET</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>111 Somerset Road
+					                      #01-04/04A/05 to 09
+					                      Triple One Somerset
+					                      Singapore 238164</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6735 5481</p> 
+					                      <p class="keywords">central</p>                  
+					                      
+					                    </div>  
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">NTUC FINEST SUPERMARKET</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>6 Scotts Road <br>
+					                      #01-01/03 Scotts Square <br>
+					                      Singapore 228209</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6636 0290</p> 
+					                      <p class="keywords">central</p>                  
+					                      
+					                    </div>  
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">NTUC FINEST SUPERMARKET</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>9 Bishan Place <br>
+					                      #B1-01 Junction 8 Shopping Centre <br>
+					                      Singapore 579837</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6259 0461 </p>
+					                      <p class="keywords">north</p>                   
+					                      
+					                    </div> 
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">NTUC FINEST SUPERMARKET</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>100 Tras Street <br>
+					                      #B1-01 100AM <br>
+					                      Singapore 079027</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6604 7457</p> 
+					                      <p class="keywords">central</p>                  
+					                      
+					                    </div>
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">PAN PACIFIC MARKETPLACE**</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>7 Raffles Boulevard <br>
+					                      Marina Square <br>
+					                      Singapore 039595</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6336 8111</p> 
+					                      <p class="keywords">central</p>                  
+					                      
+					                    </div>  
+
+					                    <div class="list-item each-location">
+					                      
+					                      <h1 class="title">SHERMAY'S COOKING SCHOOL**</h1>    
+					                      <hr class="small">
+					                      <h4>ADDRESS</h4>
+					                      <p>BLK 43 Jalan Merah Saga <br>
+					                      #01-76 Chip Bee Gardens <br>
+					                      Singapore 278115</p>
+
+					                      <h4>PHONE NUMBER</h4>
+					                      <p>+65 6479 8442</p> 
+					                      <p class="keywords">central</p>                  
+					                      
+					                    </div>  
+					                
+					                  </div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- <div class="space100"></div> -->
+
+	<!--#include virtual="inc/footer.inc" -->
+
+	<script type="text/javascript" src="js/vendors/gsap/TweenMax.min.js"></script>
+	<script type="text/javascript" src="js/vendors/gsap/easing/EasePack.min.js"></script>
+	<script type="text/javascript" src="js/plugins/gryphon/jquery.gryphon-mobile-store-sidebar.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$('#content-wrapper.store .side-bar-mobile').gryphon_mobile_store_sidebar();
+		});
+	</script>
+
+	<script>
+	var initialLoad = true;
+	$(document).ready(function(){		
+	    $(window).on('scroll', function() {
+	        var scrollPos = $(window).scrollTop();
+	        
+	        if( ( scrollPos != 0 ) ) {
+	            console.log('scrolling')
+	            $('#header-wrapper').addClass('shadow');
+	        }       
+	        else if( ( scrollPos === 0 ) ) {
+	            $('#header-wrapper').removeClass('shadow');
+	        }
+	    });
+
+	    initialLoad = false;
+	});
+	</script>
+</body>
+</html>

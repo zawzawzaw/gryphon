@@ -1,0 +1,61 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>
+<!--> 
+<html class="">
+<!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Gryphon</title>
+  <meta name="description" content="Gryphon">
+  <meta name="keywords" content="Gryphon">
+
+  <!--#include virtual="inc/head.inc" -->
+</head>
+<body>
+  
+  <!--#include virtual="inc/header.inc" -->
+
+  <div id="content-wrapper" class="not-found">
+    
+    <div class="main-content">
+      <div class="image-text-content container">
+        <h1>Oops. Sorry!</h1>
+        <p>We can’t find this page anywhere. Please use the navigation above <br>
+        or search to find what you’re looking for.</p>
+        
+        <div class="search">
+          <input type="search" name="search" id="not-found-search" placeholder="Type Here">
+          <button type="submit" title="<?php echo $this->__('Search') ?>" class="button search-button"></button>
+        </div>
+
+        <hr class="big">
+
+        <div class="cta-container">
+          <a href="{{store url='store.html'}}"><div class="final-cta-button">Go Back to Shopping</div></a>
+          <a href="{{store url='faq'}}"><div class="final-cta-button">Visit Gryphon FAQ</div></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <script>
+  jQuery(document).ready(function($){    
+    $("#not-found-search").on("keyup paste", function() {
+      console.log($(this).val())
+      $("#search").val($(this).val());
+    });
+  }); 
+  </script>
+
+  <!-- <div class="space100"></div> -->
+
+  <!--#include virtual="inc/footer.inc" -->
+
+</body>
+</html>
