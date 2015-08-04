@@ -497,9 +497,10 @@ ul.messages li.success-msg {
     font-family: "minion-pro",Verdana,sans-serif;
     font-weight: 500;
     font-style: normal;
-    font-size: 22px;
+    font-size: 10px;
     line-height: 28px;
     letter-spacing: 0.1em;
+	color:#464646
 }
 .product .main-product .product-content .desc {
     margin-top: 25px;
@@ -598,3 +599,22 @@ ul.messages li.success-msg {
     color: #464646;
     margin-top: 10px;
 }
+
+#trade-product-weight-table thead tr th {   
+    padding-right: 30px !important; 
+}
+#trade-tierprices
+{
+	padding-left: 0 !important;
+}
+#trade-product-weight-table p {   
+    font-size: 10px !important;
+   
+}
+#trade-product-weight-table thead tr th:first-child {
+    padding-left: 8px !important;
+}
+
+
+
+

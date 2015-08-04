@@ -77,10 +77,12 @@ endif;
                                 <p class="email-friend"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><?php echo $this->__('Email to a Friend') ?></a></p>
                             <?php endif; ?>
 
-                            <?php if (!$isGiftcardType) :?>
-                                <div class="price"><?php echo $this->getPriceHtml($_product); ?></div>
-                                <?php echo $this->getChildHtml('bundle_prices') ?>
-                                <?php echo $this->getTierPriceHtml() ?>
+                            <?php if (!$isGiftcardType) :?> 
+                                <?php if (count($_tierPrices) <= 0): ?>
+                                    <div class="price"><?php echo $this->getPriceHtml($_product); ?></div>
+                                    <?php echo $this->getChildHtml('bundle_prices') ?>
+                                    <?php //echo $this->getTierPriceHtml() ?>
+                                <?php endif; ?> 
                             <?php endif; ?>                            
 
                             <?php if ($isGiftcardType) :?>

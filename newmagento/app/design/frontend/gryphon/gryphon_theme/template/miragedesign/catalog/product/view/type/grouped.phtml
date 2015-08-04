@@ -57,7 +57,26 @@
         <?php $_finalPriceInclTax = $this->helper('tax')->getPrice($_item, $_item->getFinalPrice(), true) ?>
         <div class="row">
             <div class="col-xs-6">
-                <div class="italic"><?php preg_match('#\((.*?)\)#', $_item->getName(), $match); print $match[1]; ?></div>
+                <div class="italic"><?php 
+				
+				$login = Mage::getSingleton( 'customer/session' )->isLoggedIn(); //Check if User is Logged In
+				if($login)
+				{
+					$groupId = Mage::getSingleton('customer/session')->getCustomerGroupId(); //Get Customers Group ID
+					$groupname = Mage::getModel('customer/group')->load($groupId)->getCustomerGroupCode();
+					if($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium')
+					{
+						echo $_item->getAttributeText('package');
+						
+					}else
+					{
+						preg_match('#\((.*?)\)#', $_item->getName(), $match); print $match[1]; 
+					}
+				}else{
+					preg_match('#\((.*?)\)#', $_item->getName(), $match); print $match[1]; 
+				}				
+				
+				?></div>
             </div>
             <?php if ($this->getCanShowProductPrice($_product)): ?>
                 <div class="a-left col-xs-3">

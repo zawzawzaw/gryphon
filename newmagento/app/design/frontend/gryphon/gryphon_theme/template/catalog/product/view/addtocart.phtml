@@ -38,7 +38,11 @@
                     <a href="#" class="plus"><i class="fa fa-plus"></i></a>            
                 </div>
             <?php endif; ?>
-        <?php endif; ?>        
+        <?php endif; ?>
+         
+        <?php if (count($this->getTierPrices()) > 0): ?>   
+        <br/> <?php echo $this->getTierPriceHtml() ?>	
+             <?php endif; ?>	
         <div class="cta-btn add-to-cart-buttons">
             <!-- <button type="button" title="<?php echo $buttonTitle ?>" class="cta add-to-cart button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button> -->
             
