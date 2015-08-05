@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta property="og:title" content="<?php echo $this->getSubject() ?>">
+    <title><?php echo $this->getSubject() ?></title> 
+    <style type="text/css">
+      #outlook a{
+        padding:0;
+      }
+      body{
+        width:100% !important;
+        -webkit-text-size-adjust:none;
+        margin:0;
+        padding:0;
+        background-color:#FFFFFF;
+      }
+      img{
+        border:0;
+        height:auto;
+        line-height:100%;
+        outline:none;
+        text-decoration:none;
+      }
+      table td{
+        border-collapse:collapse;
+      }
+      #backgroundTable {
+        height:100% !important;
+        margin:0;
+        padding:0;
+        width:100% !important;
+        background-color:#ffffff;
+      }
+      h1,.h1{
+        color:#303030;
+        display:block;
+        font-family:Helvetica;
+        font-size:40px;
+        font-weight:bold;
+        line-height:100%;
+        margin-top:0;
+        margin-right:0;
+        margin-bottom:10px;
+        margin-left:0;
+        text-align:center;
+      }
+
+      h2,.h2{
+        color:#303030;
+        display:block;
+        font-family:Helvetica;
+        font-size:28px;
+        font-weight:bold;
+        line-height:100%;
+        margin-top:0;
+        margin-right:0;
+        margin-bottom:10px;
+        margin-left:0;
+        text-align:left;
+      }
+
+      h3,.h3{
+        color:#303030;
+        display:block;
+        font-family:Helvetica;
+        font-size:20px;
+        font-weight:bold;
+        line-height:100%;
+        margin-top:0;
+        margin-right:0;
+        margin-bottom:10px;
+        margin-left:0;
+        text-align:left;
+      }
+ 
+      h4,.h4{
+        color:#303030;
+        display:block;
+        font-family:Helvetica;
+        font-size:14px;
+        font-weight:bold;
+        line-height:100%;
+        margin-top:0;
+        margin-right:0;
+        margin-bottom:10px;
+        margin-left:0;
+        text-align:left;
+      }
+  
+      #templatePreheader{
+        background-color:#EFEFEF;
+      }
+
+      .preheaderContent{
+        color:#505050;
+        font-family:Helvetica;
+        font-size:10px;
+        line-height:125%;
+        text-align:left;
+      }
+
+      .preheaderContent a:link,.preheaderContent a:visited {
+        color:#505050;
+        font-weight:normal;
+        text-decoration:underline;
+      }
+
+      .headerContent{
+        color:#303030;
+        font-family:Helvetica;
+        font-size:40px;
+        font-weight:bold;
+        line-height:100%;
+        text-align:center;
+        vertical-align:middle;
+      }
+ 
+      .headerContent a:link,.headerContent a:visited{
+        color:#A92626;
+        font-weight:normal;
+        text-decoration:underline;
+      }
+
+      #templateBody{
+        border-top:1px solid #CCCCCC;
+      }
+   
+      .bodyContent{
+        color:#505050;
+        font-family:Helvetica;
+        font-size:15px;
+        line-height:150%;
+        text-align:left;
+      }
+ 
+      .bodyContent a:link,.bodyContent a:visited {
+        color:#A92626;
+        font-weight:normal;
+        text-decoration:none;
+      }
+      .bodyContent img {
+        display:inline;
+        height:auto;
+      }
+  
+      #templateFooter {
+        border-top:1px solid #CCCCCC;
+      }
+
+      .footerContent {
+        color:#707070;
+        font-family:Helvetica;
+        font-size:11px;
+        line-height:125%;
+        text-align:left;
+      }
+
+      .footerContent a:link,.footerContent a:visited {
+        color:#505050;
+        font-weight:normal;
+        text-decoration:underline;
+      }
+      .footerContent img {
+        display:inline;
+      }
+      
+      .button {
+      	background: #f49308;
+        text-shadow: 0 1px 1px rgba(255,255,255,0.5);
+        background-color: #fbc73f;
+        background-image: -moz-linear-gradient(top, #ffe963, #f49308);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffe963), to(#f49308));
+        background-image: -webkit-linear-gradient(top, #ffe963, #f49308);
+        background-image: -o-linear-gradient(top, #ffe963, #f49308);
+        background-image: linear-gradient(to bottom, #ffe963, #f49308);
+        border: 1px solid #f49308;
+        padding: 7px 15px;
+        border-radius: 5px;
+        color: #184e6e;
+        font-weight: bold;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+    <center>
+      <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="backgroundTable">
+        <tr>
+          <td align="center" valign="top">
+            <table border="0" cellpadding="10" cellspacing="0" width="100%" id="templatePreheader">
+              <tr>
+                <td align="center" valign="top">
+                  <table border="0" cellpadding="0" cellspacing="0" width="600">
+                    <tr>
+                      <td valign="top" class="preheaderContent" style="padding-right:20px;">
+                        <?php echo $this->getStoreName() ?>: <?php echo $this->area('teaser', "Use this area to offer a short teaser of your email's content. Text here will show in the preview area of some email clients.") ?>
+                      </td>
+                      <td valign="top" width="200" class="preheaderContent">
+                        Is this email not displaying correctly?<br><a href="<?php echo $this->getViewInBrowserUrl() ?>" target="_blank">View it in your browser</a>.
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="20" cellspacing="0" width="100%" >
+              <tr>
+              <td style="background: #888;" align="center">
+                <table border="0" cellpadding="0" cellspacing="0" width="600" >
+                <tr>
+                  <td valign="middle"><img src="<?php echo $this->getLogoUrl() ?>"></td>
+                  <td align="right"><span style="color: #fff; font-weight: bold; font-size: 22px;"><?php echo $this->getStoreName() ?></span></td>
+                </tr>
+                </table>
+              </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateContainer">
+              <tr>
+                <td align="center" valign="top" style="padding-top:30px;">
+                  <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateHeader">
+                    <?php if ($this->area('header_content')): ?>
+                    <tr>
+                      <td class="headerContent" style="padding-bottom:10px;">
+                        <h1><?php echo $this->area('header_content', 'Email Title Here...') ?></h1>
+                      </td>
+                    </tr>
+                    <?php endif ?>
+                    <?php if ($this->area('content')): ?>
+                    <tr>
+                      <td align="center" valign="top">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td valign="top" class="bodyContent" style="padding-top:20px;">
+                              <?php echo $this->area('content', 'Email text here...') ?>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <?php endif ?>
+                  </table>
+                </td>
+              </tr>
+               <?php if ($this->area('additional')): ?> 
+              <tr>
+                <td align="center" valign="top" style="padding-top:20px">
+                  <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateBody">
+                    <tr>
+                      <td valign="top" style="padding-top:20px">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td valign="top" class="bodyContent">
+                              <?php echo $this->area('additional', 'Text here...') ?> 
+                            </td> 
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <?php endif ?>
+              <?php if ($this->getCrossSellHtml()): ?>
+              <tr>
+                <td align="center" valign="top" style="padding-top:20px">
+                  <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateBody">
+                    <tr>
+                      <td valign="top" style="padding-top:20px">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td valign="top" class="bodyContent">
+                              <?php echo $this->getCrossSellHtml() ?>
+                            </td> 
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <?php endif ?>
+              <tr>
+                <td align="center" valign="top" style="padding-top:20px;">
+                  <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateFooter">
+                    <tr>
+                      <td valign="top" style="padding-top:20px;">
+                        <table border="0" cellpadding="0" cellspacing="0">
+                          <tr>
+                            <td colspan="2" valign="middle" class="footerContent" style="padding-bottom:20px;">
+                              <a href="<?php echo $this->getTwitterUrl() ?>">follow on Twitter</a> | <a href="<?php echo $this->getFacebookUrl() ?>">friend on Facebook</a> 
+                            </td>
+                          </tr>
+                          <tr>
+                            <td valign="top" class="footerContent" style="padding-right:20px;">
+                              <em>Copyright © <?php echo date('Y') ?> <?php echo $this->getStoreName() ?>, All rights reserved.</em>
+                              <br><br><br><strong>Our mailing address is:</strong>
+                              <br>
+                              <?php echo $this->getStoreEmail() ?>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" valign="middle" class="footerContent" style="padding-top:20px;">
+                              <a href="<?php echo $this->getUnsubscribeUrl() ?>">unsubscribe from this list</a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <br>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </body>
+</html>
