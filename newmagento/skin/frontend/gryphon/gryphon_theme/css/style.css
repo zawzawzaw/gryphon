@@ -4196,7 +4196,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .store .main-content .all-products .each-product .cta-list,
 .store .main-content .all-search-products .each-product .cta-list {
   position: absolute;
-  top: 30%;
+  top: 40%;
   width: 100%;
   visibility: hidden;
   -webkit-transition: all 0.2s ease-out 0s;
@@ -5809,6 +5809,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   margin: 0 auto;
   margin-bottom: 25px;
   display: block;
+  max-width: 222px;
 }
 .subscription .steps .each-step h4,
 .subscription .steps .each-step p {

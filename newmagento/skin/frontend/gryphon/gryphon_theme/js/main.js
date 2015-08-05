@@ -285,7 +285,7 @@
                 $(this).find('.cta-list').removeClass('show');
                 $(this).find('.img').removeClass('hover');
             }
-        }, '.product-image');   
+        }, '.product-image-container');   
 
         $('.all-products').on({
             mouseenter: function() {

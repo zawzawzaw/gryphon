@@ -39,13 +39,22 @@
 <?php if($_productCollection->count()): ?>
     <?php foreach ($_productCollection as $_product): ?>
         <div class="each-product">
-            <div class="product-image">
+            <div class="product-image-container">
                 <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image">
                     <?php $_imgSize = 300; ?>
                     <img id="product-collection-image-<?php echo $_product->getId(); ?>"
                          src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false)->resize($_imgSize); ?>"
                          alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>"
                          class="img-responsive img" />
+                    <?php if($_product->getAttributeText('is_featured')=="Yes"): ?>
+                        <span class="product-tag">Featured</span>
+                    <?php elseif($_product->getAttributeText('is_new')=="Yes"): ?>
+                        <span class="product-tag">New</span>
+                    <?php elseif($_product->getAttributeText('is_best_selling')=="Yes"): ?>
+                        <span class="product-tag">Best Selling</span>
+                    <?php elseif($_product->getAttributeText('is_promotion')=="Yes"): ?>
+                        <span class="product-tag">Promotion</span>
+                    <?php endif; ?>
                 </a>
                 <ul class="cta-list">
                     <li>
