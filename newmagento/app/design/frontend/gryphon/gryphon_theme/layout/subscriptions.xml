@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <subscriptions_artisan_index>
+		<label>Customer Subscriptions</label>       
+        <remove name="right"/>
+        <remove name="left"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/1column.phtml</template>
+            </action>
+        </reference>
+        <reference name="content">			
+            <block type="catalog/product_list" name="subscriptions" template="subscriptions/artisan.phtml" />
+        </reference>
+    </subscriptions_artisan_index>
+	<subscriptions_gourmet_index>
+		<label>Customer Subscriptions</label>       
+        <remove name="right"/>
+        <remove name="left"/>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/1column.phtml</template>
+            </action>
+        </reference>
+        <reference name="content">			
+            <block type="catalog/product_list" name="subscriptions-gourmet" template="subscriptions/gourmet.phtml" />
+        </reference>
+    </subscriptions_gourmet_index>
+</layout>

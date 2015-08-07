@@ -28,7 +28,7 @@ $installer->startSetup();
 /** @var $connection Varien_Db_Adapter_Pdo_Mysql */
 $connection = $installer->getConnection();
 
-foreach (array('product', 'category') as $entity) {
+foreach (array('product') as $entity) {
     $tableAlias = 'netzarbeiter_groupscatalog2/' . $entity . '_index';
     $tableName = $installer->getTable($tableAlias);
 

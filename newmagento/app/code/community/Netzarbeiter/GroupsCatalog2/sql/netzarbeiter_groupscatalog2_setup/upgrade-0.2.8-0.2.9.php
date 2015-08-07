@@ -26,7 +26,7 @@ $installer = $this;
 
 $installer->startSetup();
 
-foreach (array('catalog_product', 'catalog_category') as $type) {
+foreach (array('catalog_product') as $type) {
     $installer->dropIndexTable($type);
     $installer->createIndexTable($type);
 }
