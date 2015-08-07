@@ -1,0 +1,94 @@
+<?php
+$customer = Mage::registry('current_customer');
+$customer_email = $customer->getEmail();
+$customer_id = $customer->getEmail();
+
+$collection = Mage::getModel('subscriptions/subscriptions')
+                ->getCollection()
+                ->addFieldToFilter('customer_email', $customer_email)->setOrder('customersubscription_id', 'DESC');
+?>
+
+<div id="customer_info_tabs_customer_edit_tab_action_content">
+    <div class="entry-edit">
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-edit-form fieldset-legend">Subscriptions Detail</h4>
+        </div>
+        <div id="group_fields4" class="fieldset fieldset-wide">
+            <div class="hor-scroll">
+                <table cellspacing="10" cellpadding="10">
+                    <tbody>
+<?php
+if (count($collection->getData()) > 0) {
+
+    foreach ($collection->getData() as $coll) {
+        ?>			
+                                <tr>
+                                    <td width="5%" class="col-1">
+                                        <b>Order #:</b> <?php echo $coll['order_id'] ?>
+                                    </td>
+                                    <td class="col-2">
+                                        <b><?php echo $coll['subscription_category'] ?></b><br><b><?php echo $coll['subscription_period'] ?> Month(s) Subscription</b>
+                                    </td>					
+                                    <td class="col-3">
+                                        <b>PLAN FOR </b> <br><?php echo strtoupper($coll['location']); ?>
+                                    </td>						
+
+                                    <td class="col-4">
+                                        <b>START:</b> <?php echo $coll['start_date'] ?><br><b>END  :</b> <?php echo $coll['end_date'] ?>
+                                    </td>					
+                                    <td class="col-5">
+                                        <b>DURATION:</b> <br><?php echo $coll['subscription_period'] ?> MONTH(S)
+                                    </td>						
+
+                                </tr>
+        <?php
+        $item_options = $coll['item_options'];
+        $item_options = json_decode($item_options, true);
+
+        if (count($item_options) > 0) {
+            ?>
+                                    <tr>
+                                        <td width="5%">
+                                            <b>&nbsp;</b>
+                                        </td>
+                                        <td>
+                                            <b>Selected Tea(s):</b>								
+
+                                            <table class="form-list" cellspacing="0">
+                                                <tbody>
+                                                    <?php
+                                                    foreach ($item_options as $key => $value) {
+
+                                                        $obj = Mage::getModel('catalog/product');
+                                                        $_product = $obj->load($key); // Enter your Product Id in $product_id
+                                                        // get Product's name
+                                                        $itemName = $_product->getName();
+                                                        ?>			
+                                                        <tr>
+                                                            <td>
+                                                                <?php echo $itemName ?> <?php echo '( Qty: ' . $value . ')'; ?>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <?php
+                                }
+                            }
+                        } else {
+                            ?>
+                            <tr>
+                                <td>
+                                    <b>No Subscriptions</b>
+                                </td>
+                            </tr>
+<?php } ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

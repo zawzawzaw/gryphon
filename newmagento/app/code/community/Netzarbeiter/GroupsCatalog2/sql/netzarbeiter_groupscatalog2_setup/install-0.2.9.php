@@ -30,7 +30,7 @@ $installer->deleteTableRow(
     'eav/attribute', 'attribute_code', Netzarbeiter_GroupsCatalog2_Helper_Data::HIDE_GROUPS_ATTRIBUTE
 );
 
-foreach (array('catalog_product', 'catalog_category') as $entityType) {
+foreach (array('catalog_product') as $entityType) {
     $installer->addGroupsCatalogAttribute($entityType);
     $installer->dropIndexTable($entityType);
     $installer->createIndexTable($entityType);
