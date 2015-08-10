@@ -44,7 +44,7 @@
             <?php foreach ($_links as $_link): ?>
             <?php
             $lbl = $_link->getName();
-            if(($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium') && ($lbl == 'rewardpoints' || $lbl =='referral'))
+            if(($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium') && ($lbl == 'rewardpoints' || $lbl =='referral'|| $lbl =='giftvoucher'))
             {
                 continue;
             }

@@ -45,6 +45,15 @@ class Magestore_Giftvoucher_Block_Adminhtml_Customer_Tab_Credit extends Mage_Adm
     }
 
     public function canShowTab() {
+		
+		$customerData = Mage::registry('current_customer');
+		$customerGroupId = $customerData->getGroupId();
+		$groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();
+		if($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium')
+		{
+			return false;
+		}
+			
         if (Mage::registry('current_customer')->getId()) {
             return true;
         }

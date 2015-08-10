@@ -196,7 +196,12 @@
                     <label>New trader activated</label>
                     <file>trader_account_verified.html</file>
                     <type>html</type>
-                </trader_trader_account_activated_email_template> 
+                </trader_trader_account_activated_email_template>
+				<notification_for_new_customer>
+					<label>Template for notify new customer to Administrator</label>
+					<file>notification_for_new_customer.html</file>
+					<type>html</type>
+				</notification_for_new_customer>
             </email>
         </template>
     </global>
