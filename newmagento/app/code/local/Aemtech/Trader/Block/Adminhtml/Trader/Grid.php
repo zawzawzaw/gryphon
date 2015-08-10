@@ -36,6 +36,7 @@ class Aemtech_Trader_Block_Adminhtml_Trader_Grid extends Mage_Adminhtml_Block_Wi
         $collection = Mage::getResourceModel('customer/customer_collection')
                 ->addNameToSelect()
                 ->addAttributeToSelect('email')
+				->addAttributeToSelect('isactivated')
                 ->addAttributeToSelect('created_at')
                 ->addAttributeToSelect('group_id')
                 ->joinAttribute('billing_postcode', 'customer_address/postcode', 'default_billing', null, 'left')
@@ -114,6 +115,18 @@ class Aemtech_Trader_Block_Adminhtml_Trader_Grid extends Mage_Adminhtml_Block_Wi
             'index' => 'created_at',
             'gmtoffset' => true
         ));
+		
+		$isactivatedOptions = array(
+			1 => 'Yes',
+			0 => 'No'
+		); // or you can fetch dynamically
+		$this->addColumn('isactivated', array(
+			'header'    => Mage::helper('customer')->__('Approved'),
+			'index'     => 'isactivated',
+			'type'      => 'options',
+			'options'   => $isactivatedOptions,
+			'align'     => 'left',
+		));
 
         if(!Mage::app()->isSingleStoreMode()){
             $this->addColumn('website_id', array(

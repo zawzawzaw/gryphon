@@ -32,7 +32,7 @@
         <?php if(!$_product->isGrouped()): ?>
             <?php if (!$isGiftcardType && $_product->getTypeId() !== 'tin') : ?>
                 <div class="qty-wrapper">
-                    <h5><?php echo $this->__('QUANTITY') ?></h5>
+                    <h5><?php echo $this->__('WEIGHT (KG)') ?></h5>
                     <a href="#" class="minus"><i class="fa fa-minus"></i></a>
                     <input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" value="<?php echo max($this->getProductDefaultQty() * 1, 1) ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
                     <a href="#" class="plus"><i class="fa fa-plus"></i></a>            

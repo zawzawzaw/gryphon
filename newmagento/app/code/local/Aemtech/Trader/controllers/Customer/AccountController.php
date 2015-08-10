@@ -256,6 +256,21 @@ class Aemtech_Trader_Customer_AccountController extends Mage_Customer_AccountCon
             Mage::getSingleton('core/session')->getMessages(true);
             $session->addSuccess($this->__('Account Successfully Created. You will be notified by E-Mail when the account is activated.'));
             $url = $this->_getUrl('*/*/index', array('_secure' => true));
+			
+			//PG: Send notification to admin
+			$emailTemplate = Mage::getModel('core/email_template')->loadDefault('notification_for_new_customer');
+			$emailTemplate
+			->setSenderName(Mage::getStoreConfig('trans_email/ident_support/name'))
+			->setSenderEmail(Mage::getStoreConfig('trans_email/ident_support/email'))
+			->setTemplateSubject('New Trader Registered');
+			
+			$emailTemplateVariables['username']= $customer->getFirstname().' '.$customer->getLastname();
+			$emailTemplateVariables['customer_email'] = $customer->getEmail();
+
+			$result = $emailTemplate->send(Mage::getStoreConfig('trans_email/ident_general/email'),Mage::getStoreConfig('trans_email/ident_general/name'), $emailTemplateVariables);
+			//PG End
+			
+			
         } else {
             $session->setCustomerAsLoggedIn($customer);
             $url = $this->_welcomeCustomer($customer);
