@@ -264,7 +264,7 @@ endif;
                                 jQuery('.cart-preview-content').html('');
                                 jQuery.each(data.cart_items, function(key,value){
 
-                                    jQuery('.cart-preview-content').append('<ul class="cart-content"><li><img src="'+value.image+'" alt=""><span>'+value.name+'</span></li><li>'+value.qty+'</li><li>'+value.price+'</li></ul>');
+                                    jQuery('.cart-preview-content').append('<ul class="cart-content"><li><img src="'+value.image+'" alt=""><span>'+value.name+'</span></li><li>'+value.qty+'</li><li>'+value.row_price+'</li></ul>');
 
                                     jQuery('.cart-summary').find('.total-items-count').html(data.cart_qty);
                                     jQuery('.cart-summary').find('.sub-total-amount').html(data.cart_total);
@@ -313,9 +313,12 @@ endif;
                                             jQuery('#ajax_loader').hide();
                                             // alert(data.status + ": " + data.message);
 
-                                            do_update();
-
-                                            jQuery('span.ajax_msg').html('Added to cart!').show().delay(5000).fadeOut();
+                                            if(data.status=="ERROR") {
+                                                jQuery('span.ajax_msg').html(data.message).show().delay(5000).fadeOut();
+                                            }else {
+                                                do_update();
+                                                jQuery('span.ajax_msg').html('Added to cart!').show().delay(5000).fadeOut();
+                                            }                                            
                                       }
                                 });
                             } catch (e) {
