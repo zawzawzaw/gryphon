@@ -34,6 +34,9 @@
 ?>
 <?php
     $_productCollection=$this->getLoadedProductCollection();
+	
+	$locationskuSGPArray = array("SGP-ART-1M", "SGP-ART-3M", "SGP-ART-6M", "SGP-ART-12M", "SGP-GUR-1M", "SGP-GUR-3M", "SGP-GUR-6M", "SGP-GUR-12M","INT-ART-1M", "INT-ART-3M", "INT-ART-6M", "INT-ART-12M", "INT-GUR-1M", "INT-GUR-3M", "INT-GUR-6M", "INT-GUR-12M");
+	
     $_helper = $this->helper('catalog/output');    
 ?>
 <div id="result_products">
@@ -48,9 +51,16 @@
     <div class="row">
         <div class="col-md-12">
             <div class="products" id="products_list">
-            <?php foreach ($_productCollection as $_product): ?>                  
+            <?php foreach ($_productCollection as $_product): 
+			
+			if(in_array($_product->getSku(),$locationskuSGPArray))
+			{
+				continue;
+			}
+			
+			?>
                 <div class="each-product">
-                    <div class="product-image-container">
+                    <div class="product-image">
                         <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image">
                             <?php /* Based on the native RWD styling, product images are displayed at a max of ~400px wide when viewed on a
                                     one column page layout with four product columns from a 1280px viewport. For bandwidth reasons,
@@ -63,15 +73,6 @@
                                  src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false)->resize($_imgSize); ?>" 
                                  alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>"
                                  class="img-responsive img" />
-                            <?php if($_product->getAttributeText('is_featured')=="Yes"): ?>
-                                <span class="product-tag">Featured</span>
-                            <?php elseif($_product->getAttributeText('is_new')=="Yes"): ?>
-                                <span class="product-tag">New</span>
-                            <?php elseif($_product->getAttributeText('is_best_selling')=="Yes"): ?>
-                                <span class="product-tag">Best Selling</span>
-                            <?php elseif($_product->getAttributeText('is_promotion')=="Yes"): ?>
-                                <span class="product-tag">Promotion</span>
-                            <?php endif; ?>
                         </a>
                         <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
                         <?php echo $this->getBlockHtml('formkey') ?>                    
