@@ -9553,6 +9553,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   margin: 0 auto;
   margin-bottom: 25px;
   display: block;
+  max-width: 222px;
 }
 .trade .last-content .steps .each-step h4,
 .trade .last-content .steps .each-step p {
