@@ -50,7 +50,27 @@ $product_type = $_item->getProductType();
                 <ul class="item-options <?php if($product_type=='tin'): ?>tin<?php endif; ?>">
                     <?php foreach ($_options as $_option) : ?>
                         <?php $_formatedOptionValue = $this->getFormatedOptionValue($_option) ?>
-                        <li>
+						<?php
+						$obj = Mage::getModel('catalog/product');
+						$product_id = $this->escapeHtml($_option['label']);
+						$_product = $obj->load($product_id); // Enter your Product Id in $product_id
+						// get Product's name
+						$itemName = $_product->getName();						
+						if($product_type == 'virtual'){							
+							
+						?>
+						<li>
+                            <p class="lbl"><?php echo $itemName; ?></p>
+                            <span<?php if (isset($_formatedOptionValue['full_view'])): ?> class="truncated"<?php endif; ?>><?php echo '( Qty: '.$_formatedOptionValue['value'].')' ?>                               
+                            </span>
+                        </li>
+						
+						<?php
+						}
+						else
+						{
+							?>
+						<li>
                             <p class="lbl"><?php $label = $this->escapeHtml($_option['label']); $label = str_replace('_', ' ', $label); echo str_replace('treasure', ' ', $label) . ':'; ?></p>
                             <span<?php if (isset($_formatedOptionValue['full_view'])): ?> class="truncated"<?php endif; ?>><?php echo $_formatedOptionValue['value'] ?>
                                 <?php if (isset($_formatedOptionValue['full_view'])): ?>
@@ -62,7 +82,12 @@ $product_type = $_item->getProductType();
                                     </span> -->
                                 <?php endif; ?>
                             </span>
-                        </li>
+                        </li>	
+							
+						<?php 	
+						}
+						?>
+                        
                     <?php endforeach; ?>
                 </ul>
             <?php endif;?>
