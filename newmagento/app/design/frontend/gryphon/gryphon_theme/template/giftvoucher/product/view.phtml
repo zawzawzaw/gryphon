@@ -490,3 +490,15 @@ endif;
     sendFriend(send_friend);
 //]]>
 </script>
+<script>
+    jQuery(document).ready(function($){
+        // gift card specific
+        $('#amount_dropdown').on('change', function(e){
+            if($(this).val()) {
+                var points = Math.ceil($(this).val()) + 10;
+                $('.orange').html('<span id="j2t-pts">'+points+'</span> loyalty points');
+            }
+        });  
+        $('.orange').html($('.j2t-loyalty-points').html());      
+    });
+</script>

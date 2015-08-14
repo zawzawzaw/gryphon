@@ -160,6 +160,27 @@ class Miragedesign_Checkoutcustomiser_OnepageController extends Mage_Checkout_On
 
             $this->getOnepage()->saveOrder();
 
+            /////
+            $outputMessage = Mage::getSingleton('core/session')->getSpecialMessage();
+
+            $last_order_increment_id = Mage::getModel("sales/order")->getCollection()->getLastItem()->getIncrementId();
+
+            $order = Mage::getModel('sales/order')->loadByIncrementId($last_order_increment_id);
+            if(Mage::getSingleton('customer/session')->isLoggedIn()) {
+                $customerData = Mage::getSingleton('customer/session')->getCustomer();
+            }
+
+            $giftMessage = Mage::getModel('giftmessage/message'); 
+            if(isset($customerData)) $giftMessage->setCustomerId($customerData->getId()); 
+            $giftMessage->setSender(''); 
+            $giftMessage->setRecipient(''); 
+            $giftMessage->setMessage($outputMessage);
+            $giftObj = $giftMessage->save(); 
+
+            $order->setGiftMessageId($giftObj->getId()); 
+            $order->save();
+            /////
+
             $redirectUrl = $this->getOnepage()->getCheckout()->getRedirectUrl();
             $result['success'] = true;
             $result['error']   = false;
@@ -229,5 +250,34 @@ class Miragedesign_Checkoutcustomiser_OnepageController extends Mage_Checkout_On
         $layout->generateBlocks();
         $output = $layout->getOutput();
         return $output;
+    }
+
+    public function saveGiftMessageAction()
+    {        
+        if ($this->getRequest()->isPost()) {
+    
+            $special_message = $this->getRequest()->getPost('special_message', array());
+    
+            if(Mage::getSingleton('customer/session')->isLoggedIn()) {
+                $customerData = Mage::getSingleton('customer/session')->getCustomer();
+            }
+    
+    
+            Mage::getSingleton('core/session')->setSpecialMessage($special_message);
+    
+            return Mage::getSingleton('core/session')->getSpecialMessage();
+    
+            // $giftMessage = Mage::getModel('giftmessage/message'); 
+            // $giftMessage->setCustomerId($customerData->getId()); 
+            // $giftMessage->setSender(''); 
+            // $giftMessage->setRecipient(''); 
+            // $giftMessage->setMessage($special_message); 
+            // $giftObj = $giftMessage->save(); 
+    
+            // print_r($giftObj);
+            // $order->setGiftMessageId($giftObj->getId()); 
+            // $order->save(); 
+    
+        } 
     }
 }

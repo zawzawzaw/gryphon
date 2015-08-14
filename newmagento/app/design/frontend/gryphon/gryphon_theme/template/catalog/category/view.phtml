@@ -34,6 +34,7 @@
 <?php
     $_helper    = $this->helper('catalog/output');
     $_category  = $this->getCurrentCategory();
+    $current_category_data = $_category->getData();
     $_imgHtml   = '';
     if ($_imgUrl = $_category->getImageUrl()) {
         $_imgHtml = '<p class="category-image"><img src="'.$_imgUrl.'" alt="'.$this->escapeHtml($_category->getName()).'" title="'.$this->escapeHtml($_category->getName()).'" /></p>';
@@ -55,7 +56,9 @@
                     <!-- <img src="images/content/store-banner.jpg" alt="store banner"> -->
                     <div class="caption">
                         <h1><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></h1>
-                        <p><?php echo $_helper->categoryAttribute($_category, $_category->getDescription(), 'description') ?></p>
+                        <?php if($current_category_data['url_key']!=='gifts' && $current_category_data['url_key']!=='pantry'): ?>
+                            <p><?php echo $_helper->categoryAttribute($_category, $current_category_data['meta_description'], 'meta_description') ?></p>
+                        <?php endif; ?>
 
                         <?php echo $this->getMessagesBlock()->toHtml() ?>
 

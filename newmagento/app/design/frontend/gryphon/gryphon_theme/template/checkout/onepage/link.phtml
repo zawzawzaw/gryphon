@@ -30,12 +30,27 @@
 <script>
 	jQuery(document).ready(function($){
 
+		$("#special_message").keyup(function(event) {
+	        var str = "" + $("#special_message").val();
+	        var remaining = 200 - str.length;
+	        if(str.length > 200){
+	          str = str.substring(0, 200);
+	          $("#special_message").val(str);
+	          remaining = 0;
+	        }
+
+	        $("#message_characters_remaining").html('Characters Remainding: ' + remaining);
+	    });
+
 		$('#special_message').hide();
+		$('#message_characters_remaining').hide();
 		$('input[name="gift_service"]').on('change', function(e){
 			if($('input[name="gift_service"]').is(':checked')) {
 				$('#special_message').show();
+				$('#message_characters_remaining').show();
 			}else {
 				$('#special_message').hide();
+				$('#message_characters_remaining').hide();
 			}
 		});		
 

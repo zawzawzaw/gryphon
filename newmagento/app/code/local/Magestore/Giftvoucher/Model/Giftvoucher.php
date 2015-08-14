@@ -262,7 +262,7 @@ class Magestore_Giftvoucher_Model_Giftvoucher extends Mage_Rule_Model_Rule {
                 'note' => $this->getEmailNotes(),
                 'description' => $this->getDescription(),
                 'logo' => $this->getPrintLogo(),
-                'url' => $this->getPrintTemplate(),
+                'url' => Mage::helper('giftvoucher/drawgiftcard')->getTemplateImage($this),
                 'addurl' => Mage::getUrl('giftvoucher/index/addlist', array('giftvouchercode' => $this->getGiftCode())),
                 'secure_key' => base64_encode($this->getGiftCode() . '$' . $this->getId()),
                     )

@@ -392,8 +392,8 @@
             }
         });       
 
-        // gift card specific
-        $('.orange').html($('.j2t-loyalty-points').html());
+        // // gift card specific
+        // $('.orange').html($('.j2t-loyalty-points').html());
 
         // note that month is 0-based, like in the Date object. Adjust if necessary.
         function daysInMonth(month,year) {
@@ -480,5 +480,13 @@
                     $that.find('i').removeClass('fa-chevron-up').addClass('fa-chevron-down');
             });
         });
+
+        ////
+
+        $(".rotate").textrotator({
+            animation: "flipUp",
+            separator: ",",
+            speed: 8000
+        }); 
     });
 })(jQuery);

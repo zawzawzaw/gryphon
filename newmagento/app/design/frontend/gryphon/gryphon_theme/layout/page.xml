@@ -52,6 +52,7 @@
                 <action method="addItem"><type>skin_js</type><name>js/plugins/slick/slick.min.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/vendors/gsap/plugins/ScrollToPlugin.min.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/plugins/gryphon/jquery.gryphon-milestones.js</name></action>                
+                <action method="addItem"><type>skin_js</type><name>js/plugins/textrotator/jquery.simple-text-rotator.js</name></action>                
                 <action method="addItem"><type>skin_js</type><name>js/main.js</name></action>                
 
                 <action method="addJs"><script>lib/jquery/noconflict.js</script></action>
@@ -98,6 +99,7 @@
                  <action method="addItem"><type>skin_css</type><name>css/plugins/slick.css</name></action>
                  <action method="addItem"><type>skin_css</type><name>css/plugins/jquery.raty.css</name></action>
                  <action method="addItem"><type>skin_css</type><name>css/font-awesome.min.css</name></action>
+                 <action method="addItem"><type>skin_css</type><name>js/plugins/textrotator/simpletextrotator.css</name></action>
                  <action method="addItem"><type>skin_css</type><name>css/style.css</name></action>                
                  <action method="addItem"><type>skin_css</type><name>css/jairus-style.css</name></action>                
 

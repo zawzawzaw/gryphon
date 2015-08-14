@@ -1,0 +1,14 @@
+test emails can't send out
+facekbook login
+cron job?
+remove next prev on image
+mobile tweek
+wordpress header and footer update
+to disable magento auto update
+search load more
+price and points on emailer
+gift card image 
+share button on product view
+invoice email
+
+product view page weight and stuff

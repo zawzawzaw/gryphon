@@ -28,6 +28,13 @@ class Magestore_Giftvoucher_Helper_Drawgiftcard extends Mage_Core_Helper_Data {
         }
     }
 
+
+    // ZAW EDITED
+    public function getTemplateImage($giftcode) {
+        // return $dir = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'giftvoucher' . DS . 'template' . DS . 'images' . DS . $giftcode['giftcard_template_image'];
+        return $dir = $giftcode['giftcard_template_image'];
+    }
+
     public function generateLeftImage($giftcode, $giftcardTemplate) {
 
         $storeId = Mage::app()->getStore()->getId();

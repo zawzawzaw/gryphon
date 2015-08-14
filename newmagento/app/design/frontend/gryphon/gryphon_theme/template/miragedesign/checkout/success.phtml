@@ -37,7 +37,10 @@
                                 <hr class="small" />
                                 <!-- <h2 class="sub-title"><?php echo $this->__('Thank you for your purchase!') ?></h2> -->
                                 <p><?php echo $this->__('An order confirmation email will be sent to you and your tracking link will be e-mailed to you once parcel has been posted.') ?></p>
-
+                                <?php 
+                                $this->setCanPrintOrder(false);
+                                $this->setCanViewOrder(false);
+                                ?>
                                 <?php if ($this->getOrderId()):?>
                                 <?php if ($this->getCanViewOrder()) :?>
                                     <p class="order_id"><?php echo $this->__('Your order # is: %s.', sprintf('<a href="%s">%s</a>', $this->escapeHtml($this->getViewOrderUrl()), $this->escapeHtml($this->getOrderId()))) ?></p>

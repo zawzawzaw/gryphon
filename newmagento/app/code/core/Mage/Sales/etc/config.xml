@@ -1321,6 +1321,7 @@
                         <statuses>
                             <pending_payment default="1"/>
                         </statuses>
+                        <visible_on_front>1</visible_on_front>
                     </pending_payment>
                     <processing translate="label">
                         <label>Processing</label>

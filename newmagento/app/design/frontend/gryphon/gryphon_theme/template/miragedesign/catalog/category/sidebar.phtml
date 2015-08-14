@@ -22,9 +22,8 @@ $allowCategoriesIDs = $this->getAllowCategoires();
     <?php if($current_category_data['url_key']=='gifts' || $current_category_data['url_key']=='pantry'): ?>
     <h1><?php echo $this->__($current_category_data['name']); ?></h1>
     <a href="javascript:void(0)" class="clear-all"><?php echo $this->__('Clear All'); ?></a>
-    <hr class="small" />
-    <p class="title-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet optio eligendi tenetur nam at, eaque! Ex voluptatum doloribus sapiente laborum nobis hic aut. Culpa 
-    tempora, harum velit minus! Facere, impedit!</p>
+    <hr class="small" />    
+    <p class="title-desc"><?php echo trim($current_category_data['meta_description']); ?></p>
     <?php else: ?>
     <h1><?php echo $this->__('REFINE BY'); ?></h1>
     <a href="javascript:void(0)" class="clear-all"><?php echo $this->__('Clear All'); ?></a>
