@@ -12,3 +12,20 @@ share button on product view
 invoice email
 
 product view page weight and stuff
+
+
+// things break after auto update or cron
+email locale
+add to cart ajax
+account address cart page js
+order success
+gift message
+account page pending order
+
+php -f /var/www/vhosts/gryphontea.com/httpdocs/magento/cron.php >> /var/www/vhosts/gryphontea.com/httpdocs/magento/var/log/cron.log 2>&1
+
+php -q /var/www/vhosts/gryphontea.com/httpdocs/magento/cron.php
+
+*/5 * * * * php -f /var/www/vhosts/gryphontea.com/httpdocs/magento/cron.php
+
+/usr/bin/php /var/sites/p/domain/public_html/cron.php
