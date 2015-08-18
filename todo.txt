@@ -3,18 +3,17 @@ facekbook login
 cron job?
 remove next prev on image
 mobile tweek
-wordpress header and footer update
+
 to disable magento auto update
 search load more
-price and points on emailer
-gift card image 
+
 share button on product view
 invoice email
 
 product view page weight and stuff
 
 
-// things break after auto update or cron
+// things break after auto update 
 email locale
 add to cart ajax
 account address cart page js
@@ -28,4 +27,6 @@ php -q /var/www/vhosts/gryphontea.com/httpdocs/magento/cron.php
 
 */5 * * * * php -f /var/www/vhosts/gryphontea.com/httpdocs/magento/cron.php
 
-/usr/bin/php /var/sites/p/domain/public_html/cron.php
+/usr/bin/php /var/www/vhosts/gryphontea.com/httpdocs/magento/cron.php
+
+<!--{{block type="catalog/product_bestseller" template="catalog/product/bestseller.phtml" header="Bestsellers" limit=4}}{{block type="catalog/product_mostviewed" template="catalog/product/mostviewed.phtml"}}-->			
