@@ -66,7 +66,7 @@
         <div class="last-content">
             <div class="form-content container"> 
                 <div class="row"> 
-                    <form action="<?php echo $this->getUrl("trader/customer_account/") ?>createpost/" method="post" id="trader_register" name="trader_register">
+                    <form action="<?php echo $this->getUrl("trader/customer_account/") ?>createpost/" method="post" id="trader_register" name="trader_register" enctype="multipart/form-data">
                         <input type="hidden" name="success_url" value="<?php echo $this->getSuccessUrl() ?>" />
                         <input type="hidden" name="error_url" value="<?php echo $this->getErrorUrl() ?>" />
                         <input type="hidden" name="group" value="Trader-Temp" />
@@ -207,26 +207,26 @@
                         
                                 </div>
                                 <div class="each-input">
-                                    <label for="city">CITY*</label>
-                                    <input type="text" name="city" id="city" class="input-text required-entry" value="<?php echo $this->escapeHtml($this->getFormData()->getCity()) ?>" />
+                                    <label for="city">CITY</label>
+                                    <input type="text" name="city" id="city" class="input-text" value="<?php echo $this->escapeHtml($this->getFormData()->getCity()) ?>" />
                                 </div>
                                 <div class="each-input">
-                                    <label for="postal_code">Postal code*</label>
-                                    <input type="text" name="postal_code" class="input-text required-entry" value="<?php echo $this->escapeHtml($this->getFormData()->getPostalCode()) ?>" />
+                                    <label for="postal_code">Postal code</label>
+                                    <input type="text" name="postal_code" class="input-text" value="<?php echo $this->escapeHtml($this->getFormData()->getPostalCode()) ?>" />
                                 </div>
 
                                 <div class="each-input">
-                                    <label for="website">website*</label>
-                                    <input type="text" name="website" class="input-text required-entry" value="<?php echo $this->escapeHtml($this->getFormData()->getWebsite()) ?>" />
+                                    <label for="website">website</label>
+                                    <input type="text" name="website" class="input-text" value="<?php echo $this->escapeHtml($this->getFormData()->getWebsite()) ?>" />
                                 </div>
 
                                 <div class="each-input">
                                     <label for="tea_consumption">estimate monthly tea usage by number of cups*</label>
                                     <input type="text" name="tea_consumption" class="input-text required-entry" value="<?php echo $this->escapeHtml($this->getFormData()->getTeaConsumption()) ?>" />
-                                </div>
-
+                                </div>							
+								
                                 <div class="each-input">
-                                    <p>Estimated Monthly Tea Usage by Number of Cups: This gives us a more accurate gauge of how much tea youâ€™ll need.</p>
+                                    <p>This gives us a more accurate gauge of how much tea youâ€™ll need.</p>
                                 </div>
 
                             </div>
