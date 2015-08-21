@@ -84,12 +84,14 @@ $allowCategoriesIDs = $this->getAllowCategoires();
                         <?php $i = 1; $average = $number / 2; $pass = false; ?>
                         <?php if ($number >= $splitColumnNumber): ?><div class="col-1"><?php endif; ?>                    
                         <?php foreach($subCategories as $subCategory) :?>
+                            <?php if(strtolower($subCategory->getName())!=="pantry" && strtolower($subCategory->getName())!=="gifts"): ?>
                             <div class="each-input">
                                 <input class="ajaxsearch" id="sub-cat-<?php echo $subCategory->getId(); ?>" type="checkbox" name="categoryId[]" <?php if ($currentCategory && $currentCategory->getId() == $subCategory->getId()) :?>checked="checked"<?php endif; ?> value="<?php echo $subCategory->getId(); ?>" />
                                 <label class="checkbox-label" for="collection_type">
                                     <span></span><p class="label-text"><?php echo $subCategory->getName(); ?></p>
                                 </label>
                             </div>
+                            <?php endif; ?>
                             <?php if ($number >= $splitColumnNumber && !$pass && !($i%$average)): $pass = true; ?></div><div class="col-2"><?php endif; ?>                        
                             <?php $i++; ?>
                         <?php endforeach; ?>

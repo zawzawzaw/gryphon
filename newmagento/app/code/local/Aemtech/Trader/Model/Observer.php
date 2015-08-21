@@ -80,7 +80,7 @@ class Aemtech_Trader_Model_Observer {
             }
         }
         $CatalogPriceRule = Mage::getModel('catalogrule/rule')->getCollection();
-        $CatalogPriceRule->applyAll();
+        // $CatalogPriceRule->applyAll();
         //save the data for trader discount
     }
 

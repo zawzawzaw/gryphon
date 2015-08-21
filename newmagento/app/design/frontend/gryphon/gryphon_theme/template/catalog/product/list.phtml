@@ -110,7 +110,7 @@
                         <p><?php echo $this->helper('catalogcustomiser')->getTypesCategory($_product, $this->getLayer()->getCurrentCategory()->getName()); ?></p>
                         <p class="price test"><?php echo $this->getPriceHtml($_product, true) ?></p>                        
                         <?php if($_productNameStripped == 'Gift Card'): ?>
-                            <p class="j2t-loyalty-points inline-points"><span id="j2t-pts"><?php echo ceil($_product->getPrice()) + 10; ?></span> loyalty points</p>
+                            <p class="j2t-loyalty-points inline-points"><span id="j2t-pts"><?php echo ceil($_product->getPrice()) + 10; ?></span> reward points</p>
                         <?php endif; ?>
                     </a>
                 </div>

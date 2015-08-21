@@ -12,5 +12,6 @@ jQuery(document).ready(function($) {
     jQuery("#resume-file-upload .filename").html(resume_filename);
   });
 
-  jQuery('#career-container').gryphon_careers({});
+  jQuery('#career-container').gryphon_careers({});  
+
 });

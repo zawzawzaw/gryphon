@@ -116,4 +116,82 @@ class Manic_Discovertea_IndexController extends Mage_Core_Controller_Front_Actio
 		echo json_encode($all_cart_data, JSON_UNESCAPED_SLASHES);
 
 	}	
+
+	public function subscribeAction() {
+
+		if ($this->getRequest()->isPost()) {
+    
+            $subscribe_email = $this->getRequest()->getPost('subscribe_email', array());
+            $input_email = $this->getRequest()->getPost('subscribe_email', array());
+
+            if(!filter_var($subscribe_email, FILTER_VALIDATE_EMAIL)) {
+            	$result['success']  = false;
+            	$result['error']    = true;
+            	$result['error_messages'] = $this->__('Invalid email address.');
+            }
+
+            // if(!isset($subscribe_email) || empty($subscribe_email)) {
+            // 	if(Mage::getSingleton('customer/session')->isLoggedIn()) {
+	           //      $customerData = Mage::getSingleton('customer/session')->getCustomer();
+	           //      $customerDataArr = $customerData->getData();
+	           //      $subscribe_email = $customerDataArr['email'];
+	           //  }
+            // }
+
+            // check whether customer subscribe already or not
+            $subscriber = Mage::getModel('newsletter/subscriber')->loadByEmail($subscribe_email);
+
+            $subscriberData = $subscriber->getData();
+
+            // print_r($subscriberData);
+
+			if($subscriberData['subscriber_status']!==1)
+			{
+			    Mage::getModel('newsletter/subscriber')->subscribe($subscribe_email);
+			    $result['success']  = true;
+            	$result['error']    = false;
+			}else {
+				$result['success']  = false;
+            	$result['error']    = true;
+            	$result['error_messages']    = $this->__('This email is already being subscribed.');
+			}
+
+			$this->getResponse()->setBody(Mage::helper('core')->jsonEncode($result));
+    
+        }
+
+	}
+
+	public function subscribeUnsubscribeAction() {		
+    	if(Mage::getSingleton('customer/session')->isLoggedIn()) {
+            $customerData = Mage::getSingleton('customer/session')->getCustomer();
+            $customerDataArr = $customerData->getData();
+            $subscribe_email = $customerDataArr['email'];
+
+            $subscriber = Mage::getModel('newsletter/subscriber')->loadByEmail($subscribe_email);
+
+            $subscriberData = $subscriber->getData();
+
+			if($subscriber->getStatus() == Mage_Newsletter_Model_Subscriber::STATUS_SUBSCRIBED)
+			{
+				Mage::getModel('newsletter/subscriber')->loadByEmail($subscribe_email)->unsubscribe();
+			    $result['success']  = true;
+            	$result['error']    = false;
+            	$result['message'] = 'Successfully unsubscribed to newsletter.';
+			    
+			}else {				
+				Mage::getModel('newsletter/subscriber')->subscribe($subscribe_email);
+			    $result['success']  = true;
+            	$result['error']    = false;            	
+                $result['message'] = 'Successfully subscribed to newsletter.';				
+			}
+
+        }else {
+        	$result['success']  = false;
+        	$result['error']    = true;
+        	$result['error_messages']    = $this->__('User is not logged in.');
+        }
+
+        $this->getResponse()->setBody(Mage::helper('core')->jsonEncode($result));
+	}
 }

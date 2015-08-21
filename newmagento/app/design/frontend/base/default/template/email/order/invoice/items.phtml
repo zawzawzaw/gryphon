@@ -27,25 +27,27 @@
 <?php $_invoice = $this->getInvoice() ?>
 <?php $_order   = $this->getOrder() ?>
 <?php if ($_invoice && $_order): ?>
-<table cellspacing="0" cellpadding="0" border="0" width="650" style="border:1px solid #EAEAEA;">
-    <thead>
+<tr>
+  <td align="center" style="padding: 40px 0; font-size: 12px; line-height: 19px; font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #666666;" class="padding-copy">
+    <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+      <thead style="border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;text-transform:uppercase;font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif;font-size: 10px; line-height: 20px; letter-spacing: 0.03em; color: #777; padding-top: 25px;padding-bottom: 25px;">
         <tr>
-            <th align="left" bgcolor="#EAEAEA" style="font-size:13px; padding:3px 9px"><?php echo $this->__('Item') ?></th>
-            <th align="left" bgcolor="#EAEAEA" style="font-size:13px; padding:3px 9px"><?php echo $this->__('Sku') ?></th>
-            <th align="center" bgcolor="#EAEAEA" style="font-size:13px; padding:3px 9px"><?php echo $this->__('Qty') ?></th>
-            <th align="right" bgcolor="#EAEAEA" style="font-size:13px; padding:3px 9px"><?php echo $this->__('Subtotal') ?></th>
+          <th style="padding:10px;text-align:left;background:none;"><?php echo $this->__('ITEM') ?></th>                                                      
+          <th style="padding:10px;text-align:left;background:none;"><?php echo $this->__('SKU') ?></th>
+          <th style="padding:10px;text-align:center;background:none;"><?php echo $this->__('QTY') ?></th>
+          <th style="padding:10px;text-align:right;background:none;"><?php echo $this->__('SUBTOTAL') ?></th>
         </tr>
-    </thead>
-
-    <?php $i=0; foreach ($_invoice->getAllItems() as $_item): ?>
-    <?php if($_item->getOrderItem()->getParentItem()) continue; else $i++; ?>
-    <tbody<?php echo $i%2 ? ' bgcolor="#F6F6F6"' : '' ?>>
-        <?php echo $this->getItemHtml($_item) ?>
-    </tbody>
-    <?php endforeach; ?>
-
-    <tfoot>
+      </thead>
+      <?php $i=0; foreach ($_invoice->getAllItems() as $_item): ?>
+      <?php if($_item->getOrderItem()->getParentItem()) continue; else $i++; ?>
+        <tbody<?php echo $i%2 ? ' bgcolor="#F6F6F6"' : '' ?>>
+            <?php echo $this->getItemHtml($_item) ?>
+        </tbody>
+      <?php endforeach; ?>
+      <tfoot style="border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;text-transform:uppercase;font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif;font-size: 10px; line-height: 20px; letter-spacing: 0.03em; color: #777; padding-top: 25px;padding-bottom: 25px;">
         <?php echo $this->getChildHtml('invoice_totals')?>
-    </tfoot>
-</table>
+      </tfoot>
+    </table>
+  </td>
+</tr>
 <?php endif; ?>

@@ -95,9 +95,10 @@
         ?>
             </div>
         </div>
-
+        <?php if($i > 2): ?>
         <div class="fa fa-chevron-right next-image-button"></div>
         <div class="fa fa-chevron-left prev-image-button"></div>    
+        <?php endif; ?>
         <script>
         jQuery(document).ready(function($){
             $('.carousel').carousel({

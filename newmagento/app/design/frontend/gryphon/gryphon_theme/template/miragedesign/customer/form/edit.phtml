@@ -182,9 +182,9 @@ $telephone = ($hasAddress) ? $this->helper('customercustomiser')->getAddress()->
                             <span></span><p class="label-text"><?php echo $this->__('gryphon newsletters'); ?></p>
                         </label>
                         <?php if( $this->helper('customercustomiser')->getIsSubscribed() ): ?>
-                            <p><?php echo $this->__("You are currently subscribed to our newsletter.") ?></p>
+                            <p class="subscribe-msg"><?php echo $this->__("You are currently subscribed to our newsletter.") ?></p>
                         <?php else: ?>
-                            <p><?php echo $this->__('Be the first one to hear about our special offers, new arrivals, lastest news and trends and the other events.'); ?></p>
+                            <p class="subscribe-msg"><?php echo $this->__('Join our Gryphon Tea Family and be the first to learn about our latest news, and enjoy exclusive deals and invites to events.'); ?></p>
                         <?php endif; ?>
                         <!-- <p class="back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p> -->
                     </div>
@@ -257,4 +257,23 @@ $telephone = ($hasAddress) ? $this->helper('customercustomiser')->getAddress()->
 
     var customerRegionUpdater = new CustomRegionUpdater('country_id', 'region', 'region_id', <?php echo $this->helper('directory')->getRegionJson() ?>, undefined, 'postcode');
 //]]>
+</script>
+<script>
+    jQuery(document).ready(function($){
+        //// newsletter subscribe/unsubscribe 
+        $('#subscription').on('change', function(e){
+            var request = $.ajax({
+                url: "<?php echo $this->getUrl('discovertea/index/subscribeUnsubscribe') ?>",
+                method: "GET"
+            });
+             
+            request.done(function( msg ) {
+              if(msg.message=='Successfully subscribed to newsletter.') {
+                $('.subscribe-msg').html('You are currently subscribed to our newsletter.');
+              }else {
+                $('.subscribe-msg').html('Join our Gryphon Tea Family and be the first to learn about our latest news, and enjoy exclusive deals and invites to events.');
+              }
+            });         
+        });
+    });
 </script>

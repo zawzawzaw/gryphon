@@ -30,25 +30,18 @@
                 <tr>
                     <td>
                         <!-- HERO IMAGE -->
-                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                            <tr>
-                                <td class="padding-copy">
-                                    <a href="#" target="_blank">
-                                        <img src="http://clients.manic.com.sg/gryphon/emailer/images/hero-1.jpg" width="600" height="400" border="0" alt="Insert alt text here" style="display: block; color: #666666;  font-family: Helvetica, arial, sans-serif; font-size: 16px; line-height: 20px;" class="img-max">
-                                    </a>
-                                </td>
-                            </tr>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">                            
                             <tr>
                                 <td>
                                     <!-- COPY -->
                                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                         <tr>
                                           <td>
-                                              <h2 style="font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; font-size: 14px; font-style:normal; font-weight:normal; line-height:20px; letter-spacing:0.03em; text-align:center; text-transform:uppercase; color: #252525; padding-top: 40px;">Your order has been shipped from out warehouse</h2>
+                                              <h2 style="font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; font-size: 14px; font-style:normal; font-weight:normal; line-height:20px; letter-spacing:0.03em; text-align:center; text-transform:uppercase; color: #252525; padding-top: 40px;">Your Order Is On Its Way</h2>
                                               <hr style="width: 30px;height: 8px;border:none!important;border-bottom: 3px solid #ae4e0e!important;display: block;margin: 0 auto!important;background:none!important;">
                                               <p style="font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #464646; font-size: 12px; line-height: 19px;text-align:center;">You can track your order by clicking here and keying in your tracking number.</p>
                                               <br />
-                                              <h1 style="font-family:'MinionPro-Medium', Tahoma, Helvetica, Arial, sans-serif; font-size:17px; font-style:normal; font-weight:normal; line-height:26px;letter-spacing:0.1em; text-align:center; border: 1px solid #ae4e0e; color: #ae4e0e;padding:13px;margin: 0 auto;max-width: 330px;">Your Tracking No # is: {{block type='core/template' area='frontend' template='email/order/shipment/track.phtml' shipment=$shipment order=$order}}</h1>
+                                              <h1 style="font-family:'MinionPro-Medium', Tahoma, Helvetica, Arial, sans-serif; font-size:17px; font-style:normal; font-weight:normal; line-height:26px;letter-spacing:0.1em; text-align:center; border: 1px solid #ae4e0e; color: #ae4e0e;padding:13px;margin: 0 auto;max-width: 330px;">Tracking Number: {{block type='core/template' area='frontend' template='email/order/shipment/track.phtml' shipment=$shipment order=$order}}</h1>
                                               <br />
                                               <p style="font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #464646; font-size: 12px; line-height: 19px;text-align:center;">Don’t forget to leave a rating a review of the product or recommend us to your friends <br> to earn more rewards points.</p>
                                               <br />

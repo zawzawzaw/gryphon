@@ -466,14 +466,14 @@ class Rewardpoints_Helper_Data extends Mage_Core_Helper_Abstract {
             }
             
             if ($from_list){
-                return '<p class="j2t-loyalty-points inline-points">'.$img. Mage::helper('rewardpoints')->__("%d loyalty points", $points) . $this->getEquivalence($points) .$extraPointDetails.'</p>';
+                return '<p class="j2t-loyalty-points inline-points">'.$img. Mage::helper('rewardpoints')->__("%d reward points", $points) . $this->getEquivalence($points) .$extraPointDetails.'</p>';
             } else {
-                return '<p class="j2t-loyalty-points inline-points" style="display:none;">'.$img. Mage::helper('rewardpoints')->__("<span id='j2t-pts'>%d</span> loyalty points", $points) . $this->getEquivalence($points) . $extraPointDetails.'</p>';
+                return '<p class="j2t-loyalty-points inline-points" style="display:none;">'.$img. Mage::helper('rewardpoints')->__("<span id='j2t-pts'>%d</span> reward points", $points) . $this->getEquivalence($points) . $extraPointDetails.'</p>';
             }
         }
         
         if ($points && $product->getTypeId() == Mage_Catalog_Model_Product_Type::TYPE_BUNDLE && $product->getPriceType() == Mage_Bundle_Model_Product_Price::PRICE_TYPE_FIXED){
-            //$return = '<p class="j2t-loyalty-points inline-points">'.$img. Mage::helper('rewardpoints')->__("<span id='j2t-pts'>%d</span> loyalty points", $points) . $this->getEquivalence($points) . '</p>';
+            //$return = '<p class="j2t-loyalty-points inline-points">'.$img. Mage::helper('rewardpoints')->__("<span id='j2t-pts'>%d</span> reward points", $points) . $this->getEquivalence($points) . '</p>';
             list($points_min, $points_max) = $this->_getMinimalBundleOptionsPoint($product, true, $from_list, false, $customer_group_id);
             
             $points_min = ceil($points_min+$point_no_ceil);
@@ -487,11 +487,11 @@ class Rewardpoints_Helper_Data extends Mage_Core_Helper_Abstract {
             if ($from_list && $points_min == $points_max && $points_min == 0){
                 return '';
             } else if ($from_list && $points_min == $points_max){
-                return '<p class="j2t-loyalty-points inline-points">'.$img. Mage::helper('rewardpoints')->__("%d loyalty points", $points_min) . $this->getEquivalence($points_min) .$extraPointDetails.'</p>';
+                return '<p class="j2t-loyalty-points inline-points">'.$img. Mage::helper('rewardpoints')->__("%d reward points", $points_min) . $this->getEquivalence($points_min) .$extraPointDetails.'</p>';
             } else if ($from_list){ 
-                return '<p class="j2t-loyalty-points inline-points">'.$img. Mage::helper('rewardpoints')->__("from %d to %d loyalty points", $points_min, $points_max) . $this->getEquivalence($points_min, $points_max) .$extraPointDetails.'</p>';
+                return '<p class="j2t-loyalty-points inline-points">'.$img. Mage::helper('rewardpoints')->__("from %d to %d reward points", $points_min, $points_max) . $this->getEquivalence($points_min, $points_max) .$extraPointDetails.'</p>';
             } else {
-                return '<p class="j2t-loyalty-points inline-points" style="display:none;">'.$img. Mage::helper('rewardpoints')->__("<span id='j2t-pts'>%d</span> loyalty points", $points_min) . $this->getEquivalence($points_min) . $extraPointDetails.'</p>';
+                return '<p class="j2t-loyalty-points inline-points" style="display:none;">'.$img. Mage::helper('rewardpoints')->__("<span id='j2t-pts'>%d</span> reward points", $points_min) . $this->getEquivalence($points_min) . $extraPointDetails.'</p>';
             }
         } else if ($points){
             //$details_url = "";
@@ -522,7 +522,7 @@ class Rewardpoints_Helper_Data extends Mage_Core_Helper_Abstract {
             if($cms_page = Mage::getStoreConfig('rewardpoints/product_page/cms_page')){
                 $extraPointDetails = ' <a class="about-point-scheme" href="'.Mage::getUrl($cms_page).'" title="'.Mage::helper('rewardpoints')->__('Find more about this!').'">'.Mage::helper('rewardpoints')->__('Find more about this!').'</a>'.$extraPointDetails;
             }
-            $return = '<p class="j2t-loyalty-points inline-points">'.$img. Mage::helper('rewardpoints')->__("<span id='j2t-pts'>%s</span> loyalty points", $points) . $this->getEquivalence($points) . $extraPointDetails .'</p>';
+            $return = '<p class="j2t-loyalty-points inline-points">'.$img. Mage::helper('rewardpoints')->__("<span id='j2t-pts'>%s</span> reward points", $points) . $this->getEquivalence($points) . $extraPointDetails .'</p>';
             return $return;
         } else if($from_list) {
             //try to get from price
@@ -539,7 +539,7 @@ class Rewardpoints_Helper_Data extends Mage_Core_Helper_Abstract {
                     }
                     if (sizeof($product_points)){
                         $points_min = ceil(min($product_points));
-                        return '<p class="j2t-loyalty-points inline-points">'.$img. Mage::helper('rewardpoints')->__("%d loyalty points", $points_min) . $this->getEquivalence($points_min) .'</p>';
+                        return '<p class="j2t-loyalty-points inline-points">'.$img. Mage::helper('rewardpoints')->__("%d reward points", $points_min) . $this->getEquivalence($points_min) .'</p>';
                     }
                 }
             }
@@ -582,11 +582,11 @@ class Rewardpoints_Helper_Data extends Mage_Core_Helper_Abstract {
                     if ($from_list && $points_min == 0 && $points_max == 0) {
                         return '<p class="j2t-loyalty-points inline-points">'.$img. Mage::helper('rewardpoints')->__("With this product, earned points will depend on product configuration.") .'</p>';
                     } else if ($from_list && $points_min == $points_max){
-                        return '<p class="j2t-loyalty-points inline-points">'.$img. Mage::helper('rewardpoints')->__("%d loyalty points", $points_min) . $this->getEquivalence($points_min) .'</p>';
+                        return '<p class="j2t-loyalty-points inline-points">'.$img. Mage::helper('rewardpoints')->__("%d reward points", $points_min) . $this->getEquivalence($points_min) .'</p>';
                     } else if ($from_list){
-                        return '<p class="j2t-loyalty-points inline-points">'.$img. Mage::helper('rewardpoints')->__("from %d to %d loyalty points", $points_min, $points_max) . $this->getEquivalence($points_min, $points_max) .'</p>';
+                        return '<p class="j2t-loyalty-points inline-points">'.$img. Mage::helper('rewardpoints')->__("from %d to %d reward points", $points_min, $points_max) . $this->getEquivalence($points_min, $points_max) .'</p>';
                     } else {
-                        return '<p class="j2t-loyalty-points inline-points" style="display:none;">'.$img. Mage::helper('rewardpoints')->__("<span id='j2t-pts'>%d</span> loyalty points", $points_min) . $this->getEquivalence($points_min) . '</p>';
+                        return '<p class="j2t-loyalty-points inline-points" style="display:none;">'.$img. Mage::helper('rewardpoints')->__("<span id='j2t-pts'>%d</span> reward points", $points_min) . $this->getEquivalence($points_min) . '</p>';
                     }
                 }
             } 
@@ -598,7 +598,7 @@ class Rewardpoints_Helper_Data extends Mage_Core_Helper_Abstract {
         }
         $points = ceil($points+$points_min); 
 	//$points = ceil($points);
-        return '<p class="j2t-loyalty-points inline-points" style="display:none;">'.$img. Mage::helper('rewardpoints')->__("<span id='j2t-pts'>%d</span> loyalty points", $points) . $this->getEquivalence($points) . '</p>';
+        return '<p class="j2t-loyalty-points inline-points" style="display:none;">'.$img. Mage::helper('rewardpoints')->__("<span id='j2t-pts'>%d</span> reward points", $points) . $this->getEquivalence($points) . '</p>';
     }
     
 

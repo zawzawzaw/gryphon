@@ -161,7 +161,7 @@ class Rewardpoints_IndexController extends Mage_Core_Controller_Front_Action
         if (Mage::getStoreConfig('rewardpoints/default/max_point_used_order', Mage::app()->getStore()->getId())){
             if ((int)Mage::getStoreConfig('rewardpoints/default/max_point_used_order', Mage::app()->getStore()->getId()) < $points_value){
                 $points_max = (int)Mage::getStoreConfig('rewardpoints/default/max_point_used_order', Mage::app()->getStore()->getId());
-                $session->addError($this->__('You tried to use %s loyalty points, but you can use a maximum of %s points per shopping cart.', ceil($points_value), $points_max));
+                $session->addError($this->__('You tried to use %s reward points, but you can use a maximum of %s points per shopping cart.', ceil($points_value), $points_max));
                 $points_value = $points_max;
             }
         }

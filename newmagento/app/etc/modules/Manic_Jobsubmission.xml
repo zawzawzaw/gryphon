@@ -1,0 +1,9 @@
+<?xml version = "1.0"?>
+<config>
+  	<modules>
+    	<Manic_Jobsubmission>
+        	<active>true</active>
+        	<codePool>local</codePool>
+     	</Manic_Jobsubmission>
+   	</modules>
+</config>

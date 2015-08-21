@@ -6,11 +6,7 @@ mobile tweek
 
 to disable magento auto update
 search load more
-
 share button on product view
-invoice email
-
-product view page weight and stuff
 
 
 // things break after auto update 
@@ -21,6 +17,7 @@ order success
 gift message
 account page pending order
 
+
 php -f /var/www/vhosts/gryphontea.com/httpdocs/magento/cron.php >> /var/www/vhosts/gryphontea.com/httpdocs/magento/var/log/cron.log 2>&1
 
 php -q /var/www/vhosts/gryphontea.com/httpdocs/magento/cron.php
@@ -30,3 +27,7 @@ php -q /var/www/vhosts/gryphontea.com/httpdocs/magento/cron.php
 /usr/bin/php /var/www/vhosts/gryphontea.com/httpdocs/magento/cron.php
 
 <!--{{block type="catalog/product_bestseller" template="catalog/product/bestseller.phtml" header="Bestsellers" limit=4}}{{block type="catalog/product_mostviewed" template="catalog/product/mostviewed.phtml"}}-->			
+
+
+vhost problem with subscribe/unscribe
+revise email

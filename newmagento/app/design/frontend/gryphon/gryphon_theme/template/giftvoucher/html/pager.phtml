@@ -21,7 +21,6 @@
 
 <?php if($this->getShowPerPage()): ?>
 <div class="limiter">
-    <label><?php echo $this->__('Show') ?></label>
     <div class="dropdown">
         <select onchange="setLocation(this.value)">
         <?php foreach ($this->getAvailableLimit() as  $_key=>$_limit): ?>

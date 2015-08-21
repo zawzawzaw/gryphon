@@ -1,0 +1,60 @@
+<script type="text/javascript">
+	<?php $timestamp = time();?>
+	jQuery(document).ready(function($) {
+		$('#resume').uploadifive({
+			'fileType'     : 'application/pdf',
+			'uploadLimit'  : 1,
+			'buttonText'       : 'UPLOAD',
+			'auto'             : true,
+			'checkScript'      : '<?php echo $this->getUrl("jobsubmission/index/checkexists") ?>',
+			'formData'         : {
+								   'timestamp' : '<?php echo $timestamp;?>',
+								   'token'     : '<?php echo md5('unique_salt' . $timestamp);?>'
+			                     },
+			'uploadScript'     : '<?php echo $this->getUrl("jobsubmission/index/uploadcv") ?>',
+			'onUploadComplete' : function(file, data) { 
+				var objData = $.parseJSON(data);
+				console.log(objData['file_name']);
+				console.log(objData['message']);
+				$('#hidden_resume').val(objData['file_name']);
+				$('.filename').html(objData['message']);
+			}
+		});
+
+		$('.file-button').on('click', function(e){
+			e.preventDefault();
+			$('#resume').uploadifive('upload');
+		});
+
+		$('.apply-now').on('click', function(e){
+			var firstname = $('#firstname').val();
+			var lastname = $('#lastname').val();
+			var email = $('#email').val();
+			var mobile = $('#mobile_no').val() + ' ' + $('#mobile_no_2').val();
+			var subject = $('#subject').val();
+			var resume = $('#hidden_resume').val();
+			jQuery('#ajax_loader').show();
+			var request = $.ajax({
+			  	url: "<?php echo $this->getUrl('jobsubmission/index') ?>",
+			  	method: "POST",
+			  	data: { first_name : firstname, last_name : lastname, email : email, mobile : mobile, subject : subject, resume : resume },
+			  	dataType: "html",
+			  	success: function(data){
+			  		var objData = $.parseJSON(data);
+                    jQuery('#ajax_loader').hide();
+
+                    if(objData.status=="ERROR") {
+                        jQuery('span.ajax_msg').html(objData.message).show().delay(5000).fadeOut();
+                    }else {
+                        jQuery('span.ajax_msg').html(objData.message).show().delay(5000).fadeOut();
+                    }                                            
+                }
+			});
+			 
+			// request.done(function( msg ) {
+			//   	jQuery('#ajax_loader').hide();
+			//   	jQuery('span.ajax_msg').html('Successfully Submitted Your Resume.').show().delay(5000).fadeOut();
+			// });		
+		});
+	});
+</script>

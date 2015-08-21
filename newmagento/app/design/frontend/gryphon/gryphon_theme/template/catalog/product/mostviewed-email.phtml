@@ -12,7 +12,7 @@
                               <a href="#" target="_blank">
                                 <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(285, 240); ?>" width="285" height="240" style="display: block; width: 240px; height: 130px;" border="0" class="img-max" alt="tea <?php echo $i ?>">                                
                               </a>
-                                <p style="font-family: 'MinionPro-SemiboldIt', Tahoma, Helvetica, Arial, sans-serif; font-size: 12px; line-height: 16px; letter-spacing: 0.03em; color: #ae4e0e; margin-bottom: 0px;margin-top: 10px;"><?php echo ceil($_product->getPrice()); ?> Loyalty Points</p>
+                                <p style="font-family: 'MinionPro-SemiboldIt', Tahoma, Helvetica, Arial, sans-serif; font-size: 12px; line-height: 16px; letter-spacing: 0.03em; color: #ae4e0e; margin-bottom: 0px;margin-top: 10px;"><?php echo ceil($_product->getPrice()); ?> Reward Points</p>
                               <h4 style="font-family: 'MinionPro-Regular', Tahoma, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 16px; letter-spacing: 0.05em; color: #252525; text-transform: uppercase; margin-top: 10px; margin-bottom: 5px;"><?php echo $this->htmlEscape($_product->getName()) ?></h4>
                               <?php
                                 $categoryIds = $_product->getCategoryIds();

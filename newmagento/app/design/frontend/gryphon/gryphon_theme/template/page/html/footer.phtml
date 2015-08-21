@@ -6,8 +6,8 @@
 			<p>Join our Gryphon Tea Family and be the first to learn about our latest news, and enjoy exclusive deals and invites to events</p>
 
 			<div class="search">
-				<input type="text" name="search" placeholder="Enter your email address" />
-				<button class="signup"><i class="fa fa-check"></i> <span>Sign up</span></button>
+				<input type="text" name="subscribe_email" placeholder="Enter your email address" />
+				<button class="signup subscribe_newsletter"><i class="fa fa-check"></i> <span>Sign up</span></button>
 			</div>
 
 			<hr class="dotted">
@@ -41,8 +41,8 @@
 					<p>Join our Gryphon Tea Family and be the first to learn about our latest news, and enjoy exclusive deals and invites to events</p>
 
 					<div class="search">
-						<input type="text" name="search" placeholder="Enter your email address" />
-						<button class="signup"><i class="fa fa-check"></i> <span>Sign up</span></button>
+						<input type="text" name="subscribe_email" id="subscribe_email" placeholder="Enter your email address" />
+						<button class="signup subscribe_newsletter"><i class="fa fa-check"></i> <span>Sign up</span></button>
 					</div>
 				</div>
 				<div class="col-md-7">
@@ -152,3 +152,21 @@
 		</div>
 	</div>
 </div><!-- page wrapper end -->
+<script>
+	jQuery(document).ready(function($){
+		$('.subscribe_newsletter').on('click', function(e){
+			var subscribe_email = $('#subscribe_email').val();
+			console.log(subscribe_email);
+			var request = $.ajax({
+			  	url: "<?php echo $this->getUrl('discovertea/index/subscribe') ?>",
+			  	method: "POST",
+			  	data: { subscribe_email : subscribe_email },
+			  	dataType: "html"
+			});
+			 
+			request.done(function( msg ) {
+			  console.log(msg);
+			});			
+		});
+	});
+</script>

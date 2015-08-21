@@ -260,7 +260,7 @@ class Rewardpoints_Block_Coupon extends Mage_Checkout_Block_Cart_Abstract
             if ($slider){
                 $toHtmlArr[] = $creditToBeAdded;
             } else {
-                $toHtml .= '<option value="'. $creditToBeAdded .'">'. $this->__("%d loyalty point(s)",$creditToBeAdded) .'</option>';
+                $toHtml .= '<option value="'. $creditToBeAdded .'">'. $this->__("%d reward point(s)",$creditToBeAdded) .'</option>';
             }
         }
         if ($toHtmlArr != array()){

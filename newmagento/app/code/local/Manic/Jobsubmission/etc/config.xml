@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+  <config>
+     <modules>
+        <Manic_Jobsubmission>
+          <version>1.0.0</version>
+        </Manic_Jobsubmission>
+     </modules>
+     <frontend>
+       <routers>
+          <manic_jobsubmission>
+              <use>standard</use>
+              <args>
+                 <module>Manic_Jobsubmission</module>
+                 <frontName>jobsubmission</frontName>
+              </args>
+           </manic_jobsubmission>
+       </routers>
+    </frontend>
+</config>

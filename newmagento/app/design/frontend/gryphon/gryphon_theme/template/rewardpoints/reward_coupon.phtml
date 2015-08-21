@@ -65,7 +65,7 @@
         <?php echo $this->getIllustrationImage()?>
         <div class="rewards_point_cart">
             <?php if (!$this->isCouponPointsRemoved()): ?>
-                <?php echo $this->__("This shopping cart is worth %s loyalty point(s).", $pts);?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?>
+                <?php echo $this->__("This shopping cart is worth %s reward point(s).", $pts);?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?>
             <?php else:?>
                 <?php echo $this->__("You are currently using a discount code. Therefore, this order will not allow point gathering.");?>
             <?php endif;?>
@@ -88,7 +88,7 @@
             <?php echo $this->getIllustrationImage()?>
             <div class="rewards_point_cart">
                 <?php if (!$this->isCouponPointsRemoved()): ?>
-                    <?php echo $this->__("This shopping cart is worth %s loyalty points.", $pts);?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?>
+                    <?php echo $this->__("This shopping cart is worth %s reward points.", $pts);?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?>
                 <?php else:?>
                     <?php echo $this->__("You are currently using a discount code. Therefore, this order will not allow point gathering.");?>
                 <?php endif;?>
@@ -98,13 +98,13 @@
             <?php endif;?>
             <?php echo $login_extra_box;?>
             <?php if ($point_details['min_use'] > $point_details['customer_points']):?>
-                <p><?php echo $this->__('You have %d loyalty point(s) available.', $point_details['customer_points']); ?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($point_details['customer_points']);?></p>
+                <p><?php echo $this->__('You have %d reward point(s) available.', $point_details['customer_points']); ?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($point_details['customer_points']);?></p>
                 <?php //if ($point_details['step_apply']):?>
-                <p><?php echo $this->__('To get a discount you need at least %d loyalty point(s).', $point_details['min_use']); ?></p>
+                <p><?php echo $this->__('To get a discount you need at least %d reward point(s).', $point_details['min_use']); ?></p>
                 <?php //endif;?>
             <?php else:?>
-                <p class="no-display"><?php echo $this->__('Enter quantity of loyalty point(s) you want to use.') ?></p>
-                <!-- <p><?php echo $this->__('You have %d loyalty point(s) available.', $point_details['customer_points']); ?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($point_details['customer_points']);?></p> -->
+                <p class="no-display"><?php echo $this->__('Enter quantity of reward point(s) you want to use.') ?></p>
+                <!-- <p><?php echo $this->__('You have %d reward point(s) available.', $point_details['customer_points']); ?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($point_details['customer_points']);?></p> -->
                 <?php if($this->isUsable() && $this->getCustomerPoints() > 0) : ?>
                 <?php if ($point_details['step_apply']):?>
                     <?php if (!$this->useSlider()):?>
@@ -225,7 +225,7 @@
             <?php echo $this->getIllustrationImage()?>
             <div class="rewards_point_cart">
                 <?php if (!$this->isCouponPointsRemoved()): ?>
-                    <?php echo $this->__("This shopping cart is worth %s loyalty point(s).", $pts);?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?>
+                    <?php echo $this->__("This shopping cart is worth %s reward point(s).", $pts);?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?>
                 <?php else:?>
                     <?php echo $this->__("You are currently using a discount code. Therefore, this order will not allow point gathering.");?>
                 <?php endif;?>
@@ -235,7 +235,7 @@
             <?php endif;?>
             <?php echo $login_extra_box;?>
             <?php if ($points_currently_used > 0):?>
-            <!-- <p class="used-points-msg"><?php echo $this->__('You are currently using %d point(s) of your %d loyalty point(s) available.', $points_currently_used, $this->getCustomerPoints()); ?></p> -->
+            <!-- <p class="used-points-msg"><?php echo $this->__('You are currently using %d point(s) of your %d reward point(s) available.', $points_currently_used, $this->getCustomerPoints()); ?></p> -->
             <?php endif;?>
             <!-- <div class="buttons-set"> -->
                 <label for="coupon_code">REDEEM POINTS</label>
@@ -269,7 +269,7 @@
     <?php echo $this->getIllustrationImage()?>
     <div class="rewards_point_cart">
         <?php if (!$this->isCouponPointsRemoved()): ?>
-            <?php echo $this->__("This shopping cart is worth %s loyalty point(s).", $pts);?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?>
+            <?php echo $this->__("This shopping cart is worth %s reward point(s).", $pts);?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?>
         <?php else:?>
             <?php echo $this->__("You are currently using a discount code. Therefore, this order will not allow point gathering.");?>
         <?php endif;?>
@@ -283,7 +283,7 @@
     <?php if ($customerPoints):?>
     
         <?php if ($points_currently_used > 0):?>
-        <p><?php echo $this->__('You are currently using %d point(s) of your %d loyalty point(s) available.', $points_currently_used, $customerPoints); ?></p>
+        <p><?php echo $this->__('You are currently using %d point(s) of your %d reward point(s) available.', $points_currently_used, $customerPoints); ?></p>
         <?php endif;?>
     <?php endif;?>
     <?php endif;?>

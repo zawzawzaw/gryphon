@@ -98,6 +98,7 @@ One page checkout main layout
     <customer_account>
         <reference name="head">            
             <action method="addItem"><type>skin_js</type><name>js/inside-pages.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/no-banner.js</name></action>
         </reference>
 
         <reference name="root">

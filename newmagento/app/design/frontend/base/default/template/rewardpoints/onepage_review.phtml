@@ -13,11 +13,11 @@
         <span class="discount-codes box discount">
             <h2><?php echo $this->__('Reward points'); ?></h2>
             <?php echo $this->getIllustrationImage()?>
-            <p class="rewards_point_cart"><?php echo $this->__("This shopping cart is worth %s loyalty point(s).", $pts);?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?><?php if (!$this->getCustomerId()): ?> <em>*</em><?php endif;?></p>
+            <p class="rewards_point_cart"><?php echo $this->__("This shopping cart is worth %s reward point(s).", $pts);?><?php echo Mage::helper('rewardpoints/data')->getEquivalence($pts);?><?php if (!$this->getCustomerId()): ?> <em>*</em><?php endif;?></p>
             <?php if ($this->getCustomerId()): ?>
                 <?php $customerPoints = $this->getCustomerPoints(); ?>
                 <?php if ($customerPoints > 0):?>
-                    <p><?php echo $this->__('You are currently using %d point(s) of your %d loyalty point(s) available.', $points_currently_used, $customerPoints); ?></p>
+                    <p><?php echo $this->__('You are currently using %d point(s) of your %d reward point(s) available.', $points_currently_used, $customerPoints); ?></p>
                     <p><?php echo $this->__("Review your <a href='%s'>shopping cart</a> to apply or modify points usage.",$this->getUrl('checkout/cart'));?></p>
                 <?php endif;?>
             <?php else:?>

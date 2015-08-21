@@ -487,6 +487,6 @@
             animation: "flipUp",
             separator: ",",
             speed: 8000
-        }); 
+        });         
     });
 })(jQuery);

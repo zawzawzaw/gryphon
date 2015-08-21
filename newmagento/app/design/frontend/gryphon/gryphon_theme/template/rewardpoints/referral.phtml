@@ -19,7 +19,7 @@
  ?>
 <div class="my-account">
     <div class="page-title">
-        <h1><?php echo $this->__('Referral') ?></h1>
+        <h1><?php echo $this->__('Get Rewarded For Referring A Friend') ?></h1>
         <hr class="small">
     </div>
     <?php if($this->getReferrerRegistrationPoints()):?>
@@ -123,7 +123,7 @@
     <?php endif;?>
 
     <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
-    <form action="<?php echo $this->getUrl('rewardpoints/index/referral/') ?>" method="post" id="form-validate">
+    <form action="<?php echo $this->getUrl('rewardpoints/index/referral/') ?>" method="post" class="refer-friend-form" id="form-validate">
         <div class="group-select fieldset" id="j2t-referral-lines">
             <?php /*?><input type="hidden" value="Il1NwrpfsCuSmp03" name="form_key"/><?php */?>
             <?php echo $this->getBlockHtml('formkey')?>

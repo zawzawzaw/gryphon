@@ -255,9 +255,28 @@ $quoteData= $quote->getData();
 	</header>
 </div>
 <div id="header-wrapper" class="visible-md visible-lg"><!-- container-fluid -->
-	<div class="marquee">
-		<p class="rotate">Use code "shopnow" to enjoy 10% off first purchase, Free local shipping when you spend over $60, Free samples with every order</p>
-	</div>
+	<?php
+	if(Mage::getSingleton('customer/session')->isLoggedIn()):
+      	// Get group Id
+		$groupId = Mage::getSingleton('customer/session')->getCustomerGroupId();
+		//Get customer Group name
+		$group = Mage::getModel('customer/group')->load($groupId);
+	?>
+		<?php if(strtolower(trim($group->getCode()))!=="general"): ?>
+			<div class="marquee">
+				<p class="rotate">TRADE PROMO COPY COMES HERE, TRADE PROMO COPY COMES HERE 2, TRADE PROMO COPY COMES HERE 3</p>
+			</div>
+		<?php else: ?>
+			<div class="marquee">
+				<p class="rotate">Use code "shopnow" to enjoy 10% off first purchase, Free local shipping when you spend over $60, Free samples with every order</p>
+			</div>
+		<?php endif; ?>
+	<?php else: ?>
+		<div class="marquee">
+			<p class="rotate">Use code "shopnow" to enjoy 10% off first purchase, Free local shipping when you spend over $60, Free samples with every order</p>
+		</div>
+	<?php endif; ?>
+	
 	<header id="main-header" class="container">
 		<div class="row">
 			<div class="col-md-12">

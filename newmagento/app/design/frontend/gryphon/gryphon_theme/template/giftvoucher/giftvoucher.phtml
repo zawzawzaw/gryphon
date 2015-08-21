@@ -11,21 +11,32 @@
     <div class="balance">
         <div class="amount">
             <?php if (Mage::helper('giftvoucher')->getGeneralConfig('enablecredit')) { ?>
-                <p><?php echo $this->__('My credit balance: ') ?><span class="regular-price"><span><?php echo $this->getBalanceAccount() ?></span></span></p>
+                <p><?php echo $this->__('My credit balance: ') ?></p>
+                <span class="regular-price"><span><?php echo $this->getBalanceAccount() ?></span></span>
             <?php } ?>
-            <button type="button" class="cta form-button button addredeem" onclick="setLocation('<?php echo $this->getUrl('giftvoucher/index/addredeem') ?>')">
+            <!-- <button type="button" class="cta form-button button addredeem" onclick="setLocation('<?php echo $this->getUrl('giftvoucher/index/addredeem') ?>')">
                 <?php if (Mage::helper('giftvoucher')->getGeneralConfig('enablecredit')) { ?>
                     <span><span><?php echo $this->__('Add / Redeem a Gift Card') ?></span></span>
                 <?php } else { ?>
                     <span><span><?php echo $this->__('Add a Gift Card') ?></span></span>
                 <?php } ?>
-            </button>
+            </button> -->
         </div>
-        <?php if (Mage::helper('giftvoucher')->getGeneralConfig('enablecredit')) { ?>
-        <!-- <div class="button view-detail">
-            <a class="left" href="<?php echo $this->getUrl('giftvoucher/index/history') ?>"><?php echo $this->__('View detail') ?></a>
-        </div> -->
-        <?php } ?>
+
+        <div class="history">
+            <div class="page-title">
+                <h1><?php echo $this->__('History') ?></h1>
+                <hr class="small">
+            </div>
+            <div class="title-action">
+                <a href="javascript:void(0);" class="form-button button" onclick="setLocation('<?php echo $this->getUrl('giftvoucher/index/addredeem') ?>')"><i class="fa fa-plus"></i> Add Gift Card</a>
+            </div>
+            <?php if (Mage::helper('giftvoucher')->getGeneralConfig('enablecredit')) { ?>
+            <!-- <div class="button view-detail">
+                <a class="left" href="<?php echo $this->getUrl('giftvoucher/index/history') ?>"><?php echo $this->__('View detail') ?></a>
+            </div> -->
+            <?php } ?>
+        </div>
     </div>
     <?php echo $this->getGridHtml() ?>
 </div>

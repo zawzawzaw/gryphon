@@ -68,7 +68,7 @@
 			  	{
 			    	$caturl     = $_category->getURL();
 			    	$catname     = $_category->getName();
-			    	if($catname!='gifts' && $catname!='pantry') 
+			    	if(strtolower($catname)!='gifts' && strtolower($catname)!='pantry') 
 			    		echo '<li><a href="'.$caturl.'">'.$catname.'</a></li>';
 			    }
 			}	

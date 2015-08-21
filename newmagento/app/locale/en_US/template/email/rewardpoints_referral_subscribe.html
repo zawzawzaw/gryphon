@@ -2,32 +2,163 @@
 <!--@styles
 body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; }
 @-->
+{{template config_path="design/email/header"}}
+{{inlinecss file="email-inline.css"}}
 
-<style type="text/css">
-body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; }
-</style>
+<!-- ONE COLUMN SECTION -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#ffffff" align="center" style="padding: 0px 15px 70px 15px;" class="section-padding">
+            <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
+                <tr>
+                    <td>
+                        <!-- HERO IMAGE -->
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td class="padding-copy">
+                                    <a href="#" target="_blank">
+                                        <img src="http://clients.manic.com.sg/gryphon/emailer/images/hero-referral.jpg" width="600" height="400" border="0" alt="Insert alt text here" style="display: block; color: #666666; font-family: Helvetica, arial, sans-serif; font-size: 16px; line-height: 20px;" class="img-max">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <!-- COPY -->
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                      <tr>
+                                        <td align="center" style="font-size: 14px; font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; color: #252525; padding-top: 40px;" class="padding-copy">Dear {{var referral.rewardpoints_referral_name}},</td>
+                                      </tr>
+                                      <tr>
+                                        <td align="center" style="padding: 20px 45px 0 45px; font-size: 12px; line-height: 19px; font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #666666;" class="padding-copy">{{var parent.name}} ({{var parent.email}}) invites you to visit: <a style="color: #ae4e0e; text-decoration: none;" href="{{var referral_url}}">{{var store_name}}</a></td>
+                                      </tr>
+                                      <tr>
+                                        <td align="center" style="padding: 20px 45px 0 45px; font-size: 12px; line-height: 19px; font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #666666;" class="padding-copy">If you register and order on <a style="color: #ae4e0e; text-decoration: none;" href="{{var referral_url}}">{{var store_name}}</a> with this email address: {{var referral.rewardpoints_referral_email}}, you will allow your friend, {{var parent.name}} ({{var parent.email}}), to earn some reward points.</td>
+                                      </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    <!-- BULLETPROOF BUTTON -->
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mobile-button-container">
+                                        <tr>
+                                            <td align="center" style="padding: 25px 0 0 0;" class="padding-copy">
+                                                <table border="0" cellspacing="0" cellpadding="0" class="responsive-table">
+                                                    <tr>
+                                                        <td align="center"><a href="{{store url=''}}" target="_blank" style="padding: 7px 35px; font-size: 11px; line-height: 16px; font-family:  'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; font-weight: normal; color: #ffffff; text-decoration: none; background-color: #252525;  display: inline-block;" class="mobile-button">Gryphon Website</a></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
 
-<div style="font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;">
-    <table cellspacing="0" cellpadding="0" border="0" width="98%" style="margin-top:10px; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; margin-bottom:10px;">
-        <tr>
-            <td align="center" valign="top">
-                <table cellspacing="0" cellpadding="0" border="0" width="650">
-                    <tr>
-                        <td valign="top"><a href="{{var referral_url}}"><img src="{{skin url="images/logo_email.gif" _area='frontend'}}" alt=""  style="margin-bottom:10px;" border="0"/></a></td>
-                    </tr>
-                </table>
-                <table cellspacing="0" cellpadding="0" border="0" width="650">
-                    <tr>
-                        <td valign="top">
-                            <p>{{var parent.name}} ({{var parent.email}}) invites you to visit: <a href="{{var referral_url}}">{{var store_name}}</a></p>
-                            <p>Dear {{var referral.rewardpoints_referral_name}}, <br /><br />
-                                If you register and order on <a href="{{var referral_url}}">{{var store_name}}</a> with this email address: {{var referral.rewardpoints_referral_email}}, you will allow your friend, {{var parent.name}} ({{var parent.email}}), to earn some loyalty points.<br />
-                            </p>
-                        </td>
-                    </tr>
-                </table>
+<!-- TWO COLUMN SECTION -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#f6f4f1" align="center" style="padding: 30px 15px 30px 15px;" class="section-padding">
+            <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
+                <tr>
+                    <td>
+                        <!-- TWO COLUMNS -->
+                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td valign="top" style="padding: 0;" class="mobile-wrapper">
+                                    <!-- LEFT COLUMN -->
+                                    <table cellpadding="0" cellspacing="0" border="0" width="33%" align="left" class="responsive-table">
+                                        <tr>
+                                            <td style="padding: 20px 0 40px 0;">
+                                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                    
+                                                    <tr>
+                                                        <td align="center" style="padding: 15px 0 0 0; font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; color: #333333; font-size: 12px;">CONTACT US</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" style="padding-bottom: 5px;">
+                                                            <table cellpadding="0" cellspacing="0" border="0" width="20" align="center" class="responsive-table">
+                                                                <tr>
+                                                                    <td aligh="center" width="20" style="width: 20px;height: 8px;border-bottom: 3px solid #ae4e0e;display: block;    margin: 0 auto;">&nbsp;</td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" style="padding: 5px 0 0 0; font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #666666; font-size: 11px; line-height: 16px;"><span class="appleBody">251 Pandan Loop <br> Singapore 128431</span><br><span class="appleBody" style="padding-top: 8px;display:block;color:#666;text-decoration:none;">+65 6779 2948</span></td>
+                                                    </tr>                                                    
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- CENTER COLUMN -->
+                                    <table cellpadding="0" cellspacing="0" border="0" width="33%" align="left" class="responsive-table">
+                                        <tr>
+                                            <td style="padding: 20px 0 40px 0;">
+                                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                    
+                                                    <tr>
+                                                        <td align="center" style="padding: 15px 0 0 0; font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; color: #333333; font-size: 12px;">EMAIL SETTINGS</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" style="padding-bottom: 5px;">
+                                                            <table cellpadding="0" cellspacing="0" border="0" width="20" align="center" class="responsive-table">
+                                                                <tr>
+                                                                    <td aligh="center" width="20" style="width: 20px;height: 8px;border-bottom: 3px solid #ae4e0e;display: block;    margin: 0 auto;">&nbsp;</td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" style="padding: 5px 0 0 0; font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #666666; font-size: 11px; line-height: 16px;"><span class="appleBody">To change your <a href="#" style="color: #ae4e0e; text-decoration: none;">Email settings</a> or to unsubscribe emails containing special promotions, events and new products, <a href="#" style="color: #ae4e0e; text-decoration: none;">Click here.</a></span></td>
+                                                    </tr>                                                    
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- RIGHT COLUMN -->
+                                    <table cellpadding="0" cellspacing="0" border="0" width="33%" align="right" class="responsive-table">
+                                        <tr>
+                                            <td style="padding: 20px 0 40px 0;">
+                                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                    
+                                                    <tr>
+                                                        <td align="center" style="padding: 15px 0 0 0; font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; color: #333333; font-size: 12px;">FOLLOW US</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" style="padding-bottom: 5px;">
+                                                            <table cellpadding="0" cellspacing="0" border="0" width="20" align="center" class="responsive-table">
+                                                                <tr>
+                                                                    <td aligh="center" width="20" style="width: 20px;height: 8px;border-bottom: 3px solid #ae4e0e;display: block;    margin: 0 auto;">&nbsp;</td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" style="padding: 5px 0 0 0;">
+                                                            <a href="https://instagram.com/gryphontea/" target="_blank" style="padding: 0px 3px;color: #256F9C; text-decoration: none;"><img src="http://clients.manic.com.sg/gryphon/emailer/images/instagram.png" alt=""></a>
+                                                            <a href="https://www.pinterest.com/gryphontea/" target="_blank" style="padding: 0px 3px;color: #256F9C; text-decoration: none;"><img src="http://clients.manic.com.sg/gryphon/emailer/images/pintrest.png" alt=""></a>
+                                                            <a href="https://www.facebook.com/gryphonteacompany" target="_blank" style="padding: 0px 3px;color: #256F9C; text-decoration: none;"><img src="http://clients.manic.com.sg/gryphon/emailer/images/facebook.png" alt=""></a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>                
+            </table>
+        </td>
+    </tr>
+</table>
 
-            </td>
-        </tr>
-    </table>
-</div>
+{{template config_path="design/email/footer"}}

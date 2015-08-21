@@ -24,6 +24,14 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
+<?php 
+$groupname = '';
+if(Mage::getSingleton('customer/session')->isLoggedIn()) {
+    $customerData = Mage::getSingleton('customer/session')->getCustomer();
+    $customerGroupId = $customerData->getGroupId();
+    $groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();  
+} 
+?>
 <?php $_product = $this->getProduct(); ?>
 <?php $buttonTitle = $this->__('Add to Cart'); ?>
 <?php $isGiftcardType = $this->helper('catalogcustomiser')->isGiftcardType($_product); ?>
@@ -32,7 +40,11 @@
         <?php if(!$_product->isGrouped()): ?>
             <?php if (!$isGiftcardType && $_product->getTypeId() !== 'tin') : ?>
                 <div class="qty-wrapper">
+                    <?php if($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium'): ?>
                     <h5><?php echo $this->__('WEIGHT (KG)') ?></h5>
+                    <?php else: ?>
+                        <h5><?php echo $this->__('Quantity') ?></h5>
+                    <?php endif; ?>
                     <a href="#" class="minus"><i class="fa fa-minus"></i></a>
                     <input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" value="<?php echo max($this->getProductDefaultQty() * 1, 1) ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
                     <a href="#" class="plus"><i class="fa fa-plus"></i></a>            
