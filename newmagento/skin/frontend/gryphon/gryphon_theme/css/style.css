@@ -6854,9 +6854,6 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   line-height: 16px;
   letter-spacing: 0.05em;
 }
-.cart #confirmation .totals {
-  padding-right: 0px;
-}
 .cart #confirmation .each-details {
   /*margin-bottom: 13px;*/
   border-bottom: 1px dashed #ccc;
