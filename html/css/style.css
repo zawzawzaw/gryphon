@@ -2282,7 +2282,7 @@ div.product .main-product .product-content #trade-product-weight-table p {
   font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 600;
   font-style: italic;
-  font-size: 12px;
+  font-size: 14px!important;
   line-height: 39px;
   letter-spacing: 0.03em;
   text-align: left;
@@ -2293,6 +2293,16 @@ div.product .main-product .product-content #trade-product-weight-table .absorbin
   border-top: none !important;
   border-bottom: none !important;
   padding: 0 !important;
+}
+div.product .main-product .product-content #trade-product-weight-table .price {
+  color: #464646;
+  font-family: "minion-pro", Verdana, sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 14px !important;
+  letter-spacing: 0.03em;
+  line-height: 39px;
+  text-align: left;
 }
 div.product .main-product .product-content #trade-product-weight-table thead tr th {
   white-space: nowrap;
