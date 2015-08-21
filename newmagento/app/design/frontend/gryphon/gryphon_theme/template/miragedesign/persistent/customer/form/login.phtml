@@ -50,7 +50,7 @@
             <div class="row account-login<?php if (!$this->helper('customer')->isRegistrationAllowed()) echo ' login-only' ?>">
                 <form action="<?php echo $this->getUrl("trader/customer_account/") ?>loginpost/" method="post" id="login-form" class="scaffold-form login-form">
                     <?php echo $this->getBlockHtml('formkey'); ?>
-                    <div class="col-md-5 first-col">
+                    <div class="col-md-6 first-col">
                         <h1><?php if ($this->helper('customer')->isRegistrationAllowed()): ?>
                                 <?php echo $this->__('Login or Create an Account') ?>
                             <?php else: ?>
@@ -75,7 +75,7 @@
                             </div>
                         <?php endif; ?>
                     </div>
-                    <div class="col-md-5 col-md-offset-1 second-col">
+                    <div class="col-md-6 second-col">
                         <div class="<?php if ($this->helper('customer')->isRegistrationAllowed()): ?>col-2<?php else: ?>col-1<?php endif; ?> registered-users">
                             <div class="content fieldset">
                                 <h1><?php echo $this->__('I have a Gryphon Tea account') ?></h1>

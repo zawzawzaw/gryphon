@@ -11,8 +11,8 @@ $i = 1;
 	<div class="post">
 		<span class="date"><?php echo $post->getPostDate() ?></span>
 		<h2><?php echo $post->getPostTitle(); ?></h2>
-		<p><?php $content = $post->getPostExcerpt(); $content = strip_tags($content); echo substr($content, 0, 200); ?> ...</p>
-		<a href="<?php echo Mage::getBaseUrl(); ?>wp/?p=<?php echo $post->getId() ?>" class="cta read-more"><i class="fa fa-arrow-right"></i> Read more</a>
+		<p><?php $content = $post->getPostExcerpt(); $content = strip_tags($content); echo substr($content, 0, 150); ?> ...</p>
+		<a href="<?php echo Mage::getBaseUrl(); ?>wp/?p=<?php echo $post->getId() ?>" class="cta read-more"><i class="my-arrow-right"></i> Read more</a>
 	</div>
 	<?php $i++; ?>
 	<?php endif; ?>

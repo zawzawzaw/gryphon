@@ -19,17 +19,33 @@
  ?>
 <div class="my-account">
     <div class="page-title">
-        <h1><?php echo $this->__('Get Rewarded For Referring A Friend') ?></h1>
+        <h1><?php echo $this->__('REFERRAL') ?></h1>
         <hr class="small">
     </div>
     <?php if($this->getReferrerRegistrationPoints()):?>
-        <p><?php echo $this->__('For any referred friend\'s registration, you earn: <strong>%s points</strong>', $this->getReferrerRegistrationPoints());?></p> 
+        <div class="points">
+            <div class="left">
+                <div class="pts"><span class="no"><?php echo $this->getReferrerRegistrationPoints(); ?></span><span class="text">points</span></div>
+            </div>
+            <div class="right">
+                <span class="pts-text">For any referred friend's registration</span>
+            </div>
+        </div>
+        <!-- <p><?php echo $this->__('For any referred friend\'s registration, you earn: <strong>%s points</strong>', $this->getReferrerRegistrationPoints());?></p>  -->
     <?php endif;?>
     <?php if($this->getFriendRegistrationPoints()):?>
         <p><?php echo $this->__('For any referred friend\'s registration, you friend earn: <strong>%s points</strong>', $this->getFriendRegistrationPoints());?></p>
     <?php endif;?>
     <?php if($this->getReferrerPoints() && $this->getReferrerCalculationType() == Rewardpoints_Model_Calculationtype::STATIC_VALUE):?>
-        <p><?php echo $this->__('For any first valid order placed by referred friend, you earn: <strong>%s points</strong>', $this->getReferrerPoints());?></p>
+        <div class="points">
+            <div class="left">
+                <div class="pts"><span class="no"><?php echo $this->getReferrerPoints(); ?></span><span class="text">points</span></div>
+            </div>
+            <div class="right">
+                <span class="pts-text">For any first valid order placed by referred friend</span>
+            </div>
+        </div>
+        <!-- <p><?php echo $this->__('For any first valid order placed by referred friend, you earn: <strong>%s points</strong>', $this->getReferrerPoints());?></p> -->
         <?php elseif ($this->getReferrerPoints() && $this->getReferrerCalculationType() == Rewardpoints_Model_Calculationtype::RATIO_POINTS):?>
         <p><?php echo $this->__('For any first valid order placed by referred friend, you earn: <strong>%s points x product price values</strong>', $this->getReferrerPoints());?></p>
         <?php elseif ($this->getReferrerPoints() && $this->getReferrerCalculationType() == Rewardpoints_Model_Calculationtype::CART_SUMMARY):?>
@@ -127,7 +143,8 @@
         <div class="group-select fieldset" id="j2t-referral-lines">
             <?php /*?><input type="hidden" value="Il1NwrpfsCuSmp03" name="form_key"/><?php */?>
             <?php echo $this->getBlockHtml('formkey')?>
-            <h2 class="legend"><?php echo $this->__('Refer a friend') ?></h2>
+            <h1 class="legend"><?php echo $this->__('Refer a friend') ?></h1>
+            <hr class="small">
 
                 <ul class="form-list">
                     <li class="fields">
@@ -143,7 +160,13 @@
                         </div>
                     </li>
                 </ul>
-                <a id="j2t-add-line" href="javascript:j2t_add_line();" title="<?php echo $this->__('Add new line') ?>">Add more +
+                <div class="button-set">
+                    <!-- <p class="required"><?php echo $this->__('* Required Fields') ?></p> -->
+                    <!--<a href="<?php echo $this->getBackUrl() ?>" class="left">&laquo; <?php echo $this->__('Back') ?></a>-->
+                    <button class="form-button button cta send" type="submit"><span><span><?php echo $this->__('Send') ?></span></span></button>
+                </div>
+
+                <a id="j2t-add-line" href="javascript:j2t_add_line();" title="<?php echo $this->__('Add new line') ?>"><i class="fa fa-plus"></i> Add More
                     <!-- <img src="<?php echo $this->getSkinUrl('images/j2t_add_one.png') ?>" alt="<?php echo $this->__('Add new line') ?>" /> -->
                 </a>            
         
@@ -173,14 +196,7 @@
                     $('j2t-add-line').insert({ before: form_list_ul_clone });
                     elmt_id_j2t++;
                 }
-            </script>
-
-
-            <div class="button-set">
-                <p class="required"><?php echo $this->__('* Required Fields') ?></p>
-                <!--<a href="<?php echo $this->getBackUrl() ?>" class="left">&laquo; <?php echo $this->__('Back') ?></a>-->
-                <button class="form-button button cta send" type="submit"><span><span><?php echo $this->__('Send') ?></span></span></button>
-            </div>
+            </script>            
         </div>
     </form>
 
@@ -189,12 +205,13 @@
     </script>
     
     <div class="page-title invite-friends">
-        <h2><?php echo $this->__('Invited friends') ?></h2>
+        <h1><?php echo $this->__('Invited friends') ?></h1>
+        <hr class="small">
     </div>
     <?php $_referred = $this->getReferred();?>
     <?php if($_referred->getSize()): ?>
     <div class="referral-table">
-        <?php echo $this->getPagerHtml() ?>
+        <?php //echo $this->getPagerHtml() ?>
         <div class="table-responsive">
             <table cellspacing="0" class="data-table" id="referred-friends-table">
                 <thead>

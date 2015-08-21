@@ -49,7 +49,7 @@ if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 			?>
 					<div class="each-popular-post">
 						<?php echo get_the_post_thumbnail( $recent["ID"], 'thumbnail', array( 'class' => 'img-responsive' ) ); ?>
-						<span class="date"><?php echo date("F j", strtotime($recent["post_date"])); ?></span>
+						<span class="date"><?php echo date("F j, Y", strtotime($recent["post_date"])); ?></span>
 						<h2><?php echo $recent["post_title"]; ?></h2>
 						<p><?php echo $recent["post_excerpt"]; ?></p>
 

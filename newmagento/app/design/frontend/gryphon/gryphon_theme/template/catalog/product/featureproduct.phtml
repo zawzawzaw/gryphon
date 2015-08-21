@@ -126,7 +126,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <?php $feature_product_data = Mage::getModel('catalog/category')->load(92)->getData(); ?>             
 
                 <img src="<?php echo Mage::getBaseUrl('media').'catalog/category/'.$feature_product_data['thumbnail']; ?>" class="img-responsive" alt="feature product">
@@ -136,7 +136,7 @@
             <div class="col-md-12">
                 <?php $feature_products = Mage::getModel('catalog/category')->loadByAttribute('name', 'feature product');   ?>
                 <?php $feature_products_data = $feature_products->getData(); ?>
-                <a href="<?php echo $this->getUrl($feature_products_data['url_path']); ?>" class="cta view-more"><i class="fa fa-arrow-right"></i> View more</a>
+                <a href="<?php echo $this->getUrl($feature_products_data['url_path']); ?>" class="cta view-more"><i class="my-arrow-right"></i> View more</a>
             </div>
         </div>
     </div>

@@ -669,6 +669,7 @@ ul.messages {
       }*/
       &.shadow, &.permanent-shadow {
         box-shadow: 1px 1px 16px #EAEAEA;
+        border: 0px!important;
       }
     }
 
@@ -944,6 +945,7 @@ ul.messages {
             }
             span {
               vertical-align: middle;
+              color: @new-grey-2;
             }
           }
         }
@@ -1495,7 +1497,7 @@ ul.messages {
         .minion-pro-semibold-italic;
         display: inline-block;
         line-height: 18px;
-        color: @new-grey;
+        color: @dark-grey;
         vertical-align: top;
         height: 13px;
         font-size: 13px;
@@ -1625,6 +1627,13 @@ p {
   margin-right: 50px;
 }
 
+.my-arrow-right {  
+  background: url('../images/icons/arrow-right.png') no-repeat;
+  width: 12px;
+  height: 11px;
+  display: inline-block;
+}
+
 //   _        _ __   _____  _   _ _____ 
 //  | |      / \\ \ / / _ \| | | |_   _|
 //  | |     / _ \\ V / | | | | | | | |  
@@ -1669,7 +1678,7 @@ div.home {
     padding-bottom: 70px;
     
     h1 {
-     .gotham-bold;
+     .gotham-medium;
      font-size: 17px;
      line-height: 22px;
      letter-spacing: 0.05em;
@@ -1694,14 +1703,18 @@ div.home {
     background-color: @skin;
 
     .center-content {
-      padding-top: 30px;
+      padding-top: 20px;
+
+      .slick-slider {
+        margin-bottom: 0px!important;        
+      }      
     }
     .image-text-content {
       padding-top: 80px;
-      padding-bottom: 50px;
+      padding-bottom: 80px;
       
       h1 {
-       .gotham-bold;
+       .gotham-medium;
        font-size: 17px;
        line-height: 22px;
        letter-spacing: 0.05em;
@@ -1713,7 +1726,7 @@ div.home {
         width: 195px;
         margin-right: 30px;
         vertical-align: top;
-        position: relative;
+        position: relative;        
 
         @media all and (max-width: 550px) {
           display: block;
@@ -1722,6 +1735,10 @@ div.home {
 
         @media all and (max-width: 1200px) {
           margin-bottom: 15px;
+        }
+
+        > img {
+          width: 80%; 
         }
 
         img {
@@ -1735,6 +1752,7 @@ div.home {
 
         p.caption {
           .minion-pro-semibold;
+          font-weight: 500;
           font-size: 13px;
           color: @dark-grey;
           margin-top: 20px;
@@ -1815,7 +1833,7 @@ div.home {
       padding-top: 80px;
       padding-bottom: 80px;
     h1 {
-     .gotham-bold;
+     .gotham-medium;
      font-size: 17px;
      line-height: 22px;
      letter-spacing: 0.05em;
@@ -1837,6 +1855,7 @@ div.home {
         a.product-img {
           position: relative;
           img {
+            width: 80%;
             .transition();
             .opacity(1);
             // filter: blur(0);
@@ -1925,6 +1944,10 @@ div.home {
         letter-spacing: 0.03em;
         /*margin-top: 13px;*/
         margin-top: 35px;
+        color: #252525;
+        &:hover {
+          color: @dark-orange;
+        }
       }
      
 
@@ -1938,7 +1961,7 @@ div.home {
       padding-bottom: 80px;
 
     h1 {
-     .gotham-bold;
+     .gotham-medium;
      font-size: 17px;
      line-height: 22px;
      letter-spacing: 0.05em;
@@ -1964,11 +1987,15 @@ div.home {
 
         a {
           .minion-pro-semibold-italic;
-          font-size: 14px;
+          font-size: 13px;
           line-height: 30px;
           letter-spacing: 0.03em;
           display: block;
           text-transform: none;
+          color: #252525;
+          &:hover {
+            color: @dark-orange;
+          }
         }        
       }
     }
@@ -1978,7 +2005,7 @@ div.home {
     .image-text-content {
       padding-top: 80px;
     h1 {
-     .gotham-bold;
+     .gotham-medium;
      font-size: 17px;
      line-height: 22px;
      letter-spacing: 0.05em;
@@ -4587,7 +4614,7 @@ div.product {
 
 .sign-up {
   margin-top: 80px;
-  padding-bottom: 120px!important;
+  // padding-bottom: 120px!important;
   @media all and (max-width: 992px) {
     margin-top: 60px;
   }
@@ -4756,7 +4783,7 @@ div.product {
         }        
       }
       .ctas {
-        margin-top: 64px;
+        margin-top: 50px;
         button {
           @media all and (max-width: 470px) {
             width: 100%;
@@ -4814,6 +4841,9 @@ div.product {
           display: block;
           text-align: center;
         }
+      }
+      .first-col, .second-col {
+        padding-left: 4%;
       }
     }
 
@@ -4873,7 +4903,7 @@ div.product {
           // width: 135px;
           // margin-right: 27px;
           .gotham-medium;
-          color: #636363;
+          color: #777777;
           text-transform: uppercase;
           display: block;
           text-align: left;
@@ -4974,7 +5004,7 @@ div.product {
       }
       .buttons-set {
         text-align: left;
-        margin-top: 63px;
+        margin-top: 50px;
       }
       .ctas {
         margin-top: 64px;
@@ -4987,7 +5017,7 @@ div.product {
         }
       }
       .links {
-        margin-top: 28px;
+        margin-top: 20px;
       }
       .sign-in-facebook {
         background: url(../images/icons/facebook-2.png) no-repeat 26px 9px;
@@ -5120,7 +5150,7 @@ div.product {
       display: inline-block;
     }
     .all-points {
-      margin-top: 60px;
+      margin-top: 50px;
       @media all and (max-width: 992px) {
         margin-top: 0px;
         margin-bottom: 30px;
@@ -5148,6 +5178,9 @@ div.product {
         vertical-align: middle;
         line-height: 11px;
         padding-left: 6px;
+        text-align: left;
+        color: #464646;
+        vertical-align: bottom;
       }
     }
     .email-points {      
@@ -5189,10 +5222,10 @@ div.product {
       border-radius: 50px;
       color: @white;
       display: block;
-      .minion-pro-semibold-italic;
+      .minion-pro-medium-italic;
       text-align: center;
       padding-left: 1px;
-      padding-top: 4px;
+      padding-top: 5px;
       .no {
         font-size: 15px;
         line-height: 15px;
@@ -6285,7 +6318,7 @@ div.product {
       }
       i.no {
         .gotham-medium;
-        background: #aaa;
+        background: #777;
         border-radius: 50%;
         width: 20px;
         /*height: 20px;*/
@@ -6299,8 +6332,8 @@ div.product {
         margin-right: 10px;
       }
       span {
-        color: #aaa;
-        .minion-pro-semibold;
+        color: #777;
+        .minion-pro-medium;
         font-size: 13px;
         letter-spacing: 0.1em;
         margin-left: 10px;
@@ -6436,14 +6469,15 @@ div.product {
                 // margin-right: 40px;
                 display: inline-block;
                 text-align: center;
-                width: 58px;
+                // width: 58px;
+                width: 90px;
                 vertical-align: middle;
                 text-align: left;
                 margin-right: 30px;
               }
               
               p.product-title, .product-name {
-                .minion-pro-semibold;
+                .minion-pro-medium;
                 font-size: 12px;
                 line-height: 16px;
                 letter-spacing: 0.1em;
@@ -6476,7 +6510,8 @@ div.product {
 
               .item-options {
                   display: none;     
-                  margin-left: 30px;  
+                  // margin-left: 30px;
+                  margin-left: 60px;  
                   margin-top: -15px;           
                   li {
                     display: block;
@@ -6491,7 +6526,7 @@ div.product {
                     margin-bottom: 7px;
                     p.lbl {
                       display: inline-block;
-                      width: 135px;
+                      min-width: 135px;
                       padding-left: 0px;
                     }
                     span {
@@ -6540,8 +6575,8 @@ div.product {
                 }
 
                 .input-text {
-                  width: 33px;
-                  height: 26px;
+                  width: 45px;
+                  height: 25px;
                   background-color: #f6f4f1;
                   border: none;
                   text-align: center;
@@ -6554,8 +6589,8 @@ div.product {
                 }
                 a.minus {
                   background-color: #bcbbbb;
-                  width: 15px;
-                  height: 26px;
+                  width: 16px;
+                  height: 25px;
                   display: inline-block;
                   text-align: center;
                   font-size: 9px;
@@ -6566,8 +6601,8 @@ div.product {
                 }
                 a.plus {
                   background-color: #bcbbbb;
-                  width: 15px;
-                  height: 26px;
+                  width: 16px;
+                  height: 25px;
                   display: inline-block;
                   text-align: center;
                   font-size: 9px;
@@ -6776,7 +6811,7 @@ div.product {
         padding: .2em .6em .3em;
         margin-left: 12px;
         p {
-          .minion-pro-semibold;
+          .minion-pro-medium;
           font-size: 13px;
           line-height: 16px;
           letter-spacing: 0.05em;
@@ -6785,7 +6820,7 @@ div.product {
       .minus {
         color: #777;
         span {
-          .minion-pro-semibold;
+          .minion-pro-medium;
           font-size: 13px;
           line-height: 16px;
           letter-spacing: 0.05em; 
@@ -6817,6 +6852,9 @@ div.product {
   }
 
   #confirmation {
+    .totals {
+      padding-right: 0px;
+    }
     .each-details {
       /*margin-bottom: 13px;*/
       border-bottom: 1px dashed #ccc;
@@ -6842,8 +6880,8 @@ div.product {
           width: 60%!important;
       }
       p {
-        font-size: 12px;
-        .gotham-medium;
+        font-size: 11px;
+        .gotham-bold;
         letter-spacing: 0.03em;
         text-transform: uppercase;
       }
@@ -6905,10 +6943,11 @@ div.product {
         span {
           line-height: 14px;
         }
-      }
+      }      
       input[type="text"] {
-        .gotham-book;
-        font-size: 11px;
+        // .gotham-book;
+        .minion-pro-medium;
+        font-size: 13px;
         line-height: 19px;
         color: #464646;
         width: 240px;
@@ -7052,10 +7091,10 @@ div.product {
 
     .address-info {
       border: 1px solid #f3af68;
-      padding: 30px;
+      padding: 30px 30px 20px 30px;
       margin-top: 25px;
       .billing-info {
-        padding-bottom: 30px;
+        padding-bottom: 20px;
         border-bottom: 1px dashed #ccc;
         .address-details {
           margin-bottom: 10px;
@@ -7250,8 +7289,16 @@ div.product {
 
   #checkout-step-billing,#checkout-step-shipping {
     .dropdown-address {
+      label[for="billing-address-select"], label[for="shipping-address-select"] {
+        .gotham-book;
+        font-size: 11px;
+        color: #464646;
+        margin-bottom: 10px;
+        margin-right: 0;
+      }
       .dropdown {
         width: 400px;
+        margin-bottom: 15px;
         #custAddress {
           // width: 72%!important;
         }
@@ -7259,6 +7306,10 @@ div.product {
           width: 100%!important;
         }
       }  
+    }
+    .same-as-billing {
+      margin-bottom: 30px;
+      margin-top: -20px;
     }
     .back-btn {
       .gotham-medium;
@@ -7497,14 +7548,69 @@ div.product {
         }
       }
     }
+    
+    .points {
+      display: inline-block;
+      margin-right: 75px;  
+      margin-top: 10px;    
+    }
+    .left, .right {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .left {
+      margin-right: 15px;
+    }    
+    .pts {
+      background: @dark-orange;
+      width: 36px;
+      height: 36px;
+      border-radius: 50px;
+      color: @white;
+      display: block;
+      .minion-pro-semibold-italic;
+      text-align: center;
+      padding-left: 1px;
+      padding-top: 4px;
+      .no {
+        font-size: 15px;
+        line-height: 15px;
+        display: block;
+        vertical-align: middle;
+      }
+      .text {
+        font-size: 9px;
+        line-height: 9px;
+        display: block;
+        vertical-align: middle;
+      }
+    }
+    .pts-text {
+      .minion-pro-semibold-italic;
+      font-size: 12px;
+      line-height: 15px;      
+    }
+
     #j2t-referral-lines {
-      margin-top: 30px;
+      margin-top: 50px;
       margin-bottom: 30px;
       .form-list {
-        margin-top: 10px;
+        display: inline-block;
         .field {
           &.j2t-rewardpoints-name {
             width: 280px;
+            display: inline-block;
+          }
+          &.j2t-rewardpoints-email {           
+            display: inline-block;
+            margin-left: 30px;
+            position: relative;
+            img {
+              display: inline-block;
+              position: absolute;
+              top: 20px;
+              right: -25px;
+            }
           }
           label {
             .gotham-medium;
@@ -7560,9 +7666,23 @@ div.product {
       #j2t-add-line {
         margin-top: 10px;
         display: block;
+        .minion-pro-semibold-italic;
+        font-size: 13px;
+        line-height: 16px;
+        letter-spacing: 0.03em;
+        color: #252525;
+        i {
+          color: #ae4e0e;
+          margin-right: 5px;
+          font-size: 10px;
+        }
+        &:hover {
+          color: @dark-orange;
+        }
       }
       .button-set {
         margin-top: 10px;
+        display: inline-block;
       }
       .send {
         .gotham-medium;
@@ -7577,6 +7697,7 @@ div.product {
         text-transform: none;
         text-shadow: none;
         border: none;
+        margin-left: 30px;
         @media all and (max-width: 992px) {
           margin-top: 25px;
         }
@@ -7587,8 +7708,8 @@ div.product {
     }
 
     .refer-friend-form {
-      border-bottom: 1px solid #ccc;
-      margin-bottom: 30px;
+      // border-bottom: 1px solid #ccc;
+      margin-bottom: 60px;
     }
 
     .invite-friends {
@@ -7597,7 +7718,7 @@ div.product {
 
     .referral-table {
       text-align: left;
-      width: 45%;
+      width: 100%;
       @media all and (max-width: 992px) {
         width: 100%;
       }
@@ -7608,10 +7729,11 @@ div.product {
     }
 
     #referred-friends-table {
-      margin: 30px 0px;
-      display: block;
+      // margin: 30px 0px;
+      // display: block;
       text-align: center;
       width: 100%;
+      margin-top: 10px;
       thead {
         tr {
           th {
@@ -7646,11 +7768,23 @@ div.product {
 
     .buttons-set {
       margin-top: 10px;
+      display: inline-block;
+      margin-left: 30px;
+    }
+
+    .back-link {
+      display: none;
     }
 
     #my-rewardpoints-table {
-      margin-top: 30px;
-
+      margin-bottom: 50px;
+      p.loyalty-point {
+        .gotham-book;
+        font-size: 18px!important;
+        color: #ae4e0e;
+        display: block;
+        line-height: 25px;
+      }
       h2 {
         margin-bottom: 10px;
       }      
@@ -7658,17 +7792,19 @@ div.product {
 
     #reward-points-table {
       margin-top: 30px;
-      width: 85%;
+      width: 100%;
       thead {
         tr {
           th {
             .gotham-medium;
-            font-size: 11px;
-            line-height: 19px;
+            font-size: 10px;
+            line-height: 20px;
             border-top: 1px solid #ccc;
             border-bottom: 1px solid #ccc;
             padding: 10px 20px;
             text-align: center;
+            color: #707070;
+            text-transform: uppercase;
           }
         }
       }
@@ -7702,11 +7838,19 @@ div.product {
         display: none;
       } 
       .limiter {
-        margin-top: 30px;
-        margin-bottom: 10px;
+        margin-top: 27px;
+        margin-bottom: 10px;        
+        display: inline-block;
+        float: left;
         p {
           display: inline-block;
         }
+      }
+      .pages {
+        display: inline-block;
+        float: right;
+        margin-top: 30px;
+        margin-bottom: 10px;
       }
       label {
         .gotham-medium;
@@ -7729,7 +7873,9 @@ div.product {
       .pages {
         ol {
           li {
+            padding: 5px 10px;
             &.current {
+              color: @dark-orange;
               .gotham-book;
               font-size: 11px;
               line-height: 23px;
@@ -7738,7 +7884,8 @@ div.product {
               .gotham-book;
               font-size: 11px;
               line-height: 23px;
-              // border: none;
+              border: none;
+              padding: 0px;
               background: none;
               color: @new-grey;
               &:hover {
@@ -7797,7 +7944,7 @@ div.product {
           td {
             border-top: 1px dashed #ccc;
             padding: 20px;
-            text-align: center;
+            text-align: center; 
             p.order_no {
               color: @dark-orange;
             }
@@ -7806,6 +7953,15 @@ div.product {
               font-size: 11px;
               line-height: 19px;
               color: @new-grey;
+            }
+            span.price, span.date {
+              .minion-pro-italic;
+              font-size: 12px;
+              line-height: 16px;
+              letter-spacing: 0.03em;                
+            }
+            span.price {
+              color: @dark-orange;
             }
             p.amount {
               .minion-pro-regular;
@@ -8732,8 +8888,13 @@ div.product {
               color: @dark-orange;
             }
             p {
-              font-size: 11px;
-              line-height: 19px;
+              .minion-pro-italic;
+              font-size: 12px;
+              line-height: 16px;
+              letter-spacing: 0.03em;                
+              span.price {
+                color: @dark-orange;
+              }              
             }
             p.amount {
               .minion-pro-regular;
@@ -8749,6 +8910,9 @@ div.product {
               &.redeemed {
                 color: @dark-orange;
               }
+            }
+            a {
+              color: @dark-grey;
             }
             @media all and (max-width: 880px) {
               .giftvoucher-grid-detail {
@@ -9277,6 +9441,7 @@ div.product {
         line-height: 23px;
         color: @dark-grey;
         width: 100%;
+        border: 1px solid #ccc;
       }
       a.signup{
         background: none;

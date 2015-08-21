@@ -27,7 +27,8 @@
     <?php echo $this->getChildHtml('points') ?>
     
     <div class="page-title">
-        <h2><?php echo $this->__('History') ?></h2>
+        <h1><?php echo $this->__('History') ?></h1>
+        <hr class="small">
     </div>
 
     <?php $_points = $this->getPoints();?>
@@ -37,16 +38,17 @@
         <table cellspacing="0" class="data-table linearize-table" id="reward-points-table">
             <thead>
                 <tr>
-                    <?php ?><th><?php echo $this->__('Type of point') ?></th><?php ?>
+                    <?php ?><th><?php echo $this->__('Description') ?></th><?php ?>
                     <th><?php echo $this->__('Points added') ?></th>
                     <th><?php echo $this->__('Points used') ?></th>
-                    <th><?php echo $this->__('Allocation date') ?></th>
+                    <th><?php echo $this->__('Date') ?></th>
                     <th><?php echo $this->__('Valid until') ?></th>
                 </tr>
             </thead>
             <tbody>
                 <?php $_odd = ''; ?>
                 <?php foreach ($_points as $_point): ?>
+                    <?php $pointData = $_point->getData(); ?>
                     <tr>
                         <td data-theme-label="<?php echo $this->__('Type of point') ?>">
                             <?php echo $this->getTypeOfPoint($_point);?>
@@ -57,7 +59,7 @@
                         <?php /*?><td><?php if ($_point->getDate_start() != ""): echo $this->formatDate($_point->getDate_start(), 'short'); endif; ?></td>
                         <td><?php if ($_point->getDate_end() != ""): echo $this->formatDate($_point->getDate_end(), 'short'); endif; ?></td>
                         <?php */?>
-
+                            
                         <td data-theme-label="<?php echo $this->__('Allocation date') ?>"><?php if ($_point->getDate_start() != ""): echo $this->formatDate($_point->getDate_start(), 'short'); endif; ?></td>
                         <td data-theme-label="<?php echo $this->__('Valid until') ?>"><?php if ($_point->getDate_end() != ""): echo $this->formatDate($_point->getDate_end(), 'short'); endif; ?></td>
                     </tr>

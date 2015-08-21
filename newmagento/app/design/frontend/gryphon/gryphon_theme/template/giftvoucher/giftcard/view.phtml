@@ -40,7 +40,7 @@
                     </td>
                     <td>
                         <span class="item-hidden"><?php echo $this->__('Balance') ?></span>
-                        <span class="item-detail">
+                        <span class="item-detail price">
                             <?php if (is_null($_item->getBalance())): ?>
                                 <?php echo $this->__('N/A') ?>
                             <?php else: ?>
@@ -50,17 +50,18 @@
                     </td>
                     <td>
                         <span class="item-hidden"><?php echo $this->__('Date') ?></span>
-                        <span class="item-detail"><?php echo $this->formatDate($_item->getCreatedAt(), 'medium') ?></span>
+                        <span class="item-detail date"><?php echo $this->formatDate($_item->getCreatedAt(), 'medium') ?></span>
                     </td>
                     <td>
                         <span class="item-hidden"><?php echo $this->__('Balance Change') ?></span>
-                        <span class="item-detail"><?php echo $this->getAmountFormat($_item) ?></span>
+                        <span class="item-detail price"><?php echo $this->getAmountFormat($_item) ?></span>
                     </td>
                     <td>
                         <span class="item-hidden"><?php echo $this->__('Order') ?></span>
                         <span class="item-detail">
                             <?php if ($_item->getOrderIncrementId()): ?>
-                                <a href="<?php echo $this->getUrl('sales/order/view', array('order_id' => $_item->getOrderId())) ?>" title="<?php echo $this->__('View Order') ?>"><?php echo $_item->getOrderIncrementId() ?></a>
+                                <!-- <a href="<?php echo $this->getUrl('sales/order/view', array('order_id' => $_item->getOrderId())) ?>" title="<?php echo $this->__('View Order') ?>"><?php echo $_item->getOrderIncrementId() ?></a> -->
+                                <?php echo $_item->getOrderIncrementId() ?>
                             <?php else: ?>
                                 <?php echo $this->__('N/A') ?>
                             <?php endif ?>
@@ -92,7 +93,7 @@
     </script>
 <?php endif ?>
 
-<div class="buttons-set">
+<!--<div class="buttons-set">
     <p class="back-link">
         <a href="#" onclick="setLocation('<?php echo $this->getUrl('*/*/index') ?>');
                 return false;">
@@ -124,4 +125,4 @@
             }
         </script>
     <?php endif ?>
-</div>
+</div>-->

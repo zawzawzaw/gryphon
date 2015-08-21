@@ -301,134 +301,149 @@ $quoteData= $quote->getData();
 						<!-- <div class="promo hidden-xs hidden-sm">							
 							<p>Get <span class="red">10%</span> off discount from your first purchase <br>until 17th of Jan with Promo Code: <span class="red">SHOPNOW</span></p>
 						</div> -->
+						<?php 
+							$currentUrl = Mage::helper('core/url')->getCurrentUrl();
+							$url = Mage::getSingleton('core/url')->parseUrl($currentUrl);
+							$path = $url->getPath();
 
-						<div class="cta">
-							<ul class="cta-list">
-								<li>
-									<a href="#" class="currency"><span class="hidden-xs hidden-sm">	
-									<?php $currency_code = Mage::app()->getStore()->getCurrentCurrencyCode(); ?>																	
-									<?php if($currency_code=='SGD'): ?>
-										<i class="currency-icon">S</i><i class="fa fa-dollar"></i>
-									<?php elseif($currency_code=='AUD'): ?>
-										<i class="currency-icon">A</i><i class="fa fa-dollar"></i>
-									<?php elseif($currency_code=='HKD'): ?>
-										<i class="currency-icon">HK</i><i class="fa fa-dollar"></i>
-									<?php elseif($currency_code=='JPY'): ?>
-										<i class="fa fa-jpy"></i>
-									<?php elseif($currency_code=='EUR'): ?>
-										<i class="fa fa-eur"></i>
-									<?php elseif($currency_code=='GBP'): ?>
-										<i class="fa fa-gbp"></i>
-									<?php elseif($currency_code=='CNY'): ?>
-										<i class="fa fa-cny"></i>
-									<?php elseif($currency_code=='MYR'): ?>
-										<i class="currency-icon">MYR</i>
-									<?php else: ?>
-										<i class="fa fa-dollar"></i>
-									<?php endif; ?> Currency</span></a>									
-								</li>
-								<li>
-									<a href="#" class="search"><span class="hidden-xs hidden-sm">Search</span></a>									
-								</li>
-								<?php 
-								$session = Mage::getSingleton('customer/session');
-								if($session->isLoggedIn()) {
-								   $customer = $session->getCustomer();
-								   // echo $customer->getName();
-								   $customer_name = $customer->getFirstname();
-								}
-								?>						
-								<li><a href="#" class="account"><span class="hidden-xs hidden-sm"><?php echo (isset($customer_name)) ? $customer_name	 : $this->__('Account'); ?></span></a></li>
-								<li class="hidden-md hidden-lg"><hr class="divider"></li>
-                                <?php if ($count) :?>
-                                <li><a href="#" class="cart cart-summary-data"><span><?php echo Mage::helper('core')->currency($quoteData['subtotal']); ?> (<span class="count"><?php echo $count; ?></span>)</span></a></li>
-                            	<?php else: ?>
-                            	<li><a href="#" class="cart cart-summary-data"><span><?php echo $this->__('CART'); ?></span></a></li>
-                                <?php endif; ?>
-							</ul>
-						</div>
-						<?php if($session->isLoggedIn()): ?>
-							<ul class="account-select">
-								<li><a href="<?php echo Mage::getUrl('customer/account'); ?>">My Account</a></li>
-								<li><a href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>">Log Out</a></li>
-							</ul>
-						<?php else: ?>
-							<ul class="account-select">
-								<li><a href="<?php echo Mage::helper('customer')->getLoginUrl(); ?>">Log In</a></li>
-								<li><a href="<?php echo Mage::getUrl('customer/account/create'); ?>">Register</a></li>							
-							</ul>
-						<?php endif; ?>
-						<div class="cart-preview-select">
-							<h5><img src="<?php echo $this->getSkinUrl('images/icons/cart.png'); ?>" alt=""> SHOPPING CART</h5>
-
-							<?php 
-								$cart = Mage::getModel('checkout/cart')->getQuote();
-								$cartQty = $this->helper('checkout/cart')->getSummaryCount();
-								$cartTotal = Mage::getSingleton('checkout/cart')->getQuote()->getSubtotal();
-							?>
-							<?php if ($cartQty>0): ?>							        
-								    
-								<ul class="cart-header">
-									<li>PRODUCT</li>
-									<li>QTY</li>
-									<li>SUB TOTAL</li>
-								</ul>
-								
-								<div class="cart-preview-content">
-									<?php								
-									foreach ($cart->getAllItems() as $item) {
-									    $productName = $item->getProduct()->getName();
-									    $productPrice = $item->getProduct()->getPrice();
-									    $productQty = $item->getQty();
-									    $price = $item->getRowTotal();
-									    $productImage = Mage::helper('catalog/image')->init($item->getProduct(), 'thumbnail');
-									    
-									?>
-									<ul class="cart-content">							
-										<li><img src="<?php echo $productImage; ?>" alt=""><span><?php echo $productName; ?></span></li>
-										<li><?php echo $productQty; ?></li>
-										<li><?php echo Mage::helper('core')->formatPrice($price, true); ?></li>
-									</ul>
-									<?php
+							if (strpos($path,'checkout') === false): ?>
+							<div class="cta">
+								<ul class="cta-list">
+									<li>
+										<a href="#" class="currency"><span class="hidden-xs hidden-sm">	
+										<?php $currency_code = Mage::app()->getStore()->getCurrentCurrencyCode(); ?>																	
+										<?php if($currency_code=='SGD'): ?>
+											<i class="currency-icon">S</i><i class="fa fa-dollar"></i>
+										<?php elseif($currency_code=='AUD'): ?>
+											<i class="currency-icon">A</i><i class="fa fa-dollar"></i>
+										<?php elseif($currency_code=='HKD'): ?>
+											<i class="currency-icon">HK</i><i class="fa fa-dollar"></i>
+										<?php elseif($currency_code=='JPY'): ?>
+											<i class="fa fa-jpy"></i>
+										<?php elseif($currency_code=='EUR'): ?>
+											<i class="fa fa-eur"></i>
+										<?php elseif($currency_code=='GBP'): ?>
+											<i class="fa fa-gbp"></i>
+										<?php elseif($currency_code=='CNY'): ?>
+											<i class="fa fa-cny"></i>
+										<?php elseif($currency_code=='MYR'): ?>
+											<i class="currency-icon">MYR</i>
+										<?php else: ?>
+											<i class="fa fa-dollar"></i>
+										<?php endif; ?> Currency</span></a>									
+									</li>
+									<li>
+										<a href="#" class="search"><span class="hidden-xs hidden-sm">Search</span></a>									
+									</li>
+									<?php 
+									$session = Mage::getSingleton('customer/session');
+									if($session->isLoggedIn()) {
+									   $customer = $session->getCustomer();
+									   // echo $customer->getName();
+									   $customer_name = $customer->getFirstname();
 									}
-									?>
-								</div>
-
-								<ul class="cart-summary">								
-							        <?php if ($cartQty==1): ?>
-							            <?php echo '<li><span class="total-items"><span class="total-items-count">1</span> ITEM</span></li>'; ?>
-							        <?php else: ?>
-							            <?php echo '<li><span class="total-items"><span class="total-items-count">'.$cartQty.'</span> ITEMS</span></li>'; ?>
-							        <?php endif; ?>
-							        <li><span class="sub-total">SUB TOTAL</span></li>									
-							        <li><span class="sub-total-amount"><?php echo Mage::helper('core')->formatPrice($cartTotal, true); ?></span></li>							
-								</ul>							
-
-								<div class="cta-btns">
-									<a href="<?php echo $this->getUrl('store.html');?>" class="continue-shopping"><button type="button" class="cta button"><span><span>Back to Shopping</span></span></button></a>
-            						<a href="<?php echo $this->getUrl('checkout/cart'); ?>" class="shopping-cart"><button type="button" class="cta button"><span><span>Shopping Cart</span></span></button></a>
-								</div>
+									?>						
+									<li><a href="#" class="account"><span class="hidden-xs hidden-sm"><?php echo (isset($customer_name)) ? $customer_name	 : $this->__('Account'); ?></span></a></li>
+									<li class="hidden-md hidden-lg"><hr class="divider"></li>
+	                                <?php if ($count) :?>
+	                                <li><a href="#" class="cart cart-summary-data"><span><?php echo Mage::helper('core')->currency($quoteData['subtotal']); ?> (<span class="count"><?php echo $count; ?></span>)</span></a></li>
+	                            	<?php else: ?>
+	                            	<li><a href="#" class="cart cart-summary-data"><span><?php echo $this->__('CART'); ?></span></a></li>
+	                                <?php endif; ?>
+								</ul>
+							</div>
+							<?php if($session->isLoggedIn()): ?>
+								<ul class="account-select">
+									<li><a href="<?php echo Mage::getUrl('customer/account'); ?>">My Account</a></li>
+									<li><a href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>">Log Out</a></li>
+								</ul>
 							<?php else: ?>
-								<ul class="cart-header" style="display:none;">
-									<li>PRODUCT</li>
-									<li>QTY</li>
-									<li>SUB TOTAL</li>
+								<ul class="account-select">
+									<li><a href="<?php echo Mage::helper('customer')->getLoginUrl(); ?>">Log In</a></li>
+									<li><a href="<?php echo Mage::getUrl('customer/account/create'); ?>">Register</a></li>							
 								</ul>
-								<div class="cart-preview-content">
-									<p>Your cart is empty. <a href="<?php echo $this->getUrl('checkout/cart'); ?>">Click here to go to cart anyway.</a></p>	
-								</div>
-								<ul class="cart-summary" style="display:none;">	
-									<li><span class="total-items"><span class="total-items-count">1</span> ITEM</span></li>
-									<li><span class="sub-total">SUB TOTAL</span></li>									
-									<li><span class="sub-total-amount"></span></li>							
-								</ul>
-								<div class="cta-btns" style="display:none;">
-									<a href="<?php echo $this->getUrl('store.html');?>" class="continue-shopping"><button type="button" class="cta button"><span><span>Back to Shopping</span></span></button></a>
-            						<a href="<?php echo $this->getUrl('checkout/cart'); ?>" class="shopping-cart"><button type="button" class="cta button"><span><span>Shopping Cart</span></span></button></a>
-								</div>
 							<?php endif; ?>
-							
-						</div>
+							<div class="cart-preview-select">
+								<h5><img src="<?php echo $this->getSkinUrl('images/icons/cart.png'); ?>" alt=""> SHOPPING CART</h5>
+
+								<?php 
+									$cart = Mage::getModel('checkout/cart')->getQuote();
+									$cartQty = $this->helper('checkout/cart')->getSummaryCount();
+									$cartTotal = Mage::getSingleton('checkout/cart')->getQuote()->getSubtotal();
+								?>
+								<?php if ($cartQty>0): ?>							        
+									    
+									<ul class="cart-header">
+										<li>PRODUCT</li>
+										<li>QTY</li>
+										<li>SUB TOTAL</li>
+									</ul>
+									
+									<div class="cart-preview-content">
+										<?php								
+										foreach ($cart->getAllItems() as $item) {
+										    $productName = $item->getProduct()->getName();
+										    $productPrice = $item->getProduct()->getPrice();
+										    $productQty = $item->getQty();
+										    $price = $item->getRowTotal();
+										    $productImage = Mage::helper('catalog/image')->init($item->getProduct(), 'thumbnail');
+										    
+										?>
+										<ul class="cart-content">							
+											<li><img src="<?php echo $productImage; ?>" alt=""><span><?php echo $productName; ?></span></li>
+											<li><?php echo $productQty; ?></li>
+											<li><?php echo Mage::helper('core')->formatPrice($price, true); ?></li>
+										</ul>
+										<?php
+										}
+										?>
+									</div>
+
+									<ul class="cart-summary">								
+								        <?php if ($cartQty==1): ?>
+								            <?php echo '<li><span class="total-items"><span class="total-items-count">1</span> ITEM</span></li>'; ?>
+								        <?php else: ?>
+								            <?php echo '<li><span class="total-items"><span class="total-items-count">'.$cartQty.'</span> ITEMS</span></li>'; ?>
+								        <?php endif; ?>
+								        <li><span class="sub-total">SUB TOTAL</span></li>									
+								        <li><span class="sub-total-amount"><?php echo Mage::helper('core')->formatPrice($cartTotal, true); ?></span></li>							
+									</ul>							
+
+									<div class="cta-btns">
+										<a href="<?php echo $this->getUrl('store.html');?>" class="continue-shopping"><button type="button" class="cta button"><span><span>Back to Shopping</span></span></button></a>
+	            						<a href="<?php echo $this->getUrl('checkout/cart'); ?>" class="shopping-cart"><button type="button" class="cta button"><span><span>Shopping Cart</span></span></button></a>
+									</div>
+								<?php else: ?>
+									<ul class="cart-header" style="display:none;">
+										<li>PRODUCT</li>
+										<li>QTY</li>
+										<li>SUB TOTAL</li>
+									</ul>
+									<div class="cart-preview-content">
+										<p>Your cart is empty. <a href="<?php echo $this->getUrl('checkout/cart'); ?>">Click here to go to cart anyway.</a></p>	
+									</div>
+									<ul class="cart-summary" style="display:none;">	
+										<li><span class="total-items"><span class="total-items-count">1</span> ITEM</span></li>
+										<li><span class="sub-total">SUB TOTAL</span></li>									
+										<li><span class="sub-total-amount"></span></li>							
+									</ul>
+									<div class="cta-btns" style="display:none;">
+										<a href="<?php echo $this->getUrl('store.html');?>" class="continue-shopping"><button type="button" class="cta button"><span><span>Back to Shopping</span></span></button></a>
+	            						<a href="<?php echo $this->getUrl('checkout/cart'); ?>" class="shopping-cart"><button type="button" class="cta button"><span><span>Shopping Cart</span></span></button></a>
+									</div>
+								<?php endif; ?>
+								
+							</div>
+						<?php else: ?>
+							<div class="cta">
+								<ul class="cart-cta-list">
+									<li><a href="<?php echo Mage::getUrl('faq'); ?>" target="_blank"><i class="question"></i><span>Gryphon FAQ</span></a></li>
+									<li><a href="<?php echo Mage::getUrl('shipping-info'); ?>" target="_blank"><i class="delivery-info"></i><span>Delivery Information</span></a></li>
+									<li><a href="http://www.trackntrace.com.sg/" target="_blank"><i class="tracking"></i><span>Track Delivery</span></a></li>
+								</ul>
+							</div>
+						<?php endif; ?>
+
 						<?php echo $this->getChildHtml('topSearch') ?>
 			            <?php echo $this->getChildHtml('currency_top') ?>			            
 					</div>
