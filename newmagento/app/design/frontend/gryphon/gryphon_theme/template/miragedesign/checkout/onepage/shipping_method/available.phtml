@@ -26,8 +26,22 @@
 ?>
 <?php /** @var $this Mage_Checkout_Block_Onepage_Shipping_Method_Available */ ?>
 <?php
-$_shippingRateGroups = $this->getShippingRates();
-$allowedShippingMethods = $this->helper('shippingcustomiser')->getAllowedShippingMethods();
+
+$allskus = array("SGP-ART-1M", "SGP-ART-3M", "SGP-ART-6M", "SGP-ART-12M", "SGP-GUR-1M", "SGP-GUR-3M", "SGP-GUR-6M", "SGP-GUR-12M","INT-ART-1M", "INT-ART-3M", "INT-ART-6M", "INT-ART-12M", "INT-GUR-1M", "INT-GUR-3M", "INT-GUR-6M", "INT-GUR-12M");
+$isSubscriptionProduct = false;
+$cart = Mage::getModel('checkout/cart')->getQuote();
+
+foreach ($cart->getAllItems() as $item) {
+    $productSku = $item->getProduct()->getSku();                      
+	if(in_array($productSku, $allskus))	{
+		$isSubscriptionProduct = true;
+	}
+}
+
+if($isSubscriptionProduct == false)
+{
+	$_shippingRateGroups = $this->getShippingRates();
+	$allowedShippingMethods = $this->helper('shippingcustomiser')->getAllowedShippingMethods();
 ?>
 <?php if (!$_shippingRateGroups): ?>
     <p><?php echo $this->__('Sorry, no quotes are available for this order at this time.') ?></p>
@@ -169,3 +183,4 @@ $allowedShippingMethods = $this->helper('shippingcustomiser')->getAllowedShippin
 //]]>
 </script>
 <?php endif; ?>
+<?php } ?>

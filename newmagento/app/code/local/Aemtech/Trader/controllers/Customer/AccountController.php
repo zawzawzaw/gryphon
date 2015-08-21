@@ -156,7 +156,7 @@ class Aemtech_Trader_Customer_AccountController extends Mage_Customer_AccountCon
             $errors = $this->_getCustomerErrors($customer);
 
             if (empty($errors)) {
-                $customer->save();
+                $customer->save();				
                 $this->_dispatchRegisterSuccess($customer);
                 $this->_successProcessRegistration($customer);
                 return;
@@ -254,7 +254,7 @@ class Aemtech_Trader_Customer_AccountController extends Mage_Customer_AccountCon
                     'traderregister', $session->getBeforeAuthUrl(), $store->getId()
             );
             Mage::getSingleton('core/session')->getMessages(true);
-            $session->addSuccess($this->__('Account Successfully Created. You will be notified by E-Mail when the account is activated.'));
+            $session->addSuccess($this->__('You have successfully registered an account with us and a sales representative will get back to you within 2 business days. Once you have been approved as a Gryphon Tea customer, you may begin the process of purchasing our products online.'));
             $url = $this->_getUrl('*/*/index', array('_secure' => true));
 			
 			//PG: Send notification to admin

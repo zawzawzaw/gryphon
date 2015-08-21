@@ -7038,16 +7038,6 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
     width: 100%;
   }
 }
-.cart #confirmation .each-input #message_characters_remaining {
-  display: block;
-  font-family: "minion-pro", Verdana, sans-serif;
-  font-weight: 500;
-  font-style: italic;
-  font-size: 12px;
-  line-height: 16px;
-  color: #ae4e0e;
-  letter-spacing: 0.02em;
-}
 .cart #confirmation .rewards_point_cart {
   position: absolute;
   top: -65px;
@@ -9091,7 +9081,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   color: #ae4e0e;
 }
 .blog {
-  margin-top: 81px!important;
+  margin-top: 85px!important;
   padding-bottom: 120px!important;
 }
 @media all and (max-width: 992px) {
@@ -9627,7 +9617,6 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   margin: 0 auto;
   margin-bottom: 25px;
   display: block;
-  max-width: 222px;
 }
 .trade .last-content .steps .each-step h4,
 .trade .last-content .steps .each-step p {
@@ -10715,7 +10704,7 @@ div#footer-wrapper .search button:hover {
   }
 }
 .privacy .privacy-banner {
-  background: url("../images/content/signup-banner.jpg") no-repeat;
+  background: url("../images/content/privacy-banner.png") no-repeat;
   background-size: cover;
 }
 .privacy .privacy-banner .image-text-content .caption-container {
@@ -11898,8 +11887,10 @@ div#footer-wrapper .search button:hover {
   text-align: center;
   display: block;
   width: 168px;
+  position: absolute;
+  bottom: 31px;
+  left: 50%;
   margin-left: -84px;
-  margin: 30px auto;
   cursor: pointer;
 }
 .careers .main-content .third-content .career-display-item-single .apply-button:hover {
@@ -11955,7 +11946,7 @@ div#footer-wrapper .search button:hover {
   position: absolute;
   top: 50%;
   left: 50%;
-  height: auto;
+  height: 400px;
   margin-top: -200px;
   margin-left: -390px;
 }
@@ -12375,7 +12366,7 @@ div#footer-wrapper .search button:hover {
   }
 }
 .rewards .rewards-banner {
-  background: url("../images/content/signup-banner.jpg") no-repeat;
+  background: url("../images/content/rewards/rewards-banner.png") no-repeat;
   background-size: cover;
 }
 .rewards .rewards-banner .image-text-content .caption-container {
@@ -16863,4 +16854,16 @@ html {
   #content-wrapper.cart #opc-review .action-container .back-btn {
     bottom: -139px;
   }
+}
+
+/*PG*/
+#trade-product-weight-table .price {
+    color: #464646;
+    font-family: minion-pro,Verdana,sans-serif;
+    font-size: 14px !important;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    line-height: 39px;
+    text-align: left;
 }

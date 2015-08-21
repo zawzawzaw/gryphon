@@ -261,13 +261,24 @@ class Aemtech_Trader_Block_Adminhtml_Customer_Edit_Tab_Account extends Mage_Admi
             }
         }
         $traderFields = $form->getElement('tenure_of_contract_to');
-        $postparams = Mage::app()->getFrontController()->getRequest()->getParams();
+        $postparams = Mage::app()->getFrontController()->getRequest()->getParams();		
+		
+		$customerNew = Mage::getModel('customer/customer')->load($customer->getId());
+		$groupId = $customerNew->getGroupId();
+		$groupname = Mage::getModel('customer/group')->load($groupId)->getCustomerGroupCode();
+		$hideme = '';
+		if($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium')
+		{
+			$hideme = '$j("#_accountdob").parent().parent().hide();$j("#_accountgender").parent().parent().hide();';
+			
+		}
          
         $traderFields->setAfterElementHtml('<script type="text/javascript" src = "http://code.jquery.com/jquery-2.1.1.js"></script>
         <script type="text/javascript">
         //< ![CDATA[
         $j = jQuery.noConflict();
         $j(document).ready(function(){ 
+		'.$hideme.'
         $j("#_accountgroup_id").on("change", function(){
             
             showHideTraderAttrs();
