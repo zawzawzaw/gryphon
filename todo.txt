@@ -31,3 +31,6 @@ php -q /var/www/vhosts/gryphontea.com/httpdocs/magento/cron.php
 
 vhost problem with subscribe/unscribe
 revise email
+
+day dropdown gift card
+gift card template image
