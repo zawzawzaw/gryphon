@@ -392,7 +392,9 @@ $quoteData= $quote->getData();
 										<ul class="cart-content">							
 											<li><img src="<?php echo $productImage; ?>" alt=""><span><?php echo $productName; ?></span></li>
 											<li><?php echo $productQty; ?></li>
-											<li><?php echo Mage::helper('core')->formatPrice($price, true); ?></li>
+											<li>
+												<?php echo Mage::helper('core')->formatPrice($price, true); ?>
+												<!-- <a href="<?php echo $this->getUrl('checkout/cart/delete', array('id' => $item->getProduct()->getId())); ?>" title="<?php echo $this->__('Remove item')?>" class="btn-remove btn-remove2 delete"></a></li> -->
 										</ul>
 										<?php
 										}
