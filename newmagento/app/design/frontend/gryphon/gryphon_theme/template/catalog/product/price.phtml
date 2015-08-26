@@ -211,7 +211,23 @@ $_specialPriceStoreLabel = $this->getProductAttribute('special_price')->getStore
 					$groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();	
 				}
 				if($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium')
-				{				
+				{ 
+						$parentIds = Mage::getModel('catalog/product_type_grouped')->getParentIdsByChild($_id); // check for grouped product
+						if(!$parentIds)
+							$parentIds = Mage::getModel('catalog/product_type_configurable')->getParentIdsByChild($_id); //check for config product
+
+						//print_r($parentIds);
+						if (count($parentIds)>0)
+						{?>
+							<span class="regular-price" id="product-price-<?php echo $_id ?><?php echo $this->getIdSuffix() ?>">
+								<?php if ($_finalPrice == $_price): ?>
+									<?php echo $_coreHelper->formatPrice($_price, false) ?>
+								<?php else: ?>
+									<?php echo $_coreHelper->formatPrice($_finalPrice, false) ?>
+								<?php endif; ?>
+							</span>
+							
+						<?php }
 				}else{ ?>
 					  <span class="regular-price" id="product-price-<?php echo $_id ?><?php echo $this->getIdSuffix() ?>">
 						<?php if ($_finalPrice == $_price): ?>
@@ -462,7 +478,7 @@ $_specialPriceStoreLabel = $this->getProductAttribute('special_price')->getStore
     }
     ?>
     <?php if ($price): ?>
-        <p<?php if ($showMinPrice): ?> class="minimal-price"<?php endif ?>>
+        <p<?php if ($showMinPrice): ?> class="minimal-price price"<?php endif ?>>
             <?php if ($showMinPrice): ?>
                 <span class="price-label"><?php echo $this->__('From:') ?></span>
             <?php endif ?>

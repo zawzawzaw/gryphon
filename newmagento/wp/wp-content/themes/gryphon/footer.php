@@ -133,6 +133,50 @@
 			</div>
 		</div>
 	</div><!-- page wrapper end -->
+	<script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '1633996753523303',
+	      xfbml      : true,
+	      version    : 'v2.4'
+	    });
+
+	    $('.facebook').on('click', function(e){
+	    	e.preventDefault();
+	    	var url = $(this).attr('href');
+	    	FB.ui(
+			{
+				method: 'share',
+				href: url,
+			},function(response) {
+			    if (response && !response.error_code) {
+			      	alert('Posting completed.');
+			    }
+			});
+	    });
+	  };
+
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "//connect.facebook.net/en_US/sdk.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+
+	  	function openNewWindow(URLtoOpen, windowName, windowFeatures) { newWindow=window.open(URLtoOpen, windowName, windowFeatures); }
+
+	  	$('.twitter').on('click', function(e){
+	    	e.preventDefault();
+	    	var url = $(this).attr('href');
+	    	openNewWindow(url,'sharing','height=600,width=600,toolbar=no,scrollbars=no,resizable=yes');
+    	});
+    	$('.pintrest').on('click', function(e){
+	    	e.preventDefault();
+	    	var url = $(this).attr('href');
+	    	openNewWindow(url,'sharing','height=600,width=600,toolbar=no,scrollbars=no,resizable=yes');
+    	});
+	</script>
 	<?php wp_footer(); ?>
 </body>
 </html>

@@ -1384,7 +1384,7 @@ h5 {
   line-height: 16px;
 }
 hr.small {
-  border-top: 4px solid #ae4e0e;
+  border-top: 3px solid #ae4e0e;
   width: 30px!important;
   margin-top: 12px!important;
   margin-bottom: 15px!important;
@@ -1438,7 +1438,7 @@ p {
   top: 5px;
 }
 .cta {
-  color: #142136;
+  color: #252525;
   text-transform: uppercase;
   font-size: 11px;
   line-height: 16px;
@@ -1741,6 +1741,11 @@ div.home #feature-products .image-text-content .each-feature .cta-list {
   -moz-transition: all 0.2s ease-out 0s;
   -o-transition: all 0.2s ease-out 0s;
   transition: all 0.2s ease-out 0s;
+}
+@media all and (max-width: 450px) {
+  div.home #feature-products .image-text-content .each-feature .cta-list {
+    display: none;
+  }
 }
 div.home #feature-products .image-text-content .each-feature .cta-list li {
   display: inline-block;
@@ -3835,7 +3840,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .store .main-content .side-bar .each-filter-section .title i {
   float: right;
-  font-size: 11px;
+  font-size: 16px;
   color: #777777;
 }
 .store .main-content .side-bar .each-filter-section .all-inputs .col-1 {
@@ -4387,6 +4392,10 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   color: #464646;
   margin-top: 10px;
 }
+.store .main-content .all-products .each-product p.price .price-label,
+.store .main-content .all-search-products .each-product p.price .price-label {
+  text-transform: none;
+}
 .store .main-content .all-products .each-product p.j2t-loyalty-points,
 .store .main-content .all-search-products .each-product p.j2t-loyalty-points {
   font-family: "minion-pro", Verdana, sans-serif;
@@ -4394,7 +4403,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-style: italic;
   font-size: 13px;
   line-height: 19px;
-  color: #ae4e0e;
+  color: #c76e09;
   position: absolute;
   top: -25px;
   text-align: center;
@@ -5769,7 +5778,6 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-size: 13px;
   line-height: 22px;
   letter-spacing: 0.03em;
-  text-transform: uppercase;
   text-shadow: 0 1px 100px #000;
   color: #ffffff;
   max-width: 50%;
@@ -5783,7 +5791,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .subscription .banner-image-text {
   text-align: center;
-  padding-top: 80px;
+  padding-top: 70px;
   padding-bottom: 80px;
 }
 .subscription .banner-image-text hr {
@@ -5893,10 +5901,10 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   width: 16px;
   height: 16px;
   color: #ffffff;
-  font-family: 'Gotham-Bold', Verdana, sans-serif;
-  font-weight: 500;
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
   font-style: normal;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 16px;
   letter-spacing: 0.03em;
   vertical-align: middle;
@@ -6978,6 +6986,9 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .cart #confirmation .each-input form#discount-giftcard-form {
   margin-top: 20px;
+}
+.cart #confirmation .each-input form#discount-giftcard-form .giftvoucher .messages {
+  display: none;
 }
 .cart #confirmation .each-input form#discount-giftcard-form .points {
   margin-bottom: 0px!important;
@@ -8065,7 +8076,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .account .account-details a.edit span,
 .account .account-details-saved a.edit span {
-  color: #142136;
+  color: #252525;
 }
 .account .account-details a.edit i,
 .account .account-details-saved a.edit i {
@@ -8790,7 +8801,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-weight: 200;
   font-style: normal;
   font-size: 11px;
-  color: #142136;
+  color: #252525;
 }
 .account .order-history .order-content .orders .each-order .extra-content .each-details .reorder span:hover {
   color: #ae4e0e;
@@ -9280,7 +9291,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   display: table;
 }
 .blog .blog-banner .image-text-content .caption-container .caption {
-  height: 395px;
+  height: 325px;
   display: table-cell;
   vertical-align: middle;
   text-align: center;
@@ -9353,6 +9364,12 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .blog .main-content .image-text-content .post .post-content p {
   margin-bottom: 20px;
 }
+.blog .main-content .image-text-content .post .post-content p a {
+  color: #464646;
+}
+.blog .main-content .image-text-content .post .post-content p a:hover {
+  color: #ae4e0e;
+}
 .blog .main-content .image-text-content .post .post-content img {
   margin-top: 30px;
   width: 100%;
@@ -9411,6 +9428,12 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .blog .main-content .image-text-content .post-extra-content p {
   line-height: 18px;
   margin-top: 5px;
+}
+.blog .main-content .image-text-content .post-extra-content p a {
+  color: #464646;
+}
+.blog .main-content .image-text-content .post-extra-content p a:hover {
+  color: #ae4e0e;
 }
 .blog .main-content .image-text-content .post-extra-content ul {
   text-align: right;
@@ -9509,11 +9532,41 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .blog .sidebar .each-sidebar-content a.signup:hover {
   color: #ae4e0e;
 }
+.blog .sidebar .each-sidebar-content ul.tags {
+  height: auto;
+}
+.blog .sidebar .each-sidebar-content ul.tags li {
+  display: block;
+}
+.blog .sidebar .each-sidebar-content ul.tags li a {
+  font-family: 'Gotham-Book', Verdana, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 11px;
+  line-height: 20px;
+  color: #464646;
+  margin-left: 0px;
+}
+.blog .sidebar .each-sidebar-content ul.tags li a:hover {
+  color: #ae4e0e;
+}
+.blog .sidebar .each-sidebar-content p.tags a {
+  font-family: 'Gotham-Book', Verdana, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 11px;
+  line-height: 20px;
+  color: #464646;
+}
+.blog .sidebar .each-sidebar-content p.tags a:hover {
+  color: #ae4e0e;
+}
 .blog .sidebar .each-sidebar-content ul {
   height: 18px;
 }
 .blog .sidebar .each-sidebar-content ul li {
   display: inline-block;
+  vertical-align: top;
 }
 .blog .sidebar .each-sidebar-content ul li:first-child a {
   margin-left: 0px;
@@ -9521,22 +9574,13 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .blog .sidebar .each-sidebar-content ul li a {
   width: 18px!important;
   margin-left: 5px;
+  color: #252525;
+}
+.blog .sidebar .each-sidebar-content ul li a:hover {
+  color: #ae4e0e;
 }
 .blog .sidebar .each-sidebar-content ul li a.twitter {
   width: 18px!important;
-}
-.blog .sidebar .each-sidebar-content p.tags {
-  font-family: 'Gotham-Book', Verdana, sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 11px;
-  line-height: 20px;
-}
-.blog .sidebar .each-sidebar-content p.tags a {
-  color: #464646;
-}
-.blog .sidebar .each-sidebar-content p.tags a:hover {
-  color: #ae4e0e;
 }
 .blog .sidebar .each-sidebar-content .each-popular-post {
   margin-bottom: 40px;
@@ -9646,10 +9690,9 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   margin: 0 auto;
   margin-top: 10px;
   text-shadow: 0 1px 100px #000;
-  text-transform: uppercase;
 }
 .trade .first-content {
-  padding-top: 80px;
+  padding-top: 70px;
 }
 .trade .first-content .center {
   text-align: center;
@@ -9662,7 +9705,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   margin: 0 auto;
 }
 .trade .first-content .center .hotels {
-  margin: 40px 0 80px;
+  margin: 30px 0px 30px;
 }
 .trade .first-content .center .hotels .hotel {
   display: inline-block;
@@ -9886,7 +9929,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .trade .image-text-content hr {
   margin: 0 auto;
   margin-top: 30px;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 .trade-signup {
   margin-top: 85px;
@@ -10534,15 +10577,12 @@ div#footer-wrapper .search button:hover {
 .our-story .main-content .forth-content .magazines {
   font-size: 0;
   padding: 0 60px;
-  padding-bottom: 75px;
+  padding-bottom: 80px;
 }
 .our-story .main-content .forth-content .magazine {
   display: inline-block;
   vertical-align: top;
   padding: 0 10px;
-}
-.our-story .main-content .forth-content .ctas {
-  margin-top: 30px;
 }
 .our-story .main-content .forth-content .our-story-collections-btn {
   background-color: #252525;
@@ -10685,7 +10725,7 @@ div#footer-wrapper .search button:hover {
   font-style: italic;
   font-size: 13px;
   line-height: 16px;
-  color: #ae4e0e;
+  color: #c76e09;
 }
 .shipping-info .main-content a {
   font-family: "minion-pro", Verdana, sans-serif;
@@ -10744,7 +10784,7 @@ div#footer-wrapper .search button:hover {
   font-family: 'Gotham-Book', Verdana, sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 11.5px;
+  font-size: 11px;
   line-height: 24px;
   color: #464646;
   margin-bottom: 0;
@@ -10767,7 +10807,7 @@ div#footer-wrapper .search button:hover {
   font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 600;
   font-style: normal;
-  color: #ae4e0e;
+  color: #c76e09;
   font-size: 13px;
   line-height: 24px;
   letter-spacing: 0.05em;
@@ -10928,7 +10968,7 @@ div#footer-wrapper .search button:hover {
   text-transform: uppercase;
 }
 .privacy .main-content .intro-content {
-  padding-top: 80px;
+  padding-top: 70px;
   padding-bottom: 80px;
   background-color: #f6f4f1;
 }
@@ -10946,9 +10986,20 @@ div#footer-wrapper .search button:hover {
 .privacy .main-content .intro-content .center p:last-child {
   margin-bottom: 0;
 }
+.privacy .main-content .content-one .col-md-6:first-child {
+  padding-right: 0px;
+}
+.privacy .main-content .content-one .privacy-col-1 {
+  border-right: 1px solid #ccc;
+}
+.privacy .main-content .content-two .col-md-6:last-child {
+  padding-left: 0px;
+}
+.privacy .main-content .content-two .privacy-col-2 {
+  border-left: 1px solid #ccc;
+}
 .privacy .main-content .privacy-col-1 {
   padding-right: 60px;
-  border-right: 1px solid #ccc;
 }
 .privacy .main-content .privacy-col-2 {
   padding-left: 60px;
@@ -10969,8 +11020,8 @@ div#footer-wrapper .search button:hover {
   font-family: 'Gotham-Book', Verdana, sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 11.5px;
-  line-height: 19px;
+  font-size: 13px;
+  line-height: 24px;
   color: #464646;
   margin-bottom: 20px;
 }
@@ -12548,6 +12599,12 @@ div#footer-wrapper .search button:hover {
     margin-top: 60px;
   }
 }
+.rewards h1 {
+  padding-left: 2.5%;
+}
+.rewards hr.small {
+  margin-left: 2.5%;
+}
 .rewards .rewards-banner {
   background: url("../images/content/signup-banner.jpg") no-repeat;
   background-size: cover;
@@ -12724,10 +12781,10 @@ div#footer-wrapper .search button:hover {
 }
 .rewards .main-content .second-content .reasons {
   text-align: center;
-  padding-bottom: 50px;
+  padding-bottom: 60px;
   border-bottom: 1px solid #cccccc;
-  margin: 0 -50px;
-  margin-bottom: 65px;
+  margin: 0 auto;
+  margin-bottom: 60px;
 }
 .rewards .main-content .second-content .reasons .reason {
   position: relative;
@@ -12752,6 +12809,7 @@ div#footer-wrapper .search button:hover {
   font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 600;
   font-style: italic;
+  font-weight: 100;
   color: #ffffff;
   font-size: 26px;
   line-height: 26px;
@@ -12766,6 +12824,7 @@ div#footer-wrapper .search button:hover {
   font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 600;
   font-style: italic;
+  font-weight: 100;
   color: #ffffff;
   font-size: 14px;
   line-height: 14px;
@@ -12798,14 +12857,15 @@ div#footer-wrapper .search button:hover {
   font-size: 0;
   text-align: center;
   padding-top: 6px;
-  padding-bottom: 66px;
+  padding-bottom: 50px;
+  margin-bottom: 70px;
 }
 .rewards .main-content .second-content .additional-item-container .additional-item {
   text-align: center;
   width: 220px;
   height: 171px;
   background: #ffffff;
-  border: 2px solid #ae4e0e;
+  border: 1px solid #ae4e0e;
   display: inline-block;
   vertical-align: top;
   padding-top: 17px;
@@ -12813,7 +12873,7 @@ div#footer-wrapper .search button:hover {
 }
 .rewards .main-content .second-content .additional-item-container .additional-item h4 {
   font-family: "minion-pro", Verdana, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
   font-size: 12px;
   line-height: 16px;
@@ -12825,7 +12885,7 @@ div#footer-wrapper .search button:hover {
   font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 600;
   font-style: italic;
-  font-size: 26px;
+  font-size: 28px;
   line-height: 26px;
   color: #ae4e0e;
   letter-spacing: 0.03em;
@@ -12844,16 +12904,16 @@ div#footer-wrapper .search button:hover {
   font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 600;
   font-style: italic;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 16px;
   letter-spacing: 0.03em;
-  width: 185px;
+  padding: 0 20px;
   margin: 0 auto;
 }
 .rewards .main-content .second-content .additional-bottom {
   text-align: center;
   padding-top: 30px;
-  padding-bottom: 65px;
+  padding-bottom: 80px;
 }
 .rewards .main-content .second-content .additional-bottom hr.small {
   margin-right: auto;
@@ -12883,13 +12943,18 @@ div#footer-wrapper .search button:hover {
   padding-top: 65px;
   padding-bottom: 65px;
 }
-.rewards .main-content .third-content .image-text-content {
-  border-bottom: 1px solid #cccccc;
+.rewards .main-content .third-content .image-text-content .the-border {
+  border-bottom: 1px solid #ccc;
+  width: 95%;
+  margin: 0 auto;
 }
 .rewards .main-content .third-content .faq-item-container {
   border-top: 1px solid #cccccc;
   padding-bottom: 65px;
   margin-top: 2px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 .rewards .main-content .third-content .faq-item-container .faq-item {
   border-bottom: 1px solid #cccccc;
@@ -12921,6 +12986,10 @@ div#footer-wrapper .search button:hover {
   line-height: 16px;
   color: #ae4e0e;
   padding-top: 6px;
+}
+.rewards .main-content .forth-content ol {
+  width: 90%;
+  margin: 0 auto;
 }
 .rewards .main-content .forth-content ol li {
   font-family: 'Gotham-Book', Verdana, sans-serif;
@@ -13455,7 +13524,7 @@ div#footer-wrapper .search button:hover {
 .discover .main-content .forth-content .tea-type-container {
   font-size: 0;
   text-align: center;
-  padding-bottom: 78px;
+  padding-bottom: 60px;
 }
 .discover .main-content .forth-content .tea-type {
   display: inline-block;
@@ -13629,7 +13698,7 @@ div#footer-wrapper .search button:hover {
   height: 100px;
   margin: 0 10px;
   margin-bottom: 50px;
-  border: 2px solid #b7b7b7;
+  border: 1px solid #b7b7b7;
   padding-top: 45px;
   cursor: pointer;
   -webkit-transition: all 0.2s ease-out 0s;
@@ -13667,7 +13736,7 @@ div#footer-wrapper .search button:hover {
   color: #707070;
 }
 .discover .main-content .fifth-content .tea-aroma:hover {
-  border: 2px solid #ae4e0e;
+  border: 1px solid #ae4e0e;
 }
 .discover .main-content .fifth-content .tea-aroma:hover .icon {
   -moz-opacity: 1;
@@ -13681,7 +13750,7 @@ div#footer-wrapper .search button:hover {
   color: #ae4e0e;
 }
 .discover .main-content .fifth-content .tea-aroma.selected {
-  border: 2px solid #ae4e0e;
+  border: 1px solid #ae4e0e;
 }
 .discover .main-content .fifth-content .tea-aroma.selected .icon {
   -moz-opacity: 1;
@@ -13754,7 +13823,7 @@ div#footer-wrapper .search button:hover {
   padding-top: 36px;
   padding-bottom: 24px;
   background: #ffffff;
-  border: 2px solid #ae4e0e;
+  border: 1px solid #ae4e0e;
   position: relative;
   cursor: pointer;
   -webkit-transition: all 0.2s ease-out 0s;
@@ -13788,7 +13857,8 @@ div#footer-wrapper .search button:hover {
 }
 .discover .main-content .sixth-content .how-start h4 {
   color: #464646;
-  margin-bottom: 36px;
+  margin-bottom: 25px;
+  margin-top: 15px;
 }
 .discover .main-content .sixth-content .how-start .get-button {
   font-family: 'Gotham-Medium', Verdana, sans-serif;
@@ -13997,7 +14067,7 @@ div#footer-wrapper .search button:hover {
 .discover .main-content .seventh-content .results-item .results-item-image {
   margin: 0 auto;
   margin-bottom: 29px;
-  width: 207px;
+  width: 90%;
   min-height: 140px;
   display: block;
 }
@@ -15028,6 +15098,7 @@ html {
   width: 24px;
   height: 24px;
   display: inline-block;
+  vertical-align: top;
   margin-right: 8px;
 }
 .mobile-footer .share-ctas .instagram {
@@ -15053,6 +15124,9 @@ html {
   width: 24px;
   height: 24px;
   display: inline-block;
+}
+.mobile-footer .share-ctas i {
+  color: #464646;
 }
 .mobile-footer .copywrite h6 {
   font-family: 'Gotham-Medium', Verdana, sans-serif;

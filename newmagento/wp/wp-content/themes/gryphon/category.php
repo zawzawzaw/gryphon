@@ -1,3 +1,9 @@
+<?php 
+$current_cat_id  = get_query_var('cat');
+$showposts = -1;
+$args = array('cat' => $current_cat_id, 'orderby' => 'post_date', 'order' => 'DESC', 'posts_per_page' => $showposts,'post_status' => 'publish');
+$my_query = new WP_Query($args);
+?>
 <?php get_header(); ?>
 
 <div id="content-wrapper" class="blog">
@@ -21,9 +27,9 @@
 					<div class="posts">
 						<div id="all-posts">
 							<?php														
-							if ( have_posts() ) :
+							if ( $my_query->have_posts() ) :
 
-								while ( have_posts() ) : the_post(); ?>
+								while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
 									<?php get_template_part( 'content', get_post_format() ); ?>
 								<?php endwhile; // end of the loop. ?>																									
 

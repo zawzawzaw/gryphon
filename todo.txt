@@ -1,7 +1,6 @@
 test emails can't send out
 facekbook login
 cron job?
-remove next prev on image
 mobile tweek
 
 to disable magento auto update
@@ -18,7 +17,7 @@ gift message
 account page pending order
 
 
-php -f /var/www/vhosts/gryphontea.com/httpdocs/magento/cron.php >> /var/www/vhosts/gryphontea.com/httpdocs/magento/var/log/cron.log 2>&1
+  >> /var/www/vhosts/gryphontea.com/httpdocs/magento/var/log/cron.log 2>&1
 
 php -q /var/www/vhosts/gryphontea.com/httpdocs/magento/cron.php
 

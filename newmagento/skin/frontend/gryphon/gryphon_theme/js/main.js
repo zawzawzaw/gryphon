@@ -65,9 +65,9 @@
             var link = $loadmore.attr('href');            
             $(link).slideToggle('slow', function(){
                 if($(link).css('display') !== 'none')
-                    $loadmore.find('i').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+                    $loadmore.find('i').removeClass('fa-angle-down').addClass('fa-angle-up');
                 else
-                    $loadmore.find('i').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+                    $loadmore.find('i').removeClass('fa-angle-up').addClass('fa-angle-down');
             });
         });
 

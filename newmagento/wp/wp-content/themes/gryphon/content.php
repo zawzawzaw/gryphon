@@ -7,7 +7,7 @@
 		<?php the_content(); ?>
 
 		<!-- <img src="images/content/blog-1.jpg" class="img-responsive" alt="blog 1"> -->
-		<?php the_post_thumbnail( 'full', array('class'=>'img-responsive') ); ?>
+		<?php //the_post_thumbnail( 'full', array('class'=>'img-responsive') ); ?>
 	</div>
 
 	<div class="row post-extra-content">
@@ -29,7 +29,8 @@
 				$posttags = get_the_tags();
 				if ($posttags) {
 				  foreach($posttags as $tag) {
-				    echo '#'.$tag->name . ' '; 
+				  	echo '<a href="'.get_tag_link($tag->term_id).'">#'.$tag->name.' </a>';
+				    // echo '#'.$tag->name . ' '; 
 				  }
 				}
 				?>				
@@ -38,10 +39,10 @@
 			
 			<div class="sharing post-extra">
 				<ul>
-					<li><a href="#" class="instagram"></a></li>
-					<li><a href="#" class="pintrest"></a></li>
-					<li><a href="#" class="twitter"></a></li>
-					<li><a href="#" class="facebook"></a></li>
+					<li><a href="#" class="instagram"></a></li>					
+					<li><a href="http://pinterest.com/pin/create/button/?url=<?php echo urlencode( get_permalink(get_the_ID()) ); ?>&media=<?php echo wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>" class="pintrest"></a></li>
+					<li><a href="https://twitter.com/share?url=<?php echo urlencode( get_permalink(get_the_ID()) ); ?>&via=gryphontea&text=gryphon%20tea%20company" class="twitter"></a></li>
+					<li><a href="<?php echo get_permalink(get_the_ID()); ?>" class="facebook"></a></li>
 				</ul>
 			</div>
 		</div>
