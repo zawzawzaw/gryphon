@@ -87,11 +87,13 @@
 			//  	->setOrder('price', 'ASC');
 			
 			// $pantry_products_data = $pantry_products->getData();
+			if ($pantry_products->getIsActive()):
 			?>
 			<li>
 				<a href="<?php echo $pantry_products->getUrl(); ?>">PANTRY</a>
 			</li>
 			<?php
+			endif;
 			// PANTRY
 			$gifts_products = Mage::getModel('catalog/category')->loadByAttribute('name', 'Gifts')->getProductCollection()
 			 	->addAttributeToSelect('*') // add all attributes - optional

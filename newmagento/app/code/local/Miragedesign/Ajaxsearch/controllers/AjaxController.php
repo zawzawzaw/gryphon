@@ -12,6 +12,9 @@ class Miragedesign_Ajaxsearch_AjaxController extends Mage_Core_Controller_Front_
 {
     public function resultAction()
     {
+        ini_set('display_errors',1);
+        ini_set('display_startup_errors',1);
+        error_reporting(-1);
         $result = array();
         $ajaxSearchHelper = Mage::helper("ajaxsearch");
         $arrQuery = $ajaxSearchHelper->verifyParams($this->getRequest()->getParams());

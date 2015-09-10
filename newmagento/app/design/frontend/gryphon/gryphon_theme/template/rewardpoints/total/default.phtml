@@ -45,8 +45,26 @@
         <div class="a-right label discount" colspan="1">
             <th colspan="<?php echo $this->getColspan(); ?>" style="<?php echo $this->getTotal()->getStyle() ?>" class="a-right totals-rewards">
                 <?php if ($this->getRenderingArea() == $this->getTotal()->getArea()): ?><strong><?php endif; ?>
-                    <p><?php //echo $this->getTotal()->getTitle(); ?></p>
-                    <p>DISCOUNTS</p>
+                    <?php 
+                        $appliedRuleIds = Mage::getSingleton('checkout/session')->getQuote()->getAppliedRuleIds();
+                        $appliedRuleIds = explode(',', $appliedRuleIds);
+
+                        $all_rules = Mage::getResourceModel('salesrule/rule_collection')->load();
+                        $rules =  Mage::getModel('salesrule/rule')->getCollection()->addFieldToFilter('rule_id' , array('in' => $appliedRuleIds));
+
+                        foreach ($rules as $rule) {
+                            if ($rule->getIsActive()) {
+                                if(!empty($current_rule_name))
+                                    $current_rule_name .= ', ' . $rule->getName();
+                                else
+                                    $current_rule_name = $rule->getName();
+                            }
+                        }
+                    ?>
+                    <!-- <p><?php echo $this->getTotal()->getTitle(); ?></p> -->
+                    <p>DISCOUNT</p>
+                    <!-- <span><?php if(!empty($current_rule_name)): ?>( <?php echo $current_rule_name; ?> )<?php endif; ?></span> -->
+                    <span class="discount_desc"><?php echo $this->getTotal()->getTitle(); ?></span>
                 <?php if ($this->getRenderingArea() == $this->getTotal()->getArea()): ?></strong><?php endif; ?>
             </th>
         </div>

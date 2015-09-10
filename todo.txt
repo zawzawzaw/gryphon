@@ -2,6 +2,7 @@ test emails can't send out
 facekbook login
 cron job?
 mobile tweek
+gift card image 
 
 to disable magento auto update
 search load more
@@ -33,3 +34,6 @@ revise email
 
 day dropdown gift card
 gift card template image
+
+
+case id : gde 79692102

@@ -941,6 +941,10 @@ class Mage_SalesRule_Model_Validator extends Mage_Core_Model_Abstract
             $label = $address->getCouponCode();
         }
 
+        $rulesData = $rule->getData();
+
+        $label = $rulesData['name'];
+
         if (strlen($label)) {
             $description[$rule->getId()] = $label;
         }

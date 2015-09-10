@@ -84,8 +84,7 @@ endif;
                         <div class="product-content">
                         <?php endif; ?>
                             <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
-                            <hr class="small" />
-                            <!-- <h1 class="price">S$ 78</h1> -->
+                            <hr class="small" />                            
                             <?php if ($this->canEmailToFriend()): ?>
                                 <p class="email-friend"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><?php echo $this->__('Email to a Friend') ?></a></p>
                             <?php endif; ?>

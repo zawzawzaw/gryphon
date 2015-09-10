@@ -33,7 +33,13 @@
 /* @var $this Mage_Catalog_Block_Product_List */
 ?>
 <?php
-    $_productCollection=$this->getLoadedProductCollection();
+    // $_productCollection=$this->getLoadedProductCollection()->addAttributeToSort('pos‌​ition');
+    $_productCollection = Mage::getModel('catalog/category')->load(92)
+                         ->getProductCollection()
+                         ->addAttributeToSelect('*')
+                         ->addAttributeToFilter('status', 1) // enabled
+                         ->addAttributeToFilter('visibility', 4) //visibility in catalog,search
+                         ->addAttributeToSort('position', Varien_Data_Collection::SORT_ORDER_ASC);
     $_helper = $this->helper('catalog/output');    
 
     function isMobile()  

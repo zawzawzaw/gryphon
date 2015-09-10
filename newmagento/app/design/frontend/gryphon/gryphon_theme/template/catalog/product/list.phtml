@@ -33,11 +33,24 @@
 /* @var $this Mage_Catalog_Block_Product_List */
 ?>
 <?php
-    $_productCollection=$this->getLoadedProductCollection();
+    $_productCollection=$this->getLoadedProductCollection()->addAttributeToSort('pos‌​ition');
+    $current_cat_id = $this->getLayer()->getCurrentCategory()->getId();
+    if($current_cat_id==102 || $current_cat_id==107) {
+        $_productCollection = Mage::getModel('catalog/category')->load($current_cat_id)
+                             ->getProductCollection()
+                             ->addAttributeToSelect('*')
+                             ->addAttributeToFilter('status', 1) // enabled
+                             ->addAttributeToFilter('visibility', 4) //visibility in catalog,search
+                             ->addAttributeToSort('position', Varien_Data_Collection::SORT_ORDER_ASC);
+    }
+
 	
 	$locationskuSGPArray = array("SGP-ART-1M", "SGP-ART-3M", "SGP-ART-6M", "SGP-ART-12M", "SGP-GUR-1M", "SGP-GUR-3M", "SGP-GUR-6M", "SGP-GUR-12M","INT-ART-1M", "INT-ART-3M", "INT-ART-6M", "INT-ART-12M", "INT-GUR-1M", "INT-GUR-3M", "INT-GUR-6M", "INT-GUR-12M");
 	
     $_helper = $this->helper('catalog/output');    
+
+    // $currentCategory = Mage::registry('current_category');
+    // $current_category_data = $currentCategory->getData();
 ?>
 <div id="result_products">
 <?php if(!$_productCollection->count()): ?>

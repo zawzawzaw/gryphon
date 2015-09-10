@@ -26,6 +26,13 @@
 ?>
 <?php
 $billingAddress = $this->getCustomer()->getPrimaryBillingAddress();
+
+$groupname = '';
+if(Mage::getSingleton('customer/session')->isLoggedIn()) {
+    $customerData = Mage::getSingleton('customer/session')->getCustomer();
+    $customerGroupId = $customerData->getGroupId();
+    $groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();  
+}
 ?>
 <div class="row account-details-saved-content">
     <div class="col-md-2 col-sm-6 col-xs-6">
@@ -33,11 +40,16 @@ $billingAddress = $this->getCustomer()->getPrimaryBillingAddress();
             <h2><?php echo $this->__('NAME'); ?></h2>
             <p><?php echo $this->escapeHtml($this->getCustomer()->getName()) ?></p>
         </div>
-
+        <?php
+        if(($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium'))
+        {
+            // continue;
+        } else { ?>
         <div class="each-input">
             <h2><?php echo $this->__('GENDER'); ?></h2>
             <p><?php echo ($this->getCustomer()->getGender()) ? $this->escapeHtml($this->helper('customercustomiser')->getGender($this->getCustomer())) : $this->__('None'); ?></p>
-        </div>        
+        </div>    
+        <?php } ?>    
     </div>
     <div class="col-md-2 col-sm-6 col-xs-6">
         <div class="each-input">
@@ -48,6 +60,11 @@ $billingAddress = $this->getCustomer()->getPrimaryBillingAddress();
             <h2><?php echo $this->__('password'); ?></h2>
             <p><a href="<?php echo $this->getChangePasswordUrl() ?>"><?php echo $this->__('Change Password') ?></a></p>
         </div>
+        <?php
+        if(($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium'))
+        {
+            // continue;
+        } else { ?>
         <div class="each-input">
             <h2><?php echo $this->__('DATE OF BIRTH'); ?></h2>
             <?php 
@@ -60,8 +77,10 @@ $billingAddress = $this->getCustomer()->getPrimaryBillingAddress();
                 $dob = $this->__('None');
             }
             ?>
+
             <p><?php echo $dob; ?></p>
         </div>
+        <?php } ?>
     </div>
     <div class="col-md-3 col-sm-6 col-xs-6">
         <div class="each-input">

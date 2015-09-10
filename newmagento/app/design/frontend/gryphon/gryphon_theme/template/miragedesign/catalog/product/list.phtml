@@ -33,11 +33,17 @@
 /* @var $this Mage_Catalog_Block_Product_List */
 ?>
 <?php
-    $_productCollection=$this->getLoadedProductCollection();
+    $_productCollection=$this->getLoadedProductCollection()->addAttributeToSort('pos‌​ition');
+    $locationskuSGPArray = array("SGP-ART-1M", "SGP-ART-3M", "SGP-ART-6M", "SGP-ART-12M", "SGP-GUR-1M", "SGP-GUR-3M", "SGP-GUR-6M", "SGP-GUR-12M","INT-ART-1M", "INT-ART-3M", "INT-ART-6M", "INT-ART-12M", "INT-GUR-1M", "INT-GUR-3M", "INT-GUR-6M", "INT-GUR-12M");
     $_helper = $this->helper('catalog/output');    
 ?>
 <?php if($_productCollection->count()): ?>
-    <?php foreach ($_productCollection as $_product): ?>
+    <?php foreach ($_productCollection as $_product):
+        if(in_array($_product->getSku(),$locationskuSGPArray))
+        {
+            continue;
+        }
+    ?>
         <div class="each-product">
             <div class="product-image-container">
                 <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image">

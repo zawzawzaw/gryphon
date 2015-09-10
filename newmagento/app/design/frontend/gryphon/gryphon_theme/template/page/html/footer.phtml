@@ -43,6 +43,8 @@
 					<div class="search">
 						<input type="text" name="subscribe_email" id="subscribe_email" placeholder="Enter your email address" />
 						<button class="signup subscribe_newsletter"><i class="fa fa-check"></i> <span>Sign up</span></button>
+						<span id='ajax_loader' style='display:none'><img src='<?php echo $this->getSkinUrl('images/content/opc-ajax-loader.gif')?>'/></span>
+            			<span class="ajax_msg italic"></span>
 					</div>
 				</div>
 				<div class="col-md-7">
@@ -154,9 +156,16 @@
 </div><!-- page wrapper end -->
 <script>
 	jQuery(document).ready(function($){
+		$('#subscribe_email').keypress(function(event){
+			var keycode = (event.keyCode ? event.keyCode : event.which);
+			if(keycode == '13') 
+				$('.subscribe_newsletter').trigger('click');
+		});
 		$('.subscribe_newsletter').on('click', function(e){
 			var subscribe_email = $('#subscribe_email').val();
-			console.log(subscribe_email);
+
+			jQuery('#ajax_loader').show();
+
 			var request = $.ajax({
 			  	url: "<?php echo $this->getUrl('discovertea/index/subscribe') ?>",
 			  	method: "POST",
@@ -165,8 +174,13 @@
 			});
 			 
 			request.done(function( msg ) {
-			  console.log(msg);
-			});			
+				var message = JSON.parse(msg);
+				jQuery('#ajax_loader').hide();
+				if(message.error_messages)
+					jQuery('span.ajax_msg').html(message.error_messages).show().delay(5000).fadeOut();				  		
+			  	else
+					jQuery('span.ajax_msg').html('Successfully subscribed to newsletter').show().delay(5000).fadeOut();
+			});
 		});
 	});
 </script>

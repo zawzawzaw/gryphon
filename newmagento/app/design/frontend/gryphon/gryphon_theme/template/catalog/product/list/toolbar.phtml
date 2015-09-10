@@ -51,14 +51,14 @@
             <ul>
                 <?php $i = 0; foreach($this->getAvailableOrders() as $_key=>$_order): ?>
                     <?php if (in_array($_key, array('name', 'price'))) :?>
-                    <li><a href="<?php echo $this->helper('catalogcustomiser')->getOriginalSortUrl($this->getOrderUrl($_key, 'asc')) ?>" <?php if($this->isOrderCurrent($_key)): ?> class="selected"<?php endif; ?>><?php echo $this->__($_order) ?></a><?php if ($i < $orderByNumber) : ?><div class="v-line"></div><?php endif; ?><?php $i++; ?></li>
+                    <li><a href="<?php echo $this->getOrderUrl($_key, 'asc') ?><?php //echo $this->helper('catalogcustomiser')->getOriginalSortUrl($this->getOrderUrl($_key, 'asc')) ?>" <?php if($this->isOrderCurrent($_key)): ?> class="selected"<?php endif; ?>><?php echo $this->__($_order) ?></a><?php if ($i < $orderByNumber) : ?><div class="v-line"></div><?php endif; ?><?php $i++; ?></li>
                     <?php endif; ?>
                 <?php endforeach; ?>
             </ul>
             <?php if($this->getCurrentDirection() == 'desc'): ?>
-                <a href="<?php echo $this->helper('catalogcustomiser')->getOriginalSortUrl($this->getOrderUrl(null, 'asc')); ?>" title="<?php echo $this->__('Set Ascending Direction') ?>"><img src="<?php echo $this->getSkinUrl('images/icons/arrow-down.png') ?>" alt="<?php echo $this->__('Set Ascending Direction') ?>" class="v-middle sort-arrow" /></a>
+                <a class="arrow-up-down" href="<?php echo $this->helper('catalogcustomiser')->getOriginalSortUrl($this->getOrderUrl(null, 'asc')); ?>" title="<?php echo $this->__('Set Ascending Direction') ?>"><img src="<?php echo $this->getSkinUrl('images/icons/arrow-down.png') ?>" alt="<?php echo $this->__('Set Ascending Direction') ?>" class="v-middle sort-arrow" /></a>
             <?php else: ?>
-                <a href="<?php echo $this->helper('catalogcustomiser')->getOriginalSortUrl($this->getOrderUrl(null, 'desc')); ?>" title="<?php echo $this->__('Set Descending Direction') ?>"><img src="<?php echo $this->getSkinUrl('images/icons/arrow-up.png') ?>" alt="<?php echo $this->__('Set Descending Direction') ?>" class="v-middle sort-arrow" /></a>
+                <a class="arrow-up-down" href="<?php echo $this->helper('catalogcustomiser')->getOriginalSortUrl($this->getOrderUrl(null, 'desc')); ?>" title="<?php echo $this->__('Set Descending Direction') ?>"><img src="<?php echo $this->getSkinUrl('images/icons/arrow-up.png') ?>" alt="<?php echo $this->__('Set Descending Direction') ?>" class="v-middle sort-arrow" /></a>
             <?php endif; ?>
         </div>
     </div>

@@ -66,7 +66,7 @@ class Mage_Checkout_Block_Cart_Totals extends Mage_Checkout_Block_Cart_Abstract
 
     public function renderTotal($total, $area = null, $colspan = 1)
     {
-        $code = $total->getCode();
+        $code = $total->getCode();        
         if ($total->getAs()) {
             $code = $total->getAs();
         }

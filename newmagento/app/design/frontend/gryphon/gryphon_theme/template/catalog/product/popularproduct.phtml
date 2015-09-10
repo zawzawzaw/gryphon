@@ -33,7 +33,13 @@
 /* @var $this Mage_Catalog_Block_Product_List */
 ?>
 <?php
-    $_productCollection=$this->getLoadedProductCollection();
+    // $_productCollection=$this->getLoadedProductCollection()->addAttributeToSort('position');
+    $_productCollection = Mage::getModel('catalog/category')->load(114)
+                         ->getProductCollection()
+                         ->addAttributeToSelect('*')
+                         ->addAttributeToFilter('status', 1) // enabled
+                         ->addAttributeToFilter('visibility', 4) //visibility in catalog,search
+                         ->addAttributeToSort('position', Varien_Data_Collection::SORT_ORDER_ASC);
     $_helper = $this->helper('catalog/output');
 ?>
 <?php if(!$_productCollection->count()): ?>
@@ -44,7 +50,7 @@
             $_imgSize = 150;
             $categoryIds = $_product->getCategoryIds();
             ?>
-            <div class="center-text">
+            <div class="center-text popular">
                 <a href="<?php echo $_product->getProductUrl() ?>" class="product-img">
                     <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(150, 150); ?>" alt="tea <?php echo $i ?>">
                     <p class="caption"><?php echo $this->htmlEscape($_product->getName()) ?></p>
@@ -52,7 +58,7 @@
                     <!-- <p class="caption-2"><?php //echo Mage::helper('core/string')->truncate($product_data['short_description'], 50); ?></p>         -->
                     <?php
                     $categoryIds = $_product->getCategoryIds();
-                    if(count($categoryIds) ){
+                    if(count($categoryIds) ) {
                         foreach ($categoryIds as $key => $categoryId) {
                             $_category = Mage::getModel('catalog/category')->load($categoryId);
                             $parent_category = Mage::getModel('catalog/category')->load($categoryId)->getParentCategory();    

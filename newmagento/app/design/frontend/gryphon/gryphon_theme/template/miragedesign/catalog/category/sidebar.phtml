@@ -15,13 +15,11 @@ $currentCategory = Mage::registry('current_category');
 $current_category_data = $currentCategory->getData();
 $allowCategoriesIDs = $this->getAllowCategoires();
 
-// print_r($current_category_data);
-
 // if(in_array($current_category_data['entity_id'], $allowCategoriesIDs) || in_array($current_category_data['parent_id'], $allowCategoriesIDs) || $current_category_data['url_key']=="store"): ?>
 <div class="side-bar">    
-    <?php if($current_category_data['url_key']=='gifts' || $current_category_data['url_key']=='pantry'): ?>
+    <?php if($current_category_data['url_key']=='gifts'): ?>
     <h1><?php echo $this->__($current_category_data['name']); ?></h1>
-    <a href="javascript:void(0)" class="clear-all"><?php echo $this->__('Clear All'); ?></a>
+    <!-- <a href="javascript:void(0)" class="clear-all"><?php echo $this->__('Clear All'); ?></a> -->
     <hr class="small" />    
     <p class="title-desc"><?php echo trim($current_category_data['meta_description']); ?></p>
     <?php else: ?>
@@ -30,9 +28,6 @@ $allowCategoriesIDs = $this->getAllowCategoires();
     <hr class="small" />
     <?php endif; ?>
     
-
-    
-
     <form action="" id="ajax-filter-form" name="ajax-filter-form">
         <?php if($current_category_data['url_key']=="store"): ?>
         <div class="each-filter-section">
@@ -71,37 +66,78 @@ $allowCategoriesIDs = $this->getAllowCategoires();
                 $splitColumnNumber = 19;
             ?>
             <!-- <input type="hidden" value="<?php echo $category->getName(); ?> <?php echo $category->getId(); ?>"> -->
-            <?php if($category->getId() == $current_category_data['entity_id'] || $category->getId() == $current_category_data['parent_id'] || $current_category_data['url_key']=="store"): ?>
-                <?php if(strtolower($category->getName())!=="pantry" && strtolower($category->getName())!=="gifts"): ?>
-                    <div class="each-filter-section has-subsection">
-                        <div class="title">
-                            <a id="cat-<?php echo $category->getId(); ?>" href="#col-cat-<?php echo $category->getId(); ?>" class="load-more">
-                                <h2><?php echo $category->getName(); ?></h2><i class="fa fa-angle-up"></i>
-                            </a>
-                            <div class="clear"></div>
+            <?php if(strtolower($current_category_data['name'])!=='pantry'): ?>
+
+                <?php if($category->getId() == $current_category_data['entity_id'] || $category->getId() == $current_category_data['parent_id'] || $current_category_data['url_key']=="store"): ?>
+                    <?php if(strtolower($category->getName())!=="pantry" && strtolower($category->getName())!=="gifts"): ?>
+                        <div class="each-filter-section has-subsection">
+                            <div class="title">
+                                <a id="cat-<?php echo $category->getId(); ?>" href="#col-cat-<?php echo $category->getId(); ?>" class="load-more">
+                                    <h2><?php echo $category->getName(); ?></h2><i class="fa fa-angle-up"></i>
+                                </a>
+                                <div class="clear"></div>
+                            </div>
+                            <?php if ($number = count($subCategories)): ?>
+                            <div id="col-cat-<?php echo $category->getId(); ?>" class="all-inputs">
+                                <?php $i = 1; $average = 10; $pass = false; ?>
+                                <?php if ($number >= $splitColumnNumber): ?><div class="col-1"><?php endif; ?>                    
+                                <?php foreach($subCategories as $subCategory) :?>
+                                    <?php if(strtolower($subCategory->getName())!=="pantry" && strtolower($subCategory->getName())!=="gifts"): ?>
+                                    <div class="each-input">
+                                        <input class="ajaxsearch" id="sub-cat-<?php echo $subCategory->getId(); ?>" type="checkbox" name="categoryId[]" <?php if ($currentCategory && $currentCategory->getId() == $subCategory->getId()) :?>checked="checked"<?php endif; ?> value="<?php echo $subCategory->getId(); ?>" />
+                                        <label class="checkbox-label" for="collection_type">
+                                            <span></span><p class="label-text"><?php echo $subCategory->getName(); ?></p>
+                                        </label>
+                                    </div>
+                                    <?php endif; ?>
+                                    <?php if ($number >= $splitColumnNumber && !$pass && !($i%$average)): $pass = true; ?></div><div class="col-2"><?php endif; ?>                        
+                                    <?php $i++; ?>
+                                <?php endforeach; ?>
+                                <?php if ($number >= $splitColumnNumber && ($i == $number + 1)): ?></div><div class="clear"></div><?php $i++; ?><?php endif; ?>                    
+                            </div>
+                            <?php endif; ?>
                         </div>
-                        <?php if ($number = count($subCategories)): ?>
-                        <div id="col-cat-<?php echo $category->getId(); ?>" class="all-inputs">
-                            <?php $i = 1; $average = 10; $pass = false; ?>
-                            <?php if ($number >= $splitColumnNumber): ?><div class="col-1"><?php endif; ?>                    
-                            <?php foreach($subCategories as $subCategory) :?>
-                                <?php if(strtolower($subCategory->getName())!=="pantry" && strtolower($subCategory->getName())!=="gifts"): ?>
-                                <div class="each-input">
-                                    <input class="ajaxsearch" id="sub-cat-<?php echo $subCategory->getId(); ?>" type="checkbox" name="categoryId[]" <?php if ($currentCategory && $currentCategory->getId() == $subCategory->getId()) :?>checked="checked"<?php endif; ?> value="<?php echo $subCategory->getId(); ?>" />
-                                    <label class="checkbox-label" for="collection_type">
-                                        <span></span><p class="label-text"><?php echo $subCategory->getName(); ?></p>
-                                    </label>
-                                </div>
-                                <?php endif; ?>
-                                <?php if ($number >= $splitColumnNumber && !$pass && !($i%$average)): $pass = true; ?></div><div class="col-2"><?php endif; ?>                        
-                                <?php $i++; ?>
-                            <?php endforeach; ?>
-                            <?php if ($number >= $splitColumnNumber && ($i == $number + 1)): ?></div><div class="clear"></div><?php $i++; ?><?php endif; ?>                    
-                        </div>
-                        <?php endif; ?>
-                    </div>
+                    <?php endif; ?>
                 <?php endif; ?>
+
+            <?php else: ?>
+                <?php //echo $category->getId() . ':' .  $current_category_data['entity_id']; ?>
+                <?php if($category->getId() == $current_category_data['entity_id'] || $category->getId() == $current_category_data['parent_id'] || $current_category_data['url_key']=="store"): ?>
+                    <?php if(strtolower($category->getName())=="pantry"): ?>
+                        <div class="each-filter-section has-subsection">
+                            <div class="title">
+                                <a id="cat-<?php echo $category->getId(); ?>" href="#col-cat-<?php echo $category->getId(); ?>" class="load-more">
+                                    <h2><?php echo $category->getName(); ?></h2><i class="fa fa-angle-up"></i>
+                                </a>
+                                <div class="clear"></div>
+                            </div>
+                            <?php if ($number = count($subCategories)): ?>
+                            <div id="col-cat-<?php echo $category->getId(); ?>" class="all-inputs">
+                                <?php $i = 1; $average = 10; $pass = false; ?>
+                                <?php if ($number >= $splitColumnNumber): ?><div class="col-1"><?php endif; ?>                    
+                                <input class="ajaxsearch default-pantry-category" type="hidden" name="categoryId[]" value="<?php echo $category->getId() ?>" />
+                                <?php foreach($subCategories as $subCategory) :?>
+                                    <?php //if(strtolower($subCategory->getName())!=="pantry" && strtolower($subCategory->getName())!=="gifts"): ?>
+                                    <div class="each-input">
+                                        <input class="ajaxsearch pantry-filter" id="sub-cat-<?php echo $subCategory->getId(); ?>" type="checkbox" name="categoryId[]" <?php if ($currentCategory && $currentCategory->getId() == $subCategory->getId()) :?>checked="checked"<?php endif; ?> value="<?php echo $subCategory->getId(); ?>" />
+                                        <label class="checkbox-label" for="collection_type">
+                                            <span></span><p class="label-text"><?php echo $subCategory->getName(); ?></p>
+                                        </label>
+                                    </div>
+                                    <?php //endif; ?>
+                                    <?php if ($number >= $splitColumnNumber && !$pass && !($i%$average)): $pass = true; ?></div><div class="col-2"><?php endif; ?>                        
+                                    <?php $i++; ?>
+                                <?php endforeach; ?>
+                                <?php if ($number >= $splitColumnNumber && ($i == $number + 1)): ?></div><div class="clear"></div><?php $i++; ?><?php endif; ?>                    
+                            </div>
+                            <?php endif; ?>
+                        </div>
+                    <?php endif; ?>
+                <?php endif; ?>
+                
             <?php endif; ?>
+
+
         <?php endforeach; ?>
     </form>
 
@@ -178,6 +214,11 @@ $allowCategoriesIDs = $this->getAllowCategoires();
 
 
         $('#ajax-filter-form input.ajaxsearch').click(function() {
+            if ($('input.pantry-filter').is(':checked')) {
+                $('.default-pantry-category').prop('disabled', true);
+            }else {
+                $('.default-pantry-category').prop('disabled', false);
+            }
             ajaxSearch.submit();
         });
         $('#ajax-filter-form .clear-all').click(function() {

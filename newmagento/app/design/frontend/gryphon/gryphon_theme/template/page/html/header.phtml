@@ -165,11 +165,13 @@ $quoteData= $quote->getData();
 					<?php
 					// PANTRY
 					$pantry_products = Mage::getModel('catalog/category')->loadByAttribute('name', 'Pantry');					
+					if ($pantry_products->getIsActive()):
 					?>
 					<li>
 						<a href="<?php echo $pantry_products->getUrl(); ?>">PANTRY</a>
 					</li>
-					<?php
+					<?php 
+					endif;
 					// PANTRY
 					$gifts_products = Mage::getModel('catalog/category')->loadByAttribute('name', 'Gifts')->getProductCollection()
 					 	->addAttributeToSelect('*') // add all attributes - optional
@@ -238,10 +240,16 @@ $quoteData= $quote->getData();
 				<h2>FOLLOW US</h2>
 				<hr class="small">
 				<ul class="share-ctas">
+					<li><a href="https://instagram.com/gryphontea/" target="_blank" class="instagram"></a></li>
+					<li><a href="https://www.pinterest.com/gryphontea/" target="_blank" class="pintrest"></a></li>
+					<li><a href="https://www.facebook.com/gryphonteacompany" target="_blank" class="facebook"></a></li>
+					<li><a href="https://www.linkedin.com/company/gryphon-tea-company" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+					<!-- <li><a href="https://www.youtube.com/channel/UCrKNQcT3PHO-o_vQBMUlH8Q" target="_blank" class="youtube"><i class="fa fa-youtube"></i></a></li>
+					<li><a href="https://plus.google.com/+Gryphonteacompany/posts" target="_blank" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
 					<li><a href="#" class="instagram"></a></li>
 					<li><a href="#" class="pintrest"></a></li>
 					<li><a href="#" class="twitter"></a></li>
-					<li><a href="#" class="facebook"></a></li>
+					<li><a href="#" class="facebook"></a></li> -->
 				</ul>
 
 				<div class="copywrite">
@@ -264,7 +272,7 @@ $quoteData= $quote->getData();
 	?>
 		<?php if(strtolower(trim($group->getCode()))!=="general"): ?>
 			<div class="marquee">
-				<p class="rotate">TRADE PROMO COPY COMES HERE, TRADE PROMO COPY COMES HERE 2, TRADE PROMO COPY COMES HERE 3</p>
+				<p class="rotate">Free local shipping when you spend over $250, Get greater discounts when you order online</p>
 			</div>
 		<?php else: ?>
 			<div class="marquee">

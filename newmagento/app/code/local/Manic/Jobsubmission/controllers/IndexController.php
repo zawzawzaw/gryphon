@@ -59,11 +59,15 @@ class Manic_Jobsubmission_IndexController extends Mage_Core_Controller_Front_Act
 
 	public function uploadcvAction() {
 
+		ini_set('display_errors',1);
+		ini_set('display_startup_errors',1);
+		error_reporting(-1);
+
 		// Set the uplaod directory
 		$uploadDir = Mage::getBaseDir('media') . DS . 'careers' . DS . 'cvs/';
 
 		// Set the allowed file extensions
-		$fileTypes = array('pdf'); // Allowed file extensions
+		$fileTypes = array('pdf', 'doc', 'docx'); // Allowed file extensions
 		
 		$timestamp = $this->getRequest()->getPost('timestamp', array());
 		$token = $this->getRequest()->getPost('token', array());

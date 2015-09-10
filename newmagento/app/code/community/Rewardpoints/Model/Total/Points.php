@@ -256,8 +256,8 @@ class Rewardpoints_Model_Total_Points extends Rewardpoints_Model_Total_Points_Ab
             
             if ($pts = Mage::helper('rewardpoints/event')->getCreditPoints($address->getQuote())){
                 $title = Mage::helper('rewardpoints')->__('%s points used', $pts);
-                //echo $pts;
-                //die;
+                // echo $title;
+                // die;
                 
                 $address->getQuote()->setRewardpointsDescription($title);
                 //$title_base = $title;

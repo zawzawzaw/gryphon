@@ -203,7 +203,7 @@ $_specialPriceStoreLabel = $this->getProductAttribute('special_price')->getStore
                 </span>
             <?php else: ?>
 			<?php
-				//PG: Set From for tier lowest price
+				//PG: Set From for tier lowest price                
 				$groupname = '';
 				if(Mage::getSingleton('customer/session')->isLoggedIn()) {
 					$customerData = Mage::getSingleton('customer/session')->getCustomer();
@@ -211,14 +211,15 @@ $_specialPriceStoreLabel = $this->getProductAttribute('special_price')->getStore
 					$groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();	
 				}
 				if($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium')
-				{ 
+				{
 						$parentIds = Mage::getModel('catalog/product_type_grouped')->getParentIdsByChild($_id); // check for grouped product
 						if(!$parentIds)
 							$parentIds = Mage::getModel('catalog/product_type_configurable')->getParentIdsByChild($_id); //check for config product
 
-						//print_r($parentIds);
-						if (count($parentIds)>0)
-						{?>
+                        $categoryIds = $_product->getCategoryIds();
+
+						if (count($parentIds)>0 || in_array(107, $categoryIds) || in_array(102, $categoryIds))
+						{ ?>
 							<span class="regular-price" id="product-price-<?php echo $_id ?><?php echo $this->getIdSuffix() ?>">
 								<?php if ($_finalPrice == $_price): ?>
 									<?php echo $_coreHelper->formatPrice($_price, false) ?>
@@ -228,7 +229,7 @@ $_specialPriceStoreLabel = $this->getProductAttribute('special_price')->getStore
 							</span>
 							
 						<?php }
-				}else{ ?>
+				}else { ?>
 					  <span class="regular-price" id="product-price-<?php echo $_id ?><?php echo $this->getIdSuffix() ?>">
 						<?php if ($_finalPrice == $_price): ?>
 							<?php echo $_coreHelper->formatPrice($_price, false) ?>
@@ -429,7 +430,7 @@ $_specialPriceStoreLabel = $this->getProductAttribute('special_price')->getStore
         <?php endif; ?>
 
         <?php if ($this->getUseLinkForAsLowAs()): ?>
-            <a href="<?php echo $_product->getProductUrl(); ?>" class="minimal-price-link">
+            <!-- <a href="<?php echo $_product->getProductUrl(); ?>" class="minimal-price-link"> -->
         <?php else: ?>
             <span class="minimal-price-link">
         <?php endif ?>
@@ -444,10 +445,10 @@ $_specialPriceStoreLabel = $this->getProductAttribute('special_price')->getStore
 			if($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium')
             {
 				?>				
-				<span class="label" style="color:gray"><?php echo $this->__('From:') ?></span>
+				<span><?php echo $this->__('From:') ?></span>
             <?php 
             }else{ ?>
-				<span class="label"><?php echo $this->__('As low as:') ?></span>
+				<span><?php echo $this->__('As low as:') ?></span>
 			<?php 	
 			}
 			//PG: end
@@ -458,7 +459,7 @@ $_specialPriceStoreLabel = $this->getProductAttribute('special_price')->getStore
                 <?php echo $_coreHelper->formatPrice($_minimalPriceDisplayValue, false) ?>
             </span>
         <?php if ($this->getUseLinkForAsLowAs()): ?>
-            </a>
+            <!-- </a> -->
         <?php else: ?>
             </span>
         <?php endif ?>

@@ -1,9 +1,9 @@
 <script type="text/javascript">
 	<?php $timestamp = time();?>
 	jQuery(document).ready(function($) {
-		$('#resume').uploadifive({
-			'fileType'     : 'application/pdf',
-			'uploadLimit'  : 1,
+		$('#resume').uploadifive({			
+			'fileType'         : ["application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/msword", "application/pdf"],
+			'uploadLimit'  	   : 1,
 			'buttonText'       : 'UPLOAD',
 			'auto'             : true,
 			'checkScript'      : '<?php echo $this->getUrl("jobsubmission/index/checkexists") ?>',
@@ -17,7 +17,7 @@
 				console.log(objData['file_name']);
 				console.log(objData['message']);
 				$('#hidden_resume').val(objData['file_name']);
-				$('.filename').html(objData['message']);
+				$('.filename').html(objData['message'].substr(50));
 			}
 		});
 

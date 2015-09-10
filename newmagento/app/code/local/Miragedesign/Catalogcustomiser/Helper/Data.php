@@ -58,6 +58,9 @@ class Miragedesign_Catalogcustomiser_Helper_Data extends Mage_Core_Helper_Abstra
 
     public function getTypesCategory($product, $defaultName = '')
     {
+        ini_set('display_errors',1);
+        ini_set('display_startup_errors',1);
+        error_reporting(-1);
         if (is_null($this->_typesSubCategories)) {
             $typeCategory = Mage::getModel('catalog/category')->load(5);
             $this->_typesSubCategories = explode(',', $typeCategory->getChildren());
@@ -70,6 +73,19 @@ class Miragedesign_Catalogcustomiser_Helper_Data extends Mage_Core_Helper_Abstra
         if (count($matchedCategories)) {
             $matchedCategory = Mage::getModel('catalog/category')->load($matchedCategories[0]);
             return $matchedCategory->getName();
+        }
+
+        if($defaultName == 'Default Category') {
+            $cat_level = 0;
+            foreach ($belongsToCategories as $key => $value) {
+                $matchedCategory = Mage::getModel('catalog/category')->load($value);  
+                $matchedCategoryData = $matchedCategory->getData();
+                
+                if($matchedCategoryData['level'] > $cat_level) {
+                    $cat_level = $matchedCategoryData['level'];
+                    $defaultName = $matchedCategory->getName();    
+                }                
+            }            
         }
 
         return $defaultName;
