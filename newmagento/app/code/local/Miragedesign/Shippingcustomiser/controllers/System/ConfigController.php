@@ -2,7 +2,7 @@
 
 /**
  * Miragedesign Web Development
- *
+ * Modified By : PG
  * @category    Miragedesign
  * @package     Miragedesign_Shippingcustomiser
  * @copyright   Copyright (c) 2011 Miragedesign (http://miragedesign.net)
@@ -32,4 +32,16 @@ class Miragedesign_Shippingcustomiser_System_ConfigController extends Mage_Admin
         $content = $gridBlock->getCsvFile();
         $this->_prepareDownloadResponse($fileName, $content);
     }
+	/** Author:: PG **/
+	public function exportcustomratefreeshippingAction()
+    {
+        $fileName = 'freeshippingrates.csv';
+        /** @var $gridBlock Mage_Adminhtml_Block_Shipping_Carrier_Tablerate_Grid */
+        $gridBlock = $this->getLayout()->createBlock('shippingcustomiser/adminhtml_shipping_carrier_customratefreeshipping_grid');
+        $website = Mage::app()->getWebsite($this->getRequest()->getParam('website'));
+        $gridBlock->setWebsiteId($website->getId());
+        $content = $gridBlock->getCsvFile();
+        $this->_prepareDownloadResponse($fileName, $content);
+    }
+	/** Author:: PG End**/
 }

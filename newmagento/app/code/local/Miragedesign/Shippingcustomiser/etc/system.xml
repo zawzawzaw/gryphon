@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <!--
 /**
+/** Modified By:: PG **/
  * Miragedesign Web Development
  *
  * @category    Miragedesign
@@ -127,6 +128,26 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </free_shipping_threshold>
+						<!-- /** Author:: PG **/ -->
+						<free_shipping_export translate="label">
+                            <label>Free Shipping Export</label>
+                            <frontend_type>export</frontend_type>
+							<frontend_model>shippingcustomiser/adminhtml_system_config_form_field_exportcustomratefreeshipping</frontend_model>
+                            <sort_order>101</sort_order>
+                            <show_in_default>0</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </free_shipping_export>
+						<free_shipping_import translate="label">
+                           <label>Free Shipping Import</label>
+                           <frontend_type>import</frontend_type>
+                           <backend_model>shippingcustomiser/adminhtml_system_config_backend_shipping_freeshippingratescsv</backend_model>
+                           <sort_order>102</sort_order>
+                           <show_in_default>0</show_in_default>
+                           <show_in_website>1</show_in_website>
+                           <show_in_store>0</show_in_store>
+                        </free_shipping_import>
+						<!-- /** Author:: PG End **/ -->
                         <main_country translate="label">
                             <label>Main Country</label>
                             <frontend_type>select</frontend_type>

@@ -1,5 +1,5 @@
 <?php
-
+/** Modified By:: PG **/
 /**
  * Miragedesign Web Development
  *
@@ -60,11 +60,36 @@ class Miragedesign_Shippingcustomiser_Model_Carrier_Customrate
         $mainCountry = $this->getConfigData('main_country');
         $result = Mage::getModel('shipping/rate_result');
         $method = Mage::getModel('shipping/rate_result_method');
+		
+		//PG::Start
+		$GroupName = "";
+		$minimumFreeShippingAmount = '';
+		$login = Mage::getSingleton( 'customer/session' )->isLoggedIn(); //Check if User is Logged In
+		if($login)
+		{
+			$groupId = Mage::getSingleton('customer/session')->getCustomerGroupId(); //Get Customers Group ID
+			$group = Mage::getModel('customer/group')->load($groupId);		
+			$GroupName = $group->getCode();
+
+		}
+		if($GroupName != "")
+		{
+			$minimumFreeShippingAmountColl = Mage::getModel('shippingcustomiser/customfreeshippingrate')->getCollection();			
+			$minimumFreeShippingAmountColl->addFieldToFilter('groupname', $GroupName);
+			$freeShippingAmountData = $minimumFreeShippingAmountColl->getFirstItem();			
+			$minimumFreeShippingAmount = $freeShippingAmountData->getAmount();
+			$minimumFreeShippingAmount = ($minimumFreeShippingAmount-1);
+		}
+		if($minimumFreeShippingAmount == "")
+		{
+			$minimumFreeShippingAmount = $this->getConfigData('free_shipping_threshold');
+		}		
+		//PG::End
 
         if ($destCountry == $mainCountry) {
-            if (is_numeric($this->getConfigData('free_shipping_threshold')) &&
-                $this->getConfigData('free_shipping_threshold') > 0 &&
-                $request->getPackageValue() > $this->getConfigData('free_shipping_threshold')
+            if (is_numeric($minimumFreeShippingAmount) &&
+                $minimumFreeShippingAmount > 0 &&
+                $request->getPackageValue() > $minimumFreeShippingAmount
             ) {
                 $freeShipping = true;
             }

@@ -2,7 +2,7 @@
 <!--
 /**
  * Miragedesign Web Development
- *
+ * Modified By : PG
  * @category    Miragedesign
  * @package     Miragedesign_Shippingcustomiser
  * @copyright   Copyright (c) 2011 Miragedesign (http://miragedesign.net)
@@ -13,7 +13,7 @@
 <config>
     <modules>
         <Miragedesign_Shippingcustomiser>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </Miragedesign_Shippingcustomiser>
     </modules>
     <global>
@@ -38,6 +38,11 @@
                     <customrate>
                         <table>shipping_shippingcustomiser</table>
                     </customrate>
+					<!-- /** Author:: PG **/ -->
+					<customfreeshippingrate>
+                        <table>customfreeshippingrate</table>
+                    </customfreeshippingrate>
+					<!-- /** Author:: PG End **/ -->
                 </entities>
             </shippingcustomiser_mysql4>
         </models>

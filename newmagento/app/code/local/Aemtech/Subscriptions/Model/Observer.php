@@ -1,5 +1,5 @@
 <?php
-
+/** Author:: PG **/
 class Aemtech_Subscriptions_Model_Observer {
 	
 	public function catalogProductLoadAfter(Varien_Event_Observer $observer)
@@ -13,7 +13,8 @@ class Aemtech_Subscriptions_Model_Observer {
 			$params = $action->getRequest()->getParams();
 			$options = urldecode($params['pg']); 
 			$product = $observer->getProduct();	
-			$sku = $product->getData('sku');
+			$sku = $product->getData('sku');			
+			
                         
                         $allskus = array("SGP-ART-1M", "SGP-ART-3M", "SGP-ART-6M", "SGP-ART-12M", "SGP-GUR-1M", "SGP-GUR-3M", "SGP-GUR-6M", "SGP-GUR-12M","INT-ART-1M", "INT-ART-3M", "INT-ART-6M", "INT-ART-12M", "INT-GUR-1M", "INT-GUR-3M", "INT-GUR-6M", "INT-GUR-12M");
                         //$locationskuINTArray = array("INT-ART-1M", "INT-ART-3M", "INT-ART-6M", "INT-ART-12M", "INT-GUR-1M", "INT-GUR-3M", "INT-GUR-6M", "INT-GUR-12M");
@@ -25,24 +26,28 @@ class Aemtech_Subscriptions_Model_Observer {
                             $quote = Mage::getSingleton('checkout/session')->getQuote();
                             foreach ($quote->getAllVisibleItems() as $item) {
                                 $itemsku = $item->getProduct()->getData('sku');//if you need it
-                                $itemsku_type = explode("-", $itemsku);
-                                $itemsku_type = $itemsku_type[0];
-                                if($itemsku_type != $sku_type)
-                                {
-                                    Mage::getSingleton('core/session')->addError('Sorry, you either purchase  Singapore OR International Subscription not both.');
+								if ((strpos($itemsku,'SGP-ART') !== false || strpos($itemsku,'SGP-GUR') !== false || strpos($itemsku,'INT-ART') !== false || strpos($itemsku,'INT-GUR') !== false) && (strpos($sku,'SGP-ART') !== false || strpos($sku,'SGP-GUR') !== false || strpos($sku,'INT-ART') !== false || strpos($sku,'INT-GUR') !== false)) 
+								{									
+									$itemsku_type = explode("-", $itemsku);
+									$itemsku_type = $itemsku_type[0];
+									
+									if($itemsku_type != $sku_type)
+									{
+										Mage::getSingleton('core/session')->addError('Sorry, you either purchase  Singapore OR International Subscription not both.');
 
-                                    //get URL model for cart/index
-                                    $url = Mage::getModel('core/url')->getUrl('checkout/cart/index');
+										//get URL model for cart/index
+										$url = Mage::getModel('core/url')->getUrl('checkout/cart/index');
 
-                                    //set redirect
-                                    Mage::app()->getResponse()->setRedirect($url);
+										//set redirect
+										Mage::app()->getResponse()->setRedirect($url);
 
-                                    //send redirect
-                                    Mage::app()->getResponse()->sendResponse();
+										//send redirect
+										Mage::app()->getResponse()->sendResponse();
 
-                                    //block further action
-                                    exit;
-                                }
+										//block further action
+										exit;
+									}
+								}                             
                                     //your magic here.
                             }
                             //print_r($options);exit;
