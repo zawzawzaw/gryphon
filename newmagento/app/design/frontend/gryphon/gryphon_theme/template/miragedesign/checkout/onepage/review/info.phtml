@@ -274,7 +274,7 @@ function isMobile()
             col_3 = table_row.find('td:nth-child(3)');
             new_image_container = $('<div class="image-text-container-2"></div>');
             new_image_container.append(col_1.find('.img-container').clone());
-            new_image_container.append(table_row.find('.product-title').clone());
+            new_image_container.append(table_row.find('.product-name').clone());
             new_image_container.append($(table_row.find('.product-price')[0]).clone());
 
             col_1.prepend(new_image_container);

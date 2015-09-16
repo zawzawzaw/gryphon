@@ -89,7 +89,7 @@ $telephone = ($hasAddress) ? $this->helper('customercustomiser')->getAddress()->
                                 <input type="text" id="phone_no_2">                                
                             </div>
 
-                            <div style="hide-input">
+                            <div class="hide-input">
                                 <input type="hidden" name="telephone" value="<?php echo $this->escapeHtml($telephone) ?>" title="<?php echo $this->__('Telephone') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('telephone') ?>" id="telephone" />
                             </div>
                         </div>
@@ -106,25 +106,27 @@ $telephone = ($hasAddress) ? $this->helper('customercustomiser')->getAddress()->
                             <label for="email" class="required"><?php echo $this->__('Email') ?><em>*</em></label>
                             <input type="text" name="email" id="email" value="<?php echo $this->escapeHtml($this->getCustomer()->getEmail()) ?>" title="<?php echo $this->__('Email') ?>" class="input-text required-entry validate-email" />
                         </div>
-                        <input type="checkbox" name="change_password" id="change_password" value="1" onclick="setPasswordForm(this.checked)" title="<?php echo $this->__('Change Password') ?>"<?php if($this->getCustomer()->getChangePassword()==1): ?> checked="checked"<?php endif; ?> class="checkbox" />
-                        <label class="checkbox-label" for="change_password">
-                            <span></span><p class="label-text"><?php echo $this->__('Change Password') ?></p>
-                        </label>
-                        <div style="display: none;">
-                            <div>
+                        <div class="checkbox-input">
+                            <input type="checkbox" name="change_password" id="change_password" value="1" onclick="setPasswordForm(this.checked)" title="<?php echo $this->__('Change Password') ?>"<?php if($this->getCustomer()->getChangePassword()==1): ?> checked="checked"<?php endif; ?> class="checkbox" />
+                            <label class="checkbox-label" for="change_password">
+                                <span></span><p class="label-text"><?php echo $this->__('Change Password') ?></p>
+                            </label>
+                            <div style="display: none;">
                                 <div>
-                                    <div class="each-input">
-                                        <label for="current_password" class="required"><?php echo $this->__('Current Password') ?><em>*</em></label>
-                                        <input type="text" class="input-text no-display" name="dummy" id="dummy" />
-                                        <input type="password" title="<?php echo $this->__('Current Password') ?>" class="input-text" name="current_password" id="current_password" />
-                                    </div>
-                                    <div class="each-input">
-                                        <label for="password" class="required"><?php echo $this->__('Change Password') ?><em>*</em></label>
-                                        <input type="password" title="<?php echo $this->__('Change Password') ?>" class="input-text validate-password" name="password" id="password" />
-                                    </div>
-                                    <div class="each-input">
-                                        <label for="confirmation" class="required"><?php echo $this->__('Confirm Password') ?><em>*</em></label>
-                                        <input type="password" title="<?php echo $this->__('Confirm New Password') ?>" class="input-text validate-cpassword" name="confirmation" id="confirmation" />
+                                    <div>
+                                        <div class="each-input">
+                                            <label for="current_password" class="required"><?php echo $this->__('Current Password') ?><em>*</em></label>
+                                            <input type="text" class="input-text no-display" name="dummy" id="dummy" />
+                                            <input type="password" title="<?php echo $this->__('Current Password') ?>" class="input-text" name="current_password" id="current_password" />
+                                        </div>
+                                        <div class="each-input">
+                                            <label for="password" class="required"><?php echo $this->__('Change Password') ?><em>*</em></label>
+                                            <input type="password" title="<?php echo $this->__('Change Password') ?>" class="input-text validate-password" name="password" id="password" />
+                                        </div>
+                                        <div class="each-input">
+                                            <label for="confirmation" class="required"><?php echo $this->__('Confirm Password') ?><em>*</em></label>
+                                            <input type="password" title="<?php echo $this->__('Confirm New Password') ?>" class="input-text validate-cpassword" name="confirmation" id="confirmation" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>

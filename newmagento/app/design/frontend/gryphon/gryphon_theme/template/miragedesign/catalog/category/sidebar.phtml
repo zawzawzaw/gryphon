@@ -58,6 +58,7 @@ $allowCategoriesIDs = $this->getAllowCategoires();
                 </div>
             </div>
         </div>
+        <input class="ajaxsearch default-store-category" type="hidden" name="categoryId[]" value="<?php echo $current_category_data['entity_id']; ?>" />                 
         <?php endif; ?>
         <?php foreach ($allCategories as $categoryId => $categoryData): ?>
             <?php
@@ -80,7 +81,7 @@ $allowCategoriesIDs = $this->getAllowCategoires();
                             <?php if ($number = count($subCategories)): ?>
                             <div id="col-cat-<?php echo $category->getId(); ?>" class="all-inputs">
                                 <?php $i = 1; $average = 10; $pass = false; ?>
-                                <?php if ($number >= $splitColumnNumber): ?><div class="col-1"><?php endif; ?>                    
+                                <?php if ($number >= $splitColumnNumber): ?><div class="col-1"><?php endif; ?>                                
                                 <?php foreach($subCategories as $subCategory) :?>
                                     <?php if(strtolower($subCategory->getName())!=="pantry" && strtolower($subCategory->getName())!=="gifts"): ?>
                                     <div class="each-input">
@@ -163,15 +164,16 @@ $allowCategoriesIDs = $this->getAllowCategoires();
         </div> <!-- store-sort-expandable-container -->
 
         <div id="store-filter-expandable-container">
-
+            
+            <?php if($current_category_data['url_key']=="store"): ?>
             <div id="store-filter-expandable-checkboxes">
                 
                 
                     
             </div> <!-- store-filter-expandable-checkboxes -->
+            <?php endif; ?>
 
-
-            <div id="store-filter-expandable-title-container">
+            <div id="store-filter-expandable-title-container" class="<?php if($current_category_data['url_key']=="pantry"): ?>pantry-title<?php endif; ?>">
                 <ul></ul>
             
 
@@ -212,15 +214,24 @@ $allowCategoriesIDs = $this->getAllowCategoires();
         ajaxSearch = new Ajaxsearch("ajax-filter-form");
         ajaxSearchMobile = new Ajaxsearchmobile("ajax-filter-form-mobile");
 
-
+        
         $('#ajax-filter-form input.ajaxsearch').click(function() {
+
+            // check for pantry filter hidden
             if ($('input.pantry-filter').is(':checked')) {
                 $('.default-pantry-category').prop('disabled', true);
             }else {
                 $('.default-pantry-category').prop('disabled', false);
             }
+
+            if ($('.has-subsection input.ajaxsearch').is(':checked')) {
+                $('.default-store-category').prop('disabled', true);
+            }else {
+                $('.default-store-category').prop('disabled', false);
+            }
             ajaxSearch.submit();
         });
+
         $('#ajax-filter-form .clear-all').click(function() {
             ajaxSearch.reset();
         });
@@ -232,7 +243,21 @@ $allowCategoriesIDs = $this->getAllowCategoires();
         // });
         <?php if(in_array($current_category_data['entity_id'], $allowCategoriesIDs) || in_array($current_category_data['parent_id'], $allowCategoriesIDs) || $current_category_data['url_key']=="store"): ?> 
         $('#gryphon-store-apply-filter-button, .store-filter-detail-apply-button').click(function(){
+
+            // check for pantry filter hidden
+            if ($('input.pantry-filter').is(':checked')) {
+                $('.default-pantry-category').prop('disabled', true);
+            }else {
+                $('.default-pantry-category').prop('disabled', false);
+            }
+
+            if ($('.has-subsection input.ajaxsearch').is(':checked')) {
+                $('.default-store-category').prop('disabled', true);
+            }else {
+                $('.default-store-category').prop('disabled', false);
+            }
             ajaxSearchMobile.submit();
+            
         })
 
         $('#gryphon-store-clear-all-filter-button, .store-filter-detail-clear-button').click(function() {

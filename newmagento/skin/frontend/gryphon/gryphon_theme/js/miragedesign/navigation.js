@@ -12,6 +12,12 @@
                 ajaxSearch.more(parseInt(curPage) + 1);
             }
         });
+        $('.all-products').on('click', '.load-more-mobile-products', function() {
+            if ($('#cur_p').size()) {
+                var curPage = $('#cur_p').val();
+                ajaxSearchMobile.more(parseInt(curPage) + 1);
+            }
+        });
     });
 })(jQuery);
 

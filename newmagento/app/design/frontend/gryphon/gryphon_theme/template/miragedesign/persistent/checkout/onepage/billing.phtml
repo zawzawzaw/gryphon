@@ -8,6 +8,47 @@
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 ?>
+<?php
+function isMobile()  
+{  
+    $regex_match = "/(nokia|iphone|android|motorola|^mot\-|softbank|foma|docomo|kddi|up\.browser|up\.link|"  
+                 . "htc|dopod|blazer|netfront|helio|hosin|huawei|novarra|CoolPad|webos|techfaith|palmsource|"  
+                 . "blackberry|alcatel|amoi|ktouch|nexian|samsung|^sam\-|s[cg]h|^lge|ericsson|philips|sagem|wellcom|bunjalloo|maui|"  
+                 . "symbian|smartphone|mmp|midp|wap|phone|windows ce|iemobile|^spice|^bird|^zte\-|longcos|pantech|gionee|^sie\-|portalmmm|"  
+                 . "jig\s browser|hiptop|^ucweb|^benq|haier|^lct|opera\s*mobi|opera\*mini|320x320|240x320|176x220"  
+                 . ")/i";  
+
+    if (preg_match($regex_match, strtolower($_SERVER['HTTP_USER_AGENT']))) {  
+        return TRUE;  
+    }  
+
+    if ((strpos(strtolower($_SERVER['HTTP_ACCEPT']),'application/vnd.wap.xhtml+xml') > 0) or ((isset($_SERVER['HTTP_X_WAP_PROFILE']) or isset($_SERVER['HTTP_PROFILE'])))) {  
+        return TRUE;  
+    }      
+
+    $mobile_ua = strtolower(substr($_SERVER['HTTP_USER_AGENT'], 0, 4));  
+    $mobile_agents = array(  
+        'w3c ','acs-','alav','alca','amoi','audi','avan','benq','bird','blac',  
+        'blaz','brew','cell','cldc','cmd-','dang','doco','eric','hipt','inno',  
+        'ipaq','java','jigs','kddi','keji','leno','lg-c','lg-d','lg-g','lge-',  
+        'maui','maxo','midp','mits','mmef','mobi','mot-','moto','mwbp','nec-',  
+        'newt','noki','oper','palm','pana','pant','phil','play','port','prox',  
+        'qwap','sage','sams','sany','sch-','sec-','send','seri','sgh-','shar',  
+        'sie-','siem','smal','smar','sony','sph-','symb','t-mo','teli','tim-',  
+        'tosh','tsm-','upg1','upsi','vk-v','voda','wap-','wapa','wapi','wapp',  
+        'wapr','webc','winw','winw','xda ','xda-');  
+
+    if (in_array($mobile_ua,$mobile_agents)) {  
+        return TRUE;  
+    }  
+
+    if (isset($_SERVER['ALL_HTTP']) && strpos(strtolower($_SERVER['ALL_HTTP']),'OperaMini') > 0) {  
+        return TRUE;  
+    }  
+
+    return FALSE;  
+}  
+?>
 <form id="co-billing-form" action="">
     <div class="col2-set row">
         <div class="col-1 col-md-6 billing_address">
@@ -419,28 +460,46 @@
     jQuery(document).ready(function($){         
 
         <?php if(!$this->isCustomerLoggedIn()): ?>
-        $.blockUI({ 
-            message: $('#question'),             
-            css: { 
-                padding:        '10px', 
-                margin:         0, 
-                width:          '22.1%', 
-                height:         '280px', 
-                top:            '35%',
-                left:           '39%',                
-                textAlign:      'center', 
-                color:          '#000', 
-                border:         '0px', 
-                backgroundColor:'#fff',
-                cursor:         'wait' 
-            },
-        });         
- 
-        $('#no').click(function(e) {
-            e.preventDefault();
-            $.unblockUI(); 
-            return false; 
-        }); 
+            <?php if(isMobile()!==true): ?>
+                $.blockUI({ 
+                    message: $('#question'),             
+                    css: { 
+                        padding:        '10px', 
+                        margin:         0, 
+                        width:          '22.1%', 
+                        height:         '280px', 
+                        top:            '35%',
+                        left:           '39%',                
+                        textAlign:      'center', 
+                        color:          '#000', 
+                        border:         '0px', 
+                        backgroundColor:'#fff',
+                        cursor:         'wait' 
+                    },
+                });                  
+            <?php else: ?>
+                $.blockUI({ 
+                    message: $('#question'),             
+                    css: { 
+                        padding:        '10px', 
+                        margin:         0, 
+                        width:          '90%', 
+                        height:         '280px', 
+                        top:            '27%',
+                        left:           '5%',                
+                        textAlign:      'center', 
+                        color:          '#000', 
+                        border:         '0px', 
+                        backgroundColor:'#fff',
+                        cursor:         'wait' 
+                    },
+                });     
+            <?php endif; ?>
+            $('#no').click(function(e) {
+                e.preventDefault();
+                $.unblockUI(); 
+                return false; 
+            }); 
         <?php endif; ?>
 
         function setAllPhoneFaxInputs($telephone, $phone_no, $phone_no_2, type) {

@@ -47,7 +47,7 @@
 								<h1>plans in singapore</h1>
 								<hr class="small">
 								
-								<div class="table-responsive">
+								<div class="table-responsive hidden-xs hidden-sm">
 									<table class="table">								  	
 								      	<tbody>
 										<?php
@@ -105,6 +105,63 @@
 								      	</tbody>
 									</table>
 								</div>
+
+								<div class="subscription-slick plans visible-xs visible-sm">
+									<?php
+									$_helper = $this->helper('catalog/output'); 
+									$artisanSingaporeCollection = Mage::getModel('subscriptions/subscriptions')->getGourmetSingaporeSubscriptions();	
+									//echo count($artisanSingaporeCollection->getData());exit;								
+									$cnt = 1;
+									foreach($artisanSingaporeCollection->getData() as $productsing):
+										$_productId = $productsing['entity_id'];
+										$_productsingpur = Mage::getModel('catalog/product')->load($_productId);
+										
+										$nameStart = substr($_helper->productAttribute($_productsingpur, $_productsingpur->getName() , 'name'), 0,2);
+										$monthtext = ' MONTHS';
+										if($cnt == 1)
+										{
+											$monthtext = ' MONTH';
+									
+											$equivalent = ($_productsingpur->getPrice()/1);
+										}else if($cnt == 2)
+										{										
+											$equivalent = ($_productsingpur->getPrice()/3);
+										}else if($cnt == 3)
+										{										
+											$equivalent = ($_productsingpur->getPrice()/6);
+										}else
+										{										
+											$equivalent = ($_productsingpur->getPrice()/12);
+										}
+									?>
+										<div class="plan">
+											<div class="background">
+												<?php if(count($artisanSingaporeCollection->getData()) == $cnt){
+													?>
+													<div class="certificate-icon"></div>
+													<div class="certificate-text"><h3><?php echo $nameStart.$monthtext ?></h3></div>
+													<h5><?php echo $_helper->productAttribute($_productsingpur, $_productsingpur->getShortDescription() , 'short_description'); ?></h5>
+													<?php 
+												}else{
+													?>
+													<h3><?php echo $nameStart.$monthtext ?><!--<br><span>SGP Subscription</span>--></h3>
+													<h5><?php echo $_helper->productAttribute($_productsingpur, $_productsingpur->getShortDescription() , 'short_description'); ?></h5>
+													<?php 
+												}
+												?>
+										          	<p class="price"><?php echo Mage::helper('core')->currency($_productsingpur->getPrice(),true,false); ?><br><span>shipping included</span></p>
+										          	<p>Equivalent to <br> <?php echo Mage::helper('core')->currency($equivalent,true,false); ?> per sachet</p>
+											</div>
+								          	<a class="add-to-cart-btn" href="javascript:;" onclick="addtocartCustom('<?php echo $this->getAddToCartUrl($_productsingpur) ?>');"><span>Add to Cart</span></a>
+								        </div>
+
+							          	
+									<?php 
+									   $cnt++;
+									   endforeach; 
+									?>
+								</div>
+
 								<div class="terms-icon"></div>
 								<div class="terms">
 									<p>Customers who sign-up for a 1 year subscription can get a 10% discount off on all other online purchases throughout the subscription period.</p>
@@ -118,11 +175,10 @@
 								<h1>international plans</h1>
 								<hr class="small">
 								
-								<div class="table-responsive">
-									<table class="table">	
-
+								<div class="table-responsive hidden-xs hidden-sm">
+									<table class="table">
 								      	<tbody>
-									       <?php
+								       	<?php
 										
 										$artisanSingaporeIntCollection = Mage::getModel('subscriptions/subscriptions')->getGourmetInternationalSubscriptions();	
 										//echo count($artisanSingaporeCollection->getData());exit;								
@@ -174,6 +230,60 @@
 								      	</tbody>
 									</table>
 								</div>
+
+								<div class="subscription-slick plans visible-xs visible-sm">
+									<?php										
+									$artisanSingaporeIntCollection = Mage::getModel('subscriptions/subscriptions')->getGourmetInternationalSubscriptions();	
+									//echo count($artisanSingaporeCollection->getData());exit;								
+									$cnt = 1;
+									foreach($artisanSingaporeIntCollection->getData() as $productsingint):
+										$_productIdInt = $productsingint['entity_id'];
+										$_productsingpurint = Mage::getModel('catalog/product')->load($_productIdInt);
+										
+										$nameStart = substr($_helper->productAttribute($_productsingpurint, $_productsingpurint->getName() , 'name'), 0,2);
+										$monthtext = ' MONTHS';
+										if($cnt == 1)
+										{
+											$monthtext = ' MONTH';
+									
+											$equivalent = ($_productsingpurint->getPrice()/1);
+										}else if($cnt == 2)
+										{										
+											$equivalent = ($_productsingpurint->getPrice()/3);
+										}else if($cnt == 3)
+										{										
+											$equivalent = ($_productsingpurint->getPrice()/6);
+										}else
+										{										
+											$equivalent = ($_productsingpurint->getPrice()/12);
+										}											
+									?>
+										<div class="plan">
+											<div class="background">
+												<?php if(count($artisanSingaporeCollection->getData()) == $cnt){
+													?>
+													<div class="certificate-icon"></div>
+													<div class="certificate-text"><h3><?php echo $nameStart.$monthtext ?></h3></div>
+													<h5><?php echo $_helper->productAttribute($_productsingpurint, $_productsingpurint->getShortDescription() , 'short_description'); ?></h5>
+													<?php 
+												}else{
+													?>
+													<h3><?php echo $nameStart.$monthtext ?><!--<br><span>SGP Subscription</span>--></h3>
+													<h5><?php echo $_helper->productAttribute($_productsingpurint, $_productsingpurint->getShortDescription() , 'short_description'); ?></h5>
+													<?php 
+												}
+												?>
+										          	<p class="price"><?php echo Mage::helper('core')->currency($_productsingpurint->getPrice(),true,false); ?><br><span>shipping included</span></p>
+										          	<p>Equivalent to <br> <?php echo Mage::helper('core')->currency($equivalent,true,false); ?> per sachet</p>
+											</div>
+								          	<a class="add-to-cart-btn" href="javascript:;" onclick="addtocartCustom('<?php echo $this->getAddToCartUrl($_productsingpurint) ?>');"><span>Add to Cart</span></a>
+								        </div>
+								   <?php 
+								   $cnt++;
+								   endforeach; 
+								   ?>
+								</div>					
+											
 								<div class="terms-icon"></div>
 								<div class="terms">
 									<p>Customers who sign-up for a 1 year subscription can get a 10% discount off on all other online purchases throughout the subscription period.</p>
@@ -284,5 +394,51 @@
 	    });
 
 	    initialLoad = false;
+
+	    jQuery('.subscription-slick').slick({
+	        dots: false,
+	        infinite: false,
+	        speed: 300,
+	        slidesToShow: 5,
+	        slidesToScroll: 1,
+	        responsive: [
+	            {
+	                breakpoint: 1099,
+	                settings: {
+	                    slidesToShow: 4,
+	                    slidesToScroll: 1,
+	                    infinite: true,
+	                    dots: false
+	                }
+	            },
+	            {
+	                breakpoint: 960,
+	                settings: {
+	                    slidesToShow: 3,
+	                    slidesToScroll: 1,
+	                    infinite: true,
+	                    dots: false
+	                }
+	            },
+	            {
+	                breakpoint: 760,
+	                settings: {
+	                    slidesToShow: 2,
+	                    slidesToScroll: 1,
+	                    infinite: true,
+	                    dots: false
+	                }
+	            },
+	            {
+	                breakpoint: 600,
+	                settings: {
+	                    slidesToShow: 1,
+	                    slidesToScroll: 1,
+	                    infinite: true,
+	                    dots: false
+	                }
+	            }                      
+	        ]
+	    });
 	});
 	</script>

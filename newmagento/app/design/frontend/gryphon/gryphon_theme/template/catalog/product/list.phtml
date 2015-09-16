@@ -51,6 +51,14 @@
 
     // $currentCategory = Mage::registry('current_category');
     // $current_category_data = $currentCategory->getData();
+
+    $session = Mage::getSingleton('customer/session');
+    $groupname = '';                            
+    if($session->isLoggedIn()) {
+        $customer = $session->getCustomer();
+        $customerGroupId = $customer->getGroupId();
+        $groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();
+    }                                
 ?>
 <div id="result_products">
 <?php if(!$_productCollection->count()): ?>
@@ -121,9 +129,11 @@
                         <?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
                         <h4><?php echo $_helper->productAttribute($_product, $_product->getName() , 'name'); ?></h4>
                         <p><?php echo $this->helper('catalogcustomiser')->getTypesCategory($_product, $this->getLayer()->getCurrentCategory()->getName()); ?></p>
-                        <p class="price test"><?php echo $this->getPriceHtml($_product, true) ?></p>                        
+                        <p class="price test"><?php echo $this->getPriceHtml($_product, true) ?></p>                                               
                         <?php if($_productNameStripped == 'Gift Card'): ?>
-                            <p class="j2t-loyalty-points inline-points"><span id="j2t-pts"><?php echo ceil($_product->getPrice()) + 10; ?></span> reward points</p>
+                            <?php if(($groupname!=='Trader-Temp' && $groupname!=='Trader-Regular' && $groupname!=='Trader-Priority' && $groupname!=='Trader-Premium')): ?>
+                                <p class="j2t-loyalty-points inline-points"><span id="j2t-pts"><?php echo ceil($_product->getPrice()) + 10; ?></span> reward points</p>
+                            <?php endif; ?>
                         <?php endif; ?>
                     </a>
                 </div>

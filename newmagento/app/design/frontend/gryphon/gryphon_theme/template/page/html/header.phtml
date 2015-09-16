@@ -6,7 +6,7 @@ $quoteData= $quote->getData();
 <div id="mobile-header-wrapper" class="visible-xs visible-sm">
 	<header id="main-mobile-header">
 
-		<div id="mobile-marquee-container">
+		<!-- <div id="mobile-marquee-container">
 			<p>
 				<span>Get 10% off discount from your first purchase until 17th of jan with promo code: shopnow</span>
 				<span>Get 10% off discount from your first purchase until 17th of jan with promo code: shopnow</span>
@@ -14,10 +14,32 @@ $quoteData= $quote->getData();
 				<span>Get 10% off discount from your first purchase until 17th of jan with promo code: shopnow</span>
 			</p>
 
-		</div>
+		</div> -->
+		<?php
+		if(Mage::getSingleton('customer/session')->isLoggedIn()):
+	      	// Get group Id
+			$groupId = Mage::getSingleton('customer/session')->getCustomerGroupId();
+			//Get customer Group name
+			$group = Mage::getModel('customer/group')->load($groupId);
+		?>
+			<?php if(strtolower(trim($group->getCode()))!=="general"): ?>
+				<div class="marquee">
+					<p class="rotate">Free local shipping when you spend over $250, Get greater discounts when you order online</p>
+				</div>
+			<?php else: ?>
+				<div class="marquee">
+					<p class="rotate">Use code "shopnow" to enjoy 10% off first purchase, Free local shipping when you spend over $60, Free samples with every order</p>
+				</div>
+			<?php endif; ?>
+		<?php else: ?>
+			<div class="marquee">
+				<p class="rotate">Use code "shopnow" to enjoy 10% off first purchase, Free local shipping when you spend over $60, Free samples with every order</p>
+			</div>
+		<?php endif; ?>
+		
 		<div id="mobile-fixed-container">
 			<div class="mobile-menu-button"></div>
-			<a href="#" class="mobile-menu-logo"></a>
+			<a href="<?php echo $this->getUrl('/'); ?>" class="mobile-menu-logo"></a>
 
 			<div class="mobile-menu-icon-button-container">
 				<div class="mobile-menu-icon-button mobile-search-button"></div>
@@ -28,9 +50,10 @@ $quoteData= $quote->getData();
 
 		</div>
 		<div id="mobile-search-expand-container">
-			<form id="search_mini_form">
-				<?php echo $this->getChildHtml('topSearch') ?>
-			</form>
+			
+			<?php echo $this->getChildHtml('topSearch') ?>
+			<!-- <form id="search_mini_form"> -->
+			<!-- </form> -->
 		</div>
 		<div id="mobile-cart-expand-container">
 			<div class="cart-preview-select">
@@ -47,29 +70,32 @@ $quoteData= $quote->getData();
 						<li>QTY</li>
 						<li>SUB TOTAL</li>
 					</ul>
-					
-					<?php								
-					foreach ($cart->getAllItems() as $item) {
-					    $productName = $item->getProduct()->getName();
-					    $productPrice = $item->getProduct()->getPrice();
-					    $productQty = $item->getQty();
-					    $price = $item->getRowTotal();
-					    $productImage = Mage::helper('catalog/image')->init($item->getProduct(), 'thumbnail');
-					    
-					?>
-					<ul class="cart-content">							
-						<li><img src="<?php echo $productImage; ?>" alt=""><span><?php echo $productName; ?></span></li>
-						<li><?php echo $productQty; ?></li>
-						<li><?php echo Mage::helper('core')->formatPrice($price, true); ?></li>
-					</ul>
-					<?php
-					}
-					?>
+
+					<div class="cart-preview-content">
+						<?php								
+						foreach ($cart->getAllItems() as $item):
+						    $productName = $item->getProduct()->getName();
+						    $productPrice = $item->getProduct()->getPrice();
+						    $productQty = $item->getQty();
+						    $price = $item->getRowTotal();
+						    $productImage = Mage::helper('catalog/image')->init($item->getProduct(), 'thumbnail');
+						    
+						?>
+							<ul class="cart-content">							
+								<li><img src="<?php echo $productImage; ?>" alt=""><span><?php echo $productName; ?></span></li>
+								<li><?php echo $productQty; ?></li>
+								<li><?php echo Mage::helper('core')->formatPrice($price, true); ?></li>
+							</ul>
+						<?php
+						endforeach;
+						?>
+					</div>
+
 					<ul class="cart-summary">								
 				        <?php if ($cartQty==1): ?>
-				            <?php echo '<li><span class="total-items">1 ITEM</span></li>'; ?>
+				            <?php echo '<li><span class="total-items"><span class="total-items-count">1</span> ITEM</span></li>'; ?>
 				        <?php else: ?>
-				            <?php echo '<li><span class="total-items">'.$cartQty.' ITEMS</span></li>'; ?>
+				            <?php echo '<li><span class="total-items"><span class="total-items-count">'.$cartQty.'</span> ITEMS</span></li>'; ?>
 				        <?php endif; ?>
 				        <li><span class="sub-total">SUB TOTAL</span></li>									
 				        <li><span class="sub-total-amount"><?php echo Mage::helper('core')->formatPrice($cartTotal, true); ?></span></li>							
@@ -77,10 +103,27 @@ $quoteData= $quote->getData();
 
 					<div class="cta-btns">
 						<a href="<?php echo $this->getUrl('store.html');?>" class="continue-shopping"><button type="button" class="cta button"><span><span>Back to Shopping</span></span></button></a>
-      						<a href="<?php echo $this->getUrl('checkout/cart'); ?>" class="shopping-cart"><button type="button" class="cta button"><span><span>Shopping Cart</span></span></button></a>
+  						<a href="<?php echo $this->getUrl('checkout/cart'); ?>" class="shopping-cart"><button type="button" class="cta button"><span><span>Shopping Cart</span></span></button></a>
 					</div>
 				<?php else: ?>
-					<p>Your cart is empty. <a href="<?php echo $this->getUrl('checkout/cart'); ?>">Click here to go to cart anyway.</a></p>
+					<!-- <p>Your cart is empty. <a href="<?php echo $this->getUrl('checkout/cart'); ?>">Click here to go to cart anyway.</a></p> -->
+					<ul class="cart-header" style="display:none;">
+						<li>PRODUCT</li>
+						<li>QTY</li>
+						<li>SUB TOTAL</li>
+					</ul>
+					<div class="cart-preview-content">
+						<p>Your cart is empty. <a href="<?php echo $this->getUrl('checkout/cart'); ?>">Click here to go to cart anyway.</a></p>	
+					</div>
+					<ul class="cart-summary" style="display:none;">	
+						<li><span class="total-items"><span class="total-items-count">1</span> ITEM</span></li>
+						<li><span class="sub-total">SUB TOTAL</span></li>									
+						<li><span class="sub-total-amount"></span></li>							
+					</ul>
+					<div class="cta-btns" style="display:none;">
+						<a href="<?php echo $this->getUrl('store.html');?>" class="continue-shopping"><button type="button" class="cta button"><span><span>Back to Shopping</span></span></button></a>
+						<a href="<?php echo $this->getUrl('checkout/cart'); ?>" class="shopping-cart"><button type="button" class="cta button"><span><span>Shopping Cart</span></span></button></a>
+					</div>
 				<?php endif; ?>
 			</div>
 		</div>
@@ -106,12 +149,19 @@ $quoteData= $quote->getData();
 						<div id="mobile-account-expand-button"></div>
 					</div>					
 					<ul>
+						<?php 
+							$groupname = '';							
+						    $customerGroupId = $customer->getGroupId();
+						    $groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();  							
+						?>
 						<li><a href="<?php echo Mage::getUrl('customer/account/'); ?>">account information</a></li>
 						<li><a href="<?php echo Mage::getUrl('customer/address/'); ?>">address book</a></li>
-						<li><a href="<?php echo Mage::getUrl('sales/order/history/'); ?>">order history</a></li>
-						<li><a href="<?php echo Mage::getUrl('giftvoucher/index/index'); ?>">gift card</a></li>
-						<li><a href="<?php echo Mage::getUrl('rewardpoints/index/points/'); ?>">reward points</a></li>
-						<li><a href="<?php echo Mage::getUrl('rewardpoints/index/referral/'); ?>">refer friend</a></li>
+						<li><a href="<?php echo Mage::getUrl('sales/order/history/'); ?>">my orders</a></li>
+						<?php if(($groupname!=='Trader-Temp' && $groupname!=='Trader-Regular' && $groupname!=='Trader-Priority' && $groupname!=='Trader-Premium')): ?>
+							<li><a href="<?php echo Mage::getUrl('giftvoucher/index/index'); ?>">gift card</a></li>
+							<li><a href="<?php echo Mage::getUrl('rewardpoints/index/points/'); ?>">reward points</a></li>
+							<li><a href="<?php echo Mage::getUrl('rewardpoints/index/referral/'); ?>">refer friend</a></li>
+						<?php endif; ?>
 						<li><a href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>">log out</a></li>
 					</ul>
 				<?php else: ?>
@@ -202,7 +252,7 @@ $quoteData= $quote->getData();
 						<a href="<?php echo $this->getUrl('collections');?>">COLLECTIONS</a>								
 					</li>
 					<li>
-						<a href="http://test.gryphontea.com/wp">BLOG</a>
+						<a href="<?php echo $this->getUrl('/');?>wp">BLOG</a>
 					</li>
 					<li><a href="<?php echo $this->getUrl('discover-tea'); ?>">Discover Tea</a></li>
 					<li><a href="<?php echo $this->getUrl('our-story');?>">Our Story</a></li>

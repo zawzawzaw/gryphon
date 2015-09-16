@@ -428,7 +428,7 @@ li.giftvoucher-discount-code strong{float:none;}
         border-bottom:1px solid #AAA2A2;
     } 
     .giftvoucher-index-view  h2{
-        font-size:18px;
+        /*font-size:18px;*/
     }
     .giftvoucher-index-view .form-list{
         border-bottom:1px solid #ececec;

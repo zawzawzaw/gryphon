@@ -274,6 +274,9 @@ endif;
                                 jQuery('.cart-summary').show();
                                 jQuery('.cta-btns').show();
                                 jQuery('.cart-preview-select').show();
+                                jQuery('#mobile-cart-expand-container').show();
+
+                                jQuery('.mobile-cart-button').find('span').html(data.cart_qty);
                                 jQuery('.cart-summary-data').find('.price').html(data.cart_total);
                                 jQuery('.cart-summary-data').find('.count').html(data.cart_qty);
                                 jQuery('.cart-summary-data span').html('<span class="price">'+data.cart_total+'</span> (<span class="count">'+data.cart_qty+'</span>)');
@@ -317,11 +320,11 @@ endif;
                                             }else {
                                                 do_update();
                                                 jQuery('span.ajax_msg').html('Added to cart!').show().delay(5000).fadeOut();
-                                            }                                            
+                                            }
                                       }
                                 });
                             } catch (e) {
-                            }        
+                            }
                             //End of our new ajax code    
                             this.form.action = oldUrl;
                             if (e) {

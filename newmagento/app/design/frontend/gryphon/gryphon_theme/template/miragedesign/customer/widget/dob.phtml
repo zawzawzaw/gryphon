@@ -52,7 +52,7 @@ NOTE: Regarding styles - if we leave it this way, we'll move it to boxes.css
 <div class="each-input">
     <label class="dob-label" for="<?php echo $this->getFieldId('month')?>"<?php if ($this->isRequired()) { echo ' class="required"'; } ?>><?php echo $this->__('DATE OF BIRTH') ?></label>
     
-    <div class="dob-day dropdown">
+    <div class="dob-day dropdown dropdown-dob">
         <select name="<?php echo $this->getFieldName('day'); ?>" id="<?php echo $this->getFieldId('day'); ?>">
             <option value=""><?php echo $this->__('Day'); ?></option>
             <?php for ($i = 1; $i <= 31; $i++): ?>
@@ -61,7 +61,7 @@ NOTE: Regarding styles - if we leave it this way, we'll move it to boxes.css
             <?php endfor; ?>
         </select>
     </div>    
-    <div class="dob-month dropdown">
+    <div class="dob-month dropdown dropdown-dob">
         <?php $monthText = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']; ?>
         <select name="<?php echo $this->getFieldName('month'); ?>" id="<?php echo $this->getFieldId('month'); ?>">
             <option value=""><?php echo $this->__('Month'); ?></option>
@@ -71,7 +71,7 @@ NOTE: Regarding styles - if we leave it this way, we'll move it to boxes.css
             <?php endfor; ?>
         </select>
     </div>
-    <div class="dob-year dropdown">
+    <div class="dob-year dropdown dropdown-dob">
         <?php $currentYear = intval(date("Y")); ?>
         <select name="<?php echo $this->getFieldName('year'); ?>" id="<?php echo $this->getFieldId('year'); ?>">
             <option value=""><?php echo $this->__('Year'); ?></option>

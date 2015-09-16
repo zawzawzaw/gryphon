@@ -5,7 +5,7 @@ jQuery(document).ready(function($){
         
         if( ( scrollPos != 0 ) ) {
             jQuery('#header-wrapper').addClass('shadow');
-            $('.arrow').hide();
+            $('.scroll-to-content .arrow').hide();
             if(scrolled==false && initialLoad==false) {
                 scrolled = true;               
             }
@@ -14,7 +14,7 @@ jQuery(document).ready(function($){
         else if( ( scrollPos === 0 ) && (scrolled == true) ) {
             scrolled = false;
             $('#header-wrapper').removeClass('shadow');
-            $('.arrow').show();
+            $('.scroll-to-content .arrow').show();
         }
     }
 

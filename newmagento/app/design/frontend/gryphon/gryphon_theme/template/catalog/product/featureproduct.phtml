@@ -113,9 +113,9 @@
                                             if(count($categoryIds) ){
                                                 foreach ($categoryIds as $key => $categoryId) {
                                                     $_category = Mage::getModel('catalog/category')->load($categoryId);
-                                                    $parent_category = Mage::getModel('catalog/category')->load($categoryId)->getParentCategory();    
+                                                    $parent_category = Mage::getModel('catalog/category')->load($categoryId)->getParentCategory();                                                        
                                                     if($parent_category->getId()==5) { ?>
-                                                        <p><?php echo $_category->getName(); ?></p>
+                                                        <p class="caption-2"><?php echo $_category->getName(); ?></p>
                                             <?php   }
                                                 }
                                             }
@@ -132,7 +132,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5 hidden-xs hidden-sm">
                 <?php $feature_product_data = Mage::getModel('catalog/category')->load(92)->getData(); ?>             
 
                 <img src="<?php echo Mage::getBaseUrl('media').'catalog/category/'.$feature_product_data['thumbnail']; ?>" class="img-responsive" alt="feature product">

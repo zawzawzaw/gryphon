@@ -27,7 +27,8 @@
 
 								<div class="row">
 									<div class="col-md-8 col-md-offset-2">
-										<p>The choice is yours, as you pick an assortment from our esteemed<br> Artisan Selection, from the tried and tested to the exotic and experimental.</p>
+										<p class="hidden-xs hidden-sm">The choice is yours, as you pick an assortment from our esteemed<br> Artisan Selection, from the tried and tested to the exotic and experimental.</p>
+										<p class="visible-xs visible-sm">The choice is yours, as you pick an assortment from our esteemed Artisan Selection, from the tried and tested to the exotic and experimental.</p>
 									</div>
 								</div>
 							</div>
@@ -52,7 +53,8 @@
 													
 											$locationskuSGPArray = array("SGP-ART-1M", "SGP-ART-3M", "SGP-ART-6M", "SGP-ART-12M", "SGP-GUR-1M", "SGP-GUR-3M", "SGP-GUR-6M", "SGP-GUR-12M","INT-ART-1M", "INT-ART-3M", "INT-ART-6M", "INT-ART-12M", "INT-GUR-1M", "INT-GUR-3M", "INT-GUR-6M", "INT-GUR-12M");
 											
-											$categoryId = $category->getId();
+											// $categoryId = $category->getId();
+											$categoryId = 115;
 											$cat = Mage::getModel('catalog/category')->load($categoryId);
 											$_productCollection = $cat->getProductCollection()
 												->addAttributeToSelect('*')
@@ -106,7 +108,7 @@
 								<h1>plans in singapore</h1>
 								<hr class="small">
 								
-								<div class="table-responsive">
+								<div class="table-responsive hidden-xs hidden-sm">
 									<table class="table">								  	
 								      	<tbody>
 										<?php
@@ -164,11 +166,69 @@
 								      	</tbody>
 									</table>
 								</div>
+
+								<div class="subscription-slick plans visible-xs visible-sm">
+									<?php
+									$artisanSingaporeCollection = Mage::getModel('subscriptions/subscriptions')->getArtisanSingaporeSubscriptions();	
+									//echo count($artisanSingaporeCollection->getData());exit;								
+									$cnt = 1;
+									foreach($artisanSingaporeCollection->getData() as $productsing):
+										$_productId = $productsing['entity_id'];
+										$_productsingpur = Mage::getModel('catalog/product')->load($_productId);
+										
+										$nameStart = substr($_helper->productAttribute($_productsingpur, $_productsingpur->getName() , 'name'), 0,2);
+										$monthtext = ' MONTHS';
+										if($cnt == 1)
+										{
+											$monthtext = ' MONTH';
+									
+											$equivalent = ($_productsingpur->getPrice()/30);
+										}else if($cnt == 2)
+										{										
+											$equivalent = ($_productsingpur->getPrice()/90);
+										}else if($cnt == 3)
+										{										
+											$equivalent = ($_productsingpur->getPrice()/180);
+										}else
+										{										
+											$equivalent = ($_productsingpur->getPrice()/360);
+										}
+										
+									?>	
+										<div class="plan">
+											<div class="background">
+												<?php if(count($artisanSingaporeCollection->getData()) == $cnt){
+													?>
+													<div class="certificate-icon"></div>
+													<div class="certificate-text"><h3><?php echo $nameStart.$monthtext ?></h3></div>
+													<h5><?php echo $_helper->productAttribute($_productsingpur, $_productsingpur->getShortDescription() , 'short_description'); ?></h5>
+													<?php 
+												}else{
+													?>
+													<h3><?php echo $nameStart.$monthtext ?><!--<br><span>SGP Subscription</span>--></h3>
+													<h5><?php echo $_helper->productAttribute($_productsingpur, $_productsingpur->getShortDescription() , 'short_description'); ?></h5>
+													<?php 
+												}
+												?>
+										          	<p class="price"><?php echo Mage::helper('core')->currency($_productsingpur->getPrice(),true,false); ?><br><span>shipping included</span></p>
+										          	<p>Equivalent to <br> <?php echo Mage::helper('core')->currency($equivalent,true,false); ?> per sachet</p>
+											</div>
+								          	<a class="add-to-cart-btn" href="javascript:;" onclick="addtocartCustom('<?php echo $this->getAddToCartUrl($_productsingpur) ?>');"><span>Add to Cart</span></a>
+								        </div>
+
+							          	
+									<?php 
+									   $cnt++;
+									   endforeach; 
+									?>
+								</div>
+		
+
 								<div class="terms-icon"></div>
 								<div class="terms">
-									<p>Customers who sign-up for a 1 year subscription can get a 10% discount off on all other online purchases throughout the subscription period.</p>
-									<p>Not applicable with other special promotions or discounts.</p>
-
+									<p class="hidden-xs hidden-sm">Customers who sign-up for a 1 year subscription can get a 10% discount off on all other online purchases throughout the subscription period.</p>
+									<p class="hidden-xs hidden-sm">Not applicable with other special promotions or discounts.</p>
+									<p class="visible-xs visible-sm">Customers who sign-up for a 1 year subscription can get a 10% discount off on all other online purchases throughout the subscription period. Not applicable with other special promotions or discounts.</p>
 
 								</div>
 							</div>
@@ -177,7 +237,7 @@
 								<h1>international plans</h1>
 								<hr class="small">
 								
-								<div class="table-responsive">
+								<div class="table-responsive hidden-xs hidden-sm">	
 									<table class="table">	
 
 								      	<tbody>
@@ -233,68 +293,124 @@
 								      	</tbody>
 									</table>
 								</div>
+
+								<div class="subscription-slick plans visible-xs visible-sm">
+									<?php										
+									$artisanSingaporeIntCollection = Mage::getModel('subscriptions/subscriptions')->getArtisanInternationalSubscriptions();	
+									//echo count($artisanSingaporeCollection->getData());exit;								
+									$cnt = 1;
+									foreach($artisanSingaporeIntCollection->getData() as $productsingint):
+										$_productIdInt = $productsingint['entity_id'];
+										$_productsingpurint = Mage::getModel('catalog/product')->load($_productIdInt);
+										
+										$nameStart = substr($_helper->productAttribute($_productsingpurint, $_productsingpurint->getName() , 'name'), 0,2);
+										$monthtext = ' MONTHS';
+										if($cnt == 1)
+										{
+											$monthtext = ' MONTH';
+									
+											$equivalent = ($_productsingpurint->getPrice()/30);
+										}else if($cnt == 2)
+										{										
+											$equivalent = ($_productsingpurint->getPrice()/90);
+										}else if($cnt == 3)
+										{										
+											$equivalent = ($_productsingpurint->getPrice()/180);
+										}else
+										{										
+											$equivalent = ($_productsingpurint->getPrice()/360);
+										}
+										
+									?>
+										<div class="plan">
+											<div class="background">
+												<?php if(count($artisanSingaporeCollection->getData()) == $cnt){
+													?>
+													<div class="certificate-icon"></div>
+													<div class="certificate-text"><h3><?php echo $nameStart.$monthtext ?></h3></div>
+													<h5><?php echo $_helper->productAttribute($_productsingpurint, $_productsingpurint->getShortDescription() , 'short_description'); ?></h5>
+													<?php 
+												}else{
+													?>
+													<h3><?php echo $nameStart.$monthtext ?><!--<br><span>SGP Subscription</span>--></h3>
+													<h5><?php echo $_helper->productAttribute($_productsingpurint, $_productsingpurint->getShortDescription() , 'short_description'); ?></h5>
+													<?php 
+												}
+												?>
+										          	<p class="price"><?php echo Mage::helper('core')->currency($_productsingpurint->getPrice(),true,false); ?><br><span>shipping included</span></p>
+										          	<p>Equivalent to <br> <?php echo Mage::helper('core')->currency($equivalent,true,false); ?> per sachet</p>
+											</div>
+								          	<a class="add-to-cart-btn" href="javascript:;" onclick="addtocartCustom('<?php echo $this->getAddToCartUrl($_productsingpurint) ?>');"><span>Add to Cart</span></a>
+								        </div>
+								   <?php 
+								   $cnt++;
+								   endforeach; 
+								   ?>
+								</div>
+	
+
 								<div class="terms-icon"></div>
-								<div class="terms">
-									<p>Customers who sign-up for a 1 year subscription can get a 10% discount off on all other online purchases throughout the subscription period.</p>
-									<p>Not applicable with other special promotions or discounts.</p>
+								<div class="terms">									
+									<p class="hidden-xs hidden-sm">Customers who sign-up for a 1 year subscription can get a 10% discount off on all other online purchases throughout the subscription period.</p>
+									<p class="hidden-xs hidden-sm">Not applicable with other special promotions or discounts.</p>
+									<p class="visible-xs visible-sm">Customers who sign-up for a 1 year subscription can get a 10% discount off on all other online purchases throughout the subscription period. Not applicable with other special promotions or discounts.</p>
 								</div>
-							</div>
-
-
-							<div class="last-content">
-								<h1>WHAT YOU GET</h1>
-								<hr class="small">
-								
-								<div class="all-products">
-									<div class="row">
-										<div class="col-md-12">									
-											<div class="each-product">
-												<a href="product.html">		
-													<img alt="product" class="img-responsive" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) ?>frontend/gryphon/gryphon_theme/images/content/subscription/subscription-2.jpg">
-												</a>		
-												<a class="product-caption" href="product.html">
-													<h4>THE TEA</h4>
-													<p>Peruse and personalise the 30 silken sachets that will be delivered each month. </p>
-												</a>
-											</div>
-										
-											<div class="each-product">
-												<a href="product.html">
-													<img alt="product" class="img-responsive" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) ?>frontend/gryphon/gryphon_theme/images/content/subscription/subscription-3.jpg">
-												</a>		
-												<a class="product-caption" href="product.html">
-													<h4>THE FLEXIBILITY</h4>
-													<p>Let us know by the 17th of the month if you wish to make a change to your selection, and it will be ready for your next delivery. </p>													
-												</a>
-											</div>
-										
-											<div class="each-product">
-												<a href="product.html">													
-													<img alt="product" class="img-responsive" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) ?>frontend/gryphon/gryphon_theme/images/content/subscription/gourmet-subscription-1.jpg">
-												</a>		
-												<a class="product-caption" href="product.html">
-													<h4>THE EXTRAS</h4>
-													<p>With a one-year subscription, you receive 10% off all other regularly priced online orders.</p>
-													<p class="terms">Not applicable with other special promotions or discounts.</p>
-												</a>
-											</div>
-										
-											<div class="each-product">
-												<a href="product.html">													
-													<img alt="product" class="img-responsive" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) ?>frontend/gryphon/gryphon_theme/images/content/subscription/subscription-4.jpg">
-												</a>		
-												<a class="product-caption" href="product.html">
-													<h4>THE DELIVERY</h4>
-													<p>Order by the 17th of each month and have your tea shipped from our warehouse promptly on the 23rd, or the next available business day, along with tracking information sent via email.</p>													
-												</a>
-											</div>
-										</div>
-									</div>									
-								</div>
-				
-							</div>
+							</div>							
 						</div>
 					</div>
+				</div>
+
+			</div>
+
+			<div class="last-content">
+				<h1>WHAT YOU GET</h1>
+				<hr class="small">
+				
+				<div class="all-products">
+					<div class="row">
+						<div class="col-md-12">									
+							<div class="each-product">
+								<a href="product.html">		
+									<img alt="product" class="img-responsive" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) ?>frontend/gryphon/gryphon_theme/images/content/subscription/subscription-2.jpg">
+								</a>		
+								<a class="product-caption" href="product.html">
+									<h4>THE TEA</h4>
+									<p>Peruse and personalise the 30 silken sachets that will be delivered each month. </p>
+								</a>
+							</div>
+						
+							<div class="each-product">
+								<a href="product.html">
+									<img alt="product" class="img-responsive" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) ?>frontend/gryphon/gryphon_theme/images/content/subscription/subscription-3.jpg">
+								</a>		
+								<a class="product-caption" href="product.html">
+									<h4>THE FLEXIBILITY</h4>
+									<p>Let us know by the 17th of the month if you wish to make a change to your selection, and it will be ready for your next delivery. </p>													
+								</a>
+							</div>
+						
+							<div class="each-product">
+								<a href="product.html">													
+									<img alt="product" class="img-responsive" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) ?>frontend/gryphon/gryphon_theme/images/content/subscription/gourmet-subscription-1.jpg">
+								</a>		
+								<a class="product-caption" href="product.html">
+									<h4>THE EXTRAS</h4>
+									<p>With a one-year subscription, you receive 10% off all other regularly priced online orders.</p>
+									<p class="terms">Not applicable with other special promotions or discounts.</p>
+								</a>
+							</div>
+						
+							<div class="each-product">
+								<a href="product.html">													
+									<img alt="product" class="img-responsive" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) ?>frontend/gryphon/gryphon_theme/images/content/subscription/subscription-4.jpg">
+								</a>		
+								<a class="product-caption" href="product.html">
+									<h4>THE DELIVERY</h4>
+									<p>Order by the 17th of each month and have your tea shipped from our warehouse promptly on the 23rd, or the next available business day, along with tracking information sent via email.</p>													
+								</a>
+							</div>
+						</div>
+					</div>									
 				</div>
 
 			</div>
@@ -432,5 +548,51 @@
 	    });
 
 	    initialLoad = false;
+
+	    jQuery('.subscription-slick').slick({
+	        dots: false,
+	        infinite: false,
+	        speed: 300,
+	        slidesToShow: 5,
+	        slidesToScroll: 1,
+	        responsive: [
+	            {
+	                breakpoint: 1099,
+	                settings: {
+	                    slidesToShow: 4,
+	                    slidesToScroll: 1,
+	                    infinite: true,
+	                    dots: false
+	                }
+	            },
+	            {
+	                breakpoint: 960,
+	                settings: {
+	                    slidesToShow: 3,
+	                    slidesToScroll: 1,
+	                    infinite: true,
+	                    dots: false
+	                }
+	            },
+	            {
+	                breakpoint: 760,
+	                settings: {
+	                    slidesToShow: 2,
+	                    slidesToScroll: 1,
+	                    infinite: true,
+	                    dots: false
+	                }
+	            },
+	            {
+	                breakpoint: 600,
+	                settings: {
+	                    slidesToShow: 1,
+	                    slidesToScroll: 1,
+	                    infinite: true,
+	                    dots: false
+	                }
+	            }                      
+	        ]
+	    });
 	});
 	</script>

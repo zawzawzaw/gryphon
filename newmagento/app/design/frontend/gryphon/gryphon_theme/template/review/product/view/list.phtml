@@ -41,7 +41,7 @@
                         <span>
                         <?php echo nl2br($this->escapeHtml($_review->getTitle())) ?>. <?php echo $this->__('(Review by <span>%s</span>)', $this->escapeHtml($_review->getNickname())) ?>
                         </span>
-                        <span id="review-2" class="review-text-more">
+                        <span id="review-<?php echo $_review->getId() ?>" class="review-text-more">
                             <?php echo nl2br($this->escapeHtml($_review->getDetail())) ?>
                         </span>
                     </div>
@@ -98,8 +98,8 @@
                             <?php endforeach; ?>
                         </div>
                         <?php endif; ?>
-                        <a href="#review-2" class="load-more">
-                            <i class="fa fa-chevron-down"></i>
+                        <a href="#review-<?php echo $_review->getId() ?>" class="load-more">
+                            <i class="fa fa-angle-down"></i>
                         </a>
                     </div>                    
                 </div>

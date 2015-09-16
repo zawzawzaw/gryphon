@@ -63,7 +63,7 @@
                             $_category = Mage::getModel('catalog/category')->load($categoryId);
                             $parent_category = Mage::getModel('catalog/category')->load($categoryId)->getParentCategory();    
                             if($parent_category->getId()==5) { ?>
-                                <p><?php echo $_category->getName(); ?></p>
+                                <p class="caption-2"><?php echo $_category->getName(); ?></p>
                     <?php   }
                         }
                     }
