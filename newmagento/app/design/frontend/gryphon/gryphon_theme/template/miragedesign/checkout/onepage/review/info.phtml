@@ -73,10 +73,13 @@ function isMobile()
 </div>
 <?php echo $this->getChildHtml('items_before'); ?>
 <div class="row">   
-    <div class="col-md-3">
-        <div class="address-info">
-            <?php $billingCountry = Mage::getSingleton('checkout/session')->getQuote()->getBillingAddress()->getCountry(); ?>           
-            <?php $billingAddress = Mage::getSingleton('checkout/session')->getQuote()->getBillingAddress()->getData(); ?> 
+    <?php $billingCountry = Mage::getSingleton('checkout/session')->getQuote()->getBillingAddress()->getCountry(); ?>           
+    <?php $billingAddress = Mage::getSingleton('checkout/session')->getQuote()->getBillingAddress()->getData(); ?> 
+
+    <?php $shippingCountry = Mage::getSingleton('checkout/session')->getQuote()->getBillingAddress()->getCountry(); ?>           
+    <?php $shippingAddress = Mage::getSingleton('checkout/session')->getQuote()->getBillingAddress()->getData(); ?> 
+    <div class="col-md-3 hidden-xs hidden-sm">
+        <div class="address-info">            
             <div class="billing-info">
                 <h5>Billing Address</h5>
                 <div class="address-details">
@@ -96,9 +99,7 @@ function isMobile()
                     <p><?php echo $billingAddress['telephone']; ?></p>
                 </div>
             </div>
-            <div class="shipping-info">
-                <?php $shippingCountry = Mage::getSingleton('checkout/session')->getQuote()->getBillingAddress()->getCountry(); ?>           
-                <?php $shippingAddress = Mage::getSingleton('checkout/session')->getQuote()->getBillingAddress()->getData(); ?> 
+            <div class="shipping-info">                
                 <h5>Shipping Address</h5>
                 <div class="address-details">
                     <p class="title">NAME</p>
@@ -167,7 +168,7 @@ function isMobile()
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="action-container">
+                <div class="action-container hidden-xs hidden-sm">
                     <?php echo $this->getChildHtml('button') ?>
                     <span class="please-wait" id="review-please-wait" style="display:none;">
                         <img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>" alt="<?php echo $this->__('Submitting order information...') ?>" title="<?php echo $this->__('Submitting order information...') ?>" class="v-middle" /> <?php echo $this->__('Submitting order information...') ?>
@@ -185,7 +186,67 @@ function isMobile()
             </div>
         </div>
     </div>
-    
+    <div class="col-md-3 visible-xs visible-sm">
+        <div class="address-info">
+            <h1>billing & shipping address</h1>      
+            <hr class="small">
+            <div class="billing-info">
+                <h5>Billing Address</h5>
+                <div class="address-details">
+                    <p class="title">NAME</p>
+                    <p><?php echo $billingAddress['firstname'] . ' ' . $billingAddress['lastname']; ?></p>
+                </div>
+                <div class="address-details">
+                    <p class="title">ADDRESS</p>
+                    <p><?php echo $billingAddress['street'] . ' ' . $billingAddress['city'] . ' ' . $billingAddress['postcode'] . ' ' . $billingCountry; ?></p>
+                </div>
+                <div class="address-details">
+                    <p class="title">EMAIL</p>
+                    <p><?php echo $billingAddress['email']; ?></p>
+                </div>
+                <div class="address-details">
+                    <p class="title">PHONE NUMBER</p>
+                    <p><?php echo $billingAddress['telephone']; ?></p>
+                </div>
+            </div>
+            <div class="shipping-info">                
+                <h5>Shipping Address</h5>
+                <div class="address-details">
+                    <p class="title">NAME</p>
+                    <p><?php echo $shippingAddress['firstname'] . ' ' . $shippingAddress['lastname']; ?></p>
+                </div>
+                <div class="address-details">
+                    <p class="title">ADDRESS</p>
+                    <p><?php echo $shippingAddress['street'] . ' ' . $shippingAddress['city'] . ' ' . $shippingAddress['postcode'] . ' ' . $shippingCountry; ?></p>
+                </div>
+                <div class="address-details">
+                    <p class="title">EMAIL</p>
+                    <p><?php echo $shippingAddress['email']; ?></p>
+                </div>
+                <div class="address-details">
+                    <p class="title">PHONE NUMBER</p>
+                    <p><?php echo $shippingAddress['telephone']; ?></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="action-container visible-xs visible-sm">
+            <?php echo $this->getChildHtml('button') ?>
+            <span class="please-wait" id="review-please-wait" style="display:none;">
+                <img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>" alt="<?php echo $this->__('Submitting order information...') ?>" title="<?php echo $this->__('Submitting order information...') ?>" class="v-middle" /> <?php echo $this->__('Submitting order information...') ?>
+            </span>
+            <div class="we-accept we-are-here">
+                <p>We Accept:</p>
+                <ul>
+                    <li><i class="discover"></i></li>
+                    <li><i class="visa"></i></li>
+                    <li><i class="american-express"></i></li>
+                    <li><i class="master-card"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- <div class="cart-collaterals row" id="confirmation">
     <div class="col2-set col-md-6">
@@ -272,10 +333,14 @@ function isMobile()
             table_row = $(arr[i]);
             col_1 = table_row.find('td:first-child');
             col_3 = table_row.find('td:nth-child(3)');
-            new_image_container = $('<div class="image-text-container-2"></div>');
+            new_image_container = $('<div class="image-text-container-2"></div>');            
             new_image_container.append(col_1.find('.img-container').clone());
-            new_image_container.append(table_row.find('.product-name').clone());
-            new_image_container.append($(table_row.find('.product-price')[0]).clone());
+
+            text_container = $('<div class="text-container"></div>');
+            text_container.append(table_row.find('.product-name').clone());
+            text_container.append($(table_row.find('.product-price')[0]).clone());
+
+            new_image_container.append(text_container);
 
             col_1.prepend(new_image_container);
             col_3.append(table_row.find('.last-image-text-container'));

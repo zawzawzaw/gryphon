@@ -40,7 +40,7 @@ $product_type = $_item->getProductType();
                 <?php if ($this->hasProductUrl()):?>
                     <a href="<?php echo $this->getProductUrl() ?>"><?php echo $this->escapeHtml($this->getProductName()) ?></a>
                     <?php if ($_options = $this->getOptionList()):?>
-                    <a href="#" class="view-tin-details">view details <i class="fa fa-chevron-down"></i></a>
+                    <a href="#" class="view-tin-details hidden-xs hidden-sm">view details <i class="fa fa-chevron-down"></i></a>
                     <?php endif; ?>
                 <?php else: ?>
                     <?php echo $this->escapeHtml($this->getProductName()) ?>

@@ -41,6 +41,7 @@ function load_scripts(){
     wp_enqueue_script('carousel', THEMEROOT.'/js/vendors/bootstrap/bootstrap.min.js', array('$'), '', true);
     wp_enqueue_script('raty', THEMEROOT.'/js/plugins/raty/jquery.raty.js', array('$'), '', true);
     wp_enqueue_script('slick', THEMEROOT.'/js/plugins/slick/slick.min.js', array('$'), '', true);    
+    wp_enqueue_script('inside-pages', THEMEROOT.'/js/inside-pages.js', array('$'), '', true);    
     wp_enqueue_script('mainjs', THEMEROOT.'/js/main.js', array('$'), '', true);    
 }
 

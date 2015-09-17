@@ -80,7 +80,7 @@
                                         <div class="pts"><span class="no">10</span><span class="text">points</span></div>
                                     </div>
                                     <div class="right">
-                                        <span class="pts-text">Earn the point for creating account</span>
+                                        <span class="pts-text">For account creation</span>
                                     </div>
                                 </div>
                                 <div class="points newsletter-points">
@@ -88,7 +88,7 @@
                                         <div class="pts"><span class="no">10</span><span class="text">points</span></div>
                                     </div>
                                     <div class="right">
-                                        <span class="pts-text">Extra points by signing up for our <br> newsletter through your acount</span>
+                                        <span class="pts-text">For newsletter sign up through your account</span>
                                     </div>
                                 </div>
                                 <div class="points dob-points">
@@ -177,7 +177,7 @@
                                     <input type="checkbox" name="is_subscribed" title="<?php echo $this->__('I’d like to receive exclusive promotions and updates by email from Gryphon.') ?>" value="1" id="is_subscribed"<?php if($this->getFormData()->getIsSubscribed()): ?> checked="checked"<?php endif; ?> class="checkbox" />
                                     <label for="is_subscribed" class="checkbox-label">
                                         <span></span>
-                                        <p class="label-text"><?php echo $this->__('I’d like to receive exclusive promotions and updates by email from Gryphon.') ?></p>
+                                        <p class="label-text"><?php echo $this->__('I’d like to receive exclusive promotions and updates by email from Gryphon Tea Company') ?></p>
                                     </label>                                    
                                 </div>
                             <?php endif ?>
@@ -189,7 +189,7 @@
                                 <button type="submit" title="<?php echo $this->__('Create An Account') ?>" class="button sign-up-btn cta"><span><span><?php echo $this->__('Create An Account') ?></span></span></button>    
                                 <div class="links">
                                     <!-- <a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>" class="cta back-link"><i class="fa fa-arrow-left"></i> <?php echo $this->__('Back') ?></a> -->
-                                    <a href="#" class="cta read-more"><i class="fa fa-arrow-right"></i> More information about Gryphon rewards program</a>        
+                                    <a href="<?php echo $this->getUrl('rewards'); ?>" class="cta read-more"><i class="fa fa-arrow-right"></i> More information about Gryphon rewards program</a>        
                                     <div class="clearfix"></div>
                                 </div>                        
                             </div>

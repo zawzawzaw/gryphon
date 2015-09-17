@@ -204,6 +204,13 @@ strong {
   font-size: 11px;
   line-height: 16px;
 }
+.validation-advice {
+  font-family: "minion-pro", Verdana, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  position: absolute;
+  top: 24px;
+}
 @font-face {
   font-family: 'Gotham-Bold';
   src: url('../fonts/Gotham-Bold.eot?15905336');
@@ -483,7 +490,7 @@ ul.messages {
       }*/
 }
 #page-wrapper #header-wrapper.no-banner {
-  border-bottom: 1px solid #ccc;
+  box-shadow: 1px 1px 16px #EAEAEA;
 }
 #page-wrapper #header-wrapper .marquee {
   width: 100%;
@@ -1354,7 +1361,7 @@ ul.messages {
   font-style: italic;
   display: inline-block;
   line-height: 18px;
-  color: #252525;
+  color: #464646;
   vertical-align: top;
   height: 13px;
   font-size: 13px;
@@ -1637,6 +1644,7 @@ div.home #popular-products .image-text-content .center-text p.caption {
 div.home #popular-products .image-text-content .center-text p.caption-2 {
   /*height: 65px;*/
   margin-bottom: 20px;
+  text-transform: uppercase;
 }
 div.home #popular-products .image-text-content .center-text p {
   font-family: 'Gotham-Book', Verdana, sans-serif;
@@ -3448,6 +3456,12 @@ div.product .product-collection .image-text-content h1 {
 div.product .product-collection .image-text-content p {
   margin-bottom: 20px;
 }
+div.product .product-collection .image-text-content p a {
+  color: #464646;
+}
+div.product .product-collection .image-text-content p a:hover {
+  color: #ae4e0e;
+}
 div.product .product-collection .image-text-content .no-padding {
   padding-left: 0px;
   margin-left: 6%;
@@ -3676,7 +3690,7 @@ div.product .product-review .image-text-content .write-review table td input {
   display: table-cell;
 }
 div.product .product-review .image-text-content .write-review textarea {
-  /*border: 1px solid #ccc;*/
+  border: 1px solid #ccc;
   width: 100%;
   height: 107px;
   font-family: 'Gotham-Book', Verdana, sans-serif;
@@ -4964,6 +4978,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 @media all and (max-width: 470px) {
   .sign-up .main-content .sign-up-form .each-input .dropdown {
     margin-right: 10px;
+    width: 31%;
   }
 }
 .sign-up .main-content .sign-up-form .each-input .dropdown:nth-of-type(3) {
@@ -5165,12 +5180,11 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .sign-up .main-content .email-points .right,
 .sign-up .main-content .newsletter-points .right {
   display: table-cell;
-  vertical-align: middle;
   line-height: 11px;
   padding-left: 6px;
   text-align: left;
   color: #464646;
-  vertical-align: bottom;
+  vertical-align: middle;
 }
 .sign-up .main-content .email-points {
   top: -5px;
@@ -5745,7 +5759,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   }
 }
 .subscription-form .last-content .all-products .each-product {
-  width: 21.5%;
+  width: 13.5%;
   margin-right: 1.8%;
   margin-left: 1.8%;
   margin-bottom: 0px;
@@ -6076,6 +6090,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   width: 162px;
   padding-right: 20px;
   vertical-align: top;
+  min-height: 140px;
 }
 .subscription .last-content .center .reasons h5 {
   font-family: 'Gotham-Medium', Verdana, sans-serif;
@@ -6730,6 +6745,15 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-size: 13px;
   line-height: 16px;
   letter-spacing: .03em;
+}
+@media all and (max-width: 992px) {
+  .cart #cart .table tfoot .btn-update,
+  .cart #confirmation .table tfoot .btn-update,
+  .cart #cart .table tfoot .btn-empty,
+  .cart #confirmation .table tfoot .btn-empty {
+    font-size: 10px;
+    line-height: 13px;
+  }
 }
 .cart #cart .table tfoot .btn-update i,
 .cart #confirmation .table tfoot .btn-update i,
@@ -7418,6 +7442,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 600;
   font-style: italic;
+  font-weight: 400;
   font-size: 13px;
   color: #ae4e0e;
   text-align: center;
@@ -11369,6 +11394,7 @@ div#footer-wrapper .search span.ajax_msg {
 }
 .privacy .main-content .privacy-col-1 {
   padding-right: 60px;
+  border-right: 1px solid #ccc;
 }
 .privacy .main-content .privacy-col-2 {
   padding-left: 60px;
@@ -11389,8 +11415,8 @@ div#footer-wrapper .search span.ajax_msg {
   font-family: 'Gotham-Book', Verdana, sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 13px;
-  line-height: 24px;
+  font-size: 11.5px;
+  line-height: 19px;
   color: #464646;
   margin-bottom: 20px;
 }
@@ -11411,8 +11437,9 @@ div#footer-wrapper .search span.ajax_msg {
 }
 .privacy .main-content span {
   font-family: "minion-pro", Verdana, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-style: italic;
+  font-weight: 600;
   font-size: 13px;
   line-height: 16px;
   color: #ae4e0e;
@@ -11461,7 +11488,7 @@ div#footer-wrapper .search span.ajax_msg {
   text-align: center;
   color: #ffffff;
   position: absolute;
-  top: 1px;
+  top: 2px;
   left: 0;
   width: 16px;
   height: 16px;
@@ -12595,7 +12622,7 @@ div#footer-wrapper .search span.ajax_msg {
   display: block;
   width: 168px;
   margin-left: -84px;
-  margin: 70px auto;
+  margin: 70px auto 0px;
   cursor: pointer;
 }
 .careers .main-content .forth-content #application-form .apply-button:hover {
@@ -12869,19 +12896,19 @@ div#footer-wrapper .search span.ajax_msg {
   .careers .main-content .second-content .reasons {
     padding-top: 13px;
   }
-  .careers .main-content .second-content .slick {
+  .careers .main-content .second-content .careers-slick {
     width: 90%;
     margin: 0 auto;
   }
-  .careers .main-content .second-content .slick .slick-prev:before,
-  .careers .main-content .second-content .slick .slick-next:before {
+  .careers .main-content .second-content .careers-slick .slick-prev:before,
+  .careers .main-content .second-content .careers-slick .slick-next:before {
     font: normal normal normal 14px/1 FontAwesome;
     font-size: 12px;
   }
-  .careers .main-content .second-content .slick .slick-prev:before {
+  .careers .main-content .second-content .careers-slick .slick-prev:before {
     content: "\f053";
   }
-  .careers .main-content .second-content .slick .slick-next:before {
+  .careers .main-content .second-content .careers-slick .slick-next:before {
     content: "\f054";
   }
   .careers .main-content .second-content .reason {
@@ -13216,7 +13243,7 @@ div#footer-wrapper .search span.ajax_msg {
   position: absolute;
   top: 0;
   left: 50%;
-  margin-left: -50px;
+  margin-left: -44px;
 }
 .rewards .main-content .second-content .reasons .reason .points {
   font-family: "minion-pro", Verdana, sans-serif;
@@ -13442,7 +13469,7 @@ div#footer-wrapper .search span.ajax_msg {
   text-align: center;
   color: #ffffff;
   position: absolute;
-  top: 1px;
+  top: 2px;
   left: 0;
   width: 16px;
   height: 16px;
@@ -16855,7 +16882,6 @@ html {
   }
   #content-wrapper.cart #cart .table-responsive .table tbody tr td .product-qty,
   #content-wrapper.cart #confirmation .table-responsive .table tbody tr td .product-qty {
-    padding-top: 17px;
     padding-bottom: 0px;
   }
   #content-wrapper.cart #cart .table-responsive .table tbody tr td .image-text-container,
@@ -16864,7 +16890,7 @@ html {
   }
   #content-wrapper.cart #cart .table-responsive .table tbody tr td .last-image-text-container,
   #content-wrapper.cart #confirmation .table-responsive .table tbody tr td .last-image-text-container {
-    padding-top: 19px;
+    padding-top: 8px;
     display: block;
   }
   #content-wrapper.cart #cart .table-responsive .table tbody tr td .image-text-container .delete,
@@ -16915,19 +16941,17 @@ html {
     display: block;
     position: relative;
     text-align: left;
-    min-height: 96px;
-    padding-top: 15px;
-    padding-left: 76px;
-    padding-right: 12px;
+    vertical-align: middle;
+    margin: 20px 0px;
+    min-height: auto!important;
+    min-height: auto;
   }
   #content-wrapper.cart #cart .table-responsive .image-text-container-2 .img-container,
   #content-wrapper.cart #confirmation .table-responsive .image-text-container-2 .img-container {
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: inline-block;
+    vertical-align: middle;
+    height: auto;
     width: 56px;
-    height: 96px;
-    padding-top: 7px;
   }
   #content-wrapper.cart #cart .table-responsive .image-text-container-2 .img-container img,
   #content-wrapper.cart #confirmation .table-responsive .image-text-container-2 .img-container img {
@@ -16937,10 +16961,17 @@ html {
     height: auto;
     margin: 0 auto;
   }
+  #content-wrapper.cart #cart .table-responsive .image-text-container-2 .text-container,
+  #content-wrapper.cart #confirmation .table-responsive .image-text-container-2 .text-container {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 20px;
+    max-width: 155px;
+  }
   #content-wrapper.cart #cart .table-responsive .image-text-container-2 p,
   #content-wrapper.cart #confirmation .table-responsive .image-text-container-2 p {
     font-family: "minion-pro", Verdana, sans-serif;
-    font-weight: 500;
+    font-weight: 400;
     font-style: normal;
     font-size: 13px;
     line-height: 18px !important;
@@ -16949,22 +16980,18 @@ html {
   #content-wrapper.cart #cart .table-responsive .image-text-container-2 p.product-title,
   #content-wrapper.cart #confirmation .table-responsive .image-text-container-2 p.product-title {
     font-family: "minion-pro", Verdana, sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     font-style: normal;
     font-size: 13px;
     line-height: 18px !important;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
     color: #252525;
     text-transform: uppercase;
     margin-bottom: 5px;
   }
   #content-wrapper.cart #cart .table-responsive .image-text-container-2 p.product-title a,
   #content-wrapper.cart #confirmation .table-responsive .image-text-container-2 p.product-title a {
-    color: #252525;
-  }
-  #content-wrapper.cart #cart .table-responsive .image-text-container-2 .product-price,
-  #content-wrapper.cart #confirmation .table-responsive .image-text-container-2 .product-price {
-    padding-bottom: 20px;
+    color: #464646;
   }
   #content-wrapper.cart #cart .each-details,
   #content-wrapper.cart #confirmation .each-details {
@@ -16983,18 +17010,63 @@ html {
   #content-wrapper.cart #confirmation .each-details:last-child {
     border-bottom: 1px solid #ddd;
   }
-  #content-wrapper.cart #cart .each-details .sub-total p,
-  #content-wrapper.cart #confirmation .each-details .sub-total p {
-    color: #ae4e0e;
-    font-size: 14px;
-    line-height: 20px;
+  #content-wrapper.cart #cart .each-details .label p,
+  #content-wrapper.cart #confirmation .each-details .label p {
+    font-family: 'Gotham-Medium', Verdana, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 10px;
+    color: #464646;
   }
-  #content-wrapper.cart #cart .each-details .amount p,
-  #content-wrapper.cart #confirmation .each-details .amount p {
-    font-size: 13px;
-    line-height: 20px;
-    position: relative;
-    top: 1px;
+  #content-wrapper.cart #cart .each-details .subtotal p,
+  #content-wrapper.cart #confirmation .each-details .subtotal p {
+    font-family: 'Gotham-Bold', Verdana, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 11px;
+    line-height: 18px;
+    letter-spacing: 0.03em;
+    color: #252525;
+  }
+  #content-wrapper.cart #cart .each-details .value p,
+  #content-wrapper.cart #confirmation .each-details .value p {
+    font-family: "minion-pro", Verdana, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 11px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    color: #777;
+  }
+  #content-wrapper.cart #cart .each-details .value p.sub_total,
+  #content-wrapper.cart #confirmation .each-details .value p.sub_total {
+    font-family: "minion-pro", Verdana, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    color: #252525;
+  }
+  #content-wrapper.cart #cart .each-details .grandtotal.label p,
+  #content-wrapper.cart #confirmation .each-details .grandtotal.label p {
+    font-family: 'Gotham-Bold', Verdana, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 11px;
+    line-height: 18px;
+    letter-spacing: 0.03em;
+    color: #ae4e0e;
+  }
+  #content-wrapper.cart #cart .each-details .grandtotal.value p,
+  #content-wrapper.cart #confirmation .each-details .grandtotal.value p {
+    font-family: "minion-pro", Verdana, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    color: #ae4e0e;
   }
   #content-wrapper.cart #cart .table-responsive .table thead tr th:first-child {
     border-right: none;
@@ -17014,7 +17086,8 @@ html {
   #content-wrapper.cart #confirmation #discount-coupon-form label,
   #content-wrapper.cart #confirmation #discount-giftcard-form label {
     display: block;
-    font-size: 11px;
+    font-size: 10px;
+    line-height: 17px;
     margin-bottom: 4px;
   }
   #content-wrapper.cart #confirmation #discount-coupon-form input[type=text],
@@ -17046,8 +17119,9 @@ html {
   #content-wrapper.cart #billing_shipping .each-input label {
     width: 100%;
     display: block;
-    font-size: 11px;
-    margin-bottom: 5px;
+    font-size: 10px;
+    line-height: 17px;
+    margin-bottom: 4px;
   }
   #content-wrapper.cart #billing_shipping .each-input input[type=text],
   #content-wrapper.cart #billing_shipping .each-input select {
@@ -17426,6 +17500,7 @@ html {
   }
   #content-wrapper.cart #opc-review .table-responsive .table tbody tr td {
     padding: 0 !important;
+    vertical-align: middle;
     /*
                 &:first-child{
                   border-right: 1px solid #ddd;
@@ -17441,14 +17516,13 @@ html {
                 */
   }
   #content-wrapper.cart #opc-review .table-responsive .table tbody tr td .product-qty {
-    padding-top: 17px;
-    padding-bottom: 0px;
+    vertical-align: middle;
   }
   #content-wrapper.cart #opc-review .table-responsive .table tbody tr td .image-text-container {
     height: auto;
   }
   #content-wrapper.cart #opc-review .table-responsive .table tbody tr td .last-image-text-container {
-    padding-top: 19px;
+    padding-top: 8px;
     display: block;
   }
   #content-wrapper.cart #opc-review .table-responsive .table tbody tr td .image-text-container .delete {
@@ -17492,18 +17566,17 @@ html {
     display: block;
     position: relative;
     text-align: left;
-    min-height: 96px;
-    padding-top: 17px;
-    padding-left: 76px;
-    padding-right: 12px;
+    padding: 0px;
+    vertical-align: middle;
+    margin: 20px 0px;
+    min-height: auto!important;
   }
   #content-wrapper.cart #opc-review .table-responsive .image-text-container-2 .img-container {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: static;
+    display: inline-block;
+    vertical-align: middle;
+    height: auto;
     width: 56px;
-    height: 96px;
-    padding-top: 7px;
   }
   #content-wrapper.cart #opc-review .table-responsive .image-text-container-2 .img-container img {
     display: block;
@@ -17512,62 +17585,98 @@ html {
     height: auto;
     margin: 0 auto;
   }
+  #content-wrapper.cart #opc-review .table-responsive .image-text-container-2 .text-container {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 20px;
+    max-width: 180px;
+  }
   #content-wrapper.cart #opc-review .table-responsive .image-text-container-2 p {
     font-family: "minion-pro", Verdana, sans-serif;
-    font-weight: 500;
+    font-weight: 400;
     font-style: normal;
-    font-size: 13px;
-    line-height: 18px !important;
+    font-size: 11px;
+    line-height: 15px !important;
     letter-spacing: 0.05em;
   }
-  #content-wrapper.cart #opc-review .table-responsive .image-text-container-2 p.product-title {
+  #content-wrapper.cart #opc-review .table-responsive .image-text-container-2 h3.product-name {
     font-family: "minion-pro", Verdana, sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     font-style: normal;
-    font-size: 13px;
-    line-height: 18px !important;
+    font-size: 11px;
+    line-height: 14px !important;
     letter-spacing: 0.1em;
     color: #252525;
     text-transform: uppercase;
     margin-bottom: 5px;
   }
-  #content-wrapper.cart #opc-review .table-responsive .image-text-container-2 p.product-title a {
+  #content-wrapper.cart #opc-review .table-responsive .image-text-container-2 h3.product-name a {
     color: #252525;
   }
-  #content-wrapper.cart #opc-review .table-responsive .image-text-container-2 .product-price {
-    padding-bottom: 20px;
+  #content-wrapper.cart #opc-review .table-responsive .image-text-container-2 p.product-price {
+    font-size: 11px;
+    line-height: 15px !important;
+    letter-spacing: 0.03em;
+    color: #464646;
   }
   #content-wrapper.cart #opc-review .each-details {
     border-bottom: none;
   }
-  #content-wrapper.cart #opc-review .each-details p {
+  #content-wrapper.cart #opc-review .each-details .label p {
     font-family: 'Gotham-Medium', Verdana, sans-serif;
     font-weight: 200;
     font-style: normal;
-    font-size: 12px;
+    font-size: 10px;
+    color: #464646;
+  }
+  #content-wrapper.cart #opc-review .each-details .subtotal p {
+    font-family: 'Gotham-Bold', Verdana, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 11px;
+    line-height: 18px;
+    letter-spacing: 0.03em;
     color: #252525;
   }
-  #content-wrapper.cart #opc-review .each-details .value {
+  #content-wrapper.cart #opc-review .each-details .value p {
     font-family: "minion-pro", Verdana, sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 13px;
+    font-size: 11px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    color: #777;
+  }
+  #content-wrapper.cart #opc-review .each-details .value p.sub_total {
+    font-family: "minion-pro", Verdana, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    color: #252525;
+  }
+  #content-wrapper.cart #opc-review .each-details .grandtotal.label p {
+    font-family: 'Gotham-Bold', Verdana, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 11px;
+    line-height: 18px;
+    letter-spacing: 0.03em;
+    color: #ae4e0e;
+  }
+  #content-wrapper.cart #opc-review .each-details .grandtotal.value p {
+    font-family: "minion-pro", Verdana, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    color: #ae4e0e;
   }
   #content-wrapper.cart #opc-review .each-details:first-child {
     border-top: none;
     margin-top: -20px;
-  }
-  #content-wrapper.cart #opc-review .each-details .grandtotal p {
-    font-family: 'Gotham-Bold', Verdana, sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    color: #ae4e0e;
-  }
-  #content-wrapper.cart #opc-review .each-details .grandtotal .value {
-    font-family: "minion-pro", Verdana, sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    color: #ae4e0e;
   }
   #content-wrapper.cart #opc-review .address-info {
     border: none;
@@ -17581,14 +17690,29 @@ html {
     line-height: 16px;
     text-transform: uppercase;
     letter-spacing: 0.03em;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
   }
-  #content-wrapper.cart #opc-review .address-info h5:after {
-    content: "";
-    display: block;
-    width: 17px !important;
-    border-top: 2px solid #ae4e0e;
-    margin-top: 5px !important;
-    margin-bottom: 5px !important;
+  #content-wrapper.cart #opc-review .address-info .billing-info,
+  #content-wrapper.cart #opc-review .address-info .shipping-info {
+    border: 0px;
+    padding-bottom: 0px;
+    padding-top: 10px;
+  }
+  #content-wrapper.cart #opc-review .action-container {
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding-top: 35px;
+  }
+  #content-wrapper.cart #opc-review .action-container.buttons-set {
+    border-top: 0px;
+    padding-top: 0px;
+  }
+  #content-wrapper.cart #opc-review .action-container .we-accept {
+    text-align: center;
   }
   #content-wrapper.cart #opc-review .action-container .back-btn {
     bottom: -139px;
@@ -18003,7 +18127,7 @@ html {
     display: inline-block;
     vertical-align: top;
     position: relative;
-    left: 15px;
+    left: -10px;
     top: 20px;
   }
   .subscription-form .second-content .image-text-content .terms {
@@ -18055,5 +18179,45 @@ html {
   }
   .subscription-form .last-content .all-products .col-md-12 .each-product .product-caption p {
     text-align: left;
+  }
+}
+@media (max-width: 991px) {
+  .trade .trade-banner .image-text-content .caption {
+    height: 105px!important;
+  }
+  .trade .trade-banner .image-text-content .caption h1 {
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    margin-top: 20px;
+  }
+  .trade .trade-banner .image-text-content .caption p {
+    font-family: 'Gotham-Book', Verdana, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 10px;
+    line-height: 13px;
+    max-width: 75%;
+  }
+  .trade .main-content h1 {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.015em;
+  }
+  .trade .main-content p {
+    width: auto!important;
+  }
+  .trade .main-content hr {
+    margin: 10px auto!important;
+  }
+  .trade .main-content .image-text-content .center .hotels .hotel,
+  .trade .main-content .image-text-content .center .awards .hotel,
+  .trade .main-content .image-text-content .center .hotels .award,
+  .trade .main-content .image-text-content .center .awards .award {
+    padding: 0;
+    width: 49%;
+    display: inline-block;
+  }
+  .trade .main-content .last-content {
+    padding-bottom: 40px;
   }
 }

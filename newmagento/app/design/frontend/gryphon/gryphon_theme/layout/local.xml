@@ -155,6 +155,9 @@ One page checkout main layout
     Layout for customer login page
     -->
     <customer_account_login>
+        <reference name="head">            
+            <action method="addItem"><type>skin_js</type><name>js/inside-pages.js</name></action>
+        </reference>
         <reference name="root">
             <action method="setTemplate"><template>page/1column.phtml</template></action>
         </reference>        
@@ -184,6 +187,9 @@ One page checkout main layout
     New customer registration
     -->
     <customer_account_create translate="label">
+        <reference name="head">            
+            <action method="addItem"><type>skin_js</type><name>js/inside-pages.js</name></action>
+        </reference>
         <reference name="root">
             <action method="setTemplate"><template>page/1column.phtml</template></action>
         </reference>

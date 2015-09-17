@@ -303,7 +303,7 @@
                                     <label for="phone_no"><?php echo $this->__('PHONE NO.'); ?></label> 
                                     <div class="intl-tel-input">
                                         <input type="text" id="phone_no" class="phone_no_input">                                
-                                        <input type="text" id="phone_no_2">                                                                                    
+                                        <input type="text" id="phone_no_2" class="required-entry">                                                                                    
                                     </div>
                                     <div class="hide-input">
                                         <input id="telephone" type="hidden" name="telephone" value="<?php echo $this->escapeHtml($this->getFormData()->getTelephone()) ?>" />
@@ -394,9 +394,9 @@
         //     autoPlaceholder: false
         // });
 
-        $("#telephone").intlTelInput({
-            utilsScript: "lib/intl-tel-input/lib/libphonenumber/build/utils.js"
-        });
+        // $("#telephone").intlTelInput({
+        //     utilsScript: "lib/intl-tel-input/lib/libphonenumber/build/utils.js"
+        // });
         $("#phone_no, #mobile_no").intlTelInput({
             defaultCountry: 'sg',
             nationalMode: false,

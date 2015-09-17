@@ -61,6 +61,7 @@
 												->addAttributeToFilter('status',1)
 												->addAttributeToFilter('visibility',array('neq' =>1))
 												->addAttributeToFilter('sku', array('nin' => $locationskuSGPArray))
+												->addAttributeToSort('name', Varien_Data_Collection::SORT_ORDER_ASC)
 												->load();
 												?>
 									<?php
@@ -82,7 +83,7 @@
 									    </p>
 										<input type="hidden" id="<?php echo $_product->getId() ?>" value="" />
 									</div>
-									<?php endforeach; ?><br>
+									<?php endforeach; ?>
 									<div class="each-product selected-tea">
 										<span class="small">30 sachets left</span>
 										<h2 class="selected_tea_count">0</h2>
@@ -370,44 +371,44 @@
 					<div class="row">
 						<div class="col-md-12">									
 							<div class="each-product">
-								<a href="product.html">		
+								<!-- <a href="product.html"> -->		
 									<img alt="product" class="img-responsive" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) ?>frontend/gryphon/gryphon_theme/images/content/subscription/subscription-2.jpg">
-								</a>		
-								<a class="product-caption" href="product.html">
+								<!-- </a>		
+								<a class="product-caption" href="product.html"> -->
 									<h4>THE TEA</h4>
 									<p>Peruse and personalise the 30 silken sachets that will be delivered each month. </p>
-								</a>
+								<!-- </a> -->
 							</div>
 						
 							<div class="each-product">
-								<a href="product.html">
+								<!-- <a href="product.html"> -->
 									<img alt="product" class="img-responsive" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) ?>frontend/gryphon/gryphon_theme/images/content/subscription/subscription-3.jpg">
-								</a>		
-								<a class="product-caption" href="product.html">
+								<!-- </a>		
+								<a class="product-caption" href="product.html"> -->
 									<h4>THE FLEXIBILITY</h4>
 									<p>Let us know by the 17th of the month if you wish to make a change to your selection, and it will be ready for your next delivery. </p>													
-								</a>
+								<!-- </a> -->
 							</div>
 						
 							<div class="each-product">
-								<a href="product.html">													
+								<!-- <a href="product.html"> -->													
 									<img alt="product" class="img-responsive" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) ?>frontend/gryphon/gryphon_theme/images/content/subscription/gourmet-subscription-1.jpg">
-								</a>		
-								<a class="product-caption" href="product.html">
+								<!-- </a>		
+								<a class="product-caption" href="product.html"> -->
 									<h4>THE EXTRAS</h4>
 									<p>With a one-year subscription, you receive 10% off all other regularly priced online orders.</p>
 									<p class="terms">Not applicable with other special promotions or discounts.</p>
-								</a>
+								<!-- </a> -->
 							</div>
 						
 							<div class="each-product">
-								<a href="product.html">													
+								<!-- <a href="product.html"> -->													
 									<img alt="product" class="img-responsive" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) ?>frontend/gryphon/gryphon_theme/images/content/subscription/subscription-4.jpg">
-								</a>		
-								<a class="product-caption" href="product.html">
+								<!-- </a>		
+								<a class="product-caption" href="product.html"> -->
 									<h4>THE DELIVERY</h4>
 									<p>Order by the 17th of each month and have your tea shipped from our warehouse promptly on the 23rd, or the next available business day, along with tracking information sent via email.</p>													
-								</a>
+								<!-- </a> -->
 							</div>
 						</div>
 					</div>									
