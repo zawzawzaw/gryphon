@@ -49,9 +49,18 @@ $product_type = $_item->getProductType();
             <?php if ($_options = $this->getOptionList()):?>
                 <ul class="item-options <?php if($product_type=='tin'): ?>tin<?php endif; ?>">
                     <?php foreach ($_options as $_option) : ?>
-                        <?php $_formatedOptionValue = $this->getFormatedOptionValue($_option) ?>
+                        <?php $_formatedOptionValue = $this->getFormatedOptionValue($_option) ?>                        
                         <li>
-                            <p class="lbl"><?php $label = $this->escapeHtml($_option['label']); $label = str_replace('_', ' ', $label); echo str_replace('treasure', ' ', $label) . ':'; ?></p>
+                            <?php if($product_type=='tin'): ?>
+                            <p class="lbl">
+                                <?php $label = $this->escapeHtml($_option['label']); $label = str_replace('_', ' ', $label); echo str_replace('treasure', ' ', $label) . ':'; ?>
+                            </p>
+                            <?php elseif($product_type=='virtual'):
+                                $obj = Mage::getModel('catalog/product');
+                                $_product = $obj->load($_option['label']); 
+                            ?>
+                            <p class="lbl"><?php echo $_product->getName(); ?></p>
+                            <?php endif ?>
                             <span<?php if (isset($_formatedOptionValue['full_view'])): ?> class="truncated"<?php endif; ?>><?php echo $_formatedOptionValue['value'] ?>
                                 <?php if (isset($_formatedOptionValue['full_view'])): ?>
                                     <!-- <span class="truncated_full_value">

@@ -204,6 +204,13 @@ strong {
   font-size: 11px;
   line-height: 16px;
 }
+.validation-advice {
+  font-family: "minion-pro", Verdana, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  position: absolute;
+  top: 24px;
+}
 @font-face {
   font-family: 'Gotham-Bold';
   src: url('../fonts/Gotham-Bold.eot?15905336');
@@ -233,6 +240,12 @@ strong {
 @font-face {
   font-family: 'JacquesGilles';
   src: url('../fonts/JacquesGilles.eot?#iefix') format('embedded-opentype'), url('../fonts/JacquesGilles.woff') format('woff'), url('../fonts/JacquesGilles.ttf') format('truetype'), url('../fonts/JacquesGilles.svg#JacquesGilles') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Bombshell-Pro';
+  src: url('../fonts/Bombshell-Pro.eot?#iefix') format('embedded-opentype'), url('../fonts/Bombshell-Pro.woff') format('woff'), url('../fonts/Bombshell-Pro.ttf') format('truetype'), url('../fonts/Bombshell-Pro.svg#Bombshell-Pro') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -298,6 +311,11 @@ strong {
 }
 .jacques-gilles-regular {
   font-family: "JacquesGilles", Verdana, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+.bombshell-pro {
+  font-family: "Bombshell-Pro", Verdana, sans-serif;
   font-weight: 200;
   font-style: normal;
 }
@@ -483,7 +501,7 @@ ul.messages {
       }*/
 }
 #page-wrapper #header-wrapper.no-banner {
-  border-bottom: 1px solid #ccc;
+  box-shadow: 1px 1px 16px #EAEAEA;
 }
 #page-wrapper #header-wrapper .marquee {
   width: 100%;
@@ -1164,9 +1182,9 @@ ul.messages {
   left: -50%;
 }
 #page-wrapper .slider-wrapper div.item div.carousel-caption div.caption-text h1 {
-  font-family: "JacquesGilles", Verdana, sans-serif;
+  font-family: "Bombshell-Pro", Verdana, sans-serif;
   font-weight: 200;
-  font-style: italic;
+  font-style: normal;
   font-size: 70px;
   line-height: 66px;
   margin-top: 20px;
@@ -1354,7 +1372,7 @@ ul.messages {
   font-style: italic;
   display: inline-block;
   line-height: 18px;
-  color: #252525;
+  color: #464646;
   vertical-align: top;
   height: 13px;
   font-size: 13px;
@@ -3431,9 +3449,8 @@ div.product .product-collection {
   margin-bottom: 80px;
 }
 div.product .product-collection .image-text-content h1 {
-  font-family: "JacquesGilles", Verdana, sans-serif;
+  font-family: "Bombshell-Pro", Verdana, sans-serif;
   font-weight: 200;
-  font-style: italic;
   font-size: 25px;
   font-style: normal;
   line-height: 16px;
@@ -3683,7 +3700,7 @@ div.product .product-review .image-text-content .write-review table td input {
   display: table-cell;
 }
 div.product .product-review .image-text-content .write-review textarea {
-  /*border: 1px solid #ccc;*/
+  border: 1px solid #ccc;
   width: 100%;
   height: 107px;
   font-family: 'Gotham-Book', Verdana, sans-serif;
@@ -3758,9 +3775,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .store .store-banner .image-text-content .caption h1,
 .store .gifts-banner .image-text-content .caption h1,
 .store .pantry-banner .image-text-content .caption h1 {
-  font-family: "JacquesGilles", Verdana, sans-serif;
+  font-family: "Bombshell-Pro", Verdana, sans-serif;
   font-weight: 200;
-  font-style: italic;
   font-size: 42px;
   font-style: normal;
   line-height: 45px;
@@ -4574,7 +4590,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 @media all and (max-width: 992px) {
   .sign-up .signup-banner {
-    height: 256px!important;
+    height: 257px!important;
   }
 }
 .sign-up .signup-banner .image-text-content .caption-container {
@@ -4592,9 +4608,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   }
 }
 .sign-up .signup-banner .image-text-content .caption h1 {
-  font-family: "JacquesGilles", Verdana, sans-serif;
+  font-family: "Bombshell-Pro", Verdana, sans-serif;
   font-weight: 200;
-  font-style: italic;
   font-size: 42px;
   font-style: normal;
   line-height: 45px;
@@ -4971,6 +4986,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 @media all and (max-width: 470px) {
   .sign-up .main-content .sign-up-form .each-input .dropdown {
     margin-right: 10px;
+    width: 31%;
   }
 }
 .sign-up .main-content .sign-up-form .each-input .dropdown:nth-of-type(3) {
@@ -5172,12 +5188,11 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .sign-up .main-content .email-points .right,
 .sign-up .main-content .newsletter-points .right {
   display: table-cell;
-  vertical-align: middle;
   line-height: 11px;
   padding-left: 6px;
   text-align: left;
   color: #464646;
-  vertical-align: bottom;
+  vertical-align: middle;
 }
 .sign-up .main-content .email-points {
   top: -5px;
@@ -5258,7 +5273,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 @media all and (max-width: 992px) {
   .subscription-form .subscription-banner {
-    height: 256px!important;
+    height: 257px!important;
   }
 }
 .subscription-form .subscription-banner .image-text-content .caption-container {
@@ -5271,9 +5286,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   vertical-align: middle;
 }
 .subscription-form .subscription-banner .image-text-content .caption h1 {
-  font-family: "JacquesGilles", Verdana, sans-serif;
+  font-family: "Bombshell-Pro", Verdana, sans-serif;
   font-weight: 200;
-  font-style: italic;
   font-size: 42px;
   font-style: normal;
   line-height: 45px;
@@ -5752,7 +5766,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   }
 }
 .subscription-form .last-content .all-products .each-product {
-  width: 21.5%;
+  width: 13.5%;
   margin-right: 1.8%;
   margin-left: 1.8%;
   margin-bottom: 0px;
@@ -5835,7 +5849,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 @media all and (max-width: 992px) {
   .subscription .subscription-banner {
-    height: 256px!important;
+    height: 257px!important;
   }
 }
 .subscription .subscription-banner .image-text-content .caption-container {
@@ -5848,9 +5862,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   vertical-align: middle;
 }
 .subscription .subscription-banner .image-text-content .caption h1 {
-  font-family: "JacquesGilles", Verdana, sans-serif;
+  font-family: "Bombshell-Pro", Verdana, sans-serif;
   font-weight: 200;
-  font-style: italic;
   font-size: 42px;
   font-style: normal;
   line-height: 45px;
@@ -6083,6 +6096,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   width: 162px;
   padding-right: 20px;
   vertical-align: top;
+  min-height: 140px;
 }
 .subscription .last-content .center .reasons h5 {
   font-family: 'Gotham-Medium', Verdana, sans-serif;
@@ -6147,7 +6161,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 @media all and (max-width: 992px) {
   .collections .collections-banner {
-    height: 256px!important;
+    height: 257px!important;
   }
 }
 .collections .collections-banner .image-text-content .caption-container {
@@ -6165,9 +6179,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   }
 }
 .collections .collections-banner .image-text-content .caption-container .caption h1 {
-  font-family: "JacquesGilles", Verdana, sans-serif;
+  font-family: "Bombshell-Pro", Verdana, sans-serif;
   font-weight: 200;
-  font-style: italic;
   font-size: 42px;
   font-style: normal;
   line-height: 45px;
@@ -6340,7 +6353,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 @media all and (max-width: 992px) {
   .cart .cart-banner {
-    height: 256px!important;
+    height: 257px!important;
   }
 }
 .cart .cart-banner .image-text-content .caption-container {
@@ -6353,9 +6366,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   text-align: center;
 }
 .cart .cart-banner .image-text-content .caption-container .caption h1 {
-  font-family: "JacquesGilles", Verdana, sans-serif;
+  font-family: "Bombshell-Pro", Verdana, sans-serif;
   font-weight: 200;
-  font-style: italic;
   font-size: 42px;
   font-style: normal;
   line-height: 45px;
@@ -6734,9 +6746,18 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 600;
   font-style: italic;
-  font-size: 10px;
-  line-height: 13px;
+  font-size: 13px;
+  line-height: 16px;
   letter-spacing: .03em;
+}
+@media all and (max-width: 992px) {
+  .cart #cart .table tfoot .btn-update,
+  .cart #confirmation .table tfoot .btn-update,
+  .cart #cart .table tfoot .btn-empty,
+  .cart #confirmation .table tfoot .btn-empty {
+    font-size: 10px;
+    line-height: 13px;
+  }
 }
 .cart #cart .table tfoot .btn-update i,
 .cart #confirmation .table tfoot .btn-update i,
@@ -7425,6 +7446,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 600;
   font-style: italic;
+  font-weight: 400;
   font-size: 13px;
   color: #ae4e0e;
   text-align: center;
@@ -9560,18 +9582,13 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   margin-top: 81px!important;
   padding-bottom: 120px!important;
 }
-@media all and (max-width: 992px) {
-  .blog {
-    margin-top: 60px;
-  }
-}
 .blog .blog-banner {
   background: url("../images/content/blog-banner.jpg") no-repeat;
   background-size: cover;
 }
 @media all and (max-width: 992px) {
   .blog .blog-banner {
-    height: 256px!important;
+    height: 257px!important;
   }
 }
 .blog .blog-banner .image-text-content .caption-container {
@@ -9584,9 +9601,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   text-align: center;
 }
 .blog .blog-banner .image-text-content .caption-container .caption h1 {
-  font-family: "JacquesGilles", Verdana, sans-serif;
+  font-family: "Bombshell-Pro", Verdana, sans-serif;
   font-weight: 200;
-  font-style: italic;
   font-size: 42px;
   font-style: normal;
   line-height: 45px;
@@ -9946,7 +9962,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 @media all and (max-width: 992px) {
   .trade .trade-banner {
-    height: 256px!important;
+    height: 257px!important;
   }
 }
 .trade .trade-banner .image-text-content .caption-container {
@@ -9959,9 +9975,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   vertical-align: middle;
 }
 .trade .trade-banner .image-text-content .caption h1 {
-  font-family: "JacquesGilles", Verdana, sans-serif;
+  font-family: "Bombshell-Pro", Verdana, sans-serif;
   font-weight: 200;
-  font-style: italic;
   font-size: 42px;
   font-style: normal;
   line-height: 45px;
@@ -10237,7 +10252,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 @media all and (max-width: 992px) {
   .trade-signup .trade-signup-banner {
-    height: 256px!important;
+    height: 257px!important;
   }
 }
 .trade-signup .trade-signup-banner .image-text-content .caption-container {
@@ -10250,9 +10265,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   vertical-align: middle;
 }
 .trade-signup .trade-signup-banner .image-text-content .caption h1 {
-  font-family: "JacquesGilles", Verdana, sans-serif;
+  font-family: "Bombshell-Pro", Verdana, sans-serif;
   font-weight: 200;
-  font-style: italic;
   font-size: 42px;
   font-style: normal;
   line-height: 45px;
@@ -10706,7 +10720,7 @@ div#footer-wrapper .search span.ajax_msg {
 }
 @media all and (max-width: 992px) {
   .our-story .our-story-banner {
-    height: 256px!important;
+    height: 257px!important;
   }
 }
 .our-story .our-story-banner .image-text-content .caption-container {
@@ -10719,9 +10733,8 @@ div#footer-wrapper .search span.ajax_msg {
   text-align: center;
 }
 .our-story .our-story-banner .image-text-content .caption-container .caption h1 {
-  font-family: "JacquesGilles", Verdana, sans-serif;
+  font-family: "Bombshell-Pro", Verdana, sans-serif;
   font-weight: 200;
-  font-style: italic;
   font-size: 42px;
   font-style: normal;
   line-height: 45px;
@@ -10999,7 +11012,7 @@ div#footer-wrapper .search span.ajax_msg {
 }
 @media all and (max-width: 992px) {
   .shipping-info .shipping-info-banner {
-    height: 256px!important;
+    height: 257px!important;
   }
 }
 .shipping-info .shipping-info-banner .image-text-content .caption-container {
@@ -11012,9 +11025,8 @@ div#footer-wrapper .search span.ajax_msg {
   text-align: center;
 }
 .shipping-info .shipping-info-banner .image-text-content .caption-container .caption h1 {
-  font-family: "JacquesGilles", Verdana, sans-serif;
+  font-family: "Bombshell-Pro", Verdana, sans-serif;
   font-weight: 200;
-  font-style: italic;
   font-size: 42px;
   font-style: normal;
   line-height: 45px;
@@ -11305,7 +11317,7 @@ div#footer-wrapper .search span.ajax_msg {
 }
 @media all and (max-width: 992px) {
   .privacy .privacy-banner {
-    height: 256px!important;
+    height: 257px!important;
   }
 }
 .privacy .privacy-banner .image-text-content .caption-container {
@@ -11318,9 +11330,8 @@ div#footer-wrapper .search span.ajax_msg {
   text-align: center;
 }
 .privacy .privacy-banner .image-text-content .caption-container .caption h1 {
-  font-family: "JacquesGilles", Verdana, sans-serif;
+  font-family: "Bombshell-Pro", Verdana, sans-serif;
   font-weight: 200;
-  font-style: italic;
   font-size: 42px;
   font-style: normal;
   line-height: 45px;
@@ -11376,6 +11387,7 @@ div#footer-wrapper .search span.ajax_msg {
 }
 .privacy .main-content .privacy-col-1 {
   padding-right: 60px;
+  border-right: 1px solid #ccc;
 }
 .privacy .main-content .privacy-col-2 {
   padding-left: 60px;
@@ -11396,8 +11408,8 @@ div#footer-wrapper .search span.ajax_msg {
   font-family: 'Gotham-Book', Verdana, sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 13px;
-  line-height: 24px;
+  font-size: 11.5px;
+  line-height: 19px;
   color: #464646;
   margin-bottom: 20px;
 }
@@ -11418,8 +11430,9 @@ div#footer-wrapper .search span.ajax_msg {
 }
 .privacy .main-content span {
   font-family: "minion-pro", Verdana, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-style: italic;
+  font-weight: 600;
   font-size: 13px;
   line-height: 16px;
   color: #ae4e0e;
@@ -11468,7 +11481,7 @@ div#footer-wrapper .search span.ajax_msg {
   text-align: center;
   color: #ffffff;
   position: absolute;
-  top: 1px;
+  top: 2px;
   left: 0;
   width: 16px;
   height: 16px;
@@ -11576,7 +11589,7 @@ div#footer-wrapper .search span.ajax_msg {
 }
 @media all and (max-width: 992px) {
   .faq .faq-banner {
-    height: 256px!important;
+    height: 257px!important;
   }
 }
 .faq .faq-banner .image-text-content .caption-container {
@@ -11589,9 +11602,8 @@ div#footer-wrapper .search span.ajax_msg {
   text-align: center;
 }
 .faq .faq-banner .image-text-content .caption-container .caption h1 {
-  font-family: "JacquesGilles", Verdana, sans-serif;
+  font-family: "Bombshell-Pro", Verdana, sans-serif;
   font-weight: 200;
-  font-style: italic;
   font-size: 42px;
   font-style: normal;
   line-height: 45px;
@@ -11859,7 +11871,7 @@ div#footer-wrapper .search span.ajax_msg {
   text-align: center;
 }
 .not-found h1 {
-  font-family: "JacquesGilles", Verdana, sans-serif;
+  font-family: "Bombshell-Pro", Verdana, sans-serif;
   font-weight: 200;
   font-style: normal;
   font-size: 56px;
@@ -12225,7 +12237,7 @@ div#footer-wrapper .search span.ajax_msg {
 }
 @media all and (max-width: 992px) {
   .careers .careers-banner {
-    height: 256px!important;
+    height: 257px!important;
   }
 }
 .careers .careers-banner .image-text-content .caption-container {
@@ -12238,9 +12250,8 @@ div#footer-wrapper .search span.ajax_msg {
   text-align: center;
 }
 .careers .careers-banner .image-text-content .caption-container .caption h1 {
-  font-family: "JacquesGilles", Verdana, sans-serif;
+  font-family: "Bombshell-Pro", Verdana, sans-serif;
   font-weight: 200;
-  font-style: italic;
   font-size: 42px;
   font-style: normal;
   line-height: 45px;
@@ -12602,7 +12613,7 @@ div#footer-wrapper .search span.ajax_msg {
   display: block;
   width: 168px;
   margin-left: -84px;
-  margin: 70px auto;
+  margin: 0px auto 70px;
   cursor: pointer;
 }
 .careers .main-content .forth-content #application-form .apply-button:hover {
@@ -12876,19 +12887,19 @@ div#footer-wrapper .search span.ajax_msg {
   .careers .main-content .second-content .reasons {
     padding-top: 13px;
   }
-  .careers .main-content .second-content .slick {
+  .careers .main-content .second-content .careers-slick {
     width: 90%;
     margin: 0 auto;
   }
-  .careers .main-content .second-content .slick .slick-prev:before,
-  .careers .main-content .second-content .slick .slick-next:before {
+  .careers .main-content .second-content .careers-slick .slick-prev:before,
+  .careers .main-content .second-content .careers-slick .slick-next:before {
     font: normal normal normal 14px/1 FontAwesome;
     font-size: 12px;
   }
-  .careers .main-content .second-content .slick .slick-prev:before {
+  .careers .main-content .second-content .careers-slick .slick-prev:before {
     content: "\f053";
   }
-  .careers .main-content .second-content .slick .slick-next:before {
+  .careers .main-content .second-content .careers-slick .slick-next:before {
     content: "\f054";
   }
   .careers .main-content .second-content .reason {
@@ -13026,7 +13037,7 @@ div#footer-wrapper .search span.ajax_msg {
 }
 @media all and (max-width: 992px) {
   .rewards .rewards-banner {
-    height: 256px!important;
+    height: 257px!important;
   }
 }
 .rewards .rewards-banner .image-text-content .caption-container {
@@ -13039,9 +13050,8 @@ div#footer-wrapper .search span.ajax_msg {
   text-align: center;
 }
 .rewards .rewards-banner .image-text-content .caption-container .caption h1 {
-  font-family: "JacquesGilles", Verdana, sans-serif;
+  font-family: "Bombshell-Pro", Verdana, sans-serif;
   font-weight: 200;
-  font-style: italic;
   font-size: 42px;
   font-style: normal;
   line-height: 45px;
@@ -13223,7 +13233,7 @@ div#footer-wrapper .search span.ajax_msg {
   position: absolute;
   top: 0;
   left: 50%;
-  margin-left: -50px;
+  margin-left: -44px;
 }
 .rewards .main-content .second-content .reasons .reason .points {
   font-family: "minion-pro", Verdana, sans-serif;
@@ -13449,7 +13459,7 @@ div#footer-wrapper .search span.ajax_msg {
   text-align: center;
   color: #ffffff;
   position: absolute;
-  top: 1px;
+  top: 2px;
   left: 0;
   width: 16px;
   height: 16px;
@@ -13609,7 +13619,7 @@ div#footer-wrapper .search span.ajax_msg {
 }
 @media all and (max-width: 992px) {
   .discover .discover-banner {
-    height: 256px!important;
+    height: 257px!important;
   }
 }
 .discover .discover-banner .image-text-content .caption-container {
@@ -13622,9 +13632,8 @@ div#footer-wrapper .search span.ajax_msg {
   text-align: center;
 }
 .discover .discover-banner .image-text-content .caption-container .caption h1 {
-  font-family: "JacquesGilles", Verdana, sans-serif;
+  font-family: "Bombshell-Pro", Verdana, sans-serif;
   font-weight: 200;
-  font-style: italic;
   font-size: 42px;
   font-style: normal;
   line-height: 45px;
@@ -16281,7 +16290,7 @@ html {
     background: url('../images/content/mobile-store-banner.png') no-repeat;
     background-size: cover;
     background-position-y: 100%;
-    height: 210px!important;
+    height: 257px!important;
   }
   #content-wrapper.store .store-banner .image-text-content .caption {
     text-align: center;
@@ -17227,7 +17236,7 @@ html {
     background: url("../images/content/our_story/mobile-our-story-banner.png") no-repeat;
     background-size: cover;
     background-position-y: 100%;
-    height: 256px!important;
+    height: 257px!important;
   }
   #content-wrapper.our-story .our-story-banner .caption-container {
     display: block;
@@ -18107,7 +18116,7 @@ html {
     display: inline-block;
     vertical-align: top;
     position: relative;
-    left: 15px;
+    left: -10px;
     top: 20px;
   }
   .subscription-form .second-content .image-text-content .terms {
@@ -18159,5 +18168,58 @@ html {
   }
   .subscription-form .last-content .all-products .col-md-12 .each-product .product-caption p {
     text-align: left;
+  }
+}
+@media (max-width: 991px) {
+  .trade .trade-banner .image-text-content .caption {
+    height: 105px!important;
+  }
+  .trade .trade-banner .image-text-content .caption h1 {
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    margin-top: 20px;
+  }
+  .trade .trade-banner .image-text-content .caption p {
+    font-family: 'Gotham-Book', Verdana, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 10px;
+    line-height: 13px;
+    max-width: 75%;
+  }
+  .trade .main-content h1 {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.015em;
+  }
+  .trade .main-content p {
+    width: auto!important;
+  }
+  .trade .main-content hr {
+    margin: 10px auto!important;
+  }
+  .trade .main-content .image-text-content .center .hotels .hotel,
+  .trade .main-content .image-text-content .center .awards .hotel,
+  .trade .main-content .image-text-content .center .hotels .award,
+  .trade .main-content .image-text-content .center .awards .award {
+    padding: 0;
+    width: 49%;
+    display: inline-block;
+  }
+  .trade .main-content .last-content {
+    padding-bottom: 40px;
+  }
+}
+@media (max-width: 991px) {
+  .blog {
+    margin-top: 25px!important;
+  }
+  .blog .blog-banner .image-text-content .caption {
+    height: 105px!important;
+  }
+  .blog .blog-banner .image-text-content .caption h1 {
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    margin-top: 20px;
   }
 }

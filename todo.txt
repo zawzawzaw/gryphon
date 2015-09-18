@@ -38,9 +38,25 @@ gift card template image
 
 case id : gde 79692102
 
-
-
-
-
 account mobile
 subscription mobile
+
+
+
+centos65-15g-cpanel
+
+default primary resolvers
+103.25.203.2
+
+default secondary resolvers
+8.8.8.8
+
+cpanel generated password
+uyuN0va&uWBG
+
+
+
+
+
+old server ip
+202.157.153.148

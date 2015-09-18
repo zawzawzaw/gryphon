@@ -41,7 +41,7 @@
 <body <?php body_class(); ?>>
 
 <div id="page-wrapper">
-	<div id="header-wrapper" class=""><!-- container-fluid -->
+	<div id="header-wrapper" class="visible-md visible-lg"><!-- container-fluid -->
 		<header id="main-header" class="container">
 			<div class="row">
 				<div class="col-md-12">

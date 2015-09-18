@@ -301,6 +301,12 @@ strong {
   line-height: 16px;
 }
 
+.validation-advice {
+  .minion-pro-italic;
+  position: absolute;
+  top: 24px;
+}
+
 
 //  __     ___    ____  ___    _    ____  _     _____ ____
 //  \ \   / / \  |  _ \|_ _|  / \  | __ )| |   | ____/ ___|
@@ -387,6 +393,16 @@ strong {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Bombshell-Pro';
+  src: url('../fonts/Bombshell-Pro.eot?#iefix') format('embedded-opentype'),  
+       url('../fonts/Bombshell-Pro.woff') format('woff'), 
+       url('../fonts/Bombshell-Pro.ttf')  format('truetype'), 
+       url('../fonts/Bombshell-Pro.svg#Bombshell-Pro') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .gotham-bold{
   font-family: 'Gotham-Bold', Verdana, sans-serif;
   font-weight: 500; 
@@ -461,6 +477,12 @@ strong {
 
 .jacques-gilles-regular {
   font-family: "JacquesGilles", Verdana, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.bombshell-pro {
+  font-family: "Bombshell-Pro", Verdana, sans-serif;
   font-weight: 200;
   font-style: normal;
 }
@@ -632,7 +654,8 @@ ul.messages {
       background: #fff;
 
       &.no-banner {
-        border-bottom: 1px solid #ccc;
+        // border-bottom: 1px solid #ccc;
+        box-shadow: 1px 1px 16px #EAEAEA;
       }
       
       .marquee {
@@ -1339,7 +1362,7 @@ ul.messages {
             position: relative; 
             left: -50%;
             h1 {
-              .jacques-gilles;
+              .bombshell-pro;
               font-size: 70px;
               line-height: 66px;
               margin-top: 20px;
@@ -1523,7 +1546,8 @@ ul.messages {
         .minion-pro-semibold-italic;
         display: inline-block;
         line-height: 18px;
-        color: @dark-grey;
+        // color: @dark-grey;
+        color: @new-grey;
         vertical-align: top;
         height: 13px;
         font-size: 13px;
@@ -3593,7 +3617,7 @@ div.product {
 
     .image-text-content {
       h1 {
-        .jacques-gilles;
+        .bombshell-pro;
         font-size: 25px;
         font-style: normal;
         line-height: 16px;
@@ -3841,7 +3865,7 @@ div.product {
         }        
 
         textarea {
-          /*border: 1px solid #ccc;*/
+          border: 1px solid #ccc;
           width: 100%;
           height: 107px;
           .gotham-book;
@@ -3916,7 +3940,7 @@ div.product {
         vertical-align: middle;
 
         h1 {
-          .jacques-gilles;
+          .bombshell-pro;
           font-size: 42px;
           font-style: normal;
           line-height: 45px;
@@ -4690,7 +4714,7 @@ div.product {
     background: url("../images/content/signup-banner.jpg") no-repeat center center;
     background-size: cover;
     @media all and (max-width: 992px) {
-      height: 256px!important;  
+      height: 257px!important;  
     }
     
     .image-text-content {
@@ -4707,7 +4731,7 @@ div.product {
         }
 
         h1 {
-          .jacques-gilles;
+          .bombshell-pro;
           font-size: 42px;
           font-style: normal;
           line-height: 45px;
@@ -5065,6 +5089,7 @@ div.product {
           float: left;
           @media all and (max-width: 470px) {
             margin-right: 10px;
+            width: 31%;
           }
           &:nth-of-type(3) {
             margin-right: 0px;
@@ -5257,9 +5282,9 @@ div.product {
         padding-left: 6px;
         text-align: left;
         color: #464646;
-        vertical-align: bottom;
+        vertical-align: middle;
       }
-    }
+    }    
     .email-points {      
       top: -5px;
       right: -110px;
@@ -5337,7 +5362,7 @@ div.product {
     background: url("../images/content/subscription-form-banner.jpg") no-repeat center center;
     background-size: cover;
     @media all and (max-width: 992px) {
-      height: 256px!important;  
+      height: 257px!important;  
     }
     .image-text-content {
       .caption-container {
@@ -5350,7 +5375,7 @@ div.product {
         vertical-align: middle;
 
         h1 {
-          .jacques-gilles;
+          .bombshell-pro;
           font-size: 42px;
           font-style: normal;
           line-height: 45px;
@@ -5802,7 +5827,8 @@ div.product {
         }
       }
       .each-product {
-        width: 21.5%;
+        // width: 21.5%;
+        width: 13.5%;
         margin-right: 1.8%;
         margin-left: 1.8%;
         margin-bottom: 0px;
@@ -5890,7 +5916,7 @@ div.product {
     background: url("../images/content/subscription-banner.jpg") no-repeat center center;
     background-size: cover;
     @media all and (max-width: 992px) {
-      height: 256px!important;  
+      height: 257px!important;  
     }
     .image-text-content {
       .caption-container {
@@ -5902,7 +5928,7 @@ div.product {
         display: table-cell;
         vertical-align: middle;        
         h1 {
-          .jacques-gilles;
+          .bombshell-pro;
           font-size: 42px;
           font-style: normal;
           line-height: 45px;
@@ -6132,6 +6158,7 @@ div.product {
         width: 162px;
         padding-right: 20px;
         vertical-align: top;
+        min-height: 140px;
         h5 {
           .gotham-medium;
           font-size: 10px;
@@ -6194,7 +6221,7 @@ div.product {
     background: url("../images/content/collections-banner.jpg") no-repeat;
     background-size: cover;
     @media all and (max-width: 992px) {
-      height: 256px!important;  
+      height: 257px!important;  
     }
     .image-text-content {
       .caption-container {
@@ -6209,7 +6236,7 @@ div.product {
           vertical-align: middle;
           text-align: center;
           h1 {
-            .jacques-gilles;
+            .bombshell-pro;
             font-size: 42px;
             font-style: normal;
             line-height: 45px;
@@ -6386,7 +6413,7 @@ div.product {
     background: url("../images/content/collections-banner.jpg") no-repeat;
     background-size: cover;
     @media all and (max-width: 992px) {
-      height: 256px!important;  
+      height: 257px!important;  
     }
     .image-text-content {
       .caption-container {
@@ -6398,7 +6425,7 @@ div.product {
           vertical-align: middle;
           text-align: center;
           h1 {
-            .jacques-gilles;
+            .bombshell-pro;
             font-size: 42px;
             font-style: normal;
             line-height: 45px;
@@ -6751,8 +6778,12 @@ div.product {
           background: none;
           color: @dark-grey;
           .minion-pro-semibold-italic;
-          font-size: 10px;
-          line-height: 13px;
+          font-size: 13px;
+          line-height: 16px;          
+          @media all and (max-width: 992px) {
+            font-size: 10px;
+            line-height: 13px;
+          }
           letter-spacing: .03em;
           i {
             color: @dark-orange;
@@ -7374,6 +7405,7 @@ div.product {
               padding-top: 17px;
               p {
                 .minion-pro-semibold-italic;
+                font-weight: 400;
                 font-size: 13px;
                 color: @dark-orange;
                 text-align: center;
@@ -9455,14 +9487,11 @@ div.product {
 .blog {
   margin-top: 81px!important;
   padding-bottom: 120px!important;
-  @media all and (max-width: 992px) {
-    margin-top: 60px;
-  } 
   .blog-banner {
     background: url("../images/content/blog-banner.jpg") no-repeat;
     background-size: cover;
     @media all and (max-width: 992px) {
-      height: 256px!important;  
+      height: 257px!important;  
     }
     .image-text-content {
       .caption-container {
@@ -9474,7 +9503,7 @@ div.product {
           vertical-align: middle;
           text-align: center;
           h1 {
-            .jacques-gilles;
+            .bombshell-pro;
             font-size: 42px;
             font-style: normal;
             line-height: 45px;
@@ -9836,7 +9865,7 @@ div.product {
     background: url("../images/content/trade-banner.jpg") no-repeat center center;
     background-size: cover;
     @media all and (max-width: 992px) {
-      height: 256px!important;  
+      height: 257px!important;  
     }
     .image-text-content {
       .caption-container {
@@ -9849,7 +9878,7 @@ div.product {
         vertical-align: middle;
 
         h1 {
-          .jacques-gilles;
+          .bombshell-pro;
           font-size: 42px;
           font-style: normal;
           line-height: 45px;
@@ -10142,7 +10171,7 @@ div.product {
     background: url("../images/content/trade-banner.jpg") no-repeat center center;
     background-size: cover;
     @media all and (max-width: 992px) {
-      height: 256px!important;  
+      height: 257px!important;  
     }
     .image-text-content {
       .caption-container {
@@ -10155,7 +10184,7 @@ div.product {
         vertical-align: middle;
 
         h1 {
-          .jacques-gilles;
+          .bombshell-pro;
           font-size: 42px;
           font-style: normal;
           line-height: 45px;
@@ -10643,7 +10672,7 @@ div#footer-wrapper {
     background: url("../images/content/our_story/our-story-banner.jpg") no-repeat;
     background-size: cover;
     @media all and (max-width: 992px) {
-      height: 256px!important;  
+      height: 257px!important;  
     }
     .image-text-content {
       .caption-container {
@@ -10655,7 +10684,7 @@ div#footer-wrapper {
           vertical-align: middle;
           text-align: center;
           h1 {
-            .jacques-gilles;
+            .bombshell-pro;
             font-size: 42px;
             font-style: normal;
             line-height: 45px;
@@ -11007,7 +11036,7 @@ div#footer-wrapper {
     background: url("../images/content/shipping-info-banner.jpg") no-repeat;
     background-size: cover;
     @media all and (max-width: 992px) {
-      height: 256px!important;  
+      height: 257px!important;  
     }
     .image-text-content {
       .caption-container {
@@ -11019,7 +11048,7 @@ div#footer-wrapper {
           vertical-align: middle;
           text-align: center;
           h1 {
-            .jacques-gilles;
+            .bombshell-pro;
             font-size: 42px;
             font-style: normal;
             line-height: 45px;
@@ -11372,7 +11401,7 @@ div#footer-wrapper {
     background: url("../images/content/signup-banner.jpg") no-repeat;
     background-size: cover;
     @media all and (max-width: 992px) {
-      height: 256px!important;  
+      height: 257px!important;  
     }
     .image-text-content {
       .caption-container {
@@ -11384,7 +11413,7 @@ div#footer-wrapper {
           vertical-align: middle;
           text-align: center;
           h1 {
-            .jacques-gilles;
+            .bombshell-pro;
             font-size: 42px;
             font-style: normal;
             line-height: 45px;
@@ -11465,7 +11494,8 @@ div#footer-wrapper {
 
 
     .privacy-col-1{
-      padding-right: 60px;      
+      padding-right: 60px;    
+      border-right: 1px solid #ccc;  
     }
 
     .privacy-col-2{      
@@ -11490,8 +11520,8 @@ div#footer-wrapper {
 
     p {
       .gotham-book;
-      font-size: 13px;
-      line-height: 24px;
+      font-size: 11.5px;
+      line-height: 19px;
       // font-size: 11.5px;
       // line-height: 19px;
       color: @new-grey;
@@ -11514,7 +11544,8 @@ div#footer-wrapper {
       text-transform: uppercase;
     }
     span {
-      .minion-pro-italic;
+      .minion-pro-medium-italic;
+      font-weight: 600;
       font-size: 13px;
       line-height: 16px;
       color: @dark-orange;
@@ -11570,7 +11601,7 @@ div#footer-wrapper {
           color: #ffffff;
 
           position: absolute;
-          top: 1px;
+          top: 2px;
           left: 0;
           width: 16px;
           height: 16px;
@@ -11731,7 +11762,7 @@ div#footer-wrapper {
     background: url("../images/content/faq-banner.jpg") no-repeat;
     background-size: cover;
     @media all and (max-width: 992px) {
-      height: 256px!important;  
+      height: 257px!important;  
     }
     .image-text-content {
       .caption-container {
@@ -11743,7 +11774,7 @@ div#footer-wrapper {
           vertical-align: middle;
           text-align: center;
           h1 {
-            .jacques-gilles;
+            .bombshell-pro;
             font-size: 42px;
             font-style: normal;
             line-height: 45px;
@@ -12072,7 +12103,7 @@ div#footer-wrapper {
   text-align: center;
 
   h1 {
-    .jacques-gilles-regular;
+    .bombshell-pro;
     font-size: 56px;
     letter-spacing: -0.01em;
     color: @dark-grey;
@@ -12492,7 +12523,7 @@ div#footer-wrapper {
 
     background-size: cover;
     @media all and (max-width: 992px) {
-      height: 256px!important;  
+      height: 257px!important;  
     }
     .image-text-content {
       .caption-container {
@@ -12504,7 +12535,7 @@ div#footer-wrapper {
           vertical-align: middle;
           text-align: center;
           h1 {
-            .jacques-gilles;
+            .bombshell-pro;
             font-size: 42px;
             font-style: normal;
             line-height: 45px;
@@ -12924,7 +12955,10 @@ div#footer-wrapper {
           // bottom: 31px;
           // left: 50%;
           margin-left: -84px;
-          margin: 70px auto;
+          // margin: 70px auto;
+          // margin: 70px auto 0px;
+          margin: 0px auto 70px;
+
 
           cursor: pointer;
 
@@ -13232,7 +13266,7 @@ div#footer-wrapper {
           padding-top: 13px;
         }
 
-        .slick {
+        .careers-slick {
           width: 90%;
           margin: 0 auto;
 
@@ -13435,7 +13469,7 @@ div#footer-wrapper {
 
     background-size: cover;
     @media all and (max-width: 992px) {
-      height: 256px!important;  
+      height: 257px!important;  
     }
     .image-text-content {
       .caption-container {
@@ -13447,7 +13481,7 @@ div#footer-wrapper {
           vertical-align: middle;
           text-align: center;
           h1 {
-            .jacques-gilles;
+            .bombshell-pro;
             font-size: 42px;
             font-style: normal;
             line-height: 45px;
@@ -13652,7 +13686,7 @@ div#footer-wrapper {
             position: absolute;
             top: 0;
             left: 50%;
-            margin-left: -50px;
+            margin-left: -44px;
 
 
           }
@@ -13913,7 +13947,7 @@ div#footer-wrapper {
             color: #ffffff;
 
             position: absolute;
-            top: 1px;
+            top: 2px;
             left: 0;
             width: 16px;
             height: 16px;
@@ -14154,7 +14188,7 @@ div#footer-wrapper {
 
     background-size: cover;
     @media all and (max-width: 992px) {
-      height: 256px!important;  
+      height: 257px!important;  
     }
     .image-text-content {
       .caption-container {
@@ -14166,7 +14200,7 @@ div#footer-wrapper {
           vertical-align: middle;
           text-align: center;
           h1 {
-            .jacques-gilles;
+            .bombshell-pro;
             font-size: 42px;
             font-style: normal;
             line-height: 45px;
@@ -17481,7 +17515,7 @@ html{
       background-size: cover;
       background-position-y: 100%;
       // height: 185px!important;
-      height: 210px!important;
+      height: 257px!important;
 
       .image-text-content .caption{
         text-align: center;
@@ -18663,7 +18697,7 @@ html{
       background: url("../images/content/our_story/mobile-our-story-banner.png") no-repeat;
       background-size: cover;
       background-position-y: 100%;
-      height: 256px!important;  
+      height: 257px!important;  
 
       .caption-container{
         display: block;
@@ -19747,7 +19781,8 @@ html{
           display: inline-block;
           vertical-align: top;
           position: relative;
-          left: 15px;
+          // left: 15px;
+          left: -10px;
           top: 20px;
         }
         .terms {
@@ -19810,6 +19845,74 @@ html{
   }
 }
 
+@media (max-width: 991px) {
+  .trade {
+    .trade-banner {
+      .image-text-content {
+        .caption {
+          height: 105px!important;            
+          h1 {
+            font-size: 20px;
+            letter-spacing: -0.02em;
+            margin-top: 20px;
+          } 
+          p {
+            .gotham-book; 
+            font-size: 10px;
+            line-height: 13px;
+            max-width: 75%;       
+          }
+        }
+      }
+    }
+    .main-content {
+      h1 {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.015em;
+      }
+      p {
+        width: auto!important;
+      }
+      hr {
+        margin: 10px auto!important;
+      }
+      .image-text-content {
+        .center {            
+          .hotels, .awards {
+            .hotel, .award {
+              padding: 0;
+              width: 49%;
+              display: inline-block;
+            }
+          }
+        }
+      }
+      .last-content {
+        padding-bottom: 40px;
+      }
+
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .blog {
+    margin-top: 25px!important;
+    .blog-banner {
+      .image-text-content {
+        .caption {
+          height: 105px!important;            
+          h1 {
+            font-size: 20px;
+            letter-spacing: -0.02em;
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+}
 
 //////////////////////////////////////////////////////////////////////////////////////
 //        _   _    ___ ____  _   _ ____     ____ ____ ____    _____ _   _ ____      //
