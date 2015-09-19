@@ -62,8 +62,10 @@ class Miragedesign_Shippingcustomiser_Model_Carrier_Customrate
         $method = Mage::getModel('shipping/rate_result_method');
 		
 		//PG::Start
-		$GroupName = "";
+		$GroupName = "";		
+		$ShippingCharge = '';		
 		$minimumFreeShippingAmount = '';
+		
 		$login = Mage::getSingleton( 'customer/session' )->isLoggedIn(); //Check if User is Logged In
 		if($login)
 		{
@@ -74,25 +76,44 @@ class Miragedesign_Shippingcustomiser_Model_Carrier_Customrate
 		}
 		if($GroupName != "")
 		{
-			$minimumFreeShippingAmountColl = Mage::getModel('shippingcustomiser/customfreeshippingrate')->getCollection();			
-			$minimumFreeShippingAmountColl->addFieldToFilter('groupname', $GroupName);
-			$freeShippingAmountData = $minimumFreeShippingAmountColl->getFirstItem();			
-			$minimumFreeShippingAmount = $freeShippingAmountData->getAmount();
-			$minimumFreeShippingAmount = ($minimumFreeShippingAmount-1);
+			$cart_sub_total = $request->getPackageValue();		
+			
+			$minimumFreeShippingAmountColl = Mage::getModel('shippingcustomiser/customfreeshippingrate')->getCollection()			
+			->addFieldToFilter('groupname', $GroupName)
+			->addFieldToFilter('OrderAmountFrom', array('lteq' => $cart_sub_total));
+			
+			$minimumFreeShippingAmountColl->getSelect()->order('OrderAmountFrom DESC');
+			$minimumFreeShippingAmountColl->getSelect()->limit(1);
+						
+			$freeShippingAmountData = $minimumFreeShippingAmountColl->getFirstItem();
+			$ShippingCharge = isset($freeShippingAmountData['ShippingCharge'])?$freeShippingAmountData['ShippingCharge']:'';			
 		}
-		if($minimumFreeShippingAmount == "")
+		if($ShippingCharge == "")
 		{
 			$minimumFreeShippingAmount = $this->getConfigData('free_shipping_threshold');
 		}		
 		//PG::End
 
         if ($destCountry == $mainCountry) {
-            if (is_numeric($minimumFreeShippingAmount) &&
+			
+			if($ShippingCharge != "" && $ShippingCharge>0)
+			{
+				$freeShipping = false;				
+			}
+			else if($ShippingCharge != "" && $ShippingCharge==0)
+			{
+				$freeShipping = true;				
+			}
+			else
+			{
+				if (is_numeric($minimumFreeShippingAmount) &&
                 $minimumFreeShippingAmount > 0 &&
                 $request->getPackageValue() > $minimumFreeShippingAmount
-            ) {
-                $freeShipping = true;
-            }
+				) {
+					$freeShipping = true;
+				}
+				$ShippingCharge = $this->getConfigData('flatrate_shipping');
+			}           
 
             if ($freeShipping) {
                 $method->setCarrier($this->_code);
@@ -108,8 +129,10 @@ class Miragedesign_Shippingcustomiser_Model_Carrier_Customrate
                 $method->setCarrier($this->_code);
                 $method->setCarrierTitle($this->getConfigData('title'));
                 $method->setMethod('customrate_flatrate');
-                $method->setPrice($this->getConfigData('flatrate_shipping'));
-                $method->setCost($this->getConfigData('flatrate_shipping'));
+                //$method->setPrice($this->getConfigData('flatrate_shipping'));
+                //$method->setCost($this->getConfigData('flatrate_shipping'));
+				$method->setPrice($ShippingCharge);
+                $method->setCost($ShippingCharge);
                 $method->setMethodTitle($this->getConfigData('flatrate_shipping_text'));
                 $method->setDeliveryTime($this->getConfigData('flatrate_shipping_delivery_time'));
                 $method->setMethodDescription($this->getConfigData('flatrate_shipping_delivery_time'));
