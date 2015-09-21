@@ -17780,7 +17780,27 @@ html{
                   right: 4px;
                 }
               }
-            }
+
+              &.selected{
+                &:before{
+                  content: '\2713';
+                  display: block;
+
+                  .gotham-thin;
+                  font-size: 17px;
+                  line-height: 18px;
+                  color: @dark-orange;
+
+                  position: absolute;
+                  top: -2px;
+                  width: 12px;  
+                  height: 12px;
+                  left: 2px;
+                  
+                }
+              }
+
+            } // li
           }
         }
 
