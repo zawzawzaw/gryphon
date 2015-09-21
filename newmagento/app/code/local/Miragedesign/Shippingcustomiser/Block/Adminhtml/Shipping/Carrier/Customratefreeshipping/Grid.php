@@ -40,9 +40,17 @@ class Miragedesign_Shippingcustomiser_Block_Adminhtml_Shipping_Carrier_Customrat
             'index'     => 'groupname',
             'default'   => '*',
         ));
-        $this->addColumn('amount', array(
-            'header'    => Mage::helper('adminhtml')->__('MinimumFreeShippingAmount'),
-            'index'     => 'amount',
+        $this->addColumn('OrderAmountFrom', array(
+            'header'    => Mage::helper('adminhtml')->__('OrderAmountFrom'),
+            'index'     => 'OrderAmountFrom',
+        ));
+		$this->addColumn('OrderAmountTo', array(
+            'header'    => Mage::helper('adminhtml')->__('OrderAmountTo'),
+            'index'     => 'OrderAmountTo',
+        ));
+		$this->addColumn('ShippingCharge', array(
+            'header'    => Mage::helper('adminhtml')->__('ShippingCharge'),
+            'index'     => 'ShippingCharge',
         ));
         return Mage_Adminhtml_Block_Widget_Grid::_prepareColumns();
     }

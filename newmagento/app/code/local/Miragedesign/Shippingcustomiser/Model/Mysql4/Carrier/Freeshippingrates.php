@@ -23,7 +23,7 @@ class Miragedesign_Shippingcustomiser_Model_Mysql4_Carrier_Freeshippingrates ext
                 $csvLines = explode("\n", $csv);
                 $csvLine = array_shift($csvLines);
                 $csvLine = $this->_getCsvValues($csvLine);
-                if (count($csvLine) < 2) {
+                if (count($csvLine) < 4) {
                     $exceptions[0] = Mage::helper('shipping')->__('Invalid Custom Rates File Format');
                 }
                
@@ -34,9 +34,9 @@ class Miragedesign_Shippingcustomiser_Model_Mysql4_Carrier_Freeshippingrates ext
 
                         $csvLine = $this->_getCsvValues($csvLine);                       
 
-                        $data[] = array('website_id' => $websiteId, 'groupname' => $csvLine[0], 'amount' => $csvLine[1]);
+                        $data[] = array('website_id' => $websiteId, 'groupname' => $csvLine[0], 'OrderAmountFrom' => $csvLine[1], 'OrderAmountTo' => $csvLine[2], 'ShippingCharge' => $csvLine[3]);
 
-                        $dataDetails[] = array('groupname' => $csvLine[0], 'amount' => $csvLine[1]);
+                        $dataDetails[] = array('groupname' => $csvLine[0], 'OrderAmountFrom' => $csvLine[1], 'OrderAmountTo' => $csvLine[2], 'ShippingCharge' => $csvLine[3]);
                     }
                 }
 				
@@ -52,7 +52,7 @@ class Miragedesign_Shippingcustomiser_Model_Mysql4_Carrier_Freeshippingrates ext
                         try {
                             $connection->insert($table, $dataLine);
                         } catch (Exception $e) {
-                            $exceptions[] = Mage::helper('shipping')->__('Duplicate Row #%s (Group Name "%s", Amount "%s")', $dataDetails[$k]['groupname'], $dataDetails[$k]['amount']);
+                            $exceptions[] = Mage::helper('shipping')->__('Duplicate Row #%s (GroupName "%s", OrderAmountFrom "%s", OrderAmountTo "%s", ShippingCharge "%s")', $dataDetails[$k]['groupname'], $dataDetails[$k]['OrderAmountFrom'], $dataDetails[$k]['OrderAmountTo'], $dataDetails[$k]['ShippingCharge']);
                         }
                     }
                 }
