@@ -26,6 +26,7 @@
     this.store_filter_detail_dictionary = [];
 
     this.open_state = "close";
+    this.filter_state = "none";
 
     this.create_html();
     this.init();
@@ -150,6 +151,9 @@
         store_filter_element.prepend(all_input_element.clone());
         store_filter_fragment.append(store_filter_element);
 
+
+        //store_filter_fragment
+
         
 
         this.store_filter_detail_dictionary[collection_id] = store_filter_element;
@@ -177,6 +181,7 @@
     close: function(){
       if (this.open_state != "close") {
         this.open_state = "close";
+        this.filter_state = "none";
         // this.product_list_container.show(0);
 
         this.sort_container.stop(0).hide(0);
@@ -185,27 +190,36 @@
 
         this.main_buttons.removeClass('selected');
 
+        this.product_list_container.css({'display':'inline-block'});
+
         $(window).scrollTop(0);
       }
     },
 
     show_sort: function(){
+      this.filter_state = "sort";
       this.sort_container.stop(0).slideDown(500);
       this.filter_container.stop(0).slideUp(500);
       this.detail_container.stop(0).slideUp(500);
 
       this.main_buttons.removeClass('selected');
       this.main_sort_button.addClass('selected');
+
+      this.product_list_container.css({'display': 'inline-block'});
     },
     show_filter: function(){
+      this.filter_state = "filter";
       this.sort_container.stop(0).slideUp(500);
       this.filter_container.stop(0).slideDown(500);
       this.detail_container.stop(0).slideUp(500);
 
       this.main_buttons.removeClass('selected');
       this.main_filter_button.addClass('selected');
+
+      this.product_list_container.css({'display': 'none'});
     },
     show_detail: function(){
+      this.filter_state = "detail";
       this.sort_container.stop(0).slideUp(500);
       this.filter_container.stop(0).slideUp(500);
       this.detail_container.stop(0).slideDown(500);
@@ -226,21 +240,39 @@
     on_main_sort_button_click: function(event) {
       event.preventDefault();
 
+      /*
       this.open();
       this.show_sort();
+      */
+      if (this.open_state == "open" && this.filter_state == "sort") {
+        this.close();
+      } else {
+        this.open();
+        this.show_sort();
+      }
     },
     on_main_filter_button_click: function(event) {
       event.preventDefault();
 
+      /*
       this.open();
       this.show_filter();
+      */
+
+      if (this.open_state == "open" && this.filter_state == "filter") {
+        this.close();
+      } else {
+        this.open();
+        this.show_filter();
+      }
+
     },
     on_clear_filter_button_click: function(event) {
       event.preventDefault();
 
       // clear all the filters
     },
-    on_apply_filter_button_click: function(event) {
+    on_apply_filter_button_click: function(event) {              // command for this is already in inline html. this is all display related actions
       event.preventDefault();
 
       // apply all checked filters to the list
@@ -281,8 +313,12 @@
 
 
     },
-    on_detail_apply_buttons_click: function(event){
-      // this.show_filter();
+    on_detail_apply_buttons_click: function(event){                // command for this is already in inline html. this is all display related actions
+
+      this.show_filter();
+      
+
+
     }
 
   };
