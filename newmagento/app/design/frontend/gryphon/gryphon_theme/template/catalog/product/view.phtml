@@ -311,9 +311,9 @@ endif;
                                       dataType: 'json',
                                       type : 'post',
                                       data: data,
-                                      success: function(data){
+                                      complete: function(data){
                                             jQuery('#ajax_loader').hide();
-                                            // alert(data.status + ": " + data.message);
+                                            console.log(data.status + ": " + data.message);
 
                                             if(data.status=="ERROR") {
                                                 jQuery('span.ajax_msg').html(data.message).show().delay(5000).fadeOut();

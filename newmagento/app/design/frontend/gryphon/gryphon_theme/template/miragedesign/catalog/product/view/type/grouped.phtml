@@ -101,7 +101,7 @@
                     <div class="italic">
                     <?php if ($_item->isSaleable()) : ?>
                         <a href="#" class="minus"><i class="fa fa-minus"></i></a>
-                        <input type="text" name="super_group[<?php echo $_item->getId() ?>]" maxlength="12" value="<?php echo $_item->getQty()*1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
+                        <input type="text" name="super_group[<?php echo $_item->getId() ?>]" maxlength="12" value="<?php echo 0; //echo $_item->getQty()*1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
                         <a href="#" class="plus"><i class="fa fa-plus"></i></a>
                     <?php else: ?>
                         <p class="availability out-of-stock italic"><span><?php echo $this->__('Out of stock') ?></span></p>

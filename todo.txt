@@ -34,6 +34,7 @@ revise email
 
 day dropdown gift card
 gift card template image
+error message on account edit
 
 
 case id : gde 79692102
@@ -53,6 +54,7 @@ default secondary resolvers
 
 cpanel generated password
 uyuN0va&uWBG
+
 
 
 
