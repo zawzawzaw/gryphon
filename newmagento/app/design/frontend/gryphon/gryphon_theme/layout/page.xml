@@ -101,7 +101,7 @@
                  <action method="addItem"><type>skin_css</type><name>css/font-awesome.min.css</name></action>
                  <action method="addItem"><type>skin_css</type><name>js/plugins/textrotator/simpletextrotator.css</name></action>
                  <action method="addItem"><type>skin_css</type><name>css/style.css</name></action>                
-                 <action method="addItem"><type>skin_css</type><name>css/jairus-style.css</name></action>                
+                 <action method="addItem"><type>skin_css</type><name>css/mobile-style.css</name></action>
 
                 <!-- Sets viewport meta tag using text block -->
                 <block type="core/text" name="head.viewport">
