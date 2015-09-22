@@ -24,9 +24,14 @@
     this.product_list_container = $('#content-wrapper.store .main-content .all-products');
 
     this.store_filter_detail_dictionary = [];
+    this.store_filter_detail_title_dictionary = [];
 
     this.open_state = "close";
     this.filter_state = "none";
+
+    this.window = $(window);
+
+    this.mobile_header = $('#main-mobile-header');
 
     this.create_html();
     this.init();
@@ -36,6 +41,8 @@
     init: function () {
       console.log("init");
       
+
+
 
 
       this.filter_checkbox_container = this.element.find('#store-filter-expandable-container #store-filter-expandable-checkboxes');
@@ -74,6 +81,13 @@
 
       this.detail_apply_buttons.click(this.on_detail_apply_buttons_click.bind(this));
 
+      //store-filter-button-container
+
+
+      this.mobile_header.addClass('store-sidebar-version');
+
+      this.window.scroll(this.on_window_scroll.bind(this));
+
     },
 
 
@@ -98,6 +112,7 @@
       var title_container_fragment = $(document.createDocumentFragment());
       var title_element = null;
       var li_element = null;
+      var title_href = "";
 
       var arr = $('#content-wrapper.store .side-bar .each-filter-section .title a');
 
@@ -108,6 +123,12 @@
         li_element = $('<li></li>');
         li_element.append(title_element.clone());
         li_element.find('.fa').removeClass('fa-chevron-up').addClass('fa-chevron-right');
+
+
+        title_href = li_element.find('a').attr('href');
+        title_href = title_href.split('#').join('');
+
+        this.store_filter_detail_title_dictionary[title_href] = li_element;
 
         title_container_fragment.append(li_element);
       }
@@ -120,6 +141,9 @@
       var collection_element = null;
       var all_input_element = null;
       var collection_id = '';
+
+
+      var store_filter_element_apply_button = null;
 
       var store_filter_element = null;
       var store_filter_fragment = $(document.createDocumentFragment());
@@ -149,10 +173,12 @@
 
         store_filter_element = $('' + store_filter_detail_template);
         store_filter_element.prepend(all_input_element.clone());
+
+        store_filter_element_apply_button = store_filter_element.find('.store-filter-detail-apply-button');
+        store_filter_element_apply_button.data('detail_id', collection_id);
+
         store_filter_fragment.append(store_filter_element);
 
-
-        //store_filter_fragment
 
         
 
@@ -315,9 +341,42 @@
     },
     on_detail_apply_buttons_click: function(event){                // command for this is already in inline html. this is all display related actions
 
-      this.show_filter();
-      
+      var target = $(event.currentTarget);
+      var detail_id = target.data('detail_id');
 
+      console.log('detail_id: ' + detail_id);
+
+      if(detail_id != undefined && detail_id != null){
+
+
+
+        var detail_title_li = this.store_filter_detail_title_dictionary[detail_id];
+        var detail_element = this.store_filter_detail_dictionary[detail_id];
+
+        // if detail has anything selected...
+        if (detail_element.find('input:checkbox:checked').length > 0) {
+          detail_title_li.addClass('selected');
+        } else {
+          detail_title_li.removeClass('selected');
+        }
+        
+      }
+
+      this.show_filter();
+    },
+
+    on_window_scroll: function(event){
+
+      var scroll_top = this.window.scrollTop();
+
+      //340 = 257 + 83
+
+      //if (scroll_top > 340) { 
+      if (scroll_top > 257) {
+        this.element.addClass('sticky-version');
+      } else {
+        this.element.removeClass('sticky-version');
+      }
 
     }
 
