@@ -87,7 +87,7 @@ if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 						<h2><?php echo $recent["post_title"]; ?></h2>
 						<!-- <p><?php echo $recent["post_excerpt"]; ?></p> -->
 
-						<a href="<?php echo get_permalink($recent["ID"]); ?>" class="cta read-more"><i class="fa fa-arrow-right"></i> Read more</a>
+						<a href="<?php echo get_permalink($recent["ID"]); ?>" class="cta read-more"><i class="my-arrow-right"></i> Read more</a>
 					</div>
 			<?
 				}

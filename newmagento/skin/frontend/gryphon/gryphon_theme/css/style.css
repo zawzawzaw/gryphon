@@ -9694,6 +9694,13 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
+.blog .main-content .image-text-content .post-extra-container {
+  border: 1px solid #ebb387;
+  display: block;
+  position: relative;
+  height: 55px;
+  padding: 8px 20px;
+}
 .blog .main-content .image-text-content .post-extra-content {
   margin-top: 15px;
 }
@@ -9709,7 +9716,6 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .blog .main-content .image-text-content .post-extra-content .post-extra.sharing {
   float: right;
-  padding-top: 5px;
 }
 @media all and (max-width: 1199px) {
   .blog .main-content .image-text-content .post-extra-content .post-extra {
@@ -9747,6 +9753,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .blog .main-content .image-text-content .post-extra-content ul {
   text-align: right;
+  margin-top: 5px;
 }
 .blog .main-content .image-text-content .post-extra-content ul li {
   display: inline-block;
@@ -9813,6 +9820,9 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   letter-spacing: 0.03em;
   margin-bottom: 10px;
 }
+.blog .sidebar .each-sidebar-content h2.search-title {
+  color: #ae4e0e;
+}
 .blog .sidebar .each-sidebar-content input {
   font-family: 'Gotham-Book', Verdana, sans-serif;
   font-weight: 600;
@@ -9820,9 +9830,21 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   padding-left: 5px;
   font-size: 11px;
   line-height: 23px;
-  color: #252525;
+  color: #ae4e0e;
   width: 100%;
   border: 1px solid #ccc;
+}
+.blog .sidebar .each-sidebar-content input::-webkit-input-placeholder {
+  color: #ae4e0e;
+}
+.blog .sidebar .each-sidebar-content input:-moz-placeholder {
+  color: #ae4e0e;
+}
+.blog .sidebar .each-sidebar-content input::-moz-placeholder {
+  color: #ae4e0e;
+}
+.blog .sidebar .each-sidebar-content input:-ms-input-placeholder {
+  color: #ae4e0e;
 }
 .blog .sidebar .each-sidebar-content a.signup {
   background: none;

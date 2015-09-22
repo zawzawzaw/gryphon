@@ -9152,6 +9152,13 @@ div.product {
           }
         }
       }
+      .post-extra-container {
+        border: 1px solid #ebb387;
+        display: block;
+        position: relative;
+        height: 55px;
+        padding: 8px 20px;
+      }
       .post-extra-content {
         margin-top: 15px;
 
@@ -9166,7 +9173,7 @@ div.product {
           }
           &.sharing {
             float: right;
-            padding-top: 5px;
+            // padding-top: 5px;
           }
 
           @media all and (max-width: 1199px) {
@@ -9207,6 +9214,7 @@ div.product {
 
         ul {
           text-align: right;
+          margin-top: 5px;
           li {
             display: inline-block;
             &:first-child {
@@ -9275,15 +9283,19 @@ div.product {
         line-height: 19px;
         letter-spacing: 0.03em;
         margin-bottom: 10px;
+        &.search-title {
+          color: @dark-orange;
+        }        
       }
       input {
         .gotham-book;
         padding-left: 5px;
         font-size: 11px;
         line-height: 23px;
-        color: @dark-grey;
+        color: @dark-orange;
         width: 100%;
         border: 1px solid #ccc;
+        .placeholder(@dark-orange);
       }
       a.signup{
         background: none;
