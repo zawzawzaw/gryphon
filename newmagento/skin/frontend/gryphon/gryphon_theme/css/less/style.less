@@ -525,6 +525,16 @@ height:100%;
 margin:0;
 padding:0;
 }
+
+
+a{
+  color: @dark-orange;
+}
+a:hover, a:focus{
+  color: @dark-grey;
+}
+
+
 .carousel, .item, .active {
 height:100%;
 }
@@ -4299,7 +4309,9 @@ div.product {
               border-right: 1px solid @new-grey-2;
               height: 5px;
               display: inline;
-              padding-left: 6px;
+              //padding-left: 6px;
+              margin-right: 5px;
+
             }
             a {
               .minion-pro-italic;
@@ -12623,10 +12635,24 @@ div#footer-wrapper {
         display: block;
         margin: 0 auto;
 
+        /*
         img{
           display: block;
           margin-bottom: 26px;
         }
+        */
+        .reason-image{
+          margin-bottom: 26px;
+          height: 220px;
+          overflow: hidden;
+
+          img{
+            display: block;
+          }
+        }
+      }
+      .slick-prev, .slick-next{
+        top: 130px;
       }
 
       
@@ -17314,6 +17340,13 @@ html{
     margin-top: 83px !important;
     margin-bottom: 50px;
 
+
+    #messages_product_view{
+      .messages{
+        padding: 20px;
+      }
+    }
+
     .main-product{
       margin-bottom: 32px;
 
@@ -17400,7 +17433,37 @@ html{
           padding-bottom: 15px + 8px;
         }
 
-      } 
+      }
+
+      .product-image{
+
+      }
+      .gift-card-img{
+        height: 390px;
+        .vcenter{
+          height: 390px;
+        }
+
+        .vcenter2 #gift-design-01, 
+        .vcenter2 #gift-design-02{
+          height: 390px;
+          .gifttext{
+            top: 120px;
+          }
+        }
+      }
+      .gift-card-content .inputs .each-input .design-radio{
+        left: 0px;
+      }
+
+      /*
+      .carousel-inner>.item{
+        display: block !important;
+        width: 100%;
+        position: relative !important;
+      }
+      */
+          
 
     } // .main-product
 
@@ -17601,7 +17664,16 @@ html{
 
 
       .write-review{
-        display: none;
+        //display: none;
+        padding-left: 22px;
+        padding-right: 22px;
+        margin-top: 25px;
+
+        button.rate-btn{
+          float: none;
+          width: 100%;
+          margin-top: 0px;
+        }
       }
 
       .mobile-write-review-cta{
@@ -17839,6 +17911,13 @@ html{
       #store-sort-expandable-container{
         display: none;
 
+        &:after{
+          content: "";
+          display: block;
+          border-bottom: 1px solid #eee;
+          padding-top: 26px;
+        }
+
         .sort-by {
           position: relative;
           a.arrow-up-down {            
@@ -17902,6 +17981,9 @@ html{
           border-bottom: 1px solid #cccccc;
           margin-bottom: 38px;
 
+          padding-top: 24px;
+          padding-bottom: 26px;
+
           ul{
             li{
               position: relative;
@@ -17925,17 +18007,46 @@ html{
                   display: inline-block;
                   vertical-align: top;
                 }
-                i{
-                  font-size: 11px;
-                  position: absolute;
-                  top: 5px;
-                  right: 4px;
-                }
+              }
+              i{
+                font-size: 11px;
+                line-height: 20px;
+                color: @dark-grey;
+
+                position: absolute;
+                top: 1px;
+                right: 4px;
+              }
+              .items-selected{
+                .minion-pro-semibold-italic;
+                font-size: 11px;
+                line-height: 13px;
+                letter-spacing: 0.03em;
+                color: @dark-orange;
+                
+                margin-bottom: -2px;
+                margin-left: -20px;
               }
 
               &.selected{
+                padding-left: 23px;
 
                 a{
+
+                  // square
+                  &:before{
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 0px;
+                    left: -22px;
+
+                    height: 14px;
+                    width: 14px;
+                    border: 1px solid #545454;
+                  }
+
+                  // check
                   &:after{
                     content: '\2713';
                     display: inline-block;
@@ -17949,7 +18060,7 @@ html{
                     top: -4px;
                     width: 12px;  
                     height: 12px;
-                    right: -20px;
+                    left: -20px;
 
 
                   } 

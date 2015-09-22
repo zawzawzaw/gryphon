@@ -55,6 +55,10 @@
     
 
     this.init();
+
+    //setTimeout(this.init_product_image.bind(this),3000);
+    //this.init_product_image();
+
   }
 
   GryphonMobileHeader.prototype = {
@@ -92,6 +96,24 @@
 
       this.update_body_class();
 
+      // fix for browser reloading at scroll position
+      // http://stackoverflow.com/questions/7035331/prevent-automatic-browser-scroll-on-refresh
+      $(window).on('beforeunload', function() {
+          $(window).scrollTop(0);
+      });
+    },
+
+    init_product_image: function(){
+      var arr = $('div.product .main-product .product-img .carousel .item');
+      if (arr.length > 1) {
+        $('div.product .main-product .product-img .carousel-inner').slick({
+          infinite: true,
+          dots: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          speed: 300
+        });
+      }
     },
 
     //    ____  ____  _____     ___  _____ _____ 
