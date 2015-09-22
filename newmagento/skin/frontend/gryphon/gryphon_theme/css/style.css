@@ -7816,7 +7816,6 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   line-height: 15px;
 }
 .account .col-main #j2t-referral-lines {
-  margin-top: 50px;
   margin-bottom: 30px;
 }
 .account .col-main #j2t-referral-lines .form-list .field.j2t-rewardpoints-name {
@@ -7937,11 +7936,19 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .account .col-main #j2t-referral-lines .send:hover {
   background-color: #ae4e0e;
 }
+.account .col-main .referral-container {
+  display: inline-block;
+}
 .account .col-main .refer-friend-form {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 80px;
+  float: right;
 }
 .account .col-main .invite-friends {
   margin-bottom: 10px;
+  clear: both;
 }
 .account .col-main .referral-table {
   text-align: left;
@@ -8005,6 +8012,9 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   display: block;
   line-height: 25px;
 }
+.account .col-main .reward-page #my-rewardpoints-table h2 {
+  display: none;
+}
 .account .col-main #reward-points-table {
   margin-top: 30px;
   width: 100%;
@@ -8018,7 +8028,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   padding: 10px 20px;
-  text-align: center;
+  text-align: left;
   color: #707070;
   text-transform: uppercase;
 }
@@ -8030,7 +8040,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-style: normal;
   font-size: 11px;
   line-height: 19px;
-  text-align: center;
+  text-align: left;
 }
 .account .col-main #reward-points-table tbody tr td .j2t-in-title,
 .account .col-main #reward-points-table tbody tr td .j2t-in-txt {

@@ -320,7 +320,7 @@ endif;
                             var subscription_in_the_cart = <?php echo $subscription_in_the_cart; ?>;
 
                             if(subscription_in_the_cart==1) {
-                                jQuery('span.ajax_msg').html('This item cannot be bought with subscription item in the cart.').show().delay(5000).fadeOut();
+                                jQuery('span.ajax_msg').html('This item cannot be purchased with a subscription plan in the cart.').show();
                             }else {
                                 try {
                                     jQuery.ajax({

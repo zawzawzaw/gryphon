@@ -373,27 +373,27 @@ $quoteData= $quote->getData();
 							<div class="cta">
 								<ul class="cta-list">
 									<li>
-										<a href="#" class="currency"><span class="hidden-xs hidden-sm">	
-										<?php $currency_code = Mage::app()->getStore()->getCurrentCurrencyCode(); ?>																	
+										<?php $currency_code = Mage::app()->getStore()->getCurrentCurrencyCode(); ?>
+										<a href="#" class="currency"><span class="hidden-xs hidden-sm">
 										<?php if($currency_code=='SGD'): ?>
-											<i class="currency-icon">S</i><i class="fa fa-dollar"></i>
+											<i class="currency-icon">S</i><i class="fa fa-dollar"></i>Currency</span></a>
 										<?php elseif($currency_code=='AUD'): ?>
-											<i class="currency-icon">A</i><i class="fa fa-dollar"></i>
+											<i class="currency-icon">A</i><i class="fa fa-dollar"></i>Currency</span></a>
 										<?php elseif($currency_code=='HKD'): ?>
-											<i class="currency-icon">HK</i><i class="fa fa-dollar"></i>
+											<i class="currency-icon">HK</i><i class="fa fa-dollar"></i>Currency</span></a>
 										<?php elseif($currency_code=='JPY'): ?>
-											<i class="fa fa-jpy"></i>
+											<i class="fa fa-jpy"></i>Currency</span></a>
 										<?php elseif($currency_code=='EUR'): ?>
-											<i class="fa fa-eur"></i>
+											<i class="fa fa-eur"></i>Currency</span></a>
 										<?php elseif($currency_code=='GBP'): ?>
-											<i class="fa fa-gbp"></i>
+											<i class="fa fa-gbp"></i>Currency</span></a>
 										<?php elseif($currency_code=='CNY'): ?>
-											<i class="fa fa-cny"></i>
+											<i class="fa fa-cny"></i>Currency</span></a>
 										<?php elseif($currency_code=='MYR'): ?>
-											<i class="currency-icon">MYR</i>
+											<i class="currency-icon">MYR</i>Currency</span></a>
 										<?php else: ?>
-											<i class="fa fa-dollar"></i>
-										<?php endif; ?> Currency</span></a>									
+											<i class="fa fa-dollar"></i>Currency</span></a>
+										<?php endif; ?>
 									</li>
 									<li>
 										<a href="#" class="search"><span class="hidden-xs hidden-sm">Search</span></a>									
