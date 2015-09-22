@@ -104,14 +104,10 @@
     },
 
     init_product_image: function(){
+      // not used ever
       var arr = $('div.product .main-product .product-img .carousel .item');
       if (arr.length > 1) {
         $('div.product .main-product .product-img .carousel-inner').slick({
-          infinite: true,
-          dots: false,
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          speed: 300
         });
       }
     },
