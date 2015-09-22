@@ -8013,9 +8013,6 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   display: block;
   line-height: 25px;
 }
-.account .col-main #my-rewardpoints-table h2 {
-  margin-bottom: 10px;
-}
 .account .col-main #reward-points-table {
   margin-top: 30px;
   width: 100%;
@@ -9456,7 +9453,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .account .billing-and-shipping .billing-address .shipping-address-details,
 .account .billing-and-shipping .shipping-address .shipping-address-details {
   background-color: #f6f4f1;
-  padding: 21px 28px 0px;
+  padding: 25px 38px 5px;
   margin-bottom: 30px;
   margin-top: 7px;
 }
