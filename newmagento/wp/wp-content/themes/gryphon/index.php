@@ -58,7 +58,9 @@
 					</div>
 				</div>
 				<div class="col-md-3">
-					<?php get_sidebar(); ?>					
+					<div class="visible-md-block visible-lg-block">
+						<?php get_sidebar(); ?>					
+					</div>
 				</div>		
 			</div>	
 		</div>

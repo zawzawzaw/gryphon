@@ -81,51 +81,30 @@
     <?php else: ?>
 
 
-        <?php if($i == 1): ?>
-            <div class="carousel">
-                <div class="carousel-inner">
-            <?php
+
+        <div class="custom-product-carousel">
+        <?php
             $i = 1;
-            foreach ($this->getGalleryImages() as $_image): ?>
-                <div class="item <?php if($i==1): ?>active<?php endif; ?>">
-                    <img class="img-responsive" src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(700, 526); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>"/>             
-                </div>
-            <?php
-                // $_img = '<img id="image" class="img-responsive" src="'.$this->helper('catalog/image')->init($_product, 'image').'" alt="'.$this->escapeHtml($this->getImageLabel()).'" title="'.$this->escapeHtml($this->getImageLabel()).'" />';
-                // echo $_helper->productAttribute($_product, $_img, 'image');
-                $i++;
+            foreach ($this->getGalleryImages() as $_image): 
+        ?>
+            <div class="custom-product-carousel-item">
+                <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(700, 526); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>"/>
+            </div>
+        <?php
+            $i++;
             endforeach;
-            ?>
-                </div>
-            </div>
-
-        <?php else: ?>
-
-            <div class="custom-product-carousel">
-            <?php
-                $i = 1;
-                foreach ($this->getGalleryImages() as $_image): 
-            ?>
-                <div class="custom-product-carousel-item">
-                    <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(700, 526); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>"/>
-                </div>
-            <?php
-                $i++;
-                endforeach;
-            ?>
-            </div>
-        <?php endif; ?>
+        ?>
+        </div>
         
-        <!--
         <?php if($i > 2): ?>
-        <div class="fa fa-chevron-right next-image-button"></div>
-        <div class="fa fa-chevron-left prev-image-button"></div>    
+            <div class="fa fa-chevron-right next-image-button"></div>
+            <div class="fa fa-chevron-left prev-image-button"></div>    
         <?php endif; ?>
-        -->
 
 
         <script>
         jQuery(document).ready(function($){
+            /*
             $('.carousel').carousel({
                 interval: false
             });
@@ -137,6 +116,7 @@
                 e.preventDefault();
                 $('.carousel').carousel('prev');
             });
+            */
             $('.custom-product-carousel').slick({
                 infinite: true,
                 dots: false,
@@ -144,6 +124,16 @@
                 slidesToScroll: 1,
                 speed: 300
             });
+
+            $('.next-image-button').click(function(e){
+                e.preventDefault();
+                $('.custom-product-carousel').slick('slickNext');
+            });
+            $('.prev-image-button').click(function(e){
+                e.preventDefault();
+                $('.custom-product-carousel').slick('slickPrev');
+            });
+
         });
         </script>
     <?php endif; ?>
