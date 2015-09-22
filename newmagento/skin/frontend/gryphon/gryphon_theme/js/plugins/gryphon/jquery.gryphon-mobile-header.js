@@ -88,6 +88,7 @@
       //$("#page-wrapper").on('scroll', this.on_window_scroll.bind(this));
       
       this.window.resize(this.on_window_resize.bind(this));
+      this.window.scroll(this.on_window_scroll.bind(this));
 
       this.update_body_class();
 
@@ -115,6 +116,8 @@
         $("html").addClass('mobile-menu-open');
         //this.expand_container.stop(0).slideDown(1000);
         this.expand_container.show(0);
+
+        this.window.scrollTop(0);
       }
 
     },
@@ -153,16 +156,25 @@
       if(this.cart_open_state != "open"){
         this.cart_open_state = "open";
 
+        /*
         this.cart_expand_expandable.stop(0).slideDown(500);
         $("html").addClass('mobile-black-menu-open');
+        */
+        $("html").addClass('mobile-menu-cart-open');
+        
       }
     },
     close_cart: function(){
       if(this.cart_open_state != "close"){
         this.cart_open_state = "close";
 
+        /*
         this.cart_expand_expandable.stop(0).slideUp(500);
         $("html").removeClass('mobile-black-menu-open');
+        */
+        
+        $("html").removeClass('mobile-menu-cart-open');
+
       }
     },
     open_search: function(){
@@ -203,12 +215,24 @@
     //                                          
 
     on_window_scroll: function(){
+
+      /*
       console.log('on_window_scroll');
 
       if(this.initial_scroll == false){
         this.initial_scroll = true;
         this.marquee_container.slideUp(500);
       }
+      */
+      
+      var scroll_top = this.window.scrollTop();
+
+      if(scroll_top > 10){
+        this.element.addClass('shadow-version');
+      } else {
+        this.element.removeClass('shadow-version');
+      }
+
     },
 
     on_window_resize: function(){
@@ -245,6 +269,7 @@
     on_search_button_click: function(event) {
       event.preventDefault();
 
+      this.close_menu();
 
       if (this.search_open_state == "close") {
         this.close_cart();
@@ -259,6 +284,8 @@
     on_cart_button_click: function(event) {
       event.preventDefault();
 
+      this.close_menu();
+
       if (this.cart_open_state == "close") {
         this.close_search();
         this.open_cart();
@@ -270,6 +297,14 @@
 
     on_menu_button_click: function(event){
       event.preventDefault();
+
+      // new functionality (for easier use)
+      if (this.search_open_state == "open") {
+        this.close_search();
+      }
+      if (this.cart_open_state == "open") {
+        this.close_cart();
+      }
 
       // toggle
       if (this.menu_open_state == "close") {
