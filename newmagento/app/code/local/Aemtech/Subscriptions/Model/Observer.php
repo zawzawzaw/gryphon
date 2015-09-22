@@ -13,11 +13,11 @@ class Aemtech_Subscriptions_Model_Observer {
 			$params = $action->getRequest()->getParams();
 			$options = urldecode($params['pg']); 
 			$product = $observer->getProduct();	
-			$sku = $product->getData('sku');
+			$sku = $product->getData('sku');			
                         
                         $allskus = array("SGP-ART-1M", "SGP-ART-3M", "SGP-ART-6M", "SGP-ART-12M", "SGP-GUR-1M", "SGP-GUR-3M", "SGP-GUR-6M", "SGP-GUR-12M","INT-ART-1M", "INT-ART-3M", "INT-ART-6M", "INT-ART-12M", "INT-GUR-1M", "INT-GUR-3M", "INT-GUR-6M", "INT-GUR-12M");
                         //$locationskuINTArray = array("INT-ART-1M", "INT-ART-3M", "INT-ART-6M", "INT-ART-12M", "INT-GUR-1M", "INT-GUR-3M", "INT-GUR-6M", "INT-GUR-12M");
-			if(in_array($sku, $allskus))	
+						if(in_array($sku, $allskus))	
                         {
                             $sku_type = explode("-", $sku);
                             $sku_type = $sku_type[0];

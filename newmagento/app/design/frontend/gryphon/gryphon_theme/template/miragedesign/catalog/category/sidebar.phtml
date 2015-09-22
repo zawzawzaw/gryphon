@@ -28,8 +28,8 @@ $allowCategoriesIDs = $this->getAllowCategoires();
     <hr class="small" />
     <?php endif; ?>
     
-    <form action="" id="ajax-filter-form" name="ajax-filter-form">
-        <?php if($current_category_data['url_key']=="store"): ?>
+    <form action="" id="ajax-filter-form" name="ajax-filter-form" class="<?php echo $current_category_data['parent_id']; ?>">
+        <?php if($current_category_data['url_key']=="store" || $current_category_data['parent_id']==5): ?>
         <div class="each-filter-section">
             <div class="all-inputs">
                 <div class="each-input">
@@ -58,7 +58,7 @@ $allowCategoriesIDs = $this->getAllowCategoires();
                 </div>
             </div>
         </div>
-        <input class="ajaxsearch default-store-category" type="hidden" name="categoryId[]" value="<?php echo $current_category_data['entity_id']; ?>" />                 
+        <input class="ajaxsearch default-store-category" type="hidden" name="categoryId[]" value="56" />                 
         <?php endif; ?>
         <?php foreach ($allCategories as $categoryId => $categoryData): ?>
             <?php
@@ -69,7 +69,7 @@ $allowCategoriesIDs = $this->getAllowCategoires();
             <!-- <input type="hidden" value="<?php echo $category->getName(); ?> <?php echo $category->getId(); ?>"> -->
             <?php if(strtolower($current_category_data['name'])!=='pantry'): ?>
 
-                <?php if($category->getId() == $current_category_data['entity_id'] || $category->getId() == $current_category_data['parent_id'] || $current_category_data['url_key']=="store"): ?>
+                <?php //if($category->getId() == $current_category_data['entity_id'] || $category->getId() == $current_category_data['parent_id'] || $current_category_data['url_key']=="store"): ?>
                     <?php if(strtolower($category->getName())!=="pantry" && strtolower($category->getName())!=="gifts"): ?>
                         <div class="each-filter-section has-subsection">
                             <div class="title">
@@ -99,7 +99,7 @@ $allowCategoriesIDs = $this->getAllowCategoires();
                             <?php endif; ?>
                         </div>
                     <?php endif; ?>
-                <?php endif; ?>
+                <?php //endif; ?>
 
             <?php else: ?>
                 <?php //echo $category->getId() . ':' .  $current_category_data['entity_id']; ?>
@@ -251,7 +251,7 @@ $allowCategoriesIDs = $this->getAllowCategoires();
                 $('.default-pantry-category').prop('disabled', false);
             }
 
-            if ($('.has-subsection input.ajaxsearch').is(':checked')) {
+            if ($('input.ajaxsearch').is(':checked')) {
                 $('.default-store-category').prop('disabled', true);
             }else {
                 $('.default-store-category').prop('disabled', false);

@@ -15,33 +15,7 @@ if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 			</ul>
 		</div>
 
-		<?php //dynamic_sidebar( 'sidebar-1' ); ?>				
-
-		<div class="each-sidebar-content">
-			<h2>Tags</h2>
-			<p class="tags">
-				<?php
-				$posttags = get_tags();
-
-				// print_r($posttags);
-				// $posttags = get_the_tags();
-				if ($posttags) {
-					$no_of_tags = count($posttags);
-					$i = 1;
-				  foreach($posttags as $tag) {
-				  	if($i==$no_of_tags):
-				?>
-				    <a href="<?php echo get_tag_link($tag->term_id); ?>"><?php echo $tag->name;  ?></a>
-				    <?php else: ?>
-					<a href="<?php echo get_tag_link($tag->term_id); ?>"><?php echo $tag->name.',';  ?></a>
-				    <?php endif; ?>
-				<?php
-					$i++;
-				  }
-				}
-				?>					
-			</p>
-		</div>
+		<?php //dynamic_sidebar( 'sidebar-1' ); ?>		
 
 		<div class="each-sidebar-content">
 			<h2>Categories</h2>
@@ -60,7 +34,34 @@ if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 				}
 				?>					
 			</ul>
+		</div>		
+
+		<div class="each-sidebar-content">
+			<h2>Tags</h2>
+			<ul class="tags">
+				<?php
+				$posttags = get_tags();
+
+				// print_r($posttags);
+				// $posttags = get_the_tags();
+				if ($posttags) {
+					$no_of_tags = count($posttags);
+					$i = 1;
+				  foreach($posttags as $tag) {
+				  	//if($i==$no_of_tags):
+				?>
+				    <li><a href="<?php echo get_tag_link($tag->term_id); ?>"><?php echo $tag->name;  ?></a></li>
+				    <?php //else: ?>
+					<!-- <li><a href="<?php echo get_tag_link($tag->term_id); ?>"><?php echo $tag->name.',';  ?></a></li> -->
+				    <?php //endif; ?>
+				<?php
+					$i++;
+				  }
+				}
+				?>					
+			</ul>
 		</div>
+		
 		<!-- <div class="each-sidebar-content">
 			<h2>subscribe news letter</h2>
 			<input type="text" name="email" placeholder="Type your email address">

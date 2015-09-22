@@ -62,3 +62,9 @@ uyuN0va&uWBG
 
 old server ip
 202.157.153.148
+
+
+
+new server extension
+mb_convert_encoding()
+mcrypt_module_open()

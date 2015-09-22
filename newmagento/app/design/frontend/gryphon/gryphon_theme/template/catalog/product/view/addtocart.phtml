@@ -41,7 +41,15 @@ if(Mage::getSingleton('customer/session')->isLoggedIn()) {
             <?php if (!$isGiftcardType && $_product->getTypeId() !== 'tin') : ?>
                 <div class="qty-wrapper">
                     <?php if($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium'): ?>
-                    <h5><?php echo $this->__('WEIGHT (KG)') ?></h5>
+                        <?php 
+                        $categoryIds = $_product->getCategoryIds();
+                        $productId = $_product->getId();
+
+                        if (count($parentIds)>0 || in_array(107, $categoryIds) || in_array(102, $categoryIds) || $productId == 157 || $productId == 33): ?>
+                            <h5><?php echo $this->__('Quantity') ?></h5>
+                        <?php else: ?>
+                            <h5><?php echo $this->__('WEIGHT (KG)') ?></h5>
+                        <?php endif; ?>
                     <?php else: ?>
                         <h5><?php echo $this->__('Quantity') ?></h5>
                     <?php endif; ?>

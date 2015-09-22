@@ -53,6 +53,17 @@ if ($_product->getShortDescription()):
     $shortDescription = $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description');
 endif; 
 ?>
+<?php 
+    $subscription_in_the_cart = 0;
+    $allskus = array("SGP-ART-1M", "SGP-ART-3M", "SGP-ART-6M", "SGP-ART-12M", "SGP-GUR-1M", "SGP-GUR-3M", "SGP-GUR-6M", "SGP-GUR-12M","INT-ART-1M", "INT-ART-3M", "INT-ART-6M", "INT-ART-12M", "INT-GUR-1M", "INT-GUR-3M", "INT-GUR-6M", "INT-GUR-12M");
+    $quote = Mage::getSingleton('checkout/session')->getQuote();
+    foreach ($quote->getAllVisibleItems() as $item) {
+        $itemsku = $item->getProduct()->getData('sku');        
+        if(in_array($itemsku, $allskus)) {
+            $subscription_in_the_cart = 1;
+        }
+    }
+?>
 <div id="content-wrapper" class="product">
     <div class="main-product">
         <div class="image-text-content container">
@@ -305,25 +316,32 @@ endif;
                             var data = jQuery('#product_addtocart_form').serialize();
                             data += '&isAjax=1';   
                             jQuery('#ajax_loader').show();
-                            try {
-                                jQuery.ajax({
-                                      url: url,
-                                      dataType: 'json',
-                                      type : 'post',
-                                      data: data,
-                                      complete: function(data){
-                                            jQuery('#ajax_loader').hide();
-                                            console.log(data.status + ": " + data.message);
 
-                                            if(data.status=="ERROR") {
-                                                jQuery('span.ajax_msg').html(data.message).show().delay(5000).fadeOut();
-                                            }else {
-                                                do_update();
-                                                jQuery('span.ajax_msg').html('Added to cart!').show().delay(5000).fadeOut();
-                                            }
-                                      }
-                                });
-                            } catch (e) {
+                            var subscription_in_the_cart = <?php echo $subscription_in_the_cart; ?>;
+
+                            if(subscription_in_the_cart==1) {
+                                jQuery('span.ajax_msg').html('This item cannot be bought with subscription item in the cart.').show().delay(5000).fadeOut();
+                            }else {
+                                try {
+                                    jQuery.ajax({
+                                          url: url,
+                                          dataType: 'json',
+                                          type : 'post',
+                                          data: data,
+                                          complete: function(data){
+                                                jQuery('#ajax_loader').hide();
+                                                console.log(data.status + ": " + data.message);
+
+                                                if(data.status=="ERROR") {
+                                                    jQuery('span.ajax_msg').html(data.message).show().delay(5000).fadeOut();
+                                                }else {
+                                                    do_update();
+                                                    jQuery('span.ajax_msg').html('Added to cart!').show().delay(5000).fadeOut();
+                                                }
+                                          }
+                                    });
+                                } catch (e) {
+                                }                                
                             }
                             //End of our new ajax code    
                             this.form.action = oldUrl;
