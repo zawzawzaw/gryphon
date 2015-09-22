@@ -4859,3 +4859,9 @@ html {
     margin-top: 20px;
   }
 }
+.custom-product-carousel .slick-prev:hover,
+.custom-product-carousel .slick-prev:focus,
+.custom-product-carousel .slick-next:hover,
+.custom-product-carousel .slick-next:focus {
+  display: none;
+}

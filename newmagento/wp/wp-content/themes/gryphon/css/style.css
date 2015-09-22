@@ -7978,7 +7978,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   padding: 10px 20px;
-  text-align: center;
+  text-align: left;
 }
 .account .col-main #referred-friends-table tbody tr td {
   border-top: 1px dashed #ccc;
@@ -7988,7 +7988,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-style: normal;
   font-size: 11px;
   line-height: 19px;
-  text-align: center;
+  text-align: left;
 }
 .account .col-main #referred-friends-table tbody tr:last-child td {
   border-bottom: 1px solid #ccc;
@@ -8012,9 +8012,6 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   color: #ae4e0e;
   display: block;
   line-height: 25px;
-}
-.account .col-main #my-rewardpoints-table h2 {
-  margin-bottom: 10px;
 }
 .account .col-main #reward-points-table {
   margin-top: 30px;
@@ -8290,6 +8287,12 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-size: 18px!important;
   line-height: 26px;
   color: #ae4e0e;
+}
+.account .account-details ul.messages,
+.account .account-details-saved ul.messages {
+  position: absolute;
+  top: -45px;
+  width: 100%;
 }
 .account .account-details #action-col,
 .account .account-details-saved #action-col {
@@ -9208,14 +9211,14 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   padding: 10px 20px;
-  text-align: center;
+  text-align: left;
   color: #707070;
   text-transform: uppercase;
 }
 .account .gift-cards #gift-cards-tbl tbody tr td {
   border-top: 1px dashed #ccc;
   padding: 20px;
-  text-align: center;
+  text-align: left;
 }
 .account .gift-cards #gift-cards-tbl tbody tr td p.order_no {
   color: #ae4e0e;
@@ -9456,7 +9459,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .account .billing-and-shipping .billing-address .shipping-address-details,
 .account .billing-and-shipping .shipping-address .shipping-address-details {
   background-color: #f6f4f1;
-  padding: 21px 28px 0px;
+  padding: 25px 38px 5px;
   margin-bottom: 30px;
   margin-top: 7px;
 }
@@ -9554,6 +9557,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   display: block;
   vertical-align: top;
   margin-top: 1px;
+  text-align: right;
 }
 .account .billing-and-shipping .gift-cards-tbl tr td .set_as_default_billing:hover,
 .account .billing-and-shipping .gift-cards-tbl tr td .set_as_default_shipping:hover {

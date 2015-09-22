@@ -7763,7 +7763,6 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   color: #ae4e0e;
 }
 .account .col-main .points {
-  display: inline-block;
   margin-right: 75px;
   margin-top: 10px;
 }
@@ -7820,16 +7819,10 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   margin-top: 50px;
   margin-bottom: 30px;
 }
-.account .col-main #j2t-referral-lines .form-list {
-  display: inline-block;
-}
 .account .col-main #j2t-referral-lines .form-list .field.j2t-rewardpoints-name {
   width: 280px;
-  display: inline-block;
 }
 .account .col-main #j2t-referral-lines .form-list .field.j2t-rewardpoints-email {
-  display: inline-block;
-  margin-left: 30px;
   position: relative;
 }
 @media all and (max-width: 992px) {
@@ -7934,7 +7927,6 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   text-transform: none;
   text-shadow: none;
   border: none;
-  margin-left: 30px;
 }
 @media all and (max-width: 992px) {
   .account .col-main #j2t-referral-lines .send {
@@ -7978,7 +7970,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   padding: 10px 20px;
-  text-align: center;
+  text-align: left;
 }
 .account .col-main #referred-friends-table tbody tr td {
   border-top: 1px dashed #ccc;
@@ -7988,7 +7980,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-style: normal;
   font-size: 11px;
   line-height: 19px;
-  text-align: center;
+  text-align: left;
 }
 .account .col-main #referred-friends-table tbody tr:last-child td {
   border-bottom: 1px solid #ccc;
@@ -8287,6 +8279,12 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-size: 18px!important;
   line-height: 26px;
   color: #ae4e0e;
+}
+.account .account-details ul.messages,
+.account .account-details-saved ul.messages {
+  position: absolute;
+  top: -45px;
+  width: 100%;
 }
 .account .account-details #action-col,
 .account .account-details-saved #action-col {
@@ -9205,14 +9203,14 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   padding: 10px 20px;
-  text-align: center;
+  text-align: left;
   color: #707070;
   text-transform: uppercase;
 }
 .account .gift-cards #gift-cards-tbl tbody tr td {
   border-top: 1px dashed #ccc;
   padding: 20px;
-  text-align: center;
+  text-align: left;
 }
 .account .gift-cards #gift-cards-tbl tbody tr td p.order_no {
   color: #ae4e0e;
@@ -9551,6 +9549,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   display: block;
   vertical-align: top;
   margin-top: 1px;
+  text-align: right;
 }
 .account .billing-and-shipping .gift-cards-tbl tr td .set_as_default_billing:hover,
 .account .billing-and-shipping .gift-cards-tbl tr td .set_as_default_shipping:hover {

@@ -65,7 +65,7 @@
                         <?php if($_pAddsses): ?>
                             <?php $billingAddress = Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses) ?>
                             <?php $billingCountryName = Mage::getModel('directory/country')->load($billingAddress->getCountryId())->getName(); ?>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="each-billing-detail">
                                     <h2><?php echo $this->__('NAME'); ?></h2>
                                     <p><?php echo implode(' ', array($billingAddress->getFirstname(), $billingAddress->getLastname())); ?></p>
@@ -75,7 +75,7 @@
                                     <p><?php echo $billingAddress->getTelephone(); ?></p>
                                 </div>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-6">
                                 <div class="each-billing-detail">
                                     <h2><?php echo $this->__('ADDRESS'); ?></h2>
                                     <p><?php echo implode(' ', array(implode(' ', $billingAddress->getStreet()), $billingAddress->getCity(), $billingCountryName, $billingAddress->getPostcode())); ?></p>
@@ -144,7 +144,7 @@
                         <?php if ($_pAddsses) :?>
                             <?php $shippingAddress = Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses); ?>
                             <?php $shippingCountryName = Mage::getModel('directory/country')->load($shippingAddress->getCountryId())->getName(); ?>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="each-shipping-detail">
                                     <h2><?php echo $this->__('NAME'); ?></h2>
                                     <p><?php echo implode(' ', array($shippingAddress->getFirstname(), $shippingAddress->getLastname())); ?></p>
@@ -154,7 +154,7 @@
                                     <p><?php echo $shippingAddress->getTelephone(); ?></p>
                                 </div>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-6">
                                 <div class="each-shipping-detail">
                                     <h2><?php echo $this->__('ADDRESS'); ?></h2>
                                     <p><?php echo implode(' ', array(implode(' ', $shippingAddress->getStreet()), $shippingAddress->getCity(), $shippingCountryName, $shippingAddress->getPostcode())); ?></p>

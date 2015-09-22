@@ -7301,7 +7301,7 @@ div.product {
     }
     
     .points {
-      display: inline-block;
+      // display: inline-block;
       margin-right: 75px;  
       margin-top: 10px;    
     }
@@ -7358,15 +7358,15 @@ div.product {
       margin-top: 50px;
       margin-bottom: 30px;
       .form-list {
-        display: inline-block;
+        // display: inline-block;
         .field {
           &.j2t-rewardpoints-name {
             width: 280px;
-            display: inline-block;
+            // display: inline-block;
           }
           &.j2t-rewardpoints-email {           
-            display: inline-block;
-            margin-left: 30px;
+            // display: inline-block;
+            // margin-left: 30px;
             position: relative;
             @media all and (max-width: 992px) {
               margin-left: 0px;
@@ -7463,7 +7463,7 @@ div.product {
         text-transform: none;
         text-shadow: none;
         border: none;
-        margin-left: 30px;
+        // margin-left: 30px;
         @media all and (max-width: 992px) {
           margin-top: 25px;
           margin-left: 0px;
@@ -7510,7 +7510,7 @@ div.product {
             border-top: 1px solid #ccc;
             border-bottom: 1px solid #ccc;
             padding: 10px 20px;
-            text-align: center;
+            text-align: left;
           }
         }
       }
@@ -7522,7 +7522,7 @@ div.product {
             .gotham-book;
             font-size: 11px;
             line-height: 19px;  
-            text-align: center;       
+            text-align: left;       
           }
           &:last-child {
             td {
@@ -7847,6 +7847,11 @@ div.product {
   }
 
   .account-details, .account-details-saved {    
+    ul.messages {
+      position: absolute;
+      top: -45px;
+      width: 100%;
+    }
     #action-col {
       text-align: right;
     }
@@ -8699,7 +8704,7 @@ div.product {
             border-top: 1px solid #ccc;
             border-bottom: 1px solid #ccc;
             padding: 10px 20px;
-            text-align: center;
+            text-align: left;
             color: #707070;
             text-transform: uppercase;
           }
@@ -8710,7 +8715,7 @@ div.product {
           td {
             border-top: 1px dashed #ccc;
             padding: 20px;
-            text-align: center;
+            text-align: left;
             p.order_no {
               color: @dark-orange;
             }
@@ -9010,6 +9015,7 @@ div.product {
             display: block;
             vertical-align: top;
             margin-top: 1px;
+            text-align: right;
             &:hover {
               color: @dark-orange;
             }            
