@@ -2087,6 +2087,7 @@ html{
 
     #mobile-currency{
 
+
       #mobile-currency-header{
         background: #484848;
         position: relative;
@@ -6102,3 +6103,126 @@ html{
   }
 
 } // #mobile-blog-category-container
+
+
+
+//    __  __  ___  ____ ___ _     _____      _    ____ ____ ___  _   _ _   _ _____   ____   _    ____ _____ ____  
+//   |  \/  |/ _ \| __ )_ _| |   | ____|    / \  / ___/ ___/ _ \| | | | \ | |_   _| |  _ \ / \  / ___| ____/ ___| 
+//   | |\/| | | | |  _ \| || |   |  _|     / _ \| |  | |  | | | | | | |  \| | | |   | |_) / _ \| |  _|  _| \___ \ 
+//   | |  | | |_| | |_) | || |___| |___   / ___ \ |__| |__| |_| | |_| | |\  | | |   |  __/ ___ \ |_| | |___ ___) |
+//   |_|  |_|\___/|____/___|_____|_____| /_/   \_\____\____\___/ \___/|_| \_| |_|   |_| /_/   \_\____|_____|____/ 
+//                                                                                                                
+
+
+@media (max-width: 991px) {
+  .account{
+    .gift-cards{
+      #gift-cards-tbl{
+        thead tr th{
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        tbody tr td{
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+
+      .pager .limiter{
+        margin-right: -20px;
+      }
+
+    }
+
+    .col-main .box-account .form-list .fields{
+
+      .custom-field{
+        width: auto !important;
+      }
+      .custom-field-right{
+        width: auto !important;
+      }
+    }
+
+  }
+
+  body.giftvoucher-index-view .form-list{
+    float: none;
+  }
+
+
+} // @media (max-width: 991px)
+
+
+
+
+#mobile-custom-giftcard-view-table{
+  table{
+    width: 100%;
+  }
+  thead{
+    tr{
+      th{
+        .gotham-medium;
+        font-size: 11px;
+        line-height: 19px;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        padding: 10px 20px;
+
+        text-align: center;
+        &:first-child{
+          padding-left: 7px;
+          text-align: left;
+        }
+      }
+
+    }
+  }
+  tbody{
+    tr{
+      &:last-child{
+        td{
+          border-bottom: 1px solid #ccc;
+        }
+      }
+
+      td{
+        border-top: 1px dashed #ccc;
+        // padding: 20px;
+        // text-align: center;
+        padding: 20px;
+        text-align: left;
+
+        &:first-child{
+          padding-left: 7px;
+        }
+
+      }
+    }
+  }
+
+  span{
+    .gotham-book;
+    font-size: 11px;
+    line-height: 19px;
+    color: #464646;
+  }
+
+  span.price, 
+  span.date{
+    .minion-pro-semibold-italic;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+  }
+
+  span.price{
+    color: #ae4e0e;
+  }
+
+}
+
+
+

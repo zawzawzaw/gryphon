@@ -2,3 +2,5 @@
 html/css/.DS_Store
 *.DS_Store
 html/css/style.css
+newmagento/skin/frontend/gryphon/gryphon_theme/css/mobile-style.css
+newmagento/skin/frontend/gryphon/gryphon_theme/css/style.css

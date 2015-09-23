@@ -19,78 +19,133 @@
         <h2><?php echo $this->__('History') ?></h2>
     </div>
 
-    <table class="data-table" id="giftcard_history_table">
-        <thead>
-            <tr>
-                <th><?php echo $this->__('Action') ?></th>
-                <th><?php echo $this->__('Balance') ?></th>
-                <th><?php echo $this->__('Date') ?></th>
-                <th><?php echo $this->__('Balance Change') ?></th>
-                <th><?php echo $this->__('Order') ?></th>
-                <th><?php echo $this->__('Comments') ?></th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($_history as $_item): ?>
+    <div class="visible-md-block visible-lg-block">
+        <table class="data-table" id="giftcard_history_table">
+            <thead>
                 <tr>
-
-                    <td>
-                        <span class="item-hidden"><?php echo $this->__('Action') ?></span>
-                        <span class="item-detail"><?php echo $this->getActionName($_item) ?></span>
-                    </td>
-                    <td>
-                        <span class="item-hidden"><?php echo $this->__('Balance') ?></span>
-                        <span class="item-detail price">
-                            <?php if (is_null($_item->getBalance())): ?>
-                                <?php echo $this->__('N/A') ?>
-                            <?php else: ?>
-                                <?php echo $this->getBalanceFormat($_item) ?>
-                            <?php endif ?>
-                        </span>
-                    </td>
-                    <td>
-                        <span class="item-hidden"><?php echo $this->__('Date') ?></span>
-                        <span class="item-detail date"><?php echo $this->formatDate($_item->getCreatedAt(), 'medium') ?></span>
-                    </td>
-                    <td>
-                        <span class="item-hidden"><?php echo $this->__('Balance Change') ?></span>
-                        <span class="item-detail price"><?php echo $this->getAmountFormat($_item) ?></span>
-                    </td>
-                    <td>
-                        <span class="item-hidden"><?php echo $this->__('Order') ?></span>
-                        <span class="item-detail">
-                            <?php if ($_item->getOrderIncrementId()): ?>
-                                <!-- <a href="<?php echo $this->getUrl('sales/order/view', array('order_id' => $_item->getOrderId())) ?>" title="<?php echo $this->__('View Order') ?>"><?php echo $_item->getOrderIncrementId() ?></a> -->
-                                <?php echo $_item->getOrderIncrementId() ?>
-                            <?php else: ?>
-                                <?php echo $this->__('N/A') ?>
-                            <?php endif ?>
-                        </span>
-                    </td>
-                    <td>
-                        <span class="item-hidden"><?php echo $this->__('Comments') ?></span>
-                        <span class="item-detail">
-                            <?php
-                            //Hai.Tran
-                            if ($_item->getCustomerId() == Mage::getSingleton('customer/session')->getCustomerId()) {
-                                echo $_item->getComments();
-                            } else {
-                                $email_history = $_item->getCustomerEmail();
-                                if ($email_history)
-                                    echo $_item->getExtraContent() . ' (' . $email_history . ')';
-                                else
-                                    echo $_item->getExtraContent() != null ? $_item->getExtraContent() : $_item->getComments();
-                            }
-                            ?>
-                        </span>
-                    </td>
+                    <th><?php echo $this->__('Action') ?></th>
+                    <th><?php echo $this->__('Balance') ?></th>
+                    <th><?php echo $this->__('Date') ?></th>
+                    <th><?php echo $this->__('Balance Change') ?></th>
+                    <th><?php echo $this->__('Order') ?></th>
+                    <th><?php echo $this->__('Comments') ?></th>
                 </tr>
-            <?php endforeach ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php foreach ($_history as $_item): ?>
+                    <tr>
+
+                        <td>
+                            <span class="item-hidden"><?php echo $this->__('Action') ?></span>
+                            <span class="item-detail"><?php echo $this->getActionName($_item) ?></span>
+                        </td>
+                        <td>
+                            <span class="item-hidden"><?php echo $this->__('Balance') ?></span>
+                            <span class="item-detail price">
+                                <?php if (is_null($_item->getBalance())): ?>
+                                    <?php echo $this->__('N/A') ?>
+                                <?php else: ?>
+                                    <?php echo $this->getBalanceFormat($_item) ?>
+                                <?php endif ?>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="item-hidden"><?php echo $this->__('Date') ?></span>
+                            <span class="item-detail date"><?php echo $this->formatDate($_item->getCreatedAt(), 'medium') ?></span>
+                        </td>
+                        <td>
+                            <span class="item-hidden"><?php echo $this->__('Balance Change') ?></span>
+                            <span class="item-detail price"><?php echo $this->getAmountFormat($_item) ?></span>
+                        </td>
+                        <td>
+                            <span class="item-hidden"><?php echo $this->__('Order') ?></span>
+                            <span class="item-detail">
+                                <?php if ($_item->getOrderIncrementId()): ?>
+                                    <!-- <a href="<?php echo $this->getUrl('sales/order/view', array('order_id' => $_item->getOrderId())) ?>" title="<?php echo $this->__('View Order') ?>"><?php echo $_item->getOrderIncrementId() ?></a> -->
+                                    <?php echo $_item->getOrderIncrementId() ?>
+                                <?php else: ?>
+                                    <?php echo $this->__('N/A') ?>
+                                <?php endif ?>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="item-hidden"><?php echo $this->__('Comments') ?></span>
+                            <span class="item-detail">
+                                <?php
+                                //Hai.Tran
+                                if ($_item->getCustomerId() == Mage::getSingleton('customer/session')->getCustomerId()) {
+                                    echo $_item->getComments();
+                                } else {
+                                    $email_history = $_item->getCustomerEmail();
+                                    if ($email_history)
+                                        echo $_item->getExtraContent() . ' (' . $email_history . ')';
+                                    else
+                                        echo $_item->getExtraContent() != null ? $_item->getExtraContent() : $_item->getComments();
+                                }
+                                ?>
+                            </span>
+                        </td>
+                    </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="visible-xs-block visible-sm-block">
+        <div id="mobile-custom-giftcard-view-table">
+            <table cellspacing="0" class="data-table linearize-table">
+                <thead>
+                    <tr>
+                        <th><?php echo $this->__('Balance') ?></th>
+                        <th><?php echo $this->__('Date') ?></th>
+                        <th><?php echo $this->__('Comments') ?></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($_history as $_item): ?>
+                        <tr>
+                            <td>
+                                <span class="item-detail price">
+                                    <?php if (is_null($_item->getBalance())): ?>
+                                        <?php echo $this->__('N/A') ?>
+                                    <?php else: ?>
+                                        <?php echo $this->getBalanceFormat($_item) ?>
+                                    <?php endif ?>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="item-detail date"><?php echo $this->formatDate($_item->getCreatedAt(), 'medium') ?></span>
+                            </td>
+                            <td>
+                                <span class="item-detail">
+                                    <?php
+                                    //Hai.Tran
+                                    if ($_item->getCustomerId() == Mage::getSingleton('customer/session')->getCustomerId()) {
+                                        echo $_item->getComments();
+                                    } else {
+                                        $email_history = $_item->getCustomerEmail();
+                                        if ($email_history)
+                                            echo $_item->getExtraContent() . ' (' . $email_history . ')';
+                                        else
+                                            echo $_item->getExtraContent() != null ? $_item->getExtraContent() : $_item->getComments();
+                                    }
+                                    ?>
+                                </span>
+                            </td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
     <script type="text/javascript">
         decorateTable('giftcard_history_table');
     </script>
+
+
 <?php endif ?>
 
 <!--<div class="buttons-set">
