@@ -117,6 +117,7 @@ class Mage_Paypal_Model_Standard extends Mage_Payment_Model_Method_Abstract
      */
     public function getStandardCheckoutFormFields()
     {
+        // echo 'been here!'; exit();
         $orderIncrementId = $this->getCheckout()->getLastRealOrderId();
         $order = Mage::getModel('sales/order')->loadByIncrementId($orderIncrementId);
         /* @var $api Mage_Paypal_Model_Api_Standard */

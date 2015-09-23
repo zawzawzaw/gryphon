@@ -6792,6 +6792,10 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .cart #confirmation .table tfoot .btn-empty:hover {
   color: #ae4e0e;
 }
+.cart #cart #checkout-review-table-wrapper .table tbody tr td,
+.cart #confirmation #checkout-review-table-wrapper .table tbody tr td {
+  vertical-align: middle!important;
+}
 .cart #cart .action-container,
 .cart #confirmation .action-container {
   margin-top: 50px;
@@ -7654,6 +7658,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .checkout-onepage-success {
   padding-top: 60px;
+  border: 0px!important;
 }
 .checkout-onepage-success .messages {
   display: none;
@@ -9383,9 +9388,11 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .account #addredeem-giftvoucher-code .buttons-set {
   margin-top: 15px;
   margin-bottom: 10px;
+  margin-left: 0px!important;
 }
 .account #addredeem-giftvoucher-code .buttons-set .button-add-list {
   float: none!important;
+  display: block;
 }
 .account #addredeem-giftvoucher-code .buttons-set .button-add-list button {
   float: none!important;
