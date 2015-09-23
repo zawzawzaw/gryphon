@@ -2087,6 +2087,7 @@ html{
 
     #mobile-currency{
 
+
       #mobile-currency-header{
         background: #484848;
         position: relative;
@@ -6128,7 +6129,100 @@ html{
         }
       }
 
+      .pager .limiter{
+        margin-right: -20px;
+      }
+
+    }
+
+    .col-main .box-account .form-list .fields{
+
+      .custom-field{
+        width: auto !important;
+      }
+      .custom-field-right{
+        width: auto !important;
+      }
+    }
+
+  }
+
+  body.giftvoucher-index-view .form-list{
+    float: none;
+  }
+
+
+} // @media (max-width: 991px)
+
+
+
+
+#mobile-custom-giftcard-view-table{
+  table{
+    width: 100%;
+  }
+  thead{
+    tr{
+      th{
+        .gotham-medium;
+        font-size: 11px;
+        line-height: 19px;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        padding: 10px 20px;
+
+        text-align: center;
+        &:first-child{
+          padding-left: 7px;
+          text-align: left;
+        }
+      }
+
     }
   }
-} // @media (max-width: 991px)
+  tbody{
+    tr{
+      &:last-child{
+        td{
+          border-bottom: 1px solid #ccc;
+        }
+      }
+
+      td{
+        border-top: 1px dashed #ccc;
+        // padding: 20px;
+        // text-align: center;
+        padding: 20px;
+        text-align: left;
+
+        &:first-child{
+          padding-left: 7px;
+        }
+
+      }
+    }
+  }
+
+  span{
+    .gotham-book;
+    font-size: 11px;
+    line-height: 19px;
+    color: #464646;
+  }
+
+  span.price, 
+  span.date{
+    .minion-pro-semibold-italic;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+  }
+
+  span.price{
+    color: #ae4e0e;
+  }
+
+}
+
+
 
