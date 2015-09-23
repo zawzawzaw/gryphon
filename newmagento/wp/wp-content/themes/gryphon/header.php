@@ -132,7 +132,7 @@
 
 
 	<div id="mobile-header-wrapper" class="visible-xs visible-sm">
-		<header id="main-mobile-header" class="store-sidebar-version">
+		<header id="main-mobile-header">
 			<div class="marquee">
 	    	<p class="rotate"><span class="rotating flip up" style="display: block; transform: rotateX(-180deg);"><span class="front">Use code "shopnow" to enjoy 10% off first purchase</span><span class="back"> Free local shipping when you spend over $60</span></span></p>
 	    </div>
@@ -250,3 +250,8 @@
 			$('#main-mobile-header').gryphon_mobile_wp_header({});
 		});
 	</script>
+
+
+
+	
+
