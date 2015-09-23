@@ -7655,6 +7655,9 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .checkout-onepage-success {
   padding-top: 60px;
 }
+.checkout-onepage-success .messages {
+  display: none;
+}
 .account {
   margin-top: 115px!important;
   /*padding-bottom: 85px!important;*/
