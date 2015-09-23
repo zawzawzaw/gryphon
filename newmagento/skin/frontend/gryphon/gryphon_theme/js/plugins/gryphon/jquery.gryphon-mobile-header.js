@@ -27,6 +27,9 @@
 
     this.account_list_element = this.element.find("#mobile-account ul");
 
+    this.currency_expand_container = this.element.find('#mobile-currency-expand-container');
+    this.currency_expand_button = this.element.find('#mobile-currency-expand-button');
+
     this.submenu_elements = this.element.find(".mobile-submenu");
     this.submenu_expandable_elements = this.element.find(".mobile-submenu .has-sub-menu");
     this.submenu_expandable_list_elements = this.element.find(".mobile-submenu .has-sub-menu .sub-menu");
@@ -42,6 +45,7 @@
 
     this.menu_open_state = "close";
     this.account_open_state = "close";
+    this.currency_open_state = "close";
 
     this.cart_open_state = "close";
     this.search_open_state = "close";
@@ -53,15 +57,20 @@
     this.body_element.prepend($("#mobile-header-wrapper"));
 
     
-
+    this.create_html();
     this.init();
-
-    //setTimeout(this.init_product_image.bind(this),3000);
-    //this.init_product_image();
 
   }
 
   GryphonMobileHeader.prototype = {
+
+    create_html: function(){
+      var new_currency_dropdown = $('#main-header .currency-switcher .currency-select.all-dropdown').clone();
+      this.currency_expand_container.append(new_currency_dropdown);
+
+
+
+    },
     init: function () {
       console.log("init");
 
@@ -88,6 +97,16 @@
 
       $("#page-wrapper").click(this.on_page_wrapper_click.bind(this));
 
+
+
+
+
+      this.currency_expand_container.find('ul li a').click(this.on_currency_container_a_click.bind(this));
+
+      this.currency_expand_button = this.element.find('#mobile-currency-expand-button');
+      this.currency_expand_button.click(this.on_currency_expand_button_click.bind(this));
+
+
       //$(window).on('scroll', this.on_window_scroll.bind(this));
       //$("#page-wrapper").on('scroll', this.on_window_scroll.bind(this));
       
@@ -103,14 +122,7 @@
       });
     },
 
-    init_product_image: function(){
-      // not used ever
-      var arr = $('div.product .main-product .product-img .carousel .item');
-      if (arr.length > 1) {
-        $('div.product .main-product .product-img .carousel-inner').slick({
-        });
-      }
-    },
+    
 
     //    ____  ____  _____     ___  _____ _____ 
     //   |  _ \|  _ \|_ _\ \   / / \|_   _| ____|
@@ -150,6 +162,7 @@
 
         // additional
         this.close_account();
+        this.close_currency();
 
         this.submenu_expandable_elements.removeClass('expanded');
         this.submenu_expandable_list_elements.stop(0).slideUp(500);
@@ -169,6 +182,24 @@
         this.account_list_element.stop(0).slideUp(500);
       }
     },
+
+
+    open_currency: function(){
+      if(this.currency_open_state != "open"){
+        this.currency_open_state = "open";
+        this.currency_expand_container.stop(0).slideDown(500);
+        this.currency_expand_button.addClass('expanded');
+      }
+    },
+    close_currency: function(){
+      if(this.currency_open_state != "close"){
+        this.currency_open_state = "close";
+        this.currency_expand_container.stop(0).slideUp(500);
+        this.currency_expand_button.removeClass('expanded');
+      }
+    },
+    
+
 
     open_cart: function(){
       if(this.cart_open_state != "open"){
@@ -359,8 +390,25 @@
         submenu.stop(0).slideDown(500);
       }
 
+    },
+    on_currency_expand_button_click: function(event){
+      event.preventDefault();
+
+      if(this.currency_open_state == "close"){
+        this.open_currency();
+      } else {
+        this.close_currency();
+      }
+    },
+
+
+    on_currency_container_a_click: function(event){
+      var target = $(event.currentTarget);
+      var currencyCode = target.attr('id');
+      $("#select-currency option:contains(" + currencyCode + ")").attr('selected', 'selected').trigger("change");
+
+      this.close();
     }
-    
 
 
   };

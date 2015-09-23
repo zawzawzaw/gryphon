@@ -28,6 +28,8 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600,700' rel='stylesheet' type='text/css'>
 	<script src="//use.typekit.net/fwh2axv.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
+
+	
 		
 	<!-- ICONS -->
 	<!-- <link rel="shortcut icon" href="img/icons/favicon.ico">
@@ -127,3 +129,129 @@
 			</div>
 		</header>
 	</div>
+
+
+	<div id="mobile-header-wrapper" class="visible-xs visible-sm">
+		<header id="main-mobile-header">
+			<div class="marquee">
+	    	<p class="rotate"><span class="rotating flip up" style="display: block; transform: rotateX(-180deg);"><span class="front">Use code "shopnow" to enjoy 10% off first purchase</span><span class="back"> Free local shipping when you spend over $60</span></span></p>
+	    </div>
+
+	    <div id="mobile-fixed-container">
+	      <div class="mobile-menu-button"></div>
+	      <a href="http://gryphontea.com/magento/" class="mobile-menu-logo"></a>
+	    </div>
+
+	    <div id="mobile-expand-container">
+	    	
+
+
+
+
+
+
+
+	    	<div class="mobile-submenu">
+	        <div class="mobile-submenu-header">Gryphon Store</div>
+	        <ul>
+	          <li class="has-sub-menu">
+	              <a href="http://gryphontea.com/magento/store.html">TEA</a>
+	              <ul class="sub-menu" style=""><li><a href="http://gryphontea.com/magento/store.html">All</a></li><li><a href="http://gryphontea.com/magento/store/tea-type/black-tea.html">Black</a></li><li><a href="http://gryphontea.com/magento/store/tea-type/fruit-tisane.html">Fruit Tisane</a></li><li><a href="http://gryphontea.com/magento/store/tea-type/green-tea.html">Green</a></li><li><a href="http://gryphontea.com/magento/store/tea-type/herbs.html">Herbs</a></li><li><a href="http://gryphontea.com/magento/store/tea-type/herbal-tisane.html">Herbal Tisane</a></li><li><a href="http://gryphontea.com/magento/store/tea-type/multi.html">Multi</a></li><li><a href="http://gryphontea.com/magento/store/tea-type/oolong-tea.html">Oolong</a></li><li><a href="http://gryphontea.com/magento/store/tea-type/pu-erh-tea.html">Pu-Erh</a></li><li><a href="http://gryphontea.com/magento/store/tea-type/roobios.html">Rooibos</a></li><li><a href="http://gryphontea.com/magento/store/tea-type/white-tea.html">White</a></li></ul>
+	          </li>                   <li>
+	            <a href="http://gryphontea.com/magento/store/pantry.html">PANTRY</a>
+	          </li>
+	                    
+	          <li>
+	                                    <a href="http://gryphontea.com/magento/store/gifts.html/">GIFTS</a>
+	          </li>
+	          <li>
+	            <a href="http://gryphontea.com/magento/subscription/">SUBSCRIPTION</a>
+	          </li>                 
+	          <li>
+	            <a href="http://gryphontea.com/magento/trade/">TRADE</a>
+	          </li>         
+	        </ul>
+	      </div>
+
+	      <div class="mobile-submenu">
+	        <div class="mobile-submenu-header">About Gryphon</div>
+	        <ul>
+	          <li>
+	            <a href="http://gryphontea.com/magento/collections/">COLLECTIONS</a>                
+	          </li>
+	          <li>
+	            <a href="http://gryphontea.com/magento/wp">BLOG</a>
+	          </li>
+	          <li><a href="http://gryphontea.com/magento/discover-tea/">Discover Tea</a></li>
+	          <li><a href="http://gryphontea.com/magento/our-story/">Our Story</a></li>
+	          <li><a href="http://gryphontea.com/magento/careers/">Careers</a></li>
+	        </ul>
+	      </div>
+
+	      <div class="mobile-submenu">
+	        <div class="mobile-submenu-header">Customer Service</div>
+	        <ul>
+	                              
+
+	          <li><a href="http://gryphontea.com/magento/contact-us/">Contact Us</a></li>                             
+	          <li><a href="http://gryphontea.com/magento/faq/">FAQ</a></li>
+	          <li><a href="http://gryphontea.com/magento/shipping-info/">Shipping Information</a></li>
+	          <li><a href="http://www.trackntrace.com.sg/">Track Order</a></li>
+	          <li><a href="http://gryphontea.com/magento/terms-and-conditions/">Terms &amp; Conditions</a></li>
+	          <li><a href="http://gryphontea.com/magento/privacy-policy/">Privacy Policy</a></li>
+	        </ul>
+	      </div>
+
+      
+
+
+
+
+		    <div class="extra-space"></div>
+		    <div id="mobile-header-footer-copy" class="mobile-footer">
+		      <h2>newsletter sign up</h2>
+		      <hr class="small">
+		      <p>Join our Gryphon Tea Family and be the first to learn about our latest news, enjoy exclusive deals and invites to events!</p>
+
+		      <div class="search">
+		        <input type="text" name="subscribe_email" placeholder="Enter your email address">
+		        <button class="signup subscribe_newsletter"><i class="fa fa-check"></i> <span>Sign up</span></button>
+		      </div>
+
+		      <hr class="dotted">
+
+		      <h2>FOLLOW US</h2>
+		      <hr class="small">
+		      <ul class="share-ctas">
+		        <li><a href="https://instagram.com/gryphontea/" target="_blank" class="instagram"></a></li>
+		        <li><a href="https://www.pinterest.com/gryphontea/" target="_blank" class="pintrest"></a></li>
+		        <li><a href="https://www.facebook.com/gryphonteacompany" target="_blank" class="facebook"></a></li>
+		        <li><a href="https://www.linkedin.com/company/gryphon-tea-company" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+		        <li><a href="https://www.youtube.com/channel/UCrKNQcT3PHO-o_vQBMUlH8Q" target="_blank" class="youtube"><i class="fa fa-youtube"></i></a></li>
+		        <li><a href="https://plus.google.com/+Gryphonteacompany/posts" target="_blank" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
+		      </ul>
+
+		      <div class="copywrite">
+		        <h6>© 2013 GRYPHON TEA COMPANY.</h6>
+		        <p>All material on this site is copyrighted by Gryphon Tea Company. Gryphon Tea Company® is a registered trademark. No images or copy on this site may be used without written permission by Gryphon Tea Company.</p> 
+		      </div>
+
+		    </div>
+	    	
+	    </div> <!-- mobile-expand-container -->
+		</header>
+
+	</div>
+		
+
+	<script type="text/javascript">
+
+		jQuery(document).ready(function($) {
+			$('#main-mobile-header').gryphon_mobile_wp_header({});
+		});
+	</script>
+
+
+
+	
+

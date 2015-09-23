@@ -43,6 +43,9 @@ function load_scripts(){
     wp_enqueue_script('slick', THEMEROOT.'/js/plugins/slick/slick.min.js', array('$'), '', true);    
     wp_enqueue_script('inside-pages', THEMEROOT.'/js/inside-pages.js', array('$'), '', true);    
     wp_enqueue_script('mainjs', THEMEROOT.'/js/main.js', array('$'), '', true);    
+
+    wp_enqueue_script('gryphon_script_01', THEMEROOT.'/js/plugins/gryphon/jquery.gryphon-mobile-wp-header.js', array('$'), '', true);
+    wp_enqueue_script('gryphon_script_02', THEMEROOT.'/js/plugins/gryphon/jquery.gryphon-mobile-wp-sidebar.js', array('$'), '', true);
 }
 
 /********************************************************************************************************/

@@ -147,7 +147,8 @@ $quoteData= $quote->getData();
 						?>						
 						<p><a href="#" class="account name"><?php echo (isset($customer_name)) ? 'Welcome, '.$customer_name : $this->__('Account'); ?></a></p>
 						<div id="mobile-account-expand-button"></div>
-					</div>					
+					</div>
+
 					<ul>
 						<?php 
 							$groupname = '';							
@@ -172,6 +173,19 @@ $quoteData= $quote->getData();
 				<?php endif; ?>
 				
 			</div> <!-- mobile-account -->
+
+			<div id="mobile-currency">
+
+				<div id="mobile-currency-header">
+					<?php $currency_code_02 = Mage::app()->getStore()->getCurrentCurrencyCode(); ?>
+					<p>Currency: <?php echo $currency_code_02; ?></p>	
+					<div id="mobile-currency-expand-button"></div>
+				</div>							
+
+				<div id="mobile-currency-expand-container">
+				</div>
+				
+			</div> <!-- mobile-currency -->
 
 			<div class="mobile-submenu">
 				<div class="mobile-submenu-header">Gryphon Store</div>
