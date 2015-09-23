@@ -146,164 +146,279 @@
     </table>
 </div> -->
 
-<div class="table-responsive">
-    <table id="gift-cards-tbl" cellspacing="0" class="data-table linearize-table">
-        <!-- <colgroup>
-            <?php foreach ($columns as $id => $column): ?>
-                <col class="<?php echo $id ?>" style="<?php if (isset($column['align'])): ?>align:<?php echo $column['align'] ?>;<?php endif ?><?php if (isset($column['width'])): ?>width:<?php echo $column['width'] ?><?php endif ?>" />
-            <?php endforeach ?>
-        </colgroup> -->
-        <thead>
-            <tr <?php if ($this->getData('add_searchable_row')): ?>class="giftvoucher-grid-title"<?php endif ?>>
+
+<div class="visible-md-block visible-lg-block">
+    <div class="table-responsive">
+        <table id="gift-cards-tbl" cellspacing="0" class="data-table linearize-table">
+            <!-- <colgroup>
                 <?php foreach ($columns as $id => $column): ?>
-                    <th><?php echo $column['header'] ?></th>
+                    <col class="<?php echo $id ?>" style="<?php if (isset($column['align'])): ?>align:<?php echo $column['align'] ?>;<?php endif ?><?php if (isset($column['width'])): ?>width:<?php echo $column['width'] ?><?php endif ?>" />
                 <?php endforeach ?>
-            </tr>
-            <?php if ($this->getData('add_searchable_row')): ?>
-                <!-- <tr class="giftvoucher-grid-search">
+            </colgroup> -->
+            <thead>
+                <tr <?php if ($this->getData('add_searchable_row')): ?>class="giftvoucher-grid-title"<?php endif ?>>
                     <?php foreach ($columns as $id => $column): ?>
-                        <th>
-                            
-                            <span class="giftvoucher-grid-title-hidden"><?php echo $column['header'] ?></span>
-                            <span class="giftvoucher-grid-detail">
-                                
-                                <?php if (isset($column['searchable'])): ?>
-                                    <div class="giftvoucher-grid-search-item"<?php if (isset($column['width']) && $column['width']): ?> style="width:<?php echo $column['width'] ?>;"<?php endif ?>>
-                                        <?php $type = isset($column['type']) ? $column['type'] : '' ?>
-                                        <?php if ($type == 'date' || $type == 'datetime'): ?>
-                                            <div class="range-container">
-                                                <div class="data-range from-date">
-                                                    <span class="label"><?php echo $this->__('From') ?>:</span>
-                                                    <input type="text" name="<?php echo $id ?>-from" id="<?php echo $this->getNameInLayout() . '-' . $id ?>-from" class="search-item input-text range-text" value="<?php echo $this->getFilterValue($id, '-from') ?>" />
-                                                    <img src="<?php echo Mage::getBaseUrl('skin') ?>/adminhtml/default/default/images/grid-cal.gif" alt="<?php echo $this->__('dateinput') ?>" class="v-middle" id="calendar-<?php echo $id ?>-from" />
-                                                </div>
-                                                <div class="data-range to-date">
-                                                    <span class="label"><?php echo $this->__('To') ?>:</span>
-                                                    <input type="text" name="<?php echo $id ?>-to" id="<?php echo $this->getNameInLayout() . '-' . $id ?>-to" class="search-item input-text range-text" value="<?php echo $this->getFilterValue($id, '-to') ?>" />
-                                                    <img src="<?php echo Mage::getBaseUrl('skin') ?>/adminhtml/default/default/images/grid-cal.gif" alt="<?php echo $this->__('dateinput') ?>" class="v-middle" id="calendar-<?php echo $id ?>-to" />
-                                                </div>
-                                                <script type="text/javascript">
-                                                    Calendar.setup({
-                                                        inputField: "<?php echo $this->getNameInLayout() . '-' . $id ?>-from",
-                                                        ifFormat: "%m/%e/%y",
-                                                        showsTime: false,
-                                                        button: "calendar-<?php echo $id ?>-from",
-                                                        align: "Bl",
-                                                        singleClick: true
-                                                    });
-                                                    Calendar.setup({
-                                                        inputField: "<?php echo $this->getNameInLayout() . '-' . $id ?>-to",
-                                                        ifFormat: "%m/%e/%y",
-                                                        showsTime: false,
-                                                        button: "calendar-<?php echo $id ?>-to",
-                                                        align: "Bl",
-                                                        singleClick: true
-                                                    });
-                                                </script>
-                                            </div>
-                                        <?php elseif ($type == 'options'): ?>
-                                            <select name="<?php echo $id ?>" id="<?php echo $this->getNameInLayout() . '-' . $id ?>" class="search-item input-select">
-                                                <option value=""></option>
-                                                <?php foreach ($column['options'] as $value => $label): ?>
-                                                    <option value="<?php echo $value ?>"<?php if ($value == $this->getFilterValue($id)): ?> selected="selected"<?php endif ?>><?php echo $label ?></option>
-                                                <?php endforeach ?>
-                                            </select>
-                                        <?php elseif ($type == 'price' || $type == 'baseprice'): ?>
-                                            <div class="range-container">
-                                                <div class="data-range from-price">
-                                                    <span class="label"><?php echo $this->__('From') ?>:</span>
-                                                    <input type="text" name="<?php echo $id ?>-from" id="<?php echo $this->getNameInLayout() . '-' . $id ?>-from" class="search-item input-text range-text" value="<?php echo $this->getFilterValue($id, '-from') ?>" />
-                                                </div>
-                                                <div class="data-range to-price">
-                                                    <span class="label"><?php echo $this->__('To') ?>:</span>
-                                                    <input type="text" name="<?php echo $id ?>-to" id="<?php echo $this->getNameInLayout() . '-' . $id ?>-to" class="search-item input-text range-text" value="<?php echo $this->getFilterValue($id, '-to') ?>" />
-                                                </div>
-                                            </div>
-                                        <?php else: ?>
-                                            <input type="text" name="<?php echo $id ?>" id="<?php echo $this->getNameInLayout() . '-' . $id ?>" class="search-item input-text search-text" value="<?php echo $this->getFilterValue($id) ?>" />
-                                        <?php endif ?>
-                                    </div>				
-                                <?php endif ?>
-                            </span>
-                        </th>
+                        <th><?php echo $column['header'] ?></th>
                     <?php endforeach ?>
-                </tr> -->
-            <?php endif ?>
-        </thead>
-        <tbody>
-            <?php if ($collection->count()): ?>
-                <?php foreach ($collection as $row): ?>
-                    <?php if ($row->getIsContinueNextRow()) continue; ?>
-                    <?php
-                    $customer = Mage::getModel('customer/customer')->load(Mage::getSingleton('customer/session')->getCustomerId());
-                    ?>
-                    <tr <?php if (($row->getCustomerCheckId() == $customer->getId() || $row->getCustomerEmail() == $customer->getEmail() ) && $row->getRecipientName()) { ?> class="gift-voucher-sent-friend" <?php } ?>>
-                        <?php foreach ($columns as $id => $column): ?>
-                            <td>
-                                <!--add by Sally-->
-                                <span class="giftvoucher-grid-title-hidden"><?php echo $column['header'] ?></span>
-                                <p class="giftvoucher-grid-detail">
-                                    <!--end by Sally-->
-                                    <?php if (isset($column['render']) && $column['render']): ?>
-                                        <?php echo $this->fetchRender($column['render'], $row) ?>
-                                    <?php else: ?>
-                                        <?php $type = isset($column['type']) ? $column['type'] : '' ?>
-                                        <?php switch ($type): case 'action': ?>
-                                                <?php $action = $column['action'] ?>
-                                                <a href="<?php echo $this->getUrl($action['url'], array($action['name'] => $row->getData($action['field']))) ?>" title="<?php echo $action['label'] ?>"><?php echo $action['label'] ?></a>
-                                                <?php
-                                                break;
-                                            case 'options':
-                                                ?>
-                                                <?php echo $column['options'][$row->getData($column['index'])] ?>
-                                                <?php
-                                                break;
-                                            case 'date':
-                                                ?>
-                                                <!--Hai.Tran-->
-                                                <?php
-                                                if ($row->getData($column['index']))
-                                                    echo $this->formatDate($row->getData($column['index']), $column['format'], false);
-                                                else
-                                                    echo $this->__('Permanent');
-                                                ?>
-                                                <?php
-                                                break;
-                                            case 'datetime':
-                                                ?>
-                                                <?php echo $this->formatDate($row->getData($column['index']), $column['format'], true) ?>
-                                                <?php
-                                                break;
-                                            case 'price':
-                                                ?>
-                                                <?php echo Mage::app()->getStore()->formatPrice($row->getData($column['index'])) ?>
-                                                <?php
-                                                break;
-                                            case 'baseprice':
-                                                ?>
-                                                <?php echo Mage::helper('core')->currency($row->getData($column['index'])) ?>
-                                                <?php
-                                                break;
-                                            default:
-                                                ?>
-                                                <?php echo $row->getData($column['index']) ?>
-                                        <?php endswitch ?>
-                                    <?php endif ?>
-                                </p><!--edit by Sally-->
-                            </td>
-                        <?php endforeach ?>
-                    </tr>
-                <?php endforeach ?>
-            <?php else: ?>
-                <tr>
-                    <td colspan="<?php echo count($columns) ?>">
-                        <p>
-                            <?php echo $this->__('There are no items matching this selection.') ?>
-                        </p>
-                    </td>
                 </tr>
-            <?php endif ?>
-        </tbody>
-    </table>
+                <?php if ($this->getData('add_searchable_row')): ?>
+                    <!-- <tr class="giftvoucher-grid-search">
+                        <?php foreach ($columns as $id => $column): ?>
+                            <th>
+                                
+                                <span class="giftvoucher-grid-title-hidden"><?php echo $column['header'] ?></span>
+                                <span class="giftvoucher-grid-detail">
+                                    
+                                    <?php if (isset($column['searchable'])): ?>
+                                        <div class="giftvoucher-grid-search-item"<?php if (isset($column['width']) && $column['width']): ?> style="width:<?php echo $column['width'] ?>;"<?php endif ?>>
+                                            <?php $type = isset($column['type']) ? $column['type'] : '' ?>
+                                            <?php if ($type == 'date' || $type == 'datetime'): ?>
+                                                <div class="range-container">
+                                                    <div class="data-range from-date">
+                                                        <span class="label"><?php echo $this->__('From') ?>:</span>
+                                                        <input type="text" name="<?php echo $id ?>-from" id="<?php echo $this->getNameInLayout() . '-' . $id ?>-from" class="search-item input-text range-text" value="<?php echo $this->getFilterValue($id, '-from') ?>" />
+                                                        <img src="<?php echo Mage::getBaseUrl('skin') ?>/adminhtml/default/default/images/grid-cal.gif" alt="<?php echo $this->__('dateinput') ?>" class="v-middle" id="calendar-<?php echo $id ?>-from" />
+                                                    </div>
+                                                    <div class="data-range to-date">
+                                                        <span class="label"><?php echo $this->__('To') ?>:</span>
+                                                        <input type="text" name="<?php echo $id ?>-to" id="<?php echo $this->getNameInLayout() . '-' . $id ?>-to" class="search-item input-text range-text" value="<?php echo $this->getFilterValue($id, '-to') ?>" />
+                                                        <img src="<?php echo Mage::getBaseUrl('skin') ?>/adminhtml/default/default/images/grid-cal.gif" alt="<?php echo $this->__('dateinput') ?>" class="v-middle" id="calendar-<?php echo $id ?>-to" />
+                                                    </div>
+                                                    <script type="text/javascript">
+                                                        Calendar.setup({
+                                                            inputField: "<?php echo $this->getNameInLayout() . '-' . $id ?>-from",
+                                                            ifFormat: "%m/%e/%y",
+                                                            showsTime: false,
+                                                            button: "calendar-<?php echo $id ?>-from",
+                                                            align: "Bl",
+                                                            singleClick: true
+                                                        });
+                                                        Calendar.setup({
+                                                            inputField: "<?php echo $this->getNameInLayout() . '-' . $id ?>-to",
+                                                            ifFormat: "%m/%e/%y",
+                                                            showsTime: false,
+                                                            button: "calendar-<?php echo $id ?>-to",
+                                                            align: "Bl",
+                                                            singleClick: true
+                                                        });
+                                                    </script>
+                                                </div>
+                                            <?php elseif ($type == 'options'): ?>
+                                                <select name="<?php echo $id ?>" id="<?php echo $this->getNameInLayout() . '-' . $id ?>" class="search-item input-select">
+                                                    <option value=""></option>
+                                                    <?php foreach ($column['options'] as $value => $label): ?>
+                                                        <option value="<?php echo $value ?>"<?php if ($value == $this->getFilterValue($id)): ?> selected="selected"<?php endif ?>><?php echo $label ?></option>
+                                                    <?php endforeach ?>
+                                                </select>
+                                            <?php elseif ($type == 'price' || $type == 'baseprice'): ?>
+                                                <div class="range-container">
+                                                    <div class="data-range from-price">
+                                                        <span class="label"><?php echo $this->__('From') ?>:</span>
+                                                        <input type="text" name="<?php echo $id ?>-from" id="<?php echo $this->getNameInLayout() . '-' . $id ?>-from" class="search-item input-text range-text" value="<?php echo $this->getFilterValue($id, '-from') ?>" />
+                                                    </div>
+                                                    <div class="data-range to-price">
+                                                        <span class="label"><?php echo $this->__('To') ?>:</span>
+                                                        <input type="text" name="<?php echo $id ?>-to" id="<?php echo $this->getNameInLayout() . '-' . $id ?>-to" class="search-item input-text range-text" value="<?php echo $this->getFilterValue($id, '-to') ?>" />
+                                                    </div>
+                                                </div>
+                                            <?php else: ?>
+                                                <input type="text" name="<?php echo $id ?>" id="<?php echo $this->getNameInLayout() . '-' . $id ?>" class="search-item input-text search-text" value="<?php echo $this->getFilterValue($id) ?>" />
+                                            <?php endif ?>
+                                        </div>				
+                                    <?php endif ?>
+                                </span>
+                            </th>
+                        <?php endforeach ?>
+                    </tr> -->
+                <?php endif ?>
+            </thead>
+            <tbody>
+                <?php if ($collection->count()): ?>
+                    <?php foreach ($collection as $row): ?>
+                        <?php if ($row->getIsContinueNextRow()) continue; ?>
+                        <?php
+                        $customer = Mage::getModel('customer/customer')->load(Mage::getSingleton('customer/session')->getCustomerId());
+                        ?>
+                        <tr <?php if (($row->getCustomerCheckId() == $customer->getId() || $row->getCustomerEmail() == $customer->getEmail() ) && $row->getRecipientName()) { ?> class="gift-voucher-sent-friend" <?php } ?>>
+                            <?php foreach ($columns as $id => $column): ?>
+                                <td>
+                                    <!--add by Sally-->
+                                    <span class="giftvoucher-grid-title-hidden"><?php echo $column['header'] ?></span>
+                                    <p class="giftvoucher-grid-detail">
+                                        <!--end by Sally-->
+                                        <?php if (isset($column['render']) && $column['render']): ?>
+                                            <?php echo $this->fetchRender($column['render'], $row) ?>
+                                        <?php else: ?>
+                                            <?php $type = isset($column['type']) ? $column['type'] : '' ?>
+                                            <?php switch ($type): case 'action': ?>
+                                                    <?php $action = $column['action'] ?>
+                                                    <a href="<?php echo $this->getUrl($action['url'], array($action['name'] => $row->getData($action['field']))) ?>" title="<?php echo $action['label'] ?>"><?php echo $action['label'] ?></a>
+                                                    <?php
+                                                    break;
+                                                case 'options':
+                                                    ?>
+                                                    <?php echo $column['options'][$row->getData($column['index'])] ?>
+                                                    <?php
+                                                    break;
+                                                case 'date':
+                                                    ?>
+                                                    <!--Hai.Tran-->
+                                                    <?php
+                                                    if ($row->getData($column['index']))
+                                                        echo $this->formatDate($row->getData($column['index']), $column['format'], false);
+                                                    else
+                                                        echo $this->__('Permanent');
+                                                    ?>
+                                                    <?php
+                                                    break;
+                                                case 'datetime':
+                                                    ?>
+                                                    <?php echo $this->formatDate($row->getData($column['index']), $column['format'], true) ?>
+                                                    <?php
+                                                    break;
+                                                case 'price':
+                                                    ?>
+                                                    <?php echo Mage::app()->getStore()->formatPrice($row->getData($column['index'])) ?>
+                                                    <?php
+                                                    break;
+                                                case 'baseprice':
+                                                    ?>
+                                                    <?php echo Mage::helper('core')->currency($row->getData($column['index'])) ?>
+                                                    <?php
+                                                    break;
+                                                default:
+                                                    ?>
+                                                    <?php echo $row->getData($column['index']) ?>
+                                            <?php endswitch ?>
+                                        <?php endif ?>
+                                    </p><!--edit by Sally-->
+                                </td>
+                            <?php endforeach ?>
+                        </tr>
+                    <?php endforeach ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="<?php echo count($columns) ?>">
+                            <p>
+                                <?php echo $this->__('There are no items matching this selection.') ?>
+                            </p>
+                        </td>
+                    </tr>
+                <?php endif ?>
+            </tbody>
+        </table>
+    </div>
 </div>
+
+
+
+
+
+<!-- 
+     __  __  ___  ____ ___ _     _____    ____ ___ _____ _____    ____    _    ____  ____    _____  _    ____  _     _____ 
+    |  \/  |/ _ \| __ )_ _| |   | ____|  / ___|_ _|  ___|_   _|  / ___|  / \  |  _ \|  _ \  |_   _|/ \  | __ )| |   | ____|
+    | |\/| | | | |  _ \| || |   |  _|   | |  _ | || |_    | |   | |     / _ \ | |_) | | | |   | | / _ \ |  _ \| |   |  _|  
+    | |  | | |_| | |_) | || |___| |___  | |_| || ||  _|   | |   | |___ / ___ \|  _ <| |_| |   | |/ ___ \| |_) | |___| |___ 
+    |_|  |_|\___/|____/___|_____|_____|  \____|___|_|     |_|    \____/_/   \_\_| \_\____/    |_/_/   \_\____/|_____|_____|
+                                                                                                                           
+ -->
+
+
+<div class="visible-xs-block visible-sm-block">
+    <div class="table-responsive">
+        <table id="gift-cards-tbl" cellspacing="0" class="data-table linearize-table">
+            <thead>
+                <tr class="giftvoucher-grid-title">
+                    <th>Gift Card Code</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if ($collection->count()): ?>
+                    <?php foreach ($collection as $row): ?>
+                        <?php if ($row->getIsContinueNextRow()) continue; ?>
+                        <?php
+                        $customer = Mage::getModel('customer/customer')->load(Mage::getSingleton('customer/session')->getCustomerId());
+                        ?>
+                        <tr <?php if (($row->getCustomerCheckId() == $customer->getId() || $row->getCustomerEmail() == $customer->getEmail() ) && $row->getRecipientName()) { ?> class="gift-voucher-sent-friend" <?php } ?>>
+                            <?php foreach ($columns as $id => $column): ?>
+
+                                <?php if( $column['header'] == 'Gift Card Code' || $column['header'] == 'Action'): ?>
+                                    
+                                    <td>
+                                        <span class="giftvoucher-grid-title-hidden"><?php echo $column['header'] ?></span>
+                                        <p class="giftvoucher-grid-detail">
+                                            <?php if (isset($column['render']) && $column['render']): ?>
+                                                <?php echo $this->fetchRender($column['render'], $row) ?>
+                                            <?php else: ?>
+                                                <?php $type = isset($column['type']) ? $column['type'] : '' ?>
+                                                <?php switch ($type): case 'action': ?>
+                                                        <?php $action = $column['action'] ?>
+                                                        <a href="<?php echo $this->getUrl($action['url'], array($action['name'] => $row->getData($action['field']))) ?>" title="<?php echo $action['label'] ?>"><?php echo $action['label'] ?></a>
+                                                        <?php
+                                                        break;
+                                                    case 'options':
+                                                        ?>
+                                                        <?php echo $column['options'][$row->getData($column['index'])] ?>
+                                                        <?php
+                                                        break;
+                                                    case 'date':
+                                                        ?>
+
+                                                        <?php
+                                                        if ($row->getData($column['index']))
+                                                            echo $this->formatDate($row->getData($column['index']), $column['format'], false);
+                                                        else
+                                                            echo $this->__('Permanent');
+                                                        ?>
+                                                        <?php
+                                                        break;
+                                                    case 'datetime':
+                                                        ?>
+                                                        <?php echo $this->formatDate($row->getData($column['index']), $column['format'], true) ?>
+                                                        <?php
+                                                        break;
+                                                    case 'price':
+                                                        ?>
+                                                        <?php echo Mage::app()->getStore()->formatPrice($row->getData($column['index'])) ?>
+                                                        <?php
+                                                        break;
+                                                    case 'baseprice':
+                                                        ?>
+                                                        <?php echo Mage::helper('core')->currency($row->getData($column['index'])) ?>
+                                                        <?php
+                                                        break;
+                                                    default:
+                                                        ?>
+                                                        <?php echo $row->getData($column['index']) ?>
+                                                <?php endswitch ?>
+                                            <?php endif ?>
+                                        </p>
+                                    </td>
+                                <?php endif; ?>
+
+                            <?php endforeach ?>
+                        </tr>
+                    <?php endforeach ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="<?php echo count($columns) ?>">
+                            <p>
+                                <?php echo $this->__('There are no items matching this selection.') ?>
+                            </p>
+                        </td>
+                    </tr>
+                <?php endif ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+
+
 <?php echo $this->getPagerHtml() ?>

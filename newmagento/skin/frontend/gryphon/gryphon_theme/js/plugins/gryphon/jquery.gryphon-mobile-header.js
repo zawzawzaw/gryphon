@@ -148,6 +148,21 @@
         this.expand_container.show(0);
 
         this.window.scrollTop(0);
+
+
+        //var is_account_page = $('body').hasClass('account-page-version');
+        
+        //customer-account-index
+        //customer-address-form
+
+        var body = $('body');
+        var is_account_page = body.hasClass('customer-account');
+
+        if (is_account_page) {
+          this.open_account();
+        }
+
+
       }
 
     },
