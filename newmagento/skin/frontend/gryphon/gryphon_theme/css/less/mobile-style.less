@@ -1177,18 +1177,25 @@
         .tea-type-container{
           padding-bottom: 0px;
           margin-bottom: -4px;
+          //margin-left: -15px;
+          //margin-right: -15px;
+          font-size: 0;
         }
         .tea-type{
           //display: block;
           //width: 100%;
           display: inline-block;
-          width: 40%;
-          padding-right: 10px;
+          width: 50%;
+          //padding-right: 10px;
 
           margin: 0;
           margin-bottom: 26px;
+
+          &:first-child{
+            padding-right: 5px;
+          }
           &:last-child{
-            padding-right: 0;
+            padding-left: 5px;
           }
 
 
@@ -6198,6 +6205,37 @@ html{
         &.expanded{
           color: @dark-orange;
           .rotation(180deg);
+        }
+      }
+
+      .single-order-item{
+        &.expanded{
+          .order-details{
+            display: none;
+          }
+          .mobile-order-history-item-detail{
+            display: block;
+          }
+        }
+        &.collapsed{
+          display: none;
+        }
+
+        .mobile-button-container{
+          a{
+            display: block;
+            width: 100%;
+          }
+
+          .single-order-item-back-button{
+            text-align: left;
+            padding-left: 30px;
+          }
+          .single-order-item-reorder-button{
+            text-align: right;
+            padding-right: 30px;
+
+          }
         }
       }
 
