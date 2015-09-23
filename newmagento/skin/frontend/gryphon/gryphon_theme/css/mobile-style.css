@@ -5046,3 +5046,74 @@ html {
   letter-spacing: 0.03em;
   color: #252525;
 }
+@media (max-width: 991px) {
+  .account .gift-cards #gift-cards-tbl thead tr th {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .account .gift-cards #gift-cards-tbl tbody tr td {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .account .gift-cards .pager .limiter {
+    margin-right: -20px;
+  }
+  .account .col-main .box-account .form-list .fields .custom-field {
+    width: auto !important;
+  }
+  .account .col-main .box-account .form-list .fields .custom-field-right {
+    width: auto !important;
+  }
+  body.giftvoucher-index-view .form-list {
+    float: none;
+  }
+}
+#mobile-custom-giftcard-view-table table {
+  width: 100%;
+}
+#mobile-custom-giftcard-view-table thead tr th {
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 11px;
+  line-height: 19px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 20px;
+  text-align: center;
+}
+#mobile-custom-giftcard-view-table thead tr th:first-child {
+  padding-left: 7px;
+  text-align: left;
+}
+#mobile-custom-giftcard-view-table tbody tr:last-child td {
+  border-bottom: 1px solid #ccc;
+}
+#mobile-custom-giftcard-view-table tbody tr td {
+  border-top: 1px dashed #ccc;
+  padding: 20px;
+  text-align: left;
+}
+#mobile-custom-giftcard-view-table tbody tr td:first-child {
+  padding-left: 7px;
+}
+#mobile-custom-giftcard-view-table span {
+  font-family: 'Gotham-Book', Verdana, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 11px;
+  line-height: 19px;
+  color: #464646;
+}
+#mobile-custom-giftcard-view-table span.price,
+#mobile-custom-giftcard-view-table span.date {
+  font-family: "minion-pro", Verdana, sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+}
+#mobile-custom-giftcard-view-table span.price {
+  color: #ae4e0e;
+}
