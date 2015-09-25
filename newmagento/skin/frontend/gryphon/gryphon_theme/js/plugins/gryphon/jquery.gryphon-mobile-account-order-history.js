@@ -58,6 +58,7 @@
         item = $(arr[i]);
         item_id = item.attr('data-id');
         button = item.find('.mobile-each-order-open');
+        button = item.find('.single-order-item-mobile-button');
 
         button.click(this.on_order_item_open_click.bind(this));
         button.data('orderid', item_id);

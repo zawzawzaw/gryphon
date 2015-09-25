@@ -98,4 +98,19 @@
 
 </div>
 
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+
+		$('.mobile-readmore-button').click(function(event){
+			event.preventDefault();
+
+			var target = $(event.currentTarget);
+			var parent = target.parent();
+			parent.toggleClass('expanded-version');
+
+		});
+
+	});
+</script>
+
 <?php get_footer(); ?>

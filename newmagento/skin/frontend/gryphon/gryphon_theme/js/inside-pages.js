@@ -1,3 +1,7 @@
+/*
+
+added it to main.js
+
 var initialLoad = true;
 jQuery(document).ready(function($){		
     function myScroller()  {
@@ -29,3 +33,4 @@ jQuery(document).ready(function($){
 
     initialLoad = false;  
 });
+*/

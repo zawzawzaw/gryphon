@@ -28,7 +28,10 @@
     this.account_list_element = this.element.find("#mobile-account ul");
 
     this.currency_expand_container = this.element.find('#mobile-currency-expand-container');
+    this.currency_expand_header = this.element.find('#mobile-currency-header');
     this.currency_expand_button = this.element.find('#mobile-currency-expand-button');
+
+    
 
     this.submenu_elements = this.element.find(".mobile-submenu");
     this.submenu_expandable_elements = this.element.find(".mobile-submenu .has-sub-menu");
@@ -38,6 +41,10 @@
     this.search_expand_expandable = this.element.find("#mobile-search-expand-container");
     this.cart_expand_expandable = this.element.find("#mobile-cart-expand-container");
 
+
+    this.cart_back_to_shopping_button = this.cart_expand_expandable.find('.cta-btns .continue-shopping');
+    this.cart_back_to_shopping_button.click(this.on_cart_back_to_shopping_button_click.bind(this));
+    
     
 
 
@@ -104,7 +111,9 @@
       this.currency_expand_container.find('ul li a').click(this.on_currency_container_a_click.bind(this));
 
       this.currency_expand_button = this.element.find('#mobile-currency-expand-button');
-      this.currency_expand_button.click(this.on_currency_expand_button_click.bind(this));
+      
+      //this.currency_expand_button.click(this.on_currency_expand_button_click.bind(this));
+      this.currency_expand_header.click(this.on_currency_expand_button_click.bind(this));
 
 
       //$(window).on('scroll', this.on_window_scroll.bind(this));
@@ -358,6 +367,11 @@
         this.close_cart();
       }
     },
+    public_open_cart: function(){
+      this.close_menu();
+      this.close_search();
+      this.open_cart();
+    },
 
     on_menu_button_click: function(event){
       event.preventDefault();
@@ -422,7 +436,12 @@
       var currencyCode = target.attr('id');
       $("#select-currency option:contains(" + currencyCode + ")").attr('selected', 'selected').trigger("change");
 
-      this.close();
+      this.close_menu();
+    },
+
+    on_cart_back_to_shopping_button_click: function(event){
+      event.preventDefault();
+      this.close_cart();
     }
 
 

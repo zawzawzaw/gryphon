@@ -284,8 +284,12 @@ endif;
                                 jQuery('.cart-header').show();
                                 jQuery('.cart-summary').show();
                                 jQuery('.cta-btns').show();
-                                jQuery('.cart-preview-select').show();
-                                jQuery('#mobile-cart-expand-container').show();
+                                jQuery('#main-header .cart-preview-select').show();
+
+                                var mobile_header = jQuery("#main-mobile-header").data('gryphon_mobile_header');
+                                mobile_header.public_open_cart();
+                                //jQuery('#mobile-cart-expand-container').show();
+                                
 
                                 jQuery('.mobile-cart-button').find('span').html(data.cart_qty);
                                 jQuery('.cart-summary-data').find('.price').html(data.cart_total);

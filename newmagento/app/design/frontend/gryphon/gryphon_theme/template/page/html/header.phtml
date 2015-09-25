@@ -535,5 +535,11 @@ $quoteData= $quote->getData();
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$("#main-mobile-header").gryphon_mobile_header();
+
+		$('#main-header .cart-preview-select .continue-shopping').click(function(event){
+			event.preventDefault();
+			$('#main-header .cart-preview-select').hide(0);
+		});
+
 	});
 </script>
