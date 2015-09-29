@@ -19,7 +19,7 @@ if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 
 		<div class="each-sidebar-content">
 			<h2>Categories</h2>
-			<ul class="tags">
+			<ul class="custom-categories">
 				<?php
 				$categories = get_categories();
 
@@ -51,9 +51,6 @@ if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 				  	//if($i==$no_of_tags):
 				?>
 				    <li><a href="<?php echo get_tag_link($tag->term_id); ?>"><?php echo $tag->name;  ?></a></li>
-				    <?php //else: ?>
-					<!-- <li><a href="<?php echo get_tag_link($tag->term_id); ?>"><?php echo $tag->name.',';  ?></a></li> -->
-				    <?php //endif; ?>
 				<?php
 					$i++;
 				  }

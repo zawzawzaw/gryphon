@@ -56,12 +56,15 @@ ul.messages li.success-msg {
     clear: both;
     min-height: 13px;
     margin: 3px 0px 0px;
-    font-size: 11px !important;
+    font-size: 12px !important;
     line-height: 13px;
     color: #A70101;
     font-weight: normal;
 }
-.label.subtotal p, .value.subtotal p {color: #ae4e0e;}
+.label.subtotal p, .value.subtotal p {
+    /*color: #ae4e0e;*/
+    color: #c76e09;
+}
 
 .cart #opc-billing, .cart #opc-shipping_method, .cart #opc-payment {
     padding-left: 50px;
@@ -254,7 +257,8 @@ ul.messages li.success-msg {
     color: #464646;
 }
 .label.grandtotal p, .value.grandtotal p {
-    color: #ae4e0e;
+    /*color: #ae4e0e;*/
+    color: #c76e09;
 }
 .cart #confirmation .each-details.grand-total {
 }
@@ -545,6 +549,9 @@ ul.messages li.success-msg {
     font-style: normal;
     font-size: 9px;
     line-height: 16px;
+
+    border-top: 1px solid #eee;
+    padding-top: 15px;
 }
 .product .main-product .product-content .availability.non-group-type {
     margin-bottom: 12px;

@@ -33,6 +33,7 @@
         <li><a href="#">Jun Shan Silver Needle</a></li>
     </ul> -->
     <ul class="bread-crump">
+        <?php //var_dump($crumbs); ?>
         <?php foreach($crumbs as $_crumbName=>$_crumbInfo): ?>
             <li class="<?php echo $_crumbName ?>">
             <?php if($_crumbInfo['link']): ?>

@@ -28,6 +28,72 @@ var initialLoad = true;
     $(document).ready(function(){
 
 
+        setTimeout(function(){
+            $('html').animate({scrollTop:0}, 1);
+            $('html').addClass('load-complete');
+            console.log('back to top')
+        }, 100);
+        
+
+        // http://stackoverflow.com/questions/11486527/reload-browser-does-not-reset-page-to-top
+        /*
+        $('html').animate({scrollTop:0}, 1);
+        $('body').animate({scrollTop:0}, 1);
+        setTimeout(function(){
+            $('html').animate({scrollTop:0}, 1);
+            $('body').animate({scrollTop:0}, 1);
+            console.log('back to top')
+        }, 100);
+        setTimeout(function(){
+            $('html').animate({scrollTop:0}, 1);
+            $('body').animate({scrollTop:0}, 1);
+            console.log('back to top')
+        }, 300);
+        setTimeout(function(){
+            $('html').animate({scrollTop:0}, 1);
+            $('body').animate({scrollTop:0}, 1);
+            console.log('back to top')
+        }, 500);
+        */
+
+        // http://stackoverflow.com/questions/19999388/check-if-user-is-using-ie-with-jquery
+
+        /**
+         * detect IE
+         * returns version of IE or false, if browser is not Internet Explorer
+         */
+        function detectIE() {
+            var ua = window.navigator.userAgent;
+
+            var msie = ua.indexOf('MSIE ');
+            if (msie > 0) {
+                // IE 10 or older => return version number
+                return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+            }
+
+            var trident = ua.indexOf('Trident/');
+            if (trident > 0) {
+                // IE 11 => return version number
+                var rv = ua.indexOf('rv:');
+                return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+            }
+
+            var edge = ua.indexOf('Edge/');
+            if (edge > 0) {
+               // IE 12 => return version number
+               return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+            }
+
+            // other browser
+            return false;
+        }
+
+        if (detectIE() != false) {
+            $('html').addClass('is-ie');
+        }
+        
+
+
         // from inside-pages.js
         function myScroller()  {
         var scrollPos = $(window).scrollTop();
@@ -527,4 +593,17 @@ var initialLoad = true;
             speed: 8000
         });         
     });
+
+
+    
+
+
+    
+    
+
+    
+
+
 })(jQuery);
+
+
