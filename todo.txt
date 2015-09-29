@@ -68,3 +68,12 @@ old server ip
 new server extension
 mb_convert_encoding()
 mcrypt_module_open()
+
+
+Tested Email
+- new order confirmation
+- gift card (set to tomorrow)
+- invoice email (layout to revisit)
+- shipping email 
+- mailchip newletter confirmation received
+- welcome email received	

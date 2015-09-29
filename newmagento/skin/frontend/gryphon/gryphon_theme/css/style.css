@@ -1192,12 +1192,12 @@ ul.messages {
   font-family: "Bombshell-Pro", Verdana, sans-serif;
   font-weight: 200;
   font-style: normal;
-  font-size: 70px;
-  line-height: 66px;
-  margin-top: 20px;
   margin-bottom: 30px;
   text-transform: none;
-  text-shadow: 0 1px 100px #000000;
+  font-size: 70px;
+  line-height: 85px;
+  margin-top: 80px;
+  text-shadow: 0 1px 100px #a79178;
 }
 #page-wrapper .slider-wrapper div.item div.carousel-caption div.caption-text h3 {
   font-family: 'Gotham-Medium', Verdana, sans-serif;
@@ -1247,6 +1247,7 @@ ul.messages {
 }
 #page-wrapper #footer-wrapper.fixed-footer {
   position: static!important;
+  padding-bottom: 100px;
 }
 #page-wrapper #copyright-wrapper {
   height: auto;
@@ -1362,8 +1363,8 @@ ul.messages {
 #page-wrapper input[type="checkbox"]:checked + label span:after {
   content: '\2713';
   position: absolute;
-  top: -2px;
-  left: 2px;
+  top: -1px;
+  left: 1px;
   color: #ae4e0e;
 }
 #page-wrapper label.checkbox-label {
@@ -1661,15 +1662,15 @@ div.home #popular-products .image-text-content .center-text p.caption {
 }
 div.home #popular-products .image-text-content .center-text p.caption-2 {
   /*height: 65px;*/
-  margin-bottom: 20px;
   text-transform: uppercase;
 }
 div.home #popular-products .image-text-content .center-text p {
-  font-family: 'Gotham-Book', Verdana, sans-serif;
-  font-weight: 600;
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
   font-style: normal;
-  font-size: 11.5px;
-  color: #464646;
+  font-size: 11px;
+  color: #777777;
+  letter-spacing: 0.03em;
   line-height: 18px;
   /*width: 210px;*/
   margin: 8px auto;
@@ -1680,6 +1681,7 @@ div.home #popular-products .image-text-content .center-text a.product-img {
   position: relative;
 }
 div.home #popular-products .image-text-content .center-text a.product-img img {
+  width: 80%;
   -webkit-transition: all 0.2s ease-out 0s;
   -moz-transition: all 0.2s ease-out 0s;
   -o-transition: all 0.2s ease-out 0s;
@@ -1743,7 +1745,7 @@ div.home #feature-products .image-text-content h1 {
 }
 div.home #feature-products .image-text-content .each-feature {
   display: inline-block;
-  width: 170px;
+  width: 200px;
   vertical-align: top;
   margin-right: 20px;
   margin-top: 15px;
@@ -1877,6 +1879,7 @@ div.home #company-story .image-text-content h1 {
 }
 div.home #company-story .image-text-content .vertical-center {
   padding-top: 20px;
+  padding-right: 50px;
 }
 div.home #company-story .image-text-content .vertical-center p {
   font-family: 'Gotham-Book', Verdana, sans-serif;
@@ -2978,7 +2981,7 @@ div.product .main-product .gift-card-content p.j2t-loyalty-points {
   font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 600;
   font-style: italic;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 19px;
   color: #ae4e0e;
   position: absolute;
@@ -3790,6 +3793,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   text-transform: none;
   margin-bottom: 12px;
   color: #ffffff;
+  padding-left: 15px;
 }
 .store .store-banner .image-text-content .caption p,
 .store .gifts-banner .image-text-content .caption p,
@@ -4254,7 +4258,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .store .main-content .all-products .each-product .product-caption,
 .store .main-content .all-search-products .each-product .product-caption {
   width: 100%;
-  padding-left: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
   display: inline-block;
   position: relative;
   margin-top: 20px;
@@ -4458,14 +4463,18 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .store .main-content .all-products .each-product p.price .price-label,
 .store .main-content .all-search-products .each-product p.price .price-label {
-  text-transform: none;
+  font-family: "minion-pro", Verdana, sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  text-transform: lowercase;
+  letter-spacing: 0;
 }
 .store .main-content .all-products .each-product p.j2t-loyalty-points,
 .store .main-content .all-search-products .each-product p.j2t-loyalty-points {
   font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 600;
   font-style: italic;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 19px;
   color: #c76e09;
   position: absolute;
@@ -5434,6 +5443,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .subscription-form .all-products .each-product .product-caption {
   width: 150px;
+  padding-left: 10px;
+  padding-right: 10px;
   display: inline-block;
 }
 .subscription-form .all-products .each-product img {
@@ -5782,6 +5793,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .subscription-form .last-content .all-products .each-product .product-caption {
   width: 223px;
+  padding-left: 10px;
+  padding-right: 10px;
   display: inline-block;
 }
 @media all and (max-width: 1199px) {
@@ -10615,10 +10628,10 @@ div#footer-wrapper .links:nth-of-type(1) {
   margin-left: 0px;
 }
 div#footer-wrapper .links.about-us-links {
-  width: 18%;
+  width: 22%;
 }
 div#footer-wrapper .links.store-links {
-  width: 25%;
+  width: 22%;
 }
 div#footer-wrapper .links.selections-links {
   width: 27%;
@@ -10662,6 +10675,7 @@ div#footer-wrapper ul.share-ctas li a {
   height: 24px;
   display: inline-block;
   color: #464646;
+  line-height: 24px;
 }
 div#footer-wrapper ul.share-ctas li a i {
   font-size: 18px;
