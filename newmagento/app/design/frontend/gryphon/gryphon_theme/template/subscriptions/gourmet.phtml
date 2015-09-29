@@ -94,7 +94,7 @@
 									          	<td class="col-3"><h3><?php echo Mage::helper('core')->currency($_productsingpur->getPrice(),true,false); ?><br><span>shipping included</span></h3></td>
 									          	<td class="col-4"><p>Equivalent to <br> <?php echo Mage::helper('core')->currency($equivalent,true,false); ?> per month</p></td>
 												
-									          	<td class="col-5"><a class="add-to-cart-btn" href="javascript:;" onclick="setLocation('<?php echo $this->getAddToCartUrl($_productsingpur) ?>');"><i class="fa fa-plus"></i><span>Add to Cart</span></a></td>
+									          	<td class="col-5"><a class="add-to-cart-btn" href="javascript:void(0);" data-addtocarturl="<?php echo $this->getAddToCartUrl($_productsingpur) ?>"><i class="fa fa-plus"></i><span>Add to Cart</span></a><span class="error-msg"></span></td>
 									        </tr>
 											
 											
@@ -152,7 +152,8 @@
 										          	<p class="price"><?php echo Mage::helper('core')->currency($_productsingpur->getPrice(),true,false); ?><br><span>shipping included</span></p>
 										          	<p>Equivalent to <br> <?php echo Mage::helper('core')->currency($equivalent,true,false); ?> per sachet</p>
 											</div>
-								          	<a class="add-to-cart-btn" href="javascript:;" onclick="addtocartCustom('<?php echo $this->getAddToCartUrl($_productsingpur) ?>');"><span>Add to Cart</span></a>
+								          	<a class="add-to-cart-btn" href="javascript:void(0);" data-addtocarturl="<?php echo $this->getAddToCartUrl($_productsingpur) ?>"><span>Add to Cart</span></a>
+								          	<span class="error-msg"></span>
 								        </div>
 
 							          	
@@ -222,7 +223,7 @@
 									          	<td class="col-2"><p><?php echo $_helper->productAttribute($_productsingpurint, $_productsingpurint->getShortDescription() , 'short_description'); ?></p></td>
 									          	<td class="col-3"><h3><?php echo Mage::helper('core')->currency($_productsingpurint->getPrice(),true,false); ?><br><span>shipping included</span></h3></td>
 									          	<td class="col-4"><p>Equivalent to <br> <?php echo Mage::helper('core')->currency($equivalent,true,false); ?> per month</p></td>
-									          	<td class="col-5"><a class="add-to-cart-btn" href="javascript:;" onclick="setLocation('<?php echo $this->getAddToCartUrl($_productsingpurint) ?>');"><i class="fa fa-plus"></i><span>Add to Cart</span></a></td>
+									          	<td class="col-5"><a class="add-to-cart-btn" href="javascript:void(0);" data-addtocarturl="<?php echo $this->getAddToCartUrl($_productsingpurint) ?>"><i class="fa fa-plus"></i><span>Add to Cart</span></a><span class="error-msg"></span></td>
 									        </tr>
 											
 									       <?php 
@@ -277,7 +278,8 @@
 										          	<p class="price"><?php echo Mage::helper('core')->currency($_productsingpurint->getPrice(),true,false); ?><br><span>shipping included</span></p>
 										          	<p>Equivalent to <br> <?php echo Mage::helper('core')->currency($equivalent,true,false); ?> per sachet</p>
 											</div>
-								          	<a class="add-to-cart-btn" href="javascript:;" onclick="addtocartCustom('<?php echo $this->getAddToCartUrl($_productsingpurint) ?>');"><span>Add to Cart</span></a>
+								          	<a class="add-to-cart-btn" href="javascript:void(0);" data-addtocarturl="<?php echo $this->getAddToCartUrl($_productsingpurint) ?>"><span>Add to Cart</span></a>
+								          	<span class="error-msg"></span>
 								        </div>
 								   <?php 
 								   $cnt++;
@@ -348,7 +350,18 @@
 		</div>
 
 	</div>
-	
+
+	<?php 
+	    $non_subscription_in_the_cart = 0;
+	    $allskus = array("SGP-ART-1M", "SGP-ART-3M", "SGP-ART-6M", "SGP-ART-12M", "SGP-GUR-1M", "SGP-GUR-3M", "SGP-GUR-6M", "SGP-GUR-12M","INT-ART-1M", "INT-ART-3M", "INT-ART-6M", "INT-ART-12M", "INT-GUR-1M", "INT-GUR-3M", "INT-GUR-6M", "INT-GUR-12M");
+	    $quote = Mage::getSingleton('checkout/session')->getQuote();
+	    foreach ($quote->getAllVisibleItems() as $item) {
+	        $itemsku = $item->getProduct()->getData('sku');        
+	        if(!in_array($itemsku, $allskus)) {
+	            $non_subscription_in_the_cart = 1;
+	        }
+	    }
+	?>	
 	<script>
 
 	/*
@@ -431,5 +444,20 @@
 	            }                      
 	        ]
 	    });
+
+		jQuery('.add-to-cart-btn').on('click', function(e){
+			e.preventDefault();
+			var AddToCartUrl = jQuery(this).data('addtocarturl');
+			console.log(AddToCartUrl);
+			var non_subscription_in_the_cart = "<?php echo $non_subscription_in_the_cart ?>";
+			console.log(non_subscription_in_the_cart);
+
+			if(non_subscription_in_the_cart==1) {					
+				jQuery(this).next('span.error-msg').html('This item cannot be purchased with non-subscription product in the cart.');
+			}else {
+				setLocation(AddToCartUrl);
+			}				
+
+		});
 	});
 	</script>

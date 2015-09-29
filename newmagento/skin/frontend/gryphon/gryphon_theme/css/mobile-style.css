@@ -56,6 +56,10 @@
   font-style: italic;
   position: absolute;
   top: 24px;
+  margin: 5px 0px 0px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: #c76e09 !important;
 }
 @font-face {
   font-family: 'Gotham-Bold';
@@ -1154,6 +1158,14 @@ a:focus {
   body {
     height: auto;
   }
+  html {
+    overflow: hidden;
+    height: 100%;
+  }
+  html.load-complete {
+    overflow: scroll;
+    height: auto;
+  }
   #page-wrapper {
     position: relative;
   }
@@ -1559,6 +1571,13 @@ html {
   filter: alpha(opacity=0);
   -webkit-animation: simpleAlphaIn 0.5s both cubic-bezier(0.7, 0, 0.3, 1);
   animation: simpleAlphaIn 0.5s both cubic-bezier(0.7, 0, 0.3, 1);
+}
+.is-ie #page-wrapper #header-wrapper .marquee p span.flip.up {
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -o-transform: none !important;
+  -ms-transform: none !important;
+  transform: none !important;
 }
 #main-mobile-header {
   width: 100%;
@@ -4907,6 +4926,15 @@ html {
   .subscription-form .second-content .image-text-content .plans .plan .add-to-cart-btn:hover {
     background-color: #ae4e0e;
   }
+  .subscription-form .second-content .image-text-content .plans .plan span.error-msg {
+    display: block;
+    font-family: "minion-pro", Verdana, sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 13.5px;
+    margin-top: -20px;
+    color: #ae4e0e;
+  }
   .subscription-form .second-content .image-text-content .slick-slider {
     margin: 0 auto;
   }
@@ -5274,9 +5302,12 @@ html {
     float: none;
     margin-right: 0;
     display: block;
-  }
-  .account .col-main .refer-friend-form .referral-container {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    /*
+      .referral-container{
+        margin-bottom: 40px;
+      }
+      */
   }
   .account .col-main .refer-friend-form .refer-friend-form {
     margin-bottom: 40px;
@@ -5291,6 +5322,14 @@ html {
   .account .col-main .refer-friend-form #j2t-referral-lines .send {
     width: 100%;
     display: block;
+    margin-bottom: 20px;
+  }
+  .account .col-main .refer-friend-form #j2t-referral-lines #j2t-add-line {
+    margin-top: 20px;
+  }
+  .account .col-main .refer-friend-form #j2t-referral-lines .form-list .field.j2t-rewardpoints-email img {
+    top: -57px;
+    right: 0px;
   }
   .account #referred-friends-table thead tr th {
     padding-left: 0 !important;
@@ -5305,6 +5344,12 @@ html {
   }
   .account #referred-friends-table tbody tr td:first-child {
     padding-left: 5px !important;
+  }
+  .account .col-main .referral-container {
+    margin-bottom: 50px;
+  }
+  .account .col-main .referral-container .points .right {
+    max-width: 200px;
   }
   body.giftvoucher-index-view .form-list {
     float: none;
@@ -5364,6 +5409,21 @@ html {
 }
 #mobile-custom-giftcard-view-table span.price {
   color: #ae4e0e;
+}
+.mobile-gift-card-back-button {
+  font-family: "minion-pro", Verdana, sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: .03em;
+  display: block;
+  margin-top: 42px;
+  color: #252525;
+  text-transform: none;
+}
+.mobile-gift-card-back-button i {
+  margin-right: 7px;
 }
 .mobile-order-history-item-detail {
   display: none;

@@ -30,7 +30,7 @@ $allowCategoriesIDs = $this->getAllowCategoires();
     
     <form action="" id="ajax-filter-form" name="ajax-filter-form" class="<?php echo $current_category_data['parent_id']; ?>">
         <?php if($current_category_data['url_key']=="store" || $current_category_data['parent_id']==5): ?>
-        <div class="each-filter-section">
+        <div class="each-filter-section fixed-fitler">
             <div class="all-inputs">
                 <div class="each-input">
                     <input type="checkbox" name="is_new" id="is_new" value="1" class="ajaxsearch" />
@@ -60,6 +60,7 @@ $allowCategoriesIDs = $this->getAllowCategoires();
         </div>
         <input class="ajaxsearch default-store-category" type="hidden" name="categoryId[]" value="56" />                 
         <?php endif; ?>
+        <?php if($current_category_data['url_key']!=="gifts"): ?>
         <?php foreach ($allCategories as $categoryId => $categoryData): ?>
             <?php
                 $category = $categoryData['category'];
@@ -140,6 +141,7 @@ $allowCategoriesIDs = $this->getAllowCategoires();
 
 
         <?php endforeach; ?>
+        <?php endif; ?>
     </form>
 
     <div class="info">
@@ -229,6 +231,13 @@ $allowCategoriesIDs = $this->getAllowCategoires();
             }else {
                 $('.default-store-category').prop('disabled', false);
             }
+
+            if ($('.fixed-fitler input.ajaxsearch').is(':checked')) {
+                $('.default-store-category').prop('disabled', true);
+            }else {
+                $('.default-store-category').prop('disabled', false);
+            }
+
             ajaxSearch.submit();
         });
 

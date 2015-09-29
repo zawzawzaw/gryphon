@@ -48,7 +48,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="logo-wrapper hidden-xs hidden-sm visible-md visible-lg">
-						<a href="/magento" class="site-logo"><img src="<?php echo IMG; ?>/logo/main-logo.png" alt="logo"></a>
+						<a href="/" class="site-logo"><img src="<?php echo IMG; ?>/logo/main-logo.png" alt="logo"></a>
 					</div>
 					<div id="menu-wrapper">
 						<nav id="nav-main">

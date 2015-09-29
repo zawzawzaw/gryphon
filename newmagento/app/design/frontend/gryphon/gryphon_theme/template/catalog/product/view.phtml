@@ -328,21 +328,26 @@ endif;
                             }else {
                                 try {
                                     jQuery.ajax({
-                                          url: url,
-                                          dataType: 'json',
-                                          type : 'post',
-                                          data: data,
-                                          complete: function(data){
-                                                jQuery('#ajax_loader').hide();
-                                                console.log(data.status + ": " + data.message);
+                                        url: url,
+                                        dataType: 'json',
+                                        type : 'post',
+                                        data: data,
+                                        success: function(data){
+                                            jQuery('#ajax_loader').hide();
+                                            console.log(data.status + ": " + data.message);
 
-                                                if(data.status=="ERROR") {
-                                                    jQuery('span.ajax_msg').html(data.message).show().delay(5000).fadeOut();
-                                                }else {
-                                                    do_update();
-                                                    jQuery('span.ajax_msg').html('Added to cart!').show().delay(5000).fadeOut();
-                                                }
-                                          }
+                                            if(data.status=="ERROR") {
+                                                jQuery('span.ajax_msg').html(data.message).show().delay(5000).fadeOut();
+                                            }else {
+                                                do_update();
+                                                jQuery('span.ajax_msg').html('Added to cart!').show().delay(5000).fadeOut();
+                                            }
+                                        },
+                                        error: function() {
+                                            console.log(jqXHR, textStatus, errorThrown);
+                                            do_update();
+                                            jQuery('span.ajax_msg').html('Added to cart!').show().delay(5000).fadeOut();
+                                        }
                                     });
                                 } catch (e) {
                                 }                                

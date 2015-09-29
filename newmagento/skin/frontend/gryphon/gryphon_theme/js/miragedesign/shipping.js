@@ -41,7 +41,7 @@
             type: 'POST',
             dataType: 'json',
             data: data,
-            url: '/magento/shippingcustomiser/index/ajaxGetShipping'
+            url: '/shippingcustomiser/index/ajaxGetShipping'
         }).done(function(result) {
             hideOverlay();
             if (result.success) {

@@ -210,6 +210,10 @@ strong {
   font-style: italic;
   position: absolute;
   top: 24px;
+  margin: 5px 0px 0px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: #c76e09 !important;
 }
 @font-face {
   font-family: 'Gotham-Bold';
@@ -1019,7 +1023,7 @@ ul.messages {
   background: #fff;
   padding: 30px 20px;
   border: 1px solid #b4b4b4;
-  width: 450px;
+  width: 400px;
 }
 #page-wrapper #header-cta .cart-preview-select p a {
   color: #ae4e0e;
@@ -1447,8 +1451,8 @@ p {
   font-family: 'Gotham-Book', Verdana, sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 11.5px;
-  line-height: 19px;
+  font-size: 12px;
+  line-height: 22px;
   color: #464646;
 }
 #return-to-top {
@@ -1886,8 +1890,8 @@ div.home #company-story .image-text-content .vertical-center p {
   font-weight: 600;
   font-style: normal;
   margin-bottom: 22px;
-  font-size: 11.5px;
-  line-height: 19px;
+  font-size: 12px;
+  line-height: 22px;
   color: #464646;
 }
 div.home #company-story .image-text-content .vertical-center p:last-child {
@@ -2170,6 +2174,10 @@ div.product .main-product .product-content .grouped-items .row .row .order-qty .
   margin-top: 1px;
   margin-right: -4px;
   padding: 0 5px;
+  font-family: "minion-pro", Verdana, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
 }
 div.product .main-product .product-content .grouped-items .row .row .order-qty a.minus {
   background-color: #bcbbbb;
@@ -2335,6 +2343,10 @@ div.product .main-product .product-content .qty-wrapper .input-text {
   margin-left: -3px;
   margin-right: -4px;
   padding: 0 5px;
+  font-family: "minion-pro", Verdana, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
 }
 div.product .main-product .product-content .qty-wrapper a.minus {
   background-color: #bcbbbb;
@@ -3456,7 +3468,7 @@ div.product .similar-product .all-products .each-product span.caption.product-ti
 }
 div.product .product-collection {
   margin-top: 90px;
-  margin-bottom: 80px;
+  margin-bottom: 90px;
 }
 div.product .product-collection .image-text-content h1 {
   font-family: "Bombshell-Pro", Verdana, sans-serif;
@@ -3477,7 +3489,7 @@ div.product .product-collection .image-text-content p {
   margin-bottom: 20px;
 }
 div.product .product-collection .image-text-content p a {
-  color: #464646;
+  color: #ae4e0e;
 }
 div.product .product-collection .image-text-content p a:hover {
   color: #ae4e0e;
@@ -3496,6 +3508,7 @@ div.product .product-collection .image-text-content .text-content {
   vertical-align: middle;
   height: 217px;
   padding-right: 2%;
+  padding-top: 15px;
 }
 div.product .product-collection .image-text-content hr {
   border-top: 1px solid #CCC;
@@ -3781,6 +3794,12 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   height: 261px;
   display: table-cell;
   vertical-align: middle;
+  -moz-opacity: 0.9;
+  -khtml-opacity: 0.9;
+  -webkit-opacity: 0.9;
+  opacity: 0.9;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=90);
+  filter: alpha(opacity=90);
 }
 .store .store-banner .image-text-content .caption h1,
 .store .gifts-banner .image-text-content .caption h1,
@@ -4296,10 +4315,10 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-family: 'Gotham-Medium', Verdana, sans-serif;
   font-weight: 200;
   font-style: normal;
-  font-size: 11px;
-  line-height: 24px;
-  letter-spacing: 0.2em;
   text-transform: uppercase;
+  font-size: 10.5px;
+  line-height: 22px;
+  letter-spacing: 0.03em;
 }
 .store .main-content .all-products .each-product .product-image-container a img.hover,
 .store .main-content .all-search-products .each-product .product-image-container a img.hover {
@@ -5526,18 +5545,18 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   color: #464646;
 }
 .subscription-form .all-products .selected-tea {
-  padding: 21px 28px;
-  padding-bottom: 50px;
-  border: 2px solid #ae4e0e;
   margin-top: 18px;
+  padding: 35px 28px;
+  padding-bottom: 50px;
+  border: 2px solid #c76e09;
 }
 .subscription-form .all-products .selected-tea .small {
   font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 400;
   font-style: italic;
-  font-size: 12px;
   line-height: 16px;
-  color: #ae4e0e;
+  font-size: 13px;
+  color: #c76e09;
 }
 .subscription-form .all-products .selected-tea h2.selected_tea_count {
   font-family: "minion-pro", Verdana, sans-serif;
@@ -5674,7 +5693,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.03em;
-  color: #ae4e0e;
+  color: #c76e09;
 }
 .subscription-form .table-1 .col-3 span,
 .subscription-form .table-2 .col-3 span {
@@ -5684,7 +5703,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-size: 13px;
   line-height: 16px;
   letter-spacing: 0.03em;
-  color: #ae4e0e;
+  color: #c76e09;
 }
 .subscription-form .table-1 .col-4 p,
 .subscription-form .table-2 .col-4 p {
@@ -5723,6 +5742,19 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .subscription-form .table-1 .col-5 .add-to-cart-btn span:hover,
 .subscription-form .table-2 .col-5 .add-to-cart-btn span:hover {
+  color: #ae4e0e;
+}
+.subscription-form .table-1 .col-5 .error-msg,
+.subscription-form .table-2 .col-5 .error-msg {
+  position: absolute;
+  right: -215px;
+  max-width: 390px;
+  display: block;
+  font-family: "minion-pro", Verdana, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 13.5px;
+  margin-top: -20px;
   color: #ae4e0e;
 }
 .subscription-form .table-1 .terms-icon,
@@ -5784,9 +5816,14 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   }
 }
 .subscription-form .last-content .all-products .each-product {
-  width: 13.5%;
-  margin-right: 1.8%;
-  margin-left: 1.8%;
+  /*
+        width: 13.5%;
+        margin-right: 1.8%;
+        margin-left: 1.8%;
+        */
+  width: 20%;
+  margin-right: 2% !important;
+  margin-left: 2%;
   margin-bottom: 0px;
   float: none;
   height: auto;
@@ -5844,6 +5881,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   letter-sapcing: 0px;
   color: #464646;
   text-transform: none;
+  padding: 0 5px;
 }
 .subscription-form .last-content .all-products .each-product .terms {
   font-family: "minion-pro", Verdana, sans-serif;
@@ -6103,6 +6141,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-family: 'Gotham-Medium', Verdana, sans-serif;
   font-weight: 200;
   font-style: normal;
+  font-weight: 600;
   font-size: 10px;
   letter-spacing: 0.03em;
   color: #ae4e0e;
@@ -6114,9 +6153,9 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .subscription .last-content .center .reasons {
   display: inline-block;
   width: 162px;
-  padding-right: 20px;
   vertical-align: top;
   min-height: 140px;
+  padding-right: 30px;
 }
 .subscription .last-content .center .reasons h5 {
   font-family: 'Gotham-Medium', Verdana, sans-serif;
@@ -6138,7 +6177,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   margin-bottom: 6px;
   letter-spacing: 0.1em;
   color: #252525;
-  width: 100px;
+  width: 140px;
 }
 .subscription .last-content .center .reasons p {
   font-family: 'Gotham-Book', Verdana, sans-serif;
@@ -6166,6 +6205,9 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .subscription .last-content .center button.cta:hover {
   background-color: #ae4e0e;
+}
+.subscriptions-gourmet-index .subscription .second-content {
+  padding-top: 0;
 }
 .collections {
   margin-top: 85px;
@@ -6265,10 +6307,12 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .collections .main-content .text-content {
   margin-left: 40px;
   margin-top: 26px;
+  margin-right: 30px;
 }
 @media all and (max-width: 992px) {
   .collections .main-content .text-content {
     margin-left: 0px;
+    margin-right: 0px;
   }
 }
 @media all and (max-width: 992px) {
@@ -6291,8 +6335,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-family: 'Gotham-Book', Verdana, sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 11.5px;
-  line-height: 19px;
+  font-size: 12px;
+  line-height: 22px;
   color: #464646;
   margin-bottom: 20px;
 }
@@ -6337,7 +6381,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 600;
   font-style: italic;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 16px;
   letter-spacing: 0.03em;
   display: block;
@@ -6439,6 +6483,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 500;
   font-style: normal;
+  font-weight: 600;
   font-size: 13px;
   letter-spacing: 0.1em;
   margin-left: 10px;
@@ -6724,6 +6769,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   display: inline-block;
   text-align: center;
   font-size: 9px;
+  margin-left: -20px;
 }
 .cart #cart .table tbody tr td .image-text-container p.product-qty a.minus i,
 .cart #confirmation .table tbody tr td .image-text-container p.product-qty a.minus i {
@@ -6738,6 +6784,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   display: inline-block;
   text-align: center;
   font-size: 9px;
+  margin-right: -20px;
 }
 .cart #cart .table tbody tr td .image-text-container p.product-qty a.plus i,
 .cart #confirmation .table tbody tr td .image-text-container p.product-qty a.plus i {
@@ -6982,7 +7029,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .cart #cart .each-details .sub-total p,
 .cart #confirmation .each-details .sub-total p {
-  color: #ae4e0e;
+  color: #c76e09;
 }
 .cart #cart .each-details .amount,
 .cart #confirmation .each-details .amount {
@@ -7023,6 +7070,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 500;
   font-style: normal;
+  font-weight: 600;
   font-size: 13px;
   line-height: 16px;
   letter-spacing: 0.05em;
@@ -7082,8 +7130,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .cart #confirmation .each-details p {
   font-size: 11px;
-  font-family: 'Gotham-Bold', Verdana, sans-serif;
-  font-weight: 500;
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
   font-style: normal;
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -7299,8 +7347,10 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-style: italic;
   font-size: 12px;
   line-height: 16px;
-  color: #ae4e0e;
   letter-spacing: 0.02em;
+  color: #c76e09;
+  font-weight: 600;
+  font-size: 13px;
 }
 .cart #confirmation .rewards_point_cart {
   position: absolute;
@@ -7311,7 +7361,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-size: 13px;
   line-height: 16px;
   letter-spacing: 0.01em;
-  color: #ae4e0e;
+  color: #c76e09;
   width: 600px;
 }
 .cart #confirmation .used-points-msg {
@@ -7330,8 +7380,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   margin-bottom: 10px;
 }
 .cart #confirmation .address-info .billing-info h5 {
-  font-family: 'Gotham-Bold', Verdana, sans-serif;
-  font-weight: 500;
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
   font-style: normal;
   font-size: 11px;
   line-height: 38px;
@@ -7364,8 +7414,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   margin-bottom: 10px;
 }
 .cart #confirmation .address-info .shipping-info h5 {
-  font-family: 'Gotham-Bold', Verdana, sans-serif;
-  font-weight: 500;
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
   font-style: normal;
   font-size: 11px;
   line-height: 38px;
@@ -7472,7 +7522,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-style: italic;
   font-weight: 400;
   font-size: 13px;
-  color: #ae4e0e;
+  color: #c76e09;
   text-align: center;
   letter-spacing: 0.03em;
 }
@@ -7486,7 +7536,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   color: #464646;
 }
 .cart #billing_shipping .delivery-rates p span {
-  color: #ae4e0e;
+  color: #c76e09;
   font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 400;
   font-style: italic;
@@ -7540,7 +7590,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .cart #checkout-step-billing .dropdown-address .dropdown,
 .cart #checkout-step-shipping .dropdown-address .dropdown {
-  width: 400px;
+  width: 440px;
   margin-bottom: 15px;
 }
 .cart #checkout-step-billing .dropdown-address .dropdown select#billing-address-select,
@@ -7664,6 +7714,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   .cart #co-billing-form #billing_fax_no_2,
   .cart #co-billing-form #shipping_fax_no_2 {
     width: 61%;
+    margin-left: 0;
   }
 }
 .cart #co-billing-form .hide-input {
@@ -9727,8 +9778,21 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   border: 1px solid #ebb387;
   display: block;
   position: relative;
-  height: 55px;
-  padding: 8px 20px;
+  height: auto;
+  *zoom: 1;
+  padding-left: 21px;
+  padding-right: 16px;
+  padding-top: 15px;
+  padding-bottom: 8px;
+}
+.blog .main-content .image-text-content .post-extra-container:before,
+.blog .main-content .image-text-content .post-extra-container:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.blog .main-content .image-text-content .post-extra-container:after {
+  clear: both;
 }
 .blog .main-content .image-text-content .post-extra-content {
   margin-top: 15px;
@@ -9772,7 +9836,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .blog .main-content .image-text-content .post-extra-content p {
   line-height: 18px;
-  margin-top: 5px;
+  margin-top: 3px;
+  font-size: 11px;
 }
 .blog .main-content .image-text-content .post-extra-content p a {
   color: #464646;
@@ -9782,7 +9847,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .blog .main-content .image-text-content .post-extra-content ul {
   text-align: right;
-  margin-top: 5px;
+  margin-top: 3px;
 }
 .blog .main-content .image-text-content .post-extra-content ul li {
   display: inline-block;
@@ -9849,9 +9914,6 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   letter-spacing: 0.03em;
   margin-bottom: 10px;
 }
-.blog .sidebar .each-sidebar-content h2.search-title {
-  color: #ae4e0e;
-}
 .blog .sidebar .each-sidebar-content input {
   font-family: 'Gotham-Book', Verdana, sans-serif;
   font-weight: 600;
@@ -9859,21 +9921,9 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   padding-left: 5px;
   font-size: 11px;
   line-height: 23px;
-  color: #ae4e0e;
+  color: #252525;
   width: 100%;
   border: 1px solid #ccc;
-}
-.blog .sidebar .each-sidebar-content input::-webkit-input-placeholder {
-  color: #ae4e0e;
-}
-.blog .sidebar .each-sidebar-content input:-moz-placeholder {
-  color: #ae4e0e;
-}
-.blog .sidebar .each-sidebar-content input::-moz-placeholder {
-  color: #ae4e0e;
-}
-.blog .sidebar .each-sidebar-content input:-ms-input-placeholder {
-  color: #ae4e0e;
 }
 .blog .sidebar .each-sidebar-content a.signup {
   background: none;
@@ -9895,9 +9945,12 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .blog .sidebar .each-sidebar-content ul.tags {
   height: auto;
+  font-size: 0;
 }
 .blog .sidebar .each-sidebar-content ul.tags li {
   display: block;
+  width: 50%;
+  display: inline-block;
 }
 .blog .sidebar .each-sidebar-content ul.tags li a {
   font-family: 'Gotham-Book', Verdana, sans-serif;
@@ -9909,6 +9962,24 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   margin-left: 0px;
 }
 .blog .sidebar .each-sidebar-content ul.tags li a:hover {
+  color: #ae4e0e;
+}
+.blog .sidebar .each-sidebar-content ul.custom-categories {
+  height: auto;
+}
+.blog .sidebar .each-sidebar-content ul.custom-categories li {
+  display: block;
+}
+.blog .sidebar .each-sidebar-content ul.custom-categories li a {
+  font-family: 'Gotham-Book', Verdana, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 11px;
+  line-height: 20px;
+  color: #464646;
+  margin-left: 0px;
+}
+.blog .sidebar .each-sidebar-content ul.custom-categories li a:hover {
   color: #ae4e0e;
 }
 .blog .sidebar .each-sidebar-content p.tags a {
@@ -10219,6 +10290,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-weight: 600;
   font-size: 13px;
   line-height: 20px;
   letter-spacing: 0.1em;
@@ -10229,8 +10301,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-family: 'Gotham-Book', Verdana, sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 11px;
-  line-height: 16px;
+  font-size: 12px;
+  line-height: 22px;
   color: #464646;
   width: 266px;
   margin-top: 5px;
@@ -10416,7 +10488,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-style: italic;
   font-size: 12px;
   line-height: 16px;
-  color: #ae4e0e;
+  color: #c76e09;
   letter-spacing: 0.03em;
   display: inline-block;
   padding-left: 163px;
@@ -10556,7 +10628,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-size: 12px;
   line-height: 15px;
   letter-spacing: 0.05em;
-  color: #ae4e0e;
+  color: #c76e09;
 }
 .trade-signup .last-content .notice p {
   font-family: "minion-pro", Verdana, sans-serif;
@@ -10565,7 +10637,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-size: 12px;
   line-height: 15px;
   letter-spacing: .03em;
-  color: #ae4e0e;
+  color: #c76e09;
   margin-top: 2px;
   margin-bottom: 23px;
 }
@@ -11139,8 +11211,8 @@ div#footer-wrapper .search span.ajax_msg {
   font-family: 'Gotham-Book', Verdana, sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 11.5px;
-  line-height: 19px;
+  font-size: 12px;
+  line-height: 22px;
   color: #464646;
   margin-bottom: 20px;
 }
@@ -11172,10 +11244,11 @@ div#footer-wrapper .search span.ajax_msg {
 }
 .shipping-info .main-content a {
   font-family: "minion-pro", Verdana, sans-serif;
+  font-family: 'Gotham-Book', Verdana, sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 11.5px;
+  line-height: 19px;
   letter-spacing: 0.03em;
   display: block;
   margin-top: 30px;
@@ -11250,7 +11323,7 @@ div#footer-wrapper .search span.ajax_msg {
   font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 600;
   font-style: normal;
-  color: #c76e09;
+  color: #ae4e0e;
   font-size: 13px;
   line-height: 24px;
   letter-spacing: 0.05em;
@@ -11372,8 +11445,8 @@ div#footer-wrapper .search span.ajax_msg {
   font-family: 'Gotham-Book', Verdana, sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 11.5px;
-  line-height: 19px;
+  font-size: 12px;
+  line-height: 22px;
   color: #464646;
   margin-bottom: 20px;
 }
@@ -11400,6 +11473,7 @@ div#footer-wrapper .search span.ajax_msg {
   font-size: 13px;
   line-height: 16px;
   color: #ae4e0e;
+  color: #c76e09;
 }
 .privacy .main-content ol {
   counter-reset: olcounter;
@@ -11614,8 +11688,8 @@ div#footer-wrapper .search span.ajax_msg {
   font-family: 'Gotham-Book', Verdana, sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 11.5px;
-  line-height: 19px;
+  font-size: 12px;
+  line-height: 22px;
   color: #ae4e0e;
   margin-bottom: 20px;
 }
@@ -11986,6 +12060,8 @@ div#footer-wrapper .search span.ajax_msg {
   width: 690px;
   margin: 0 auto;
   margin-bottom: 1em;
+  font-size: 12px;
+  line-height: 22px;
 }
 .careers .main-content .first-content .center p:last-child {
   margin-bottom: 0;
@@ -12015,8 +12091,8 @@ div#footer-wrapper .search span.ajax_msg {
   font-family: 'Gotham-Book', Verdana, sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 11.5px;
-  line-height: 18px;
+  font-size: 12px;
+  line-height: 20px;
   color: #464646;
 }
 .careers .main-content .second-content .reason {
@@ -12695,8 +12771,8 @@ div#footer-wrapper .search span.ajax_msg {
   font-family: 'Gotham-Book', Verdana, sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 11.5px;
-  line-height: 18px;
+  font-size: 12px;
+  line-height: 20px;
   color: #464646;
   margin-top: 5px;
   width: 220px;
@@ -12706,10 +12782,10 @@ div#footer-wrapper .search span.ajax_msg {
   width: 16px;
   height: 16px;
   color: #ffffff;
-  font-family: 'Gotham-Bold', Verdana, sans-serif;
-  font-weight: 500;
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
   font-style: normal;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 16px;
   letter-spacing: 0.03em;
   vertical-align: middle;
@@ -12789,6 +12865,7 @@ div#footer-wrapper .search span.ajax_msg {
   font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-weight: 500;
   font-size: 12px;
   line-height: 15px;
   letter-spacing: 0.1em;
@@ -12807,7 +12884,6 @@ div#footer-wrapper .search span.ajax_msg {
   font-size: 0;
   text-align: center;
   padding-top: 6px;
-  padding-bottom: 50px;
   margin-bottom: 70px;
 }
 .rewards .main-content .second-content .additional-item-container .additional-item {
@@ -12909,6 +12985,7 @@ div#footer-wrapper .search span.ajax_msg {
 .rewards .main-content .third-content .faq-item-container .faq-item {
   border-bottom: 1px solid #cccccc;
   padding: 10px 5px;
+  padding-right: 15px;
   padding-bottom: 16px;
 }
 .rewards .main-content .third-content .faq-item-container .faq-item .question {

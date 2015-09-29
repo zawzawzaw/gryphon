@@ -7,7 +7,7 @@
 				<div class="col-md-12 caption-container">
 					<div class="caption">
 						<h1>How to start a day with <br> Gryphon tea</h1>
-						<a href="store.html" class="read-more cta">Visit Tea Store</a>
+						<a href="http://www.gryphontea.com/store.html" class="read-more cta">Visit Tea Store</a>
 					</div>
 				</div>
 			</div>
