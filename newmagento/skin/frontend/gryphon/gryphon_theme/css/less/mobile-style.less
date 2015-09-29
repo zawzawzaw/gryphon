@@ -1343,6 +1343,16 @@
   html, body{
     height: auto;
   }
+  html{
+    overflow: hidden;
+    height: 100%;
+
+    &.load-complete{
+      overflow: scroll;
+      height: auto;
+    }
+  }
+
 
   #page-wrapper{
     position: relative;
@@ -1627,6 +1637,21 @@ html{
     }
   }
 }
+
+.is-ie{
+  #page-wrapper #header-wrapper .marquee{
+    p{
+      span.flip.up{
+        -webkit-transform: none !important;
+        -moz-transform: none !important;
+        -o-transform: none !important;
+        -ms-transform: none !important;
+        transform: none !important;
+      }
+    }
+  }
+}
+
 
 
 #main-mobile-header{
@@ -6403,10 +6428,15 @@ html{
       float: none;
       margin-right: 0;
       display: block;
+      margin-bottom: 50px;
 
+
+      /*
       .referral-container{
         margin-bottom: 40px;
       }
+      */
+     
       .refer-friend-form{
         margin-bottom: 40px;
       }
@@ -6425,9 +6455,21 @@ html{
         .send{
           width: 100%;
           display: block;
+          margin-bottom: 20px;
         }
 
       }
+
+      #j2t-referral-lines #j2t-add-line{
+        // margin-bottom: 30px;
+        margin-top: 20px;
+      }
+
+      #j2t-referral-lines .form-list .field.j2t-rewardpoints-email img{
+        top: -57px;
+        right: 0px;
+      }
+
     }
 
 
@@ -6448,6 +6490,15 @@ html{
         }
       }
     }
+
+    .col-main .referral-container{
+      margin-bottom: 50px;
+      .points{
+        .right{
+          max-width: 200px;
+        }
+      }
+    } // .referral-container
 
 
 
@@ -6545,6 +6596,22 @@ html{
 
 }
 
+
+.mobile-gift-card-back-button{
+
+  .minion-pro-semibold-italic;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: .03em;
+  display: block;
+  margin-top: 42px;
+  color: #252525;
+  text-transform: none;
+
+  i{
+    margin-right: 7px;
+  }
+}
 
 .mobile-order-history-item-detail{
   display: none;
