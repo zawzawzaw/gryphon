@@ -6132,6 +6132,23 @@ html{
     }
 
 
+    .main-content.single{
+      #all-posts .post-content{
+
+        .mobile-part-01{
+          //display: block;
+        }
+        .mobile-readmore-button{
+          display: none;
+        }
+        .mobile-part-02{
+          display: block !important;
+        }
+
+      }
+    }
+
+
   } // .blog
 
 } // @media (max-width: 991px)
@@ -6177,7 +6194,7 @@ html{
 
 
 @media (max-width: 991px) {
-  body.blog{
+  .blog{
     
     padding-bottom: 0px!important;
 
@@ -6417,7 +6434,7 @@ html{
 
           .single-order-item-back-button{
             text-align: left;
-            padding-left: 30px;
+            //padding-left: 30px;
           }
           .single-order-item-reorder-button{
             text-align: right;
