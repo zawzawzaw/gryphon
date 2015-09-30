@@ -230,10 +230,10 @@
 								<div class="terms">
 									<p class="hidden-xs hidden-sm">Customers who sign-up for a 1 year subscription can get a 10% discount off on all other online purchases throughout the subscription period.</p>
 									<p class="hidden-xs hidden-sm">Not applicable with other special promotions or discounts.</p>
-									<p class="hidden-xs hidden-sm">Note: Subscription plans cannot be checked out with other product purchases.</p>
+									<!-- <p class="hidden-xs hidden-sm">Note: Subscription plans cannot be checked out with other product purchases.</p> -->
 
 
-									<p class="visible-xs visible-sm">Customers who sign-up for a 1 year subscription can get a 10% discount off on all other online purchases throughout the subscription period. Not applicable with other special promotions or discounts. Subscription plans cannot be checked out with other product purchases.</p>
+									<p class="visible-xs visible-sm">Customers who sign-up for a 1 year subscription can get a 10% discount off on all other online purchases throughout the subscription period. Not applicable with other special promotions or discounts.</p>
 
 								</div>
 							</div>
@@ -359,9 +359,9 @@
 								<div class="terms">									
 									<p class="hidden-xs hidden-sm">Customers who sign-up for a 1 year subscription can get a 10% discount off on all other online purchases throughout the subscription period.</p>
 									<p class="hidden-xs hidden-sm">Not applicable with other special promotions or discounts.</p>
-									<p class="hidden-xs hidden-sm">Note: Subscription plans cannot be checked out with other product purchases.</p>
+									<!-- <p class="hidden-xs hidden-sm">Note: Subscription plans cannot be checked out with other product purchases.</p> -->
 									
-									<p class="visible-xs visible-sm">Customers who sign-up for a 1 year subscription can get a 10% discount off on all other online purchases throughout the subscription period. Not applicable with other special promotions or discounts. Subscription plans cannot be checked out with other product purchases.</p>
+									<p class="visible-xs visible-sm">Customers who sign-up for a 1 year subscription can get a 10% discount off on all other online purchases throughout the subscription period. Not applicable with other special promotions or discounts.</p>
 								</div>
 							</div>							
 						</div>
@@ -620,7 +620,7 @@
 			console.log(non_subscription_in_the_cart);
 
 			if(non_subscription_in_the_cart==1) {					
-				jQuery(this).next('span.error-msg').html('This item cannot be purchased with non-subscription product in the cart.');
+				jQuery(this).next('span.error-msg').html('This subscription plan cannot be purchased with other items in the cart. Please check out first before making any other purchases.');
 			}else {
 				addtocartCustom(AddToCartUrl);
 			}				

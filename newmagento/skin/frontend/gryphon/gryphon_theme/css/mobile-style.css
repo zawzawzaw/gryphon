@@ -1572,12 +1572,15 @@ html {
   -webkit-animation: simpleAlphaIn 0.5s both cubic-bezier(0.7, 0, 0.3, 1);
   animation: simpleAlphaIn 0.5s both cubic-bezier(0.7, 0, 0.3, 1);
 }
-.is-ie #page-wrapper #header-wrapper .marquee p span.flip.up {
+.is-ie #page-wrapper #header-wrapper .marquee div span.flip.up {
   -webkit-transform: none !important;
   -moz-transform: none !important;
   -o-transform: none !important;
   -ms-transform: none !important;
   transform: none !important;
+}
+.is-ie #page-wrapper #header-wrapper .marquee div span.flip.up .front {
+  position: static!important;
 }
 #main-mobile-header {
   width: 100%;

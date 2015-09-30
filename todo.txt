@@ -77,3 +77,15 @@ Tested Email
 - shipping email 
 - mailchip newletter confirmation received
 - welcome email received	
+
+
+
+Product quantity has exceeded limit
+
+
+30-09-15
+- magento newsletter
+- order copy email to client
+- guest order confirmation layout seems different
+- auto generate invoice - all of customer order has invoice already does client had to click through sales > order or did it happend automatically?
+- magento order reports - done

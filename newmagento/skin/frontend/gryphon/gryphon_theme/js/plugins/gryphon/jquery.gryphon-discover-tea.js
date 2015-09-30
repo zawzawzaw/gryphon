@@ -485,7 +485,7 @@ if (!Array.prototype.indexOf) {
           $.ajax({
             type: 'GET',
             data: {},
-            url: 'http://gryphontea.com/magento/discovertea/index?id=' + final_results[0].id,
+            url: 'http://gryphontea.com/discovertea/index?id=' + final_results[0].id,
             complete: this.on_result_01_complete.bind(this)
           });
         }
@@ -494,7 +494,7 @@ if (!Array.prototype.indexOf) {
           $.ajax({
             type: 'GET',
             data: {},
-            url: 'http://gryphontea.com/magento/discovertea/index?id=' + final_results[1].id,
+            url: 'http://gryphontea.com/discovertea/index?id=' + final_results[1].id,
             complete: this.on_result_02_complete.bind(this)
           });
         }
@@ -503,7 +503,7 @@ if (!Array.prototype.indexOf) {
           $.ajax({
             type: 'GET',
             data: {},
-            url: 'http://gryphontea.com/magento/discovertea/index?id=' + final_results[2].id,
+            url: 'http://gryphontea.com/discovertea/index?id=' + final_results[2].id,
             complete: this.on_result_03_complete.bind(this)
           });
         }
@@ -512,7 +512,7 @@ if (!Array.prototype.indexOf) {
           $.ajax({
             type: 'GET',
             data: {},
-            url: 'http://gryphontea.com/magento/discovertea/index?id=' + final_results[3].id,
+            url: 'http://gryphontea.com/discovertea/index?id=' + final_results[3].id,
             complete: this.on_result_04_complete.bind(this)
           });
         }
@@ -634,7 +634,7 @@ if (!Array.prototype.indexOf) {
           $.ajax({
             type: 'GET',
             data: {},
-            url: 'http://gryphontea.com/magento/discovertea/index?id=' + different_final_results[0].id,
+            url: 'http://gryphontea.com/discovertea/index?id=' + different_final_results[0].id,
             complete: this.on_different_result_01_complete.bind(this)
           });
         }
@@ -643,7 +643,7 @@ if (!Array.prototype.indexOf) {
           $.ajax({
             type: 'GET',
             data: {},
-            url: 'http://gryphontea.com/magento/discovertea/index?id=' + different_final_results[1].id,
+            url: 'http://gryphontea.com/discovertea/index?id=' + different_final_results[1].id,
             complete: this.on_different_result_02_complete.bind(this)
           });
           
@@ -653,7 +653,7 @@ if (!Array.prototype.indexOf) {
           $.ajax({
             type: 'GET',
             data: {},
-            url: 'http://gryphontea.com/magento/discovertea/index?id=' + different_final_results[2].id,
+            url: 'http://gryphontea.com/discovertea/index?id=' + different_final_results[2].id,
             complete: this.on_different_result_03_complete.bind(this)
           });
           
@@ -663,7 +663,7 @@ if (!Array.prototype.indexOf) {
           $.ajax({
             type: 'GET',
             data: {},
-            url: 'http://gryphontea.com/magento/discovertea/index?id=' + different_final_results[3].id,
+            url: 'http://gryphontea.com/discovertea/index?id=' + different_final_results[3].id,
             complete: this.on_different_result_04_complete.bind(this)
           });
         }
@@ -895,26 +895,26 @@ if (!Array.prototype.indexOf) {
 
     on_result_01_complete: function(event){
       var data = JSON.parse(event['responseText']);
-      var image_str = '<img src="' + 'http://gryphontea.com/magento/media/catalog/product' + data.image + '">'
+      var image_str = '<img src="' + 'http://gryphontea.com/media/catalog/product' + data.image + '">'
       this.result_01_element.find('.results-item-image a').append(image_str);
       this.result_01_element.find('p').html("" + data.short_description);
       
     },
     on_result_02_complete: function(event){
       var data = JSON.parse(event['responseText']);
-      var image_str = '<img src="' + 'http://gryphontea.com/magento/media/catalog/product' + data.image + '">'
+      var image_str = '<img src="' + 'http://gryphontea.com/media/catalog/product' + data.image + '">'
       this.result_02_element.find('.results-item-image a').append(image_str);
       this.result_02_element.find('p').html("" + data.short_description);
     },
     on_result_03_complete: function(event){
       var data = JSON.parse(event['responseText']);
-      var image_str = '<img src="' + 'http://gryphontea.com/magento/media/catalog/product' + data.image + '">'
+      var image_str = '<img src="' + 'http://gryphontea.com/media/catalog/product' + data.image + '">'
       this.result_03_element.find('.results-item-image a').append(image_str);
       this.result_03_element.find('p').html("" + data.short_description);
     },
     on_result_04_complete: function(event){
       var data = JSON.parse(event['responseText']);
-      var image_str = '<img src="' + 'http://gryphontea.com/magento/media/catalog/product' + data.image + '">'
+      var image_str = '<img src="' + 'http://gryphontea.com/media/catalog/product' + data.image + '">'
       this.result_04_element.find('.results-item-image a').append(image_str);
       this.result_04_element.find('p').html("" + data.short_description);
     },
@@ -923,25 +923,25 @@ if (!Array.prototype.indexOf) {
 
     on_different_result_01_complete: function(event){
       var data = JSON.parse(event['responseText']);
-      var image_str = '<img src="' + 'http://gryphontea.com/magento/media/catalog/product' + data.image + '">'
+      var image_str = '<img src="' + 'http://gryphontea.com/media/catalog/product' + data.image + '">'
       this.different_result_01_element.find('.results-item-image a').append(image_str);
       this.different_result_01_element.find('p').html("" + data.short_description);
     },
     on_different_result_02_complete: function(event){
       var data = JSON.parse(event['responseText']);
-      var image_str = '<img src="' + 'http://gryphontea.com/magento/media/catalog/product' + data.image + '">'
+      var image_str = '<img src="' + 'http://gryphontea.com/media/catalog/product' + data.image + '">'
       this.different_result_02_element.find('.results-item-image a').append(image_str);
       this.different_result_02_element.find('p').html("" + data.short_description);
     },
     on_different_result_03_complete: function(event){
       var data = JSON.parse(event['responseText']);
-      var image_str = '<img src="' + 'http://gryphontea.com/magento/media/catalog/product' + data.image + '">'
+      var image_str = '<img src="' + 'http://gryphontea.com/media/catalog/product' + data.image + '">'
       this.different_result_03_element.find('.results-item-image a').append(image_str);
       this.different_result_03_element.find('p').html("" + data.short_description);
     },
     on_different_result_04_complete: function(event){
       var data = JSON.parse(event['responseText']);
-      var image_str = '<img src="' + 'http://gryphontea.com/magento/media/catalog/product' + data.image + '">'
+      var image_str = '<img src="' + 'http://gryphontea.com/media/catalog/product' + data.image + '">'
       this.different_result_04_element.find('.results-item-image a').append(image_str);
       this.different_result_04_element.find('p').html("" + data.short_description);
     },
