@@ -1,6 +1,6 @@
 [
   {
-    "url": "http://test.gryphontea.com/magento/contessa-grey.html",
+    "url": "http://gryphontea.com/contessa-grey.html",
     "id": "93",
     "sku": "ART0007",
     "name": "Contessa Grey",
@@ -9,7 +9,7 @@
     "aroma": ["citrus", "minty"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/earl-grey-lavender.html",
+    "url": "http://gryphontea.com/earl-grey-lavender.html",
     "id": "108",
     "sku": "ART0008",
     "name": "Earl Grey Lavender",
@@ -18,7 +18,7 @@
     "aroma": ["citrus"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/british-breakfast-tea.html",
+    "url": "http://gryphontea.com/british-breakfast-tea.html",
     "id": "47",
     "sku": "ART0009",
     "name": "British Breakfast",
@@ -27,7 +27,7 @@
     "aroma": ["woody"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/straits-chai.html",
+    "url": "http://gryphontea.com/straits-chai.html",
     "id": "450",
     "sku": "ART0010",
     "name": "Straits Chai",
@@ -36,7 +36,7 @@
     "aroma": ["spicy"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/chocolate-truffle-mint-96.html",
+    "url": "http://gryphontea.com/chocolate-truffle-mint-96.html",
     "id": "88",
     "sku": "GOUR0002",
     "name": "Chocolate Truffle Mint",
@@ -45,7 +45,7 @@
     "aroma": ["milky", "minty"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/tiramisu-495.html",
+    "url": "http://gryphontea.com/tiramisu-495.html",
     "id": "487",
     "sku": "GOUR0009",
     "name": "Tiramisu",
@@ -54,7 +54,7 @@
     "aroma": ["milky", "sweet"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/earl-grey-creme-115.html",
+    "url": "http://gryphontea.com/earl-grey-creme-115.html",
     "id": "107",
     "sku": "GOUR0001",
     "name": "Earl Grey Crème",
@@ -63,7 +63,7 @@
     "aroma": ["milky"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/english-toffee-121.html",
+    "url": "http://gryphontea.com/english-toffee-121.html",
     "id": "113",
     "sku": "GOUR0003",
     "name": "English Toffee",
@@ -72,7 +72,7 @@
     "aroma": ["milky", "sweet"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/marsala-chai-279.html",
+    "url": "http://gryphontea.com/marsala-chai-279.html",
     "id": "271",
     "sku": "GOUR0012",
     "name": "Masala Chai",
@@ -81,7 +81,7 @@
     "aroma": ["citrus", "spicy"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/yunnan-gold-gongfu.html",
+    "url": "http://gryphontea.com/yunnan-gold-gongfu.html",
     "id": "536",
     "sku": "GC0017",
     "name": "Yunnan Gold Gongfu",
@@ -90,7 +90,7 @@
     "aroma": ["woody", "smoky"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/ceylon-lovers-leap-fop.html",
+    "url": "http://gryphontea.com/ceylon-lovers-leap-fop.html",
     "id": "69",
     "sku": "GC0022",
     "name": "Ceylon Lover's Leap FOP",
@@ -99,7 +99,7 @@
     "aroma": ["fruity", "woody"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/assam-hazelbank-tgfop1-2nd-flush.html",
+    "url": "http://gryphontea.com/assam-hazelbank-tgfop1-2nd-flush.html",
     "id": "23",
     "sku": "GC0021",
     "name": "Assam Hazelbank TGFOP1 2nd Flush",
@@ -108,7 +108,7 @@
     "aroma": ["fruity", "smokey"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/pearl-of-the-orient.html",
+    "url": "http://gryphontea.com/pearl-of-the-orient.html",
     "id": "356",
     "sku": "ART0003",
     "name": "Pearl of the Orient",
@@ -117,7 +117,7 @@
     "aroma": ["floral"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/osmanthus-sencha.html",
+    "url": "http://gryphontea.com/osmanthus-sencha.html",
     "id": "325",
     "sku": "ART0004",
     "name": "Osmanthus Sencha",
@@ -126,7 +126,7 @@
     "aroma": ["milky", "sweet"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/marrakesh-mint.html",
+    "url": "http://gryphontea.com/marrakesh-mint.html",
     "id": "266",
     "sku": "ART0005",
     "name": "Marrakesh Mint",
@@ -135,7 +135,7 @@
     "aroma": ["minty"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/hanami.html",
+    "url": "http://gryphontea.com/hanami.html",
     "id": "159",
     "sku": "ART0006",
     "name": "Hanami",
@@ -144,7 +144,7 @@
     "aroma": ["floral", "milky"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/mangosteen-pear-273.html",
+    "url": "http://gryphontea.com/mangosteen-pear-273.html",
     "id": "265",
     "sku": "GOUR0024",
     "name": "Mangosteen & Pear",
@@ -153,7 +153,7 @@
     "aroma": ["sweet"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/melona-lisa-294.html",
+    "url": "http://gryphontea.com/melona-lisa-294.html",
     "id": "286",
     "sku": "GOUR0025",
     "name": "Melona Lisa",
@@ -162,7 +162,7 @@
     "aroma": ["sweet"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/lucky-bamboo-239.html",
+    "url": "http://gryphontea.com/lucky-bamboo-239.html",
     "id": "231",
     "sku": "GOUR0047",
     "name": "Lucky Bamboo",
@@ -171,7 +171,7 @@
     "aroma": ["floral", "sweet"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/uji-sencha.html",
+    "url": "http://gryphontea.com/uji-sencha.html",
     "id": "496",
     "sku": "GC0008",
     "name": "Uji Sencha",
@@ -180,7 +180,7 @@
     "aroma": ["plant"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/lion-peak-dragonwell.html",
+    "url": "http://gryphontea.com/lion-peak-dragonwell.html",
     "id": "212",
     "sku": "GC0004",
     "name": "Lion's Peak Dragonwell",
@@ -189,7 +189,7 @@
     "aroma": ["plant"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/gyokuro-pearl-dew.html",
+    "url": "http://gryphontea.com/gyokuro-pearl-dew.html",
     "id": "158",
     "sku": "GC0006",
     "name": "Gyokuro Pearl Dew",
@@ -198,7 +198,7 @@
     "aroma": ["woody", "plant"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/melon-mangosteen-289.html",
+    "url": "http://gryphontea.com/melon-mangosteen-289.html",
     "id": "281",
     "sku": "GOUR0056",
     "name": "Melon & Mangosteen",
@@ -207,7 +207,7 @@
     "aroma": ["fruity", "sweet"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/very-berry-519.html",
+    "url": "http://gryphontea.com/very-berry-519.html",
     "id": "511",
     "sku": "GOUR0062",
     "name": "Very Berry",
@@ -216,7 +216,7 @@
     "aroma": ["fruity", "sweet"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/sangria-432.html",
+    "url": "http://gryphontea.com/sangria-432.html",
     "id": "424",
     "sku": "GOUR0059",
     "name": "Sangria",
@@ -225,7 +225,7 @@
     "aroma": ["fruity"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/turkish-apple-503.html",
+    "url": "http://gryphontea.com/turkish-apple-503.html",
     "id": "495",
     "sku": "GOUR0061",
     "name": "Turkish Apple",
@@ -234,7 +234,7 @@
     "aroma": ["fruity", "sweet"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/fruit-symphony-150.html",
+    "url": "http://gryphontea.com/fruit-symphony-150.html",
     "id": "142",
     "sku": "GOUR0055",
     "name": "Fruit Symphony",
@@ -243,7 +243,7 @@
     "aroma": ["fruity", "sweet"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/pink-rose-buds-385.html",
+    "url": "http://gryphontea.com/pink-rose-buds-385.html",
     "id": "377",
     "sku": "GOUR0068",
     "name": "Pink Rose Buds",
@@ -252,7 +252,7 @@
     "aroma": ["floral", "sweet"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/lavender-206.html",
+    "url": "http://gryphontea.com/lavender-206.html",
     "id": "201",
     "sku": "GOUR0063",
     "name": "Lavender",
@@ -261,7 +261,7 @@
     "aroma": ["citrus", "spicy", "minty"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/peppermint-leaves-375.html",
+    "url": "http://gryphontea.com/peppermint-leaves-375.html",
     "id": "367",
     "sku": "GOUR0067",
     "name": "Peppermint",
@@ -270,7 +270,7 @@
     "aroma": ["spicy", "minty"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/lemongrass-219.html",
+    "url": "http://gryphontea.com/lemongrass-219.html",
     "id": "211",
     "sku": "GOUR0064",
     "name": "Lemongrass",
@@ -279,7 +279,7 @@
     "aroma": ["citrus", "floral"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/osmanthus-326.html",
+    "url": "http://gryphontea.com/osmanthus-326.html",
     "id": "318",
     "sku": "GOUR0066",
     "name": "Osmanthus",
@@ -288,7 +288,7 @@
     "aroma": ["fruity", "sweet"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/chamomile-dream.html",
+    "url": "http://gryphontea.com/chamomile-dream.html",
     "id": "70",
     "sku": "ART0011",
     "name": "Chamomile Dream",
@@ -297,7 +297,7 @@
     "aroma": ["floral"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/lemon-ginger-mint.html",
+    "url": "http://gryphontea.com/lemon-ginger-mint.html",
     "id": "202",
     "sku": "ART0012",
     "name": "Lemon Ginger Mint",
@@ -306,7 +306,7 @@
     "aroma": ["spicy", "minty"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/pink-rose-marigold-380.html",
+    "url": "http://gryphontea.com/pink-rose-marigold-380.html",
     "id": "372",
     "sku": "GOUR0049",
     "name": "Pink Rose & Marigold",
@@ -315,7 +315,7 @@
     "aroma": ["floral", "sweet"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/sensuale-442.html",
+    "url": "http://gryphontea.com/sensuale-442.html",
     "id": "434",
     "sku": "GOUR0050",
     "name": "Sensual",
@@ -324,7 +324,7 @@
     "aroma": ["floral", "sweet"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/bael-pandan-38.html",
+    "url": "http://gryphontea.com/bael-pandan-38.html",
     "id": "30",
     "sku": "GOUR0045",
     "name": "Bael & Pandan",
@@ -333,7 +333,7 @@
     "aroma": ["citrus", "sweet"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/swiss-berry-herbs-483.html",
+    "url": "http://gryphontea.com/swiss-berry-herbs-483.html",
     "id": "475",
     "sku": "GOUR0051",
     "name": "Swiss Berry Herbs",
@@ -342,7 +342,7 @@
     "aroma": ["floral", "sweet"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/calming-spirits-64.html",
+    "url": "http://gryphontea.com/calming-spirits-64.html",
     "id": "56",
     "sku": "GOUR0046",
     "name": "Calming Spirits",
@@ -351,7 +351,7 @@
     "aroma": ["floral", "minty"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/lily-of-the-field.html",
+    "url": "http://gryphontea.com/lily-of-the-field.html",
     "id": "550",
     "sku": "ART0018",
     "name": "Lily of the Field",
@@ -360,7 +360,7 @@
     "aroma": ["floral"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/templetree-lotus.html",
+    "url": "http://gryphontea.com/templetree-lotus.html",
     "id": "551",
     "sku": "ART0019",
     "name": "Templetree Lotus",
@@ -369,7 +369,7 @@
     "aroma": ["floral", "fruity"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/milky-oolong-304.html",
+    "url": "http://gryphontea.com/milky-oolong-304.html",
     "id": "296",
     "sku": "GOUR0035",
     "name": "Milky Oolong",
@@ -378,7 +378,7 @@
     "aroma": ["milky", "plant"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/osmanthus-oolong-331.html",
+    "url": "http://gryphontea.com/osmanthus-oolong-331.html",
     "id": "323",
     "sku": "GOUR0034",
     "name": "Osmanthus Oolong",
@@ -387,7 +387,7 @@
     "aroma": ["floral", "milky"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/orchid-oolong.html",
+    "url": "http://gryphontea.com/orchid-oolong.html",
     "id": "310",
     "sku": "GOUR0036",
     "name": "Orchid Oolong",
@@ -396,7 +396,7 @@
     "aroma": ["floral", "plant"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/dan-cong-magnolia.html",
+    "url": "http://gryphontea.com/dan-cong-magnolia.html",
     "id": "94",
     "sku": "GC0015",
     "name": "Dan Cong Magnolia",
@@ -405,7 +405,7 @@
     "aroma": ["fruity", "woody"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/imperial-pu-erh.html",
+    "url": "http://gryphontea.com/imperial-pu-erh.html",
     "id": "165",
     "sku": "GC0024",
     "name": "Imperial Pu-erh",
@@ -414,7 +414,7 @@
     "aroma": ["forrest", "woody"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/tomatino-caffeine-free-tea.html",
+    "url": "http://gryphontea.com/tomatino-caffeine-free-tea.html",
     "id": "548",
     "sku": "ART0016",
     "name": "Tomatino",
@@ -423,7 +423,7 @@
     "aroma": ["citrus"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/coba-cabana-tea.html",
+    "url": "http://gryphontea.com/coba-cabana-tea.html",
     "id": "549",
     "sku": "ART0015",
     "name": "Coba Cabana",
@@ -432,7 +432,7 @@
     "aroma": ["fruity", "minty"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/azteca-d-oro.html",
+    "url": "http://gryphontea.com/azteca-d-oro.html",
     "id": "24",
     "sku": "ART0014",
     "name": "Aztec d'Oro",
@@ -441,7 +441,7 @@
     "aroma": ["toasty"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/mogambo.html",
+    "url": "http://gryphontea.com/mogambo.html",
     "id": "297",
     "sku": "ART0017",
     "name": "Mogambo",
@@ -450,7 +450,7 @@
     "aroma": ["fruity"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/apple-strudel-with-pistachios-22.html",
+    "url": "http://gryphontea.com/apple-strudel-with-pistachios-22.html",
     "id": "18",
     "sku": "GOUR0039",
     "name": "Apple Strudel with Pistachios",
@@ -459,7 +459,7 @@
     "aroma": ["milky", "sweet"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/peach-nectar-362.html",
+    "url": "http://gryphontea.com/peach-nectar-362.html",
     "id": "352",
     "sku": "GOUR0041",
     "name": "Peach Nectar",
@@ -468,7 +468,7 @@
     "aroma": ["fruity", "milky"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/african-sunset-13.html",
+    "url": "http://gryphontea.com/african-sunset-13.html",
     "id": "5",
     "sku": "GOUR0037",
     "name": "African Sunset",
@@ -477,7 +477,7 @@
     "aroma": ["citrus", "sweet"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/aloe-verah-18.html",
+    "url": "http://gryphontea.com/aloe-verah-18.html",
     "id": "10",
     "sku": "GOUR0038",
     "name": "Aloe Verah",
@@ -486,7 +486,7 @@
     "aroma": ["sweet"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/white-gingerlily.html",
+    "url": "http://gryphontea.com/white-gingerlily.html",
     "id": "519",
     "sku": "ART0001",
     "name": "White Gingerlily",
@@ -495,7 +495,7 @@
     "aroma": ["spicy"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/nymph-of-the-nile.html",
+    "url": "http://gryphontea.com/nymph-of-the-nile.html",
     "id": "305",
     "sku": "ART0002",
     "name": "Nyph of the Nile",
@@ -504,7 +504,7 @@
     "aroma": ["floral", "fruity"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/peony-jade-369.html",
+    "url": "http://gryphontea.com/peony-jade-369.html",
     "id": "361",
     "sku": "GOUR0014",
     "name": "Peony Jade",
@@ -513,7 +513,7 @@
     "aroma": ["floral", "fruity"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/pomegranate-ruby-398.html",
+    "url": "http://gryphontea.com/pomegranate-ruby-398.html",
     "id": "390",
     "sku": "GOUR0015",
     "name": "Pomegranate Ruby",
@@ -522,7 +522,7 @@
     "aroma": ["floral"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/white-muscato-532.html",
+    "url": "http://gryphontea.com/white-muscato-532.html",
     "id": "524",
     "sku": "GOUR0017",
     "name": "White Muscato",
@@ -531,7 +531,7 @@
     "aroma": ["floral", "sweet"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/gold-muscato-160.html",
+    "url": "http://gryphontea.com/gold-muscato-160.html",
     "id": "156",
     "sku": "GOUR0018",
     "name": "Gold Muscato",
@@ -540,7 +540,7 @@
     "aroma": ["floral", "sweet"]
   },
   {
-    "url": "http://test.gryphontea.com/magento/silver-needle.html",
+    "url": "http://gryphontea.com/silver-needle.html",
     "id": "440",
     "sku": "GC0001",
     "name": "Silver Needle",

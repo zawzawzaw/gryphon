@@ -1640,13 +1640,16 @@ html{
 
 .is-ie{
   #page-wrapper #header-wrapper .marquee{
-    p{
+    div{
       span.flip.up{
         -webkit-transform: none !important;
         -moz-transform: none !important;
         -o-transform: none !important;
         -ms-transform: none !important;
         transform: none !important;
+        .front {
+          position: static!important;
+        }
       }
     }
   }

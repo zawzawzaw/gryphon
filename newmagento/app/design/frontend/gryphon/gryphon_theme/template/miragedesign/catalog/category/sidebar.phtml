@@ -228,15 +228,11 @@ $allowCategoriesIDs = $this->getAllowCategoires();
 
             if ($('.has-subsection input.ajaxsearch').is(':checked')) {
                 $('.default-store-category').prop('disabled', true);
-            }else {
-                $('.default-store-category').prop('disabled', false);
-            }
-
-            if ($('.fixed-fitler input.ajaxsearch').is(':checked')) {
+            }else if ($('.fixed-fitler input.ajaxsearch').is(':checked')) {
                 $('.default-store-category').prop('disabled', true);
             }else {
                 $('.default-store-category').prop('disabled', false);
-            }
+            }            
 
             ajaxSearch.submit();
         });

@@ -139,7 +139,7 @@
 
 	    <div id="mobile-fixed-container">
 	      <div class="mobile-menu-button"></div>
-	      <a href="http://gryphontea.com/magento/" class="mobile-menu-logo"></a>
+	      <a href="http://gryphontea.com/" class="mobile-menu-logo"></a>
 	    </div>
 
 	    <div id="mobile-expand-container">
@@ -155,20 +155,20 @@
 	        <div class="mobile-submenu-header">Gryphon Store</div>
 	        <ul>
 	          <li class="has-sub-menu">
-	              <a href="http://gryphontea.com/magento/store.html">TEA</a>
-	              <ul class="sub-menu" style=""><li><a href="http://gryphontea.com/magento/store.html">All</a></li><li><a href="http://gryphontea.com/magento/store/tea-type/black-tea.html">Black</a></li><li><a href="http://gryphontea.com/magento/store/tea-type/fruit-tisane.html">Fruit Tisane</a></li><li><a href="http://gryphontea.com/magento/store/tea-type/green-tea.html">Green</a></li><li><a href="http://gryphontea.com/magento/store/tea-type/herbs.html">Herbs</a></li><li><a href="http://gryphontea.com/magento/store/tea-type/herbal-tisane.html">Herbal Tisane</a></li><li><a href="http://gryphontea.com/magento/store/tea-type/multi.html">Multi</a></li><li><a href="http://gryphontea.com/magento/store/tea-type/oolong-tea.html">Oolong</a></li><li><a href="http://gryphontea.com/magento/store/tea-type/pu-erh-tea.html">Pu-Erh</a></li><li><a href="http://gryphontea.com/magento/store/tea-type/roobios.html">Rooibos</a></li><li><a href="http://gryphontea.com/magento/store/tea-type/white-tea.html">White</a></li></ul>
+	              <a href="http://gryphontea.com/store.html">TEA</a>
+	              <ul class="sub-menu" style=""><li><a href="http://gryphontea.com/store.html">All</a></li><li><a href="http://gryphontea.com/store/tea-type/black-tea.html">Black</a></li><li><a href="http://gryphontea.com/store/tea-type/fruit-tisane.html">Fruit Tisane</a></li><li><a href="http://gryphontea.com/store/tea-type/green-tea.html">Green</a></li><li><a href="http://gryphontea.com/store/tea-type/herbs.html">Herbs</a></li><li><a href="http://gryphontea.com/store/tea-type/herbal-tisane.html">Herbal Tisane</a></li><li><a href="http://gryphontea.com/store/tea-type/multi.html">Multi</a></li><li><a href="http://gryphontea.com/store/tea-type/oolong-tea.html">Oolong</a></li><li><a href="http://gryphontea.com/store/tea-type/pu-erh-tea.html">Pu-Erh</a></li><li><a href="http://gryphontea.com/store/tea-type/roobios.html">Rooibos</a></li><li><a href="http://gryphontea.com/store/tea-type/white-tea.html">White</a></li></ul>
 	          </li>                   <li>
-	            <a href="http://gryphontea.com/magento/store/pantry.html">PANTRY</a>
+	            <a href="http://gryphontea.com/store/pantry.html">PANTRY</a>
 	          </li>
 	                    
 	          <li>
-	                                    <a href="http://gryphontea.com/magento/store/gifts.html/">GIFTS</a>
+	                                    <a href="http://gryphontea.com/store/gifts.html/">GIFTS</a>
 	          </li>
 	          <li>
-	            <a href="http://gryphontea.com/magento/subscription/">SUBSCRIPTION</a>
+	            <a href="http://gryphontea.com/subscription/">SUBSCRIPTION</a>
 	          </li>                 
 	          <li>
-	            <a href="http://gryphontea.com/magento/trade/">TRADE</a>
+	            <a href="http://gryphontea.com/trade/">TRADE</a>
 	          </li>         
 	        </ul>
 	      </div>
@@ -177,14 +177,14 @@
 	        <div class="mobile-submenu-header">About Gryphon</div>
 	        <ul>
 	          <li>
-	            <a href="http://gryphontea.com/magento/collections/">COLLECTIONS</a>                
+	            <a href="http://gryphontea.com/collections/">COLLECTIONS</a>                
 	          </li>
 	          <li>
-	            <a href="http://gryphontea.com/magento/wp">BLOG</a>
+	            <a href="http://gryphontea.com/wp">BLOG</a>
 	          </li>
-	          <li><a href="http://gryphontea.com/magento/discover-tea/">Discover Tea</a></li>
-	          <li><a href="http://gryphontea.com/magento/our-story/">Our Story</a></li>
-	          <li><a href="http://gryphontea.com/magento/careers/">Careers</a></li>
+	          <li><a href="http://gryphontea.com/discover-tea/">Discover Tea</a></li>
+	          <li><a href="http://gryphontea.com/our-story/">Our Story</a></li>
+	          <li><a href="http://gryphontea.com/careers/">Careers</a></li>
 	        </ul>
 	      </div>
 
@@ -193,12 +193,12 @@
 	        <ul>
 	                              
 
-	          <li><a href="http://gryphontea.com/magento/contact-us/">Contact Us</a></li>                             
-	          <li><a href="http://gryphontea.com/magento/faq/">FAQ</a></li>
-	          <li><a href="http://gryphontea.com/magento/shipping-info/">Shipping Information</a></li>
+	          <li><a href="http://gryphontea.com/contact-us/">Contact Us</a></li>                             
+	          <li><a href="http://gryphontea.com/faq/">FAQ</a></li>
+	          <li><a href="http://gryphontea.com/shipping-info/">Shipping Information</a></li>
 	          <li><a href="http://www.trackntrace.com.sg/">Track Order</a></li>
-	          <li><a href="http://gryphontea.com/magento/terms-and-conditions/">Terms &amp; Conditions</a></li>
-	          <li><a href="http://gryphontea.com/magento/privacy-policy/">Privacy Policy</a></li>
+	          <li><a href="http://gryphontea.com/terms-and-conditions/">Terms &amp; Conditions</a></li>
+	          <li><a href="http://gryphontea.com/privacy-policy/">Privacy Policy</a></li>
 	        </ul>
 	      </div>
 
