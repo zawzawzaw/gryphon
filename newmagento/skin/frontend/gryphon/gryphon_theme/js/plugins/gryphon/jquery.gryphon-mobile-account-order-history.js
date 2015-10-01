@@ -107,6 +107,8 @@
 
         order.removeClass('collapsed');
         order.addClass('expanded');
+
+        $(window).scrollTop(0);
       }
     },
 
