@@ -1,3 +1,4 @@
+
 //   ____  _____ ____  _____ _____
 //  |  _ \| ____/ ___|| ____|_   _|
 //  | |_) |  _| \___ \|  _|   | |
@@ -223,7 +224,8 @@ ul.messages {
         background: @skin;
         padding: 1px 0;
         text-align: center;
-        p {
+        height: 30px;
+        div {
           .gotham-medium;
           font-size: 10px;
           line-height: 28px;
@@ -749,7 +751,8 @@ ul.messages {
         background: #fff;
         padding: 30px 20px;
         border: 1px solid #b4b4b4;
-        width: 450px;
+        // width: 450px;
+        width: 400px;  // edit by suyeon
 
         p {
           a {
@@ -922,12 +925,18 @@ ul.messages {
             left: -50%;
             h1 {
               .bombshell-pro;
-              font-size: 70px;
-              line-height: 66px;
-              margin-top: 20px;
+              //font-size: 70px;
+              //line-height: 66px;
+              //margin-top: 20px;
               margin-bottom: 30px;
               text-transform: none;
-              text-shadow: 0 1px 100px rgba(0, 0, 0, 1);
+              //text-shadow: 0 1px 100px rgba(0, 0, 0, 1);
+              
+              font-size: 70px;
+              line-height: 85px;
+              margin-top: 80px;
+              text-shadow: 0 1px 100px #a79178;
+
             }
             h3 {
               .gotham-medium;
@@ -979,6 +988,7 @@ ul.messages {
 
         &.fixed-footer {
           position: static!important;
+          padding-bottom: 100px;          // suyeon
         }
     }
 
@@ -1089,8 +1099,10 @@ ul.messages {
     input[type="checkbox"]:checked + label span:after {  
       content: '\2713';
       position: absolute;
-      top: -2px;
-      left: 2px;
+      //top: -2px;
+      //left: 2px;        // modified for suyeon (sept 25)
+      top: -1px;
+      left: 1px;
       color: @dark-orange;
     }
 
@@ -1165,8 +1177,8 @@ hr.small {
 
 p {
   .gotham-book;
-  font-size: 11.5px;
-  line-height: 19px;
+  font-size: 12px;
+  line-height: 22px;
   color: @new-grey;
 }
 
@@ -1371,13 +1383,18 @@ div.home {
         }
         p.caption-2 {
           /*height: 65px;*/
-          margin-bottom: 20px;
+          // margin-bottom: 20px;            // removed for suyeon (sept 25)
           text-transform: uppercase;
         }
         p {
-          .gotham-book;
-          font-size: 11.5px;
-          color: @new-grey;
+          // .gotham-book;
+          // font-size: 11.5px;   // modified for suyoen (sept 25)
+          // color: @new-grey;
+          .gotham-medium;
+          font-size: 11px;
+          color: #777777;
+          letter-spacing: 0.03em;
+          
           line-height: 18px;
           /*width: 210px;*/
           margin: 8px auto;
@@ -1388,6 +1405,7 @@ div.home {
         a.product-img {
           position: relative;
           img {
+            width: 80%;
             .transition();
             .opacity(1);
             // filter: blur(0);
@@ -1451,7 +1469,8 @@ div.home {
     }
       .each-feature {
         display: inline-block;
-        width: 170px;
+        // width: 170px;
+        width: 200px;
         vertical-align: top;
         margin-right: 20px;
         margin-top: 15px;
@@ -1583,11 +1602,12 @@ div.home {
     
       .vertical-center {
         padding-top: 20px;
+        padding-right: 50px;
         p {
           .gotham-book;
           margin-bottom: 22px;
-          font-size: 11.5px;
-          line-height: 19px;
+          font-size: 12px;
+          line-height: 22px;
           color: @new-grey;
           &:last-child {
             margin-bottom: 0px;
@@ -1873,6 +1893,9 @@ div.product {
                 margin-top: 1px;
                 margin-right: -4px;
                 padding: 0 5px;
+
+                .minion-pro-regular;
+                font-size: 13px;
               }
               a.minus {
                 background-color: #bcbbbb;
@@ -2048,6 +2071,9 @@ div.product {
           margin-left: -3px;
           margin-right: -4px;
           padding: 0 5px;
+
+          .minion-pro-regular;
+          font-size: 13px;
         }
         a.minus {
           background-color: #bcbbbb;
@@ -2616,6 +2642,7 @@ div.product {
 
       .cta-btn{
         text-align: right;
+
       }
       button.add-to-cart {
         background-color: @dark-grey;
@@ -2660,7 +2687,8 @@ div.product {
 
       p.j2t-loyalty-points {
         .minion-pro-semibold-italic;
-        font-size: 13px;
+        //font-size: 13px;
+        font-size: 12px;
         line-height: 19px;
         color: @dark-orange;
         // text-transform: none;
@@ -2671,6 +2699,9 @@ div.product {
         left: 5px;
         text-transform: capitalize;
         display: none;
+
+
+
       }
 
       .inputs {
@@ -3172,7 +3203,8 @@ div.product {
 
   .product-collection {
     margin-top: 90px;
-    margin-bottom: 80px;
+    margin-bottom: 90px;
+
 
     .image-text-content {
       h1 {
@@ -3191,7 +3223,9 @@ div.product {
       p {
         margin-bottom: 20px;
         a {
-          color: #464646;
+          //color: #464646;
+          color: #ae4e0e;
+
           &:hover {
             color: @dark-orange;
           }          
@@ -3209,6 +3243,7 @@ div.product {
         vertical-align: middle;
         height: 217px;
         padding-right: 2%;
+        padding-top: 15px;
       }
       hr {
         border-top: 1px solid #CCC;
@@ -3498,6 +3533,8 @@ div.product {
         display: table-cell;
         vertical-align: middle;
 
+        .opacity(0.9);
+
         h1 {
           .bombshell-pro;
           font-size: 42px;
@@ -3506,6 +3543,8 @@ div.product {
           text-transform: none;
           margin-bottom: 12px;
           color: @white;
+
+          padding-left: 15px;
         }
 
         p {
@@ -3956,8 +3995,12 @@ div.product {
 
         .product-caption {
           width: 100%;
-          padding-left: 15px;
-          // madding-right: 15px; madding? :D
+          // padding-left: 15px;           // modified for suyeon sept 25
+          padding-left: 10px;
+          padding-right: 10px;
+
+
+          // madding-right: 15px; madding? :D      // lolololol - jai
           display: inline-block;
           position: relative;
           margin-top: 20px;
@@ -3988,11 +4031,16 @@ div.product {
               padding-bottom: 4px;
               color: @white;
               .gotham-medium;
-              font-size: 11px;
+              // font-size: 11px;
               // line-height: 30px;
-              line-height: 24px;
-              letter-spacing: 0.2em;
+              // line-height: 24px;
+              // letter-spacing: 0.2em;
               text-transform: uppercase;
+
+              // suyeon edits
+              font-size: 10.5px;
+              line-height: 22px;
+              letter-spacing: 0.03em;
             }
             img.hover {
               .transition();
@@ -4132,12 +4180,16 @@ div.product {
           text-transform: none;
 
           .price-label {
-            text-transform: none;
+            //text-transform: none;
+            .minion-pro-medium-italic;
+            text-transform: lowercase;
+            letter-spacing: 0;
           }
         }
         p.j2t-loyalty-points {
           .minion-pro-semibold-italic;
-          font-size: 13px;
+          //font-size: 13px;
+          font-size: 12px;
           line-height: 19px;
           color: #c76e09;
           // color: @dark-orange;
@@ -5083,6 +5135,8 @@ div.product {
 
       .product-caption {
         width: 150px;
+        padding-left: 10px;
+        padding-right: 10px;
         display: inline-block;
       }
       
@@ -5128,6 +5182,7 @@ div.product {
         text-align: center;
         margin: 0 auto;
 
+
         .add {
           background: url(../images/icons/increase-qty.png) no-repeat;
           width: 13px;
@@ -5135,6 +5190,7 @@ div.product {
           display: inline-block;
           text-align: right;
           float: right;
+
         }
         .minus {
           background: url(../images/icons/decrease-qty.png) no-repeat;
@@ -5164,15 +5220,23 @@ div.product {
     }
 
     .selected-tea {
-      padding: 21px 28px;
-      padding-bottom: 50px;
-      border: 2px solid @dark-orange;
+      //padding: 21px 28px;
+      //padding-bottom: 50px;
+      //border: 2px solid @dark-orange;
       margin-top: 18px;
+
+      padding: 35px 28px;
+      padding-bottom: 50px;
+      border: 2px solid #c76e09;
+
       .small {
         .minion-pro-italic;
-        font-size: 12px;
+        //font-size: 12px;
         line-height: 16px;
-        color: @dark-orange;
+        //color: @dark-orange;
+
+        font-size: 13px;
+        color: #c76e09;
       }
       h2.selected_tea_count {
         .minion-pro-regular;
@@ -5294,14 +5358,16 @@ div.product {
         font-size: 14px;
         line-height: 16px;
         letter-spacing: 0.03em;
-        color: @dark-orange; 
+        //color: @dark-orange; 
+        color: #c76e09;
       }
       span {
         .minion-pro-semibold-italic;
         font-size: 13px;
         line-height: 16px;
         letter-spacing: 0.03em;
-        color: @dark-orange; 
+        //color: @dark-orange; 
+        color: #c76e09;
       }
     }
     .col-4 {
@@ -5335,6 +5401,16 @@ div.product {
             color: @dark-orange;
           }
         }
+      }
+      .error-msg {
+        position: absolute;
+        right: -215px;
+        max-width: 390px;
+        display: block;
+        .minion-pro-italic;
+        font-size: 13.5px;
+        margin-top: -20px;
+        color: @dark-orange;
       }
     }
     .terms-icon {    
@@ -5389,15 +5465,23 @@ div.product {
       }
       .each-product {
         // width: 21.5%;
+        /*
         width: 13.5%;
         margin-right: 1.8%;
         margin-left: 1.8%;
+        */
+        width: 20%;
+        margin-right: 2% !important;
+        margin-left: 2%;
+
         margin-bottom: 0px;
         float: none;
         height: auto;
 
         .product-caption {
           width: 223px;
+          padding-left: 10px;
+          padding-right: 10px;
           display: inline-block;
         }
 
@@ -5448,6 +5532,8 @@ div.product {
           letter-sapcing: 0px;
           color: @new-grey;
           text-transform: none;
+
+          padding: 0 5px;
         }
         .terms {
           .minion-pro-semibold-italic;
@@ -5701,6 +5787,8 @@ div.product {
         }
         p.discount {
           .gotham-medium;
+          font-weight: 600;   //
+
           font-size: 10px;
           letter-spacing: 0.03em;
           color: @dark-orange;
@@ -5717,9 +5805,13 @@ div.product {
       .reasons {
         display: inline-block;
         width: 162px;
-        padding-right: 20px;
+        //padding-right: 20px;
         vertical-align: top;
         min-height: 140px;
+
+        // suyeon edits
+        padding-right: 30px;
+
         h5 {
           .gotham-medium;
           font-size: 10px;
@@ -5736,7 +5828,9 @@ div.product {
           margin-bottom: 6px;
           letter-spacing: 0.1em;
           color: @dark-grey;
-          width: 100px;
+          //width: 100px;
+
+          width: 140px;
         }
         p {
           .gotham-book;
@@ -5766,6 +5860,13 @@ div.product {
   }
 
 
+}
+
+
+.subscriptions-gourmet-index{
+  .subscription .second-content{
+    padding-top: 0;
+  }
 }
 
 //////////////////////
@@ -5868,8 +5969,11 @@ div.product {
     .text-content {
       margin-left: 40px;
       margin-top: 26px;
+      margin-right: 30px;
+
       @media all and (max-width: 992px) {
         margin-left: 0px;
+        margin-right: 0px;
       }
     }
 
@@ -5895,8 +5999,8 @@ div.product {
 
     p {
       .gotham-book;
-      font-size: 11.5px;
-      line-height: 19px;
+      font-size: 12px;
+      line-height: 22px;
       color: @new-grey;
       margin-bottom: 20px;
       @media all and (max-width: 992px) {
@@ -5936,7 +6040,8 @@ div.product {
 
     a {
       .minion-pro-semibold-italic;
-      font-size: 14px;
+      //font-size: 14px;
+      font-size: 13px;
       line-height: 16px;
       letter-spacing: 0.03em;
       display: block;
@@ -6037,6 +6142,8 @@ div.product {
       span {
         color: #777;
         .minion-pro-medium;
+        font-weight: 600;     // suyeon
+
         font-size: 13px;
         letter-spacing: 0.1em;
         margin-left: 10px;
@@ -6300,6 +6407,8 @@ div.product {
                   display: inline-block;
                   text-align: center;
                   font-size: 9px;
+                  margin-left: -20px;
+
                   i {
                     color: @white;
                     margin-top: 8px;
@@ -6312,6 +6421,7 @@ div.product {
                   display: inline-block;
                   text-align: center;
                   font-size: 9px;
+                  margin-right: -20px;
                   i {
                     color: @white;
                     margin-top: 8px;
@@ -6364,6 +6474,18 @@ div.product {
             color: @dark-orange;
           }
         }
+      }
+    }
+
+    #checkout-review-table-wrapper {
+      .table {
+        tbody {
+          tr {
+            td {
+              vertical-align: middle!important;
+            }
+          }  
+        }         
       }
     }
 
@@ -6497,7 +6619,8 @@ div.product {
       .sub-total {
         display: inline-block;     
         p {
-          color: @dark-orange;
+          //color: @dark-orange;
+          color: #c76e09;
         }        
       }
       .amount {
@@ -6526,6 +6649,7 @@ div.product {
         }
         p {
           .minion-pro-medium;
+          font-weight: 600;
           font-size: 13px;
           line-height: 16px;
           letter-spacing: 0.05em;
@@ -6595,7 +6719,8 @@ div.product {
       }
       p {
         font-size: 11px;
-        .gotham-bold;
+        //.gotham-bold;
+        .gotham-medium;
         letter-spacing: 0.03em;
         text-transform: uppercase;
       }
@@ -6806,8 +6931,13 @@ div.product {
         .minion-pro-medium-italic;
         font-size: 12px;
         line-height: 16px;
-        color: @dark-orange;
+        // color: @dark-orange;
         letter-spacing: 0.02em;
+
+        // suyeon edit.
+        color: #c76e09;
+        font-weight: 600;
+        font-size: 13px;
       }
     }
 
@@ -6818,7 +6948,8 @@ div.product {
       font-size: 13px;
       line-height: 16px;
       letter-spacing: 0.01em; 
-      color: @dark-orange;
+      //color: @dark-orange;
+      color: #c76e09;
       width: 600px;
     }
     .used-points-msg {
@@ -6836,7 +6967,8 @@ div.product {
           margin-bottom: 10px;
         }
         h5 {
-          .gotham-bold;
+          //.gotham-bold;
+          .gotham-medium;
           font-size: 11px;
           line-height: 38px;
           letter-spacing: 0.05em;
@@ -6864,7 +6996,8 @@ div.product {
           margin-bottom: 10px;
         }
         h5 {
-          .gotham-bold;
+          //.gotham-bold;
+          .gotham-medium;
           font-size: 11px;
           line-height: 38px;
           letter-spacing: 0.05em;
@@ -6968,7 +7101,8 @@ div.product {
                 .minion-pro-semibold-italic;
                 font-weight: 400;
                 font-size: 13px;
-                color: @dark-orange;
+                //color: @dark-orange;
+                color: #c76e09;
                 text-align: center;
                 letter-spacing: 0.03em;
               }
@@ -6984,7 +7118,8 @@ div.product {
         color: @new-grey;
 
         span {
-          color: @dark-orange;
+          // color: @dark-orange;
+          color: #c76e09;
           .minion-pro-italic;
           font-style: italic;
           font-size: 13px;
@@ -7034,7 +7169,8 @@ div.product {
         margin-right: 0;
       }
       .dropdown {
-        width: 400px;
+        //width: 400px;
+        width: 440px;
         margin-bottom: 15px;
         #custAddress {
           // width: 72%!important;
@@ -7153,6 +7289,7 @@ div.product {
       @media all and (max-width: 992px) {
         // width: 232px;
         width: 61%;
+        margin-left: 0;
       }
     }
     .hide-input {
@@ -7163,6 +7300,10 @@ div.product {
 
 .checkout-onepage-success {
   padding-top: 60px;
+  border: 0px!important;
+  .messages {
+    display: none;
+  } 
 }
 
 
@@ -7301,7 +7442,7 @@ div.product {
     }
     
     .points {
-      display: inline-block;
+      // display: inline-block;
       margin-right: 75px;  
       margin-top: 10px;    
     }
@@ -7355,18 +7496,18 @@ div.product {
     }
 
     #j2t-referral-lines {
-      margin-top: 50px;
+      // margin-top: 50px;
       margin-bottom: 30px;
       .form-list {
-        display: inline-block;
+        // display: inline-block;
         .field {
           &.j2t-rewardpoints-name {
             width: 280px;
-            display: inline-block;
+            // display: inline-block;
           }
           &.j2t-rewardpoints-email {           
-            display: inline-block;
-            margin-left: 30px;
+            // display: inline-block;
+            // margin-left: 30px;
             position: relative;
             @media all and (max-width: 992px) {
               margin-left: 0px;
@@ -7463,7 +7604,7 @@ div.product {
         text-transform: none;
         text-shadow: none;
         border: none;
-        margin-left: 30px;
+        // margin-left: 30px;
         @media all and (max-width: 992px) {
           margin-top: 25px;
           margin-left: 0px;
@@ -7474,13 +7615,22 @@ div.product {
       }
     }
 
+    .referral-container {
+      display: inline-block;
+    }
+
     .refer-friend-form {
       // border-bottom: 1px solid #ccc;
-      margin-bottom: 60px;
+      margin-bottom: 30px;
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 80px;
+      float: right;
     }
 
     .invite-friends {
       margin-bottom: 10px;
+      clear: both;
     }
 
     .referral-table {
@@ -7557,6 +7707,15 @@ div.product {
       }      
     }
 
+    .reward-page {
+      #my-rewardpoints-table {
+        h2 {
+          display: none;
+        }
+        
+      }
+    }
+
     #reward-points-table {
       margin-top: 30px;
       width: 100%;
@@ -7569,7 +7728,7 @@ div.product {
             border-top: 1px solid #ccc;
             border-bottom: 1px solid #ccc;
             padding: 10px 20px;
-            text-align: center;
+            text-align: left;
             color: #707070;
             text-transform: uppercase;
           }
@@ -7583,7 +7742,7 @@ div.product {
             .gotham-book;
             font-size: 11px;
             line-height: 19px;  
-            text-align: center;       
+            text-align: left;       
 
             .j2t-in-title, .j2t-in-txt {
               display: inline-block;
@@ -8877,9 +9036,11 @@ div.product {
     .buttons-set {
       margin-top: 15px;
       margin-bottom: 10px;
+      margin-left: 0px!important;
 
       .button-add-list {
         float: none!important;
+        display: block;
         button {
           float: none!important;
           .gotham-medium;
@@ -9162,8 +9323,15 @@ div.product {
         border: 1px solid #ebb387;
         display: block;
         position: relative;
-        height: 55px;
-        padding: 8px 20px;
+        //height: 55px;
+        //padding: 8px 20px;
+        height: auto;
+        .add-clearfix();
+
+        padding-left: 21px;
+        padding-right: 16px;
+        padding-top: 15px;
+        padding-bottom: 8px;
       }
       .post-extra-content {
         margin-top: 15px;
@@ -9209,7 +9377,10 @@ div.product {
 
         p {
           line-height: 18px;
-          margin-top: 5px;
+          // margin-top: 5px;
+          margin-top: 3px;
+          font-size: 11px;
+
           a {
             color: @new-grey;
             &:hover {
@@ -9220,7 +9391,8 @@ div.product {
 
         ul {
           text-align: right;
-          margin-top: 5px;
+          //margin-top: 5px;
+          margin-top: 3px;
           li {
             display: inline-block;
             &:first-child {
@@ -9289,19 +9461,23 @@ div.product {
         line-height: 19px;
         letter-spacing: 0.03em;
         margin-bottom: 10px;
+
         &.search-title {
-          color: @dark-orange;
-        }        
+          // color: @dark-orange;
+        }
       }
       input {
         .gotham-book;
         padding-left: 5px;
         font-size: 11px;
         line-height: 23px;
-        color: @dark-orange;
+        //color: @dark-orange;
+        color: #252525;             // suyeon edits
         width: 100%;
         border: 1px solid #ccc;
-        .placeholder(@dark-orange);
+        // .placeholder(@dark-orange);
+
+
       }
       a.signup{
         background: none;
@@ -9322,8 +9498,32 @@ div.product {
       }
       ul.tags {
         height: auto;
+        font-size: 0;
+
         li {
-          display: block;          
+          display: block;
+          width: 50%;
+          display: inline-block;
+
+          a {
+            .gotham-book;
+            font-size: 11px;
+            line-height: 20px;
+            color: @new-grey;
+            margin-left: 0px;
+            &:hover {
+              color: @dark-orange;
+            }
+          }
+        }
+      }
+
+      ul.custom-categories {
+        height: auto;
+
+        li {
+          display: block;
+
           a {
             .gotham-book;
             font-size: 11px;
@@ -9338,6 +9538,7 @@ div.product {
       }
 
       p.tags {
+        
         a {
           .gotham-book;
           font-size: 11px;
@@ -9651,6 +9852,8 @@ div.product {
 
         h4 {
           .minion-pro-regular;
+          font-weight: 600;
+
           font-size: 13px;
           line-height: 20px;
           letter-spacing: 0.1em;
@@ -9660,8 +9863,10 @@ div.product {
 
         p {
           .gotham-book;
-          font-size: 11px;
-          line-height: 16px;                
+          //font-size: 11px;
+          font-size: 12px;
+
+          line-height: 22px;                
           color: @new-grey;
           width: 266px;
           margin-top: 5px;
@@ -9856,7 +10061,8 @@ div.product {
         .minion-pro-italic;
         font-size: 12px;
         line-height: 16px;
-        color: @dark-orange;
+        //color: @dark-orange;
+        color: #c76e09;
         letter-spacing: 0.03em;
         display: inline-block;
         padding-left: 163px;
@@ -9993,14 +10199,16 @@ div.product {
         font-size: 12px;
         line-height: 15px;
         letter-spacing: 0.05em;
-        color: @dark-orange;
+        //color: @dark-orange;
+        color: #c76e09;
       }
       p {
         .minion-pro-semibold-italic;
         font-size: 12px;
         line-height: 15px;
         letter-spacing: .03em;
-        color: @dark-orange;
+        //color: @dark-orange;
+        color: #c76e09;
         margin-top: 2px;
         margin-bottom: 23px;
       }
@@ -10077,10 +10285,12 @@ div#footer-wrapper {
     }
 
     &.about-us-links {
-      width: 18%;
+      //width: 18%;
+      width: 22%;
     }
     &.store-links {
-      width: 25%;
+      //width: 25%;
+      width: 22%;
     }
     &.selections-links {
       width: 27%;
@@ -10126,6 +10336,8 @@ div#footer-wrapper {
         height: 24px;
         display: inline-block;
         color: #464646;
+        line-height: 24px;
+
         i {
           font-size: 18px;          
         }
@@ -10693,12 +10905,13 @@ div#footer-wrapper {
 
     p {
       .gotham-book;
-      font-size: 11.5px;
-      line-height: 19px;
+      font-size: 12px;
+      line-height: 22px;
       color: @new-grey;
       margin-bottom: 20px;
 
       a {
+        //font-size: 13px;
         margin: 0px;
         color: @dark-orange;
         display: inline-block;
@@ -10726,8 +10939,13 @@ div#footer-wrapper {
 
     a {
       .minion-pro-semibold;
-      font-size: 14px;
-      line-height: 16px;
+      //font-size: 14px;
+      //line-height: 16px;
+
+      .gotham-book;
+      font-size: 11.5px;
+      line-height: 19px;
+
       letter-spacing: 0.03em;
       display: block;
       margin-top: 30px; 
@@ -10809,10 +11027,12 @@ div#footer-wrapper {
       p.price {            
         .minion-pro-semibold;
         // color: @dark-orange;
-        color: #c76e09;
+        // color: #c76e09;
+        color: #ae4e0e;
         font-size: 13px;
         line-height: 24px;
         letter-spacing: 0.05em;
+
       }
       p.country{
         font-size: 9px;
@@ -10970,8 +11190,8 @@ div#footer-wrapper {
 
     p {
       .gotham-book;
-      font-size: 11.5px;
-      line-height: 19px;
+      font-size: 12px;
+      line-height: 22px;
       // font-size: 11.5px;
       // line-height: 19px;
       color: @new-grey;
@@ -10999,6 +11219,7 @@ div#footer-wrapper {
       font-size: 13px;
       line-height: 16px;
       color: @dark-orange;
+      color: #c76e09;
     }
 
     ol{
@@ -11236,8 +11457,8 @@ div#footer-wrapper {
 
             p{
               .gotham-book;
-              font-size: 11.5px;
-              line-height: 19px;
+              font-size: 12px;
+              line-height: 22px;
               color: @dark-orange;
               margin-bottom: 20px;
 
@@ -11663,6 +11884,8 @@ div#footer-wrapper {
           width: 690px;
           margin: 0 auto;
           margin-bottom: 1em;
+          font-size: 12px;
+          line-height: 22px;
 
           &:last-child{
             margin-bottom: 0;
@@ -11693,8 +11916,8 @@ div#footer-wrapper {
       }
       p{
         .gotham-book;
-        font-size: 11.5px;
-        line-height: 18px;
+        font-size: 12px;
+        line-height: 20px;
         color: @new-grey;
       }
 
@@ -12443,8 +12666,8 @@ div#footer-wrapper {
 
           p {
             .gotham-book;
-            font-size: 11.5px;
-            line-height: 18px;                
+            font-size: 12px;
+            line-height: 20px;                
             color: @new-grey;
             margin-top: 5px;
 
@@ -12456,8 +12679,10 @@ div#footer-wrapper {
             width: 16px;
             height: 16px;
             color: @white;
-            .gotham-bold;
-            font-size: 12px;
+            //.gotham-bold;
+            .gotham-medium;
+            //font-size: 12px;
+            font-size: 11px;
             line-height: 16px;
             letter-spacing: 0.03em;
             vertical-align: middle;
@@ -12552,6 +12777,7 @@ div#footer-wrapper {
 
           p{
             .minion-pro-regular;
+            font-weight: 500;
             font-size: 12px;
             line-height: 15px;
             letter-spacing: 0.1em;
@@ -12565,6 +12791,7 @@ div#footer-wrapper {
 
       .additional-top{
         text-align: center;
+
         hr.small{
           margin-left: auto;
           margin-right: auto;
@@ -12575,8 +12802,8 @@ div#footer-wrapper {
         font-size: 0;
         text-align: center;
         padding-top: 6px;
-        padding-bottom: 50px;
-        margin-bottom: 70px;
+        // padding-bottom: 50px;
+        margin-bottom: 70px;  
 
         .additional-item{
           text-align: center;
@@ -12679,6 +12906,7 @@ div#footer-wrapper {
       padding-top: 65px;
       padding-bottom: 65px;
 
+
       .image-text-content{
         // border-bottom: 1px solid #cccccc;
         .the-border {
@@ -12698,7 +12926,9 @@ div#footer-wrapper {
 
         .faq-item{
           border-bottom: 1px solid #cccccc;
+          // padding: 10px 5px;
           padding: 10px 5px;
+          padding-right: 15px;
           padding-bottom: 16px;
           
 

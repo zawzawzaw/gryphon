@@ -5059,13 +5059,21 @@ html {
 }
 @media (max-width: 991px) {
   .blog {
-    margin-top: 25px!important;
+    margin-top: 40px!important;
   }
-  .blog .blog-banner .image-text-content .caption {
+  .blog .blog-banner {
+    background: url('../images/content/mobile-blog-banner.png') no-repeat;
+  }
+  .blog .blog-banner .image-text-content .caption-container {
+    display: block!important;
+  }
+  .blog .blog-banner .image-text-content .caption-container .caption {
     height: 105px!important;
+    display: block!important;
+    margin: 0 auto!important;
   }
-  .blog .blog-banner .image-text-content .caption h1 {
-    font-size: 20px;
+  .blog .blog-banner .image-text-content .caption-container .caption h1 {
+    font-size: 20px!important;
     letter-spacing: -0.02em;
     margin-top: 20px;
   }

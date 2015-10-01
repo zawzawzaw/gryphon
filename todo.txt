@@ -85,7 +85,41 @@ Product quantity has exceeded limit
 
 30-09-15
 - magento newsletter
-- order copy email to client
+- order copy email to client - seems to be sending to my email - working on our end
 - guest order confirmation layout seems different
-- auto generate invoice - all of customer order has invoice already does client had to click through sales > order or did it happend automatically?
+- auto generate invoice - all of customer order has invoice already does client had to click through sales - done
 - magento order reports - done
+- points for order not accumulated
+- banner changes for mobile (Store, Blog, Our Story, Careers, Shipping Information, Privacy Policy, T&C (Refer to desktop)) - done
+
+
+
+1-10-15
+- reply to email to set
+
+In summary, ALL emails': 
+1. “Follow Us” buttons should be the same as the website’s social media links. - done
+2. Links to each page such as Tea, Pantry etc, is not linking correctly so it needs to be updated. - done
+3. “Click here” under Email Settings, “Privacy Policy” and “Terms & Conditions” - These hyperlinks are not working too. -done
+4. Remove hyperlink for “Email Setting” in body text. - done
+
+Password Reset Email
+1. “Reset Password" and “Visit Tea Store” icons look off in Outlook mail (It’s just highlighted in black). 
+2. Can we not have the blue underline for clickable links or is this the client’s default setting? 
+3. In general, when viewed from Outlook, the layout looks weird but it looks perfect on our end so are we able to do anything about this?
+4. Make changes to the hyperlinks as mentioned above.
+
+Newsletter Subscription Email - done
+1. Make changes to the hyperlinks as mentioned above. - done
+
+Welcome, My Gryphon Rewards
+1. Make changes to the hyperlinks as mentioned above. - done
+2. Let's automate the Copyright year to 2015. -done
+
+Newsletter Successful Subscription
+1. Make changes to the hyperlinks as mentioned above. - done
+2. Copy change: BENEFITS OF NEWSLETTER SUBSCRIPTION. - done
+3. 3 benefits are: (TBC) 
+	- Learn about our latest news
+	- Enjoy exclusive deals 
+	- Get invited to private events 

@@ -1,0 +1,47 @@
+<?php
+    // $_productCollection=$this->getLoadedProductCollection()->addAttributeToSort('position');
+    $_productCollection = Mage::getModel('catalog/category')->load(116)
+                         ->getProductCollection()
+                         ->addAttributeToSelect('*')
+                         ->addAttributeToFilter('status', 1) // enabled
+                         ->addAttributeToFilter('visibility', 4) //visibility in catalog,search
+                         ->addAttributeToSort('position', Varien_Data_Collection::SORT_ORDER_ASC);
+    $_helper = $this->helper('catalog/output');
+?>
+<?php if($_productCollection->count()): ?>
+
+  <?php $i=1; foreach ($_productCollection as $key => $_product): ?> 
+      <table cellpadding="0" cellspacing="0" border="0" width="47%" align="<?php if($i%2==0): ?>right<?php else: ?>left<?php endif; ?>" class="responsive-table">
+            <tr>
+                <td style="padding: 20px 0 40px 0;">
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tr>
+                            <td align="center" valign="middle">
+                                <a href="#" target="_blank">
+                                  <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(285, 240); ?>" width="285" height="240" style="display: block; width: 240px; height: 130px;" border="0" class="img-max" alt="tea <?php echo $i ?>">                                
+                                </a>
+                                  <p style="font-family: 'MinionPro-SemiboldIt', Tahoma, Helvetica, Arial, sans-serif; font-size: 12px; line-height: 16px; letter-spacing: 0.03em; color: #ae4e0e; margin-bottom: 0px;margin-top: 10px;"><?php echo ceil($_product->getPrice()); ?> Reward Points</p>
+                                <h4 style="font-family: 'MinionPro-Regular', Tahoma, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 16px; letter-spacing: 0.05em; color: #252525; text-transform: uppercase; margin-top: 10px; margin-bottom: 5px;"><?php echo $this->htmlEscape($_product->getName()) ?></h4>
+                                <?php
+                                  $categoryIds = $_product->getCategoryIds();
+                                  if(count($categoryIds) ){
+                                      foreach ($categoryIds as $key => $categoryId) {
+                                          $_category = Mage::getModel('catalog/category')->load($categoryId);
+                                          $parent_category = Mage::getModel('catalog/category')->load($categoryId)->getParentCategory();    
+                                          if($parent_category->getId()==5) { ?>
+                                              <p style="font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; font-size: 10px; line-height: 20px; letter-spacing: 0.03em; text-transform: uppercase; margin-top: 0px; color: #777777;"><?php echo $_category->getName(); ?></p>
+                                  <?php   }
+                                      }
+                                  }
+                                  ?>                              
+                                <p class="price" style="font-family: 'MinionPro-Regular', Tahoma, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 16px; letter-spacing: 0.1em; color: #464646; margin-top: 10px;"><?php echo Mage::helper('core')->currency($_product->getPrice()); ?></p>                                                                        
+                            </td>
+                        </tr>                                                                
+                    </table>
+                </td>
+            </tr>
+      </table>
+  <?php $i++; endforeach; ?>
+
+
+<?php endif; ?>

@@ -1,11 +1,14 @@
-<!--@subject Welcome, {{var customer.name}}! @-->
+<!--@subject Start Earning Reward Points With Us Today! @-->
 <!--@vars
 {"store url=\"\"":"Store Url",
 "var logo_url":"Email Logo Image Url",
 "htmlescape var=$customer.name":"Customer Name",
 "store url=\"customer/account/\"":"Customer Account Url",
 "var customer.email":"Customer Email",
-"htmlescape var=$customer.password":"Customer Password"}
+"htmlescape var=$customer.password":"Customer Password",
+"var subscriber.getUnsubscriptionLink()":"Subscriber Unsubscribe Url",
+"var subscriber.getConfirmationLink()":"Subscriber Confirmation Url"
+"var unsubscribe":"Unsubscribe Url"}
 @-->
 <!--@styles
 @-->
@@ -25,7 +28,7 @@
                             <tr>
                                 <td class="padding-copy">
                                     <a href="#" target="_blank">
-                                        <img src="http://clients.manic.com.sg/gryphon/emailer/images/hero-1.jpg" width="600" height="400" border="0" alt="Insert alt text here" style="display: block; color: #666666; font-family: Helvetica, arial, sans-serif; font-size: 16px; line-height: 20px;" class="img-max">
+                                        <img src="http://www.gryphontea.com/emailer/images/hero-1.jpg" width="600" height="400" border="0" alt="Insert alt text here" style="display: block; color: #666666; font-family: Helvetica, arial, sans-serif; font-size: 16px; line-height: 20px;" class="img-max">
                                     </a>
                                 </td>
                             </tr>
@@ -37,10 +40,10 @@
                                         <td align="center" style="font-size: 14px; font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; color: #252525; padding-top: 40px;" class="padding-copy">Hi, {{htmlescape var=$customer.name}}</td>
                                       </tr>
                                       <tr>
-                                        <td align="center" style="padding: 20px 45px 0 45px; font-size: 12px; line-height: 19px; font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #666666;" class="padding-copy">Thank you for joining My Gryphon Rewards! An account with us means you’re now able to start earning reward points, which can be used to offset future purchases.</td>
+                                        <td align="center" style="padding: 20px 45px 0 45px; font-size: 12px; line-height: 19px; font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #666666;" class="padding-copy">Thank you for joining My Gryphon Rewards! An account with us means you're now able to start earning reward points, which can be used to offset future purchases.</td>
                                       </tr>
                                       <tr>
-                                        <td align="center" style="padding: 20px 45px 0 45px; font-size: 12px; line-height: 19px; font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #666666;" class="padding-copy">Here’s a look at how easy it is to accumulate points:</td>
+                                        <td align="center" style="padding: 20px 45px 0 45px; font-size: 12px; line-height: 19px; font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #666666;" class="padding-copy">Here's a look at how easy it is to accumulate points:</td>
                                       </tr>
                                       <tr>
                                         <td align="center" style="padding: 20px 45px;">
@@ -108,9 +111,9 @@
                                             <td align="center" style="padding: 25px 0 0 0;" class="padding-copy">
                                                 <table border="0" cellspacing="0" cellpadding="0" class="responsive-table">
                                                     <tr>
-                                                        <td align="center"><a href="{{store url=''}}" target="_blank" style="padding: 7px 35px; font-size: 11px; line-height: 16px; font-family:  'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; font-weight: normal; color: #ffffff; text-decoration: none; background-color: #252525;  display: inline-block;" class="mobile-button">Gryphon Website</a></td>
+                                                        <td align="center"><a href="{{store direct_url='store.html'}}" target="_blank" style="padding: 7px 35px; font-size: 11px; line-height: 16px; font-family:  'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; font-weight: normal; color: #ffffff; text-decoration: none; background-color: #252525;  display: inline-block;" class="mobile-button">Visit Tea Store</a></td>
                                                         <td align="center" width="57"></td>
-                                                        <td align="center"><a href="{{store url='rewards'}}" target="_blank" style="padding: 7px 35px; font-size: 11px; line-height: 16px; font-family:  'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; font-weight: normal; color: #ffffff; text-decoration: none; background-color: #252525;  display: inline-block;" class="mobile-button">Visit Rewards Page</a></td>
+                                                        <td align="center"><a href="{{store direct_url='rewards'}}" target="_blank" style="padding: 7px 35px; font-size: 11px; line-height: 16px; font-family:  'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; font-weight: normal; color: #ffffff; text-decoration: none; background-color: #252525;  display: inline-block;" class="mobile-button">My Rewards Page</a></td>
                                                     </tr>
                                                 </table>
                                             </td>
@@ -181,7 +184,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td align="center" style="padding: 5px 0 0 0; font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #666666; font-size: 11px; line-height: 16px;"><span class="appleBody">To change your <a href="#" style="color: #ae4e0e; text-decoration: none;">Email settings</a> or to unsubscribe emails containing special promotions, events and new products, <a href="#" style="color: #ae4e0e; text-decoration: none;">Click here.</a></span></td>
+                                                        <td align="center" style="padding: 5px 0 0 0; font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #666666; font-size: 11px; line-height: 16px;"><span class="appleBody">To change your email settings or to unsubscribe emails containing special promotions, events and new products, <a href="{{var unsubscribe}}" style="color: #ae4e0e; text-decoration: none;" class="{{var subscriber.getConfirmationLink()}}">Click here.</a></span></td>
                                                     </tr>                                                    
                                                 </table>
                                             </td>
@@ -207,9 +210,12 @@
                                                     </tr>
                                                     <tr>
                                                         <td align="center" style="padding: 5px 0 0 0;">
-                                                            <a href="https://instagram.com/gryphontea/" target="_blank" style="padding: 0px 3px;color: #256F9C; text-decoration: none;"><img src="http://clients.manic.com.sg/gryphon/emailer/images/instagram.png" alt=""></a>
-                                                            <a href="https://www.pinterest.com/gryphontea/" target="_blank" style="padding: 0px 3px;color: #256F9C; text-decoration: none;"><img src="http://clients.manic.com.sg/gryphon/emailer/images/pintrest.png" alt=""></a>
-                                                            <a href="https://www.facebook.com/gryphonteacompany" target="_blank" style="padding: 0px 3px;color: #256F9C; text-decoration: none;"><img src="http://clients.manic.com.sg/gryphon/emailer/images/facebook.png" alt=""></a>
+                                                            <a href="https://instagram.com/gryphontea/" target="_blank" style="padding: 0px 3px;color: #256F9C; text-decoration: none;"><img src="http://www.gryphontea.com/emailer/images/instagram.png" alt=""></a>
+                                                            <a href="https://www.pinterest.com/gryphontea/" target="_blank" style="padding: 0px 3px;color: #256F9C; text-decoration: none;"><img src="http://www.gryphontea.com/emailer/images/pintrest.png" alt=""></a>
+                                                            <a href="https://www.facebook.com/gryphonteacompany" target="_blank" style="padding: 0px 3px;color: #256F9C; text-decoration: none;"><img src="http://www.gryphontea.com/emailer/images/facebook.png" alt=""></a>
+                                                            <a href="https://www.linkedin.com/company/gryphon-tea-company" target="_blank" style="padding: 0px 3px;color: #256F9C; text-decoration: none;"><img src="http://www.gryphontea.com/emailer/images/linkedin.png" alt=""></a>
+                                                            <a href="https://www.youtube.com/channel/UCrKNQcT3PHO-o_vQBMUlH8Q" target="_blank" style="padding: 0px 3px;color: #256F9C; text-decoration: none;"><img src="http://www.gryphontea.com/emailer/images/youtube.png" alt=""></a>
+                                                            <a href="https://plus.google.com/+Gryphonteacompany/posts" target="_blank" style="padding: 0px 3px;color: #256F9C; text-decoration: none;"><img src="http://www.gryphontea.com/emailer/images/google-plus.png" alt=""></a>
                                                         </td>
                                                     </tr>
                                                 </table>
