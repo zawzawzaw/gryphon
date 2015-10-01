@@ -1,3 +1,28 @@
+<p>Thank you for your recent purchase from <a href="<?php echo $this->getStoreUrl() ?>"><?php echo $this->getStoreName() ?></a>.</p>
+<p>We hope the experience met your expectations. We always strive to offer the highest quality service to all of our customers, and we rely on your feedback to help us achieve this.</p>
+<p>We hope you’ll take a couple of minutes to write a review of your experience with our products.</p>
+
+<table width="0" border="0" cellspacing="5" cellpadding="10">
+<?php foreach($this->getOrder()->getAllVisibleItems() as $item): ?>
+  <tr>
+    <td>
+      <img src="<?php echo $this->getImageUrl($item->getProduct(), 100) ?>"/>
+    </td>
+    <td valign="top">
+      <a href="<?php echo $this->getResumeUrl($item->getProduct()->getProductUrl()) ?>">Review <?php echo $item->getName() ?></a>
+    </td>
+  </tr>
+<?php endforeach ?>
+</table>
+
+ 
+
+ <?php if ($this->getCoupon()): ?>
+<p>We highly appreciate each and every our visitor. So let us offer you a <b>discount</b> to featurer purchases.<br>
+Your coupon code: <b style="font-size:16px"><?php echo $this->getCoupon()->getCode() ?></b></p>
+Coupon available till <?php echo $this->getFormatedDate($this->getCoupon()->getExpirationDate()) ?>
+<?php endif ?>
+
 test emails can't send out
 facekbook login
 cron job?

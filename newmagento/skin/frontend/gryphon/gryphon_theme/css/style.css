@@ -520,8 +520,9 @@ ul.messages {
   background: #f6f4f1;
   padding: 1px 0;
   text-align: center;
+  height: 30px;
 }
-#page-wrapper #header-wrapper .marquee p {
+#page-wrapper #header-wrapper .marquee div {
   font-family: 'Gotham-Medium', Verdana, sans-serif;
   font-weight: 200;
   font-style: normal;
@@ -1521,6 +1522,12 @@ p {
 }
 .my-arrow-right {
   background: url('../images/icons/arrow-right.png') no-repeat;
+  width: 12px;
+  height: 11px;
+  display: inline-block;
+}
+.my-arrow-left {
+  background: url('../images/icons/arrow-left.png') no-repeat;
   width: 12px;
   height: 11px;
   display: inline-block;
