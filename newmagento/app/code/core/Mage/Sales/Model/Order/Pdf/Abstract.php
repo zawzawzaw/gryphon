@@ -333,7 +333,7 @@ abstract class Mage_Sales_Model_Order_Pdf_Abstract extends Varien_Object
         }
 
         $page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
-        $this->_setFontBold($page, 12);
+        $this->_setFontRegular($page, 12);
         $page->drawText(Mage::helper('sales')->__('Sold to:'), 35, ($top - 15), 'UTF-8');
 
         if (!$order->getIsVirtual()) {
@@ -393,7 +393,7 @@ abstract class Mage_Sales_Model_Order_Pdf_Abstract extends Varien_Object
             $page->drawRectangle(275, $this->y, 570, $this->y-25);
 
             $this->y -= 15;
-            $this->_setFontBold($page, 12);
+            $this->_setFontRegular($page, 12);
             $page->setFillColor(new Zend_Pdf_Color_GrayScale(0));
             $page->drawText(Mage::helper('sales')->__('Payment Method'), 35, $this->y, 'UTF-8');
             $page->drawText(Mage::helper('sales')->__('Shipping Method:'), 285, $this->y , 'UTF-8');
@@ -936,7 +936,7 @@ abstract class Mage_Sales_Model_Order_Pdf_Abstract extends Varien_Object
                         $fontStyle = empty($column['font']) ? 'regular' : $column['font'];
                         switch ($fontStyle) {
                             case 'bold':
-                                $font = $this->_setFontBold($page, $fontSize);
+                                $font = $this->_setFontRegular($page, $fontSize);
                                 break;
                             case 'italic':
                                 $font = $this->_setFontItalic($page, $fontSize);

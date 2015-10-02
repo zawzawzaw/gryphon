@@ -118,7 +118,6 @@ Product quantity has exceeded limit
 - banner changes for mobile (Store, Blog, Our Story, Careers, Shipping Information, Privacy Policy, T&C (Refer to desktop)) - done
 
 
-
 1-10-15
 - reply to email to set
 
@@ -148,3 +147,50 @@ Newsletter Successful Subscription
 	- Learn about our latest news
 	- Enjoy exclusive deals 
 	- Get invited to private events 
+
+
+2-10-15
+In general: 
+1. “Tea” hyperlink should lead to tea store and not the homepage - done?
+2. “Click here” under Email Setting is not clickable - where should it lead to?
+3. Email setting copy change: events and new products, click here. “Click here” should be hyperlinked and in copper too. - done
+
+Thank You for Signing Up! 
+1. For “4 doses of goodness”, the rectangles should be of the same size/height
+
+New here? Let us help you.
+1. Remove full-stop “.” from Email header - New here? Let us help you - done
+2. Change button copy: Discover Tea - done
+
+Teas We Love and We Think You Will Too!
+1. Change button copy: Discover Tea - done
+2. “Popular Products” to link to tea store - done
+
+My Gryphon Rewards Account Statement
+1. “Gryphon Tea Company” logo does not lead to homepage. - done
+2. If customer has 0 points, can we state it as 0 instead of leaving it blank?  - done
+
+Happy Birthday
+1. “Tea recommendation for you” image is not loading, are we able to fix this or is it randomly selected? - seems to be working on preview this product should be 2 feature products may be its only doesn't work on test email
+
+Share A Review And Be Rewarded!
+1. “Write Review” links are not working at all - will it automatically link to the product page based on what customers bought? - should be linking to product details page?
+
+We’ve Missed You! 
+1. Loyalty points, tea type and prices are all the same - it should reflect the correct one when sent to customer right? - points and price are the same, fixed categories - done
+
+
+<?php 
+											$catIds = $_product->getCategoryIds();
+print_r($catIds); 
+                      $type_category = Mage::getModel('catalog/category')->loadByAttribute('name', 'Types');
+                      $subcategories = $type_category->getChildrenCategories(); 
+                      foreach($subcategories as $_category) {
+                        if($_category->getIsActive())
+                        {
+                          if(in_array($_category->getId(), $catIds)) {
+                            echo $_category->getName();
+                          }
+                        }
+                      }
+										?>

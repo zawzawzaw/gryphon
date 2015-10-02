@@ -453,7 +453,7 @@
 			console.log(non_subscription_in_the_cart);
 
 			if(non_subscription_in_the_cart==1) {					
-				jQuery(this).next('span.error-msg').html('This item cannot be purchased with non-subscription product in the cart.');
+				jQuery(this).next('span.error-msg').html('This subscription plan cannot be purchased with other items in the cart. Please check out first before making any other purchases.');
 			}else {
 				setLocation(AddToCartUrl);
 			}				

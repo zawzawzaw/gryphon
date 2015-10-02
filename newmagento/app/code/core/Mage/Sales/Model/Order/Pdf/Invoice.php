@@ -110,7 +110,7 @@ class Mage_Sales_Model_Order_Pdf_Invoice extends Mage_Sales_Model_Order_Pdf_Abst
         $pdf = new Zend_Pdf();
         $this->_setPdf($pdf);
         $style = new Zend_Pdf_Style();
-        $this->_setFontBold($style, 10);
+        $this->_setFontRegular($style, 10);
 
         foreach ($invoices as $invoice) {
             if ($invoice->getStoreId()) {

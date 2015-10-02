@@ -162,6 +162,55 @@ class Manic_Discovertea_IndexController extends Mage_Core_Controller_Front_Actio
 
 	}
 
+	public function unsubscribeAction() {
+
+		if ($this->getRequest()->isGet()) {
+    
+            $unsubscribe_email = $this->getRequest()->getParam('unsubscribe_email', array()); 
+
+            // print_r($unsubscribe_email);
+            $result = array();
+            $result['error'] = false;
+
+            if(!filter_var($unsubscribe_email, FILTER_VALIDATE_EMAIL)) {
+            	$result['success']  = false;
+            	$result['error']    = true;
+            	$result['messages'] = $this->__('Invalid email address. You may close this window and try again.');
+            }
+
+            // if(!isset($subscribe_email) || empty($subscribe_email)) {
+            // 	if(Mage::getSingleton('customer/session')->isLoggedIn()) {
+	           //      $customerData = Mage::getSingleton('customer/session')->getCustomer();
+	           //      $customerDataArr = $customerData->getData();
+	           //      $subscribe_email = $customerDataArr['email'];
+	           //  }
+            // }
+
+            // check whether customer subscribe already or not
+            $subscriber = Mage::getModel('newsletter/subscriber')->loadByEmail($unsubscribe_email);
+
+            $subscriberData = $subscriber->getData();
+
+            // print_r($subscriberData);
+
+			if($result['error']==false && !empty($subscriberData) && $subscriberData['subscriber_status']!==3)
+			{
+			    $subscriber->unsubscribe();
+			    $result['success']  = true;
+            	$result['error']    = false;
+            	$result['messages']    = $this->__('Successfully unsubscribed to newsletter. You may close this window.');
+			}else if($result['error']==false) {
+				$result['success']  = false;
+            	$result['error']    = true;
+            	$result['messages']    = $this->__('This email is already unsubscribed. You may close this window. <script>setTimeout("window.close()", 5000);</script>');
+			}
+
+			$this->getResponse()->setBody($result['messages']);
+    
+        }
+
+	}
+
 	public function subscribeUnsubscribeAction() {		
     	if(Mage::getSingleton('customer/session')->isLoggedIn()) {
             $customerData = Mage::getSingleton('customer/session')->getCustomer();

@@ -324,7 +324,7 @@ endif;
                             var subscription_in_the_cart = <?php echo $subscription_in_the_cart; ?>;
 
                             if(subscription_in_the_cart==1) {
-                                jQuery('span.ajax_msg').html('This item cannot be purchased with a subscription plan in the cart.').show();
+                                jQuery('span.ajax_msg').html('This item cannot be purchased with a subscription plan in the cart. Please check out first before making any other purchases.').show();
                             }else {
                                 try {
                                     jQuery.ajax({

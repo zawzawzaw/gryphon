@@ -5754,14 +5754,14 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .subscription-form .table-1 .col-5 .error-msg,
 .subscription-form .table-2 .col-5 .error-msg {
   position: absolute;
-  right: -215px;
-  max-width: 390px;
+  right: -15px;
+  max-width: 220px;
   display: block;
   font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 400;
   font-style: italic;
-  font-size: 13.5px;
-  margin-top: -20px;
+  font-size: 12px;
+  margin-top: -38px;
   color: #ae4e0e;
 }
 .subscription-form .table-1 .terms-icon,
