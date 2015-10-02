@@ -13,7 +13,7 @@ add_filter( 'excerpt_more', 'new_excerpt_more' );
 			<div class="row">
 				<div class="col-md-12 caption-container">
 					<div class="caption">
-						<h1>How to start a day with <br> Gryphon tea</h1>
+						<h1>The Gryphon Blog</h1>
 						<a href="store.html" class="read-more cta">Visit Tea Store</a>
 					</div>
 				</div>

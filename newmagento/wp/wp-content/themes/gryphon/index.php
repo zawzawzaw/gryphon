@@ -6,7 +6,7 @@
 			<div class="row">
 				<div class="col-md-12 caption-container">
 					<div class="caption">
-						<h1>How to start a day with <br> Gryphon tea</h1>
+						<h1>The Gryphon Blog</h1>
 						<a href="http://www.gryphontea.com/store.html" class="read-more cta">Visit Tea Store</a>
 					</div>
 				</div>
@@ -30,9 +30,14 @@
 	  <div id="mobile-blog-category-container">
 	  	<ul>
 		  	<?php 
+		  		/*
 		  		wp_list_categories( array(
 		  			'title_li' => '',
 		  		));
+		  		*/
+
+		  		get_categories();
+
 		  	?>
 	  	</ul>
 	  </div>

@@ -303,7 +303,7 @@
                                     <label for="phone_no"><?php echo $this->__('PHONE NUMBER*'); ?></label> 
                                     <div class="intl-tel-input">
                                         <input type="text" id="phone_no" class="phone_no_input">                                
-                                        <input type="text" id="phone_no_2" class="required-entry">                                                                                    
+                                        <input type="text" id="phone_no_2" class="required-entry validate-phoneLax">                                                                                    
                                     </div>
                                     <div class="hide-input">
                                         <input id="telephone" type="hidden" name="telephone" value="<?php echo $this->escapeHtml($this->getFormData()->getTelephone()) ?>" />
@@ -313,7 +313,7 @@
                                     <label for="mobile_no">mobile number</label> 
                                     <div class="intl-tel-input">
                                         <input type="text" id="mobile_no" class="phone_no_input">                                
-                                        <input type="text" id="mobile_no_2">                                                                                    
+                                        <input type="text" id="mobile_no_2" class="validate-phoneLax">
                                     </div>
                                     <div class="hide-input">
                                         <input id="mobile" type="hidden" name="mobile_no" value="<?php echo $this->escapeHtml($this->getFormData()->getMobileNo()) ?>" />
@@ -501,6 +501,9 @@
     #advice-required-entry-city, 
     #advice-required-entry-answer{
         margin-left: 163px;
+    }
+    #advice-validate-phoneLax-phone_no_2{
+        margin-right: -110px !important;
     }
 
 </style>
