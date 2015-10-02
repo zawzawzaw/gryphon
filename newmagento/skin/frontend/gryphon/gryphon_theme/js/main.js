@@ -539,14 +539,13 @@ var initialLoad = true;
             $('.search-select').toggle();
         });
 
-        /*
+        
         $('.cta-list .account').on('click', function() {
             $('.search-select').hide();
             $('.currency-select').hide();
             $('.cart-preview-select').hide();
             $('.account-select').toggle();
         });
-        .*/
 
         $('.cta-list .cart').on('click', function() {
             $('.search-select').hide();
