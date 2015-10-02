@@ -181,19 +181,24 @@ var initialLoad = true;
             $(this).parent().parent().next().find('.expanded').slideToggle("slow").addClass('open');
         });
 
-        var baseurl = getBaseUrl();
-        console.log(baseurl);
+        try{
+            var baseurl = getBaseUrl();
+            console.log(baseurl);
 
-        // rating
-        $('.stars').raty({
-            path : getBaseUrl()+"/skin/frontend/gryphon/gryphon_theme/js/plugins/raty/images/",
-            click: function(score, evt){
-                console.log(score);
-                $('#product-review-table').find('#Price_'+score).trigger('click')
-                $('#product-review-table').find('#Value_'+score).trigger('click')
-                $('#product-review-table').find('#Quality_'+score).trigger('click')
-            }
-        });
+            // rating
+            $('.stars').raty({
+                path : getBaseUrl()+"/skin/frontend/gryphon/gryphon_theme/js/plugins/raty/images/",
+                click: function(score, evt){
+                    console.log(score);
+                    $('#product-review-table').find('#Price_'+score).trigger('click')
+                    $('#product-review-table').find('#Value_'+score).trigger('click')
+                    $('#product-review-table').find('#Quality_'+score).trigger('click')
+                }
+            });
+
+        } catch(e){
+            console.log('custom error with function getBaseUrl');
+        }
 
         // mobile menu
         $('.mobile-menu-btn').on('click', function(e){
@@ -370,6 +375,84 @@ var initialLoad = true;
             }
         });*/
 
+
+
+        // http://stackoverflow.com/questions/487073/check-if-element-is-visible-after-scrolling
+        function isScrolledIntoView( element ) {
+            var elementTop    = element.getBoundingClientRect().top,
+                elementBottom = element.getBoundingClientRect().bottom;
+            return elementTop >= 0 && elementBottom <= window.innerHeight;
+        }
+        function on_loading_scroll() {
+            if (isScrolledIntoView(this_is_the_load_button)) {
+                
+                if($('.load-more-btn.load-more-products').text() != 'Loading...' ){
+                    console.log('this is triggering');
+                    $('.load-more-btn.load-more-products').trigger('click');
+                    $(window).off('scroll', on_loading_scroll);
+                }
+            }
+            
+        }
+        var this_is_the_load_button = $('.load-more-btn.load-more-products')[0];
+        if ($('.load-more-btn.load-more-products').length != 0) {
+            $(window).on('scroll', on_loading_scroll);
+        }
+
+    
+        function sendLoadMoreProductsRequestHOMEPAGE(url) {
+            $.get(url, function(response) {
+
+                var $result = $(response).find('#all-posts');
+                var $next = $(response).find('.next-page a');
+
+                var new_link = $next.attr('href');
+
+                if(typeof(new_link)!="undefined") {
+                    $('.next-page a').attr('href', new_link);
+                }else {
+                    $('.next-page a').attr('href', '');
+                }
+
+                var html = $result.html();
+
+                $('#all-posts').append(html);
+
+                // $(html).insertBefore($(".load-more-wrapper"))
+
+                $('.load-more-btn').text('load more');
+
+
+                this_is_the_load_button = $('.load-more-btn.load-more-products')[0];
+                if ($('.load-more-btn.load-more-products').length != 0) {
+                    $(window).on('scroll', on_loading_scroll);
+                }
+
+            });
+        }
+
+        $('.load-more-btn').on('click', function(e){        
+            e.preventDefault();
+
+            console.log('load more button clicked');
+
+            $(this).text('Loading...');
+
+            var link = $('.next-page a').attr('href');
+
+            if(link!='') {
+                sendLoadMoreProductsRequestHOMEPAGE(link);       
+            }else {
+                $(this).parent().parent().hide();
+            }
+        });
+
+        
+
+
+
+
+
         $('input[name="product_type"]').on('change', function(e) {
             if ($(this).is(':checked')) {
                 setGetParameter('product_type', $(this).val());
@@ -456,12 +539,14 @@ var initialLoad = true;
             $('.search-select').toggle();
         });
 
+        /*
         $('.cta-list .account').on('click', function() {
             $('.search-select').hide();
             $('.currency-select').hide();
             $('.cart-preview-select').hide();
             $('.account-select').toggle();
         });
+        .*/
 
         $('.cta-list .cart').on('click', function() {
             $('.search-select').hide();
@@ -475,7 +560,11 @@ var initialLoad = true;
             $("#select-currency option:contains(" + currencyCode + ")").attr('selected', 'selected').trigger("change");           
         });
 
-        $(".fancybox").fancybox();  
+        try{
+            $(".fancybox").fancybox();  
+        } catch(e){
+            console.log('fancy box jquery not loaded!!')
+        }
 
         // product details qty
         $('.plus').on('click',function(e){
@@ -586,12 +675,88 @@ var initialLoad = true;
 
         ////
 
-        $(".rotate").textrotator({
-            animation: "flipUp",
-            //animation: "flip",
-            separator: ",",
-            speed: 8000
-        });         
+
+        try{
+            $(".rotate").textrotator({
+                animation: "flipUp",
+                //animation: "flip",
+                separator: ",",
+                speed: 8000
+            });
+        } catch(e){
+            
+        }
+
+
+        // gift card additional code...
+        // from http://stackoverflow.com/questions/13236651/allowing-only-alphanumeric-values
+        
+        $('.gift-card-content .giftvoucher-product-info #giftvoucher-receiver #customer_name').keypress(function (e) {
+            var regex = new RegExp("^[a-zA-Z0-9]+$");
+            var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+            if (regex.test(str)) {
+                return true;
+            }
+
+            e.preventDefault();
+            return false;
+        });
+        $('.gift-card-content .giftvoucher-product-info #giftvoucher-receiver #recipient_name').keypress(function (e) {
+            var regex = new RegExp("^[a-zA-Z0-9]+$");
+            var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+            if (regex.test(str)) {
+                return true;
+            }
+
+            e.preventDefault();
+            return false;
+        });
+
+
+        // trader page, form character limitation
+        $('body.trader-index-index #trader_register .inputs .each-input input[name=companyname]').keypress(function (e) {
+            var regex = new RegExp("^[a-zA-Z]+$");
+            var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+            if (regex.test(str)) {
+                return true;
+            }
+            e.preventDefault();
+            return false;
+        });
+        $('body.trader-index-index #trader_register .inputs .each-input input[name=registrationnumber]').keypress(function (e) {
+            var regex = new RegExp("^[a-zA-Z0-9]+$");
+            var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+            if (regex.test(str)) {
+                return true;
+            }
+            e.preventDefault();
+            return false;
+        });
+        $('body.trader-index-index #trader_register .inputs .each-input #phone_no_2').keypress(function (e) {
+            var regex = new RegExp("^[0-9]+$");
+            var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+            if (regex.test(str)) {
+                return true;
+            }
+            e.preventDefault();
+            return false;
+        }); 
+        $('body.trader-index-index #trader_register .inputs .each-input #mobile_no_2').keypress(function (e) {
+            var regex = new RegExp("^[0-9]+$");
+            var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+            if (regex.test(str)) {
+                return true;
+            }
+            e.preventDefault();
+            return false;
+        }); 
+        
+        
+        
+
+
+
+
     });
 
 
