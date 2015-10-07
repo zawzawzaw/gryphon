@@ -394,10 +394,14 @@ var initialLoad = true;
             }
             
         }
+
+        /*
+        // reverted auto scroll
         var this_is_the_load_button = $('.load-more-btn.load-more-products')[0];
         if ($('.load-more-btn.load-more-products').length != 0) {
             // $(window).on('scroll', on_loading_scroll);
         }
+        */
 
     
         function sendLoadMoreProductsRequestHOMEPAGE(url) {
