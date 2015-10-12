@@ -3791,7 +3791,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .store .store-banner,
 .store .gifts-banner,
 .store .pantry-banner {
-  background: url("../images/content/store-banner.jpg") no-repeat center;
+  background: url("../images/content/store-banner.jpg") no-repeat center bottom;
   background-size: cover;
   height: 325px!important;
 }
@@ -3832,14 +3832,14 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   color: #ffffff;
 }
 .store .gifts-banner {
-  background: url("../images/content/gifts-banner.jpg") no-repeat center !important;
+  background: url("../images/content/gifts-banner.jpg") no-repeat center bottom !important;
   background-size: cover!important;
 }
 .store .gifts-banner h1 {
   color: #ffffff;
 }
 .store .pantry-banner {
-  background: url("../images/content/pantry-banner.jpg") no-repeat center !important;
+  background: url("../images/content/pantry-banner.jpg") no-repeat center bottom !important;
   background-size: cover!important;
 }
 .store .pantry-banner h1 {

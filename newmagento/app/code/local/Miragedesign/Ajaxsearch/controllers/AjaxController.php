@@ -18,7 +18,29 @@ class Miragedesign_Ajaxsearch_AjaxController extends Mage_Core_Controller_Front_
         $result = array();
         $ajaxSearchHelper = Mage::helper("ajaxsearch");
         $arrQuery = $ajaxSearchHelper->verifyParams($this->getRequest()->getParams());
+        // print_r($arrQuery); exit();
         $isUpdate = 0;
+
+        // Mage::getSingleton('catalogsearch/advanced')->setCategoryId(56);        
+        // print_r(Mage::getSingleton('catalogsearch/advanced')->getProductCollection()->addAttributeToFilter(
+        //         array(
+        //             array('attribute'=> 'is_new', 'finset' => 1),
+        //             array('attribute'=> 'is_featured', 'finset' => 1),
+        //             array('attribute'=> 'is_best_selling', 'finset' => 1),
+        //             array('attribute'=> 'is_promotion', 'finset' => 1),
+        //         )
+        // )->getData());
+        // exit();
+
+        $filter = array();
+        foreach ($arrQuery as $key => $value) {
+            if($key!=='categoryId') {
+                $filter['attribute'] = $key;
+                $filter['finset'] = $value;    
+
+                $filters[] = $filter;
+            }           
+        }
 
         try {
             if ($page = $this->getRequest()->getParam("p")) {
@@ -28,7 +50,17 @@ class Miragedesign_Ajaxsearch_AjaxController extends Mage_Core_Controller_Front_
             }
 
             Mage::getSingleton('catalogsearch/advanced')->setCategoryId($this->getRequest()->getParam("categoryId"));
-            Mage::getSingleton('catalogsearch/advanced')->addFilters($arrQuery);
+            if(isset($filters) && !empty($filters))
+                Mage::getSingleton('catalogsearch/advanced')->getProductCollection()->addAttributeToFilter($filters);            
+
+            // $arrQueryKeys = array_keys($arrQuery);
+            // Mage::getSingleton('catalogsearch/advanced')->getProductCollection()->addFieldToFilter(
+            //     array(
+            //         array('attribute'=> $arrQueryKeys[0], '=' => $arrQuery[0]),
+            //         array('attribute'=> $arrQueryKeys[1], '=' => $arrQuery[1]),
+            //         array('attribute'=> $arrQueryKeys[2], '=' => $arrQuery[2])
+            //     )
+            // );
             //$resultNumber = Mage::getSingleton('catalogsearch/advanced')->getProductCollection()->getSize();
         } catch (Mage_Core_Exception $e) {
             Mage::getSingleton('catalogsearch/session')->addError($e->getMessage());

@@ -268,7 +268,7 @@ endif;
                         jQuery.ajax({
                             url: '<?php echo $this->getUrl("discovertea/index/cartpreview"); ?>',
                             dataType: 'json',
-                            type : 'getJSON',
+                            type : 'get',
                             success: function(data){
 
                                 jQuery('.cart-preview-content').html('');

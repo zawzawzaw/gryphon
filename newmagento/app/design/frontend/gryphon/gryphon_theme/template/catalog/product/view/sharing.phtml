@@ -36,7 +36,7 @@
     <?php $_productName = urlencode(trim($_helper->productAttribute($_product, $_product->getName(), 'name')))?>
     <?php $_productImageUrl = urlencode(trim($this->helper('catalog/image')->init($_product, 'image')))?>
     <?php $_productUrl = urlencode(trim($_product->getProductUrl()))?>
-    <li><a href="#" class="instagram"></a></li>
+    <!-- <li><a href="#" class="instagram"></a></li> -->
     <li>
         <a href="http://pinterest.com/pin/create/button/?url=<?php echo $_productUrl; ?>&media=<?php echo $_productImageUrl; ?>&description=<?php echo $_productName; ?>" class="pintrest" target="_blank"></a>
     </li>
@@ -45,8 +45,56 @@
     </li>
     <li>
         <?php $_u = 'p[url]=' . $_productUrl . '&p[images][0]=' . $_productImageUrl . '&p[title]=' . $_productName . '&p[summary]=' . urlencode(trim($_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description'))); ?>
-        <a href="<?php echo 'http://www.facebook.com/sharer.php?s=100&' . $_u; ?>" target="_blank" title="<?php echo $this->__('Share on Facebook') ?>" class="facebook">
+        <!-- <a href="<?php echo 'http://www.facebook.com/sharer.php?s=100&' . $_u; ?>" target="_blank" title="<?php echo $this->__('Share on Facebook') ?>" class="facebook"> -->
+        <a href="<?php echo Mage::helper('core/url')->getCurrentUrl(); ?>" target="_blank" title="<?php echo $this->__('Share on Facebook') ?>" class="facebook">
         </a>
     </li>    
 </ul>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1633996753523303',
+      xfbml      : true,
+      version    : 'v2.4'
+    });
+
+    jQuery('.facebook').on('click', function(e){
+        e.preventDefault();
+        var url = jQuery(this).attr('href');
+        FB.ui(
+        {
+            method: 'share',
+            href: url,
+        },function(response) {
+            if (response && !response.error_code) {
+                alert('Posting completed.');
+            }
+        });
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+    function openNewWindow(URLtoOpen, windowName, windowFeatures) { newWindow=window.open(URLtoOpen, windowName, windowFeatures); }
+
+
+    jQuery(document).ready(function($){
+        $('.twitter').on('click', function(e){
+            e.preventDefault();
+            var url = $(this).attr('href');
+            openNewWindow(url,'sharing','height=600,width=600,toolbar=no,scrollbars=no,resizable=yes');
+        });
+        $('.pintrest').on('click', function(e){
+            e.preventDefault();
+            var url = $(this).attr('href');
+            openNewWindow(url,'sharing','height=600,width=600,toolbar=no,scrollbars=no,resizable=yes');
+        });
+    });    
+</script>
 

@@ -26,7 +26,7 @@
 				</ul>
 
 				<div class="copywrite">
-					<h6>&copy; 2013 GRYPHON TEA COMPANY.</h6>
+					<h6>&copy; <?php echo date("Y"); ?> GRYPHON TEA COMPANY.</h6>
 					<p>All material on this site is copyrighted by Gryphon Tea Company. Gryphon Tea Company® is a registered trademark. No images or copy on this site may be used without written permission by Gryphon Tea Company.</p>	
 				</div>
 
@@ -162,7 +162,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<p>&copy; 2013 GRYPHON TEA COMPANY.</p>
+						<p>&copy; <?php echo date("Y"); ?> GRYPHON TEA COMPANY.</p>
 						<p>All material on this site is copyrighted by Gryphon Tea Company. Gryphon Tea Company® is a registered trademark. No images or copy on this site may be used without written permission by Gryphon Tea Company.</p>	
 					</div>
 				</div>
