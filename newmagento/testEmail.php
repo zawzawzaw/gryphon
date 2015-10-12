@@ -1,3 +1,13 @@
-<?php 
-$headers = 'From: webmaster@example.com'; 
-mail('ngocdbcn@gmail.com', 'Test email using PHP', 'This is a test email message', $headers, '-fwebmaster@example.com');
+<html>
+	<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		console.log('hi')
+	});
+	</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

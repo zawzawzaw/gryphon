@@ -60,6 +60,7 @@ class Mage_Adminhtml_Block_Sales_Order_Create_Shipping_Method_Form
     public function getShippingRates()
     {
         if (empty($this->_rates)) {
+            echo 'hi';
             $groups = $this->getAddress()->getGroupedAllShippingRates();
             /*
             if (!empty($groups)) {

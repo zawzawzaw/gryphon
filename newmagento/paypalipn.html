@@ -1,0 +1,21 @@
+<html>
+	<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		var data = "mc_gross=67.51&invoice=145000136&protection_eligibility=Eligible&address_status=unconfirmed&item_number1=ART0006&tax=4.42&item_number2=GOUR0018-03&payer_id=U8MTEGJTNVK5E&item_number3=GOUR0018-02&address_street=240 Jln Besar, Singapore&payment_date=23:55:24 Oct 08, 2015 PDT&payment_status=Completed&charset=gb2312&address_zip=208913&mc_shipping=0.00&mc_handling=0.00&first_name=Gryphontea&mc_fee=2.80&address_country_code=SG&address_name=Classique Newsletter&notify_version=3.8&custom=&payer_status=verified&business=gryphontea_business@gryphontea.com&address_country=Singapore&num_cart_items=3&mc_handling1=0.00&mc_handling2=0.00&mc_handling3=0.00&address_city=singapore&verify_sign=Ae4eqEPlvFwYuXka2cAk7D9prwKzAm3a2KEj9R6x-QVUweuRCZPtHw8m&payer_email=gryphontea_buyer@gryphontea.com&mc_shipping1=0.00&mc_shipping2=0.00&mc_shipping3=0.00&txn_id=0BA6859680429220R&payment_type=instant&last_name=Buyer&address_state=&item_name1=Hanami&receiver_email=gryphontea_business@gryphontea.com&item_name2=Gold Muscato (50 gr)&payment_fee=&item_name3=Gold Muscato (100 gr)&shipping_discount=0.00&quantity1=1&insurance_amount=0.00&quantity2=1&receiver_id=WBPJGZWNXNU3A&quantity3=1&txn_type=cart&discount=7.01&mc_gross_1=16.60&mc_currency=SGD&mc_gross_2=18.50&mc_gross_3=35.00&residence_country=SG&test_ipn=1&shipping_method=Default&transaction_subject=&payment_gross=&ipn_track_id=d293a819e6914";
+		$.ajax({
+		  type: "POST",
+		  url: 'http://test.gryphontea.com/magento/paypal/ipn/',
+		  data: data,
+		  success: function(data, textStatus, jqXHR) {
+		  	console.log(data);
+		  }
+		});
+	});
+	</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
