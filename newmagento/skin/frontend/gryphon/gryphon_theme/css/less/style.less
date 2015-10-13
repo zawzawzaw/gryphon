@@ -1555,7 +1555,7 @@ div.home {
       }
 
       p.caption {
-        .minion-pro-semibold;
+        .minion-pro-medium;
         font-size: 13px;
         color: @dark-grey;
         margin-top: 20px;
@@ -3535,6 +3535,7 @@ div.product {
     height: 325px!important;
     .image-text-content {
       .caption {
+        width: 600px;
         height: 261px;
         display: table-cell;
         vertical-align: middle;
@@ -3558,6 +3559,7 @@ div.product {
           font-size: 12px;
           line-height: 19px;
           color: @white; 
+          padding-left: 15px;
         }
       }
     }    
@@ -3946,6 +3948,7 @@ div.product {
         margin-right: 1%;
         margin-left: 1%;
         text-align: center;
+        z-index: 9999;
 
         &:nth-of-type(4n) {
           margin-right: 0px;
@@ -4014,7 +4017,12 @@ div.product {
 
         .product-image-container {          
           position: relative;
+          z-index: 9999;
           a {            
+            display: block;
+            width: 100%;
+            height: 100%;
+            z-index: 99999;
             img {
               .transition();
               .opacity(1);
@@ -4046,7 +4054,7 @@ div.product {
               // suyeon edits
               font-size: 10.5px;
               line-height: 22px;
-              letter-spacing: 0.03em;
+              letter-spacing: 0.2em;
             }
             img.hover {
               .transition();

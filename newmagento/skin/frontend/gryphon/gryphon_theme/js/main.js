@@ -347,7 +347,7 @@ var initialLoad = true;
             e.preventDefault();
 
             setGetParameter('dir', 'desc');
-        });
+        });        
 
         function sendLoadMoreProductsRequest(url) {
             $.get(url, function(response) {
@@ -554,8 +554,10 @@ var initialLoad = true;
             $('.cart-preview-select').toggle();
         });
 
-        $('.currency-select li a').on('click', function(){
+        $('.currency-select li a').on('click', function(e){
+            e.preventDefault();            
             var currencyCode = $(this).attr('id');
+            console.log(currencyCode);
             $("#select-currency option:contains(" + currencyCode + ")").attr('selected', 'selected').trigger("change");           
         });
 

@@ -436,9 +436,14 @@
 
 
     on_currency_container_a_click: function(event){
+      event.preventDefault();
       var target = $(event.currentTarget);
       var currencyCode = target.attr('id');
-      $("#select-currency option:contains(" + currencyCode + ")").attr('selected', 'selected').trigger("change");
+      var currentIndex = target.parent().index();      
+      
+      var el = document.getElementById("select-currency");
+      setLocation($(el.options[currentIndex]).val());
+      // $("#select-currency option:contains(" + currencyCode + ")").attr('selected', 'selected').trigger("change");
 
       this.close_menu();
     },

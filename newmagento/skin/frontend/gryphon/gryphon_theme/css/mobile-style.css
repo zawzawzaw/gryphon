@@ -190,6 +190,7 @@ body,
 html {
   background: #fff;
   height: 100%;
+  z-index: -9999;
 }
 html,
 body {
@@ -1273,7 +1274,7 @@ html {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 99999;
 }
 .mobile-menu-open #page-wrapper {
   display: none;

@@ -66,16 +66,16 @@
 
                 <li>
                     <?php if($this->getCurrentOrder() == 'name' && $this->getCurrentDirection() == 'asc'): ?>
-                        <a href="<?php echo $this->getOrderUrl('name', 'desc') ?>">Name (A - Z)</a>
+                        <a href="<?php echo $this->getOrderUrl('name', 'desc') ?>">Name A - Z</a>
                     <?php else: ?>
-                        <a href="<?php echo $this->getOrderUrl('name', 'asc') ?>">Name (Z - A)</a>
+                        <a href="<?php echo $this->getOrderUrl('name', 'asc') ?>">Name Z - A</a>
                     <?php endif; ?>
                     <div class="v-line"></div>
                     <?php if($this->getCurrentOrder() == 'price' && $this->getCurrentDirection() == 'asc'): ?>
-                        <a href="<?php echo $this->getOrderUrl('price', 'desc') ?>">Price </a>
-                        <a class="arrow-up-down" href="<?php echo $this->getOrderUrl($_key, 'desc') ?>" title="<?php echo $this->__('Set Descending Direction') ?>"><img src="<?php echo $this->getSkinUrl('images/icons/arrow-up.png') ?>" alt="<?php echo $this->__('Set Descending Direction') ?>" class="v-middle sort-arrow" /></a>                        
+                        <a href="<?php echo $this->getOrderUrl('price', 'desc') ?>">Price Low - High</a>
+                        <!-- <a class="arrow-up-down" href="<?php echo $this->getOrderUrl($_key, 'desc') ?>" title="<?php echo $this->__('Set Descending Direction') ?>"><img src="<?php echo $this->getSkinUrl('images/icons/arrow-up.png') ?>" alt="<?php echo $this->__('Set Descending Direction') ?>" class="v-middle sort-arrow" /></a>                         -->
                     <?php else: ?>
-                        <a href="<?php echo $this->getOrderUrl('price', 'asc') ?>">Price</a>
+                        <a href="<?php echo $this->getOrderUrl('price', 'asc') ?>">Price High - Low</a>
                         <a class="arrow-up-down" href="<?php echo $this->getOrderUrl($_key, 'asc') ?>" title="<?php echo $this->__('Set Ascending Direction') ?>"><img src="<?php echo $this->getSkinUrl('images/icons/arrow-down.png') ?>" alt="<?php echo $this->__('Set Ascending Direction') ?>" class="v-middle sort-arrow" /></a>
                     <?php endif; ?>
                 </li>
