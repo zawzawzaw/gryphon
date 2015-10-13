@@ -478,6 +478,9 @@ ul.messages {
   text-indent: 0.01px;
   text-overflow: '';
 }
+#loading-mask {
+  z-index: 99999;
+}
 #page-wrapper {
   height: 100%;
   position: relative;
@@ -487,7 +490,7 @@ ul.messages {
   position: fixed;
   top: 0px;
   width: 100%;
-  z-index: 9999;
+  z-index: 99999;
   background: #fff;
   /*.scrolled {
         padding-top: 0px!important;
