@@ -423,6 +423,7 @@ Billing.prototype = {
 
         checkout.setStepResponse(response);
         payment.initWhatIsCvvListeners();
+        window.scrollTo(0, 0);
         // DELETE
         //alert('error: ' + response.error + ' / redirect: ' + response.redirect + ' / shipping_methods_html: ' + response.shipping_methods_html);
         // This moves the accordion panels of one page checkout and updates the checkout progress

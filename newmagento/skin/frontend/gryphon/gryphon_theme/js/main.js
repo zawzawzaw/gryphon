@@ -293,7 +293,7 @@ var initialLoad = true;
                     }
                 }
             ]
-        });
+        });            
 
         // clearing filters
         $('.clear-all').on('click', function(e){

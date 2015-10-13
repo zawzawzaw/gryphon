@@ -15,12 +15,14 @@
 			<div class="post-extra-container">
 				<div class="category post-extra">
 					<h2>category</h2>
+					<p>
 					<?php 
-					$category = get_the_category(); 
-					if($category[0]){
-						echo '<p><a href="'.get_category_link($category[0]->term_id ).'">'.$category[0]->cat_name.'</a></p>';
+					$categories = get_the_category();
+					foreach ($categories as $key => $category) {
+						echo '<a style="padding-right:5px;" href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a>';
 					}
 					?>
+					</p>
 				</div>
 			
 				<div class="tags post-extra">

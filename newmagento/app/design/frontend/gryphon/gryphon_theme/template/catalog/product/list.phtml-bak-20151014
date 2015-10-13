@@ -35,7 +35,7 @@
 <?php
     $_productCollection=$this->getLoadedProductCollection()->addAttributeToSort('pos‌​ition');
     $current_cat_id = $this->getLayer()->getCurrentCategory()->getId();
-    if($current_cat_id==102 || $current_cat_id==107 || $current_cat_id==92) {
+    if($current_cat_id==102 || $current_cat_id==107) {
         $_productCollection = Mage::getModel('catalog/category')->load($current_cat_id)
                              ->getProductCollection()
                              ->addAttributeToSelect('*')

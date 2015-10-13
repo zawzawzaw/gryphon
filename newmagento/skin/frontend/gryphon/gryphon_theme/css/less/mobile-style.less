@@ -1338,6 +1338,14 @@
 //   |_|  |_|\___/|____/___|_____|_____|  \____|_____|_| \_|_____|_| \_\/_/   \_\_____|
 //                                                                                     
 
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+  #page-wrapper {
+    .slider-wrapper {
+      height: 430px!important;
+    }
+  }
+}
+
 @media (max-width: 991px) {
 
   html, body{
@@ -3002,6 +3010,29 @@ html{
           border-bottom: 1px solid #e5e5e5;
           margin-bottom: 5px;
           padding-bottom: 30px;
+
+          .slick-prev,
+          .slick-next{
+            &:before{
+              font: normal normal normal 14px/1 FontAwesome;
+              font-size: 12px;
+            }
+          }
+
+          .slick-prev{
+            left: 10px;
+            top: 40%;
+            &:before{
+              content: "\f053";
+            }
+          }
+          .slick-next{
+            right: 10px;
+            top: 40%;
+            &:before{
+              content: "\f054";
+            }
+          }
 
           a{
             width: 50%;

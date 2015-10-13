@@ -1154,6 +1154,11 @@ a:focus {
     margin-bottom: 34px;
   }
 }
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) {
+  #page-wrapper .slider-wrapper {
+    height: 430px!important;
+  }
+}
 @media (max-width: 991px) {
   html,
   body {
@@ -2651,6 +2656,25 @@ html {
     border-bottom: 1px solid #e5e5e5;
     margin-bottom: 5px;
     padding-bottom: 30px;
+  }
+  div.home #social .image-text-content .instagram-images .slick-prev:before,
+  div.home #social .image-text-content .instagram-images .slick-next:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 12px;
+  }
+  div.home #social .image-text-content .instagram-images .slick-prev {
+    left: 10px;
+    top: 40%;
+  }
+  div.home #social .image-text-content .instagram-images .slick-prev:before {
+    content: "\f053";
+  }
+  div.home #social .image-text-content .instagram-images .slick-next {
+    right: 10px;
+    top: 40%;
+  }
+  div.home #social .image-text-content .instagram-images .slick-next:before {
+    content: "\f054";
   }
   div.home #social .image-text-content .instagram-images a {
     width: 50%;
