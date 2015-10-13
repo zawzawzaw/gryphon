@@ -3487,6 +3487,24 @@ div.product .similar-product .all-products .each-product span.caption.product-ti
   margin-bottom: 10px;
   color: #252525;
 }
+div.product .similar-product .all-products .each-product p.minimal-price {
+  font-family: "minion-pro", Verdana, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  color: #464646;
+  margin-top: 10px;
+  text-transform: none;
+}
+div.product .similar-product .all-products .each-product p.minimal-price .price-label {
+  font-family: "minion-pro", Verdana, sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  text-transform: lowercase;
+  letter-spacing: 0;
+}
 div.product .product-collection {
   margin-top: 90px;
   margin-bottom: 90px;
@@ -5383,7 +5401,6 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
     }*/
   display: inline-block;
   /*width: 995px;*/
-  width: 100%;
   vertical-align: top;
 }
 @media all and (max-width: 1199px) {
@@ -5822,7 +5839,6 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   margin-bottom: 32px;
 }
 .subscription-form .last-content .all-products {
-  width: 95%;
   margin: 0 auto;
 }
 @media all and (max-width: 1199px) {

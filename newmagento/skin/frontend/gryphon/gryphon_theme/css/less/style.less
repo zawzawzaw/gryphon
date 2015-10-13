@@ -3217,6 +3217,22 @@ div.product {
             color: @dark-grey; 
           }
         }
+        p.minimal-price {
+          .minion-pro-medium;
+          font-size: 13px;
+          line-height: 16px;
+          letter-spacing: 0.05em;
+          color: @new-grey;
+          margin-top: 10px;
+          text-transform: none;
+
+          .price-label {
+            //text-transform: none;
+            .minion-pro-medium-italic;
+            text-transform: lowercase;
+            letter-spacing: 0;
+          }
+        }
       }
     }
   } 
@@ -5057,7 +5073,7 @@ div.product {
     }*/
     display: inline-block;
     /*width: 995px;*/
-    width: 100%;
+    // width: 100%;
     vertical-align: top;    
 
     @media all and (max-width: 1199px) {
@@ -5478,7 +5494,7 @@ div.product {
     }
 
     .all-products {
-      width: 95%;
+      // width: 95%;
       margin: 0 auto;
       @media all and (max-width: 1199px) {
         width: 75%;
