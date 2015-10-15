@@ -6,7 +6,7 @@ jQuery(document).ready(function($) {
         accessToken: '637296152.467ede5.9bae6b7506ad4287b4ba40e25edcc7b0',
         limit: 4,
         after: function() {
-        	console.log('loaded image');
+        	$("#instafeed a").attr("target","_blank");
         	// For use within normal web clients 
 	        var isiPad = navigator.userAgent.match(/iPad/i) != null;
 	        // var isiPadTest = /iPad/i.test(ua) || /iPhone OS 3_1_2/i.test(ua) || /iPhone OS 3_2_2/i.test(ua);

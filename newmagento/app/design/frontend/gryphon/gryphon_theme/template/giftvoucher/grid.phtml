@@ -241,7 +241,7 @@
                         ?>
                         <tr <?php if (($row->getCustomerCheckId() == $customer->getId() || $row->getCustomerEmail() == $customer->getEmail() ) && $row->getRecipientName()) { ?> class="gift-voucher-sent-friend" <?php } ?>>
                             <?php foreach ($columns as $id => $column): ?>
-                                <td>
+                                <td class="<?php echo $id; ?>">
                                     <!--add by Sally-->
                                     <span class="giftvoucher-grid-title-hidden"><?php echo $column['header'] ?></span>
                                     <p class="giftvoucher-grid-detail">

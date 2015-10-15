@@ -95,7 +95,13 @@
                                     <div class="col-md-2 col-sm-3 col-xs-3"><p class="price" style="text-align:center;"><?php echo $_order->formatPrice($_item->getPrice()*1) ?></p></div>
                                     <div class="col-md-2 col-sm-1 col-xs-1 order-qty"><p><?php echo $_item->getQtyOrdered()*1 ?></p></div>
                                     <div class="col-md-2 col-sm-2 col-xs-2"><p class="price"><?php echo $_order->formatPrice($_item->getRowTotal()*1) ?></p></div>
-                                    <div class="col-md-2 col-sm-2 col-xs-2"></div>
+
+                                    <?php 
+                                    $_productId = $_item->getId(); 
+                                    $_product = Mage::getModel('catalog/product')->load($_productId);
+                                    $_url = Mage::helper('checkout/cart')->getAddUrl($_product); 
+                                    ?>
+                                    <div class="col-md-2 col-sm-2 col-xs-2"><a href="<?php echo $_url ?>" class="add-to-cart-btn"><i class="fa fa-plus"></i><span><?php echo $this->__('Add to Cart'); ?></span></a></div>
                                 </div>
                                 <?php endforeach; ?>
                             </div>
@@ -111,7 +117,7 @@
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-6">
                                     <div class="row each-details view-order-details">
-                                        <div class="col-md-4 col-sm-8 col-xs-8"><h2><?php echo $this->__('Sub total'); ?></h2></div>
+                                        <div class="col-md-4 col-sm-8 col-xs-8 align-label-to-right"><h2><?php echo $this->__('Sub total'); ?></h2></div>
                                         <div class="col-md-4 col-sm-4 col-xs-4 align-to-total"><h2 class="sub_total price"><?php echo $_order->formatPrice($_order->getSubtotal()) ?></h2></div>
                                         <div class="col-md-4 hidden-sm hidden-xs"><!-- <a class="add-to-cart-btn" href="<?php //echo $this->getViewUrl($_order) ?>"><span><?php //echo $this->__('View Order') ?></span></a> --></div>
                                     </div>
@@ -121,13 +127,13 @@
                                 <div class="col-md-6 col-md-offset-6 col-sm-6 col-xs-6 col-sm-offset-6 col-xs-offset-6 expanded open" style="display: none;">
                                     <?php if ($_order->getShippingAmount()) :?>
                                     <div class="row each-details">
-                                        <div class="col-md-5 col-sm-5 col-xs-5"><h2><?php echo $this->__('shipping &amp; handling'); ?></h2><span>— <?php echo $_order->getShippingDescription(); ?></span></div>
+                                        <div class="col-md-5 col-sm-5 col-xs-5 align-label-to-right"><h2><?php echo $this->__('shipping &amp; handling'); ?></h2><span>— <?php echo $_order->getShippingDescription(); ?></span></div>
                                         <div class="col-md-7 col-sm-7 col-xs-7 align-to-total"><h2 class="shipping price"><?php echo $_order->formatPrice($_order->getShippingAmount()); ?></h2></div>
                                     </div>
                                     <?php endif; ?>
                                     <?php if ($_order->getCouponCode()) : ?>
                                     <div class="row each-details">
-                                        <div class="col-md-5 col-sm-5 col-xs-5"><h2><?php echo $this->__('Applied Discount Code'); ?></h2><span>— <?php echo $_order->getCouponCode(); ?></span></div>
+                                        <div class="col-md-5 col-sm-5 col-xs-5 align-label-to-right"><h2><?php echo $this->__('Applied Discount Code'); ?></h2><span>— <?php echo $_order->getCouponCode(); ?></span></div>
                                         <div class="col-md-7 col-sm-7 col-xs-7 align-to-total"><h2 class="minus applied_discount_code price">- <?php echo $_order->formatPrice($_order->getDiscountAmount()); ?></h2></div>
                                     </div>
                                     <?php endif; ?>
@@ -141,7 +147,7 @@
                                     </div> -->
                                     <?php if ($_order->getTaxAmount()): ?>
                                     <div class="row each-details">
-                                        <div class="col-md-5 col-sm-5 col-xs-5"><h2><?php echo $this->__('Tax'); ?></h2></div>
+                                        <div class="col-md-5 col-sm-5 col-xs-5 align-label-to-right"><h2><?php echo $this->__('Tax'); ?></h2></div>
                                         <div class="col-md-7 col-sm-7 col-xs-7 align-to-total"><h2 class="tax price"><?php echo $_order->formatPrice($_order->getTaxAmount()); ?></h2></div>
                                     </div>
                                     <?php endif; ?>
@@ -149,7 +155,7 @@
                                         <hr />
                                     </div>
                                     <div class="row each-details">
-                                        <div class="col-md-4 col-sm-7 col-xs-7"><h2 class="grand_total"><?php echo $this->__('grand total'); ?></h2></div>
+                                        <div class="col-md-4 col-sm-7 col-xs-7 align-label-to-right"><h2 class="grand_total"><?php echo $this->__('grand total'); ?></h2></div>
                                         <div class="col-md-4 col-sm-5 col-xs-5 align-to-total-2"><h2 class="grand_total price"><?php echo $_order->formatPrice($_order->getGrandTotal()) ?></h2></div>
                                         <div class="col-md-4 col-sm-12 col-xs-12 align-to-button"><a href="<?php echo $this->getReorderUrl($_order) ?>" class="reorder"><i class="fa fa-repeat"></i><span><?php echo $this->__('Reorder'); ?></span></a></div>
                                     </div>

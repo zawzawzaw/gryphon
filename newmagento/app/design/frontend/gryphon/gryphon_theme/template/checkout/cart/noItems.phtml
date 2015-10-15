@@ -29,8 +29,8 @@
         <div class="image-text-content container">
             <?php echo $this->getMessagesBlock()->toHtml() ?>
             <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="cart">
-                    <div class="row">
+                <div role="tabpanel" class="tab-pane active">
+                    <div id="empty-cart" class="row">
                         <div class="col-md-6">
                             <h1><?php echo $this->__('Shopping Cart is Empty') ?></h1>
                             <hr class="small" />
@@ -38,6 +38,7 @@
                             <p><?php echo $this->__('You have no items in your shopping cart.') ?></p>
                             <p><?php echo $this->__('Click <a href="%s">here</a> to continue shopping.', $this->getUrl('store.html')) ?></p> <?php //$this->getContinueShoppingUrl() ?>
                             <?php echo $this->getChildHtml('shopping.cart.table.after'); ?>
+                            <div class="space400"></div>
                         </div>
                     </div>
                 </div>
@@ -45,3 +46,4 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="http://gryphontea.com/skin/frontend/gryphon/gryphon_theme/js/no-banner.js"></script>

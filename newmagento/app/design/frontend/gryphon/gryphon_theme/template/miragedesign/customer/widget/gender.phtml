@@ -25,22 +25,21 @@
  */
 ?>
 <div class="each-input">
-
+	<?php $value = $this->getGender(); ?> 
 	<label for="<?php echo $this->getFieldId('gender')?>"<?php if ($this->isRequired()) echo ' class="required"' ?>><?php if ($this->isRequired()) echo '<em>*</em>' ?><?php echo $this->__('Gender') ?></label>	
 	<div class="gender-input">
-		<input class="gender" type="checkbox" name="gender" value="Female">
+		<input class="gender" type="checkbox" name="gender" <?php if ($value==2) echo ' checked="checked"'; ?> value="Female">
 			<label class="checkbox-label" for="gender">
 			<span></span><p class="label-text">Female</p>
 		</label>
-		<input class="gender" type="checkbox" name="gender" value="Male">
+		<input class="gender" type="checkbox" name="gender" <?php if ($value==1) echo ' checked="checked"'; ?> value="Male">
 			<label class="checkbox-label" for="gender">
 			<span></span><p class="label-text">Male</p>
 		</label>
 	</div>
 	<div class="dropdown" style="display:none;">
 	    <select id="<?php echo $this->getFieldId('gender')?>" name="<?php echo $this->getFieldName('gender')?>" title="<?php echo $this->__('Gender') ?>"<?php if ($this->isRequired()):?> class="validate-select"<?php endif; ?> <?php echo $this->getFieldParams() ?>>
-	        <?php $options = Mage::getResourceSingleton('customer/customer')->getAttribute('gender')->getSource()->getAllOptions();?>
-	        <?php $value = $this->getGender();?>
+	        <?php $options = Mage::getResourceSingleton('customer/customer')->getAttribute('gender')->getSource()->getAllOptions();?>	        
 	        <?php foreach ($options as $option):?>
 	            <option value="<?php echo $option['value'] ?>"<?php if ($option['value'] == $value) echo ' selected="selected"' ?>><?php echo $option['label'] ?></option>
 	        <?php endforeach;?>

@@ -201,7 +201,7 @@ ul.messages {
 }
 
 #loading-mask {
-  z-index: 99999;
+  z-index: 99999!important;
 }
 
 
@@ -329,7 +329,8 @@ ul.messages {
             }
 
             a {
-              .gotham-bold;
+              // .gotham-bold;
+              .gotham-medium;
               color: @dark-grey;
               font-size: 11px;
               letter-spacing: 0.03em;
@@ -410,7 +411,8 @@ ul.messages {
             }
             /*padding: 3px 0 3px 30px;*/
             a {
-              .gotham-bold;
+              // .gotham-bold;
+              .gotham-medium;
               color: @dark-grey;
               font-size: 11px;
               line-height: 14px;
@@ -1160,7 +1162,8 @@ h3{
 }
 
 h4{
-  .gotham-bold;
+  // .gotham-bold;
+  .gotham-medium;
   font-size: 21px;
   line-height: 25px;
   text-transform: uppercase;
@@ -1177,6 +1180,7 @@ hr.small {
   width: 30px!important;
   margin-top: 12px!important;
   margin-bottom: 15px!important;
+  text-align: left;
 }
 
 p {
@@ -2209,13 +2213,13 @@ div.product {
           background-color: @dark-orange;
         }
       }
-      .ajax_msg {
+      .ajax_msg_product {
         float: right;
         margin-top: 25px;
         margin-right: 15px;
         color: @dark-orange;
       }
-      #ajax_loader {
+      #ajax_loader_product {
         float: right;
         margin-top: 26px;
         margin-right: 8px;
@@ -2360,7 +2364,8 @@ div.product {
                 }
               }
               .gifttext-code-title{
-                .gotham-bold;
+                // .gotham-bold;
+                .gotham-medium;
                 font-size: 11px;
                 line-height: 22px;
                 text-transform: uppercase;
@@ -2373,7 +2378,8 @@ div.product {
                 }
               }
               .gifttext-code{
-                .gotham-bold;
+                // .gotham-bold;
+                .gotham-medium;
                 font-size: 15px;
                 line-height: 22px;
                 text-transform: uppercase;
@@ -2655,7 +2661,8 @@ div.product {
       }
 
       .desc-title{
-        .gotham-bold;
+        // .gotham-bold;
+        .gotham-medium;
         font-size: 11.5px;
         line-height: 18px;
         color: #464646;
@@ -3700,7 +3707,8 @@ div.product {
           h2 {
             color: @dark-grey;
             float: left;
-            .gotham-bold;
+            // .gotham-bold;
+            .gotham-medium;
             font-size: 12px;
             letter-spacing: 0.05em;
           }
@@ -4483,6 +4491,9 @@ div.product {
       p {
         text-align: center;
       }
+      .validation-advice {
+        top: 50px!important;
+      }
     }
 
     .login-form {      
@@ -4752,20 +4763,22 @@ div.product {
           }
         }
         .dropdown {
-          margin-right: 25px;
+          margin-right: 10px;
           float: left;
+          width: 92px;
           @media all and (max-width: 470px) {
             margin-right: 10px;
             width: 31%;
           }
           &:nth-of-type(3) {
             margin-right: 0px;
-            width: 31%;
+            // width: 31%;
           }
         }
         select {
           /*width: 238px;*/
-          width: 82px;
+          // width: 82px;
+          width: 100%;
           @media all and (max-width: 470px) {
             width: 100%;
           }          
@@ -5435,6 +5448,7 @@ div.product {
     }
     .col-5 {
       .add-to-cart-btn {
+        position: relative;
         /*padding-left: 28px;*/
         &:hover {
           color: @dark-orange;
@@ -5455,7 +5469,15 @@ div.product {
             color: @dark-orange;
           }
         }
-      }
+        .ajax_loader_product {
+          position: absolute;
+          right: -32px;
+          top: 0px;
+          img {
+            width: 20px;
+          }
+        }
+      }      
       .error-msg {
         position: absolute;
         position: absolute;
@@ -6135,6 +6157,10 @@ div.product {
   @media all and (max-width: 992px) {
     margin-top: 60px;
   }
+
+  #empty-cart {
+    margin-top: 55px;
+  }
   .messages {
     margin-left: 26px!important;
     margin-right: 26px!important;
@@ -6673,7 +6699,8 @@ div.product {
     .each-details {
       /*margin-left: 44px;*/
       p {
-        .gotham-bold;
+        // .gotham-bold;
+        .gotham-medium;
         font-size: 13px;
         line-height: 16px;
         text-transform: uppercase;
@@ -6807,7 +6834,8 @@ div.product {
         }
       }
       .grand_total {
-        .gotham-bold;
+        // .gotham-bold;
+        .gotham-medium;
         font-size: 12px;
         line-height: 19px;
         letter-spacing: 0.03em;
@@ -7415,7 +7443,7 @@ div.product {
             color: #707070;
             &:hover {
               color: @dark-orange;
-              font-weight: bold;
+              // font-weight: bold;
             }
           }
         }
@@ -7446,11 +7474,14 @@ div.product {
           color: #707070;
         }
         .regular-price {
-          .gotham-book;
-          font-size: 18px!important;
-          color: #ae4e0e;
+          // .gotham-book;
+          .minion-pro-regular;
+          // font-size: 18px!important;
+          font-size: 24px;
+          color: #c76e09;
           display: block;
-          line-height: 25px;
+          line-height: 36px;
+          letter-spacing: 0.03em;
         }
         // .addredeem {
         //   float: none!important;
@@ -7689,7 +7720,7 @@ div.product {
       margin-bottom: 30px;
       display: inline-block;
       vertical-align: top;
-      margin-right: 80px;
+      margin-right: 160px;
       float: right;
     }
 
@@ -7761,11 +7792,14 @@ div.product {
     #my-rewardpoints-table {
       margin-bottom: 50px;
       p.loyalty-point {
-        .gotham-book;
-        font-size: 18px!important;
-        color: #ae4e0e;
+        // .gotham-book;
+        .minion-pro-regular;
+        // font-size: 18px!important;
+        font-size: 22px;
+        color: #c76e09;
         display: block;
-        line-height: 25px;
+        line-height: 26px;
+        letter-spacing: 0.03em;
       }
       h2 {
         // margin-bottom: 10px;
@@ -7782,7 +7816,7 @@ div.product {
     }
 
     #reward-points-table {
-      margin-top: 30px;
+      margin-top: 10px;
       width: 100%;
       thead {
         tr {
@@ -7792,7 +7826,7 @@ div.product {
             line-height: 20px;
             border-top: 1px solid #ccc;
             border-bottom: 1px solid #ccc;
-            padding: 10px 20px;
+            padding: 10px 15px;
             text-align: left;
             color: #707070;
             text-transform: uppercase;
@@ -7894,11 +7928,12 @@ div.product {
         margin-bottom: 10px;
       }
       .form-list {
+        display: inline-block;
         .fields {
-          margin-bottom: 5px;
+          margin-bottom: 10px;
           p {
             .gotham-medium;
-            font-weight: bold;
+            // font-weight: bold;
           }
           a, span, div {
             .gotham-book;
@@ -7911,7 +7946,8 @@ div.product {
     }
 
     #giftcard_history_table {
-      margin-top: 30px;
+      margin-top: 10px;
+      width: 100%;
       thead {
         @media all and (max-width: 990px) {
           .giftvoucher-grid-title {
@@ -7920,13 +7956,20 @@ div.product {
         }
         tr {
           th {
+            // .gotham-medium;
+            // font-size: 11px;
+            // line-height: 19px;            
+            // text-align: center;
             .gotham-medium;
-            font-size: 11px;
-            line-height: 19px;
+            font-size: 10px;
+            line-height: 20px;
+            letter-spacing: 0.03em;
+            color: #707070;
+            text-transform: uppercase;
+            text-align: left;
             border-top: 1px solid #ccc;
             border-bottom: 1px solid #ccc;
             padding: 10px 20px;
-            text-align: center;
           }
         }
       }
@@ -7935,7 +7978,7 @@ div.product {
           td {
             border-top: 1px dashed #ccc;
             padding: 20px;
-            text-align: center; 
+            text-align: left; 
             p.order_no {
               color: @dark-orange;
             }
@@ -7952,7 +7995,7 @@ div.product {
               letter-spacing: 0.03em;                
             }
             span.price {
-              color: @dark-orange;
+              color: #c76e09;
             }
             p.amount {
               .minion-pro-regular;
@@ -8035,6 +8078,11 @@ div.product {
     .buttons-set {
       margin-left: -15px;
       display: block;
+    }
+
+    label.chk-label {
+      margin-left: 0px!important;
+      top: -19px;
     }
   }
   
@@ -8131,6 +8179,11 @@ div.product {
     }
     .each-input {
       margin-bottom: 25px;
+      position: relative;
+
+      .validation-advice {
+        top: 47px!important;
+      }
       h2 {
         font-size: 9px; 
         line-height: 23px;
@@ -8362,6 +8415,7 @@ div.product {
         // margin-bottom: 0px!important;
         .field {
           margin-bottom: 25px;
+          position: relative;
           .additional-address {
             margin-top: 48px;
           }
@@ -8553,15 +8607,16 @@ div.product {
     hr.order-headers-line {
       margin-top: 8px;
       margin-bottom: 8px;
+      border-top: 1px solid #cdcdcd!important;
     }
 
     h2 {
       .gotham-medium;
-      font-size: 9px;
-      line-height: 19px;
+      font-size: 10px;
+      line-height: 20px;
       letter-spacing: 0.03em;
       color: #707070;
-      text-align: center;
+      text-align: left;
       &.minus {
         color: #777!important;
       }
@@ -8576,6 +8631,12 @@ div.product {
       // color: #464646;
       color: @new-grey;
     }
+ 
+    .pager {
+      .pages {
+        margin-top: 10px;
+      }
+    }
 
     .order-status {
       span {
@@ -8586,23 +8647,26 @@ div.product {
 
     .order-headers {
       .order-status {
-        padding-left: 40px!important;
+        padding-left: 30px!important;
+        text-align: center;
         @media all and (max-width: 992px) {
           // padding-left: 15px!important;
           padding-left: 14px!important;
           margin-right: 24px;
-        }
-        text-align: center;
+        }        
       }
       .order-no {
         @media all and (max-width: 992px) {
           margin-left: -7px;
         }
       }
-      .order-no, .order-date {
-        padding-left: 5px!important;
+      .order-no {
+        padding-left: 10px!important;
+        padding-right: 5px!important;        
+      }
+      .order-date   {
+        padding-left: 15px!important;
         padding-right: 5px!important;
-        text-align: center;
       }
       .order-qty {
         text-align: center;
@@ -8631,7 +8695,7 @@ div.product {
 
       .align-to-total {
         /*padding-left: 41px;*/
-        padding-left: 116px;
+        padding-left: 93px;
         @media all and (max-width: 992px) {
           padding-left: 0px;
         }
@@ -8640,7 +8704,7 @@ div.product {
       .view-order-details {
         .align-to-total {
           // padding-left: 93px;
-          padding-left: 115px;
+          padding-left: 92px;
           @media all and (max-width: 992px) {
             padding-left: 0px;
           }
@@ -8648,7 +8712,7 @@ div.product {
       }
 
       .align-to-total-2 {
-        padding-left: 113px;
+        padding-left: 92px;
         @media all and (max-width: 992px) {
           padding-left: 0px;
         }
@@ -8656,7 +8720,7 @@ div.product {
 
       .extra-content {
         .align-to-total {
-          padding-left: 75px;
+          padding-left: 53px;
           @media all and (max-width: 992px) {
             padding-left: 50px;
           }
@@ -8665,7 +8729,7 @@ div.product {
 
       .align-to-button {
         text-align: right;
-        margin-left: -28px;
+        margin-left: -23px;
         @media all and (max-width: 992px) {
           margin-top: 5px;
           text-align: right;
@@ -8681,6 +8745,7 @@ div.product {
           }
           hr.each-order {
             margin-top: 0px;
+            border-top: 1px solid #cdcdcd!important;
           }
           .order-details {
             p {
@@ -8697,7 +8762,7 @@ div.product {
               p {
                 font-size: 11px; 
                 line-height: 16px;
-                text-align: center;               
+                text-align: left;               
                 color: @new-grey;
                 .gotham-book;                
               }
@@ -8790,6 +8855,9 @@ div.product {
                 }
               }
             }
+            .align-label-to-right {
+              padding-left: 27px;
+            }
           }
 
           .extra-content {
@@ -8828,6 +8896,10 @@ div.product {
             }
             hr {
               margin-top: 5px!important;
+              border-top: 1px solid #cccccc;
+            }
+            .align-label-to-right {
+              padding-left: 27px;
             }
           }
 
@@ -8912,7 +8984,8 @@ div.product {
       line-height: 16px;
     }
     #gift-cards-tbl {
-      margin-top: 30px;
+      // margin-top: 30px;
+      margin-top: 0px;
       width: 100%;
       thead {
         @media all and (max-width: 990px) {
@@ -8949,7 +9022,7 @@ div.product {
               line-height: 16px;
               letter-spacing: 0.03em;                
               span.price {
-                color: @dark-orange;
+                color: #c76e09;
               }              
             }
             p.amount {
@@ -8980,6 +9053,9 @@ div.product {
             }
             .email {
               display: none;
+            }
+            &.action {
+              width: 145px;
             }
           }
           &:last-child {
@@ -9192,7 +9268,7 @@ div.product {
         h2.title {
           color: @dark-orange;
           margin-bottom: 20px;
-          .gotham-book;
+          .gotham-book-thick;
           text-transform: none;
           font-size: 11.5px;
           line-height: 16px;
@@ -9310,7 +9386,8 @@ div.product {
             text-align: right;
           }
           .read-more {
-            .gotham-bold;
+            // .gotham-bold;
+            .gotham-medium;
             font-size: 11px;
             color: @dark-grey;
             background-color: #fff;
@@ -9353,6 +9430,10 @@ div.product {
         border-bottom: 1px solid #ccc;
 
         .post-content {
+          .gotham-book;
+          font-size: 12px;
+          line-height: 22px;
+          text-align: left!important;
           span {
             .gotham-medium;
             font-size: 10px;
@@ -9362,20 +9443,27 @@ div.product {
             text-transform: uppercase;
           }
           p {
-            font-size: 14px;
-            margin-bottom: 20px;           
+            text-align: left!important;
+            // font-size: 14px;
+            // margin-bottom: 20px;           
             a {
               color: @new-grey;
               &:hover {
                 color: @dark-orange;
               }
             }
+            em {
+              .minion-pro-italic;
+              font-size: 14px;
+              line-height: 24px;
+            }
 
 
 
           }
           strong{
-            .gotham-bold;
+            // .gotham-bold;
+            .gotham-medium;
           }
           em{
             .gotham-medium;
@@ -9387,12 +9475,15 @@ div.product {
             height: auto;
           }
           h1 {
-            .gotham-bold;
+            .gotham-medium;
             font-size: 16px;
             line-height: 20px;
             margin-bottom: 2px;
             letter-spacing: 0.03em;
             text-transform: uppercase;
+            a {
+              color: @new-grey;
+            }
           }
         }
       }
@@ -9961,7 +10052,8 @@ div.product {
           width: 16px;
           height: 16px;
           color: @white;
-          .gotham-bold;
+          // .gotham-bold;
+          .gotham-medium;
           font-size: 12px;
           line-height: 16px;
           letter-spacing: 0.03em;
@@ -10216,11 +10308,11 @@ div.product {
 
       // added by jairus
       .dropdown-container{
-        width: 281px;
+        // width: 281px;
         display: inline-block;
         vertical-align: top;
-        margin-left: 10px;
-        padding-right: 20px;
+        // margin-left: 10px;
+        // padding-right: 20px;
 
         .col-md-4, .col-md-8,
         .col-md-5, .col-md-7{
@@ -10229,7 +10321,8 @@ div.product {
         }
 
         .dropdown{
-          width: 100%;
+          // width: 100%;
+          width: 84px;
         }
 
 
@@ -11558,7 +11651,7 @@ div#footer-wrapper {
               .gotham-book;
               font-size: 12px;
               line-height: 22px;
-              color: @dark-orange;
+              color: @dark-grey;
               margin-bottom: 20px;
 
               &:last-child{
@@ -11566,10 +11659,10 @@ div#footer-wrapper {
               }
 
               a{
-                color: @dark-grey;
+                color: @dark-orange;
 
                 &:hover {
-                  color: @dark-orange;
+                  color: @dark-grey;
                 }
               }
             }

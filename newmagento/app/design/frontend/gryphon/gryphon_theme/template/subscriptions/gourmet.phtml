@@ -94,7 +94,7 @@
 									          	<td class="col-3"><h3><?php echo Mage::helper('core')->currency($_productsingpur->getPrice(),true,false); ?><br><span>shipping included</span></h3></td>
 									          	<td class="col-4"><p>Equivalent to <br> <?php echo Mage::helper('core')->currency($equivalent,true,false); ?> per month</p></td>
 												
-									          	<td class="col-5"><a class="add-to-cart-btn" href="javascript:void(0);" data-addtocarturl="<?php echo $this->getAddToCartUrl($_productsingpur) ?>"><i class="fa fa-plus"></i><span>Add to Cart</span></a><span class="error-msg"></span></td>
+									          	<td class="col-5"><a class="add-to-cart-btn" href="javascript:void(0);" data-addtocarturl="<?php echo $this->getAddToCartUrl($_productsingpur) ?>"><i class="fa fa-plus"></i><span>Add to Cart</span><span class='ajax_loader_product' style='display:none'><img src='<?php echo $this->getSkinUrl('images/content/opc-ajax-loader.gif')?>'/></span></a><span class="error-msg"></span></td>
 									        </tr>
 											
 											
@@ -223,7 +223,7 @@
 									          	<td class="col-2"><p><?php echo $_helper->productAttribute($_productsingpurint, $_productsingpurint->getShortDescription() , 'short_description'); ?></p></td>
 									          	<td class="col-3"><h3><?php echo Mage::helper('core')->currency($_productsingpurint->getPrice(),true,false); ?><br><span>shipping included</span></h3></td>
 									          	<td class="col-4"><p>Equivalent to <br> <?php echo Mage::helper('core')->currency($equivalent,true,false); ?> per month</p></td>
-									          	<td class="col-5"><a class="add-to-cart-btn" href="javascript:void(0);" data-addtocarturl="<?php echo $this->getAddToCartUrl($_productsingpurint) ?>"><i class="fa fa-plus"></i><span>Add to Cart</span></a><span class="error-msg"></span></td>
+									          	<td class="col-5"><a class="add-to-cart-btn" href="javascript:void(0);" data-addtocarturl="<?php echo $this->getAddToCartUrl($_productsingpurint) ?>"><i class="fa fa-plus"></i><span>Add to Cart</span><span class='ajax_loader_product' style='display:none'><img src='<?php echo $this->getSkinUrl('images/content/opc-ajax-loader.gif')?>'/></span></a><span class="error-msg"></span></td>
 									        </tr>
 											
 									       <?php 
@@ -445,6 +445,41 @@
 	        ]
 	    });
 
+		function do_update() {
+            jQuery.ajax({
+                url: '<?php echo $this->getUrl("discovertea/index/cartpreview"); ?>',
+                dataType: 'json',
+                type : 'get',
+                success: function(data){
+
+                    jQuery('.cart-preview-content').html('');
+                    jQuery.each(data.cart_items, function(key,value){
+
+                        jQuery('.cart-preview-content').append('<ul class="cart-content"><li><img src="'+value.image+'" alt=""><span>'+value.name+'</span></li><li>'+value.qty+'</li><li>'+value.row_price+'</li></ul>');
+
+                        jQuery('.cart-summary').find('.total-items-count').html(data.cart_qty);
+                        jQuery('.cart-summary').find('.sub-total-amount').html(data.cart_total);
+
+                    });
+
+                    jQuery('.cart-header').show();
+                    jQuery('.cart-summary').show();
+                    jQuery('.cta-btns').show();
+                    jQuery('#main-header .cart-preview-select').show();
+
+                    var mobile_header = jQuery("#main-mobile-header").data('gryphon_mobile_header');
+                    mobile_header.public_open_cart();
+                    //jQuery('#mobile-cart-expand-container').show();
+                    
+
+                    jQuery('.mobile-cart-button').find('span').html(data.cart_qty);
+                    jQuery('.cart-summary-data').find('.price').html(data.cart_total);
+                    jQuery('.cart-summary-data').find('.count').html(data.cart_qty);
+                    jQuery('.cart-summary-data span').html('<span class="price">'+data.cart_total+'</span> (<span class="count">'+data.cart_qty+'</span>)');
+                }
+            });
+        }
+
 		jQuery('.add-to-cart-btn').on('click', function(e){
 			e.preventDefault();
 			var AddToCartUrl = jQuery(this).data('addtocarturl');
@@ -455,7 +490,18 @@
 			if(non_subscription_in_the_cart==1) {					
 				jQuery(this).next('span.error-msg').html('This subscription plan cannot be purchased with other items in the cart. Please check out first before making any other purchases.');
 			}else {
-				setLocation(AddToCartUrl);
+				// setLocation(AddToCartUrl);
+				jQuery(this).find('.ajax_loader_product').show();
+				var el = this;
+				jQuery.get(AddToCartUrl, function( data ) {		
+					if(data=='Sorry, you either purchase  Singapore OR International Subscription not both.') {
+						alert(data);
+						jQuery(el).find('.ajax_loader_product').hide();
+					}else {
+						do_update();
+				  		jQuery(el).find('.ajax_loader_product').hide();	  	
+					}						  	
+				});
 			}				
 
 		});

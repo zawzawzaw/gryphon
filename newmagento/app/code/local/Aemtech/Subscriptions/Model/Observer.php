@@ -29,16 +29,17 @@ class Aemtech_Subscriptions_Model_Observer {
                                 $itemsku_type = $itemsku_type[0];
                                 if($itemsku_type != $sku_type)
                                 {
+                                	echo 'Sorry, you either purchase  Singapore OR International Subscription not both.';
                                     Mage::getSingleton('core/session')->addError('Sorry, you either purchase  Singapore OR International Subscription not both.');
 
                                     //get URL model for cart/index
-                                    $url = Mage::getModel('core/url')->getUrl('checkout/cart/index');
+                                    // $url = Mage::getModel('core/url')->getUrl('checkout/cart/index');
 
                                     //set redirect
-                                    Mage::app()->getResponse()->setRedirect($url);
+                                    // Mage::app()->getResponse()->setRedirect($url);
 
                                     //send redirect
-                                    Mage::app()->getResponse()->sendResponse();
+                                    // Mage::app()->getResponse()->sendResponse();
 
                                     //block further action
                                     exit;

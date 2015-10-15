@@ -8,9 +8,9 @@
 <?php $_giftCard = $this->getGiftVoucher() ?>
 
 <div class="box-account box-info">
-    <div class="box-head visible-md-block visible-lg-block" >
+    <!-- <div class="box-head visible-md-block visible-lg-block" >
         <h2><?php echo $this->__('Gift Card Code Information') ?></h2>
-    </div>
+    </div> -->
 
     <div class="visible-md-block visible-lg-block">
         <ul class="form-list">
@@ -60,6 +60,8 @@
                     <?php echo $this->getStatus($_giftCard) ?>
                 </div>
             </li>
+        </ul>
+        <ul class="form-list">
             <li class="fields">
                 <div class="field custom-field">
                     <p><?php echo $this->__('Added Date') ?></p>
@@ -86,7 +88,7 @@
         <?php if ($this->checkSendFriendGiftCard($_giftCard)): ?>
             <li class="fields">
                 <div class="field custom-field">
-                    <strong><?php echo $this->__('Comment') ?></strong>
+                    <p><?php echo $this->__('Comment') ?></p>
                 </div>
                 <div class="field custom-field-right">
                     <?php echo $this->__('This is your gift to give for %s (%s)',$_giftCard->getRecipientName(), $_giftCard->getRecipientEmail()) ?>

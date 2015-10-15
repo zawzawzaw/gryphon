@@ -76,8 +76,8 @@ function isMobile()
     <?php $billingCountry = Mage::getSingleton('checkout/session')->getQuote()->getBillingAddress()->getCountry(); ?>           
     <?php $billingAddress = Mage::getSingleton('checkout/session')->getQuote()->getBillingAddress()->getData(); ?> 
 
-    <?php $shippingCountry = Mage::getSingleton('checkout/session')->getQuote()->getBillingAddress()->getCountry(); ?>           
-    <?php $shippingAddress = Mage::getSingleton('checkout/session')->getQuote()->getBillingAddress()->getData(); ?> 
+    <?php $shippingCountry = Mage::getSingleton('checkout/session')->getQuote()->getShippingAddress()->getCountry(); ?>           
+    <?php $shippingAddress = Mage::getSingleton('checkout/session')->getQuote()->getShippingAddress()->getData(); ?> 
     <div class="col-md-3 hidden-xs hidden-sm">
         <div class="address-info">            
             <div class="billing-info">

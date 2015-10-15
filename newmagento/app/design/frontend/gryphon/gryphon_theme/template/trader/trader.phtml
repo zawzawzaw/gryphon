@@ -83,7 +83,7 @@
                             <div class="inputs">
                                 <div class="each-input">
                                     <label for="companyname">COMPANY NAME*</label>
-                                    <input type="text" name="companyname" id="companyname" class="input-text required-entry" value="<?php echo $this->escapeHtml($this->getFormData()->getCompanyname()) ?>" />
+                                    <input type="text" name="companyname" id="companyname" class="input-text required-entry validate-alpha" value="<?php echo $this->escapeHtml($this->getFormData()->getCompanyname()) ?>" />
                                 </div> 
                                 <div class=" each-input">
                                     <label for="registrationnumber">business registration number*</label>
@@ -100,8 +100,8 @@
                                 <div class="each-input">
                                     <label>date of business registration*</label> 
                                     <div class="dropdown-container">
-                                        <div class="row">
-                                            <div class="col-xs-4"> 
+                                        <!-- <div class="row"> -->
+                                            <!-- <div class="col-xs-4">  -->
                                                 <div class=" dropdown date-dropdown">
                                                     <select class="input-text required-entry" id="registration_date_day" name="registration_date_day" value="<?php echo $this->escapeHtml($this->getFormData()->getRegistrationDateDay()) ?>" />>
                                                     <?php
@@ -119,8 +119,8 @@
                                                     ?>
                                                     </select>
                                                 </div>
-                                            </div>
-                                            <div class="col-xs-4">
+                                            <!-- </div>
+                                            <div class="col-xs-4"> -->
                                                 <div class=" dropdown date-dropdown">
                                                     <select class="input-text required-entry" id="registration_date_month" name="registration_date_month">
                                                         <?php
@@ -138,8 +138,8 @@
                                                         ?>
                                                     </select>
                                                 </div>
-                                            </div>
-                                            <div class="col-xs-4">
+                                            <!-- </div>
+                                            <div class="col-xs-4"> -->
                                                 <div class="input dropdown date-dropdown">
                                                     <select class="input-text required-entry" id="registration_date_year" name="registration_date_year">
                                                         <?php
@@ -157,9 +157,9 @@
                                                         ?>
                                                     </select>
                                                 </div>
-                                            </div>
+                                            <!-- </div> -->
 
-                                        </div>
+                                        <!-- </div> -->
                                     </div>
                                 </div>
 
@@ -489,6 +489,7 @@
         position: relative;
         right: 0;
     }*/
+    #advice-validate-alpha-companyname,
     #advice-required-entry-companyname,
     #advice-required-entry-registrationnumber,
     #advice-required-entry-address_1,
@@ -500,7 +501,7 @@
     #advice-required-entry-email,
     #advice-required-entry-city, 
     #advice-required-entry-answer{
-        margin-left: 163px;
+        margin-left: 163px!important;
     }
     #advice-validate-phoneLax-phone_no_2{
         margin-right: -110px !important;

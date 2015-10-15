@@ -67,8 +67,8 @@ if(Mage::getSingleton('customer/session')->isLoggedIn()) {
             <!-- <button type="button" title="<?php echo $buttonTitle ?>" class="cta add-to-cart button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button> -->
             
                 <button type="button" title="<?php echo $buttonTitle ?>" class="cta add-to-cart button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>
-                <span id='ajax_loader' style='display:none'><img src='<?php echo $this->getSkinUrl('images/content/opc-ajax-loader.gif')?>'/></span>
-                <span class="ajax_msg italic"></span>
+                <span id='ajax_loader_product' style='display:none'><img src='<?php echo $this->getSkinUrl('images/content/opc-ajax-loader.gif')?>'/></span>
+                <span class="ajax_msg_product italic"></span>
             
             <?php //echo $this->getChildHtml('', true, true) ?>
         </div>

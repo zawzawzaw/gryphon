@@ -319,12 +319,13 @@ endif;
                             }
                             var data = jQuery('#product_addtocart_form').serialize();
                             data += '&isAjax=1';   
-                            jQuery('#ajax_loader').show();
+                            jQuery('#ajax_loader_product').show();
 
                             var subscription_in_the_cart = <?php echo $subscription_in_the_cart; ?>;
 
-                            if(subscription_in_the_cart==1) {
-                                jQuery('span.ajax_msg').html('This item cannot be purchased with a subscription plan in the cart. Please check out first before making any other purchases.').show();
+                            if(subscription_in_the_cart==1) {                                
+                                jQuery('span.ajax_msg_product').html('This item cannot be purchased with a subscription plan in the cart. Please check out first before making any other purchases.').show();
+                                jQuery('#ajax_loader_product').hide();
                             }else {
                                 try {
                                     jQuery.ajax({
@@ -333,20 +334,20 @@ endif;
                                         type : 'post',
                                         data: data,
                                         success: function(data){
-                                            jQuery('#ajax_loader').hide();
+                                            jQuery('#ajax_loader_product').hide();
                                             console.log(data.status + ": " + data.message);
 
                                             if(data.status=="ERROR") {
-                                                jQuery('span.ajax_msg').html(data.message).show().delay(5000).fadeOut();
+                                                jQuery('span.ajax_msg_product').html(data.message).show().delay(5000).fadeOut();
                                             }else {
                                                 do_update();
-                                                jQuery('span.ajax_msg').html('Added to cart!').show().delay(5000).fadeOut();
+                                                jQuery('span.ajax_msg_product').html('Added to cart!').show().delay(5000).fadeOut();
                                             }
                                         },
                                         error: function() {
                                             console.log(jqXHR, textStatus, errorThrown);
                                             do_update();
-                                            jQuery('span.ajax_msg').html('Added to cart!').show().delay(5000).fadeOut();
+                                            jQuery('span.ajax_msg_product').html('Added to cart!').show().delay(5000).fadeOut();
                                         }
                                     });
                                 } catch (e) {

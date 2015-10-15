@@ -23,6 +23,32 @@ class Miragedesign_Ajaxsearch_Model_Advanced extends Mage_CatalogSearch_Model_Ad
     public function getCategoryId() {
         return $this->_categoryIds;
     }
+
+    /**
+     * Retrieve advanced search product collection
+     *
+     * @return Mage_CatalogSearch_Model_Resource_Advanced_Collection
+     */
+    public function getProductCollection($filters=null){
+        $feature_filter = false;
+        if($filters!=null){
+            foreach($filters as $key => $filter) {
+                if($filter['attribute']=='is_featured') {
+                    $feature_filter = true;
+                }
+            }
+        }
+        if (is_null($this->_productCollection)) {
+            $collection = $this->_engine->getAdvancedResultCollection();
+            $this->prepareProductCollection($collection, $feature_filter);
+            if (!$collection) {
+                return $collection;
+            }
+            $this->_productCollection = $collection;
+        }
+
+        return $this->_productCollection;
+    }
     
     /**
      * Prepare product collection
@@ -30,14 +56,24 @@ class Miragedesign_Ajaxsearch_Model_Advanced extends Mage_CatalogSearch_Model_Ad
      * @param Mage_CatalogSearch_Model_Mysql4_Advanced_Collection $collection
      * @return Mage_Catalog_Model_Layer
      */
-    public function prepareProductCollection($collection)
+    public function prepareProductCollection($collection, $feature_filter)
     {
-        $collection->addAttributeToSelect(Mage::getSingleton('catalog/config')->getProductAttributes())
+        // print_r($collection->getData()); exit();
+        if($feature_filter) {
+            $collection->addAttributeToSelect(Mage::getSingleton('catalog/config')->getProductAttributes())
             ->addAttributeToSelect("external_link")
-            ->setStore(Mage::app()->getStore())
-            ->addMinimalPrice()
+            ->setStore(Mage::app()->getStore())            
             ->addTaxPercents()
             ->addStoreFilter();
+        }
+        else {
+            $collection->addAttributeToSelect(Mage::getSingleton('catalog/config')->getProductAttributes())
+                ->addAttributeToSelect("external_link")
+                ->setStore(Mage::app()->getStore())
+                ->addMinimalPrice()
+                ->addTaxPercents()
+                ->addStoreFilter();
+        }
 
         Mage::getSingleton('catalog/product_status')->addVisibleFilterToCollection($collection);
         Mage::getSingleton('catalog/product_visibility')->addVisibleInSearchFilterToCollection($collection);

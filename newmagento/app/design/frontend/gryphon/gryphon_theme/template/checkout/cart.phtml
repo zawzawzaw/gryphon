@@ -32,7 +32,7 @@
  */
 
 function isMobile()  
-{  
+{
     $regex_match = "/(nokia|iphone|android|motorola|^mot\-|softbank|foma|docomo|kddi|up\.browser|up\.link|"  
                  . "htc|dopod|blazer|netfront|helio|hosin|huawei|novarra|CoolPad|webos|techfaith|palmsource|"  
                  . "blackberry|alcatel|amoi|ktouch|nexian|samsung|^sam\-|s[cg]h|^lge|ericsson|philips|sagem|wellcom|bunjalloo|maui|"  
@@ -69,14 +69,15 @@ function isMobile()
     }  
 
     return FALSE;  
+}
 
-    $groupname = '';                            
-    if($session->isLoggedIn()) {
-        $customer = $session->getCustomer();
-        $customerGroupId = $customer->getGroupId();
-        $groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();
-    }
-}  
+$groupname = '';    
+$session = Mage::getSingleton('customer/session');                        
+if($session->isLoggedIn()) {
+    $customer = $session->getCustomer();
+    $customerGroupId = $customer->getGroupId();
+    $groupname = Mage::getModel('customer/group')->load($customerGroupId)->getCustomerGroupCode();
+}
 ?>
 <div id="content-wrapper" class="cart">
     <div class="cart-breadcrumb">
@@ -100,7 +101,7 @@ function isMobile()
                         <div class="col-md-12">
                             <h1><?php echo $this->__('Shopping Cart') ?></h1>
                             <hr class="small" />
-                            <p>
+                            <p class="<?php echo $groupname; ?>">
                             <?php if(($groupname!=='Trader-Temp' && $groupname!=='Trader-Regular' && $groupname!=='Trader-Priority' && $groupname!=='Trader-Premium')): ?>
                                 <?php echo $this->__('Point accumulation is not applicable for Subscription Program.') ?>    
                             <?php endif; ?><br>The shipping costs and any applicable tax is calculated on the order confirmation page.</p>
