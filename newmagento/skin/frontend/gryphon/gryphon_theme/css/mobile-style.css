@@ -4866,7 +4866,7 @@ html {
   }
   .subscription-form .second-content .image-text-content .table-1,
   .subscription-form .second-content .image-text-content .table-2 {
-    padding-top: 0px;
+    padding-top: 40px;
     padding-bottom: 40px;
     border-bottom: 1px solid #ccc;
   }
@@ -4937,7 +4937,8 @@ html {
   .subscription-form .second-content .image-text-content .plans .plan p.price {
     color: #ae4e0e;
   }
-  .subscription-form .second-content .image-text-content .plans .plan .add-to-cart-btn {
+  .subscription-form .second-content .image-text-content .add-to-cart-btn,
+  .subscription-form .second-content .image-text-content #mobile-add-to-cart-btn {
     font-family: 'Gotham-Medium', Verdana, sans-serif;
     font-weight: 200;
     font-style: normal;
@@ -4954,11 +4955,23 @@ html {
     margin-bottom: 30px;
     width: 133px;
     margin-top: 30px;
+    position: relative;
   }
-  .subscription-form .second-content .image-text-content .plans .plan .add-to-cart-btn:hover {
+  .subscription-form .second-content .image-text-content .add-to-cart-btn:hover,
+  .subscription-form .second-content .image-text-content #mobile-add-to-cart-btn:hover {
     background-color: #ae4e0e;
   }
-  .subscription-form .second-content .image-text-content .plans .plan span.error-msg {
+  .subscription-form .second-content .image-text-content .add-to-cart-btn .ajax_loader_product,
+  .subscription-form .second-content .image-text-content #mobile-add-to-cart-btn .ajax_loader_product {
+    position: absolute;
+    right: -32px;
+    top: 6px;
+  }
+  .subscription-form .second-content .image-text-content .add-to-cart-btn .ajax_loader_product img,
+  .subscription-form .second-content .image-text-content #mobile-add-to-cart-btn .ajax_loader_product img {
+    width: 20px;
+  }
+  .subscription-form .second-content .image-text-content span.error-msg {
     display: block;
     font-family: "minion-pro", Verdana, sans-serif;
     font-weight: 400;
@@ -4977,12 +4990,14 @@ html {
   }
   .subscription-form .second-content .image-text-content .slick-slider .slick-prev {
     left: 2px;
+    top: 47%!important;
   }
   .subscription-form .second-content .image-text-content .slick-slider .slick-prev:before {
     content: "\f053";
   }
   .subscription-form .second-content .image-text-content .slick-slider .slick-next {
     right: 2px;
+    top: 47%!important;
   }
   .subscription-form .second-content .image-text-content .slick-slider .slick-next:before {
     content: "\f054";

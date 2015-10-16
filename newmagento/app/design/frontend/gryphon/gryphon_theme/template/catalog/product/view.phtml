@@ -285,6 +285,7 @@ endif;
                                 jQuery('.cart-summary').show();
                                 jQuery('.cta-btns').show();
                                 jQuery('#main-header .cart-preview-select').show();
+                                jQuery('#main-header .cart-preview-select').delay(5000).hide(400);
 
                                 var mobile_header = jQuery("#main-mobile-header").data('gryphon_mobile_header');
                                 mobile_header.public_open_cart();

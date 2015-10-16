@@ -5847,7 +5847,7 @@ html{
       padding-bottom: 0px;
       .image-text-content {
         .table-1, .table-2 {
-          padding-top: 0px;
+          padding-top: 40px;
           padding-bottom: 40px;
           border-bottom: 1px solid #ccc;
           h1 {
@@ -5908,34 +5908,43 @@ html{
               &.price {
                 color: @dark-orange;
               }              
-            }
-            .add-to-cart-btn {
-              .gotham-medium;
-              font-size: 11px;
-              line-height: 16px;
-              color: @white;
-              padding: 7px 30px;
-              background-color: @dark-grey;
-              border: none;
-              text-transform: none;
-              text-align: center;
-              display: block;
-              margin: 0 auto;
-              margin-bottom: 30px;
-              width: 133px;
-              margin-top: 30px;
-              &:hover {
-                background-color: @dark-orange;
-              }
-            }
-            span.error-msg {
-              display: block;
-              .minion-pro-italic;
-              font-size: 13.5px;
-              margin-top: -20px;
-              color: @dark-orange;
+            }            
+          }
+        }
+        .add-to-cart-btn, #mobile-add-to-cart-btn {
+          .gotham-medium;
+          font-size: 11px;
+          line-height: 16px;
+          color: @white;
+          padding: 7px 30px;
+          background-color: @dark-grey;
+          border: none;
+          text-transform: none;
+          text-align: center;
+          display: block;
+          margin: 0 auto;
+          margin-bottom: 30px;
+          width: 133px;
+          margin-top: 30px;
+          position: relative;
+          &:hover {
+            background-color: @dark-orange;
+          }
+          .ajax_loader_product {
+            position: absolute;
+            right: -32px;
+            top: 6px;
+            img {
+              width: 20px;
             }
           }
+        }
+        span.error-msg {
+          display: block;
+          .minion-pro-italic;
+          font-size: 13.5px;
+          margin-top: -20px;
+          color: @dark-orange;
         }
         .slick-slider {
           margin: 0 auto;
@@ -5949,12 +5958,14 @@ html{
 
           .slick-prev{
             left: 2px;
+            top: 47%!important;
             &:before{
               content: "\f053";
             }
           }
           .slick-next{
             right: 2px;
+            top: 47%!important;
             &:before{
               content: "\f054";
             }

@@ -201,7 +201,7 @@ ul.messages {
 }
 
 #loading-mask {
-  z-index: 99999;
+  z-index: 99999!important;
 }
 
 
@@ -329,7 +329,8 @@ ul.messages {
             }
 
             a {
-              .gotham-bold;
+              // .gotham-bold;
+              .gotham-medium;
               color: @dark-grey;
               font-size: 11px;
               letter-spacing: 0.03em;
@@ -410,7 +411,8 @@ ul.messages {
             }
             /*padding: 3px 0 3px 30px;*/
             a {
-              .gotham-bold;
+              // .gotham-bold;
+              .gotham-medium;
               color: @dark-grey;
               font-size: 11px;
               line-height: 14px;
@@ -1160,7 +1162,8 @@ h3{
 }
 
 h4{
-  .gotham-bold;
+  // .gotham-bold;
+  .gotham-medium;
   font-size: 21px;
   line-height: 25px;
   text-transform: uppercase;
@@ -1177,6 +1180,7 @@ hr.small {
   width: 30px!important;
   margin-top: 12px!important;
   margin-bottom: 15px!important;
+  text-align: left;
 }
 
 p {
@@ -2360,7 +2364,8 @@ div.product {
                 }
               }
               .gifttext-code-title{
-                .gotham-bold;
+                // .gotham-bold;
+                .gotham-medium;
                 font-size: 11px;
                 line-height: 22px;
                 text-transform: uppercase;
@@ -2373,7 +2378,8 @@ div.product {
                 }
               }
               .gifttext-code{
-                .gotham-bold;
+                // .gotham-bold;
+                .gotham-medium;
                 font-size: 15px;
                 line-height: 22px;
                 text-transform: uppercase;
@@ -2655,7 +2661,8 @@ div.product {
       }
 
       .desc-title{
-        .gotham-bold;
+        // .gotham-bold;
+        .gotham-medium;
         font-size: 11.5px;
         line-height: 18px;
         color: #464646;
@@ -3700,7 +3707,8 @@ div.product {
           h2 {
             color: @dark-grey;
             float: left;
-            .gotham-bold;
+            // .gotham-bold;
+            .gotham-medium;
             font-size: 12px;
             letter-spacing: 0.05em;
           }
@@ -4057,7 +4065,7 @@ div.product {
           a {            
             display: block;
             width: 100%;
-            height: 100%;
+            // height: 100%;
             z-index: 99999;
             img {
               .transition();
@@ -6691,7 +6699,8 @@ div.product {
     .each-details {
       /*margin-left: 44px;*/
       p {
-        .gotham-bold;
+        // .gotham-bold;
+        .gotham-medium;
         font-size: 13px;
         line-height: 16px;
         text-transform: uppercase;
@@ -6825,7 +6834,8 @@ div.product {
         }
       }
       .grand_total {
-        .gotham-bold;
+        // .gotham-bold;
+        .gotham-medium;
         font-size: 12px;
         line-height: 19px;
         letter-spacing: 0.03em;
@@ -7433,7 +7443,7 @@ div.product {
             color: #707070;
             &:hover {
               color: @dark-orange;
-              font-weight: bold;
+              // font-weight: bold;
             }
           }
         }
@@ -7464,11 +7474,14 @@ div.product {
           color: #707070;
         }
         .regular-price {
-          .gotham-book;
-          font-size: 18px!important;
-          color: #ae4e0e;
+          // .gotham-book;
+          .minion-pro-regular;
+          // font-size: 18px!important;
+          font-size: 24px;
+          color: #c76e09;
           display: block;
-          line-height: 25px;
+          line-height: 36px;
+          letter-spacing: 0.03em;
         }
         // .addredeem {
         //   float: none!important;
@@ -7707,7 +7720,7 @@ div.product {
       margin-bottom: 30px;
       display: inline-block;
       vertical-align: top;
-      margin-right: 80px;
+      margin-right: 160px;
       float: right;
     }
 
@@ -7779,11 +7792,14 @@ div.product {
     #my-rewardpoints-table {
       margin-bottom: 50px;
       p.loyalty-point {
-        .gotham-book;
-        font-size: 18px!important;
-        color: #ae4e0e;
+        // .gotham-book;
+        .minion-pro-regular;
+        // font-size: 18px!important;
+        font-size: 22px;
+        color: #c76e09;
         display: block;
-        line-height: 25px;
+        line-height: 26px;
+        letter-spacing: 0.03em;
       }
       h2 {
         // margin-bottom: 10px;
@@ -7800,7 +7816,7 @@ div.product {
     }
 
     #reward-points-table {
-      margin-top: 30px;
+      margin-top: 10px;
       width: 100%;
       thead {
         tr {
@@ -7912,11 +7928,12 @@ div.product {
         margin-bottom: 10px;
       }
       .form-list {
+        display: inline-block;
         .fields {
-          margin-bottom: 5px;
+          margin-bottom: 10px;
           p {
             .gotham-medium;
-            font-weight: bold;
+            // font-weight: bold;
           }
           a, span, div {
             .gotham-book;
@@ -7929,7 +7946,8 @@ div.product {
     }
 
     #giftcard_history_table {
-      margin-top: 30px;
+      margin-top: 10px;
+      width: 100%;
       thead {
         @media all and (max-width: 990px) {
           .giftvoucher-grid-title {
@@ -7938,13 +7956,20 @@ div.product {
         }
         tr {
           th {
+            // .gotham-medium;
+            // font-size: 11px;
+            // line-height: 19px;            
+            // text-align: center;
             .gotham-medium;
-            font-size: 11px;
-            line-height: 19px;
+            font-size: 10px;
+            line-height: 20px;
+            letter-spacing: 0.03em;
+            color: #707070;
+            text-transform: uppercase;
+            text-align: left;
             border-top: 1px solid #ccc;
             border-bottom: 1px solid #ccc;
             padding: 10px 20px;
-            text-align: center;
           }
         }
       }
@@ -7953,7 +7978,7 @@ div.product {
           td {
             border-top: 1px dashed #ccc;
             padding: 20px;
-            text-align: center; 
+            text-align: left; 
             p.order_no {
               color: @dark-orange;
             }
@@ -7970,7 +7995,7 @@ div.product {
               letter-spacing: 0.03em;                
             }
             span.price {
-              color: @dark-orange;
+              color: #c76e09;
             }
             p.amount {
               .minion-pro-regular;
@@ -8606,6 +8631,12 @@ div.product {
       // color: #464646;
       color: @new-grey;
     }
+ 
+    .pager {
+      .pages {
+        margin-top: 10px;
+      }
+    }
 
     .order-status {
       span {
@@ -8953,7 +8984,8 @@ div.product {
       line-height: 16px;
     }
     #gift-cards-tbl {
-      margin-top: 30px;
+      // margin-top: 30px;
+      margin-top: 0px;
       width: 100%;
       thead {
         @media all and (max-width: 990px) {
@@ -8990,7 +9022,7 @@ div.product {
               line-height: 16px;
               letter-spacing: 0.03em;                
               span.price {
-                color: @dark-orange;
+                color: #c76e09;
               }              
             }
             p.amount {
@@ -9021,6 +9053,9 @@ div.product {
             }
             .email {
               display: none;
+            }
+            &.action {
+              width: 145px;
             }
           }
           &:last-child {
@@ -9233,7 +9268,7 @@ div.product {
         h2.title {
           color: @dark-orange;
           margin-bottom: 20px;
-          .gotham-book;
+          .gotham-book-thick;
           text-transform: none;
           font-size: 11.5px;
           line-height: 16px;
@@ -9351,7 +9386,8 @@ div.product {
             text-align: right;
           }
           .read-more {
-            .gotham-bold;
+            // .gotham-bold;
+            .gotham-medium;
             font-size: 11px;
             color: @dark-grey;
             background-color: #fff;
@@ -9426,7 +9462,8 @@ div.product {
 
           }
           strong{
-            .gotham-bold;
+            // .gotham-bold;
+            .gotham-medium;
           }
           em{
             .gotham-medium;
@@ -9438,7 +9475,7 @@ div.product {
             height: auto;
           }
           h1 {
-            .gotham-bold;
+            .gotham-medium;
             font-size: 16px;
             line-height: 20px;
             margin-bottom: 2px;
@@ -10015,7 +10052,8 @@ div.product {
           width: 16px;
           height: 16px;
           color: @white;
-          .gotham-bold;
+          // .gotham-bold;
+          .gotham-medium;
           font-size: 12px;
           line-height: 16px;
           letter-spacing: 0.03em;

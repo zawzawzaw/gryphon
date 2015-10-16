@@ -51,7 +51,7 @@ class Miragedesign_Ajaxsearch_AjaxController extends Mage_Core_Controller_Front_
 
             Mage::getSingleton('catalogsearch/advanced')->setCategoryId($this->getRequest()->getParam("categoryId"));
             if(isset($filters) && !empty($filters))
-                Mage::getSingleton('catalogsearch/advanced')->getProductCollection($filters)->addAttributeToFilter($filters)->getData();            
+                Mage::getSingleton('catalogsearch/advanced')->getProductCollection()->addAttributeToFilter($filters)->getData();            
 
             // $arrQueryKeys = array_keys($arrQuery);
             // Mage::getSingleton('catalogsearch/advanced')->getProductCollection()->addFieldToFilter(

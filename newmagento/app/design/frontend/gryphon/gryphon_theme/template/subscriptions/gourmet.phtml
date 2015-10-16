@@ -106,7 +106,7 @@
 									</table>
 								</div>
 
-								<div class="subscription-slick plans visible-xs visible-sm">
+								<div id="sg-subscription-slick" class="subscription-slick plans visible-xs visible-sm">
 									<?php
 									$_helper = $this->helper('catalog/output'); 
 									$artisanSingaporeCollection = Mage::getModel('subscriptions/subscriptions')->getGourmetSingaporeSubscriptions();	
@@ -123,6 +123,7 @@
 											$monthtext = ' MONTH';
 									
 											$equivalent = ($_productsingpur->getPrice()/1);
+											$first_add_to_cart_url = $this->getAddToCartUrl($_productsingpur);
 										}else if($cnt == 2)
 										{										
 											$equivalent = ($_productsingpur->getPrice()/3);
@@ -152,8 +153,7 @@
 										          	<p class="price"><?php echo Mage::helper('core')->currency($_productsingpur->getPrice(),true,false); ?><br><span>shipping included</span></p>
 										          	<p>Equivalent to <br> <?php echo Mage::helper('core')->currency($equivalent,true,false); ?> per sachet</p>
 											</div>
-								          	<a class="add-to-cart-btn" href="javascript:void(0);" data-addtocarturl="<?php echo $this->getAddToCartUrl($_productsingpur) ?>"><span>Add to Cart</span></a>
-								          	<span class="error-msg"></span>
+								          	<a class="hidden-xs hidden-sm actual-add-to-cart-btn" href="javascript:void(0);" data-addtocarturl="<?php echo $this->getAddToCartUrl($_productsingpur) ?>"><span>Add to Cart</span></a>								          	
 								        </div>
 
 							          	
@@ -162,6 +162,8 @@
 									   endforeach; 
 									?>
 								</div>
+								<a id="sg-add-to-cart-btn" class="add-to-cart-btn visible-xs visible-sm" href="javascript:void(0);" data-addtocarturl="<?php echo $first_add_to_cart_url; ?>"><span>Add to Cart</span><span class='ajax_loader_product' style='display:none'><img src='<?php echo $this->getSkinUrl('images/content/opc-ajax-loader.gif')?>'/></span></a>
+								<span class="error-msg"></span>
 
 								<div class="terms-icon"></div>
 								<div class="terms">
@@ -233,7 +235,7 @@
 									</table>
 								</div>
 
-								<div class="subscription-slick plans visible-xs visible-sm">
+								<div id="int-subscription-slick" class="subscription-slick plans visible-xs visible-sm">
 									<?php										
 									$artisanSingaporeIntCollection = Mage::getModel('subscriptions/subscriptions')->getGourmetInternationalSubscriptions();	
 									//echo count($artisanSingaporeCollection->getData());exit;								
@@ -249,6 +251,7 @@
 											$monthtext = ' MONTH';
 									
 											$equivalent = ($_productsingpurint->getPrice()/1);
+											$first_add_to_cart_url = $this->getAddToCartUrl($_productsingpurint);
 										}else if($cnt == 2)
 										{										
 											$equivalent = ($_productsingpurint->getPrice()/3);
@@ -278,14 +281,16 @@
 										          	<p class="price"><?php echo Mage::helper('core')->currency($_productsingpurint->getPrice(),true,false); ?><br><span>shipping included</span></p>
 										          	<p>Equivalent to <br> <?php echo Mage::helper('core')->currency($equivalent,true,false); ?> per sachet</p>
 											</div>
-								          	<a class="add-to-cart-btn" href="javascript:void(0);" data-addtocarturl="<?php echo $this->getAddToCartUrl($_productsingpurint) ?>"><span>Add to Cart</span></a>
-								          	<span class="error-msg"></span>
+								          	<a class="hidden-xs hidden-sm actual-add-to-cart-btn" href="javascript:void(0);" data-addtocarturl="<?php echo $this->getAddToCartUrl($_productsingpurint) ?>"><span>Add to Cart</span></a>
+								          	
 								        </div>
 								   <?php 
 								   $cnt++;
 								   endforeach; 
 								   ?>
-								</div>					
+								</div>		
+								<a id="int-add-to-cart-btn" class="add-to-cart-btn visible-xs visible-sm" href="javascript:void(0);" data-addtocarturl="<?php echo $first_add_to_cart_url; ?>"><span>Add to Cart</span><span class='ajax_loader_product' style='display:none'><img src='<?php echo $this->getSkinUrl('images/content/opc-ajax-loader.gif')?>'/></span></a>
+								<span class="error-msg"></span>			
 											
 								<div class="terms-icon"></div>
 								<div class="terms">
@@ -445,6 +450,32 @@
 	        ]
 	    });
 
+		// On before slide change
+		var sgSlick = jQuery('#sg-subscription-slick');
+		sgSlick.on('afterChange', function(event, slick, currentSlide){			
+		  sgSlick.find('.plan').each(function(){
+		  	var slickIndex = jQuery(this).data('slick-index');
+		  	if(parseInt(currentSlide) == parseInt(slickIndex)) {
+		  		var AddToCartUrl = jQuery(this).children('.actual-add-to-cart-btn').data('addtocarturl');
+		  		// console.log(AddToCartUrl);
+		  		jQuery('#sg-add-to-cart-btn').attr('data-addtocarturl', AddToCartUrl);
+		  	}
+		  });
+		});
+
+		// On before slide change
+		var intSlick = jQuery('#int-subscription-slick');
+		intSlick.on('afterChange', function(event, slick, currentSlide){			
+		  intSlick.find('.plan').each(function(){
+		  	var slickIndex = jQuery(this).data('slick-index');
+		  	if(parseInt(currentSlide) == parseInt(slickIndex)) {
+		  		var AddToCartUrl = jQuery(this).children('.actual-add-to-cart-btn').data('addtocarturl');
+		  		// console.log(AddToCartUrl);
+		  		jQuery('#int-add-to-cart-btn').attr('data-addtocarturl', AddToCartUrl);
+		  	}
+		  });
+		});
+
 		function do_update() {
             jQuery.ajax({
                 url: '<?php echo $this->getUrl("discovertea/index/cartpreview"); ?>',
@@ -466,6 +497,7 @@
                     jQuery('.cart-summary').show();
                     jQuery('.cta-btns').show();
                     jQuery('#main-header .cart-preview-select').show();
+                    jQuery('#main-header .cart-preview-select').delay(5000).hide(400);
 
                     var mobile_header = jQuery("#main-mobile-header").data('gryphon_mobile_header');
                     mobile_header.public_open_cart();
@@ -480,9 +512,9 @@
             });
         }
 
-		jQuery('.add-to-cart-btn').on('click', function(e){
+		jQuery('.subscription-form').on('click', '.add-to-cart-btn', function(e){
 			e.preventDefault();
-			var AddToCartUrl = jQuery(this).data('addtocarturl');
+			var AddToCartUrl = jQuery(this).attr('data-addtocarturl');
 			console.log(AddToCartUrl);
 			var non_subscription_in_the_cart = "<?php echo $non_subscription_in_the_cart ?>";
 			console.log(non_subscription_in_the_cart);

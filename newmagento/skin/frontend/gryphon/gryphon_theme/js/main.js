@@ -723,15 +723,15 @@ var initialLoad = true;
 
 
         // trader page, form character limitation
-        // $('body.trader-index-index #trader_register .inputs .each-input input[name=companyname]').keypress(function (e) {
-        //     var regex = new RegExp("^[a-zA-Z]+$");
-        //     var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
-        //     if (regex.test(str)) {
-        //         return true;
-        //     }
-        //     e.preventDefault();
-        //     return false;
-        // });
+        $('body.trader-index-index #trader_register .inputs .each-input input[name=companyname]').keypress(function (e) {
+            var regex = new RegExp("^[a-zA-Z ]+$");
+            var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+            if (regex.test(str)) {
+                return true;
+            }
+            e.preventDefault();
+            return false;
+        });
         $('body.trader-index-index #trader_register .inputs .each-input input[name=registrationnumber]').keypress(function (e) {
             var regex = new RegExp("^[a-zA-Z0-9]+$");
             var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);

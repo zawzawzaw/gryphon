@@ -484,7 +484,7 @@ ul.messages {
   text-overflow: '';
 }
 #loading-mask {
-  z-index: 99999;
+  z-index: 99999!important;
 }
 #page-wrapper {
   height: 100%;
@@ -613,8 +613,8 @@ ul.messages {
   }
 }
 #page-wrapper #menu-wrapper nav ul.main-menu li a {
-  font-family: 'Gotham-Bold', Verdana, sans-serif;
-  font-weight: 500;
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
   font-style: normal;
   color: #252525;
   font-size: 11px;
@@ -694,8 +694,8 @@ ul.messages {
   padding-bottom: 20px;
 }
 #page-wrapper #menu-wrapper nav ul.mobile-menu li a {
-  font-family: 'Gotham-Bold', Verdana, sans-serif;
-  font-weight: 500;
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
   font-style: normal;
   color: #252525;
   font-size: 11px;
@@ -1437,8 +1437,8 @@ h3 {
   line-height: 27px;
 }
 h4 {
-  font-family: 'Gotham-Bold', Verdana, sans-serif;
-  font-weight: 500;
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
   font-style: normal;
   font-size: 21px;
   line-height: 25px;
@@ -1456,6 +1456,7 @@ hr.small {
   width: 30px!important;
   margin-top: 12px!important;
   margin-bottom: 15px!important;
+  text-align: left;
 }
 p {
   font-family: 'Gotham-Book', Verdana, sans-serif;
@@ -2640,8 +2641,8 @@ div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gif
 }
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-code-title,
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-code-title {
-  font-family: 'Gotham-Bold', Verdana, sans-serif;
-  font-weight: 500;
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
   font-style: normal;
   font-size: 11px;
   line-height: 22px;
@@ -2658,8 +2659,8 @@ div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gif
 }
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-code,
 div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gifttext .gifttext-code {
-  font-family: 'Gotham-Bold', Verdana, sans-serif;
-  font-weight: 500;
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
   font-style: normal;
   font-size: 15px;
   line-height: 22px;
@@ -2960,8 +2961,8 @@ div.product .main-product .gift-card-content .product-options-bottom .regular-pr
   display: none;
 }
 div.product .main-product .gift-card-content .desc-title {
-  font-family: 'Gotham-Bold', Verdana, sans-serif;
-  font-weight: 500;
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
   font-style: normal;
   font-size: 11.5px;
   line-height: 18px;
@@ -3959,8 +3960,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .store .main-content .side-bar .each-filter-section .title h2 {
   color: #252525;
   float: left;
-  font-family: 'Gotham-Bold', Verdana, sans-serif;
-  font-weight: 500;
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
   font-style: normal;
   font-size: 12px;
   letter-spacing: 0.05em;
@@ -4337,7 +4338,6 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .store .main-content .all-search-products .each-product .product-image-container a {
   display: block;
   width: 100%;
-  height: 100%;
   z-index: 99999;
 }
 .store .main-content .all-products .each-product .product-image-container a img,
@@ -7080,8 +7080,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .cart #cart .each-details p,
 .cart #confirmation .each-details p {
-  font-family: 'Gotham-Bold', Verdana, sans-serif;
-  font-weight: 500;
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
   font-style: normal;
   font-size: 13px;
   line-height: 16px;
@@ -7220,8 +7220,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   padding-top: 5px;
 }
 .cart #confirmation .each-details .grand_total {
-  font-family: 'Gotham-Bold', Verdana, sans-serif;
-  font-weight: 500;
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
   font-style: normal;
   font-size: 12px;
   line-height: 19px;
@@ -7839,7 +7839,6 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .account .sidebar .block-content ul li a:hover {
   color: #ae4e0e;
-  font-weight: bold;
 }
 .account .col-main {
   border-left: 1px solid #ccc;
@@ -7866,13 +7865,14 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   color: #707070;
 }
 .account .col-main .customer-account-giftcard .amount .regular-price {
-  font-family: 'Gotham-Book', Verdana, sans-serif;
+  font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 18px!important;
-  color: #ae4e0e;
+  font-size: 24px;
+  color: #c76e09;
   display: block;
-  line-height: 25px;
+  line-height: 36px;
+  letter-spacing: 0.03em;
 }
 .account .col-main .customer-account-giftcard .history {
   margin-top: 50px;
@@ -8083,7 +8083,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   margin-bottom: 30px;
   display: inline-block;
   vertical-align: top;
-  margin-right: 80px;
+  margin-right: 160px;
   float: right;
 }
 .account .col-main .invite-friends {
@@ -8144,19 +8144,20 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   margin-bottom: 50px;
 }
 .account .col-main #my-rewardpoints-table p.loyalty-point {
-  font-family: 'Gotham-Book', Verdana, sans-serif;
+  font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 18px!important;
-  color: #ae4e0e;
+  font-size: 22px;
+  color: #c76e09;
   display: block;
-  line-height: 25px;
+  line-height: 26px;
+  letter-spacing: 0.03em;
 }
 .account .col-main .reward-page #my-rewardpoints-table h2 {
   display: none;
 }
 .account .col-main #reward-points-table {
-  margin-top: 30px;
+  margin-top: 10px;
   width: 100%;
 }
 .account .col-main #reward-points-table thead tr th {
@@ -8262,14 +8263,16 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .account .col-main .box-account .box-head {
   margin-bottom: 10px;
 }
+.account .col-main .box-account .form-list {
+  display: inline-block;
+}
 .account .col-main .box-account .form-list .fields {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .account .col-main .box-account .form-list .fields p {
   font-family: 'Gotham-Medium', Verdana, sans-serif;
   font-weight: 200;
   font-style: normal;
-  font-weight: bold;
 }
 .account .col-main .box-account .form-list .fields a,
 .account .col-main .box-account .form-list .fields span,
@@ -8282,7 +8285,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   color: #464646;
 }
 .account .col-main #giftcard_history_table {
-  margin-top: 30px;
+  margin-top: 10px;
+  width: 100%;
 }
 @media all and (max-width: 990px) {
   .account .col-main #giftcard_history_table thead .giftvoucher-grid-title {
@@ -8293,17 +8297,20 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-family: 'Gotham-Medium', Verdana, sans-serif;
   font-weight: 200;
   font-style: normal;
-  font-size: 11px;
-  line-height: 19px;
+  font-size: 10px;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+  color: #707070;
+  text-transform: uppercase;
+  text-align: left;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   padding: 10px 20px;
-  text-align: center;
 }
 .account .col-main #giftcard_history_table tbody tr td {
   border-top: 1px dashed #ccc;
   padding: 20px;
-  text-align: center;
+  text-align: left;
 }
 .account .col-main #giftcard_history_table tbody tr td p.order_no {
   color: #ae4e0e;
@@ -8327,7 +8334,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   letter-spacing: 0.03em;
 }
 .account .col-main #giftcard_history_table tbody tr td span.price {
-  color: #ae4e0e;
+  color: #c76e09;
 }
 .account .col-main #giftcard_history_table tbody tr td p.amount {
   font-family: "minion-pro", Verdana, sans-serif;
@@ -9016,6 +9023,9 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-style: italic;
   color: #464646;
 }
+.account .order-history .pager .pages {
+  margin-top: 10px;
+}
 .account .order-history .order-status span {
   font-size: 14px;
   font-size: 16px;
@@ -9357,7 +9367,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   line-height: 16px;
 }
 .account .gift-cards #gift-cards-tbl {
-  margin-top: 30px;
+  margin-top: 0px;
   width: 100%;
 }
 @media all and (max-width: 990px) {
@@ -9395,7 +9405,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   letter-spacing: 0.03em;
 }
 .account .gift-cards #gift-cards-tbl tbody tr td p span.price {
-  color: #ae4e0e;
+  color: #c76e09;
 }
 .account .gift-cards #gift-cards-tbl tbody tr td p.amount {
   font-family: "minion-pro", Verdana, sans-serif;
@@ -9429,6 +9439,9 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .account .gift-cards #gift-cards-tbl tbody tr td .email {
   display: none;
+}
+.account .gift-cards #gift-cards-tbl tbody tr td.action {
+  width: 145px;
 }
 .account .gift-cards #gift-cards-tbl tbody tr:last-child td {
   border-bottom: 1px solid #ccc;
@@ -9635,7 +9648,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   color: #ae4e0e;
   margin-bottom: 20px;
   font-family: 'Gotham-Book', Verdana, sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
   text-transform: none;
   font-size: 11.5px;
@@ -9792,8 +9805,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   text-align: right;
 }
 .blog .blog-banner .image-text-content .caption-container .caption .read-more {
-  font-family: 'Gotham-Bold', Verdana, sans-serif;
-  font-weight: 500;
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
   font-style: normal;
   font-size: 11px;
   color: #252525;
@@ -9865,8 +9878,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   line-height: 24px;
 }
 .blog .main-content .image-text-content .post .post-content strong {
-  font-family: 'Gotham-Bold', Verdana, sans-serif;
-  font-weight: 500;
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
   font-style: normal;
 }
 .blog .main-content .image-text-content .post .post-content em {
@@ -9881,8 +9894,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   height: auto;
 }
 .blog .main-content .image-text-content .post .post-content h1 {
-  font-family: 'Gotham-Bold', Verdana, sans-serif;
-  font-weight: 500;
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
   font-style: normal;
   font-size: 16px;
   line-height: 20px;
@@ -10431,8 +10444,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   width: 16px;
   height: 16px;
   color: #ffffff;
-  font-family: 'Gotham-Bold', Verdana, sans-serif;
-  font-weight: 500;
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
   font-style: normal;
   font-size: 12px;
   line-height: 16px;
