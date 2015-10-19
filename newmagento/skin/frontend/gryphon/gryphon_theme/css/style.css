@@ -9559,6 +9559,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .account #addredeem-giftvoucher-code .buttons-set .button-add-list {
   float: none!important;
   display: block;
+  width: 100%;
 }
 .account #addredeem-giftvoucher-code .buttons-set .button-add-list button {
   float: none!important;

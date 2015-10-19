@@ -302,6 +302,9 @@
     </customer_account>
     <giftvoucher_index_index>
         <update handle="customer_account" />
+        <reference name="head">
+            <action method="setForcedTitle"><title>Gryphon Tea Company - Gift Card</title></action>                        
+        </reference>
         <reference name="content">
             <block type="giftvoucher/giftvoucherlist" name="giftvoucherlist" template="giftvoucher/giftvoucher.phtml" />
         </reference>
@@ -314,6 +317,9 @@
     </giftvoucher_index_history>
     <giftvoucher_index_addredeem>
         <update handle="customer_account" />
+        <reference name="head">
+            <action method="setForcedTitle"><title>Gryphon Tea Company - Redeem Gift Card</title></action>                        
+        </reference>
         <reference name="content">
             <block type="giftvoucher/addorredeem" name="add-redeem-giftvoucherlist" template="giftvoucher/addorredeem.phtml" />
         </reference>
@@ -478,6 +484,9 @@
     <!-- Gift Card Management -->
     <giftvoucher_index_view>
         <update handle="customer_account" />
+        <reference name="head">
+            <action method="setForcedTitle"><title>Gryphon Tea Company - Gift Card Details</title></action>                        
+        </reference>
         <reference name="content">
             <block type="giftvoucher/view" name="giftvoucher.email" template="giftvoucher/giftcard/view.phtml">
                 <block type="giftvoucher/view" name="giftvoucher.basic" template="giftvoucher/giftcard/basic.phtml"/>

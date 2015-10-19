@@ -9,6 +9,9 @@
                 <template>page/1column.phtml</template>
             </action>
         </reference>
+        <reference name="head">
+            <action method="setData"><key>title</key><value>Gryphon Tea Company - Artisan</value></action>
+        </reference>
         <reference name="content">			
             <block type="catalog/product_list" name="subscriptions" template="subscriptions/artisan.phtml" />
         </reference>
@@ -21,6 +24,9 @@
             <action method="setTemplate">
                 <template>page/1column.phtml</template>
             </action>
+        </reference>
+        <reference name="head">
+            <action method="setData"><key>title</key><value>Gryphon Tea Company - Gourmet</value></action>
         </reference>
         <reference name="content">			
             <block type="catalog/product_list" name="subscriptions-gourmet" template="subscriptions/gourmet.phtml" />

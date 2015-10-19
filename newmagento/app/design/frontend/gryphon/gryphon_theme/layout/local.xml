@@ -40,6 +40,7 @@ One page checkout main layout
             <action method="addItem"><type>skin_js</type><name>js/plugins/intlTelInput.min.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/plugins/lib/libphonenumber/build/utils.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/plugins/jquery.blockUI.js</name></action>
+            <action method="setForcedTitle"><title>Gryphon Tea Company - Check Out</title></action>                     
         </reference>
         <reference name="root">
             <action method="setTemplate"><template>page/1column.phtml</template></action>
@@ -76,6 +77,7 @@ One page checkout main layout
         <reference name="head">            
             <action method="addItem"><type>skin_js</type><name>js/inside-pages.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/no-banner.js</name></action>
+            <action method="setForcedTitle"><title>Gryphon Tea Company - Order Success</title></action>                     
         </reference>
         <reference name="root">
             <action method="setTemplate"><template>page/1column.phtml</template></action>
@@ -135,6 +137,7 @@ One page checkout main layout
 
     <customer_account_index>
         <reference name="head">            
+            <action method="setForcedTitle"><title>Gryphon Tea Company - My Account</title></action>            
             <action method="addItem"><type>skin_js</type><name>js/inside-pages.js</name></action>
         </reference>
         <reference name="root">
@@ -156,7 +159,8 @@ One page checkout main layout
     Layout for customer login page
     -->
     <customer_account_login>
-        <reference name="head">            
+        <reference name="head">
+            <action method="setForcedTitle"><title>Gryphon Tea Company - Customer Login</title></action>            
             <action method="addItem"><type>skin_js</type><name>js/inside-pages.js</name></action>
         </reference>
         <reference name="root">
@@ -175,6 +179,9 @@ One page checkout main layout
     Layout for customer forgot password
     -->
     <customer_account_forgotpassword>        
+        <reference name="head">
+            <action method="setForcedTitle"><title>Gryphon Tea Company - Forgot Password</title></action>            
+        </reference>
         <reference name="root">
             <action method="setTemplate"><template>page/1column.phtml</template></action>            
         </reference>
@@ -190,6 +197,7 @@ One page checkout main layout
     <customer_account_create translate="label">
         <reference name="head">            
             <action method="addItem"><type>skin_js</type><name>js/inside-pages.js</name></action>
+            <action method="setForcedTitle"><title>Gryphon Tea Company - Create New Customer Account</title></action>
         </reference>
         <reference name="root">
             <action method="setTemplate"><template>page/1column.phtml</template></action>
@@ -212,6 +220,7 @@ One page checkout main layout
             <action method="addItem"><type>skin_js</type><name>js/miragedesign/regionupdater.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/miragedesign/telephone.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/inside-pages.js</name></action>
+            <action method="setForcedTitle"><title>Gryphon Tea Company - Account Information</title></action>            
         </reference>
         <reference name="my.account.wrapper">
             <action method="unsetChildren"></action>
@@ -225,6 +234,7 @@ One page checkout main layout
         <reference name="head">
             <action method="addItem"><type>skin_js</type><name>js/miragedesign/regionupdater.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/inside-pages.js</name></action>
+            <action method="setForcedTitle"><title>Gryphon Tea Company - Edit Address</title></action>                     
         </reference>
         <reference name="customer_address_edit">
             <action method="setTemplate"><template>miragedesign/customer/address/edit.phtml</template></action>
@@ -245,6 +255,7 @@ One page checkout main layout
 
     <sales_order_history>
         <reference name="head">
+            <action method="setForcedTitle"><title>Gryphon Tea Company - My Orders</title></action>            
             <action method="addItem"><type>skin_js</type><name>js/plugins/gryphon/jquery.gryphon-mobile-account-order-history.js</name></action>            
         </reference>
         <reference name="customer.account.link.back">
@@ -253,7 +264,8 @@ One page checkout main layout
     </sales_order_history>
 
     <customer_address_index>
-        <reference name="head">            
+        <reference name="head">   
+            <action method="setForcedTitle"><title>Gryphon Tea Company - Address Book</title></action>                     
             <action method="addItem"><type>skin_js</type><name>js/inside-pages.js</name></action>
         </reference>
         <reference name="address_book">
@@ -263,6 +275,7 @@ One page checkout main layout
 
     <checkout_cart_index>
         <reference name="head">
+            <action method="setForcedTitle"><title>Gryphon Tea Company - Shopping Cart</title></action>                     
             <action method="addItem"><type>skin_js</type><name>js/miragedesign/cart.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/inside-pages.js</name></action>
         </reference>

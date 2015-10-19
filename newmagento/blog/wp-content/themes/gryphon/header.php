@@ -9,7 +9,7 @@
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-	<title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
+	<title><?php bloginfo('name'); ?> <?php is_front_page() ? bloginfo('description') : wp_title('-', true, 'left'); ?></title>
 	<meta name="description" content="<?php bloginfo('description'); ?>">
 	<meta name="keywords" content="Strand">	
 

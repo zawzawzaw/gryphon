@@ -149,6 +149,9 @@
 
     <rewardpoints_index_points>
         <update handle="customer_account"/>
+        <reference name="head">
+            <action method="setForcedTitle"><title>Gryphon Tea Company - Reward Points</title></action>                        
+        </reference>
         <reference name="content">
             <block type="rewardpoints/points" name="rewardpoints" template="rewardpoints/points.phtml">
                 <block type="rewardpoints/dashboard" name="customer_account_points" as="points" template="rewardpoints/dashboard_points.phtml" />
@@ -168,6 +171,9 @@
         </reference>
 
         <update handle="customer_account"/>
+        <reference name="head">
+            <action method="setForcedTitle"><title>Gryphon Tea Company - Refer Friends</title></action>                        
+        </reference>
         <reference name="content">
             <block type="rewardpoints/referral" name="referral" template="rewardpoints/referral.phtml" />
             <block type="customer/account_dashboard" name="customer.account.link.back" template="customer/account/link/back.phtml"/>

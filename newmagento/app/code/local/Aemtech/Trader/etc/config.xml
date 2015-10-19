@@ -167,7 +167,7 @@
                     </trader>
                 </observers>
             </adminhtml_customer_save_after>
-            <catalog_category_save_commit_after>
+           <!-- <catalog_category_save_commit_after>
                 <observers>
                     <category_category_observer>
                         <type>singleton</type>
@@ -175,7 +175,7 @@
                         <method>saveCategoryData</method>
                     </category_category_observer> 
                 </observers>
-            </catalog_category_save_commit_after> 
+            </catalog_category_save_commit_after> -->
         </events> 
         <fieldsets>
             <customer_account> 

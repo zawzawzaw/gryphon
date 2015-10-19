@@ -165,6 +165,9 @@
         </reference>
 
         <update handle="customer_account"/>
+        <reference name="head">
+            <action method="setForcedTitle"><title>Gryphon Tea Company - Refer Friends</title></action>                        
+        </reference>
         <reference name="content">
             <block type="rewardpoints/referral" name="referral" template="rewardpoints/referral.phtml" />
             <block type="customer/account_dashboard" name="customer.account.link.back" template="customer/account/link/back.phtml"/>
