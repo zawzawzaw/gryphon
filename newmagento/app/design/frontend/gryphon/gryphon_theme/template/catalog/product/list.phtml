@@ -35,7 +35,7 @@
 <?php
     $_productCollection=$this->getLoadedProductCollection()->addAttributeToSort('pos‌​ition');
     $current_cat_id = $this->getLayer()->getCurrentCategory()->getId();
-    if($current_cat_id==102 || $current_cat_id==107 || $current_cat_id==92) {
+    if($current_cat_id==102 || $current_cat_id==107) {
         $_productCollection = Mage::getModel('catalog/category')->load($current_cat_id)
                              ->getProductCollection()
                              ->addAttributeToSelect('*')
@@ -108,21 +108,21 @@
                         <?php echo $this->getBlockHtml('formkey') ?>                    
                         <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
                         <input type="hidden" name="related_product" id="related-products-field" value="" />
-                            <!-- <ul class="cta-list">
-                                <li>
-                                    <a href="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false)->resize(500); ?>" class="fancybox"><img src="<?php echo $this->getSkinUrl('images/icons/magnifying-glass.png') ?>" alt="magnifying glass"></a>
-                                </li>
+                            <ul class="cta-list" style="display:block !important;">
+                                <!--<li>
+                                    <a href="<?php //echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false)->resize(500); ?>" class="fancybox"><img src="<?php //echo $this->getSkinUrl('images/icons/magnifying-glass.png') ?>" alt="magnifying glass"></a>
+                                </li>-->
                                 <li>
                                     <?php if(!$_product->canConfigure() && $_product->isSaleable()): ?>                                    
-                                        <a href="#" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><img src="<?php echo $this->getSkinUrl('images/icons/plus-sign.png') ?>" alt="plus sign"></a>
+                                        <!--<a href="#" onclick="setLocation('<?php //echo $this->getAddToCartUrl($_product) ?>')"><img src="<?php //echo $this->getSkinUrl('images/icons/plus-sign.png') ?>" alt="plus sign"></a>-->
                                     <?php elseif($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
-                                        <a href="<?php echo $_product->getProductUrl() ?>"><img src="<?php echo $this->getSkinUrl('images/icons/plus-sign.png') ?>" alt="plus sign"></a>
+                                        <!--<a href="<?php //echo $_product->getProductUrl() ?>"><img src="<?php //echo $this->getSkinUrl('images/icons/plus-sign.png') ?>" alt="plus sign"></a>-->
                                     <?php else: ?>
-                                         <!-<p class="action availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>->
+                                        <p style="visibility:visible;color:#ae4e0e;background: #ffffff;padding: 5px;display:block !important;" class="action availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
                                     <?php endif; ?>
                                     
                                 </li>
-                            </ul> -->
+                            </ul>
                         </form>
                     </div>        
                     <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-caption test">        

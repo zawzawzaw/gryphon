@@ -40,6 +40,14 @@
 					   </subscriptions>
 					</observers>
 				</sales_order_place_after>
+				<sales_model_service_quote_submit_success>
+					<observers>
+						<subscriptions>
+							<class>Aemtech_Subscriptions_Model_Observer</class>
+							<method>orderSubscriptionsSetStatus</method>
+						</subscriptions>
+					</observers>
+				</sales_model_service_quote_submit_success>
 			</events>
     </frontend>
     <admin>
