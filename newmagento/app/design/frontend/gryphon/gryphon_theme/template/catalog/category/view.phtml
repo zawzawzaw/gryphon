@@ -57,7 +57,7 @@
                     <div class="caption">
                         <h1><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></h1>
                         <?php if($current_category_data['url_key']!=='gifts' && $current_category_data['url_key']!=='pantry'): ?>
-                            <p><?php echo $_helper->categoryAttribute($_category, $current_category_data['meta_description'], 'meta_description') ?></p>
+                            <p><?php echo $_helper->categoryAttribute($_category, $current_category_data['description'], 'description') ?></p>
                         <?php endif; ?>
 
                         <?php echo $this->getMessagesBlock()->toHtml() ?>

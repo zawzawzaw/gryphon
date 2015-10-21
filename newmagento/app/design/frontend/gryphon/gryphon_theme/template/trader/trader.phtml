@@ -368,9 +368,7 @@
 
                                 <div class="each-input">
                                     <label for="message">message/inquiry</label>	
-                                    <textarea rows="10" cols="30" id="" name="message" class="input-text">
-                                    <?php echo $this->escapeHtml($this->getFormData()->getMessage()) ?>
-                                    </textarea>
+                                    <textarea rows="10" cols="30" id="" name="message" class="input-text"><?php echo $this->escapeHtml($this->getFormData()->getMessage()) ?></textarea>
                                 </div>
                             </div> 
                                 <?php echo $this->getChildHtml('form.additional.info'); ?>

@@ -733,7 +733,7 @@ var initialLoad = true;
             return false;
         });
         $('body.trader-index-index #trader_register .inputs .each-input input[name=registrationnumber]').keypress(function (e) {
-            var regex = new RegExp("^[a-zA-Z0-9]+$");
+            var regex = new RegExp("^[0-9]+$");
             var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
             if (regex.test(str)) {
                 return true;

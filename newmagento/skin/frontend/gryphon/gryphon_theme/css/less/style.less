@@ -233,7 +233,7 @@ ul.messages {
           .gotham-medium;
           font-size: 10px;
           line-height: 28px;
-          color: @dark-orange;
+          color: @dark-orange2;
           display: inline-block;
           text-transform: uppercase;
         }
@@ -1602,7 +1602,7 @@ div.home {
         margin-top: 35px;
         color: #252525;
         &:hover {
-          color: @dark-orange;
+          color: @dark-orange2;
         }
       }
      
@@ -1651,7 +1651,7 @@ div.home {
           text-transform: none;
           color: #252525;
           &:hover {
-            color: @dark-orange;
+            color: @dark-orange2;
           }
         }        
       }
@@ -1726,6 +1726,8 @@ div.home {
 
             h2 {
               .minion-pro-semibold;
+              font-weight: 500;
+
               font-size: 13px;
               color: @dark-grey;
               line-height: 18px;
@@ -1746,6 +1748,8 @@ div.home {
               max-width: 300px;
               margin-bottom: 10px;
 
+              padding-right: 0px;
+
               font-size: 11.5px;
               line-height: 19px;
 
@@ -1765,7 +1769,7 @@ div.home {
         color: @dark-grey;
         text-transform: none;
         &:hover {
-          color: @dark-orange;
+          color: @dark-orange2;
         }
       }
      a.find-out {
@@ -1776,7 +1780,7 @@ div.home {
         color: @dark-grey;
         text-transform: none;
         &:hover {
-          color: @dark-orange;
+          color: @dark-orange2;
         }
       }
     }
@@ -1952,6 +1956,7 @@ div.product {
         }
         .italic {
           width: 100px;
+
         }
         .special-price {
           display: inline-block;
@@ -2017,6 +2022,11 @@ div.product {
         .minion-pro-italic;
         font-size: 13.5px;
         line-height: 22px;
+
+        a{
+          color: @dark-orange2;
+          font-weight: 600;
+        }
       }
 
       .steeping {
@@ -2396,7 +2406,8 @@ div.product {
                 .minion-pro-semibold-italic;
                 font-size: 12px;
                 line-height: 15px;
-                color: #d98d54;
+                // color: #d98d54;
+                color: @dark-orange2;
                 @media all and (max-width: 990px) {
                   width: 185px;
                   text-align: center;
@@ -2915,9 +2926,10 @@ div.product {
 
           span.orange{
             .minion-pro-medium-italic;
+            font-weight: 600;
             font-size: 12px;
             line-height: 27px;
-            color: @dark-orange;
+            color: @dark-orange2;
 
             height: 27px;
             margin-left: 5px;
@@ -2958,9 +2970,10 @@ div.product {
             display: block;
 
             .minion-pro-medium-italic;
+            font-weight: 600;
             font-size: 12px;
             line-height: 16px;
-            color: @dark-orange;
+            color: @dark-orange2;
 
             letter-spacing: 0.02em;
           }
@@ -3921,7 +3934,7 @@ div.product {
           font-size: 13px;
           line-height: 19px;  
           margin-left: 5px;
-          color: @dark-orange;
+          color: @dark-orange2;
         }
 
         .sort-by {
@@ -5220,7 +5233,8 @@ div.product {
       }
 
       h4 {
-        .minion-pro-semibold;
+        //.minion-pro-semibold;
+        .minion-pro-medium;
         font-size: 12px;
         line-height: 16px;
         letter-spacing: 0.1em;
@@ -5297,7 +5311,8 @@ div.product {
       border: 2px solid #c76e09;
 
       .small {
-        .minion-pro-italic;
+        //.minion-pro-italic;
+        .minion-pro-semibold-italic;
         //font-size: 12px;
         line-height: 16px;
         //color: @dark-orange;
@@ -5399,7 +5414,8 @@ div.product {
         display: inline-block;
       }
       h3 {
-      .minion-pro-semibold;
+      //.minion-pro-semibold;
+      .minion-pro-medium;
       font-size: 15px;
       line-height: 16px;
       letter-spacing: 0.1em;
@@ -5776,7 +5792,8 @@ div.product {
       }
 
       h4 {
-        .minion-pro-semibold;
+        //.minion-pro-semibold;
+        .minion-pro-medium;
         font-size: 13px;
         line-height: 20px;
         letter-spacing: 0.1em;
@@ -5862,7 +5879,8 @@ div.product {
           color: @new-grey;
         }          
         p.price {            
-          .minion-pro-semibold;
+          //.minion-pro-semibold;
+          .minion-pro-medium;
           color: @dark-grey;
           font-size: 12px;
           line-height: 16px;
@@ -5905,6 +5923,7 @@ div.product {
         }
         h4 {
           .minion-pro-semibold;
+          .minion-pro-medium;
           font-size: 13px;
           line-height: 18px;
           margin-top: 6px;
@@ -6142,7 +6161,7 @@ div.product {
       color: @dark-grey;
       text-transform: none;
       &:hover {
-        color: @dark-orange;
+        color: @dark-orange2;
       }
     }
   }
@@ -10027,9 +10046,9 @@ div.product {
         }
 
         h4 {
-          .minion-pro-regular;
-          font-weight: 600;
-
+          //.minion-pro-regular;
+          //font-weight: 600;
+          .minion-pro-medium;
           font-size: 13px;
           line-height: 20px;
           letter-spacing: 0.1em;
@@ -10583,7 +10602,7 @@ div#footer-wrapper {
         }
 
         &:hover {
-          color: @dark-orange;
+          color: @dark-orange2;
         }
     }
     span#ajax_loader {
