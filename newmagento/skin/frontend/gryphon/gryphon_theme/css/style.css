@@ -212,7 +212,7 @@ strong {
   top: 24px;
   margin: 5px 0px 0px !important;
   font-size: 12px !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   color: #c76e09 !important;
 }
 @font-face {
@@ -241,12 +241,17 @@ strong {
   font-weight: normal;
   font-style: normal;
 }
+/*
 @font-face {
   font-family: 'JacquesGilles';
-  src: url('../fonts/JacquesGilles.eot?#iefix') format('embedded-opentype'), url('../fonts/JacquesGilles.woff') format('woff'), url('../fonts/JacquesGilles.ttf') format('truetype'), url('../fonts/JacquesGilles.svg#JacquesGilles') format('svg');
+  src: url('../fonts/JacquesGilles.eot?#iefix') format('embedded-opentype'),  
+       url('../fonts/JacquesGilles.woff') format('woff'), 
+       url('../fonts/JacquesGilles.ttf')  format('truetype'), 
+       url('../fonts/JacquesGilles.svg#JacquesGilles') format('svg');
   font-weight: normal;
   font-style: normal;
 }
+*/
 @font-face {
   font-family: 'Bombshell-Pro';
   src: url('../fonts/Bombshell-Pro.eot?#iefix') format('embedded-opentype'), url('../fonts/Bombshell-Pro.woff') format('woff'), url('../fonts/Bombshell-Pro.ttf') format('truetype'), url('../fonts/Bombshell-Pro.svg#Bombshell-Pro') format('svg');
@@ -313,16 +318,19 @@ strong {
   font-weight: 600;
   font-style: italic;
 }
+/*
 .jacques-gilles {
   font-family: "JacquesGilles", Verdana, sans-serif;
   font-weight: 200;
   font-style: italic;
 }
+
 .jacques-gilles-regular {
   font-family: "JacquesGilles", Verdana, sans-serif;
   font-weight: 200;
   font-style: normal;
 }
+*/
 .bombshell-pro {
   font-family: "Bombshell-Pro", Verdana, sans-serif;
   font-weight: 200;
@@ -537,7 +545,7 @@ ul.messages {
   font-style: normal;
   font-size: 10px;
   line-height: 28px;
-  color: #ae4e0e;
+  color: #c76e09;
   display: inline-block;
   text-transform: uppercase;
 }
@@ -1885,7 +1893,7 @@ div.home #feature-products .image-text-content .view-more {
   color: #252525;
 }
 div.home #feature-products .image-text-content .view-more:hover {
-  color: #ae4e0e;
+  color: #c76e09;
 }
 div.home #company-story {
   border-bottom: 1px solid #e5e5e5;
@@ -1934,7 +1942,7 @@ div.home #company-story .image-text-content .ctas a {
   color: #252525;
 }
 div.home #company-story .image-text-content .ctas a:hover {
-  color: #ae4e0e;
+  color: #c76e09;
 }
 div.home #social .image-text-content {
   padding-top: 80px;
@@ -2012,6 +2020,7 @@ div.home #social .image-text-content .blog-wrapper .blog-content .post h2 {
   font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 600;
   font-style: normal;
+  font-weight: 500;
   font-size: 13px;
   color: #252525;
   line-height: 18px;
@@ -2033,6 +2042,7 @@ div.home #social .image-text-content .blog-wrapper .blog-content .post p {
   padding-left: 0px!important;
   max-width: 300px;
   margin-bottom: 10px;
+  padding-right: 0px;
   font-size: 11.5px;
   line-height: 19px;
 }
@@ -2050,7 +2060,7 @@ div.home #social .image-text-content a.read-more {
   text-transform: none;
 }
 div.home #social .image-text-content a.read-more:hover {
-  color: #ae4e0e;
+  color: #c76e09;
 }
 div.home #social .image-text-content a.find-out {
   font-family: "minion-pro", Verdana, sans-serif;
@@ -2063,7 +2073,7 @@ div.home #social .image-text-content a.find-out {
   text-transform: none;
 }
 div.home #social .image-text-content a.find-out:hover {
-  color: #ae4e0e;
+  color: #c76e09;
 }
 div.product {
   margin-top: 145px;
@@ -2290,6 +2300,10 @@ div.product .main-product .product-content .italic {
   font-style: italic;
   font-size: 13.5px;
   line-height: 22px;
+}
+div.product .main-product .product-content .italic a {
+  color: #c76e09;
+  font-weight: 600;
 }
 div.product .main-product .product-content .steeping li {
   display: table;
@@ -2683,7 +2697,7 @@ div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-02 .gif
   font-style: italic;
   font-size: 12px;
   line-height: 15px;
-  color: #d98d54;
+  color: #c76e09;
 }
 @media all and (max-width: 990px) {
   div.product .main-product .gift-card-img .vcenter .vcenter2 #gift-design-01 .gifttext .gifttext-disclaimer,
@@ -3206,9 +3220,10 @@ div.product .main-product .gift-card-content .inputs .each-input span.orange {
   font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 500;
   font-style: italic;
+  font-weight: 600;
   font-size: 12px;
   line-height: 27px;
-  color: #ae4e0e;
+  color: #c76e09;
   height: 27px;
   margin-left: 5px;
   letter-spacing: 0.02em;
@@ -3233,9 +3248,10 @@ div.product .main-product .gift-card-content .inputs .each-input textarea + span
   font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 500;
   font-style: italic;
+  font-weight: 600;
   font-size: 12px;
   line-height: 16px;
-  color: #ae4e0e;
+  color: #c76e09;
   letter-spacing: 0.02em;
 }
 div.product .main-product .gift-card-content .inputs .each-input textarea + span:before {
@@ -4178,7 +4194,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-size: 13px;
   line-height: 19px;
   margin-left: 5px;
-  color: #ae4e0e;
+  color: #c76e09;
 }
 .store .main-content .all-products .controls .sort-by,
 .store .main-content .all-search-products .controls .sort-by {
@@ -5535,7 +5551,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .subscription-form .all-products .each-product h4 {
   font-family: "minion-pro", Verdana, sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-style: normal;
   font-size: 12px;
   line-height: 16px;
@@ -5607,7 +5623,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .subscription-form .all-products .selected-tea .small {
   font-family: "minion-pro", Verdana, sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-style: italic;
   line-height: 16px;
   font-size: 13px;
@@ -5713,7 +5729,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .subscription-form .table-1 .col-1 h3,
 .subscription-form .table-2 .col-1 h3 {
   font-family: "minion-pro", Verdana, sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-style: normal;
   font-size: 15px;
   line-height: 16px;
@@ -6104,7 +6120,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .subscription .steps .each-step h4 {
   font-family: "minion-pro", Verdana, sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-style: normal;
   font-size: 13px;
   line-height: 20px;
@@ -6195,7 +6211,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .subscription .second-content .center .table p.price {
   font-family: "minion-pro", Verdana, sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-style: normal;
   color: #252525;
   font-size: 12px;
@@ -6233,8 +6249,9 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   text-transform: uppercase;
 }
 .subscription .last-content .center .reasons h4 {
-  font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 600;
+  font-family: "minion-pro", Verdana, sans-serif;
+  font-weight: 500;
   font-style: normal;
   font-size: 13px;
   line-height: 18px;
@@ -6462,7 +6479,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   }
 }
 .collections .main-content a:hover {
-  color: #ae4e0e;
+  color: #c76e09;
 }
 .cart {
   margin-top: 110px;
@@ -10421,9 +10438,8 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .trade .last-content .steps .each-step h4 {
   font-family: "minion-pro", Verdana, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
-  font-weight: 600;
   font-size: 13px;
   line-height: 20px;
   letter-spacing: 0.1em;
@@ -10508,6 +10524,10 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   .trade-signup {
     margin-top: 60px;
   }
+}
+.trade-signup .validation-advice {
+  top: 29px;
+  left: 2px;
 }
 .trade-signup .trade-signup-banner {
   background: url("../images/content/trade-banner.jpg") no-repeat center center;
@@ -10617,7 +10637,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .trade-signup .last-content .each-input span.upload-restriction {
   font-family: "minion-pro", Verdana, sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-style: italic;
   font-size: 12px;
   line-height: 16px;
@@ -10945,7 +10965,7 @@ div#footer-wrapper .search button i {
   padding-right: 5px;
 }
 div#footer-wrapper .search button:hover {
-  color: #ae4e0e;
+  color: #c76e09;
 }
 div#footer-wrapper .search span#ajax_loader {
   display: inline-block;
@@ -11072,7 +11092,7 @@ div#footer-wrapper .search span.ajax_msg {
 .our-story .main-content .first-content .milestones .milestone h5 {
   width: 100%;
   font-family: "minion-pro", Verdana, sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-style: normal;
   font-size: 14px;
   line-height: 36px;
@@ -11796,7 +11816,7 @@ div#footer-wrapper .search span.ajax_msg {
 }
 .faq .main-content .faq-section ul li .question p {
   font-family: "minion-pro", Verdana, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
   font-size: 13px;
   line-height: 16px;
@@ -12211,7 +12231,7 @@ div#footer-wrapper .search span.ajax_msg {
 }
 .careers .main-content .second-content h4 {
   font-family: "minion-pro", Verdana, sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-style: normal;
   font-size: 13px;
   line-height: 18px;
@@ -12282,7 +12302,7 @@ div#footer-wrapper .search span.ajax_msg {
 }
 .careers .main-content .third-content .career-display-item-none h4 {
   font-family: "minion-pro", Verdana, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
   font-size: 13px;
   line-height: 16px;
@@ -12293,11 +12313,11 @@ div#footer-wrapper .search span.ajax_msg {
 }
 .careers .main-content .third-content .career-display-item-none h5 {
   font-family: "minion-pro", Verdana, sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-style: italic;
   font-size: 13px;
   line-height: 16px;
-  color: #ae4e0e;
+  color: #c76e09;
   letter-spacing: 0.03em;
 }
 .careers .main-content .third-content .career-display-item {
@@ -12333,16 +12353,16 @@ div#footer-wrapper .search span.ajax_msg {
 }
 .careers .main-content .third-content .career-display-item h5 {
   font-family: "minion-pro", Verdana, sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-style: italic;
   font-size: 13px;
   line-height: 16px;
-  color: #ae4e0e;
+  color: #c76e09;
   letter-spacing: 0.03em;
 }
 .careers .main-content .third-content .career-display-item h4 {
   font-family: "minion-pro", Verdana, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
   font-size: 15px;
   line-height: 16px;
@@ -12379,7 +12399,7 @@ div#footer-wrapper .search span.ajax_msg {
 }
 .careers .main-content .third-content .career-display-item-single h4 {
   font-family: "minion-pro", Verdana, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
   font-size: 13px;
   line-height: 16px;
@@ -12390,11 +12410,11 @@ div#footer-wrapper .search span.ajax_msg {
 }
 .careers .main-content .third-content .career-display-item-single h5 {
   font-family: "minion-pro", Verdana, sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-style: italic;
   font-size: 13px;
   line-height: 16px;
-  color: #ae4e0e;
+  color: #c76e09;
   letter-spacing: 0.03em;
   margin-bottom: 13px;
 }
@@ -12737,11 +12757,11 @@ div#footer-wrapper .search span.ajax_msg {
 }
 .careers .main-content .forth-content .each-input span.upload-restriction {
   font-family: "minion-pro", Verdana, sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-style: italic;
   font-size: 13px;
   line-height: 16px;
-  color: #ae4e0e;
+  color: #c76e09;
   letter-spacing: 0.03em;
   margin-top: 10px;
   display: inline-block;

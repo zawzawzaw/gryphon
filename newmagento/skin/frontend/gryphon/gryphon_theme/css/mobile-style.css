@@ -58,7 +58,7 @@
   top: 24px;
   margin: 5px 0px 0px !important;
   font-size: 12px !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   color: #c76e09 !important;
 }
 @font-face {
@@ -87,12 +87,17 @@
   font-weight: normal;
   font-style: normal;
 }
+/*
 @font-face {
   font-family: 'JacquesGilles';
-  src: url('../fonts/JacquesGilles.eot?#iefix') format('embedded-opentype'), url('../fonts/JacquesGilles.woff') format('woff'), url('../fonts/JacquesGilles.ttf') format('truetype'), url('../fonts/JacquesGilles.svg#JacquesGilles') format('svg');
+  src: url('../fonts/JacquesGilles.eot?#iefix') format('embedded-opentype'),  
+       url('../fonts/JacquesGilles.woff') format('woff'), 
+       url('../fonts/JacquesGilles.ttf')  format('truetype'), 
+       url('../fonts/JacquesGilles.svg#JacquesGilles') format('svg');
   font-weight: normal;
   font-style: normal;
 }
+*/
 @font-face {
   font-family: 'Bombshell-Pro';
   src: url('../fonts/Bombshell-Pro.eot?#iefix') format('embedded-opentype'), url('../fonts/Bombshell-Pro.woff') format('woff'), url('../fonts/Bombshell-Pro.ttf') format('truetype'), url('../fonts/Bombshell-Pro.svg#Bombshell-Pro') format('svg');
@@ -159,16 +164,19 @@
   font-weight: 600;
   font-style: italic;
 }
+/*
 .jacques-gilles {
   font-family: "JacquesGilles", Verdana, sans-serif;
   font-weight: 200;
   font-style: italic;
 }
+
 .jacques-gilles-regular {
   font-family: "JacquesGilles", Verdana, sans-serif;
   font-weight: 200;
   font-style: normal;
 }
+*/
 .bombshell-pro {
   font-family: "Bombshell-Pro", Verdana, sans-serif;
   font-weight: 200;
