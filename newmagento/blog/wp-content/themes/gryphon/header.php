@@ -40,6 +40,13 @@
 
 	<?php wp_head(); ?>
 
+
+	<style type="text/css">
+		#main-mobile-header .marquee{
+			display: none !important;
+		}
+	</style>
+
 </head>
 <body <?php body_class(); ?>>
 

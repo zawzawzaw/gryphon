@@ -265,7 +265,8 @@
                                                     <!--Hai.Tran-->
                                                     <?php
                                                     if ($row->getData($column['index']))
-                                                        echo $this->formatDate($row->getData($column['index']), $column['format'], false);
+                                                        //echo $this->formatDate($row->getData($column['index']), $column['format'], false);
+                                                        echo $this->formatDate($row->getData($column['index']), 'short', false);
                                                     else
                                                         echo $this->__('Permanent');
                                                     ?>

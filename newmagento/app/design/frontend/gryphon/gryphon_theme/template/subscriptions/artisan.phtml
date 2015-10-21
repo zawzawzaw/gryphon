@@ -534,6 +534,19 @@
 											
 		jQuery(document).ready(function($) {
 
+			if( jQuery(window).width() < 992 ){
+				jQuery(window).scroll(function(event){
+
+					if(jQuery(window).scrollTop() > 257){
+						jQuery('.subscription-form .all-products .selected-tea').addClass('sticky-version');
+					} else {
+						jQuery('.subscription-form .all-products .selected-tea').removeClass('sticky-version');
+					}
+				})
+			}
+			
+
+
 			var total_tea_selected = 0;
 			var arr = jQuery(".each-product");
 			var product_element = null;

@@ -223,3 +223,22 @@ AddOutputFilterByType DEFLATE application/x-javascript
 ## http://developer.yahoo.com/performance/rules.html#etags
 
     #FileETag none
+
+# font fix
+# http://stackoverflow.com/questions/25710015/webfont-does-not-apear-without-www
+
+# <IfModule mod_headers.c>
+#   <FilesMatch "\.(ttf|ttc|otf|eot|woff|font.css|css)$">
+#     Header set Access-Control-Allow-Origin "*"
+#   </FilesMatch>
+# </IfModule>
+
+# http://davidwalsh.name/cdn-fonts
+
+# <FilesMatch ".(eot|ttf|otf|woff)">
+#     Header set Access-Control-Allow-Origin "*"
+# </FilesMatch>
+
+# http://stackoverflow.com/questions/2892691/font-face-fonts-only-work-on-their-own-domain
+
+# Header add Access-Control-Allow-Origin "*"

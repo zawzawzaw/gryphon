@@ -65,6 +65,9 @@ ul.messages li.success-msg {
     /*color: #ae4e0e;*/
     color: #c76e09;
 }
+.value.subtotal p{
+    color: #ae4e0e;
+}
 
 .cart #opc-billing, .cart #opc-shipping_method, .cart #opc-payment {
     padding-left: 50px;
@@ -259,6 +262,9 @@ ul.messages li.success-msg {
 .label.grandtotal p, .value.grandtotal p {
     /*color: #ae4e0e;*/
     color: #c76e09;
+}
+.value.grandtotal p{
+    color: #ae4e0e;
 }
 .cart #confirmation .each-details.grand-total {
 }
