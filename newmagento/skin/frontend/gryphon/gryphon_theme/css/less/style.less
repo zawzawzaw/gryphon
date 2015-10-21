@@ -3806,7 +3806,7 @@ div.product {
           .minion-pro-semibold-italic;
           font-size: 13px;
           line-height: 16px;
-          color: @dark-orange;
+          color: @dark-orange2;
           span {
             display: inline-block;
             margin-right: 3px;
@@ -4505,7 +4505,8 @@ div.product {
         text-align: center;
       }
       .validation-advice {
-        top: 50px!important;
+        top: 48px!important;
+        left: 2px;
       }
     }
 
@@ -4863,6 +4864,10 @@ div.product {
         line-height: 16px;
         letter-spacing: 0.03em;
         text-transform: none;
+
+        &:hover{
+          color: @dark-orange2;
+        }
       }
       // input[type="checkbox"] {
       //   top: 2px!important;
@@ -7494,10 +7499,12 @@ div.product {
         }
         .regular-price {
           // .gotham-book;
-          .minion-pro-regular;
+          //.minion-pro-regular;
+          .minion-pro-semibold;
           // font-size: 18px!important;
           font-size: 24px;
-          color: #c76e09;
+          //color: #c76e09;
+          color: @dark-orange;
           display: block;
           line-height: 36px;
           letter-spacing: 0.03em;
@@ -7812,13 +7819,16 @@ div.product {
       margin-bottom: 50px;
       p.loyalty-point {
         // .gotham-book;
-        .minion-pro-regular;
+        //.minion-pro-regular;
+        .minion-pro-semibold;
         // font-size: 18px!important;
         font-size: 22px;
-        color: #c76e09;
+        // color: #c76e09;
+        color: @dark-orange;
         display: block;
         line-height: 26px;
         letter-spacing: 0.03em;
+
       }
       h2 {
         // margin-bottom: 10px;
@@ -11136,7 +11146,8 @@ div#footer-wrapper {
     }
 
     h5 {
-      .minion-pro-semibold;
+      //.minion-pro-semibold;
+      .minion-pro-medium;
       font-size: 13px;
       line-height: 18px;
       letter-spacing: 0.1em;
@@ -11144,11 +11155,13 @@ div#footer-wrapper {
       margin-bottom: 5px;
     }
     span {
-      .minion-pro-italic;
+      //.minion-pro-italic;
+      .minion-pro-semibold-italic;
       font-size: 13px;
       line-height: 16px;
-      // color: @dark-orange;
-      color: #c76e09;
+      //color: @dark-orange;
+      //color: #c76e09;
+      color: @dark-orange2;
     }
 
     a {
@@ -11424,7 +11437,8 @@ div#footer-wrapper {
     }
 
     h5 {
-      .minion-pro-semibold;
+      //.minion-pro-semibold;
+      .minion-pro-medium;
       font-size: 13px;
       line-height: 18px;
       letter-spacing: 0.1em;
@@ -11435,7 +11449,8 @@ div#footer-wrapper {
       font-weight: 600;
       font-size: 13px;
       line-height: 16px;
-      color: @dark-orange;
+      //color: @dark-orange;
+      color: @dark-orange2;
       color: #c76e09;
     }
 
@@ -11841,6 +11856,13 @@ div#footer-wrapper {
   margin-top: 160px;
 
 
+  .validation-advice{
+    top: 46px;
+    left: 2px;
+  }
+  
+
+
   .contact-us-col-1{
     margin-right: -15px;
 
@@ -11870,6 +11892,13 @@ div#footer-wrapper {
   }
   .contact-us-col-3{
     padding-top: 113px;
+
+    .validation-advice{
+      left: 2px;
+      bottom: -16px;
+      top: auto;
+    }
+
   }
 
   .contact-us-col-seperator{
@@ -12897,7 +12926,8 @@ div#footer-wrapper {
           }
 
           h4 {
-            .minion-pro-semibold;
+            //.minion-pro-semibold;
+            .minion-pro-medium;
             font-size: 13px;
             line-height: 20px;
             letter-spacing: 0.1em;
@@ -13077,14 +13107,16 @@ div#footer-wrapper {
             .minion-pro-semibold-italic;
             font-size: 28px;
             line-height: 26px;
-            color: @dark-orange;
+            //color: @dark-orange;
+            color: @dark-orange2;
             letter-spacing: 0.03em;
           }
           h5{
             .minion-pro-semibold-italic;
             font-size: 13px;
             line-height: 16px;
-            color: @dark-orange;
+            //color: @dark-orange;
+            color: @dark-orange2;
             letter-spacing: 0.03em;
 
             margin-bottom: 14px;
@@ -13336,18 +13368,21 @@ div#footer-wrapper {
   .main-content {
 
     h4{
-      .minion-pro-semibold;
+      //.minion-pro-semibold;
+      .minion-pro-medium;
       font-size: 13px;
       line-height: 18px;
       letter-spacing: 0.1em;
       color: @dark-grey;
     }
     h6{
-      .minion-pro-italic;
+      //.minion-pro-italic;
+      .minion-pro-semibold-italic;
       font-size: 13px;
       line-height: 18px;
       letter-spacing: 0.03em;
-      color: @dark-orange;
+      //color: @dark-orange;
+      color: @dark-orange2;
     }
     p{
       .gotham-book;
@@ -13438,6 +13473,7 @@ div#footer-wrapper {
         padding-top: 45px;
 
         h4{
+          
           font-size: 14px;
           letter-spacing: 0.13em;
           
@@ -13516,6 +13552,7 @@ div#footer-wrapper {
         }
         h6{
           margin-bottom: 7px;
+
         }
 
       }
@@ -13583,6 +13620,8 @@ div#footer-wrapper {
             .opacity(1);
           }
           h4{
+            //color: @dark-orange;
+            font-weight: 600;
             color: @dark-orange;
           }
         }
@@ -13598,6 +13637,8 @@ div#footer-wrapper {
               .opacity(1);
             }
             h4{
+              //color: @dark-orange;
+              font-weight: 600;
               color: @dark-orange;
             }
           }
@@ -13779,6 +13820,8 @@ div#footer-wrapper {
             }
           }
           h4{
+            //color: @dark-orange;
+            font-weight: 600;
             color: @dark-orange;
           }
         }
@@ -13796,6 +13839,8 @@ div#footer-wrapper {
               }
             }
             h4{
+              //color: @dark-orange;
+              font-weight: 600;
               color: @dark-orange;
             }
           }
@@ -13920,6 +13965,7 @@ div#footer-wrapper {
             .opacity(1);
           }
           h4{
+            font-weight: 600;
             color: @dark-orange;
           }
         }
@@ -14085,6 +14131,8 @@ div#footer-wrapper {
           */
 
           h4{
+            //color: @dark-orange;
+            font-weight: 600;
             color: @dark-orange;
           }
         }
@@ -14100,6 +14148,8 @@ div#footer-wrapper {
             */
 
             h4{
+              //color: @dark-orange;
+              font-weight: 600;
               color: @dark-orange;
             }
           }
