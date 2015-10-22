@@ -131,6 +131,7 @@
 			parent.toggleClass('expanded-version');
 
 		});
+		$('.mobile-readmore-button').addClass('has-event');
 
 	});
 </script>

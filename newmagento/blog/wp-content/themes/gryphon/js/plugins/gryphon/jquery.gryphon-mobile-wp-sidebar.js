@@ -59,6 +59,10 @@
       if (this.open_state != "open") {
         this.open_state = "open";
         // this.product_list_container.css('display', 'inline-block');
+        
+
+        this.window.scrollTop(288);
+
       }
     },
     close: function(){
@@ -70,7 +74,9 @@
         this.category_container.stop(0).hide(0);
         this.main_buttons.removeClass('selected');
 
-        $(window).scrollTop(0);
+        //$(window).scrollTop(0);
+
+        this.window.scrollTop(288);
       }
     },
 
