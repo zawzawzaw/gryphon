@@ -51,7 +51,8 @@
                         </td>
                         <td>
                             <span class="item-hidden"><?php echo $this->__('Date') ?></span>
-                            <span class="item-detail date"><?php echo $this->formatDate($_item->getCreatedAt(), 'medium') ?></span>
+                            <!--<span class="item-detail date"><?php echo $this->formatDate($_item->getCreatedAt(), 'medium') ?></span>-->
+                            <span class="item-detail date"><?php echo $this->formatDate($_item->getCreatedAt(), 'short') ?></span>
                         </td>
                         <td>
                             <span class="item-hidden"><?php echo $this->__('Balance Change') ?></span>
@@ -116,6 +117,7 @@
                             </td>
                             <td>
                                 <span class="item-detail date"><?php echo $this->formatDate($_item->getCreatedAt(), 'medium') ?></span>
+                                <span class="item-detail date"><?php echo $this->formatDate($_item->getCreatedAt(), 'short') ?></span>
                             </td>
                             <td>
                                 <span class="item-detail">

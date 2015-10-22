@@ -21,24 +21,41 @@
 	  </div>
 
 	  <div id="mobile-blog-tag-container">
-	  	<?php 
-	  		wp_tag_cloud( array(
-	  			'format' => 'list',
-	  		));
-	  	?>
+	  	<ul class="tags">
+		  	<?php
+					$posttags = get_tags();
+
+					// print_r($posttags);
+					// $posttags = get_the_tags();
+					if ($posttags) {
+						$no_of_tags = count($posttags);
+						$i = 1;
+					  foreach($posttags as $tag) {
+					  	//if($i==$no_of_tags):
+					?>
+					    <li><a href="<?php echo get_tag_link($tag->term_id); ?>"><?php echo $tag->name;  ?></a></li>
+					<?php
+						$i++;
+					  }
+					}
+				?>					
+	  	</ul>
 	  </div>
 	  <div id="mobile-blog-category-container">
 	  	<ul>
-		  	<?php 
-		  		/*
-		  		wp_list_categories( array(
-		  			'title_li' => '',
-		  		));
-		  		*/
+		  	<?php
+				$categories = get_categories();
 
-		  		get_categories();
-
-		  	?>
+				// print_r($posttags);
+				// $posttags = get_the_tags();
+				if ($categories) {
+				  foreach($categories as $category) {
+				?>
+				    <li><a href="<?php echo get_category_link($category->cat_ID); ?>"><?php echo $category->name;  ?></a></li>
+				<?php
+				  }
+				}
+				?>					
 	  	</ul>
 	  </div>
 	</div>
