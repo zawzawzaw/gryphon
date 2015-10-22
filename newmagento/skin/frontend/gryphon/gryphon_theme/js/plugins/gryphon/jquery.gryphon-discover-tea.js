@@ -198,6 +198,11 @@ if (!Array.prototype.indexOf) {
       this.load_json();
 
     },
+
+
+    is_mobile: function(){
+      return ($(window).width() < 922 );
+    },
     create_button: function(){
 
       var button_element = null;
@@ -744,7 +749,14 @@ if (!Array.prototype.indexOf) {
 
       var header_height = $("#header-wrapper").height();
       var padding_top = 45;
+
+      if( this.is_mobile() ){
+        padding_top += 60;
+      }
+
       var target_y = this.question_02_element.offset().top - header_height - padding_top;
+
+
 
       console.log("target_y: " + target_y);
       this.scroll_to(target_y);
@@ -756,6 +768,11 @@ if (!Array.prototype.indexOf) {
 
       var header_height = $("#header-wrapper").height();
       var padding_top = 45;
+
+      if( this.is_mobile() ){
+        padding_top += 60;
+      }
+
       var target_y = this.question_02_gift_element.offset().top - header_height - padding_top;
 
       console.log("target_y: " + target_y);
@@ -767,6 +784,11 @@ if (!Array.prototype.indexOf) {
 
       var header_height = $("#header-wrapper").height();
       var padding_top = 45;
+
+      if( this.is_mobile() ){
+        padding_top += 60;
+      }
+
       var target_y = this.question_03_element.offset().top - header_height - padding_top;
       this.scroll_to(target_y);
 
@@ -794,6 +816,11 @@ if (!Array.prototype.indexOf) {
 
       var header_height = $("#header-wrapper").height();
       var padding_top = 45;
+
+      if( this.is_mobile() ){
+        padding_top += 60;
+      }
+
       var target_y = this.question_04_element.offset().top - header_height - padding_top;
       this.scroll_to(target_y);
 
@@ -804,6 +831,14 @@ if (!Array.prototype.indexOf) {
 
       var header_height = $("#header-wrapper").height();
       var padding_top = 45 + 200;
+
+      if( this.is_mobile() ){
+        padding_top += 60;
+        padding_top -= 200;
+        padding_top -= 35;
+
+      }
+
       var target_y = this.question_05_element.offset().top - header_height - padding_top;
       this.scroll_to(target_y);
 
@@ -838,7 +873,20 @@ if (!Array.prototype.indexOf) {
 
       var header_height = $("#header-wrapper").height();
       var padding_top = 0;
+
+
+
       var target_y = this.question_05_element.offset().top - header_height - padding_top;
+
+      if( this.is_mobile() ){
+
+        target_y = this.result_container_element.offset().top - header_height - padding_top;
+        target_y -= 70;
+
+        //padding_top = 45;
+        //padding_top += 60;
+      }
+
       this.scroll_to(target_y);
 
       this.subscription_element.slideDown(500);

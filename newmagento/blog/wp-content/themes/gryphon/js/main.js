@@ -398,6 +398,20 @@ var initialLoad = true;
                 // $(html).insertBefore($(".load-more-wrapper"))
 
                 $('.load-more-btn').text('load more');
+
+
+
+                $('.mobile-readmore-button').not('.has-event').click(function(event){
+
+                    event.preventDefault();
+                    console.log('.mobile-readmore-button clicked again');
+
+                    var target = $(event.currentTarget);
+                    var parent = target.parent();
+                    parent.toggleClass('expanded-version');
+                });
+
+
             });
         }
 

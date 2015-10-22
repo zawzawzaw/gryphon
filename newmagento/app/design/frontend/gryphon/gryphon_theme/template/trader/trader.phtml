@@ -83,7 +83,7 @@
                             <div class="inputs">
                                 <div class="each-input">
                                     <label for="companyname">COMPANY NAME*</label>
-                                    <input type="text" name="companyname" id="companyname" class="input-text required-entry validate-alpha" value="<?php echo $this->escapeHtml($this->getFormData()->getCompanyname()) ?>" />
+                                    <input type="text" name="companyname" id="companyname" class="input-text required-entry validate-alphanum-with-spaces" value="<?php echo $this->escapeHtml($this->getFormData()->getCompanyname()) ?>" />
                                 </div> 
                                 <div class=" each-input">
                                     <label for="registrationnumber">business registration number*</label>

@@ -69,7 +69,7 @@
     });
   </script>
 
-  <div class="main-content single">
+  <div class="main-content">
     <div class="image-text-content container">
       <div class="row">
         <div class="col-md-9">
@@ -123,5 +123,21 @@
   </div>
 
 </div>
+
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+
+    $('.mobile-readmore-button').click(function(event){
+      event.preventDefault();
+
+      var target = $(event.currentTarget);
+      var parent = target.parent();
+      parent.toggleClass('expanded-version');
+
+    });
+    $('.mobile-readmore-button').addClass('has-event');
+
+  });
+</script>
 
 <?php get_footer(); ?>
