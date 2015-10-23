@@ -10801,6 +10801,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .trade-signup .last-content .each-input textarea {
   width: 280px;
   height: 130px;
+  resize: none;
 }
 .trade-signup .last-content .each-input #phone_no_2,
 .trade-signup .last-content .each-input #mobile_no_2 {
