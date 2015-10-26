@@ -118,7 +118,7 @@
                                     <?php elseif($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
                                         <!--<a href="<?php //echo $_product->getProductUrl() ?>"><img src="<?php //echo $this->getSkinUrl('images/icons/plus-sign.png') ?>" alt="plus sign"></a>-->
                                     <?php else: ?>
-                                        <p style="visibility:visible;color:#ae4e0e;background: #ffffff;padding: 5px;display:block !important;" class="action availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                                        <p class="action availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
                                     <?php endif; ?>
                                     
                                 </li>
