@@ -118,7 +118,11 @@ class Manic_Discovertea_IndexController extends Mage_Core_Controller_Front_Actio
 	}	
 
 	public function subscribeAction() {
-
+		header('Access-Control-Allow-Origin: '.$_SERVER['HTTP_ORIGIN']);
+		header('Access-Control-Allow-Methods: GET');
+		header('Access-Control-Max-Age: 1000');
+		header('Access-Control-Allow-Headers: Content-Type');
+		
 		if ($this->getRequest()->isPost()) {
     
             $subscribe_email = $this->getRequest()->getPost('subscribe_email', array());
@@ -211,7 +215,7 @@ class Manic_Discovertea_IndexController extends Mage_Core_Controller_Front_Actio
 
 	}
 
-	public function subscribeUnsubscribeAction() {		
+	public function subscribeUnsubscribeAction() {
     	if(Mage::getSingleton('customer/session')->isLoggedIn()) {
             $customerData = Mage::getSingleton('customer/session')->getCustomer();
             $customerDataArr = $customerData->getData();

@@ -161,7 +161,9 @@ var initialLoad = true;
         });*/
 
         $('#products_list').on('touchstart', '.product-image-container', function(e){
-            setLocation($(this).find('a.product-image').attr('href'));
+            var isiPad = navigator.userAgent.match(/iPad/i) != null;
+            if(isiPad)
+                setLocation($(this).find('a.product-image').attr('href'));
         });
 
         $('.load-more').on('click', function(e){

@@ -106,8 +106,8 @@
                         </a>
                         <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
                         <?php echo $this->getBlockHtml('formkey') ?>                    
-                        <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
-                        <input type="hidden" name="related_product" id="related-products-field" value="" />
+                            <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+                            <input type="hidden" name="related_product" id="related-products-field" value="" />
                             <ul class="cta-list" style="display:block !important;">
                                 <!--<li>
                                     <a href="<?php //echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false)->resize(500); ?>" class="fancybox"><img src="<?php //echo $this->getSkinUrl('images/icons/magnifying-glass.png') ?>" alt="magnifying glass"></a>
@@ -118,7 +118,7 @@
                                     <?php elseif($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
                                         <!--<a href="<?php //echo $_product->getProductUrl() ?>"><img src="<?php //echo $this->getSkinUrl('images/icons/plus-sign.png') ?>" alt="plus sign"></a>-->
                                     <?php else: ?>
-                                        <p class="action availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                                        <li><div class="action availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></div></li>
                                     <?php endif; ?>
                                     
                                 </li>

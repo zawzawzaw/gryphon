@@ -306,6 +306,9 @@ class Mage_Newsletter_Model_Subscriber extends Mage_Core_Model_Abstract
      */
     public function subscribe($email)
     {
+        require_once(Mage::getBaseDir('lib') . '/Mailchimpapi/MailChimp.php');
+        $MailChimp = new \Drewm\MailChimp('3f4cca784b2f700c1d129e00b8300115-us2');
+
         $this->loadByEmail($email);
         $customerSession = Mage::getSingleton('customer/session');
 
@@ -356,6 +359,19 @@ class Mage_Newsletter_Model_Subscriber extends Mage_Core_Model_Abstract
                 $this->sendConfirmationRequestEmail();
             } else {
                 $this->sendConfirmationSuccessEmail();
+
+                $customerData = Mage::getModel('customer/customer')->load($ownerId)->getData();
+
+                //55c5f5090f
+                $result = $MailChimp->call('lists/subscribe', array(
+                    'id'                => '55c5f5090f',
+                    'email'             => array('email'=>$email),
+                    'merge_vars'        => array('FNAME'=>$customerData['firstname'], 'LNAME'=>$customerData['lastname']),
+                    'double_optin'      => false,
+                    'update_existing'   => true,
+                    'replace_interests' => false,
+                    'send_welcome'      => false,
+                ));
             }
 
             return $this->getStatus();
@@ -473,6 +489,25 @@ class Mage_Newsletter_Model_Subscriber extends Mage_Core_Model_Abstract
             $this->setStatus(self::STATUS_SUBSCRIBED)
                 ->setIsStatusChanged(true)
                 ->save();
+
+            require_once(Mage::getBaseDir('lib') . '/Mailchimpapi/MailChimp.php');
+            $MailChimp = new \Drewm\MailChimp('3f4cca784b2f700c1d129e00b8300115-us2');
+
+            $email = $this->getEmail();
+            $firstname = $this->getCustomerFirstname();
+            $lastname = $this->getCustomerLastname();
+
+            $result = $MailChimp->call('lists/subscribe', array(
+                'id'                => '55c5f5090f',
+                'email'             => array('email'=>$email),
+                'merge_vars'        => array('FNAME'=>$firstname, 'LNAME'=>$lastname),
+                'double_optin'      => false,
+                'update_existing'   => true,
+                'replace_interests' => false,
+                'send_welcome'      => false,
+            ));
+
+            $this->sendConfirmationSuccessEmail();
             return true;
         }
 

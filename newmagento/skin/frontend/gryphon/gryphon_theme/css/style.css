@@ -4463,6 +4463,39 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   -o-transition: all 0.2s ease-out 0s;
   transition: all 0.2s ease-out 0s;
 }
+.store .main-content .all-products .each-product .availability,
+.store .main-content .all-search-products .each-product .availability {
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #b86006;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#b86006), to(#c2620b));
+  background-image: -webkit-linear-gradient(bottom, #b86006, #c2620b);
+  background-image: -moz-linear-gradient(bottom, #b86006, #c2620b);
+  background-image: -o-linear-gradient(bottom, #b86006, #c2620b);
+  background-image: linear-gradient(to top, #b86006, #c2620b);
+  display: table;
+  visibility: visible;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 10px;
+  top: -73px;
+}
+.store .main-content .all-products .each-product .availability span,
+.store .main-content .all-search-products .each-product .availability span {
+  font-family: "minion-pro", Verdana, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  vertical-align: middle;
+  display: table-cell;
+}
 .store .main-content .all-products .each-product .tag,
 .store .main-content .all-search-products .each-product .tag {
   text-transform: none;
@@ -11087,12 +11120,12 @@ div#footer-wrapper .search button i {
 div#footer-wrapper .search button:hover {
   color: #c76e09;
 }
-div#footer-wrapper .search span#ajax_loader {
+div#footer-wrapper .search span.newsletter_ajax_loader {
   display: inline-block;
   vertical-align: middle;
   padding-left: 10px;
 }
-div#footer-wrapper .search span#ajax_loader img {
+div#footer-wrapper .search span.newsletter_ajax_loader img {
   width: 16px;
   height: 16px;
 }

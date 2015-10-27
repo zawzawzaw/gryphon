@@ -16,6 +16,8 @@ class Miragedesign_Customercustomiser_AccountController extends Mage_Customer_Ac
      */
     public function editPostAction()
     {
+        require_once(Mage::getBaseDir('lib') . '/Mailchimpapi/MailChimp.php');
+
         if (!$this->_validateFormKey()) {
             return $this->_redirect('*/*/edit');
         }
@@ -80,6 +82,22 @@ class Miragedesign_Customercustomiser_AccountController extends Mage_Customer_Ac
 
             // Set subscribe newsletter
             $customer->setIsSubscribed((boolean)$this->getRequest()->getPost('is_subscribed', false));
+            
+            if((boolean)$this->getRequest()->getPost('is_subscribed', false)) {
+                $MailChimp = new \Drewm\MailChimp('3f4cca784b2f700c1d129e00b8300115-us2');
+
+                //55c5f5090f
+                $result = $MailChimp->call('lists/subscribe', array(
+                    'id'                => '55c5f5090f',
+                    'email'             => array('email'=>$customerData['email']),
+                    'merge_vars'        => array('FNAME'=>$customerData['firstname'], 'LNAME'=>$customerData['lastname']),
+                    'double_optin'      => false,
+                    'update_existing'   => true,
+                    'replace_interests' => false,
+                    'send_welcome'      => false,
+                ));
+            }
+            
 
             $defaultAddress = false;
 
