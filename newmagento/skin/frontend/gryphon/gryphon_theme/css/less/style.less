@@ -5344,7 +5344,9 @@ div.product {
         font-size: 12px;
         line-height: 16px;
         letter-spacing: 0.1em;
-        color: @dark-grey;          
+        color: @dark-grey;    
+        min-height: 32px;
+
         sup {
           .gotham-book;
           font-size: 6px;
@@ -5364,12 +5366,15 @@ div.product {
         color: @new-grey-2;
       }
       p.product-qty {
-        width: 65px;
+        //width: 65px;
+        //width: 85px;
+        width: 74px;
+
         padding-left: 0px;
         text-align: center;
         margin: 0 auto;
 
-
+        /*
         .add {
           background: url(../images/icons/increase-qty.png) no-repeat;
           width: 13px;
@@ -5387,12 +5392,70 @@ div.product {
           text-align: left;
           float: left;
         }
+        */
+
+        .add{
+          display: inline-block;
+          font: normal normal normal 14px/1 FontAwesome;
+          font-size: inherit;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+
+          //width: 13px;
+          //height: 13px;
+          display: inline-block;
+          text-align: right;
+          float: right;
+
+          background-color: #bcbbbb;
+          width: 16px;
+          height: 20px;
+
+          text-align: center;
+          color: #fff;
+          line-height: 20px;
+
+          &:before{
+            content: "\f067";
+          }
+        }
+        .minus{
+          display: inline-block;
+          font: normal normal normal 14px/1 FontAwesome;
+          font-size: inherit;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+
+          //width: 13px;
+          //height: 13px;
+          display: inline-block;
+          text-align: left;
+          float: left;
+
+          background-color: #bcbbbb;
+          width: 16px;
+          height: 20px;
+
+          text-align: center;
+          color: #fff;
+          line-height: 20px;
+
+          &:before{
+            content: "\f068";
+          }
+        }
 
         span {
           text-align: center;
           float: left;
           line-height: 14px;
           width: 60%;
+
+          width: 41px;
+          background-color: #f6f4f1;
+          line-height: 20px;
         }
       }
       p.price {
@@ -5449,25 +5512,48 @@ div.product {
         padding: 0;
 
         .small{
+          /*
           position: absolute;
           top: 23px;
           left: 61px;
           letter-spacing: 0.05em;
+          */
+          
+          display: none;
         }
         h2.selected_tea_count{
           padding: 0;
           position: absolute;
           top: 13px;
-          left: 15px;
+          //left: 15px;
+          right: 15px;
+          left: auto;
+
           text-align: left;
+          color: @dark-orange;
+          font-size: 24px;
+          letter-spacing: 0.1em;
+
+          &:after{
+            content: "/30";
+            color: #cccccc;
+          }
 
         }
         h4{
           text-align: left;
           position: absolute;
-          top: 6px;
-          left: 60px;
+          top: 15px;
+          //left: 60px;
+          //left: 15px;
+          left: 19px;
           width: 220px;
+
+          .minion-pro-semibold-italic;
+          //color: @dark-orange2;
+          color: @dark-orange;
+          text-transform: capitalize;
+          font-size: 12px !important;
 
           br{
             display: none;
@@ -5616,7 +5702,12 @@ div.product {
         position: relative;
         /*padding-left: 28px;*/
         &:hover {
-          color: @dark-orange;
+          //color: @dark-orange;
+          color: @dark-orange2;
+
+          span{
+            color: @dark-orange2;
+          }
         }
         i {
           font-size: 10px;  
@@ -5631,7 +5722,8 @@ div.product {
           line-height: 16px;
           color: @dark-grey;
           &:hover {
-            color: @dark-orange;
+            //color: @dark-orange;
+            color: @dark-orange2;
           }
         }
         .ajax_loader_product {
@@ -12880,6 +12972,7 @@ div#footer-wrapper {
         }
 
         .italic {
+          
           .minion-pro-italic;
           font-size: 13.5px;
           line-height: 22px;
@@ -12888,8 +12981,11 @@ div#footer-wrapper {
         .ajax_msg {
           position: absolute;
           top: 5px;
-            left: 58%;
+          left: 58%;
           color: #ae4e0e;
+
+          .minion-pro-semibold-italic;
+          color: @dark-orange2;
         }
 
       }
@@ -14847,6 +14943,26 @@ body.sales-order-history{
       text-align: left;               
       color: @new-grey;
       .gotham-book;
+
+      &.price{
+        .minion-pro-medium;
+        font-size: 12px;
+        letter-spacing: 0.05em !important;
+      }
     }
+  }
+}
+
+
+body.rewardpoints-index-points{
+
+  [data-theme-label="Points added"],
+  [data-theme-label="Points used"]{
+    //.minion-pro-medium;
+    font-family: minion-pro,Verdana,sans-serif !important;
+    font-weight: 500 !important;
+    font-style: normal !important;
+    font-size: 12px !important;
+    letter-spacing: 0.05em !important;
   }
 }
