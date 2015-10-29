@@ -2144,6 +2144,7 @@ div.product {
           display: inline-block;
           text-align: center;
           font-size: 9px;
+          line-height: 20px;
           i {
             color: @white;
           }
@@ -2155,6 +2156,7 @@ div.product {
           display: inline-block;
           text-align: center;
           font-size: 9px;
+          line-height: 20px;
           i {
             color: @white;
           }
@@ -3655,16 +3657,30 @@ div.product {
   }
   @media all and (max-width: 992px) {
     .store-banner, .gifts-banner, .pantry-banner {
-      background: url("../images/content/store-banner.jpg") no-repeat center bottom;
-      background-size: cover !important;
-      background-position-x: 0 !important;
-      background-position-y: 100% !important;
       .image-text-content {
         .caption {
           width: 100% !important;
           height: auto !important;
         }
       }
+    }
+    .store-banner{
+      background: url("../images/content/mobile-banner/brand-new-store-mobile-banner.jpg") no-repeat center bottom;
+      background-size: cover !important;
+      background-position-x: 0 !important;
+      background-position-y: 100% !important;
+    }
+    .gifts-banner{
+      background: url("../images/content/mobile-banner/brand-new-gift-mobile-banner.jpg") no-repeat center bottom;
+      background-size: cover !important;
+      background-position-x: 0 !important;
+      background-position-y: 100% !important;
+    }
+    .pantry-banner{
+      background: url("../images/content/mobile-banner/brand-new-pantry-mobile-banner.jpg") no-repeat center bottom;
+      background-size: cover !important;
+      background-position-x: 0 !important;
+      background-position-y: 100% !important;
     }
   }
   .gifts-banner {
@@ -3684,6 +3700,7 @@ div.product {
     }
   }
   @media all and (max-width: 992px) {
+    /*
     .gifts-banner {
       background: url("../images/content/gifts-banner.jpg") no-repeat center bottom!important;
       background-size: cover !important;
@@ -3696,7 +3713,7 @@ div.product {
       background-position-x: 0 !important;
       background-position-y: 100% !important;
     }
-
+    */
   }
 
 

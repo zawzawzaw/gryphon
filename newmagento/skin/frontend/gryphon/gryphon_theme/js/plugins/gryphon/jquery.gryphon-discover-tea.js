@@ -418,6 +418,7 @@ if (!Array.prototype.indexOf) {
 
         if(final_results.length == 0){
           this.has_no_similar = true;
+          
 
           // create aroma based.
           final_results = [];
@@ -495,6 +496,24 @@ if (!Array.prototype.indexOf) {
 
         this.similar_container.empty();
         this.similar_container.append(results_str);
+
+        
+        if(final_results.length == 0){
+          this.result_01_element_loaded = true;
+          this.result_02_element_loaded = true;
+          this.result_03_element_loaded = true;
+          this.result_04_element_loaded = true;
+        } else if(final_results.length == 1){
+          this.result_02_element_loaded = true;
+          this.result_03_element_loaded = true;
+          this.result_04_element_loaded = true;
+        } else if(final_results.length == 2){
+          this.result_03_element_loaded = true;
+          this.result_04_element_loaded = true;
+        } else if(final_results.length == 3){
+          this.result_04_element_loaded = true;
+        }
+
 
 
         //this.similar_container
@@ -654,6 +673,26 @@ if (!Array.prototype.indexOf) {
 
         console.log('this.different_result_01_element');
         console.log(this.different_result_01_element);
+
+
+        //this.different_result_02_element_loaded = true;
+        if(different_final_results.length == 0){
+          this.different_result_01_element_loaded = true;
+          this.different_result_02_element_loaded = true;
+          this.different_result_03_element_loaded = true;
+          this.different_result_04_element_loaded = true;
+        } else if(different_final_results.length == 1){
+          this.different_result_02_element_loaded = true;
+          this.different_result_03_element_loaded = true;
+          this.different_result_04_element_loaded = true;
+        } else if(different_final_results.length == 2){
+          this.different_result_03_element_loaded = true;
+          this.different_result_04_element_loaded = true;
+        } else if(different_final_results.length == 3){
+          this.different_result_04_element_loaded = true;
+        }
+
+
 
         if(this.different_result_01_element.length != 0){
           $.ajax({
@@ -975,6 +1014,8 @@ if (!Array.prototype.indexOf) {
           this.different_result_02_element_loaded &&
           this.different_result_03_element_loaded &&
           this.different_result_04_element_loaded ){
+
+        
           
         if( this.is_mobile() ){
           this.different_container.addClass('slick');
@@ -999,6 +1040,7 @@ if (!Array.prototype.indexOf) {
     //                                                             
 
     on_result_01_complete: function(event){
+      console.log('on_result_01_complete');
       var data = JSON.parse(event['responseText']);
       var image_str = '<img src="' + 'http://www.gryphontea.com/media/catalog/product' + data.image + '">'
       this.result_01_element.find('.results-item-image a').append(image_str);
@@ -1008,6 +1050,7 @@ if (!Array.prototype.indexOf) {
       this.check_result_loaded();
     },
     on_result_02_complete: function(event){
+      console.log('on_result_02_complete');
       var data = JSON.parse(event['responseText']);
       var image_str = '<img src="' + 'http://www.gryphontea.com/media/catalog/product' + data.image + '">'
       this.result_02_element.find('.results-item-image a').append(image_str);
@@ -1017,6 +1060,7 @@ if (!Array.prototype.indexOf) {
       this.check_result_loaded();
     },
     on_result_03_complete: function(event){
+      console.log('on_result_03_complete');
       var data = JSON.parse(event['responseText']);
       var image_str = '<img src="' + 'http://www.gryphontea.com/media/catalog/product' + data.image + '">'
       this.result_03_element.find('.results-item-image a').append(image_str);
@@ -1026,6 +1070,7 @@ if (!Array.prototype.indexOf) {
       this.check_result_loaded();
     },
     on_result_04_complete: function(event){
+      console.log('on_result_04_complete');
       var data = JSON.parse(event['responseText']);
       var image_str = '<img src="' + 'http://www.gryphontea.com/media/catalog/product' + data.image + '">'
       this.result_04_element.find('.results-item-image a').append(image_str);
@@ -1037,6 +1082,7 @@ if (!Array.prototype.indexOf) {
 
 
     on_different_result_01_complete: function(event){
+      console.log('on_different_result_01_complete');
       var data = JSON.parse(event['responseText']);
       var image_str = '<img src="' + 'http://www.gryphontea.com/media/catalog/product' + data.image + '">'
       this.different_result_01_element.find('.results-item-image a').append(image_str);
@@ -1046,6 +1092,7 @@ if (!Array.prototype.indexOf) {
       this.check_different_result_loaded();
     },
     on_different_result_02_complete: function(event){
+      console.log('on_different_result_02_complete');
       var data = JSON.parse(event['responseText']);
       var image_str = '<img src="' + 'http://www.gryphontea.com/media/catalog/product' + data.image + '">'
       this.different_result_02_element.find('.results-item-image a').append(image_str);
@@ -1055,6 +1102,7 @@ if (!Array.prototype.indexOf) {
       this.check_different_result_loaded();
     },
     on_different_result_03_complete: function(event){
+      console.log('on_different_result_03_complete');
       var data = JSON.parse(event['responseText']);
       var image_str = '<img src="' + 'http://www.gryphontea.com/media/catalog/product' + data.image + '">'
       this.different_result_03_element.find('.results-item-image a').append(image_str);
@@ -1064,6 +1112,7 @@ if (!Array.prototype.indexOf) {
       this.check_different_result_loaded();
     },
     on_different_result_04_complete: function(event){
+      console.log('on_different_result_04_complete');
       var data = JSON.parse(event['responseText']);
       var image_str = '<img src="' + 'http://www.gryphontea.com/media/catalog/product' + data.image + '">'
       this.different_result_04_element.find('.results-item-image a').append(image_str);
