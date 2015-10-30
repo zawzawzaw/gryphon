@@ -5,6 +5,7 @@ jQuery(document).ready(function($) {
         userId: 637296152,        
         accessToken: '637296152.467ede5.9bae6b7506ad4287b4ba40e25edcc7b0',
         limit: 4,
+        resolution: 'standard_resolution',
         after: function() {
         	$("#instafeed a").attr("target","_blank");
         	// For use within normal web clients 

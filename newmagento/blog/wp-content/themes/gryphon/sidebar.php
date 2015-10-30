@@ -90,5 +90,35 @@ if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 				}
 			?>			
 		</div>
+
+		
+		<div id="desktop-back-to-top-button">
+			<a href="#"><i class="my-arrow-left"></i>Back to Top</a>
+		</div>
+		<script type="text/javascript" src=""></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(window).scroll(function(){
+
+					if($(window).scrollTop() > 1160){
+						if($('body').hasClass('has-blog-back-to-top') == false){
+							$('body').addClass('has-blog-back-to-top');
+						}
+					} else {
+						if($('body').hasClass('has-blog-back-to-top') == true){
+							$('body').removeClass('has-blog-back-to-top');
+						}
+					}
+				});
+
+				$('#desktop-back-to-top-button a').click(function(event){
+					event.preventDefault();
+					//$(window).scrollTop(0);
+					TweenMax.to(window, 1, {scrollTo:{y:0}, ease:Sine.easeInOut });
+				});
+
+			});
+		</script>
+
 	</div>
 <?php endif; ?>

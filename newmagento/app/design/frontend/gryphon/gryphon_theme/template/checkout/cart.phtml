@@ -332,6 +332,8 @@ and delivered together with the product."></textarea>
         text_container = $('<div class="text-container"></div>');
         text_container.append(table_row.find('.product-title').clone());
         text_container.append($(table_row.find('.product-price')[0]).clone());
+
+        text_container.append($(table_row.find('.item-options') ).clone());
         new_image_container.append(text_container);
 
         col_1.prepend(new_image_container);
@@ -339,6 +341,20 @@ and delivered together with the product."></textarea>
 
         console.log('row!');
       }
+
+      $('.view-tin-details').on('click', function(e){
+        console.log('view-tin-details click');
+        e.preventDefault();
+        var $that = $(this);
+        var $link = $(this).parent().parent().find('.item-options');
+        $link.slideToggle('slow', function(){
+            if($link.css('display') !== 'none')
+                $that.find('i').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+            else
+                $that.find('i').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+        });
+    });
+
     });
   </script>
   <?php endif; ?>

@@ -46,6 +46,10 @@ function load_scripts(){
 
     wp_enqueue_script('gryphon_script_01', THEMEROOT.'/js/plugins/gryphon/jquery.gryphon-mobile-wp-header.js', array('$'), '', true);
     wp_enqueue_script('gryphon_script_02', THEMEROOT.'/js/plugins/gryphon/jquery.gryphon-mobile-wp-sidebar.js', array('$'), '', true);
+
+    wp_enqueue_script('tweenmax', THEMEROOT.'/js/vendors/gsap/TweenMax.min.js', array('$'), '', true);
+    wp_enqueue_script('tweenmax1', THEMEROOT.'/js/vendors/gsap/easing/EasePack.min.js', array('tweenmax'), '', true);
+    wp_enqueue_script('tweenmax2', THEMEROOT.'/js/vendors/gsap/plugins/ScrollToPlugin.min.js', array('tweenmax'), '', true);
 }
 
 /********************************************************************************************************/
