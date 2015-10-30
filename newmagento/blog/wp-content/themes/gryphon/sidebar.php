@@ -98,15 +98,26 @@ if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 		<script type="text/javascript" src=""></script>
 		<script type="text/javascript">
 			jQuery(document).ready(function($) {
+
+				var body_element = $('body');
+				var window_element = $(window);
+				var main_container =  $('#content-wrapper .main-content > .image-text-content');
+
 				$(window).scroll(function(){
 
-					if($(window).scrollTop() > 1160){
-						if($('body').hasClass('has-blog-back-to-top') == false){
-							$('body').addClass('has-blog-back-to-top');
+					
+					// 522 = 120 + 340 + 62
+
+					window_element.scrollTop()
+					(main_container.height() - 522) < 
+
+					if(window_element.scrollTop() > 1160){
+						if(body_element.hasClass('has-blog-back-to-top') == false){
+							body_element.addClass('has-blog-back-to-top');
 						}
 					} else {
-						if($('body').hasClass('has-blog-back-to-top') == true){
-							$('body').removeClass('has-blog-back-to-top');
+						if(body_element.hasClass('has-blog-back-to-top') == true){
+							body_element.removeClass('has-blog-back-to-top');
 						}
 					}
 				});
