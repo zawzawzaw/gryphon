@@ -10,6 +10,24 @@ class Aemtech_Subscriptions_Model_Observer {
 		
 		if($action->getFullActionName() == 'checkout_cart_add')
 		{	
+			$sessionCustomer =Mage::getSingleton("customer/session");
+			if (!$sessionCustomer->isLoggedIn()) {
+				
+				Mage::getSingleton('core/session')->addError('Please login to purchase the subscription.');
+
+				//get URL model for cart/index
+				$loginurl = Mage::getModel('core/url')->getUrl('customer/account/login');
+
+				//set redirect
+				Mage::app()->getResponse()->setRedirect($loginurl);
+
+				//send redirect
+				Mage::app()->getResponse()->sendResponse();
+
+				//block further action
+				exit;
+			}
+			
 			$params = $action->getRequest()->getParams();
 			$options = urldecode($params['pg']); 
 			$product = $observer->getProduct();	
@@ -195,39 +213,5 @@ class Aemtech_Subscriptions_Model_Observer {
         }			  
 
     }
-	
-	public function orderSubscriptionsSetStatus(Varien_Event_Observer $observer)
-    {		
-		$orderNew = $observer->getEvent()->getOrder();		
-		$isSubscription = false;
-		$locationskuSGPArray = array("SGP-ART-1M", "SGP-ART-3M", "SGP-ART-6M", "SGP-ART-12M", "SGP-GUR-1M", "SGP-GUR-3M", "SGP-GUR-6M", "SGP-GUR-12M","INT-ART-1M", "INT-ART-3M", "INT-ART-6M", "INT-ART-12M", "INT-GUR-1M", "INT-GUR-3M", "INT-GUR-6M", "INT-GUR-12M");
-		
-		//#get all items
-		$items = $orderNew->getAllItems();			
-				
-		//#loop for all order items
-		foreach ($items as $itemId => $item)
-		{			  
-			$sku = $item->getSku();
-			if(in_array($sku, $locationskuSGPArray))
-			{
-				$isSubscription = true;
-			}			
-		}
-		
-		if($isSubscription)
-		{
-			// PG:: Update order status to Processing for subscription only			
-			try
-			{
-				$orderNew->setState(Mage_Sales_Model_Order::STATE_PROCESSING, true)->save();
-			}
-			catch(Exception $e)
-			{
-				Mage::log('Update order status to Processing for subscription only Exception::'.$e->getMessage());
-				//echo $e->getMessage();
-			}
-		}				
-    }  
 
 }
