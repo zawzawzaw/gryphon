@@ -164,6 +164,10 @@ strong {
   height: 100%;
   padding-top: 27px;
 }
+#question img {
+  width: 103px;
+  height: auto;
+}
 #question button {
   background-color: #252525;
   border: none;
@@ -178,6 +182,8 @@ strong {
   display: block;
   margin: 20px auto;
   width: 214px;
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
 #question button:hover {
   background-color: #ae4e0e;
@@ -196,6 +202,8 @@ strong {
   color: #464646;
   text-transform: uppercase;
   padding-top: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 .uploadifive-button {
   font-family: 'Gotham-Medium', Verdana, sans-serif;
@@ -370,7 +378,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #252525;
+  color: #ae4e0e;
 }
 .carousel,
 .item,
@@ -396,6 +404,14 @@ a:focus {
 .carousel .carousel-inner .bg1 {
   background-image: url('../images/content/slider-1.png');
   background-position: center top;
+}
+@media all and (max-width: 992px) {
+  .carousel .carousel-inner .bg1 {
+    background: url("../images/content/mobile-banner/brand-new-home-mobile-banner.jpg") no-repeat center bottom;
+    background-size: cover !important;
+    background-position-x: 0 !important;
+    background-position-y: 100% !important;
+  }
 }
  .ui-loader {
   display: none;
@@ -541,15 +557,17 @@ ul.messages {
   font-family: 'Gotham-Medium', Verdana, sans-serif;
   font-weight: 200;
   font-style: normal;
-  color: #c76e09 !important;
+  font-weight: 600 !important;
+  color: #ae4e0e !important;
 }
 #page-wrapper #header-wrapper .marquee div {
   font-family: 'Gotham-Medium', Verdana, sans-serif;
   font-weight: 200;
   font-style: normal;
   font-size: 10px;
+  font-weight: 600 !important;
   line-height: 28px;
-  color: #c76e09;
+  color: #ae4e0e;
   display: inline-block;
   text-transform: uppercase;
 }
@@ -1970,6 +1988,7 @@ div.home #social .image-text-content .instagram-images {
   margin-top: 25px;
 }
 div.home #social .image-text-content .instagram-images img {
+  width: 150px;
   /*width: 43%;*/
   margin-right: 10px;
   margin-bottom: 10px;
@@ -2398,6 +2417,7 @@ div.product .main-product .product-content .qty-wrapper a.minus {
   display: inline-block;
   text-align: center;
   font-size: 9px;
+  line-height: 20px;
 }
 div.product .main-product .product-content .qty-wrapper a.minus i {
   color: #ffffff;
@@ -2409,6 +2429,7 @@ div.product .main-product .product-content .qty-wrapper a.plus {
   display: inline-block;
   text-align: center;
   font-size: 9px;
+  line-height: 20px;
 }
 div.product .main-product .product-content .qty-wrapper a.plus i {
   color: #ffffff;
@@ -3764,6 +3785,10 @@ div.product .product-review .image-text-content .write-review input[type="text"]
   font-style: normal;
   font-size: 11px;
   line-height: 14px;
+  -webkit-appearance: none;
+  border-radius: 0;
+  border: none;
+  border: 1px solid #ccc;
 }
 div.product .product-review .image-text-content .write-review table {
   width: 100%;
@@ -3789,6 +3814,7 @@ div.product .product-review .image-text-content .write-review table td input {
   display: table-cell;
 }
 div.product .product-review .image-text-content .write-review textarea {
+  border: none;
   border: 1px solid #ccc;
   width: 100%;
   height: 107px;
@@ -3799,6 +3825,9 @@ div.product .product-review .image-text-content .write-review textarea {
   line-height: 14px;
   padding: 15px 0 0 15px;
   /*.placeholder(@dark-grey);*/
+  resize: none;
+  -webkit-appearance: none;
+  border-radius: 0;
 }
 div.product .product-review .image-text-content .write-review button.rate-btn {
   float: right;
@@ -3841,6 +3870,22 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .store {
   margin-top: 80px;
   padding-bottom: 120px!important;
+  /*
+  @media all and (max-width: 992px) {
+    .gifts-banner {
+      background: url("../images/content/gifts-banner.jpg") no-repeat center bottom!important;
+      background-size: cover !important;
+      background-position-x: 0 !important;
+      background-position-y: 100% !important;
+    }
+    .pantry-banner {
+      background: url("../images/content/pantry-banner.jpg") no-repeat center bottom!important;
+      background-size: cover !important;
+      background-position-x: 0 !important;
+      background-position-y: 100% !important;
+    }
+  }
+  */
 }
 @media all and (max-width: 992px) {
   .store {
@@ -3892,22 +3937,6 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   color: #ffffff;
   padding-left: 15px;
 }
-@media all and (max-width: 992px) {
-  .store .store-banner,
-  .store .gifts-banner,
-  .store .pantry-banner {
-    background: url("../images/content/store-banner.jpg") no-repeat center bottom;
-    background-size: cover !important;
-    background-position-x: 0 !important;
-    background-position-y: 100% !important;
-  }
-  .store .store-banner .image-text-content .caption,
-  .store .gifts-banner .image-text-content .caption,
-  .store .pantry-banner .image-text-content .caption {
-    width: 100% !important;
-    height: auto !important;
-  }
-}
 .store .gifts-banner {
   background: url("../images/content/gifts-banner.jpg") no-repeat center bottom !important;
   background-size: cover!important;
@@ -3923,14 +3952,29 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   color: #ffffff;
 }
 @media all and (max-width: 992px) {
+  .store .store-banner .image-text-content .caption,
+  .store .gifts-banner .image-text-content .caption,
+  .store .pantry-banner .image-text-content .caption {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .store .store-banner {
+    height: 257px !important;
+    background: url("../images/content/mobile-banner/brand-new-store-mobile-banner.jpg") no-repeat center bottom;
+    background-size: cover !important;
+    background-position-x: 0 !important;
+    background-position-y: 100% !important;
+  }
   .store .gifts-banner {
-    background: url("../images/content/gifts-banner.jpg") no-repeat center bottom !important;
+    height: 257px !important;
+    background: url("../images/content/mobile-banner/brand-new-gift-mobile-banner.jpg") no-repeat center bottom !important;
     background-size: cover !important;
     background-position-x: 0 !important;
     background-position-y: 100% !important;
   }
   .store .pantry-banner {
-    background: url("../images/content/pantry-banner.jpg") no-repeat center bottom !important;
+    height: 257px !important;
+    background: url("../images/content/mobile-banner/brand-new-pantry-mobile-banner.jpg") no-repeat center bottom !important;
     background-size: cover !important;
     background-position-x: 0 !important;
     background-position-y: 100% !important;
@@ -4496,6 +4540,20 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   vertical-align: middle;
   display: table-cell;
 }
+@media (max-width: 991px) {
+  .store .main-content .all-products .each-product .availability,
+  .store .main-content .all-search-products .each-product .availability {
+    top: -45px;
+    left: 7px;
+    width: 45px;
+    height: 45px;
+  }
+  .store .main-content .all-products .each-product .availability span,
+  .store .main-content .all-search-products .each-product .availability span {
+    font-size: 10px;
+    letter-spacing: 0.06em;
+  }
+}
 .store .main-content .all-products .each-product .tag,
 .store .main-content .all-search-products .each-product .tag {
   text-transform: none;
@@ -4765,9 +4823,15 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 @media all and (max-width: 992px) {
   .sign-up .signup-banner {
     height: 257px!important;
-    background: url("../images/content/signup-banner.jpg") no-repeat center center;
+    /*
+      background: url("../images/content/signup-banner.jpg") no-repeat center center;
+      background-size: cover !important;
+      background-position-x: 50%!important;
+      background-position-y: 100% !important;
+      */
+    background: url("../images/content/mobile-banner/brand-new-signup-mobile-banner.jpg") no-repeat center bottom;
     background-size: cover !important;
-    background-position-x: 50%!important;
+    background-position-x: 0 !important;
     background-position-y: 100% !important;
   }
 }
@@ -5459,7 +5523,13 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 @media all and (max-width: 992px) {
   .subscription-form .subscription-banner {
     height: 257px!important;
-    background: url("../images/content/subscription-form-banner.jpg") no-repeat center center;
+    /*
+      background: url("../images/content/subscription-form-banner.jpg") no-repeat center center;
+      background-size: cover !important;
+      background-position-x: 0 !important;
+      background-position-y: 100% !important;
+      */
+    background: url("../images/content/mobile-banner/brand-new-subscription-mobile-banner.jpg") no-repeat center bottom;
     background-size: cover !important;
     background-position-x: 0 !important;
     background-position-y: 100% !important;
@@ -5639,6 +5709,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   line-height: 16px;
   letter-spacing: 0.1em;
   color: #252525;
+  min-height: 32px;
 }
 .subscription-form .all-products .each-product h4 sup {
   font-family: 'Gotham-Book', Verdana, sans-serif;
@@ -5661,32 +5732,76 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   color: #777777;
 }
 .subscription-form .all-products .each-product p.product-qty {
-  width: 65px;
+  width: 74px;
   padding-left: 0px;
   text-align: center;
   margin: 0 auto;
+  /*
+        .add {
+          background: url(../images/icons/increase-qty.png) no-repeat;
+          width: 13px;
+          height: 13px;
+          display: inline-block;
+          text-align: right;
+          float: right;
+
+        }
+        .minus {
+          background: url(../images/icons/decrease-qty.png) no-repeat;
+          width: 13px;
+          height: 13px;
+          display: inline-block;
+          text-align: left;
+          float: left;
+        }
+        */
 }
 .subscription-form .all-products .each-product p.product-qty .add {
-  background: url(../images/icons/increase-qty.png) no-repeat;
-  width: 13px;
-  height: 13px;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   display: inline-block;
   text-align: right;
   float: right;
+  background-color: #bcbbbb;
+  width: 16px;
+  height: 20px;
+  text-align: center;
+  color: #fff;
+  line-height: 20px;
+}
+.subscription-form .all-products .each-product p.product-qty .add:before {
+  content: "\f067";
 }
 .subscription-form .all-products .each-product p.product-qty .minus {
-  background: url(../images/icons/decrease-qty.png) no-repeat;
-  width: 13px;
-  height: 13px;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   display: inline-block;
   text-align: left;
   float: left;
+  background-color: #bcbbbb;
+  width: 16px;
+  height: 20px;
+  text-align: center;
+  color: #fff;
+  line-height: 20px;
+}
+.subscription-form .all-products .each-product p.product-qty .minus:before {
+  content: "\f068";
 }
 .subscription-form .all-products .each-product p.product-qty span {
   text-align: center;
   float: left;
   line-height: 14px;
   width: 60%;
+  width: 41px;
+  background-color: #f6f4f1;
+  line-height: 20px;
 }
 .subscription-form .all-products .each-product p.price {
   font-family: "minion-pro", Verdana, sans-serif;
@@ -5734,24 +5849,41 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   padding: 0;
 }
 .subscription-form .all-products .selected-tea.sticky-version .small {
-  position: absolute;
-  top: 23px;
-  left: 61px;
-  letter-spacing: 0.05em;
+  /*
+          position: absolute;
+          top: 23px;
+          left: 61px;
+          letter-spacing: 0.05em;
+          */
+  display: none;
 }
 .subscription-form .all-products .selected-tea.sticky-version h2.selected_tea_count {
   padding: 0;
   position: absolute;
   top: 13px;
-  left: 15px;
+  right: 15px;
+  left: auto;
   text-align: left;
+  color: #ae4e0e;
+  font-size: 24px;
+  letter-spacing: 0.1em;
+}
+.subscription-form .all-products .selected-tea.sticky-version h2.selected_tea_count:after {
+  content: "/30";
+  color: #cccccc;
 }
 .subscription-form .all-products .selected-tea.sticky-version h4 {
   text-align: left;
   position: absolute;
-  top: 6px;
-  left: 60px;
+  top: 15px;
+  left: 19px;
   width: 220px;
+  font-family: "minion-pro", Verdana, sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  color: #ae4e0e;
+  text-transform: capitalize;
+  font-size: 12px !important;
 }
 .subscription-form .all-products .selected-tea.sticky-version h4 br {
   display: none;
@@ -5910,7 +6042,11 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .subscription-form .table-1 .col-5 .add-to-cart-btn:hover,
 .subscription-form .table-2 .col-5 .add-to-cart-btn:hover {
-  color: #ae4e0e;
+  color: #c76e09;
+}
+.subscription-form .table-1 .col-5 .add-to-cart-btn:hover span,
+.subscription-form .table-2 .col-5 .add-to-cart-btn:hover span {
+  color: #c76e09;
 }
 .subscription-form .table-1 .col-5 .add-to-cart-btn i,
 .subscription-form .table-2 .col-5 .add-to-cart-btn i {
@@ -5931,7 +6067,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .subscription-form .table-1 .col-5 .add-to-cart-btn span:hover,
 .subscription-form .table-2 .col-5 .add-to-cart-btn span:hover {
-  color: #ae4e0e;
+  color: #c76e09;
 }
 .subscription-form .table-1 .col-5 .add-to-cart-btn .ajax_loader_product,
 .subscription-form .table-2 .col-5 .add-to-cart-btn .ajax_loader_product {
@@ -6106,7 +6242,13 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 @media all and (max-width: 992px) {
   .subscription .subscription-banner {
     height: 257px!important;
-    background: url("../images/content/subscription-form-banner.jpg") no-repeat center center;
+    /*
+      background: url("../images/content/subscription-form-banner.jpg") no-repeat center center;
+      background-size: cover !important;
+      background-position-x: 0 !important;
+      background-position-y: 100% !important;
+      */
+    background: url("../images/content/mobile-banner/brand-new-subscription-mobile-banner.jpg") no-repeat center bottom;
     background-size: cover !important;
     background-position-x: 0 !important;
     background-position-y: 100% !important;
@@ -6427,9 +6569,15 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 @media all and (max-width: 992px) {
   .collections .collections-banner {
     height: 257px!important;
-    background: url("../images/content/collections-banner.jpg") no-repeat;
+    /*
+      background: url("../images/content/collections-banner.jpg") no-repeat;
+      background-size: cover !important;
+      background-position-x: 70% !important;
+      background-position-y: 100% !important;
+      */
+    background: url("../images/content/mobile-banner/brand-new-collection-mobile-banner.jpg") no-repeat center bottom;
     background-size: cover !important;
-    background-position-x: 70% !important;
+    background-position-x: 0 !important;
     background-position-y: 100% !important;
   }
 }
@@ -6628,6 +6776,10 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 @media all and (max-width: 992px) {
   .cart .cart-banner {
     height: 257px!important;
+    background: url("../images/content/mobile-banner/brand-new-collection-mobile-banner.jpg") no-repeat center bottom;
+    background-size: cover !important;
+    background-position-x: 0 !important;
+    background-position-y: 100% !important;
   }
 }
 .cart .cart-banner .image-text-content .caption-container {
@@ -7986,6 +8138,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .account .sidebar .block-content ul li a:hover {
   color: #ae4e0e;
+  font-weight: 600;
 }
 .account .col-main {
   border-left: 1px solid #dddddd;
@@ -9789,7 +9942,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .account .billing-and-shipping .billing-address ul li a:hover span,
 .account .billing-and-shipping .shipping-address ul li a:hover span {
-  color: #ae4e0e;
+  color: #c76e09;
 }
 .account .billing-and-shipping .billing-address .billing-address-details,
 .account .billing-and-shipping .shipping-address .billing-address-details,
@@ -9926,6 +10079,14 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .account .billing-and-shipping .gift-cards-tbl tr td a:hover {
   color: #ae4e0e;
 }
+.has-blog-back-to-top .blog #desktop-back-to-top-button a {
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+  filter: alpha(opacity=100);
+}
 .blog {
   margin-top: 81px!important;
   padding-bottom: 120px!important;
@@ -9937,6 +10098,10 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 @media all and (max-width: 992px) {
   .blog .blog-banner {
     height: 257px!important;
+    background: url("../images/content/mobile-banner/brand-new-blog-mobile-banner.jpg") no-repeat center bottom;
+    background-size: cover !important;
+    background-position-x: 0 !important;
+    background-position-y: 100% !important;
   }
 }
 .blog .blog-banner .image-text-content .caption-container {
@@ -9978,6 +10143,39 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .blog .blog-banner .image-text-content .caption-container .caption .read-more:hover {
   color: #ae4e0e;
   border-color: #ae4e0e;
+}
+.blog #desktop-back-to-top-button a {
+  font-family: "minion-pro", Verdana, sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 13px;
+  line-height: 16px;
+  text-transform: none;
+  letter-spacing: 0.03em;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #252525;
+  position: fixed;
+  bottom: 50px;
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  filter: alpha(opacity=0);
+}
+@media (max-width: 991px) {
+  .blog #desktop-back-to-top-button a {
+    display: none;
+  }
+}
+.blog #desktop-back-to-top-button a i {
+  font-size: 12px;
+  color: #ae4e0e;
+  margin-right: 7px;
+}
+.blog #desktop-back-to-top-button a:hover {
+  color: #c76e09;
 }
 .blog .main-content {
   margin-top: 80px;
@@ -10386,9 +10584,15 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 @media all and (max-width: 992px) {
   .trade .trade-banner {
     height: 257px!important;
-    background: url("../images/content/trade-banner.jpg") no-repeat center center;
+    /*
+      background: url("../images/content/trade-banner.jpg") no-repeat center center;
+      background-size: cover !important;
+      background-position-x: 10% !important;
+      background-position-y: 100% !important;
+      */
+    background: url("../images/content/mobile-banner/brand-new-trade-mobile-banner.jpg") no-repeat center bottom;
     background-size: cover !important;
-    background-position-x: 10% !important;
+    background-position-x: 0 !important;
     background-position-y: 100% !important;
   }
 }
@@ -10684,9 +10888,15 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 @media all and (max-width: 992px) {
   .trade-signup .trade-signup-banner {
     height: 257px!important;
-    background: url("../images/content/trade-banner.jpg") no-repeat center center;
+    /*
+      background: url("../images/content/trade-banner.jpg") no-repeat center center;
+      background-size: cover !important;
+      background-position-x: 10% !important;
+      background-position-y: 100% !important;
+      */
+    background: url("../images/content/mobile-banner/brand-new-trade-mobile-banner.jpg") no-repeat center bottom;
     background-size: cover !important;
-    background-position-x: 10% !important;
+    background-position-x: 0 !important;
     background-position-y: 100% !important;
   }
 }
@@ -11051,6 +11261,7 @@ div#footer-wrapper ul.share-ctas li a {
   display: inline-block;
   color: #464646;
   line-height: 24px;
+  background: transparent !important;
 }
 div#footer-wrapper ul.share-ctas li a i {
   font-size: 18px;
@@ -11155,6 +11366,10 @@ div#footer-wrapper .search span.ajax_msg {
 @media all and (max-width: 992px) {
   .our-story .our-story-banner {
     height: 257px!important;
+    background: url("../images/content/mobile-banner/brand-new-our-story-mobile-banner.jpg") no-repeat center bottom;
+    background-size: cover !important;
+    background-position-x: 0 !important;
+    background-position-y: 100% !important;
   }
 }
 .our-story .our-story-banner .image-text-content .caption-container {
@@ -11447,7 +11662,13 @@ div#footer-wrapper .search span.ajax_msg {
 @media all and (max-width: 992px) {
   .shipping-info .shipping-info-banner {
     height: 257px!important;
-    background: url("../images/content/shipping-info-banner.jpg");
+    /*
+      background: url("../images/content/shipping-info-banner.jpg");
+      background-size: cover !important;
+      background-position-x: 0 !important;
+      background-position-y: 100% !important;
+      */
+    background: url("../images/content/mobile-banner/brand-new-shipping-info-mobile-banner.jpg") no-repeat center bottom;
     background-size: cover !important;
     background-position-x: 0 !important;
     background-position-y: 100% !important;
@@ -11660,9 +11881,15 @@ div#footer-wrapper .search span.ajax_msg {
 @media all and (max-width: 992px) {
   .privacy .privacy-banner {
     height: 257px!important;
-    background: url("../images/content/signup-banner.jpg") no-repeat;
+    /*
+      background: url("../images/content/signup-banner.jpg") no-repeat;
+      background-size: cover !important;
+      background-position-x: 50%!important;
+      background-position-y: 100% !important;
+      */
+    background: url("../images/content/mobile-banner/brand-new-rewards-privacy-terms-mobile-banner.jpg") no-repeat center bottom;
     background-size: cover !important;
-    background-position-x: 50%!important;
+    background-position-x: 0 !important;
     background-position-y: 100% !important;
   }
 }
@@ -11875,11 +12102,17 @@ div#footer-wrapper .search span.ajax_msg {
 }
 @media all and (max-width: 992px) {
   .faq .faq-banner {
-    background: url("../images/content/faq-banner.jpg") no-repeat;
-    background-size: cover !important;
-    background-position-x: 10% !important;
-    background-position-y: 100% !important;
     height: 257px!important;
+    /*
+      background: url("../images/content/faq-banner.jpg") no-repeat;
+      background-size: cover !important;
+      background-position-x: 10% !important;
+      background-position-y: 100% !important;
+      */
+    background: url("../images/content/mobile-banner/brand-new-faq-mobile-banner.jpg") no-repeat center bottom;
+    background-size: cover !important;
+    background-position-x: 0 !important;
+    background-position-y: 100% !important;
   }
 }
 .faq .faq-banner .image-text-content .caption-container {
@@ -12353,8 +12586,14 @@ div#footer-wrapper .search span.ajax_msg {
 @media all and (max-width: 992px) {
   .careers .careers-banner {
     height: 257px!important;
-    background: url("../images/content/careers/careers-banner.jpg") no-repeat;
-    background-position-x: 64% !important;
+    /*
+      background: url("../images/content/careers/careers-banner.jpg") no-repeat;
+      background-position-x: 64% !important;
+      background-position-y: 100% !important;
+      */
+    background: url("../images/content/mobile-banner/brand-new-careers-mobile-banner.jpg") no-repeat center bottom;
+    background-size: cover !important;
+    background-position-x: 0 !important;
     background-position-y: 100% !important;
   }
 }
@@ -12766,6 +13005,10 @@ div#footer-wrapper .search span.ajax_msg {
   top: 5px;
   left: 58%;
   color: #ae4e0e;
+  font-family: "minion-pro", Verdana, sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  color: #c76e09;
 }
 .careers .main-content .forth-content .each-input {
   position: relative;
@@ -12982,9 +13225,15 @@ div#footer-wrapper .search span.ajax_msg {
 @media all and (max-width: 992px) {
   .rewards .rewards-banner {
     height: 257px!important;
-    background: url("../images/content/signup-banner.jpg") no-repeat;
+    /*
+      background: url("../images/content/signup-banner.jpg") no-repeat;
+      background-size: cover !important;
+      background-position-x: 50%!important;
+      background-position-y: 100% !important;
+      */
+    background: url("../images/content/mobile-banner/brand-new-rewards-privacy-terms-mobile-banner.jpg") no-repeat center bottom;
     background-size: cover !important;
-    background-position-x: 50%!important;
+    background-position-x: 0 !important;
     background-position-y: 100% !important;
   }
 }
@@ -13428,9 +13677,15 @@ div#footer-wrapper .search span.ajax_msg {
 @media all and (max-width: 992px) {
   .discover .discover-banner {
     height: 257px!important;
-    background: url("../images/content/discover/discover-banner.png") no-repeat;
-    background-size: cover;
-    background-position-x: 16% !important;
+    /*
+      background: url("../images/content/discover/discover-banner.png") no-repeat;
+      background-size: cover;
+      background-position-x: 16% !important;
+      background-position-y: 100% !important;
+      */
+    background: url("../images/content/mobile-banner/brand-new-discover-tea-mobile-banner.jpg") no-repeat center bottom;
+    background-size: cover !important;
+    background-position-x: 0 !important;
     background-position-y: 100% !important;
   }
 }
@@ -14424,4 +14679,19 @@ body.sales-order-history .single-order-item span {
   font-family: 'Gotham-Book', Verdana, sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+body.sales-order-history .single-order-item span.price {
+  font-family: "minion-pro", Verdana, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0.05em !important;
+}
+body.rewardpoints-index-points [data-theme-label="Points added"],
+body.rewardpoints-index-points [data-theme-label="Points used"] {
+  font-family: minion-pro, Verdana, sans-serif !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+  font-size: 12px !important;
+  letter-spacing: 0.05em !important;
 }
