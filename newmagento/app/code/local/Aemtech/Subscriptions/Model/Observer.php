@@ -48,7 +48,7 @@ class Aemtech_Subscriptions_Model_Observer {
                                 if($itemsku_type != $sku_type)
                                 {
                                 	// :: EDITED
-                                	// echo here for because add to cart changes to ajax 
+                                	// echoing here because add to cart changed to ajax 
                                 	echo 'Sorry, you either purchase  Singapore OR International Subscription not both.';
                                 	
                                     // Mage::getSingleton('core/session')->addError('Sorry, you either purchase  Singapore OR International Subscription not both.');                                    

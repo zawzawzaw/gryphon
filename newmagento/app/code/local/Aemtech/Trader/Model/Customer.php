@@ -48,6 +48,9 @@ class Aemtech_Trader_Model_Customer extends Mage_Customer_Model_Customer
         if(!$storeId){
             $storeId = $this->_getWebsiteStoreId($this->getSendemailStoreId());
         }
+
+        $salesEmail = Mage::getStoreConfig('trans_email/ident_sales/email');
+
         $emailTemplateVariables = array();
         $emailTemplateVariables['store url'] = $backUrl;
         $emailTemplateVariables['logo_alt'] = Mage::app()->getStore()->getFrontendName();
@@ -56,6 +59,7 @@ class Aemtech_Trader_Model_Customer extends Mage_Customer_Model_Customer
         $emailTemplate->setSenderName(Mage::app()->getStore()->getFrontendName());
         $emailTemplate->setSenderEmail(Mage::getStoreConfig('trans_email/ident_general/email'));
         $emailTemplate->setTemplateSubject("Welcome to " . Mage::app()->getStore()->getFrontendName() . "! Trader registration");
+        $emailTemplate->addBcc($salesEmail);
         $emailTemplate->setStoreId($storeId);
         $emailTemplate->setTemplateParams(array('customer' => $this, 'back_url' => $backUrl, 'store' => Mage::app()->getStore()->getId()));
         $emailTemplate->send($this->getEmail(), $this->getName(), $emailTemplateVariables);

@@ -79,3 +79,51 @@
         </div>
     </div>
 </div>
+<?php 
+$order = Mage::getSingleton('sales/order'); 
+$order->loadByIncrementId($this->getOrderId());
+$_items = $order->getAllItems();
+$order_total = $order->getGrandTotal();
+$order_date = $order->getCreatedAt();
+$order_shipping_cost = $order->getShippingAmount();
+$order_tax_refunded = $order->getTaxRefunded();
+$order_shipping_method = $order->getShippingDescription();
+// $order_coupon_code = $order->coupon_code();
+$order_coupon_code = '';
+$all_order_items = [];
+$currency_code = Mage::app()->getStore()->getCurrentCurrencyCode();
+
+foreach($_items as $key => $_item) {
+    $all_order_items[$key]['id'] = $_item->getItemId();
+    $product = Mage::getModel('catalog/product')->load($all_order_items['id']);
+    $categoryIds = $product->getCategoryIds();
+    $categoryName = '';
+    if (isset($categoryIds[0])){
+        $category = Mage::getModel('catalog/category')->setStoreId(Mage::app()->getStore()->getId())->load($categoryIds[0]);
+        $categoryName = $category->getName();
+    }
+    $all_order_items[$key]['name'] = $_item->getName();
+    $all_order_items[$key]['sku'] = $_item->getSku();
+    $all_order_items[$key]['category'] = $categoryName;
+    $all_order_items[$key]['price'] = number_format(abs($_item->getPrice()),2);           
+    $all_order_items[$key]['currency'] = $currency_code;
+    $all_order_items[$key]['quantity'] = number_format(abs($_item->getQtyOrdered()),2);
+}
+?>
+<script>
+    dataLayer.push({
+        'transactionId': "<?php echo $this->getOrderId(); ?>",
+        'Date': '<?php echo $order_date; ?>',
+        'Type': 'sale',
+        'Affiliation': '',
+        'Total': '<?php echo number_format(abs($order_total),2); ?>',
+        'Shipping': '<?php echo number_format(abs($order_shipping_cost),2); ?>',
+        'Tax': '<?php echo number_format(abs($order_tax_refunded),2); ?>',
+        'PaymentType': 'PayPal',
+        'Currency': '<?php echo $currency_code; ?>',
+        'ShippingMethod': '<?php echo $order_shipping_method; ?>',
+        'PromoCode': '<?php echo $order_coupon_code; ?>',
+        'Products': <?php echo json_encode($all_order_items); ?>,
+        'event': ''
+    });
+</script>

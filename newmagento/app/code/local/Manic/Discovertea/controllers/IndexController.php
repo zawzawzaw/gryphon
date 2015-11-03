@@ -21,26 +21,54 @@ class Manic_Discovertea_IndexController extends Mage_Core_Controller_Front_Actio
 
 		//Basic parameters that need to be provided for oAuth authentication
 	    //on Magento
-	    $params = array(
-	        'siteUrl' => 'http://test.gryphontea.com/magento/oauth',
-	        'requestTokenUrl' => 'http://test.gryphontea.com/magento/oauth/initiate',
-	        'accessTokenUrl' => 'http://test.gryphontea.com/magento/oauth/token',
-	        'authorizeUrl' => 'http://test.gryphontea.com/magento/admin/index.php/oauth_authorize',//This URL is used only if we authenticate as Admin user type
-	        'consumerKey' => '678c0d8c77bd8d473c92a85e27906d00',//Consumer key registered in server administration
-	        'consumerSecret' => '753fedef49d9eeb9f271b19aff7f6d8b',//Consumer secret registered in server administration
-	        'callbackUrl' => 'http://test.gryphontea.com/magento/discovertea/index/callback',//Url of callback action below
-	    );
+	    // $params = array(
+	    //     'siteUrl' => 'http://test.gryphontea.com/magento/oauth',
+	    //     'requestTokenUrl' => 'http://test.gryphontea.com/magento/oauth/initiate',
+	    //     'accessTokenUrl' => 'http://test.gryphontea.com/magento/oauth/token',
+	    //     'authorizeUrl' => 'http://test.gryphontea.com/magento/admin/index.php/oauth_authorize',//This URL is used only if we authenticate as Admin user type
+	    //     'consumerKey' => '678c0d8c77bd8d473c92a85e27906d00',//Consumer key registered in server administration
+	    //     'consumerSecret' => '753fedef49d9eeb9f271b19aff7f6d8b',//Consumer secret registered in server administration
+	    //     'callbackUrl' => 'http://test.gryphontea.com/magento/discovertea/index/callback',//Url of callback action below
+	    // );
 
-	    // Initiate oAuth consumer with above parameters
-	    $consumer = new Zend_Oauth_Consumer($params);
-	    // Get request token
-	    $requestToken = $consumer->getRequestToken();
-	    // Get session
-	    $session = Mage::getSingleton('core/session');
-	    // Save serialized request token object in session for later use
-	    $session->setRequestToken(serialize($requestToken));
-	    // Redirect to authorize URL
-	    $consumer->redirect();
+	    // // Initiate oAuth consumer with above parameters
+	    // $consumer = new Zend_Oauth_Consumer($params);
+	    // // Get request token
+	    // $requestToken = $consumer->getRequestToken();
+	    // // Get session
+	    // $session = Mage::getSingleton('core/session');
+	    // // Save serialized request token object in session for later use
+	    // $session->setRequestToken(serialize($requestToken));
+	    // // Redirect to authorize URL
+	    // $consumer->redirect();
+
+	    $order = Mage::getSingleton('sales/order'); 
+		$order->loadByIncrementId(145000288);
+		$_items = $order->getAllItems();
+		$all_order_items = [];
+		$currency_code = Mage::app()->getStore()->getCurrentCurrencyCode();
+
+		foreach($_items as $_item) {
+			$all_order_items['id'] = $_item->getItemId();
+			$product = Mage::getModel('catalog/product')->load($all_order_items['id']);
+			$categoryIds = $product->getCategoryIds();
+			$categoryName = '';
+			if (isset($categoryIds[0])){
+				$category = Mage::getModel('catalog/category')->setStoreId(Mage::app()->getStore()->getId())->load($categoryIds[0]);
+				$categoryName = $category->getName();
+			}
+			$all_order_items['name'] = $_item->getName();
+			$all_order_items['sku'] = $_item->getSku();
+			$all_order_items['category'] = $categoryName;
+			$all_order_items['price'] = number_format(abs($_item->getPrice()),2);			
+			$all_order_items['currency'] = $currency_code;
+			$all_order_items['quantity'] = number_format(abs($_item->getQtyOrdered()),2);
+			$all_order_items['date'] = $_item->getCreatedAt();
+		}
+
+		print_r(json_encode($all_order_items));
+
+		exit();
 
 	    return;
 	}

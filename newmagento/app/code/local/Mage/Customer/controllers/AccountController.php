@@ -214,14 +214,10 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
             $session->setBeforeAuthUrl( $this->_getHelper('customer')->getDashboardUrl());
         } else {
             if (!$session->getAfterAuthUrl()) {
-                $session->setAfterAuthUrl($session->getBeforeAuthUrl());                
+                $session->setAfterAuthUrl($session->getBeforeAuthUrl());
             }
             if ($session->isLoggedIn()) {
-                if(strpos($session->getAfterAuthUrl(true),'trader/customer_account') !== false){
-                    $session->setBeforeAuthUrl(Mage::getUrl('customer/account'));
-                }else {
-                    $session->setBeforeAuthUrl($session->getAfterAuthUrl(true));
-                }                
+                $session->setBeforeAuthUrl($session->getAfterAuthUrl(true));
             }
         }
         $this->_redirectUrl($session->getBeforeAuthUrl(true));
