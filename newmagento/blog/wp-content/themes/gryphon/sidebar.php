@@ -90,5 +90,46 @@ if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 				}
 			?>			
 		</div>
+
+		
+		<div id="desktop-back-to-top-button">
+			<a href="#"><i class="my-arrow-left"></i>Back to Top</a>
+		</div>
+		<script type="text/javascript" src=""></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+
+				var body_element = $('body');
+				var window_element = $(window);
+				var main_container =  $('#content-wrapper .main-content > .image-text-content');
+
+				$(window).scroll(function(){
+
+					
+					// 522 = 120 + 340 + 62
+
+					window_element.scrollTop()
+					(main_container.height() - 522) < 
+
+					if(window_element.scrollTop() > 1160){
+						if(body_element.hasClass('has-blog-back-to-top') == false){
+							body_element.addClass('has-blog-back-to-top');
+						}
+					} else {
+						if(body_element.hasClass('has-blog-back-to-top') == true){
+							body_element.removeClass('has-blog-back-to-top');
+						}
+					}
+				});
+
+				$('#desktop-back-to-top-button a').click(function(event){
+					event.preventDefault();
+					//$(window).scrollTop(0);
+					TweenMax.to(window, 1, {scrollTo:{y:0}, ease:Sine.easeInOut });
+				});
+
+			});
+		</script>
+
 	</div>
 <?php endif; ?>

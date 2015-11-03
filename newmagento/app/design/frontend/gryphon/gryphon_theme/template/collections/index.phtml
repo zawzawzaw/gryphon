@@ -4,7 +4,9 @@ foreach($collection_categories as $collection_category):
 	$_category = Mage::getModel('catalog/category')->load($collection_category->getId());
 	$caturl     = $_category->getURL();
 	$catname     = $_category->getName();
-	$catdesc     = $_category->getDescription();
+	//$catdesc     = $_category->getDescription();
+	$catdesc     = $_category->getMetaDescription();
+	
 	$catimgurl     = $_category->getImageUrl();
 ?>
 	<div class="row collection-row">

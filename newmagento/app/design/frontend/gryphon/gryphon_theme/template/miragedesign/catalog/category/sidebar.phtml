@@ -29,7 +29,8 @@ $allowCategoriesIDs = $this->getAllowCategoires();
     <?php endif; ?>
     
     <form action="" id="ajax-filter-form" name="ajax-filter-form" class="<?php echo $current_category_data['parent_id']; ?>">
-        <?php if($current_category_data['url_key']=="store" || $current_category_data['parent_id']==5): ?>
+
+        <?php if($current_category_data['url_key']=="store" || $current_category_data['parent_id']==5 || $current_category_data['url_key']=="feature"): ?>
         <div class="each-filter-section fixed-fitler">
             <div class="all-inputs">
                 <div class="each-input">
@@ -166,8 +167,8 @@ $allowCategoriesIDs = $this->getAllowCategoires();
         </div> <!-- store-sort-expandable-container -->
 
         <div id="store-filter-expandable-container">
-            
-            <?php if($current_category_data['url_key']=="store"): ?>
+
+            <?php if($current_category_data['url_key']=="store" || $current_category_data['parent_id']==5 || $current_category_data['url_key']=="feature"): ?>
             <div id="store-filter-expandable-checkboxes">
                 
                 
@@ -201,6 +202,12 @@ $allowCategoriesIDs = $this->getAllowCategoires();
     </form>
 
 </div>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $('#content-wrapper.store .side-bar-mobile').gryphon_mobile_store_sidebar();  // moved this here.
+    });
+</script>
+
 <?php endif; ?>
 <?php //endif; ?>
 <script type="text/javascript">    
@@ -210,7 +217,7 @@ $allowCategoriesIDs = $this->getAllowCategoires();
     var ajaxSearchMobile;
     jQuery(document).ready(function($) {
         <?php if(in_array($current_category_data['entity_id'], $allowCategoriesIDs) || in_array($current_category_data['parent_id'], $allowCategoriesIDs) || $current_category_data['url_key']=="store"): ?> 
-            $('#content-wrapper.store .side-bar-mobile').gryphon_mobile_store_sidebar();
+            //$('#content-wrapper.store .side-bar-mobile').gryphon_mobile_store_sidebar();
         <?php endif; ?>
         //<![CDATA[        
         ajaxSearch = new Ajaxsearch("ajax-filter-form");

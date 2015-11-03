@@ -693,6 +693,7 @@ var initialLoad = true;
 
 
         $('.view-tin-details').on('click', function(e){
+            console.log('view-tin-details click');
             e.preventDefault();
             var $that = $(this);
             var $link = $(this).parent().parent().find('.item-options');

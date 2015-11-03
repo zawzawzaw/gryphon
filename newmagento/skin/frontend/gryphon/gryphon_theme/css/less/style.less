@@ -107,6 +107,13 @@ background-size:cover;
 .carousel .carousel-inner .bg1 {
 background-image:url('../images/content/slider-1.png');
 background-position: center top;
+
+  @media all and (max-width: 992px) {
+    background: url("../images/content/mobile-banner/brand-new-home-mobile-banner.jpg") no-repeat center bottom;
+    background-size: cover !important;
+    background-position-x: 0 !important;
+    background-position-y: 100% !important;
+  }
 }
 ​
 .ui-loader {
@@ -231,13 +238,18 @@ ul.messages {
         height: 30px;
 
         .gotham-medium;
-        color: @dark-orange2 !important;
+        font-weight: 600 !important;
+        //color: @dark-orange2 !important;
+        color: @dark-orange !important;
 
         div {
           .gotham-medium;
           font-size: 10px;
+          font-weight: 600 !important;
+
           line-height: 28px;
-          color: @dark-orange2;
+          //color: @dark-orange2;
+          color: @dark-orange;
           display: inline-block;
           text-transform: uppercase;
         }
@@ -1630,6 +1642,8 @@ div.home {
     }
   }
 
+  
+
   #company-story {
     //border-bottom: 1px solid @light-grey;
     border-bottom: 1px solid @border-grey;
@@ -1697,6 +1711,8 @@ div.home {
       .instagram-images {
         margin-top: 25px;
         img {
+          width: 150px;
+
           /*width: 43%;*/
           @media all and (max-width: 1199px) {
             width: 43%;
@@ -2144,6 +2160,7 @@ div.product {
           display: inline-block;
           text-align: center;
           font-size: 9px;
+          line-height: 20px;
           i {
             color: @white;
           }
@@ -2155,6 +2172,7 @@ div.product {
           display: inline-block;
           text-align: center;
           font-size: 9px;
+          line-height: 20px;
           i {
             color: @white;
           }
@@ -3526,6 +3544,11 @@ div.product {
           .gotham-book;
           font-size: 11px;
           line-height: 14px;
+          -webkit-appearance: none;
+          border-radius: 0;
+          border: none;
+          border: 1px solid #ccc;
+
         }
 
         table {
@@ -3553,6 +3576,7 @@ div.product {
         }        
 
         textarea {
+          border: none;
           border: 1px solid #ccc;
           width: 100%;
           height: 107px;
@@ -3561,6 +3585,9 @@ div.product {
           line-height: 14px;
           padding: 15px 0 0 15px;
           /*.placeholder(@dark-grey);*/
+          resize: none;
+          -webkit-appearance: none;
+          border-radius: 0;
         }
 
         button.rate-btn {
@@ -3652,23 +3679,12 @@ div.product {
       }
     }    
   }
-  @media all and (max-width: 992px) {
-    .store-banner, .gifts-banner, .pantry-banner {
-      background: url("../images/content/store-banner.jpg") no-repeat center bottom;
-      background-size: cover !important;
-      background-position-x: 0 !important;
-      background-position-y: 100% !important;
-      .image-text-content {
-        .caption {
-          width: 100% !important;
-          height: auto !important;
-        }
-      }
-    }
-  }
+  
   .gifts-banner {
     background: url("../images/content/gifts-banner.jpg") no-repeat center bottom!important;
     background-size: cover!important;
+
+
 
     h1 {
       color: @white;
@@ -3682,6 +3698,7 @@ div.product {
       color: @white;
     }
   }
+  /*
   @media all and (max-width: 992px) {
     .gifts-banner {
       background: url("../images/content/gifts-banner.jpg") no-repeat center bottom!important;
@@ -3695,8 +3712,40 @@ div.product {
       background-position-x: 0 !important;
       background-position-y: 100% !important;
     }
-
   }
+  */
+  @media all and (max-width: 992px) {
+    .store-banner, .gifts-banner, .pantry-banner {
+      .image-text-content {
+        .caption {
+          width: 100% !important;
+          height: auto !important;
+        }
+      }
+    }
+    .store-banner{
+      height: 257px !important;
+      background: url("../images/content/mobile-banner/brand-new-store-mobile-banner.jpg") no-repeat center bottom;
+      background-size: cover !important;
+      background-position-x: 0 !important;
+      background-position-y: 100% !important;
+    }
+    .gifts-banner{
+      height: 257px !important;
+      background: url("../images/content/mobile-banner/brand-new-gift-mobile-banner.jpg") no-repeat center bottom !important;
+      background-size: cover !important;
+      background-position-x: 0 !important;
+      background-position-y: 100% !important;
+    }
+    .pantry-banner{
+      height: 257px !important;
+      background: url("../images/content/mobile-banner/brand-new-pantry-mobile-banner.jpg") no-repeat center bottom !important;
+      background-size: cover !important;
+      background-position-x: 0 !important;
+      background-position-y: 100% !important;
+    }
+  }
+
 
 
   .main-content {
@@ -4232,6 +4281,21 @@ div.product {
             display: table-cell;
           }
         }
+        @media (max-width: 991px) {
+          .availability {
+            top: -45px;
+            left: 7px;
+
+            width: 45px;
+            height: 45px;
+
+            span{
+              font-size: 10px;
+              letter-spacing: 0.06em;
+            }
+          }
+
+        }
 
         .tag {
           text-transform: none;
@@ -4490,9 +4554,16 @@ div.product {
     background-size: cover;
     @media all and (max-width: 992px) {
       height: 257px!important;  
+      /*
       background: url("../images/content/signup-banner.jpg") no-repeat center center;
       background-size: cover !important;
       background-position-x: 50%!important;
+      background-position-y: 100% !important;
+      */
+
+      background: url("../images/content/mobile-banner/brand-new-signup-mobile-banner.jpg") no-repeat center bottom;
+      background-size: cover !important;
+      background-position-x: 0 !important;
       background-position-y: 100% !important;
     }
     
@@ -5156,7 +5227,13 @@ div.product {
     background-size: cover;
     @media all and (max-width: 992px) {
       height: 257px!important;  
+      /*
       background: url("../images/content/subscription-form-banner.jpg") no-repeat center center;
+      background-size: cover !important;
+      background-position-x: 0 !important;
+      background-position-y: 100% !important;
+      */
+      background: url("../images/content/mobile-banner/brand-new-subscription-mobile-banner.jpg") no-repeat center bottom;
       background-size: cover !important;
       background-position-x: 0 !important;
       background-position-y: 100% !important;
@@ -5343,7 +5420,9 @@ div.product {
         font-size: 12px;
         line-height: 16px;
         letter-spacing: 0.1em;
-        color: @dark-grey;          
+        color: @dark-grey;    
+        min-height: 32px;
+
         sup {
           .gotham-book;
           font-size: 6px;
@@ -5363,12 +5442,15 @@ div.product {
         color: @new-grey-2;
       }
       p.product-qty {
-        width: 65px;
+        //width: 65px;
+        //width: 85px;
+        width: 74px;
+
         padding-left: 0px;
         text-align: center;
         margin: 0 auto;
 
-
+        /*
         .add {
           background: url(../images/icons/increase-qty.png) no-repeat;
           width: 13px;
@@ -5386,12 +5468,70 @@ div.product {
           text-align: left;
           float: left;
         }
+        */
+
+        .add{
+          display: inline-block;
+          font: normal normal normal 14px/1 FontAwesome;
+          font-size: inherit;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+
+          //width: 13px;
+          //height: 13px;
+          display: inline-block;
+          text-align: right;
+          float: right;
+
+          background-color: #bcbbbb;
+          width: 16px;
+          height: 20px;
+
+          text-align: center;
+          color: #fff;
+          line-height: 20px;
+
+          &:before{
+            content: "\f067";
+          }
+        }
+        .minus{
+          display: inline-block;
+          font: normal normal normal 14px/1 FontAwesome;
+          font-size: inherit;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+
+          //width: 13px;
+          //height: 13px;
+          display: inline-block;
+          text-align: left;
+          float: left;
+
+          background-color: #bcbbbb;
+          width: 16px;
+          height: 20px;
+
+          text-align: center;
+          color: #fff;
+          line-height: 20px;
+
+          &:before{
+            content: "\f068";
+          }
+        }
 
         span {
           text-align: center;
           float: left;
           line-height: 14px;
           width: 60%;
+
+          width: 41px;
+          background-color: #f6f4f1;
+          line-height: 20px;
         }
       }
       p.price {
@@ -5448,25 +5588,48 @@ div.product {
         padding: 0;
 
         .small{
+          /*
           position: absolute;
           top: 23px;
           left: 61px;
           letter-spacing: 0.05em;
+          */
+          
+          display: none;
         }
         h2.selected_tea_count{
           padding: 0;
           position: absolute;
           top: 13px;
-          left: 15px;
+          //left: 15px;
+          right: 15px;
+          left: auto;
+
           text-align: left;
+          color: @dark-orange;
+          font-size: 24px;
+          letter-spacing: 0.1em;
+
+          &:after{
+            content: "/30";
+            color: #cccccc;
+          }
 
         }
         h4{
           text-align: left;
           position: absolute;
-          top: 6px;
-          left: 60px;
+          top: 15px;
+          //left: 60px;
+          //left: 15px;
+          left: 19px;
           width: 220px;
+
+          .minion-pro-semibold-italic;
+          //color: @dark-orange2;
+          color: @dark-orange;
+          text-transform: capitalize;
+          font-size: 12px !important;
 
           br{
             display: none;
@@ -5615,7 +5778,12 @@ div.product {
         position: relative;
         /*padding-left: 28px;*/
         &:hover {
-          color: @dark-orange;
+          //color: @dark-orange;
+          color: @dark-orange2;
+
+          span{
+            color: @dark-orange2;
+          }
         }
         i {
           font-size: 10px;  
@@ -5630,7 +5798,8 @@ div.product {
           line-height: 16px;
           color: @dark-grey;
           &:hover {
-            color: @dark-orange;
+            //color: @dark-orange;
+            color: @dark-orange2;
           }
         }
         .ajax_loader_product {
@@ -5809,7 +5978,13 @@ div.product {
     background-size: cover;
     @media all and (max-width: 992px) {
       height: 257px!important;  
+      /*
       background: url("../images/content/subscription-form-banner.jpg") no-repeat center center;
+      background-size: cover !important;
+      background-position-x: 0 !important;
+      background-position-y: 100% !important;
+      */
+      background: url("../images/content/mobile-banner/brand-new-subscription-mobile-banner.jpg") no-repeat center bottom;
       background-size: cover !important;
       background-position-x: 0 !important;
       background-position-y: 100% !important;
@@ -6144,9 +6319,15 @@ div.product {
     background-size: cover;
     @media all and (max-width: 992px) {
       height: 257px!important;
+      /*
       background: url("../images/content/collections-banner.jpg") no-repeat;
       background-size: cover !important;
       background-position-x: 70% !important;
+      background-position-y: 100% !important;
+      */
+      background: url("../images/content/mobile-banner/brand-new-collection-mobile-banner.jpg") no-repeat center bottom;
+      background-size: cover !important;
+      background-position-x: 0 !important;
       background-position-y: 100% !important;
     }
     .image-text-content {
@@ -6348,7 +6529,11 @@ div.product {
     background: url("../images/content/collections-banner.jpg") no-repeat;
     background-size: cover;
     @media all and (max-width: 992px) {
-      height: 257px!important;  
+      height: 257px!important;
+      background: url("../images/content/mobile-banner/brand-new-collection-mobile-banner.jpg") no-repeat center bottom;
+      background-size: cover !important;
+      background-position-x: 0 !important;
+      background-position-y: 100% !important;
     }
     .image-text-content {
       .caption-container {
@@ -7650,6 +7835,7 @@ div.product {
             color: #707070;
             &:hover {
               color: @dark-orange;
+              font-weight: 600;
               // font-weight: bold;
             }
           }
@@ -9522,7 +9708,8 @@ div.product {
             }
             &:hover {
               span {
-                color: @dark-orange;  
+                color: @dark-orange2;
+
               }
             }
           }
@@ -9624,6 +9811,12 @@ div.product {
 // blog
 //////////////////////
 
+.has-blog-back-to-top{
+  .blog #desktop-back-to-top-button a{
+    .opacity(1);
+  }
+}
+
 .blog {
   margin-top: 81px!important;
   padding-bottom: 120px!important;
@@ -9632,6 +9825,12 @@ div.product {
     background-size: cover;
     @media all and (max-width: 992px) {
       height: 257px!important;  
+
+      background: url("../images/content/mobile-banner/brand-new-blog-mobile-banner.jpg") no-repeat center bottom;
+      background-size: cover !important;
+      background-position-x: 0 !important;
+      background-position-y: 100% !important;
+
     }
     .image-text-content {
       .caption-container {
@@ -9674,6 +9873,37 @@ div.product {
         }
       }
       
+    }
+  }
+
+
+  #desktop-back-to-top-button a{
+    .minion-pro-semibold-italic;
+    font-size: 13px;
+    line-height: 16px;
+    text-transform: none;
+    letter-spacing: 0.03em;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #252525;
+
+    position: fixed;
+    bottom: 50px;
+
+    @media (max-width: 991px) {
+      display: none;
+    }
+
+    .opacity(0);
+
+    i{
+      font-size: 12px;
+      color: #ae4e0e;
+      margin-right: 7px;
+    }
+
+    &:hover{
+      color: @dark-orange2;
     }
   }
   .main-content {    
@@ -10100,9 +10330,15 @@ div.product {
     background-size: cover;
     @media all and (max-width: 992px) {
       height: 257px!important;
+      /*
       background: url("../images/content/trade-banner.jpg") no-repeat center center;
       background-size: cover !important;
       background-position-x: 10% !important;
+      background-position-y: 100% !important;
+      */
+      background: url("../images/content/mobile-banner/brand-new-trade-mobile-banner.jpg") no-repeat center bottom;
+      background-size: cover !important;
+      background-position-x: 0 !important;
       background-position-y: 100% !important;
     }
     .image-text-content {
@@ -10424,9 +10660,16 @@ div.product {
     @media all and (max-width: 992px) {
       height: 257px!important;
 
+      /*
       background: url("../images/content/trade-banner.jpg") no-repeat center center;
       background-size: cover !important;
       background-position-x: 10% !important;
+      background-position-y: 100% !important;
+      */
+
+      background: url("../images/content/mobile-banner/brand-new-trade-mobile-banner.jpg") no-repeat center bottom;
+      background-size: cover !important;
+      background-position-x: 0 !important;
       background-position-y: 100% !important;
     }
     .image-text-content {
@@ -10817,6 +11060,7 @@ div#footer-wrapper {
         display: inline-block;
         color: #464646;
         line-height: 24px;
+        background: transparent !important;
 
         i {
           font-size: 18px;          
@@ -10944,6 +11188,10 @@ div#footer-wrapper {
     background-size: cover;
     @media all and (max-width: 992px) {
       height: 257px!important;  
+      background: url("../images/content/mobile-banner/brand-new-our-story-mobile-banner.jpg") no-repeat center bottom;
+      background-size: cover !important;
+      background-position-x: 0 !important;
+      background-position-y: 100% !important;
     }
     .image-text-content {
       .caption-container {
@@ -11315,7 +11563,13 @@ div#footer-wrapper {
     @media all and (max-width: 992px) {
       height: 257px!important;  
 
+      /*
       background: url("../images/content/shipping-info-banner.jpg");
+      background-size: cover !important;
+      background-position-x: 0 !important;
+      background-position-y: 100% !important;
+      */
+      background: url("../images/content/mobile-banner/brand-new-shipping-info-mobile-banner.jpg") no-repeat center bottom;
       background-size: cover !important;
       background-position-x: 0 !important;
       background-position-y: 100% !important;
@@ -11573,9 +11827,15 @@ div#footer-wrapper {
     @media all and (max-width: 992px) {
       height: 257px!important;  
 
+      /*
       background: url("../images/content/signup-banner.jpg") no-repeat;
       background-size: cover !important;
       background-position-x: 50%!important;
+      background-position-y: 100% !important;
+      */
+      background: url("../images/content/mobile-banner/brand-new-rewards-privacy-terms-mobile-banner.jpg") no-repeat center bottom;
+      background-size: cover !important;
+      background-position-x: 0 !important;
       background-position-y: 100% !important;
     }
     .image-text-content {
@@ -11859,11 +12119,18 @@ div#footer-wrapper {
     background: url("../images/content/faq-banner.jpg") no-repeat;
     background-size: cover;
     @media all and (max-width: 992px) {
+      height: 257px!important;  
+
+      /*
       background: url("../images/content/faq-banner.jpg") no-repeat;
       background-size: cover !important;
       background-position-x: 10% !important;
       background-position-y: 100% !important;
-      height: 257px!important;  
+      */
+      background: url("../images/content/mobile-banner/brand-new-faq-mobile-banner.jpg") no-repeat center bottom;
+      background-size: cover !important;
+      background-position-x: 0 !important;
+      background-position-y: 100% !important;
     }
     .image-text-content {
       .caption-container {
@@ -12398,8 +12665,14 @@ div#footer-wrapper {
     @media all and (max-width: 992px) {
       height: 257px!important;  
 
+      /*
       background: url("../images/content/careers/careers-banner.jpg") no-repeat;
       background-position-x: 64% !important;
+      background-position-y: 100% !important;
+      */
+      background: url("../images/content/mobile-banner/brand-new-careers-mobile-banner.jpg") no-repeat center bottom;
+      background-size: cover !important;
+      background-position-x: 0 !important;
       background-position-y: 100% !important;
     }
     .image-text-content {
@@ -12879,6 +13152,7 @@ div#footer-wrapper {
         }
 
         .italic {
+          
           .minion-pro-italic;
           font-size: 13.5px;
           line-height: 22px;
@@ -12887,8 +13161,11 @@ div#footer-wrapper {
         .ajax_msg {
           position: absolute;
           top: 5px;
-            left: 58%;
+          left: 58%;
           color: #ae4e0e;
+
+          .minion-pro-semibold-italic;
+          color: @dark-orange2;
         }
 
       }
@@ -13120,9 +13397,15 @@ div#footer-wrapper {
     @media all and (max-width: 992px) {
       height: 257px!important;  
 
+      /*
       background: url("../images/content/signup-banner.jpg") no-repeat;
       background-size: cover !important;
       background-position-x: 50%!important;
+      background-position-y: 100% !important;
+      */
+      background: url("../images/content/mobile-banner/brand-new-rewards-privacy-terms-mobile-banner.jpg") no-repeat center bottom;
+      background-size: cover !important;
+      background-position-x: 0 !important;
       background-position-y: 100% !important;
     }
     .image-text-content {
@@ -13659,9 +13942,16 @@ div#footer-wrapper {
     background-size: cover;
     @media all and (max-width: 992px) {
       height: 257px!important;  
+
+      /*
       background: url("../images/content/discover/discover-banner.png") no-repeat;
       background-size: cover;
       background-position-x: 16% !important;
+      background-position-y: 100% !important;
+      */
+      background: url("../images/content/mobile-banner/brand-new-discover-tea-mobile-banner.jpg") no-repeat center bottom;
+      background-size: cover !important;
+      background-position-x: 0 !important;
       background-position-y: 100% !important;
     }
     .image-text-content {
@@ -14846,6 +15136,26 @@ body.sales-order-history{
       text-align: left;               
       color: @new-grey;
       .gotham-book;
+
+      &.price{
+        .minion-pro-medium;
+        font-size: 12px;
+        letter-spacing: 0.05em !important;
+      }
     }
+  }
+}
+
+
+body.rewardpoints-index-points{
+
+  [data-theme-label="Points added"],
+  [data-theme-label="Points used"]{
+    //.minion-pro-medium;
+    font-family: minion-pro,Verdana,sans-serif !important;
+    font-weight: 500 !important;
+    font-style: normal !important;
+    font-size: 12px !important;
+    letter-spacing: 0.05em !important;
   }
 }
