@@ -26,8 +26,13 @@
 ?>
 <div class="dashboard first-content">
     <div class="account-details-saved">
-        <div class="image-text-content">
+        <div class="visible-xs-block visible-sm-block" id="custom-mobile-account-messages">
             <?php echo $this->getMessagesBlock()->toHtml() ?>
+        </div>
+        <div class="image-text-content">
+            <div class="visible-md-block visible-lg-block">
+                <?php echo $this->getMessagesBlock()->toHtml() ?>
+            </div>
             <?php echo $this->getChildHtml('hello') ?>            
             <?php echo $this->getChildHtml('customer.account.dashboard.extra') ?>
             <?php echo $this->getChildHtml('info') ?>

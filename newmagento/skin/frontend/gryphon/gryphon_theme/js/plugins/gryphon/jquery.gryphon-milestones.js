@@ -31,6 +31,7 @@
     this.page_width = 0;
 
     this.milestone_array = [];
+    this.milestone_array_v2 = [];
     this.circle_array = [];
 
     this.current_index = 0;
@@ -48,6 +49,7 @@
     this.next_button = this.element.find('.next-button');
     this.next_button.click(this.on_next_button_click.bind(this));
 
+    this.milestone_images = this.element.find('.milestone-image');
 
     this.init();
 
@@ -58,10 +60,12 @@
 
 
     this.highlight_index(0);
-    this.goto_page(0);
+    //this.goto_page(0);
+    this.goto_page_instant(0);
 
     if (this.auto_play) {
-      TweenMax.delayedCall(5, this.auto_play_function, [], this);
+      // TweenMax.delayedCall(5, this.auto_play_function, [], this);
+      TweenMax.delayedCall(6, this.auto_play_function, [], this);
     }
 
   }
@@ -96,6 +100,23 @@
 
       this.max_index = this.milestone_array.length - 1;
 
+
+      var copy_html = "" + this.milestone_container.html();
+      this.milestone_container.append($(copy_html));
+      this.milestone_container.append($(copy_html));
+
+      
+      var arr = this.element.find('.milestone');
+      for (var i = 0, l = arr.length; i < l; i++) {
+
+        milestone_element = $(arr[i]);
+        milestone_element.data('i', i % (this.max_index + 1));
+        milestone_element.click(this.on_milestone_click.bind(this));
+        this.milestone_array_v2[i] = milestone_element;
+      }
+
+      this.milestone_images = this.element.find('.milestone-image');
+
       // need the array's length before determining max pages
       this.window = $(window);
       this.window.resize(this.on_window_resize.bind(this));
@@ -127,7 +148,8 @@
         this.highlight_index(target_index);
         this.goto_page(target_page);
 
-        TweenMax.delayedCall(2, this.auto_play_function, [], this);
+        //TweenMax.delayedCall(2, this.auto_play_function, [], this);
+        TweenMax.delayedCall(4, this.auto_play_function, [], this);
       }
 
 
@@ -148,9 +170,30 @@
 
         var target_x = -1 * (this.max_col * this.item_width) * this.current_page_index;
 
+        var target_x2 = (-1 * (this.max_col * this.item_width) * this.current_page_index) - ((this.max_index + 1) * this.item_width);
+
+
         TweenMax.to(this.circle_container, 0.8, {left: target_x,ease: Sine.easeInOut});
-        TweenMax.to(this.milestone_container, 0.8, {left: target_x,ease: Sine.easeInOut});
+        //TweenMax.to(this.milestone_container, 0.8, {left: target_x,ease: Sine.easeInOut});
+        TweenMax.to(this.milestone_container, 0.8, {left: target_x2,ease: Sine.easeInOut});
       }
+
+    },
+    goto_page_instant: function(number_param){
+
+      //if (number_param >= 0 && number_param <= this.max_page) {
+
+        this.current_page_index = number_param;
+
+        var target_x = -1 * (this.max_col * this.item_width) * this.current_page_index;
+
+        var target_x2 = (-1 * (this.max_col * this.item_width) * this.current_page_index) - ((this.max_index + 1) * this.item_width);
+
+
+        TweenMax.to(this.circle_container, 0.0, {left: target_x,ease: Sine.easeInOut});
+        //TweenMax.to(this.milestone_container, 0.8, {left: target_x,ease: Sine.easeInOut});
+        TweenMax.to(this.milestone_container, 0.0, {left: target_x2,ease: Sine.easeInOut});
+      //}
 
     },
     highlight_index: function(number_param){
@@ -167,9 +210,12 @@
         var milestone_element = null;
         var circle_element = null;
 
-        for (var i = 0, l = this.milestone_array.length; i < l; i++) {
+        //for (var i = 0, l = this.milestone_array.length; i < l; i++) {
+        for (var ii = 0, l = this.milestone_array_v2.length; ii < l; ii++) {
 
-          milestone_element = $(this.milestone_array[i]);
+          var i = ii % (this.max_index + 1);
+
+          milestone_element = $(this.milestone_array_v2[ii]);
           circle_element = $(this.circle_array[i]);
 
           if (i <= this.current_index) {
@@ -194,26 +240,62 @@
       this.auto_play = false;
 
       var target_index = this.current_page_index + 1;
+
+      if (target_index > this.max_page) {
+        target_index = 0;
+        this.goto_page_instant(-1);
+        TweenMax.delayedCall(0.2, this.goto_page, [target_index], this);
+      } else {
+        target_index = target_index;
+        this.goto_page(target_index);
+      }
+
+      /*
       target_index = target_index >= this.max_page ? this.max_page : target_index;
       this.goto_page(target_index);
+      */
 
       var current_page_max_index = this.max_col * target_index
-      if (this.current_index < current_page_max_index) {
+
+      if(this.max_col == 1){
+        current_page_max_index = target_index;
         this.highlight_index(current_page_max_index);
+      } else {  
+        if (this.current_index < current_page_max_index) {
+          this.highlight_index(current_page_max_index);
+        }
       }
     },
     prev_page: function(){
       this.auto_play = false;
 
       var target_index = this.current_page_index - 1;
-      target_index = target_index <= 0 ? 0 : target_index;
-      this.goto_page(target_index);
+
+      if (target_index < 0) {
+        target_index = this.max_page;
+        this.goto_page_instant(this.max_page + 1);
+        TweenMax.delayedCall(0.2, this.goto_page, [target_index], this);
+
+      } else {
+        target_index = target_index;
+        this.goto_page(target_index);
+      }
+      
+      //target_index = target_index <= 0 ? 0 : target_index;
+      //this.goto_page(target_index);
 
 
       var current_page_max_index = this.max_col * (target_index + 1) - 1;
-      if (this.current_index > current_page_max_index) {
+
+      if(this.max_col == 1){
+        current_page_max_index = target_index;
         this.highlight_index(current_page_max_index);
+      } else {  
+        if (this.current_index > current_page_max_index) {
+          this.highlight_index(current_page_max_index);
+        }
       }
+
     },
 
     //    _______     _______ _   _ _____ ____  
@@ -236,6 +318,27 @@
 
       this.timeline_element.width(this.page_width);
 
+
+      if(window_width < 992) {
+        var extra_image_width = Math.floor( (window_width - this.page_width) / 2 );
+        extra_image_width -= 9;
+
+        this.milestone_images.css({
+          marginLeft: (-1 * extra_image_width) + 'px',
+          marginRight: (-1 * extra_image_width) + 'px'
+        });
+
+        var aspect_ratio = 640 / 503;
+        var additional_height = (extra_image_width * 2) / aspect_ratio;
+        
+        this.circle_container.css({
+          marginTop: additional_height + 'px'
+        });
+        this.element.css({
+          paddingBottom: additional_height + 'px'
+        })
+
+      }
     },
     on_prev_button_click: function(event){
       event.preventDefault();

@@ -235,6 +235,16 @@ function nano(template, data) {
           this.fullscreen_career_item.find('.requirements-col ul').html(requirements_str);
 
 
+          if (this.is_mobile()) {
+            var target_y = this.fullscreen_container.offset().top;
+            target_y -= 60;
+            target_y -= 30;
+            var current_scroll = $(window).scrollTop();
+            var target_duration = Math.abs(  (target_y - current_scroll) / 800 );
+            TweenMax.to($(window), target_duration, {scrollTo:{y:target_y,autoKill: true}, ease:Quad.easeInOut});
+          }
+
+
         }
       }
     },
@@ -247,6 +257,10 @@ function nano(template, data) {
     hide_fullscreen_container: function(){
       this.fullscreen_container.hide(0);
 
+    },
+
+    is_mobile: function(){
+      return ($(window).width() < 922 );
     },
 
 
@@ -305,6 +319,9 @@ function nano(template, data) {
       target_index = target_index < 0 ? 0 : target_index;
 
       this.display_multiple_item_detail(target_index);
+
+      
+
     }
 
   };

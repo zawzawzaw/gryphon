@@ -1962,7 +1962,7 @@ div.product {
                 display: inline-block;
                 vertical-align: top;
                 margin-left: -3px;
-                margin-top: 1px;
+                // margin-top: 1px;
                 margin-right: -4px;
                 padding: 0 5px;
 
@@ -1976,6 +1976,8 @@ div.product {
                 display: inline-block;
                 text-align: center;
                 font-size: 9px;
+                vertical-align: top;
+
                 i {
                   color: @white;
                 }
@@ -1987,6 +1989,7 @@ div.product {
                 display: inline-block;
                 text-align: center;
                 font-size: 9px;
+                vertical-align: top;
                 i {
                   color: @white;
                 }
@@ -4546,12 +4549,14 @@ div.product {
   margin-top: 80px;
   // padding-bottom: 120px!important;
   @media all and (max-width: 992px) {
-    margin-top: 60px;
+    //margin-top: 60px;
+    margin-top: 83px!important;
     padding-bottom: 90px!important;
   }
   .signup-banner {
     background: url("../images/content/signup-banner.jpg") no-repeat center center;
     background-size: cover;
+
     @media all and (max-width: 992px) {
       height: 257px!important;  
       /*
@@ -4606,6 +4611,43 @@ div.product {
         }
       }
     }
+
+    @media all and (max-width: 992px) {
+      .image-text-content{
+        .caption-container{
+          display: block;
+          height: 225px;
+
+          .caption{
+            height: 225px;
+
+            text-align: center;
+            color: @white;
+            display: block;
+            padding-top: 22px;
+
+            h1{
+              font-size: 21px;
+              line-height: 22px;
+              margin-bottom: 17px;
+            }
+
+            p{
+              color: @white;
+              .gotham-medium;
+              font-size: 10px;
+              line-height: 15px;
+              padding: 0 30px;
+              max-width: none;
+            }
+          }
+        }
+      }
+    } // media
+
+
+
+
   }
 
   .main-content {
@@ -10493,7 +10535,8 @@ div.product {
       }
 
       @media all and (max-width: 992px) {
-        margin-top: 35px;        
+        //margin-top: 35px;
+        margin-top: 2px;
         margin-left: 0px;
       }      
 
@@ -11267,7 +11310,7 @@ div#footer-wrapper {
 
         .milestone-container{
           font-size: 0;
-          width: 10000px;
+          width: 30000px;
           text-align: left;
 
           position: absolute;
@@ -12329,6 +12372,9 @@ div#footer-wrapper {
   }
 }
 
+
+
+
 .not-found{
   margin-top: 160px;
   text-align: center;
@@ -12567,6 +12613,9 @@ div#footer-wrapper {
       textarea {
         width: 280px;
         height: 160px;
+        resize: none;
+
+
       }
 
       // added by jairus
@@ -14317,6 +14366,12 @@ div#footer-wrapper {
 
       }
 
+      .cta-container{
+        font-size: 0;
+        text-align: center;
+        
+      }
+
       .gift-cart-button{
         .gotham-medium;
         font-size: 11px;
@@ -14330,8 +14385,12 @@ div#footer-wrapper {
 
         //display: inline-block;
         //vertical-align: top;
-        display: block;
-        margin: 0 auto;
+        
+        // display: block;
+        display: inline-block;
+        vertical-align: top;
+
+        //margin: 0 auto;
 
         width: 214px;
 
@@ -14339,6 +14398,10 @@ div#footer-wrapper {
 
         &:hover{
           background-color: @dark-orange;
+        }
+
+        &:last-child{
+          margin-left: 58px;
         }
       }
 
@@ -15109,6 +15172,9 @@ div#footer-wrapper {
 //////////////////////////////////////////////////////////////////////////////////////
 
 
+.slick-initialized .slick-slide{
+  //margin-right: 10px;
+}
  
 // SPECIFIC CSS TO SPECIFIC PAGES
 

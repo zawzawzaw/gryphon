@@ -333,7 +333,13 @@ and delivered together with the product."></textarea>
         text_container.append(table_row.find('.product-title').clone());
         text_container.append($(table_row.find('.product-price')[0]).clone());
 
-        text_container.append($(table_row.find('.item-options') ).clone());
+        //text_container.append($(table_row.find('.item-options') ).clone());
+        text_container.find('.product-title').after($(table_row.find('.item-options') ).clone());
+
+        if(  text_container.find('.view-tin-details').length != 0 ){
+            text_container.find('.view-tin-details').before(text_container.find('.product-price'));
+        }
+
         new_image_container.append(text_container);
 
         col_1.prepend(new_image_container);
