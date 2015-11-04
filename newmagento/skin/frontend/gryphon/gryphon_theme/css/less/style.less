@@ -8421,6 +8421,15 @@ div.product {
             border-bottom: 1px solid @border-grey;
             padding: 10px 20px;
           }
+
+          /*
+          @media all and (max-width: 880px) {
+            th:nth-child(1){
+              padding-left: 13px !important;
+            }
+          }
+          */
+
         }
       }
       tbody {        
@@ -8466,11 +8475,22 @@ div.product {
               }
             }
 
+
             @media all and (max-width: 880px) {
               .giftvoucher-grid-detail {
                 margin-left: 0px!important;
               }
             }
+
+            /*
+            @media all and (max-width: 880px) {
+              .giftvoucher-grid-detail {
+                margin-left: 0px!important;
+                position: relative;
+                left: 10px;
+              }
+            }
+            */
             .print {
               display: none;
             }
@@ -9455,6 +9475,14 @@ div.product {
       font-size: 12px;
       line-height: 16px;
     }
+
+
+    @media all and (max-width: 990px) {
+      #gift-cards-tbl {
+        overflow: hidden;
+      }
+    }
+
     #gift-cards-tbl {
       // margin-top: 30px;
       margin-top: 0px;
@@ -9479,6 +9507,11 @@ div.product {
             color: #707070;
             text-transform: uppercase;
           }
+
+          th:nth-child(2){
+            padding-left: 13px !important;
+          }
+
         }
       }
       tbody {        
@@ -9540,6 +9573,13 @@ div.product {
             @media all and (max-width: 880px) {
               .giftvoucher-grid-detail {
                 margin-left: 0px!important;
+                position: relative;
+                left: 10px;
+
+                a{
+                  padding-left: 1px;
+                  padding-right: 1px;
+                }
               }
             }
             .print {
@@ -15162,6 +15202,11 @@ div#footer-wrapper {
 }
 
 
+#discover-loading-icon{
+  display: none;
+}
+
+
 //////////////////////////////////////////////////////////////////////////////////////
 //        _   _    ___ ____  _   _ ____     ____ ____ ____    _____ _   _ ____      //
 //       | | / \  |_ _|  _ \| | | / ___|   / ___/ ___/ ___|  | ____| \ | |  _ \     //
@@ -15224,4 +15269,9 @@ body.rewardpoints-index-points{
     font-size: 12px !important;
     letter-spacing: 0.05em !important;
   }
+}
+
+
+.custom-first-order-title-02{
+  margin-left: 5px;
 }

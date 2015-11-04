@@ -524,6 +524,7 @@
         }
         textarea{
           width: 100%;
+          resize: vertical;
         }
         div.dropdown{
           width: 100%;
@@ -1413,6 +1414,7 @@
 
         }
         #results-item-container{
+          text-align: center;
           &:before{
             height: 34px;
           }
@@ -1452,6 +1454,33 @@
     } // .main-content
 
   } // .discover
+
+  #discover-loading-icon{
+
+    //display: block;
+    display: inline-block;
+
+    padding: 15px 60px;
+    background: #fff4e9;
+    border: 2px solid #f1af73;
+    color: #d85909;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    line-height: 23px;
+
+    .discover-loading-icon-icon{
+      width: 31px;
+      height: 31px;
+      margin: 0 auto;
+      background: transparent url(../images/content/products/ajax-loader.gif);
+    }
+    p{
+
+    }
+
+    
+  }
 
 } // @media (max-width: 991px)
 
@@ -7069,6 +7098,9 @@ html{
 
     }
 
+
+    //.account .order-history .order-headers .order-status
+
     .col-main .box-account .form-list .fields{
 
       .custom-field{
@@ -7082,8 +7114,22 @@ html{
 
 
     .order-history{
-      .order-headers .order-status{
-        margin-right: 0px;
+      .order-headers{
+        .order-status{
+          margin-left: 0px !important;
+          margin-right: 0px !important;
+          padding-left: 15px !important;
+          padding-right: 15px !important;
+          h2{
+            padding-left: 5px;
+          }
+        }
+        .order-no{
+          margin-left: 0px !important;
+          margin-right: 0px !important;
+          padding-left: 15px !important;
+          padding-right: 15px !important;
+        }
       }
 
       .orders{
@@ -7185,6 +7231,17 @@ html{
 
     } // .order-history
 
+    .custom-first-order-title-container{
+      position: relative;
+    }
+    .custom-first-order-title-01{
+      margin-left: 0px;
+      position: absolute;
+      left: -20px;
+    }
+    .custom-first-order-title-02{
+      margin-left: 0px;
+    }
 
     .col-main .refer-friend-form{
       float: none;
@@ -7301,6 +7358,22 @@ html{
   }
 
 
+
+  .giftvoucher-index-view{
+
+    .account .col-main .box-account .form-list .fields .field{
+
+      &.custom-field{
+        margin-bottom: 1px !important;
+      }
+      &.custom-field-right{
+        margin-bottom: 20px !important;
+      }
+    }
+    
+  }
+
+
   .account .account-details ul.messages, 
   .account .account-details-saved ul.messages{
     top: 0;
@@ -7314,7 +7387,10 @@ html{
   .account .billing-and-shipping .billing-address ul li, 
   .account .billing-and-shipping .shipping-address ul li{
     margin-right: 0px;
+    display: block;
   }
+
+
 
   .account .billing-and-shipping .billing-address .billing-address-details, 
   .account .billing-and-shipping .shipping-address .billing-address-details, 
@@ -7443,13 +7519,13 @@ html{
     color: #464646;
   }
 
-  span.price, 
-  span.date{
+  //span.price, span.date{
+  span.price{
     .minion-pro-semibold-italic;
     font-size: 12px;
     line-height: 16px;
     letter-spacing: 0.03em;
-  }
+  }  
 
   span.price{
     color: #ae4e0e;
@@ -7630,6 +7706,44 @@ html{
 
 }
 
+//    __  __  ___  ____ ___ _     _____   ____ ___ ____ _   _ _   _ ____    _____ ___  ____  __  __ 
+//   |  \/  |/ _ \| __ )_ _| |   | ____| / ___|_ _/ ___| \ | | | | |  _ \  |  ___/ _ \|  _ \|  \/  |
+//   | |\/| | | | |  _ \| || |   |  _|   \___ \| | |  _|  \| | | | | |_) | | |_ | | | | |_) | |\/| |
+//   | |  | | |_| | |_) | || |___| |___   ___) | | |_| | |\  | |_| |  __/  |  _|| |_| |  _ <| |  | |
+//   |_|  |_|\___/|____/___|_____|_____| |____/___\____|_| \_|\___/|_|     |_|   \___/|_| \_\_|  |_|
+//                                                                                                  
+
+
+@media (max-width: 991px) {
+
+  .sign-up{
+    .main-content{
+
+      .login-form{ 
+
+        .each-input{
+
+
+          .remember-me-box{
+
+          }
+          .forgot-password{
+            float: right;
+          }
+        }
+
+        
+      }
+    }
+
+
+
+  }
+
+
+}
+
+
 
 
 
@@ -7641,6 +7755,13 @@ html{
 //                                                 
 
 @media (max-width: 991px) {
+
+  #page-wrapper{
+    > .page-title{
+      height: 0;
+    }
+  }
+
   .slick-initialized .slick-slide{
     border: 2px solid transparent;
   }
