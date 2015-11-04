@@ -82,8 +82,8 @@ class Aemtech_Trader_Customer_AccountController extends Mage_Customer_AccountCon
                 $session->addError($this->__('Login and password are required.'));
             }
         }
-
-        $this->_loginPostRedirect();
+        echo 'hi'; exit();
+        // $this->_loginPostRedirect();
     }
 
     public function createPostAction() {
