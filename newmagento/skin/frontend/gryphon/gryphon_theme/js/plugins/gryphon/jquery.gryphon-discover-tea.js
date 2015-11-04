@@ -787,6 +787,12 @@ if (!Array.prototype.indexOf) {
       var header_height = $("#header-wrapper").height();
       var target_y = this.question_01_element.offset().top - header_height;
 
+      if (this.is_mobile()) {
+        target_y -= 60;
+        target_y -= 20;
+      }
+      
+
       TweenMax.delayedCall(0.6, this.scroll_to, [target_y], this);
       //this.scroll_to(target_y);
 
