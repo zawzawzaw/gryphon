@@ -48,7 +48,7 @@ function nano(template, data) {
       '<div class="career-display-item">',
         '<h5>{workhours}</h5>',
         '<h4>{title}</h4>',
-        '<div class="detail-button">See Detail</div>',
+        '<div class="detail-button">See Details</div>',
       '</div>'
     ].join("")
 
@@ -62,6 +62,7 @@ function nano(template, data) {
     this.element = $(elem);
     this.settings = $.extend({}, defaults, settings);
 
+    this.is_multiple = false;
     this.data_array = [];
 
     this.display_container = this.element.find('#career-display-item-container');
@@ -79,8 +80,11 @@ function nano(template, data) {
     init: function () {
       console.log("init");
 
+
+
       this.parse_data_html();
       this.create_html();
+
 
 
       this.fullscreen_container.find('.black-bg').click(this.on_black_bg_click.bind(this));
@@ -88,7 +92,13 @@ function nano(template, data) {
       this.fullscreen_container.find('.next-button').click(this.on_next_button_click.bind(this));
       this.fullscreen_container.find('.prev-button').click(this.on_prev_button_click.bind(this));
 
-
+      //if(this.is_mobile() == true){
+      
+      
+      //}
+      this.hammertime = new Hammer(this.element[0], {});
+      this.hammertime.on('swipeleft', this.on_swipe_left.bind(this));
+      this.hammertime.on('swiperight', this.on_swipe_right.bind(this));
 
     },
     parse_data_html: function(){
@@ -157,6 +167,8 @@ function nano(template, data) {
         this.create_single_career_item();
 
       } else if(this.data_array.length > 1){
+
+        this.is_multiple = true;
         this.create_multiple_career_items();
       }
       
@@ -249,9 +261,10 @@ function nano(template, data) {
       }
     },
 
-
     show_fullscreen_container: function(){
       this.fullscreen_container.show(0);
+
+      
 
     },
     hide_fullscreen_container: function(){
@@ -263,6 +276,31 @@ function nano(template, data) {
       return ($(window).width() < 922 );
     },
 
+    next_page: function(){
+
+      console.log('next_page');
+
+      if (this.is_multiple == true) {
+        console.log('next_page inside');
+        var target_index = this.current_multiple_index + 1;
+        target_index = target_index > this.max_multiple_index ? 0 : target_index;
+
+        this.display_multiple_item_detail(target_index);
+      }
+    },
+
+    prev_page: function(){
+      console.log('prev_page');
+
+      if (this.is_multiple == true) {
+        console.log('prev_page inside');
+
+        var target_index = this.current_multiple_index - 1;
+        target_index = target_index < 0 ? this.max_multiple_index : target_index;
+
+        this.display_multiple_item_detail(target_index);
+      }
+    },
 
     //    _______     _______ _   _ _____ ____  
     //   | ____\ \   / / ____| \ | |_   _/ ___| 
@@ -290,9 +328,17 @@ function nano(template, data) {
     },
     on_fullscreen_apply_button_click: function(event){
       event.preventDefault();
-      this.hide_fullscreen_container();
+
+      if (this.is_mobile() == false){
+        this.hide_fullscreen_container();
+      }
             
       var target_y = $('.application-form-banner').offset().top - 100 - 45;
+
+      if (this.is_mobile() == true){
+        target_y += 30;
+      }
+
       var current_scroll = $(window).scrollTop();
       var target_duration = Math.abs(  (target_y - current_scroll) / 800 );
       TweenMax.to($(window), target_duration, {scrollTo:{y:target_y,autoKill: true}, ease:Quad.easeInOut});
@@ -306,23 +352,24 @@ function nano(template, data) {
     on_next_button_click: function(event){
       event.preventDefault();
 
-      var target_index = this.current_multiple_index + 1;
-      target_index = target_index >= this.max_multiple_index ? this.max_multiple_index : target_index;
-
-      this.display_multiple_item_detail(target_index);
-
+      this.next_page();      
     },
     on_prev_button_click: function(event){
       event.preventDefault();
 
-      var target_index = this.current_multiple_index - 1;
-      target_index = target_index < 0 ? 0 : target_index;
+      this.prev_page();
+    },
 
-      this.display_multiple_item_detail(target_index);
-
-      
-
+    on_swipe_left: function(event){
+      console.log('on_swipe_left');
+      this.next_page();
+    },
+    on_swipe_right: function(event){
+      console.log('on_swipe_right');
+      this.prev_page();
     }
+
+
 
   };
 

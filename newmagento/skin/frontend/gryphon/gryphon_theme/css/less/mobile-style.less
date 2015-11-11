@@ -646,6 +646,10 @@
           padding-top: 7px;
         }
 
+        .slick-initialized .slick-slide{
+          border: 10px solid transparent;
+        }
+
         .careers-slick {
           //width: 90%;
           /*
@@ -653,8 +657,11 @@
           margin: 0 auto;
           */
           width: auto;
-          margin-left: 10px;
-          margin-right: 10px;
+          margin-top: -10px;
+          margin-bottom: 20px;
+
+          //margin-left: 10px;
+          //margin-right: 10px;
 
           .slick-prev,
           .slick-next{
@@ -665,14 +672,16 @@
           }
 
           .slick-prev{
-            left: -23px;
+            //left: -23px;
+            left: -13px;
 
             &:before{
               content: "\f053";
             }
           }
           .slick-next{
-            right: -23px;
+            //right: -23px;
+            right: -13px;
 
             &:before{
               content: "\f054";
@@ -696,10 +705,14 @@
         #career-display-item-container{
           padding-top: 24px;
         }
+        .career-display-item-none{
+          border: 1px solid @dark-orange;
+        }
         .career-display-item{
           display: block;
           width: 100%;
           margin-bottom: 17px;
+          border: 1px solid @dark-orange;
 
           &:last-child{
             margin-bottom: 0;
@@ -712,6 +725,14 @@
           height: auto;
           padding-bottom: 20px;
           margin-bottom: 0;
+          border: 1px solid @dark-orange;
+
+          padding-left: 5px;
+          padding-right: 5px;
+
+          h5{
+            margin-bottom: 26px;
+          }
 
           p{
             margin-bottom: 20px;
@@ -726,7 +747,20 @@
             margin-bottom: 34px;
           }
           .requirements-col{
-            padding-bottom: 77px;
+            //padding-bottom: 77px;
+            padding-bottom: 7px;
+          }
+
+
+          .next-button{
+            right: -2px;
+          }
+          .prev-button{
+            left: -2px;
+          }
+          .apply-button{
+            margin-top: 11px;
+            margin-bottom: 11px;
           }
         }
         .career-display-item-none{
@@ -783,6 +817,25 @@
             margin-bottom: 20px;
           }
 
+          .mobile_no_2_container{
+            margin-left: -17px;
+          }
+
+          .apply-button{
+            width: 100%;
+          }
+
+          .file-upload{
+            .filename{
+              width: 60%;
+            }
+            .uploadifive-button{
+              width: 40% !important;
+              height: 28px !important;
+              line-height: 28px !important;
+              padding-top: 0 !important;
+            }
+          }
 
           .each-input .dropdown-container{
             .col-md-4, .col-md-8,
@@ -3670,7 +3723,8 @@ html{
           margin-left: 15px;
           margin-right: 15px;
           overflow: hidden;
-          height: 200px;
+          //height: 200px;
+          height: 130px;
 
           img{
             position: absolute;
@@ -3678,8 +3732,11 @@ html{
             left: 0px;
             width: auto;
             max-width: none;
-            height: 200px;
-            margin-left: -120px;
+            //height: 200px;
+            //margin-left: -120px;
+
+            height: 130px;
+            margin-left: -20px;
           }
 
         }
@@ -3966,6 +4023,7 @@ html{
             font-size: 11px;
             line-height: 12px;
             top: -31px;
+            left: 0;
           }
 
           h4{
@@ -4006,6 +4064,7 @@ html{
           top: 12px;
           font-size: 10px !important;
           letter-spacing: 0.1em;
+          color: #777 !important;
         }
 
 
@@ -5263,6 +5322,29 @@ html{
         }
       }
     }
+
+    .main-content{
+      h1{
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: .03em;
+        padding-bottom: 1px;
+      }
+      p{
+        font-size: 12px;
+        line-height: 21px;
+        letter-spacing: 0em;
+
+        padding-top: 3px;
+        padding-bottom: 5px;
+      }
+      .text-content{
+        margin-top: 26px + 8px;
+        padding-bottom: 29px;
+        border-bottom: 1px solid @border-grey;
+        margin-bottom: 4px;
+      }
+    }
   }
 
 }
@@ -5608,6 +5690,8 @@ html{
         padding-top: 34px;
         padding-bottom: 65px;
 
+
+
         .vertical-line{
           width: 100%;
           height: 0px;
@@ -5645,6 +5729,18 @@ html{
             font-weight: 400;
             font-style: normal;
             color: #464646;
+          }
+
+          /*
+          input[name=registrationnumber]{
+            color: @dark-orange;
+          }
+          */
+         
+          p.registrationnumber-disclaimer{
+            color: @dark-orange2;
+            margin-top: -10px;
+            padding-bottom: 20px;
           }
 
           textarea{
@@ -6113,14 +6209,19 @@ html{
               letter-spacing: 0.015em;
             }
 
+            .slick-initialized .slick-slide{
+              border: 10px solid transparent;
+            }
 
             .slick-prev{
               //left: -5px;
-              left: -23px;
+              //left: -23px;
+              left: -13px;
             }
             .slick-next{
               //right: -5px;
-              right: -23px;
+              //right: -23px;
+              right: -13px;
             }
 
             .slick-prev,
@@ -6151,11 +6252,11 @@ html{
               //padding-top: 30px;
               padding-top: 2px;
 
-              margin-left: 10px;
-              margin-right: 10px;
+              //margin-left: 10px;
+              //margin-right: 10px;
 
-              margin-left: 8px;
-              margin-right: 8px;
+              margin-left: 0px;
+              margin-right: 0px;
 
               width: auto !important;
 
@@ -6711,8 +6812,10 @@ html{
         }
 
         .this-is-only-trade-mobile-slick-container{
-          padding-left: 10px;
-          padding-right: 10px;
+          //padding-left: 10px;
+          //padding-right: 10px;
+          padding-left: 0px;
+          padding-right: 0px;
         }
 
         .steps{
@@ -6734,6 +6837,9 @@ html{
           }
         }
 
+        .slick-initialized .slick-slide{
+          border: 10px solid transparent;
+        }
 
         .slick-prev,
         .slick-next{
@@ -6748,14 +6854,16 @@ html{
 
         .slick-prev{
           //left: 10px;
-          left: -23px;
+          //left: -23px;
+          left: -13px;
           &:before{
             content: "\f053";
           }
         }
         .slick-next{
           //right: 10px;
-          right: -23px;
+          //right: -23px;
+          right: -13px;
           &:before{
             content: "\f054";
           }
@@ -7090,6 +7198,8 @@ html{
           padding-left: 0;
           padding-right: 0;
         }
+
+
       }
 
       .pager .limiter{
@@ -7527,6 +7637,7 @@ html{
     letter-spacing: 0.03em;
   }  
 
+
   span.price{
     color: #ae4e0e;
   }
@@ -7718,8 +7829,73 @@ html{
 
   .sign-up{
     .main-content{
+      margin-top: 34px;
+
+      h1{
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: .03em;
+        padding-bottom: 1px;
+      }
+      p{
+        font-size: 12px;
+        line-height: 21px;
+        letter-spacing: 0em;
+      }
+      hr.small{
+        margin-bottom: 11px!important;
+      }
+
+      .ctas .or{
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+      }
+
+      .first-col{
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+      }
+      .second-col{
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+
+        margin-top: 30px;
+        padding-top: 30px;
+
+
+        &:before{
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 15px;
+          right: 15px;
+          border-top: 1px solid @border-grey;
+        }
+      }
+
+
 
       .login-form{ 
+        .ctas{
+          margin-top: 25px;
+        }
+        ul.benefits{
+          margin-bottom: 40px;
+
+          li{
+            font-size: 12px;
+            line-height: 21px;
+            letter-spacing: 0em;
+          }
+        }
+        p.form-instructions{
+          margin-bottom: 26px;
+        }
 
         .each-input{
 
@@ -7762,9 +7938,12 @@ html{
     }
   }
 
+  /*
   .slick-initialized .slick-slide{
     border: 2px solid transparent;
   }
+  */
+  
   #loading-mask .loader{
     //font-size: 10px;
     margin-left: -102px !important;
