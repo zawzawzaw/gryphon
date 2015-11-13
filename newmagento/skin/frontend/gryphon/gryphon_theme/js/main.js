@@ -286,6 +286,30 @@ var initialLoad = true;
                 slidesToShow: 1,
             });
 
+            $('.mobile-gourmet-what-you-get-slider').addClass('slick');
+            $('.mobile-artisan-what-you-get-slider').addClass('slick');
+            $('.mobile-gourmet-what-you-get-slider').slick({
+                dots: false,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+            });
+            $('.mobile-artisan-what-you-get-slider').slick({
+                dots: false,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+            });
+
+            
+            $('.rewards .main-content .first-content .steps').addClass('slick');
+            $('.rewards .main-content .first-content .steps').slick({
+                dots: false,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+            });
+
         }
         
         // product page carousel

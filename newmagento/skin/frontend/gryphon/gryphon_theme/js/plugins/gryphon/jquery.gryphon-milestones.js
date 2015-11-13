@@ -323,7 +323,8 @@
 
       if(window_width < 992) {
         var extra_image_width = Math.floor( (window_width - this.page_width) / 2 );
-        extra_image_width -= 9;
+        // extra_image_width -= 9;
+        extra_image_width -= (9 + 13);
 
         this.milestone_images.css({
           marginLeft: (-1 * extra_image_width) + 'px',

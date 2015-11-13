@@ -306,8 +306,10 @@
 
       if(scroll_top > 10){
         this.element.addClass('shadow-version');
+        this.body_element.addClass('shadow-version');
       } else {
         this.element.removeClass('shadow-version');
+        this.body_element.removeClass('shadow-version');
       }
 
     },

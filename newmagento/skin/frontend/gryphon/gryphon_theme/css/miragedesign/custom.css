@@ -14,7 +14,8 @@
 }
 .remember-me-popup {
     display: none;
-    border: 1px solid #cccccc;
+    /*border: 1px solid #cccccc;*/
+    border: 1px solid #dddddd;
     padding: 10px;
     position: relative;
 }
@@ -375,7 +376,8 @@ ul.messages li.success-msg {
 .sales-order-history .pages .current,
 .sales-order-history .pages .current:hover {
     color: #636363;
-    border: 1px solid #cccccc;
+    /*border: 1px solid #cccccc*/;
+    border: 1px solid #dddddd;
     width: 30px;
     background-color: #FFFFFF;
     cursor: default;
@@ -564,7 +566,8 @@ ul.messages li.success-msg {
     font-size: 9px;
     line-height: 16px;
 
-    border-top: 1px solid #eee;
+    /*border-top: 1px solid #eee;*/
+    border-top: 1px solid #dddddd;
     padding-top: 15px;
 }
 .product .main-product .product-content .availability.non-group-type {

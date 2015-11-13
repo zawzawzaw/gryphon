@@ -177,7 +177,7 @@
                                 <hr class="small">
                                 <div class="space20"></div>
                                 <div class="row">
-                                    <div class="col-xs-6">
+                                    <div class="col-xs-6 hidden-xs">
                                         <h2><?php echo $this->__('STATUS'); ?></h2>
                                         <span><?php if($_order->getStatusLabel()=='Complete'): ?><i class="fa fa-smile-o"></i><?php else: ?><i class="fa fa-spinner fa-spin"></i><?php endif; ?></span>
                                     </div>
@@ -251,11 +251,19 @@
                                     <div class="space20"></div>
 
                                     <div class="row mobile-button-container">
+                                        <!--
                                         <div class="col-xs-6">
                                             <a href="#" class="reorder single-order-item-back-button"><i class="fa my-arrow-left"></i><span>&nbsp;<?php echo $this->__('Back'); ?></span></a>
                                         </div>
                                         <div class="col-xs-6">
                                             <a href="<?php echo $this->getReorderUrl($_order) ?>" class="reorder single-order-item-reorder-button"><i class="fa fa-repeat"></i><span>&nbsp;<?php echo $this->__('Reorder'); ?></span></a>
+                                        </div>
+                                        -->
+                                        <div class="col-xs-6">
+                                            <a href="#" class="reorder single-order-item-back-button"><?php echo $this->__('Back'); ?></a>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <a href="<?php echo $this->getReorderUrl($_order) ?>" class="reorder single-order-item-reorder-button"><?php echo $this->__('Reorder'); ?></a>
                                         </div>
                                     </div>
 

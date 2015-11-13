@@ -36,16 +36,16 @@ $additionalAddresses = $this->getCustomer()->getAdditionalAddresses();
         <div class="row">
             <div class="col-md-8 billing-address">
                 <div class="row">
-                    <div class="col-md-5 col-sm-5 col-xs-6">
+                    <div class="col-md-5 col-sm-5 col-xs-8">
                         <h1><?php echo $this->__('billing Address'); ?></h1>
                         <hr class="small">
                     </div>
-                    <div class="col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-2 col-xs-6">
+                    <div class="col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-2 col-xs-4">
                         <ul>
                             <?php if( $billingAddress instanceof Varien_Object ) : ?>
                                 <li><a href="<?php echo $this->getPrimaryBillingAddressEditUrl() ?>" class="edit"><i class="fa fa-cog"></i> <span><?php echo $this->__('Edit') ?></span></a></li>
                             <?php endif; ?>
-                            <li><a href="<?php echo Mage::getUrl('customer/address/new'); ?>" class="add_address"><i class="fa fa-plus"></i> <span>Add Address</span></a></li>
+                            <li class="hidden-xs"><a href="<?php echo Mage::getUrl('customer/address/new'); ?>" class="add_address"><i class="fa fa-plus"></i> <span>Add Address</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -86,6 +86,13 @@ $additionalAddresses = $this->getCustomer()->getAdditionalAddresses();
                         <?php endif; ?>
                     </div>
                 </div>
+
+                <div class="visible-xs-block">
+                    <div class="account-address-button-container">
+                        <a href="<?php echo Mage::getUrl('customer/address/new'); ?>" class="account-address-button-cta">Add Address</a>
+                    </div>
+                </div>
+
                 <?php if( $additionalAddresses ) : ?>
                 <div class="row">
                     <div class="col-md-12">
@@ -113,16 +120,16 @@ $additionalAddresses = $this->getCustomer()->getAdditionalAddresses();
             </div>
             <div class="col-md-8 shipping-address">
                 <div class="row">
-                    <div class="col-md-5 col-sm-5 col-xs-6">
+                    <div class="col-md-5 col-sm-5 col-xs-8">
                         <h1><?php echo $this->__('Shipping Address'); ?></h1>
                         <hr class="small">
                     </div>
-                    <div class="col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-2 col-xs-6">
+                    <div class="col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-2 col-xs-4">
                         <ul>
                             <?php if( $shippingAddress instanceof Varien_Object ) : ?>
                                 <li><a href="<?php echo $this->getPrimaryShippingAddressEditUrl() ?>" class="edit"><i class="fa fa-cog"></i><span>Edit</span></a></li>
                             <?php endif; ?>
-                            <li><a href="<?php echo Mage::getUrl('customer/address/new'); ?>" class="add_address"><i class="fa fa-plus"></i><span>Add Address</span></a></li>
+                            <li class="hidden-xs"><a href="<?php echo Mage::getUrl('customer/address/new'); ?>" class="add_address"><i class="fa fa-plus"></i><span>Add Address</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -188,6 +195,13 @@ $additionalAddresses = $this->getCustomer()->getAdditionalAddresses();
                 </div>
                 <?php endif; ?>
             </div>
+            
+            <div class="visible-xs-block">
+                <div class="account-address-button-container">
+                    <a href="<?php echo Mage::getUrl('customer/address/new'); ?>" class="account-address-button-cta">Add Address</a>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
