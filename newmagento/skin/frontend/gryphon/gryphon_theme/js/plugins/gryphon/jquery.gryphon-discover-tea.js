@@ -496,6 +496,14 @@ if (!Array.prototype.indexOf) {
 
         results_str = results_str_array.join("");
 
+        if(this.similar_container.hasClass('slick')){
+          this.similar_container.removeClass('slick');
+
+          if(this.similar_container.unslick != null && this.similar_container.unslick != undefined) {
+            this.similar_container.unslick();
+          }
+        }
+
         this.similar_container.empty();
         this.similar_container.append(results_str);
 
@@ -665,6 +673,14 @@ if (!Array.prototype.indexOf) {
         }
 
         var different_results_str = different_results_str_array.join("");
+
+        if(this.different_container.hasClass('slick')){
+          this.different_container.removeClass('slick');
+          if(this.different_container.unslick != null && this.different_container.unslick != undefined) {
+            this.different_container.unslick();
+          }
+
+        }
 
         this.different_container.empty();
         this.different_container.append(different_results_str);
