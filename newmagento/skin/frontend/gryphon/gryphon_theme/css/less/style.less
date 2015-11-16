@@ -1089,7 +1089,7 @@ ul.messages {
       }
     }
 
-    .google, .mailto {
+    .google, .mailto, .print, .linkedin {
       &:hover {
         color: @dark-orange;
       }
@@ -10229,6 +10229,7 @@ div.product {
           }
           &.sharing {
             float: right;
+            max-width: 100px;
             // padding-top: 5px;
           }
 
@@ -10276,7 +10277,7 @@ div.product {
         }
 
         ul {
-          text-align: right;
+          text-align: left;
           //margin-top: 5px;
           margin-top: 3px;
           li {
@@ -10295,6 +10296,9 @@ div.product {
             }
             a.twitter {
               width: 18px!important;
+            }
+            a.google {
+              margin-left: 0px;
             }
           }
         }

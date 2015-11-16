@@ -218,6 +218,11 @@
 	    	var url = $(this).attr('href');
 	    	openNewWindow(url,'sharing','height=600,width=600,toolbar=no,scrollbars=no,resizable=yes');
     	});
+    	$('.linkedin').on('click', function(e){
+	    	e.preventDefault();
+	    	var url = $(this).attr('href');
+	    	openNewWindow(url,'sharing','height=600,width=600,toolbar=no,scrollbars=no,resizable=yes');
+    	});
 	</script>
 	<?php wp_footer(); ?>
 </body>

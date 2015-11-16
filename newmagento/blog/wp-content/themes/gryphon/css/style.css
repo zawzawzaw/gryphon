@@ -1350,7 +1350,9 @@ ul.messages {
   background: url(../images/icons/twitter-hover.png) no-repeat;
 }
 #page-wrapper .google:hover,
-#page-wrapper .mailto:hover {
+#page-wrapper .mailto:hover,
+#page-wrapper .print:hover,
+#page-wrapper .linkedin:hover {
   color: #ae4e0e;
 }
 #page-wrapper div.dropdown {
@@ -10441,6 +10443,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .blog .main-content .image-text-content .post-extra-content .post-extra.sharing {
   float: right;
+  max-width: 100px;
 }
 @media all and (max-width: 1199px) {
   .blog .main-content .image-text-content .post-extra-content .post-extra {
@@ -10478,7 +10481,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   color: #ae4e0e;
 }
 .blog .main-content .image-text-content .post-extra-content ul {
-  text-align: right;
+  text-align: left;
   margin-top: 3px;
 }
 .blog .main-content .image-text-content .post-extra-content ul li {
@@ -10496,6 +10499,9 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .blog .main-content .image-text-content .post-extra-content ul li a.twitter {
   width: 18px!important;
+}
+.blog .main-content .image-text-content .post-extra-content ul li a.google {
+  margin-left: 0px;
 }
 .blog .main-content .image-text-content .each-load-more {
   display: inline-block;
