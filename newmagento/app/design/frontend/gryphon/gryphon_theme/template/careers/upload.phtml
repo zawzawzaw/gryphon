@@ -1,4 +1,9 @@
 <script type="text/javascript">
+//<![CDATA[
+    var applicationForm = new VarienForm('job-application-form', true);
+//]]>
+</script>
+<script type="text/javascript">
 	<?php $timestamp = time();?>
 	jQuery(document).ready(function($) {
 		$('#resume').uploadifive({			
@@ -27,29 +32,36 @@
 		});
 
 		$('.apply-now').on('click', function(e){
-			var firstname = $('#firstname').val();
-			var lastname = $('#lastname').val();
-			var email = $('#email').val();
-			var mobile = $('#mobile_no').val() + ' ' + $('#mobile_no_2').val();
-			var subject = $('#subject').val();
-			var resume = $('#hidden_resume').val();
-			jQuery('#ajax_loader').show();
-			var request = $.ajax({
-			  	url: "<?php echo $this->getUrl('jobsubmission/index') ?>",
-			  	method: "POST",
-			  	data: { first_name : firstname, last_name : lastname, email : email, mobile : mobile, subject : subject, resume : resume },
-			  	dataType: "html",
-			  	success: function(data){
-			  		var objData = $.parseJSON(data);
-                    jQuery('#ajax_loader').hide();
 
-                    if(objData.status=="ERROR") {
-                        jQuery('span.ajax_msg').html(objData.message).show().delay(5000).fadeOut();
-                    }else {
-                        jQuery('span.ajax_msg').html(objData.message).show().delay(5000).fadeOut();
-                    }                                            
-                }
-			});
+			if (applicationForm.validator && applicationForm.validator.validate())   
+		   	{
+		     	// if validation successful pass then
+ 				var firstname = $('#firstname').val();
+				var lastname = $('#lastname').val();
+				var email = $('#email').val();
+				var mobile = $('#mobile_no').val() + ' ' + $('#mobile_no_2').val();
+				var subject = $('#subject').val();
+				var resume = $('#hidden_resume').val();
+				jQuery('#ajax_loader').show();
+				var request = $.ajax({
+				  	url: "<?php echo $this->getUrl('jobsubmission/index') ?>",
+				  	method: "POST",
+				  	data: { first_name : firstname, last_name : lastname, email : email, mobile : mobile, subject : subject, resume : resume },
+				  	dataType: "html",
+				  	success: function(data){
+				  		var objData = $.parseJSON(data);
+	                    jQuery('#ajax_loader').hide();
+
+	                    if(objData.status=="ERROR") {
+	                        jQuery('span.ajax_msg').html(objData.message).show().delay(5000).fadeOut();
+	                    }else {
+	                        jQuery('span.ajax_msg').html(objData.message).show().delay(5000).fadeOut();
+	                    }                                            
+	                }
+				});
+
+		   	}  		
+
 			 
 			// request.done(function( msg ) {
 			//   	jQuery('#ajax_loader').hide();

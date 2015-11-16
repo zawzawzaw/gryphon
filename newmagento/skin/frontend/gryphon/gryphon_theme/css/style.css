@@ -849,7 +849,7 @@ ul.messages {
   vertical-align: middle!important;
 }
 #page-wrapper #header-cta ul.cart-cta-list li a .question {
-  background: url('../images/icons/question.png') no-repeat bottom;
+  background: url('../images/icons/question.svg') no-repeat bottom;
   width: 13px;
   height: 12px;
   display: inline-block;
@@ -857,7 +857,7 @@ ul.messages {
   margin-left: 5px;
 }
 #page-wrapper #header-cta ul.cart-cta-list li a .delivery-info {
-  background: url('../images/icons/delivery-info.png') no-repeat bottom;
+  background: url('../images/icons/delivery-info.svg') no-repeat bottom;
   width: 13px;
   height: 12px;
   display: inline-block;
@@ -865,7 +865,7 @@ ul.messages {
   margin-left: 5px;
 }
 #page-wrapper #header-cta ul.cart-cta-list li a .tracking {
-  background: url('../images/icons/tracking.png') no-repeat bottom;
+  background: url('../images/icons/tracking.svg') no-repeat bottom;
   width: 13px;
   height: 12px;
   display: inline-block;
@@ -4122,7 +4122,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   letter-spacing: 0.01em;
 }
 .store .main-content .side-bar .info ul li a .question {
-  background: url('../images/icons/question.png') no-repeat bottom;
+  background: url('../images/icons/question.svg') no-repeat bottom;
   width: 13px;
   height: 12px;
   display: inline-block;
@@ -4130,7 +4130,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   margin-left: 5px;
 }
 .store .main-content .side-bar .info ul li a .delivery-info {
-  background: url('../images/icons/delivery-info.png') no-repeat bottom;
+  background: url('../images/icons/delivery-info.svg') no-repeat bottom;
   width: 13px;
   height: 12px;
   display: inline-block;
@@ -4138,7 +4138,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   margin-left: 5px;
 }
 .store .main-content .side-bar .info ul li a .tracking {
-  background: url('../images/icons/tracking.png') no-repeat bottom;
+  background: url('../images/icons/tracking.svg') no-repeat bottom;
   width: 13px;
   height: 12px;
   display: inline-block;
@@ -6977,7 +6977,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .cart #cart ul li a .question,
 .cart #confirmation ul li a .question {
-  background: url('../images/icons/question.png') no-repeat bottom;
+  background: url('../images/icons/question.svg') no-repeat bottom;
   width: 13px;
   height: 12px;
   display: inline-block;
@@ -6986,7 +6986,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .cart #cart ul li a .delivery-info,
 .cart #confirmation ul li a .delivery-info {
-  background: url('../images/icons/delivery-info.png') no-repeat bottom;
+  background: url('../images/icons/delivery-info.svg') no-repeat bottom;
   width: 13px;
   height: 12px;
   display: inline-block;
@@ -6995,7 +6995,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .cart #cart ul li a .tracking,
 .cart #confirmation ul li a .tracking {
-  background: url('../images/icons/tracking.png') no-repeat bottom;
+  background: url('../images/icons/tracking.svg') no-repeat bottom;
   width: 13px;
   height: 12px;
   display: inline-block;
@@ -9372,19 +9372,19 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   color: #ae4e0e;
 }
 .account .order-history ul.order-info li a:hover .question {
-  background: url('../images/icons/question-hover.png') no-repeat bottom;
+  background: url('../images/icons/question-hover.svg') no-repeat bottom;
 }
 .account .order-history ul.order-info li a:hover .delivery-info {
-  background: url('../images/icons/delivery-info-hover.png') no-repeat bottom;
+  background: url('../images/icons/delivery-info-hover.svg') no-repeat bottom;
 }
 .account .order-history ul.order-info li a:hover .tracking {
-  background: url('../images/icons/tracking-hover.png') no-repeat bottom;
+  background: url('../images/icons/tracking-hover.svg') no-repeat bottom;
 }
 .account .order-history ul.order-info li a i {
   vertical-align: middle;
 }
 .account .order-history ul.order-info li a .question {
-  background: url('../images/icons/question.png') no-repeat bottom;
+  background: url('../images/icons/question.svg') no-repeat bottom;
   width: 13px;
   height: 12px;
   display: inline-block;
@@ -9392,7 +9392,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   margin-left: 5px;
 }
 .account .order-history ul.order-info li a .delivery-info {
-  background: url('../images/icons/delivery-info.png') no-repeat bottom;
+  background: url('../images/icons/delivery-info.svg') no-repeat bottom;
   width: 13px;
   height: 12px;
   display: inline-block;
@@ -9400,7 +9400,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   margin-left: 5px;
 }
 .account .order-history ul.order-info li a .tracking {
-  background: url('../images/icons/tracking.png') no-repeat bottom;
+  background: url('../images/icons/tracking.svg') no-repeat bottom;
   width: 13px;
   height: 12px;
   display: inline-block;

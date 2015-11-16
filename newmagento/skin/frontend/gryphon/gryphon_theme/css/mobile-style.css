@@ -4605,12 +4605,11 @@ html {
     border-right: none;
   }
   #content-wrapper.cart #confirmation .rewards_point_cart {
-    position: relative;
-    top: 0;
+    position: absolute;
+    top: -20px;
     text-align: left;
     width: 100%;
     line-height: 35px;
-    margin-top: -48px;
     margin-bottom: 10px;
   }
   #content-wrapper.cart #confirmation #discount-coupon-form label,
@@ -4627,7 +4626,7 @@ html {
     height: 29px;
   }
   #content-wrapper.cart #confirmation #discount-coupon-form {
-    padding-top: 3px;
+    padding-top: 20px;
   }
   #content-wrapper.cart #confirmation #discount-giftcard-form {
     margin-top: 22px;
@@ -5886,7 +5885,7 @@ html {
     padding: 27px 0;
   }
   .subscription-form .second-content .image-text-content .plans .plan .certificate-icon {
-    background: url(../images/icons/certificate.png) no-repeat;
+    background: url(../images/icons/certificate.svg) no-repeat;
     display: inline-block;
     width: 14px;
     height: 14px;
