@@ -42,16 +42,16 @@
         <div class="row">
             <div class="col-md-11 billing-address">
                 <div class="row">
-                    <div class="col-md-5 col-sm-5 col-xs-6">
+                    <div class="col-md-5 col-sm-5 col-xs-8">
                         <h1><?php echo $this->__('billing Address'); ?></h1>
                         <hr class="small" />
                     </div>
-                    <div class="col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-2 col-xs-6">
+                    <div class="col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-2 col-xs-4">
                         <ul>
                             <?php if($_pAddsses = Mage::getSingleton('customer/session')->getCustomer()->getDefaultBilling()): ?>
                                 <li><a href="<?php echo $this->getAddressEditUrl(Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses)) ?>" class="edit"><i class="fa fa-cog"></i> <span><?php echo $this->__('Edit') ?></span></a></li>
                             <?php endif; ?>
-                            <li><a href="<?php echo Mage::getUrl('customer/address/new'); ?>" class="add_address"><i class="fa fa-plus"></i> <span>Add Address</span></a></li>
+                            <li class="hidden-xs"><a href="<?php echo Mage::getUrl('customer/address/new'); ?>" class="add_address"><i class="fa fa-plus"></i> <span>Add Address</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -94,6 +94,11 @@
                         <?php endif; ?>
                     </div>
                 </div>
+                <div class="visible-xs-block">
+                    <div class="account-address-button-container">
+                        <a href="<?php echo Mage::getUrl('customer/address/new'); ?>" class="account-address-button-cta">Add Address</a>
+                    </div>
+                </div>
                 <?php if($_pAddsses = $this->getAdditionalAddresses()): ?>
                     <div class="row">
                         <div class="col-md-12">
@@ -121,16 +126,16 @@
             </div>
             <div class="col-md-11 shipping-address" style="margin-top:70px;">
                 <div class="row">
-                    <div class="col-md-5 col-sm-5 col-xs-6">
+                    <div class="col-md-5 col-sm-5 col-xs-8">
                         <h1><?php echo $this->__('Shipping Address'); ?></h1>
                         <hr class="small" />
                     </div>
-                    <div class="col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-2 col-xs-6">
+                    <div class="col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-2 col-xs-4">
                         <ul>
                             <?php if($_pAddsses = Mage::getSingleton('customer/session')->getCustomer()->getDefaultShipping()): ?>
                                 <li><a href="<?php echo $this->getAddressEditUrl(Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses)) ?>" class="edit"><i class="fa fa-cog"></i><span>Edit</span></a></li>
                             <?php endif; ?>
-                            <li><a href="<?php echo Mage::getUrl('customer/address/new'); ?>" class="add_address"><i class="fa fa-plus"></i><span>Add Address</span></a></li>
+                            <li class="hidden-xs"><a href="<?php echo Mage::getUrl('customer/address/new'); ?>" class="add_address"><i class="fa fa-plus"></i><span>Add Address</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -199,6 +204,13 @@
                 <?php endif ?>
             </div>
         </div>
+
+        <div class="visible-xs-block">
+            <div class="account-address-button-container">
+                <a href="<?php echo Mage::getUrl('customer/address/new'); ?>" class="account-address-button-cta">Add Address</a>
+            </div>
+        </div>
+
         <div class="buttons-set row">
             <!-- <p class="back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p> -->
         </div>

@@ -136,6 +136,7 @@
       //if (scroll_top > 257) {
       //if (scroll_top > 227) {
       if (scroll_top > (277 + 9)) {
+      // if (scroll_top > (256)) {
         this.element.addClass('sticky-version');
       } else {
         this.element.removeClass('sticky-version');

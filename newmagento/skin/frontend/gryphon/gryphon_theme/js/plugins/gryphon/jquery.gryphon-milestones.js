@@ -65,7 +65,8 @@
 
     if (this.auto_play) {
       // TweenMax.delayedCall(5, this.auto_play_function, [], this);
-      TweenMax.delayedCall(6, this.auto_play_function, [], this);
+      //TweenMax.delayedCall(6, this.auto_play_function, [], this);
+      TweenMax.delayedCall(10, this.auto_play_function, [], this);
     }
 
   }
@@ -149,7 +150,8 @@
         this.goto_page(target_page);
 
         //TweenMax.delayedCall(2, this.auto_play_function, [], this);
-        TweenMax.delayedCall(4, this.auto_play_function, [], this);
+        //TweenMax.delayedCall(4, this.auto_play_function, [], this);
+        TweenMax.delayedCall(6, this.auto_play_function, [], this);
       }
 
 
@@ -321,7 +323,8 @@
 
       if(window_width < 992) {
         var extra_image_width = Math.floor( (window_width - this.page_width) / 2 );
-        extra_image_width -= 9;
+        // extra_image_width -= 9;
+        extra_image_width -= (9 + 13);
 
         this.milestone_images.css({
           marginLeft: (-1 * extra_image_width) + 'px',

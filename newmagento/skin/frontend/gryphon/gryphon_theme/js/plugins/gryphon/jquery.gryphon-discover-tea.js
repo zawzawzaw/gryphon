@@ -165,6 +165,8 @@ if (!Array.prototype.indexOf) {
     this.has_created_results = false;
     this.has_no_similar = false;
 
+    this.loading_icon = this.element.find('#discover-loading-icon');
+
 
     this.question_01_element = this.element.find("#discover-tea-question-01");
     this.question_02_element = this.element.find("#discover-tea-question-02");
@@ -514,6 +516,9 @@ if (!Array.prototype.indexOf) {
           this.result_04_element_loaded = true;
         }
 
+        if (this.is_mobile()) {
+          this.loading_icon.show(0);
+        }
 
 
         //this.similar_container
@@ -1011,6 +1016,9 @@ if (!Array.prototype.indexOf) {
               speed: 300,
               slidesToShow: 1,
           });
+
+          this.loading_icon.hide(0);
+
         }
 
       }
@@ -1021,8 +1029,6 @@ if (!Array.prototype.indexOf) {
           this.different_result_03_element_loaded &&
           this.different_result_04_element_loaded ){
 
-        
-          
         if( this.is_mobile() ){
           this.different_container.addClass('slick');
           this.different_container.slick({
@@ -1031,6 +1037,9 @@ if (!Array.prototype.indexOf) {
               speed: 300,
               slidesToShow: 1,
           });
+
+          this.loading_icon.hide(0);
+
         }
 
       }

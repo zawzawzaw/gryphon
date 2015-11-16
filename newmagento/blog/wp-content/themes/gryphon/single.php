@@ -22,23 +22,25 @@
 	  </div>
 
 	  <div id="mobile-blog-tag-container">
-	  	<?php
-					$posttags = get_tags();
+	  	<ul>
+		  	<?php
+						$posttags = get_tags();
 
-					// print_r($posttags);
-					// $posttags = get_the_tags();
-					if ($posttags) {
-						$no_of_tags = count($posttags);
-						$i = 1;
-					  foreach($posttags as $tag) {
-					  	//if($i==$no_of_tags):
-					?>
-					    <li><a href="<?php echo get_tag_link($tag->term_id); ?>"><?php echo $tag->name;  ?></a></li>
-					<?php
-						$i++;
-					  }
-					}
-				?>		
+						// print_r($posttags);
+						// $posttags = get_the_tags();
+						if ($posttags) {
+							$no_of_tags = count($posttags);
+							$i = 1;
+						  foreach($posttags as $tag) {
+						  	//if($i==$no_of_tags):
+						?>
+						    <li><a href="<?php echo get_tag_link($tag->term_id); ?>"><?php echo $tag->name;  ?></a></li>
+						<?php
+							$i++;
+						  }
+						}
+					?>		
+	  	</ul>
 	  </div>
 	  <div id="mobile-blog-category-container">
 	  	<ul>

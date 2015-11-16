@@ -79,14 +79,15 @@
 
     close_all_orders: function(){
       this.all_orders.removeClass('collapsed expanded');
-      /*
+      
       this.top_part.show(0);
       this.top_part_02.show(0);
       this.bottom_part.show(0);
-      */
+      /*
       this.top_part.stop(0).slideDown(500);
       this.top_part_02.stop(0).slideDown(500);
       this.bottom_part.stop(0).slideDown(500);
+      */
     },
     open_order: function(str_param){
       var order = this.order_dictionary[str_param];
@@ -96,14 +97,15 @@
         this.all_orders.removeClass('expanded');
         this.all_orders.addClass('collapsed');
 
-        /*
+        
         this.top_part.hide(0);
         this.top_part_02.hide(0);
         this.bottom_part.hide(0);
-        */
+        /*
         this.top_part.stop(0).slideUp(500);
         this.top_part_02.stop(0).slideUp(500);
         this.bottom_part.stop(0).slideUp(500);
+        */
 
         order.removeClass('collapsed');
         order.addClass('expanded');

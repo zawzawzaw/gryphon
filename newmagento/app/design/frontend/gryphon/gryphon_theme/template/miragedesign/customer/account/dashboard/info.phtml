@@ -93,7 +93,8 @@ if(Mage::getSingleton('customer/session')->isLoggedIn()) {
                 <?php endif; ?>
             </p>
         </div>
-        <div class="each-input">
+
+        <div class="each-input hidden-xs">
             <h2><?php echo $this->__('phone no.'); ?></h2>
             <p>
                 <?php if ($billingAddress) :?>
@@ -104,8 +105,26 @@ if(Mage::getSingleton('customer/session')->isLoggedIn()) {
             </p>
         </div>
     </div>
+    <div class="visible-xs-block col-xs-6">
+        <div class="each-input">
+            <h2><?php echo $this->__('phone no.'); ?></h2>
+            <p>
+                <?php if ($billingAddress) :?>
+                    <?php echo $billingAddress->getTelephone(); ?>
+                <?php else : ?>
+                    <?php echo $this->__('None'); ?>
+                <?php endif; ?>
+            </p>
+        </div>
+
+    </div>
     <div class="col-md-4 col-sm-12 col-xs-12">
         <?php if( $this->isNewsletterEnabled() ): ?>
+
+            <div class="visible-xs-block">
+                <hr class="custom-account-dashboard-hr">
+            </div>
+
             <div class="each-input">
                 <input type="checkbox" name="is_subscribed" id="subscription" value="1" title="<?php echo $this->__('Sign up for our newsletter') ?>" class="input-text" <?php if($this->helper('customercustomiser')->getIsSubscribed()): ?> checked="checked"<?php endif; ?> />
                 <label class="checkbox-label" for="subscription">
