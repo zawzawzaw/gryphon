@@ -169,6 +169,7 @@
 			</div>
 		</div>
 	</div><!-- page wrapper end -->
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
 	<script>
 	  window.fbAsyncInit = function() {
 	    FB.init({
@@ -208,6 +209,11 @@
 	    	openNewWindow(url,'sharing','height=600,width=600,toolbar=no,scrollbars=no,resizable=yes');
     	});
     	$('.pintrest').on('click', function(e){
+	    	e.preventDefault();
+	    	var url = $(this).attr('href');
+	    	openNewWindow(url,'sharing','height=600,width=600,toolbar=no,scrollbars=no,resizable=yes');
+    	});
+    	$('.google').on('click', function(e){
 	    	e.preventDefault();
 	    	var url = $(this).attr('href');
 	    	openNewWindow(url,'sharing','height=600,width=600,toolbar=no,scrollbars=no,resizable=yes');

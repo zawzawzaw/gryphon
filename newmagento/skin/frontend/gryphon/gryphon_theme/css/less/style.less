@@ -1089,6 +1089,12 @@ ul.messages {
       }
     }
 
+    .google, .mailto {
+      &:hover {
+        color: @dark-orange;
+      }
+    }
+
     div.dropdown {
       display: inline-block;
       position: relative;
@@ -10215,7 +10221,8 @@ div.product {
           display: inline-block;
           &.category {
             float: left;
-            margin-right: 115px;
+            margin-right: 75px;
+            max-width: 85px;
           }
           &.tags {
             float: left;
@@ -10281,7 +10288,10 @@ div.product {
             }          
             a {
               width: 18px!important;
-              margin-left: 5px;              
+              margin-left: 5px;       
+              vertical-align: middle;
+              color: #464646;              
+              font-size: 18px;       
             }
             a.twitter {
               width: 18px!important;

@@ -4,7 +4,11 @@
 		<span><?php the_date(); ?></span>
 		<hr class="small">
 
-		<?php the_content(); ?>		
+		<?php //the_content(); ?>
+		<?php if ( has_post_thumbnail() ) {
+	        the_post_thumbnail('full');
+	    } ?>
+		<?php the_excerpt(); ?>
 
 		<!-- <img src="images/content/blog-1.jpg" class="img-responsive" alt="blog 1"> -->
 		<?php //the_post_thumbnail( 'full', array('class'=>'img-responsive') ); ?>
@@ -45,7 +49,9 @@
 					<ul>
 						<li><a href="http://pinterest.com/pin/create/button/?url=<?php echo urlencode( get_permalink(get_the_ID()) ); ?>&media=<?php echo wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>" class="pintrest"></a></li>
 						<li><a href="https://twitter.com/share?url=<?php echo urlencode( get_permalink(get_the_ID()) ); ?>&via=gryphontea&text=gryphon%20tea%20company" class="twitter"></a></li>
-						<li><a href="<?php echo get_permalink(get_the_ID()); ?>" class="facebook"></a></li>						
+						<li><a href="<?php echo get_permalink(get_the_ID()); ?>" class="facebook"></a></li>
+						<li><a href="https://plus.google.com/share?url=<?php echo urlencode( get_permalink(get_the_ID()) ); ?>&hl=en-US" class="google"><i class="fa fa-google-plus"></i></a></li>
+						<li><a href="mailto:?Subject=Hello%20again" class="mailto" target="_top"><i class="fa fa-envelope-o"></i></a></li>
 					</ul>
 				</div>
 			</div>

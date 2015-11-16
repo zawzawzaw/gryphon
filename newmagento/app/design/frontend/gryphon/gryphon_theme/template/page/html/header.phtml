@@ -423,9 +423,11 @@ $quoteData= $quote->getData();
 									   $customer_name = $customer->getFirstname();
 									}
 									?>						
-
+									<?php if($session->isLoggedIn()): ?>
 									<li><a href="#" class="account"><span class="hidden-xs hidden-sm"><?php echo (isset($customer_name)) ? $customer_name	 : $this->__('Account'); ?></span></a></li>
-									<!-- <li><a href="<?php echo Mage::helper('customer')->getLoginUrl(); ?>" class="account"><span class="hidden-xs hidden-sm"><?php echo (isset($customer_name)) ? $customer_name	 : $this->__('Join | Sign In'); ?></span></a></li> -->
+									<?php else: ?>
+									<li><a href="<?php echo Mage::helper('customer')->getLoginUrl(); ?>" class="account"><span class="hidden-xs hidden-sm"><?php echo (isset($customer_name)) ? $customer_name	 : $this->__('Join | Sign In'); ?></span></a></li>
+									<?php endif; ?>
 									<li class="hidden-md hidden-lg"><hr class="divider"></li>
 	                                <?php if ($count) :?>
 	                                <li><a href="#" class="cart cart-summary-data"><span><?php echo Mage::helper('core')->currency($quoteData['subtotal']); ?> (<span class="count"><?php echo $count; ?></span>)</span></a></li>
@@ -440,10 +442,10 @@ $quoteData= $quote->getData();
 									<li><a href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>">Log Out</a></li>
 								</ul>
 							<?php else: ?>
-								<ul class="account-select">
+								<!-- <ul class="account-select">
 									<li><a href="<?php echo Mage::helper('customer')->getLoginUrl(); ?>">Log In</a></li>
 									<li><a href="<?php echo Mage::getUrl('customer/account/create'); ?>">Register</a></li>							
-								</ul>
+								</ul> -->
 							<?php endif; ?>
 							<div class="cart-preview-select">
 								<h5><img src="<?php echo $this->getSkinUrl('images/icons/cart.png'); ?>" alt=""> SHOPPING CART</h5>

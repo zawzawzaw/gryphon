@@ -82,7 +82,7 @@
 							if($wp_query->have_posts()):
 
 								while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
-									<?php get_template_part( 'content', get_post_format() ); ?>
+									<?php get_template_part( 'content', 'home' ); ?>
 								<?php endwhile; // end of the loop. ?>																									
 
 							<?php else : ?>
