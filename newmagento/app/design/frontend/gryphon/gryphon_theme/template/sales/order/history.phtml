@@ -188,31 +188,32 @@
                                 </div>
                                 <div class="space40"></div>
 
-                                <div class="row">
-                                    <div class="col-xs-4"><h2><?php echo $this->__('PRODUCT'); ?></h2></div>
-                                    <div class="col-xs-3"><h2 style="text-align:center;"><?php echo $this->__('UNIT PRICE'); ?></h2></div>
-                                    <div class="col-xs-2 order-qty"><h2><?php echo $this->__('QTY'); ?></h2></div>
-                                    <div class="col-xs-3 align-to-total"><h2><?php echo $this->__('TOTAL'); ?></h2></div>
+                                <div class="mobile-order-history-header-row">
+                                    <div class="row">
+                                        <div class="col-xs-4"><h2 style="margin-left:5px;"><?php echo $this->__('PRODUCT'); ?></h2></div>
+                                        <div class="col-xs-3"><h2 style="text-align:center; margin-right:-20px;"><?php echo $this->__('UNIT PRICE'); ?></h2></div>
+                                        <div class="col-xs-2 order-qty"><h2><?php echo $this->__('QTY'); ?></h2></div>
+                                        <div class="col-xs-3 align-to-total"><h2><?php echo $this->__('TOTAL'); ?></h2></div>
+                                    </div>
                                 </div>
 
                                 <?php $_items = $_order->getItemsCollection(); ?>
                                 <?php foreach ($_items as $_item): ?>
                                 <?php if ($_item->getParentItem()) continue; ?>
                                 <?php //echo "<pre>";print_r($_item->getData());die(); ?>
-                                <hr class="dotted" />
                                 <div class="row each-product">
-                                    <div class="col-xs-4"><p class="product"><?php echo $this->escapeHtml($_item->getName()) ?></p></div>
+                                    <div class="col-xs-4"><p class="product" style="margin-left:5px;"><?php echo $this->escapeHtml($_item->getName()) ?></p></div>
                                     <div class="col-xs-3"><p class="price" style="text-align:center;"><?php echo $_order->formatPrice($_item->getPrice()*1) ?></p></div>
                                     <div class="col-xs-2 order-qty"><p><?php echo $_item->getQtyOrdered()*1 ?></p></div>
                                     <div class="col-xs-3 align-to-total"><p class="price"><?php echo $_order->formatPrice($_item->getRowTotal()*1) ?></p></div>
                                 </div>
+                                <hr class="dotted" />
                                 <?php endforeach; ?>
 
-                                <hr class="dotted" />
                                 <div class="row extra-content-headers">
                                     <div class="col-xs-12">
                                         <div class="row each-details view-order-details">
-                                            <div class="col-xs-9"><h2><?php echo $this->__('Sub total'); ?></h2></div>
+                                            <div class="col-xs-9"><h2 style="margin-left:5px;"><?php echo $this->__('Sub total'); ?></h2></div>
                                             <div class="col-xs-3 align-to-total"><h2 class="sub_total price"><?php echo $_order->formatPrice($_order->getSubtotal()) ?></h2></div>
                                         </div>
                                     </div>
@@ -222,28 +223,28 @@
                                 <div class="extra-content-mobile">
                                     <?php if ($_order->getShippingAmount()) :?>
                                     <div class="row each-details">
-                                        <div class="col-xs-9"><h2><?php echo $this->__('shipping &amp; handling'); ?></h2><span>— <?php echo $_order->getShippingDescription(); ?></span></div>
+                                        <div class="col-xs-9"><h2 style="margin-left:5px;"><?php echo $this->__('shipping &amp; handling'); ?></h2><span style="margin-left:5px;">— <?php echo $_order->getShippingDescription(); ?></span></div>
                                         <div class="col-xs-3 align-to-total"><h2 class="shipping price"><?php echo $_order->formatPrice($_order->getShippingAmount()); ?></h2></div>
                                     </div>
                                     <?php endif; ?>
                                     <?php if ($_order->getCouponCode()) : ?>
                                     <div class="row each-details">
-                                        <div class="col-xs-9"><h2><?php echo $this->__('Applied Discount Code'); ?></h2><span>— <?php echo $_order->getCouponCode(); ?></span></div>
+                                        <div class="col-xs-9"><h2 style="margin-left:5px;"><?php echo $this->__('Applied Discount Code'); ?></h2><span style="margin-left:5px;">— <?php echo $_order->getCouponCode(); ?></span></div>
                                         <div class="col-xs-3 align-to-total"><h2 class="minus applied_discount_code price">- <?php echo $_order->formatPrice($_order->getDiscountAmount()); ?></h2></div>
                                     </div>
                                     <?php endif; ?>
                                     
                                     <?php if ($_order->getTaxAmount()): ?>
                                     <div class="row each-details">
-                                        <div class="col-xs-9"><h2><?php echo $this->__('Tax'); ?></h2></div>
+                                        <div class="col-xs-9"><h2 style="margin-left:5px;"><?php echo $this->__('Tax'); ?></h2></div>
                                         <div class="col-xs-3 align-to-total"><h2 class="tax price"><?php echo $_order->formatPrice($_order->getTaxAmount()); ?></h2></div>
                                     </div>
                                     <?php endif; ?>
                                     <div class="row">
-                                        <hr />
+                                        <hr class="mobile-order-history-item-hr" />
                                     </div>
                                     <div class="row each-details">
-                                        <div class="col-xs-9"><h2 class="grand_total"><?php echo $this->__('grand total'); ?></h2></div>
+                                        <div class="col-xs-9"><h2 class="grand_total" style="margin-left:5px;"><?php echo $this->__('grand total'); ?></h2></div>
                                         <div class="col-xs-3 align-to-total-2"><h2 class="grand_total price"><?php echo $_order->formatPrice($_order->getGrandTotal()) ?></h2></div>
                                         
                                     </div>
