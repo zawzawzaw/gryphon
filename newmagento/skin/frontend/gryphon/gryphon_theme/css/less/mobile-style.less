@@ -145,7 +145,8 @@
 
       .table-item{
         margin-bottom: 30px;
-        border-bottom: 1px solid #cccccc;
+        //border-bottom: 1px solid #cccccc;
+        border-bottom: 1px solid @border-grey;
         //padding-bottom: 15px;
         padding-bottom: 30px;
 
@@ -154,7 +155,8 @@
         }
 
         &:first-child{
-          border-top: 1px solid #ccc;
+          //border-top: 1px solid #ccc;
+          border-top: 1px solid @border-grey;
           //padding-top: 15px;
           padding-top: 30px;
         }
@@ -426,8 +428,10 @@
     } // .faq-banner
 
     .main-content {
-      padding-top: 34px;
-
+      // padding-top: 34px;
+      
+      padding-top: 28px;
+      padding-bottom: 18px;
 
       h1{
         font-size: 14px;
@@ -465,7 +469,8 @@
 
 
       .faq-section{
-        margin-bottom: 34px;
+        // margin-bottom: 34px;
+        margin-bottom: 50px;
 
         > p{
           padding-top: 15px;
@@ -498,7 +503,9 @@
 
 
             &.open-version{
-              
+              .arrow-btn{
+                //top: 36px;
+              }
 
             }
             
@@ -542,7 +549,8 @@
   .contact-us{
     margin-top: 83px + 34px;
     //margin-top: 34px;
-    margin-bottom: 65px;
+    // margin-bottom: 65px;
+    margin-bottom: 70px;
 
     hr.small{
       margin-top: 6px!important;
@@ -564,15 +572,19 @@
     }
     .contact-us-col-1{
       margin-right: 0;
-      padding-bottom: 34px - 20px; 
-      margin-bottom: 34px; 
-      border-bottom: 1px solid #ccc;
+      // padding-bottom: 34px - 20px; 
+      padding-bottom: 26px; 
+      // margin-bottom: 34px; 
+      margin-bottom: 50px; 
+      // border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid @border-grey;
 
       padding-top: 30px;
 
       img{
         padding-top: 0;
-        padding-bottom: 20px;
+        // padding-bottom: 20px;
+        padding-bottom: 30px;
       }
       .each-input p{
         font-size: 12px;
@@ -741,8 +753,11 @@
 
 
       .first-content{
-        padding-top: 34px;
-        padding-bottom: 34px;
+        // padding-top: 34px;
+        // padding-bottom: 34px;
+
+        padding-top: 28px;
+        padding-bottom: 28px;
 
         .center{
           p{
@@ -751,7 +766,8 @@
         }
       } // .first-content
       .second-content{
-        padding-top: 34px;
+        // padding-top: 34px;
+        padding-top: 28px;
         padding-bottom: 0px;
         //padding-bottom: 34px;
 
@@ -814,11 +830,16 @@
 
       } // .second-content
       .third-content{
-        margin-top: 34px;
-        margin-bottom: 34px;
+        // margin-top: 34px;
+        // margin-bottom: 34px;
+
+        margin-top: 28px;
+        // margin-bottom: 28px;
+        margin-bottom: 50px;
 
         .image-text-content{
-          padding-bottom: 34px;
+          // padding-bottom: 34px;
+          padding-bottom: 50px;
           border-bottom: none;
           position: relative;
 
@@ -933,7 +954,8 @@
       .forth-content{
         .application-form-banner{
           width: 100%;
-          margin-bottom: 34px - 10px;
+          // margin-bottom: 34px - 10px;
+          margin-bottom: 18px;
         }
         #application-form{
           .application-form-col-1,
@@ -941,7 +963,8 @@
             padding: 0px;
           }
           .application-form-col-2{
-            padding-bottom: 65px - 20px;
+            // padding-bottom: 65px - 20px;
+            padding-bottom: 12px;
           }
 
           .intl-tel-input{
@@ -1391,16 +1414,19 @@
 
       .first-content{
         &:before{
-          height: 30px;
+          //height: 30px;
+          height: 28px;
         }
         &:after{
-          height: 32px;
+          //height: 32px;
+          height: 28px;
         }
       } // .first-content
 
       .second-content{
         &:before{
-          height: 38px;
+          //height: 38px;
+          height: 30px;
         }
         &:after{
           height: 0px;
@@ -1461,7 +1487,8 @@
           display: none;
         }
         .tea-category-top{
-          padding-bottom: 13px;
+          //padding-bottom: 13px;
+          padding-bottom: 6px;
 
           h6{
             margin-top: -9px;
@@ -1536,7 +1563,7 @@
         }
 
         .tea-type-top{
-
+          margin-top: -4px;
         }
         .tea-type-container{
           padding-bottom: 0px;
@@ -1553,7 +1580,8 @@
           //padding-right: 10px;
 
           margin: 0;
-          margin-bottom: 26px;
+          // margin-bottom: 26px;
+          margin-bottom: 0px;
 
           &:first-child{
             // padding-right: 5px;
@@ -1644,7 +1672,8 @@
 
       .sixth-content{
         &:before{
-          height: 34px;
+          //height: 34px;
+          height: 29px;
         }
         &:after{
           height: 34px - 20px;
@@ -1779,9 +1808,11 @@
           padding-top: 0px;
         }
         .subscribe-cta-button{
-          margin-top: 34px;
+          // margin-top: 34px;
+          margin-top: 30px;
           //margin-bottom: 34px;
-          margin-bottom: 50px;
+          // margin-bottom: 50px;
+          margin-bottom: 70px;
           width: 100%;
         }
       }
@@ -2004,6 +2035,10 @@ html{
         .cart-preview-select{
           //padding-top: 81px + 30px;
           padding-top: 100px;
+
+          .cart-preview-content{
+            padding-top: 16px;
+          }
         }
 
         .cta-btns{
@@ -2019,7 +2054,8 @@ html{
         }
         .cart-preview-select ul.cart-summary{
           position: fixed;
-          bottom: 50px;
+          // bottom: 50px;
+          bottom: 45px;
           left: 0px;
           width: 100%;
           z-index: 220;
@@ -2037,7 +2073,8 @@ html{
             left: 15px;
             //right: 19px;
             right: 15px;
-            border-top: 1px solid #e1e1e1;
+            //border-top: 1px solid #e1e1e1;
+            border-top: 1px solid @border-grey;
           }
 
         }
@@ -2482,8 +2519,12 @@ html{
 
       ul.cart-header {
         text-align: left;
-        border-top: 1px solid #d6d6d6;
-        border-bottom: 1px solid #d6d6d6;
+        //border-top: 1px solid #d6d6d6;
+        //border-bottom: 1px solid #d6d6d6;
+
+        border-top: 1px solid @border-grey;
+        border-bottom: 1px solid @border-grey;
+
         padding-top: 2px;
         padding-bottom: 2px;
         margin-top: 15px;
@@ -2536,7 +2577,8 @@ html{
       }
 
       ul.cart-summary {
-        border-top: 1px solid #e1e1e1;
+        //border-top: 1px solid #e1e1e1;
+        border-top: 1px solid @border-grey;
         padding-top: 8px;
         li {
           width: 20%;
@@ -2642,7 +2684,8 @@ html{
         height: 41px;
         background: @skin;
 
-        border-bottom: 1px solid #e9e8e6;
+        //border-bottom: 1px solid #e9e8e6;
+        border-bottom: 1px solid @border-grey;
 
         p{
           .gotham-medium;
@@ -2692,7 +2735,8 @@ html{
           display: block;
           width: 100%;
           background: @skin;
-          border-bottom: 1px solid #e9e8e6;
+          //border-bottom: 1px solid #e9e8e6;
+          border-bottom: 1px solid @border-grey;
 
           &:last-child{
             border-bottom: none;
@@ -2815,7 +2859,8 @@ html{
 
         > li {
           background: @white;
-          border-bottom: 1px solid #e9e8e6;
+          //border-bottom: 1px solid #e9e8e6;
+          border-bottom: 1px solid @border-grey;
           position: relative;
 
           &:last-child{
@@ -2967,7 +3012,8 @@ html{
     margin-bottom: 5px !important;
   }
   hr.dotted{
-    border-top: 1px dotted #ccc;
+    // border-top: 1px dotted #ccc;
+    border-top: 1px dotted @border-grey;
     margin-top: 25px;
     margin-bottom: 19px;
   }
@@ -2987,7 +3033,9 @@ html{
       line-height: 21px;
 
       display: block;
-      border: 1px solid #cccccc!important;
+      //border: 1px solid #cccccc!important;
+      border: 1px solid @border-grey !important;
+
       width: 253px;
       height: 21px;
       padding: 0 5px;
@@ -3354,8 +3402,11 @@ html{
       //margin-bottom: 34px;
       //padding-bottom: 32px;
 
-      margin-bottom: 50px;
-      padding-bottom: 50px;
+      // margin-bottom: 50px;
+      // padding-bottom: 50px;
+
+      margin-bottom: 30px;
+      padding-bottom: 30px;
 
       position: relative;
 
@@ -3367,7 +3418,8 @@ html{
         bottom: 0;
         left: 15px;
         right: 15px;
-        border-bottom: 1px solid #e5e5e5;
+        //border-bottom: 1px solid #e5e5e5;
+        border-bottom: 1px solid @border-grey;
       }
       
 
@@ -3551,7 +3603,8 @@ html{
         .ctas{
           margin-top: 40px - 18px + 3px;
           //padding-bottom: 6px;
-          padding-bottom: 37px;
+          // padding-bottom: 37px;
+          padding-bottom: 17px;
 
           border-bottom: 1px solid @border-grey;
         }
@@ -3565,7 +3618,8 @@ html{
       .image-text-content{
         // padding-top: 34px;
         // padding-top: 30px;
-        padding-top: 37px;
+        // padding-top: 37px;
+        padding-top: 17px;
         //padding-bottom: 14px;
 
         //text-align: center;
@@ -3614,8 +3668,11 @@ html{
           // margin-bottom: 5px;
           // padding-bottom: 30px;
 
-          margin-bottom: 50px;
-          padding-bottom: 50px;
+          // margin-bottom: 50px;
+          // padding-bottom: 50px;
+
+          margin-bottom: 30px;
+          padding-bottom: 30px;
 
           position: relative;
 
@@ -3679,11 +3736,13 @@ html{
           //  padding-top: 30px;
           padding-top: 0px;
 
-          border-bottom: 1px solid #e5e5e5;
+          //border-bottom: 1px solid #e5e5e5;
+          border-bottom: 1px solid @border-grey;
           margin-bottom: 18px;
           //padding-bottom: 16px;
           //
-          margin-bottom: 40px;
+          // margin-bottom: 40px;
+          margin-bottom: 20px;
 
           h1{
             padding: 0;
@@ -3710,8 +3769,11 @@ html{
 
             .post{
               padding-left: 0px;
-              padding-top: 30px;
-              padding-bottom: 30px;
+              //padding-top: 30px;
+              //padding-bottom: 30px;
+
+              padding-top: 15px;
+              padding-bottom: 15px;
 
               span.date{
                 padding-top: 3px;
@@ -4206,7 +4268,8 @@ html{
           &:after{
             content: "";
             display: block;
-            border-bottom: 1px solid #e5e5e5;
+            //border-bottom: 1px solid #e5e5e5;
+            border-bottom: 1px solid @border-grey;
 
             // margin-bottom: 50px;
             //   padding-bottom: 10px;
@@ -4363,7 +4426,8 @@ html{
         .input-box{
           input{
             border: none;
-            border: 1px solid #cccccc;
+            //border: 1px solid #cccccc;
+            border: 1px solid @border-grey;
           }
         }
 
@@ -4475,12 +4539,14 @@ html{
     // STORE LOCATOR
 
     .locations-container{
-      margin-top: 10px;
+      //margin-top: 10px;
+      margin-top: 31px;
 
       .each-location{
         padding-left: 0;
         padding-right: 0;
-        margin-bottom: -9px;
+        //margin-bottom: -9px;
+        margin-bottom: 15px;
 
         h1{
           font-size: 14px;
@@ -4609,7 +4675,8 @@ html{
       input[type=checkbox]+label span{
         height: 14px;
         width: 14px;
-        border: 1px solid #545454;
+        //border: 1px solid #545454;
+        border: 1px solid @border-grey;
         position: relative;
         top: 2px;
         z-index: 10;
@@ -4667,7 +4734,8 @@ html{
         &:after{
           content: "";
           display: block;
-          border-bottom: 1px solid #eee;
+          //border-bottom: 1px solid #eee;
+          border-bottom: 1px solid @border-grey;
           //padding-top: 26px;
           padding-top: 17px;
         }
@@ -4720,7 +4788,8 @@ html{
           padding-bottom: 26px;
           padding-left: 6px;
           padding-right: 6px;
-          border-bottom: 1px solid #cccccc;
+          //border-bottom: 1px solid #cccccc;
+          border-bottom: 1px solid @border-grey;
           margin-bottom: 22px;
 
           .each-input{
@@ -4740,7 +4809,8 @@ html{
           padding-left: 6px;
           padding-right: 6px;
           padding-bottom: 36px;
-          border-bottom: 1px solid #cccccc;
+          //border-bottom: 1px solid #cccccc;
+          border-bottom: 1px solid @border-grey;
 
           // margin-bottom: 38px;
           margin-bottom: 30px;
@@ -4807,7 +4877,8 @@ html{
 
                     height: 14px;
                     width: 14px;
-                    border: 1px solid #545454;
+                    border: 1px solid @border-grey;
+                    //border: 1px solid #545454;
                   }
 
                   // check
@@ -4875,7 +4946,8 @@ html{
         #store-filter-detail-cta-container{
 
           margin-top: 37px;
-          border-top: 1px solid #cccccc;
+          //border-top: 1px solid #cccccc;
+          border-top: 1px solid @border-grey;
           padding-top: 38px;
 
           .store-filter-detail-cta-button{
@@ -4987,7 +5059,8 @@ html{
     input[type=checkbox]+label span{
       height: 13px;
       width: 13px;
-      border: 1px solid #545454;
+      //border: 1px solid #545454;
+      border: 1px solid @border-grey;
       position: relative;
       top: 2px;
       z-index: 10;
@@ -5055,7 +5128,8 @@ html{
           top: 9px;
           right: 50%;
           width: 100%;
-          border-top: 1px solid #cccccc;
+          // border-top: 1px solid #cccccc;
+          border-top: 1px solid @border-grey;
         }
 
         &.active,
@@ -5084,7 +5158,8 @@ html{
           top: 9px;
           left: 50%;
           width: 100%;
-          border-top: 1px solid #cccccc;
+          //border-top: 1px solid #cccccc;
+          border-top: 1px solid @border-grey;
         }
       }
 
@@ -5228,7 +5303,8 @@ html{
                 padding-right: 5px;
 
                 &:first-child{
-                  border-right: 1px solid #ddd;
+                  //border-right: 1px solid #ddd;
+                  border-right: 1px solid @border-grey;
                 }
                 &:nth-child(2),
                 &:nth-child(4),
@@ -5249,14 +5325,18 @@ html{
 
             tr{
 
-              border-bottom: 1px solid #ddd;
+              //border-bottom: 1px solid #ddd;
+              border-bottom: 1px solid @border-grey;
               position: relative;
 
               td{
                 padding: 0 !important;
 
                 &:first-child{
-                  border-right: 1px solid #ddd;
+
+                  // border-right: 1px solid #ddd;
+                  border-right: 1px solid @border-grey;
+
                   .image-text-container{
                     display: none;
                   }
@@ -5510,7 +5590,8 @@ html{
 
         
         border-bottom: 0px;
-        border-top: 1px dashed #ddd;
+        //border-top: 1px dashed #ddd;
+        border-top: 1px dashed @border-grey;
         // border-bottom: 1px solid #ddd;
         //border-bottom: 1px solid #ddd;
         //
@@ -5519,7 +5600,8 @@ html{
         }
         
         &:last-child{
-          border-bottom: 1px solid #ddd;
+          //border-bottom: 1px solid #ddd;
+          border-bottom: 1px solid @border-grey;
         }
 
         .label {
@@ -5710,7 +5792,9 @@ html{
       
       .delivery-rates{
         padding-bottom: 7px;
-        margin-bottom: -20px;
+        // margin-bottom: -20px;
+        margin-bottom: -30px;
+
         
 
         p{
@@ -5798,9 +5882,11 @@ html{
     }
 
     #billing-new-address-form{
-      padding-bottom: 23px;
-      margin-bottom: 33px;
-      border-bottom: 1px solid #ddd;
+      // padding-bottom: 23px;
+      // margin-bottom: 33px;
+      padding-bottom: 50px;
+      margin-bottom: 50px;
+      border-bottom: 1px solid @border-grey;
     }
 
     .form-list,
@@ -5848,6 +5934,7 @@ html{
   .collections {
     //padding-bottom: 20px;
     margin-top: 81px;
+    padding-bottom: 32px !important;
 
     .collections-banner {
       .image-text-content {
@@ -5901,10 +5988,13 @@ html{
         letter-spacing: 0em;
 
         padding-top: 3px;
-        padding-bottom: 5px;
+        // padding-bottom: 5px;
+        padding-bottom: 3px;
       }
       .text-content{
-        margin-top: 26px + 8px;
+        // margin-top: 26px + 8px;
+        
+        margin-top: 27px;
         padding-bottom: 29px;
         border-bottom: 1px solid @border-grey;
         margin-bottom: 4px;
@@ -6007,14 +6097,17 @@ html{
 
     .main-content {
       .first-content{
-        padding-top: 34px;
+        // padding-top: 34px;
+        padding-top: 28px;
 
         p{
           width: auto;
         }
 
         .milestones{
-          margin-top: 34px;
+          // margin-top: 34px;
+          
+          margin-top: 28px;
           //margin-left: -10px;
           //margin-right: -10px;
           
@@ -6083,8 +6176,11 @@ html{
 
       } // .first-content
       .second-content{
-        padding-top: 34px;
-        padding-bottom: 34px;
+        // padding-top: 34px;
+        // padding-bottom: 34px;
+
+        padding-top: 28px;
+        padding-bottom: 28px;
 
         p{
           width: auto;
@@ -6092,7 +6188,8 @@ html{
       }
 
       .third-content{
-        margin-top: 34px;
+        // margin-top: 34px;
+        margin-top: 28px;
         text-align: center;
 
         p{
@@ -6107,7 +6204,8 @@ html{
         }
         
         .text-content{
-          padding-bottom: 34px;
+          //padding-bottom: 34px;
+          padding-bottom: 49px;
         }
         
 
@@ -6116,8 +6214,10 @@ html{
 
         .mobile-awards{
           text-align: center;
-          margin-top: -16px;
-          padding-bottom: 9px;
+          // margin-top: -16px;
+          margin-top: -4px;
+          // padding-bottom: 9px;
+          padding-bottom: 6px;
           //margin-left: -12px;
           //margin-bottom: 31px;
 
@@ -6138,9 +6238,11 @@ html{
       } // .third-content
 
       .forth-content{
-        padding-top: 34px;
+        //padding-top: 34px;
+        padding-top: 50px;
         //padding-bottom: 65px;
-        padding-bottom: 50px;
+        // padding-bottom: 50px;
+        padding-bottom: 70px;
 
         .magazines{
           padding: 0;
@@ -6240,6 +6342,14 @@ html{
       margin-bottom: 8px!important;
     }
 
+    .validation-advice{
+      text-align: left;
+      margin-left: 0 !important;
+      position: relative;
+      top: 0;
+      margin-bottom: 10px !important;
+    }
+
     .trade-signup-banner {
       /*
       background: url("../images/content/mobile-trade-banner.png") no-repeat;
@@ -6287,16 +6397,22 @@ html{
 
     .main-content {
       .first-content{
-        padding-top: 34px;
-        padding-bottom: 34px;
+        //padding-top: 34px;
+        //padding-bottom: 34px;
+
+        padding-top: 28px;
+        padding-bottom: 28px;
 
         p{
           width: auto;
         }
       }
       .last-content{
-        padding-top: 34px;
-        padding-bottom: 65px;
+        // padding-top: 34px;
+        // padding-bottom: 65px;
+
+        padding-top: 28px;
+        padding-bottom: 70px;
 
 
 
@@ -6306,9 +6422,15 @@ html{
           border: none;
           margin: 0;
 
+          /*
           border-bottom: 1px solid #ccc;
           margin-top: 34px - 2px;
           margin-bottom: 34px - 1px;
+          */
+
+          border-bottom: 1px solid @border-grey;
+          margin-top: 50px;
+          margin-bottom: 49px;
 
         }
         .notice{
@@ -6492,7 +6614,8 @@ html{
 
             tr{
 
-              border-bottom: 1px solid #ddd;
+              //border-bottom: 1px solid #ddd;
+              border-bottom: 1px solid @border-grey;
               position: relative;
 
               &.last{
@@ -6749,8 +6872,11 @@ html{
           line-height: 16px;
           text-transform: uppercase;
           letter-spacing: 0.03em;
-          border-top: 1px solid #eee;
-          border-bottom: 1px solid #eee;
+          //border-top: 1px solid #eee;
+          //border-bottom: 1px solid #eee;
+
+          border-top: 1px solid @border-grey;
+          border-bottom: 1px solid @border-grey;
           //padding-top: 5px;
           //padding-bottom: 5px;
           padding-top: 10px;
@@ -6776,7 +6902,8 @@ html{
 
       .action-container {
         text-align: center;
-        border-top: 1px solid #eee;
+        //border-top: 1px solid #eee;
+        border-top: 1px solid @border-grey;
         padding-top: 35px;
         &.buttons-set {
           border-top: 0px;
@@ -6856,7 +6983,8 @@ html{
         //background: none;
         
         .banner-image-text {
-          padding-top: 40px - 8px;
+          // padding-top: 40px - 8px;
+          padding-top: 25px;
           //padding-bottom: 30px;
           padding-bottom: 0px;
 
@@ -6922,6 +7050,7 @@ html{
               margin-right: 12px;
 
               width: auto !important;
+              margin-bottom: 17px !important;
 
               .item {
                 background: none;
@@ -6942,6 +7071,7 @@ html{
 
                 h4 {
                   .minion-pro-semibold;
+                  font-weight: 600;
                   font-size: 13px;
                   line-height: 17px;
                   letter-spacing: 0.1em;
@@ -7031,7 +7161,9 @@ html{
         .reasons {
           background-color: @skin;
           text-align: center;
-          padding: 40px 0px;
+          //padding: 40px 0px;
+          padding: 30px 0px;
+
           h1 {
             font-size: 12px;
             line-height: 20px;
@@ -7103,17 +7235,34 @@ html{
         }
 
         .plans {
-          margin-top: 20px;
+          margin-top: 30px;
           //border-bottom: 1px solid #eee;
-          margin-bottom: 30px;      
+          
+          //margin-bottom: 30px;      
 
+          padding-bottom: 10px;
+          margin-bottom: 45px;
+          position: relative;
+
+          &:after{
+            content: "";
+            display: block;
+            border-bottom: 1px solid @border-grey;
+
+            position: absolute;
+            bottom: 0;
+            left: 15px;
+            right: 15px;
+
+          }
 
 
           &:last-child {
             border: 0px;
           }
           ul {
-            margin-bottom: 40px;
+            // margin-bottom: 40px;
+            margin-bottom: 30px;
             li {
               width: 49%;
               display: inline-block;
@@ -7122,11 +7271,13 @@ html{
               margin-right: -2px;
 
               &:nth-of-type(1), &:nth-of-type(2) {
-                border-bottom: 1px solid #eee;
+                //border-bottom: 1px solid #eee;
+                border-bottom: 1px solid @border-grey;
               }
 
               &:nth-of-type(2n) {
-                border-left: 1px solid #eee;
+                //border-left: 1px solid #eee;
+                border-left: 1px solid @border-grey;
                 margin-left: -2px;                   
               }
 
@@ -7184,13 +7335,31 @@ html{
   .subscription-form {
     margin-top: 80px;
     .first-content {
-      border-bottom: 1px solid #eee;
+      // border-bottom: 1px solid #eee;
       background: @white;
+      position: relative; 
+      border-bottom: none;
+      padding-bottom: 20px;
+
+      &:after{
+        content: "";
+        display: block;
+        border-bottom: 1px solid @border-grey;
+
+        position: absolute;
+        bottom: 0;
+        left: 15px;
+        right: 15px;
+
+      }
+
       .banner-text {
         
         .text-content {
-          padding-top: 45px;
-          padding-bottom: 37px;  
+          // padding-top: 45px;
+          padding-top: 28px;
+          //padding-bottom: 37px;  
+          padding-bottom: 28px;  
 
           h1 {
             font-size: 14px;
@@ -7215,7 +7384,8 @@ html{
           .each-product {
             //width: 49%;
             width: 50%;
-            margin-bottom: 40px;
+            // margin-bottom: 40px;
+            margin-bottom: 30px;
 
             padding-left: 7.5px;
             padding-right: 7.5px;
@@ -7261,11 +7431,14 @@ html{
     }
     .second-content {
       padding-bottom: 0px;
+      padding-top: 5px;
+
       .image-text-content {
         .table-1, .table-2 {
           padding-top: 40px;
           padding-bottom: 40px;
-          border-bottom: 1px solid #ccc;
+          // border-bottom: 1px solid #ccc;
+          border-bottom: 1px solid @border-grey;
           h1 {
             font-size: 14px;
             line-height: 22px;
@@ -7276,19 +7449,30 @@ html{
             line-height: 22px;          
           }
         }
+        .table-1{
+          padding-bottom: 50px;
+        }
         .table-2 {
-          padding-top: 40px;
+          // padding-top: 40px;
+          padding-top: 50px;
+          padding-bottom: 50px;
         }
         .plans {
           border: 0px;
           margin-top: 20px!important;
           margin-bottom: 25px;
+
+          &:after{
+            display: none;
+          }
+
           .plan {
             text-align: center;            
             .background {
               background-color: @skin;
               padding: 27px 0;
             }
+
             
             .certificate-icon {
               background: url(../images/icons/certificate.png) no-repeat;
@@ -7366,6 +7550,7 @@ html{
           margin: 0 auto;
           margin-left: 22px;
           margin-right: 22px;
+          padding-bottom: 0 !important;
 
           .slick-prev,
           .slick-next{
@@ -7417,8 +7602,10 @@ html{
     }
 
     .last-content {
-      padding-top: 40px;
-      padding-bottom: 100px;
+      //padding-top: 40px;
+      padding-top: 45px;
+      padding-bottom: 30px;
+
       h1 {
         font-size: 14px;
         line-height: 22px;
@@ -7544,15 +7731,24 @@ html{
     }
 
     .first-content{
-      padding-top: 34px;
+      // padding-top: 34px;
+      padding-top: 28px;
+
     }
     .second-content{
-      padding-top: 34px;
-      padding-bottom: 34px;
+      padding-top: 45px;
+      padding-bottom: 28px;
+
+      .text-content{
+        padding-top: 30px;
+      }
     }
     .third-content{
-      padding-top: 34px;
-      padding-bottom: 34px;
+      //padding-top: 34px;
+      //padding-bottom: 34px;
+
+      padding-top: 28px;
+      padding-bottom: 0px;
     }
     .main-content {
       h1 {
@@ -7574,10 +7770,12 @@ html{
         .center {
           .hotels{
             margin-bottom: 0px;
+            margin-top: 0;
           }
           .awards{
             margin-left: -7.5px;
             margin-right: -7.5px;
+            padding-top: 30px;
           }
           .hotels, .awards {
             font-size: 0;
@@ -7592,7 +7790,9 @@ html{
               padding-left: 7.5px;
               padding-right: 7.5px;
               img{
-                width: 100%;
+                // width: 100%;
+                
+                width: 70%;
                 height: auto;
                 padding: 0;
               }
@@ -7601,7 +7801,9 @@ html{
         }
       }
       .last-content {
-        padding-bottom: 40px;
+        // padding-bottom: 40px;
+        padding-top: 50px !important;
+        padding-bottom: 70px !important;
 
         hr.small{
           margin-top: 5px !important;
@@ -7616,6 +7818,7 @@ html{
 
           padding-left: 12px;
           padding-right: 12px;
+          margin-bottom: -25px;
         }
 
         .steps{
@@ -7707,6 +7910,9 @@ html{
       //margin-top: 51px !important;
       margin-top: 0px !important;
     }
+    .main-content{
+      margin-top: 30px;
+    }
     .main-content .image-text-content{
       .load-more-wrapper{
         text-align: center;
@@ -7726,6 +7932,22 @@ html{
         letter-spacing: 0.1em;
         color: #777 !important;
       }      
+    }
+
+    .main-content .image-text-content .post{
+      padding-top: 50px !important;
+      padding-bottom: 50px !important;
+
+      &:first-child{
+        padding-top: 0px !important;
+      }
+      &:last-child{
+        padding-bottom: 70px !important;
+      }
+
+    }
+    .main-content .image-text-content .load-more-wrapper{
+      margin-top: 0px;
     }
 
     .blog-banner {
@@ -7977,7 +8199,8 @@ html{
   &:after{
     content: "";
     display: block;
-    border-bottom: 1px solid #eee;
+    // border-bottom: 1px solid #eee;
+    border-bottom: 1px solid @border-grey;
     padding-top: 26px;
   }
 
@@ -8019,7 +8242,7 @@ html{
 
 @media (max-width: 991px) {
   .account{
-
+    margin-bottom: 70px !important;
 
 
     .account-details-saved-content{
@@ -8106,6 +8329,8 @@ html{
       .limiter{
       }
       .pager{
+        margin-bottom: -32px;
+
         .pages{
           float: none;
           display: inline-block;
@@ -8162,6 +8387,8 @@ html{
         }
 
         &.expanded{
+          margin-bottom: -70px;
+
           .single-order-item-mobile-button{
             display: none;
           }
@@ -8236,6 +8463,11 @@ html{
       float: none;
       margin-right: 0;
       display: block;
+
+      // margin-bottom: 50px;
+      // 
+      padding-bottom: 20px;
+      border-bottom: 1px solid @border-grey;
       margin-bottom: 50px;
 
 
@@ -8316,6 +8548,9 @@ html{
 
     .col-main .referral-container{
       margin-bottom: 50px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid @border-grey;
+
       .points{
         .right{
           max-width: 200px;
@@ -8327,8 +8562,19 @@ html{
 
   } // .account
 
-  body.giftvoucher-index-view .form-list{
-    float: none;
+  body.giftvoucher-index-view {
+    .account .page-title{
+      margin-bottom: 10px;
+    }
+    .form-list{
+      float: none;
+      margin-bottom: 1px;
+      padding-bottom: 27px;
+      border-bottom: 1px solid @border-grey;
+    }
+    .mobile-gift-card-back-button{
+      margin-top: -3px;
+    }
   }
 
 
@@ -8336,6 +8582,8 @@ html{
     .limiter{
     }
     .pager{
+      margin-bottom: -32px;
+
       .pages{
         float: none !important;
         display: inline-block !important;
@@ -8345,6 +8593,8 @@ html{
       
     }
   }
+
+  
 
 
 
@@ -8362,6 +8612,12 @@ html{
     
   }
 
+  .account .account-details, 
+  .account .account-details-saved{
+    .each-input{
+      margin-bottom: 20px;
+    }
+  }
 
   .account .account-details ul.messages, 
   .account .account-details-saved ul.messages{
@@ -8377,6 +8633,10 @@ html{
   .account .billing-and-shipping .shipping-address ul li{
     margin-right: 0px;
     display: block;
+  }
+
+  .account .account-details-saved .checkbox-wrapper{
+    margin-bottom: -10px;
   }
 
 
@@ -8409,8 +8669,38 @@ html{
     }
   }
 
+
+  .account{
+    p{
+      font-size: 12px !important;
+      line-height: 22px !important;
+    }
+  }
+
+  .account .col-main #my-rewardpoints-table p.loyalty-point{
+    font-size: 22px !important;
+    line-height: 26px !important;
+  }
+
+  .account .col-main #reward-points-table{
+    thead{
+      tr th{
+        padding: 10px 5px;
+        line-height: 14px;
+      }
+    }
+    tbody{
+      tr td{
+        padding: 10px 5px;
+      }
+    }
+  } 
+
+
   //.account .order-history .pager{
   .account .pager{
+    margin-bottom: -32px;
+
     .limiter{
       display: block !important;
       float: none !important;
@@ -8450,6 +8740,18 @@ html{
   }
 
 
+  body.customer-address-form.customer-account{
+
+    .account .account-details hr.dotted, 
+    .account .account-details-saved hr.dotted{
+      display: none;
+    }
+    
+  }
+
+  .giftvoucher-index-index .pager{
+    margin-bottom: -16px;
+  }
 
 
 } // @media (max-width: 991px)
@@ -8467,8 +8769,10 @@ html{
         .gotham-medium;
         font-size: 11px;
         line-height: 19px;
-        border-top: 1px solid #ccc;
-        border-bottom: 1px solid #ccc;
+        //border-top: 1px solid #ccc;
+        //border-bottom: 1px solid #ccc;
+        border-top: 1px solid @border-grey;
+        border-bottom: 1px solid @border-grey;
         padding: 10px 20px;
 
         text-align: center;
@@ -8484,12 +8788,14 @@ html{
     tr{
       &:last-child{
         td{
-          border-bottom: 1px solid #ccc;
+          //border-bottom: 1px solid #ccc;
+          border-bottom: 1px solid @border-grey;
         }
       }
 
       td{
-        border-top: 1px dashed #ccc;
+        //border-top: 1px dashed #ccc;
+        border-top: 1px dashed @border-grey;
         // padding: 20px;
         // text-align: center;
         padding: 20px;
@@ -8647,8 +8953,11 @@ html{
     }
 
     .account-address-button-container{
-      margin-top: 20px;
-      padding-bottom: 10px;
+      //margin-top: 20px;
+      margin-top: 30px;
+      padding-bottom: 1px;
+      .add-clearfix;
+      margin-bottom: -15px;
 
       .account-address-button-cta{
         display: block;
@@ -8679,7 +8988,32 @@ html{
 
 @media (max-width: 991px) {
   body.checkout-cart-index{
+    #content-wrapper.cart .action-container{
+      padding-bottom: 65px;
+    }
+  }
 
+
+
+  #content-wrapper.cart #billing_shipping .delivery-rates{
+    border-top: 1px solid @border-grey;
+    margin-top: 26px;
+    padding-top: 44px;
+
+    .table-responsive{
+      margin-bottom: 26px;
+    }
+
+  }
+
+
+  // account page
+  .custom-account-dashboard-hr{
+    margin-bottom: 50px;
+  }
+  .account .account-details-saved-content{
+    //margin-bottom: -10px;
+    margin-bottom: -30px;
   }
 }
 
@@ -8741,6 +9075,8 @@ html{
   }
 
 
+
+
   div.product .main-product .gift-card-content .inputs .each-input .quantity-container{
     display: block;
     margin-bottom: -19px;
@@ -8776,16 +9112,30 @@ html{
     margin-top: 3px;
   }
   .giftvoucher-receiver{
-    padding-bottom: 0;
+    padding-bottom: 0 !important;
     margin-bottom: -18px;
   }
   div.product .main-product .gift-card-content{
     margin-bottom: 20px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid @border-grey;
     padding-bottom: 50px;
   }
 
-  
+  body.catalog-product-view.catalog-product-view.product-gift-card{
+    #content-wrapper.product .product-review{
+      margin-top: -8px !important;
+    }
+    .validation-advice{
+      top: 43px;
+      position: relative;
+      top: 0;
+      margin-bottom: 20px !important;
+      display: block;
+      width: 100%;
+
+      .add-clearfix;
+    }
+  }
 
 }
 
@@ -8800,8 +9150,11 @@ html{
 @media (max-width: 991px) {
 
   .sign-up{
+    padding-bottom: 70px !important;
+
     .main-content{
-      margin-top: 34px;
+      //margin-top: 34px;
+      margin-top: 28px;
 
       h1{
         font-size: 14px;
@@ -8835,8 +9188,11 @@ html{
         padding-left: 15px !important;
         padding-right: 15px !important;
 
-        margin-top: 30px;
-        padding-top: 30px;
+        // margin-top: 30px;
+        // padding-top: 30px;
+
+        margin-top: 50px;
+        padding-top: 48px;
 
 
         &:before{
@@ -8854,10 +9210,12 @@ html{
 
       .login-form{ 
         .ctas{
-          margin-top: 25px;
+          margin-top: 30px;
         }
         ul.benefits{
-          margin-bottom: 40px;
+          // margin-bottom: 40px;
+          // margin-bottom: 30px;
+          margin-bottom: 0px;
 
           li{
             font-size: 12px;
@@ -8873,7 +9231,7 @@ html{
 
 
           .remember-me-box{
-
+            margin-bottom: -20px;
           }
           .forgot-password{
             float: right;
@@ -8975,7 +9333,9 @@ html{
   body.cms-page-view.cms-store-locator,
   body.cms-page-view.cms-contact-us,
   body.account-page-version,
-  body.customer-account{
+  body.customer-account,
+
+  body.checkout-cart-index{
     #main-mobile-header{
       box-shadow: 1px 1px 16px #eaeaea;
     }
@@ -9032,6 +9392,71 @@ html{
   }
 
 
+  body.cms-page-view.cms-store-locator{
+    #content-wrapper.store .main-content{
+      padding-bottom: 45px;
+    }
+  }
+
+
+  body.sales-order-history.customer-account{
+
+    .account .order-history .order-content .align-to-total{
+      h2{
+        text-align: right !important;
+        padding-right: 5px;
+      }
+      p.price{
+        text-align: right !important;
+        padding-right: 5px;
+      }
+    }
+
+    .account .order-history .order-content .align-to-total-2{
+      h2{
+        text-align: right !important;
+        padding-right: 5px;
+      }
+      p.price{
+        text-align: right !important;
+        padding-right: 5px;
+      }
+    }
+
+    /*
+    .account .order-history .order-content .orders .each-order .extra-content-headers .each-details h2{
+      text-align: left !important;
+      text-align: left !important;
+    }
+    */
+
+
+
+    .account .order-history .order-content .orders .each-order .order-details p{
+      line-height: 16px !important;
+    }
+
+    .account .order-history .order-content .orders .each-order .extra-content-headers .each-details h2{
+      //text-align: right !important;
+      //padding-right: 5px;
+    }
+  }
+
+
+
+  /*
+  .subscription-form .all-products .each-product p.product-qty span{
+    .minion-pro-regular;
+    font-size: 13px;
+  }
+  */
   
+
+  .careers .main-content .forth-content #application-form .ajax_msg{
+    width: 100%;
+    left: 15px;
+    right: 0;
+    top: 50px;
+  }
 
 }
