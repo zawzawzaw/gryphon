@@ -5,7 +5,6 @@ jQuery(document).ready(function($) {
     autoHideDialCode: false,
     autoPlaceholder: false
   });
-
   
   jQuery("#resume-file-upload #resume").change(function(){
     var resume_filename = jQuery("#resume-file-upload #resume").val();

@@ -32,7 +32,7 @@
 		});
 
 		$('.apply-now').on('click', function(e){
-
+			e.preventDefault();
 			if (applicationForm.validator && applicationForm.validator.validate())   
 		   	{
 		     	// if validation successful pass then
