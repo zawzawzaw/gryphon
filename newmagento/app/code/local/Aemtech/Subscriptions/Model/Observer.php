@@ -19,23 +19,23 @@ class Aemtech_Subscriptions_Model_Observer {
                         //$locationskuINTArray = array("INT-ART-1M", "INT-ART-3M", "INT-ART-6M", "INT-ART-12M", "INT-GUR-1M", "INT-GUR-3M", "INT-GUR-6M", "INT-GUR-12M");
 						if(in_array($sku, $allskus))	
                         {
-							$sessionCustomer =Mage::getSingleton("customer/session");
-							if (!$sessionCustomer->isLoggedIn()) {
+							// $sessionCustomer =Mage::getSingleton("customer/session");
+							// if (!$sessionCustomer->isLoggedIn()) {
 								
-								Mage::getSingleton('core/session')->addError('Please login to purchase the subscription.');
+							// 	Mage::getSingleton('core/session')->addError('Please login to purchase the subscription.');
 
-								//get URL model for cart/index
-								$loginurl = Mage::getModel('core/url')->getUrl('customer/account/login');
+							// 	//get URL model for cart/index
+							// 	$loginurl = Mage::getModel('core/url')->getUrl('customer/account/login');
 
-								//set redirect
-								Mage::app()->getResponse()->setRedirect($loginurl);
+							// 	//set redirect
+							// 	Mage::app()->getResponse()->setRedirect($loginurl);
 
-								//send redirect
-								Mage::app()->getResponse()->sendResponse();
+							// 	//send redirect
+							// 	Mage::app()->getResponse()->sendResponse();
 
-								//block further action
-								exit;
-							}
+							// 	//block further action
+							// 	exit;
+							// }
                             $sku_type = explode("-", $sku);
                             $sku_type = $sku_type[0];
 

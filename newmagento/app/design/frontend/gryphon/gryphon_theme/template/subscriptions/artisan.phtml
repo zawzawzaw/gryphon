@@ -521,13 +521,10 @@
 
 			jQuery(el).find('.ajax_loader_product').show();
 			//alert(jsonObjectEncoded);
-
-			<?php if(!Mage::getSingleton('customer/session')->isLoggedIn()): ?>
-		        //not logged in
-		        setLocation(addtocartUrl+'pg/'+jsonObjectEncoded);
-		    <?php else: ?>
-		        // logged in
-		        jQuery.get(addtocartUrl+'pg/'+jsonObjectEncoded, function( data ) {			  	
+			
+	        // setLocation(addtocartUrl+'pg/'+jsonObjectEncoded);
+		    
+	        jQuery.get(addtocartUrl+'pg/'+jsonObjectEncoded, function( data ) {			  	
 				if(data=='Sorry, you either purchase  Singapore OR International Subscription not both.') {
 					alert(data);
 					jQuery(el).find('.ajax_loader_product').hide();	  	
@@ -536,7 +533,7 @@
 			  		jQuery(el).find('.ajax_loader_product').hide();		  	
 				}			  	
 			});
-		    <?php endif; ?>			
+		    			
 		}		
 											
 		jQuery(document).ready(function($) {

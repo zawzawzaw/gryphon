@@ -448,13 +448,26 @@ function isMobile()
             </span>
         </div>
     </div>    
-
+    <?php 
+        $allskus = array("SGP-ART-1M", "SGP-ART-3M", "SGP-ART-6M", "SGP-ART-12M", "SGP-GUR-1M", "SGP-GUR-3M", "SGP-GUR-6M", "SGP-GUR-12M","INT-ART-1M", "INT-ART-3M", "INT-ART-6M", "INT-ART-12M", "INT-GUR-1M", "INT-GUR-3M", "INT-GUR-6M", "INT-GUR-12M"); 
+        $cart = Mage::getModel('checkout/cart')->getQuote(); $subscription_in_cart = false;
+        foreach ($cart->getAllItems() as $item):
+            $added_sku = $item->getProduct()->getSku();
+            if(in_array($added_sku, $allskus)) {
+                $subscription_in_cart = true;             
+            }
+        endforeach; 
+    ?>
     <div id="question" style="display:none; cursor: default">
         <img src="<?php echo $this->getSkinUrl('images/small-logo.png'); ?>" alt="">
         <p>How would you like to check out?</p>
         <hr class="small">                 
         <a href="<?php echo Mage::helper('customer')->getLoginUrl(); ?>" id="yes"><button class="cta continue">Sign in to your account</button></a>
-        <a href="#" id="no"><button class="cta continue">Continue as guest</button></a>
+        <?php if($subscription_in_cart): ?>
+            <a href="<?php echo Mage::helper('customer')->getRegisterUrl(); ?>" id="yes"><button class="cta continue">Create new account</button></a>
+        <?php else: ?>
+            <a href="#" id="no"><button class="cta continue">Continue as guest</button></a>
+        <?php endif; ?>
     </div> 
 <script>
     jQuery(document).ready(function($){         
@@ -500,7 +513,7 @@ function isMobile()
                 $.unblockUI(); 
                 return false; 
             }); 
-        <?php endif; ?>
+        <?php endif; ?>        
 
         function setAllPhoneFaxInputs($telephone, $phone_no, $phone_no_2, type) {
             $phone_no.intlTelInput({
