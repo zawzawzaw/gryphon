@@ -589,7 +589,7 @@
       .each-input p{
         font-size: 12px;
         line-height: 21px;
-        letter-spacing: 0.0em;
+        letter-spacing: 0.0em !important;
         padding: 0;
       }
     }
@@ -4561,6 +4561,9 @@ html{
           margin-top: 6px!important;
           margin-bottom: 8px!important;
         }
+        p{
+          letter-spacing: 0;
+        }
         
       }
     }
@@ -7369,7 +7372,8 @@ html{
           }
           p {
             font-size: 11px;
-            line-height: 22px;          
+            line-height: 22px;
+            letter-spacing: 0;     
           }
         }
       }
@@ -7598,6 +7602,7 @@ html{
           p {
             font-size: 10px;
             line-height: 19px;
+            letter-spacing: 0;
           }
         }
       }
@@ -7669,6 +7674,9 @@ html{
             display: block;
             float: left !important;
 
+            p{
+              letter-spacing: 0;
+            }
 
             /*
             &:nth-of-type(2n) {
@@ -7687,6 +7695,8 @@ html{
               }
               p {
                 text-align: left;
+                letter-spacing: 0;
+
               }
             }
           }
@@ -7727,6 +7737,7 @@ html{
             font-size: 12px;
             line-height: 17px;
             padding: 0 30px;
+
           }
         }
       }
@@ -7736,6 +7747,11 @@ html{
       // padding-top: 34px;
       padding-top: 28px;
 
+      .center{
+        p{
+          letter-spacing: 0;
+        }
+      }
     }
     .second-content{
       padding-top: 45px;
@@ -7743,6 +7759,10 @@ html{
 
       .text-content{
         padding-top: 30px;
+
+        p{
+          letter-spacing: 0;
+        }
       }
     }
     .third-content{
@@ -7751,6 +7771,12 @@ html{
 
       padding-top: 28px;
       padding-bottom: 0px;
+
+      .center{
+        p{
+          letter-spacing: 0;
+        }
+      }
     }
     .main-content {
       h1 {
@@ -7838,6 +7864,7 @@ html{
 
             p{
               padding: 0px 30px;
+              letter-spacing: 0;
             }
           }
         }
@@ -7907,6 +7934,10 @@ html{
     margin-top: 0 !important;
     //margin-top: 40px!important;
     // margin-top: 24px!important;
+    // 
+    p{
+      letter-spacing: 0;
+    }
 
     #page-wrapper{
       //margin-top: 51px !important;
@@ -8249,6 +8280,11 @@ html{
 
     .account-details-saved-content{
       margin-top: 20px;      
+
+
+      .subscribe-msg{
+        letter-spacing: 0;
+      }
     }
 
     .account-details, .account-details-saved {    
@@ -8388,6 +8424,21 @@ html{
           z-index: 20;
         }
 
+        .mobile-order-history-header-row{
+          border-top: 1px solid @border-grey;
+          border-bottom: 1px solid @border-grey;
+          padding-top: 8px;
+          padding-bottom: 8px;
+          margin-bottom: 12px;
+        }
+        .mobile-order-history-item-hr{
+          margin-left: 15px;
+          margin-right: 15px;
+        }
+        .extra-content-headers{
+          padding-bottom: 0 !important;
+        }
+
         &.expanded{
           margin-bottom: -70px;
 
@@ -8399,6 +8450,8 @@ html{
           }
           .mobile-order-history-item-detail{
             display: block;
+
+
           }
           hr.each-order{
             display: none;
@@ -9171,6 +9224,12 @@ html{
       }
       hr.small{
         margin-bottom: 11px!important;
+      }
+
+      .validation-advice{
+        position: relative;
+        top: 0px;
+        margin-bottom: 10px !important;
       }
 
       .ctas .or{
