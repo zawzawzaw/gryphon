@@ -279,6 +279,7 @@ class Manic_Discovertea_IndexController extends Mage_Core_Controller_Front_Actio
 	public function loginCustomerAction() {
 		if ($this->getRequest()->isPost()) {
     
+            $id = $this->getRequest()->getParam('id', array()); 
             $first_name = $this->getRequest()->getParam('first_name', array()); 
             $last_name = $this->getRequest()->getParam('last_name', array()); 
             $email = $this->getRequest()->getParam('email', array()); 
@@ -312,7 +313,7 @@ class Manic_Discovertea_IndexController extends Mage_Core_Controller_Front_Actio
 				$response = curl_exec($ch);
 				$response = json_decode($response, true);
 
-				if($response['email']!==$email) {
+				if($response['id']!==$id) {
 
 				 	$result['success']  = false;
 	        		$result['error']    = true;

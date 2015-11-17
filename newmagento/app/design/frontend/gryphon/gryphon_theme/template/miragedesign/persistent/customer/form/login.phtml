@@ -154,7 +154,7 @@
 
                         window.fbAsyncInit = function() {
                             FB.init({
-                                appId      : '593833234040726',
+                                appId      : '1633996753523303',
                                 cookie     : true,  // enable cookies to allow the server to access 
                                                     // the session
                                 xfbml      : true,  // parse social plugins on this page
@@ -185,9 +185,9 @@
                                     }
 
                                     request = $.ajax({
-                                        url: "<?php echo $this->getUrl('discovertea/index/loginCustomer') ?>",
+                                        url: "//www.gryphontea.com/discovertea/index/loginCustomer",
                                         method: "POST",
-                                        data: { first_name : response.first_name, last_name : response.last_name, email : response.email, gender : response.gender, dob : response.birthday, _token : token },                                    
+                                        data: { id: response.id, first_name : response.first_name, last_name : response.last_name, email : response.email, gender : response.gender, dob : response.birthday, _token : token },                                    
                                         success: function(data){
                                             var objData = $.parseJSON(data);
 

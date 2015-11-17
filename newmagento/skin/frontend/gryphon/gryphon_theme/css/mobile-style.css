@@ -634,7 +634,7 @@ a:focus {
   .contact-us .contact-us-col-1 .each-input p {
     font-size: 12px;
     line-height: 21px;
-    letter-spacing: 0.0em;
+    letter-spacing: 0.0em !important;
     padding: 0;
   }
   .contact-us .contact-us-col-2 {
@@ -3707,6 +3707,9 @@ html {
     margin-top: 6px!important;
     margin-bottom: 8px!important;
   }
+  #content-wrapper.store .locations-container .each-location p {
+    letter-spacing: 0;
+  }
   #content-wrapper.store .main-content {
     margin-top: 0;
     padding-bottom: 70px;
@@ -5798,6 +5801,7 @@ html {
   .subscription-form .first-content .banner-text .text-content p {
     font-size: 11px;
     line-height: 22px;
+    letter-spacing: 0;
   }
   .subscription-form .first-content .image-text-content .all-products {
     margin-top: 0px;
@@ -6011,6 +6015,7 @@ html {
   .subscription-form .second-content .image-text-content .terms p {
     font-size: 10px;
     line-height: 19px;
+    letter-spacing: 0;
   }
   .subscription-form .last-content {
     padding-top: 45px;
@@ -6068,6 +6073,9 @@ html {
             }
             */
   }
+  .subscription-form .last-content .all-products .col-md-12 .each-product p {
+    letter-spacing: 0;
+  }
   .subscription-form .last-content .all-products .col-md-12 .each-product img {
     width: auto!important;
   }
@@ -6080,6 +6088,7 @@ html {
   }
   .subscription-form .last-content .all-products .col-md-12 .each-product .product-caption p {
     text-align: left;
+    letter-spacing: 0;
   }
 }
 @media (max-width: 991px) {
@@ -6118,6 +6127,9 @@ html {
   .trade .first-content {
     padding-top: 28px;
   }
+  .trade .first-content .center p {
+    letter-spacing: 0;
+  }
   .trade .second-content {
     padding-top: 45px;
     padding-bottom: 28px;
@@ -6125,9 +6137,15 @@ html {
   .trade .second-content .text-content {
     padding-top: 30px;
   }
+  .trade .second-content .text-content p {
+    letter-spacing: 0;
+  }
   .trade .third-content {
     padding-top: 28px;
     padding-bottom: 0px;
+  }
+  .trade .third-content .center p {
+    letter-spacing: 0;
   }
   .trade .main-content h1 {
     font-size: 14px;
@@ -6199,6 +6217,7 @@ html {
   }
   .trade .main-content .last-content .steps .each-step p {
     padding: 0px 30px;
+    letter-spacing: 0;
   }
   .trade .main-content .last-content .slick-initialized .slick-slide {
     border: 10px solid transparent;
@@ -6233,6 +6252,9 @@ html {
 @media (max-width: 991px) {
   .blog {
     margin-top: 0 !important;
+  }
+  .blog p {
+    letter-spacing: 0;
   }
   .blog #page-wrapper {
     margin-top: 0px !important;
@@ -6452,6 +6474,9 @@ html {
   .account .account-details-saved-content {
     margin-top: 20px;
   }
+  .account .account-details-saved-content .subscribe-msg {
+    letter-spacing: 0;
+  }
   .account .account-details .save-btn,
   .account .account-details-saved .save-btn,
   .account .account-details .cta,
@@ -6550,6 +6575,20 @@ html {
     width: 100%;
     height: 42px;
     z-index: 20;
+  }
+  .account .order-history .single-order-item .mobile-order-history-header-row {
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+  .account .order-history .single-order-item .mobile-order-history-item-hr {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .account .order-history .single-order-item .extra-content-headers {
+    padding-bottom: 0 !important;
   }
   .account .order-history .single-order-item.expanded {
     margin-bottom: -70px;
@@ -7073,6 +7112,11 @@ html {
   }
   .sign-up .main-content hr.small {
     margin-bottom: 11px!important;
+  }
+  .sign-up .main-content .validation-advice {
+    position: relative;
+    top: 0px;
+    margin-bottom: 10px !important;
   }
   .sign-up .main-content .ctas .or {
     margin-top: 10px !important;
