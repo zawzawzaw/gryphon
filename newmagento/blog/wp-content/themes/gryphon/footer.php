@@ -178,19 +178,19 @@
 	      version    : 'v2.4'
 	    });
 
-	    $('.facebook').on('click', function(e){
-	    	e.preventDefault();
-	    	var url = $(this).attr('href');
-	    	FB.ui(
-			{
-				method: 'share',
-				href: url,
-			},function(response) {
-			    if (response && !response.error_code) {
-			      	alert('Posting completed.');
-			    }
-			});
-	    });
+	  //   $('.facebook').on('click', function(e){
+	  //   	e.preventDefault();
+	  //   	var url = $(this).attr('href');
+	  //   	FB.ui(
+			// {
+			// 	method: 'share',
+			// 	href: url,
+			// },function(response) {
+			//     if (response && !response.error_code) {
+			//       	alert('Posting completed.');
+			//     }
+			// });
+	  //   });
 	  };
 
 	  (function(d, s, id){
@@ -203,22 +203,27 @@
 
 	  	function openNewWindow(URLtoOpen, windowName, windowFeatures) { newWindow=window.open(URLtoOpen, windowName, windowFeatures); }
 
-	  	$('.twitter').on('click', function(e){
+	  	$(document).on('click','.facebook', function(e){
 	    	e.preventDefault();
 	    	var url = $(this).attr('href');
 	    	openNewWindow(url,'sharing','height=600,width=600,toolbar=no,scrollbars=no,resizable=yes');
     	});
-    	$('.pintrest').on('click', function(e){
+    	$(document).on('click','.twitter', function(e){
 	    	e.preventDefault();
 	    	var url = $(this).attr('href');
 	    	openNewWindow(url,'sharing','height=600,width=600,toolbar=no,scrollbars=no,resizable=yes');
     	});
-    	$('.google').on('click', function(e){
+    	$(document).on('click','.pintrest', function(e){
+	    	e.preventDefault();
+	    	var url = $(this).attr('href');
+	    	openNewWindow(url,'sharing','height=600,width=600,toolbar=no,scrollbars=no,resizable=yes');
+    	});    	
+    	$(document).on('click','.google', function(e){
 	    	e.preventDefault();
 	    	var url = $(this).attr('href');
 	    	openNewWindow(url,'sharing','height=600,width=600,toolbar=no,scrollbars=no,resizable=yes');
     	});
-    	$('.linkedin').on('click', function(e){
+    	$(document).on('click','.linkedin', function(e){    	
 	    	e.preventDefault();
 	    	var url = $(this).attr('href');
 	    	openNewWindow(url,'sharing','height=600,width=600,toolbar=no,scrollbars=no,resizable=yes');

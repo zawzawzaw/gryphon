@@ -9,9 +9,8 @@
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-	<title><?php bloginfo('name'); ?> <?php is_front_page() ? bloginfo('description') : wp_title('-', true, 'left'); ?></title>
-	<meta name="description" content="<?php bloginfo('description'); ?>">
-	<meta name="keywords" content="Strand">	
+	<title><?php bloginfo('name'); ?> <?php is_front_page() ? bloginfo('description') : wp_title('-', true, 'left'); ?></title>	
+	<meta name="keywords" content="Gryphon Tea Company">	
 
 	<!-- HTML5 SHIV -->
 	<!--[if lt IE 9]>

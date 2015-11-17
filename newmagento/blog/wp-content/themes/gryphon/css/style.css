@@ -849,7 +849,7 @@ ul.messages {
   vertical-align: middle!important;
 }
 #page-wrapper #header-cta ul.cart-cta-list li a .question {
-  background: url('../images/icons/question.png') no-repeat bottom;
+  background: url('../images/icons/question.svg') no-repeat bottom;
   width: 13px;
   height: 12px;
   display: inline-block;
@@ -857,7 +857,7 @@ ul.messages {
   margin-left: 5px;
 }
 #page-wrapper #header-cta ul.cart-cta-list li a .delivery-info {
-  background: url('../images/icons/delivery-info.png') no-repeat bottom;
+  background: url('../images/icons/delivery-info.svg') no-repeat bottom;
   width: 13px;
   height: 12px;
   display: inline-block;
@@ -865,7 +865,7 @@ ul.messages {
   margin-left: 5px;
 }
 #page-wrapper #header-cta ul.cart-cta-list li a .tracking {
-  background: url('../images/icons/tracking.png') no-repeat bottom;
+  background: url('../images/icons/tracking.svg') no-repeat bottom;
   width: 13px;
   height: 12px;
   display: inline-block;
@@ -1284,14 +1284,12 @@ ul.messages {
   width: 100%;
   /*position: absolute;*/
   left: 0;
-  bottom: 48px;
   background-color: #f6f4f1;
   padding-top: 45px;
   padding-bottom: 60px;
 }
 #page-wrapper #footer-wrapper.fixed-footer {
-  position: static!important;
-  padding-bottom: 100px;
+  position: relative!important;
 }
 #page-wrapper #copyright-wrapper {
   height: auto;
@@ -1303,7 +1301,7 @@ ul.messages {
   padding-bottom: 20px;
 }
 #page-wrapper #copyright-wrapper.fixed-footer {
-  position: static!important;
+  position: relative!important;
 }
 #page-wrapper #copyright-wrapper p {
   text-align: left;
@@ -1363,7 +1361,7 @@ ul.messages {
   content: '';
   width: 20px;
   height: 20px;
-  background: url(../images/icons/dropdown.png) no-repeat 0px 11px;
+  background: url(../images/icons/dropdown.svg) no-repeat 0px 11px;
   position: absolute;
   display: block;
   right: 0px;
@@ -3453,7 +3451,7 @@ div.product .main-product .gift-card-content .inputs .each-input .dropdown-conta
   content: '';
   width: 20px;
   height: 20px;
-  background: url(../images/icons/dropdown.png) no-repeat 0px 11px;
+  background: url(../images/icons/dropdown.svg) no-repeat 0px 11px;
   position: absolute;
   display: block;
   right: 0px;
@@ -4122,7 +4120,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   letter-spacing: 0.01em;
 }
 .store .main-content .side-bar .info ul li a .question {
-  background: url('../images/icons/question.png') no-repeat bottom;
+  background: url('../images/icons/question.svg') no-repeat bottom;
   width: 13px;
   height: 12px;
   display: inline-block;
@@ -4130,7 +4128,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   margin-left: 5px;
 }
 .store .main-content .side-bar .info ul li a .delivery-info {
-  background: url('../images/icons/delivery-info.png') no-repeat bottom;
+  background: url('../images/icons/delivery-info.svg') no-repeat bottom;
   width: 13px;
   height: 12px;
   display: inline-block;
@@ -4138,7 +4136,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   margin-left: 5px;
 }
 .store .main-content .side-bar .info ul li a .tracking {
-  background: url('../images/icons/tracking.png') no-repeat bottom;
+  background: url('../images/icons/tracking.svg') no-repeat bottom;
   width: 13px;
   height: 12px;
   display: inline-block;
@@ -5104,6 +5102,15 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
     padding: 7px 25px!important;
   }
 }
+.sign-up .main-content .login-form #ajax_loader_fb_signin {
+  margin-top: 5px;
+  margin-left: 5px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.sign-up .main-content .login-form #ajax_loader_fb_signin img {
+  width: 20px;
+}
 .sign-up .main-content .login-form .sign-in-btn {
   padding: 7px 30px!important;
 }
@@ -6031,7 +6038,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .subscription-form .table-1 .col-1 .certificate-icon,
 .subscription-form .table-2 .col-1 .certificate-icon {
-  background: url(../images/icons/certificate.png) no-repeat;
+  background: url(../images/icons/certificate.svg) no-repeat;
   display: inline-block;
   width: 14px;
   height: 14px;
@@ -6163,7 +6170,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .subscription-form .table-1 .terms-icon,
 .subscription-form .table-2 .terms-icon {
-  background: url(../images/icons/small-certificate.png) no-repeat;
+  background: url(../images/icons/small-certificate.svg) no-repeat;
   display: inline-block;
   width: 10px;
   height: 11px;
@@ -6281,7 +6288,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-style: normal;
   font-size: 11.5px;
   line-height: 19px;
-  letter-sapcing: 0px;
+  letter-spacing: 0px;
   color: #464646;
   text-transform: none;
   padding: 0 5px;
@@ -6977,7 +6984,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .cart #cart ul li a .question,
 .cart #confirmation ul li a .question {
-  background: url('../images/icons/question.png') no-repeat bottom;
+  background: url('../images/icons/question.svg') no-repeat bottom;
   width: 13px;
   height: 12px;
   display: inline-block;
@@ -6986,7 +6993,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .cart #cart ul li a .delivery-info,
 .cart #confirmation ul li a .delivery-info {
-  background: url('../images/icons/delivery-info.png') no-repeat bottom;
+  background: url('../images/icons/delivery-info.svg') no-repeat bottom;
   width: 13px;
   height: 12px;
   display: inline-block;
@@ -6995,7 +7002,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .cart #cart ul li a .tracking,
 .cart #confirmation ul li a .tracking {
-  background: url('../images/icons/tracking.png') no-repeat bottom;
+  background: url('../images/icons/tracking.svg') no-repeat bottom;
   width: 13px;
   height: 12px;
   display: inline-block;
@@ -7230,7 +7237,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .cart #cart .table tbody tr td .image-text-container .delete,
 .cart #confirmation .table tbody tr td .image-text-container .delete {
-  background: url(../images/icons/delete.png) no-repeat center;
+  background: url(../images/icons/delete.svg) no-repeat center;
   display: table-cell;
   vertical-align: middle;
   text-align: right;
@@ -7275,7 +7282,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .cart #cart .table tfoot .btn-empty i.trash,
 .cart #confirmation .table tfoot .btn-empty i.trash {
   color: #ae4e0e;
-  background: url('../images/icons/trash.png') no-repeat;
+  background: url('../images/icons/trash.svg') no-repeat;
   display: inline-block;
   width: 10px;
   height: 12px;
@@ -7509,7 +7516,6 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-family: "minion-pro", Verdana, sans-serif;
   font-weight: 500;
   font-style: normal;
-  font-weight: 600;
   font-size: 13px;
   line-height: 16px;
   letter-spacing: 0.05em;
@@ -8132,7 +8138,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   content: '';
   width: 20px;
   height: 20px;
-  background: url(../images/icons/dropdown.png) no-repeat 0px 11px;
+  background: url(../images/icons/dropdown.svg) no-repeat 0px 11px;
   position: absolute;
   display: block;
   right: 0px;
@@ -9067,7 +9073,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   content: '';
   width: 20px;
   height: 20px;
-  background: url(../images/icons/dropdown.png) no-repeat 0px 11px;
+  background: url(../images/icons/dropdown.svg) no-repeat 0px 11px;
   position: absolute;
   display: block;
   right: 0px;
@@ -9372,19 +9378,19 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   color: #ae4e0e;
 }
 .account .order-history ul.order-info li a:hover .question {
-  background: url('../images/icons/question-hover.png') no-repeat bottom;
+  background: url('../images/icons/question-hover.svg') no-repeat bottom;
 }
 .account .order-history ul.order-info li a:hover .delivery-info {
-  background: url('../images/icons/delivery-info-hover.png') no-repeat bottom;
+  background: url('../images/icons/delivery-info-hover.svg') no-repeat bottom;
 }
 .account .order-history ul.order-info li a:hover .tracking {
-  background: url('../images/icons/tracking-hover.png') no-repeat bottom;
+  background: url('../images/icons/tracking-hover.svg') no-repeat bottom;
 }
 .account .order-history ul.order-info li a i {
   vertical-align: middle;
 }
 .account .order-history ul.order-info li a .question {
-  background: url('../images/icons/question.png') no-repeat bottom;
+  background: url('../images/icons/question.svg') no-repeat bottom;
   width: 13px;
   height: 12px;
   display: inline-block;
@@ -9392,7 +9398,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   margin-left: 5px;
 }
 .account .order-history ul.order-info li a .delivery-info {
-  background: url('../images/icons/delivery-info.png') no-repeat bottom;
+  background: url('../images/icons/delivery-info.svg') no-repeat bottom;
   width: 13px;
   height: 12px;
   display: inline-block;
@@ -9400,7 +9406,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   margin-left: 5px;
 }
 .account .order-history ul.order-info li a .tracking {
-  background: url('../images/icons/tracking.png') no-repeat bottom;
+  background: url('../images/icons/tracking.svg') no-repeat bottom;
   width: 13px;
   height: 12px;
   display: inline-block;
@@ -10317,6 +10323,11 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-size: 12px;
   color: #ae4e0e;
   margin-right: 7px;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 .blog #desktop-back-to-top-button a:hover {
   color: #c76e09;
@@ -10366,10 +10377,18 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   text-align: left!important;
 }
 .blog .main-content .image-text-content .post .post-content p a {
-  color: #464646;
+  font-family: "minion-pro", Verdana, sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 13px;
+  line-height: 16px;
+  text-transform: none;
+  letter-spacing: 0.03em;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .blog .main-content .image-text-content .post .post-content p a:hover {
-  color: #ae4e0e;
+  color: #c76e09;
 }
 .blog .main-content .image-text-content .post .post-content p em {
   font-family: "minion-pro", Verdana, sans-serif;
@@ -10435,15 +10454,17 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .blog .main-content .image-text-content .post-extra-content .post-extra.category {
   float: left;
-  margin-right: 75px;
-  max-width: 85px;
+  max-width: 200px;
+  margin-right: 40px;
 }
 .blog .main-content .image-text-content .post-extra-content .post-extra.tags {
   float: left;
+  width: 320px;
+  margin-right: 50px;
 }
 .blog .main-content .image-text-content .post-extra-content .post-extra.sharing {
   float: right;
-  max-width: 100px;
+  max-width: 200px;
 }
 @media all and (max-width: 1199px) {
   .blog .main-content .image-text-content .post-extra-content .post-extra {
@@ -10495,13 +10516,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   margin-left: 5px;
   vertical-align: middle;
   color: #464646;
-  font-size: 18px;
-}
-.blog .main-content .image-text-content .post-extra-content ul li a.twitter {
-  width: 18px!important;
-}
-.blog .main-content .image-text-content .post-extra-content ul li a.google {
-  margin-left: 0px;
+  font-size: 15px;
 }
 .blog .main-content .image-text-content .each-load-more {
   display: inline-block;
@@ -11222,7 +11237,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   content: '';
   width: 20px;
   height: 20px;
-  background: url(../images/icons/dropdown.png) no-repeat 0px 11px;
+  background: url(../images/icons/dropdown.svg) no-repeat 0px 11px;
   position: absolute;
   display: block;
   right: 0px;
@@ -11260,7 +11275,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   content: '';
   width: 20px;
   height: 20px;
-  background: url(../images/icons/dropdown.png) no-repeat 0px 11px;
+  background: url(../images/icons/dropdown.svg) no-repeat 0px 11px;
   position: absolute;
   display: block;
   right: 0px;
@@ -12699,7 +12714,7 @@ div#footer-wrapper .search span.ajax_msg {
   content: '';
   width: 20px;
   height: 20px;
-  background: url(../images/icons/dropdown.png) no-repeat 0px 11px;
+  background: url(../images/icons/dropdown.svg) no-repeat 0px 11px;
   position: absolute;
   display: block;
   right: 0px;
@@ -13258,7 +13273,7 @@ div#footer-wrapper .search span.ajax_msg {
   content: '';
   width: 20px;
   height: 20px;
-  background: url(../images/icons/dropdown.png) no-repeat 0px 11px;
+  background: url(../images/icons/dropdown.svg) no-repeat 0px 11px;
   position: absolute;
   display: block;
   right: 0px;
@@ -13359,8 +13374,15 @@ div#footer-wrapper .search span.ajax_msg {
   line-height: 16px;
   color: #c76e09;
   letter-spacing: 0.03em;
-  margin-top: 10px;
+  margin-top: 23px;
   display: inline-block;
+}
+.careers .main-content .forth-content .each-input .validation-advice {
+  top: 45px;
+}
+.careers .main-content .forth-content .each-input #advice-required-entry-mobile_no_2 {
+  top: 26px!important;
+  left: -116px;
 }
 .rewards {
   margin-top: 85px;
