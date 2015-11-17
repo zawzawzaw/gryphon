@@ -63,6 +63,8 @@
     // move the element
     this.body_element.prepend($("#mobile-header-wrapper"));
 
+    //this.md = new MobileDetect(window.navigator.userAgent);
+
     
     this.create_html();
     this.init();
@@ -273,6 +275,9 @@
 
     update_body_class: function(){
       var window_width = this.window.width();
+
+
+      // md.mobile()
       if(window_width <= 991){
         // if mobile
         this.body_element.addClass('is-mobile');
@@ -280,6 +285,15 @@
         // if desktop
         this.body_element.removeClass('is-mobile');
       }
+
+      /*
+      if( this.md.tablet() != null ){
+        this.body_element.addClass('is-tablet');
+        window.istablet = true;
+      }
+      */
+      
+
     },
 
 
