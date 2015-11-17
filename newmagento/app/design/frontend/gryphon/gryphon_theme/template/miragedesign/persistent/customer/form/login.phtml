@@ -104,6 +104,7 @@
                                 <button type="submit" class="button sign-in-btn cta" title="<?php echo $this->__('Login') ?>" name="send" id="send2"><span><span><?php echo $this->__('Sign In with Email') ?></span></span></button>
                                 <span class="or">or</span>
                                 <button class="sign-in-facebook cta">Sign In with Facebook</button>
+                                <span id='ajax_loader_fb_signin' style='display:none'><img src='<?php echo $this->getSkinUrl('images/content/opc-ajax-loader.gif')?>'/></span>
                             </div>
                         </div>
                     </div>
@@ -115,6 +116,103 @@
                     //<![CDATA[
                     var dataForm = new VarienForm('login-form', true);
                     //]]>
+                </script>
+                <script>
+                    jQuery(document).ready(function($){
+                        // This is called with the results from from FB.getLoginStatus().
+                        function statusChangeCallback(response) {
+                            console.log('statusChangeCallback');
+                            console.log(response);
+                            // The response object is returned with a status field that lets the
+                            // app know the current login status of the person.
+                            // Full docs on the response object can be found in the documentation
+                            // for FB.getLoginStatus().
+                            if (response.status === 'connected') {
+                              // Logged into your app and Facebook.
+                              testAPI(response.authResponse.accessToken);
+                            } else if (response.status === 'not_authorized') {
+                              // The person is logged into Facebook, but not your app.
+                              document.getElementById('status').innerHTML = 'Please log ' +
+                                'into this app.';
+                            } else {
+                              // The person is not logged into Facebook, so we're not sure if
+                              // they are logged into this app or not.
+                              document.getElementById('status').innerHTML = 'Please log ' +
+                                'into Facebook.';
+                            }
+                        }
+
+                        $('.sign-in-facebook').on('click', function(e){
+                            e.preventDefault();
+
+                            $('#ajax_loader_fb_signin').show();
+
+                            FB.login(function(response) {
+                              statusChangeCallback(response);
+                            }, {scope: 'public_profile, email, user_location, user_birthday'});
+                        });
+
+                        window.fbAsyncInit = function() {
+                            FB.init({
+                                appId      : '593833234040726',
+                                cookie     : true,  // enable cookies to allow the server to access 
+                                                    // the session
+                                xfbml      : true,  // parse social plugins on this page
+                                version    : 'v2.2' // use version 2.2
+                            });
+                        };
+
+                        // Load the SDK asynchronously
+                        (function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/en_US/sdk.js";
+                        fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));
+
+                        // Here we run a very simple test of the Graph API after login is
+                        // successful.  See statusChangeCallback() for when this call is made.
+                        var request;
+                        function testAPI(token) {
+                            console.log('Welcome!  Fetching your information.... ');
+                            FB.api('/me?fields=email,id,name,location,first_name,last_name,gender,birthday', function(response) {                              
+                                console.log('Successful login for: ' + response.name);
+
+                                if(response && response.email != '') {
+                                    if (request) {
+                                        request.abort();
+                                    }
+
+                                    request = $.ajax({
+                                        url: "<?php echo $this->getUrl('discovertea/index/loginCustomer') ?>",
+                                        method: "POST",
+                                        data: { first_name : response.first_name, last_name : response.last_name, email : response.email, gender : response.gender, dob : response.birthday, _token : token },                                    
+                                        success: function(data){
+                                            var objData = $.parseJSON(data);
+
+                                            // console.log(data);
+                                            // console.log(objData);
+
+                                            if(objData.success==true) {
+                                                location.reload();
+                                            }else {
+                                                if(objData.error_messages) {
+                                                    alert(objData.error_messages);
+                                                }else {
+                                                    alert('Something went wrong please try again.');
+                                                }
+                                            }
+                                        }
+                                    });
+                                }else {
+                                    alert('Couldn\'t fetch the infomation we need from Facebook. Please try signin/sign up normally.')
+                                }
+                                
+                            });
+                        }
+                    });
+                  
                 </script>
             </div>      
         </div>

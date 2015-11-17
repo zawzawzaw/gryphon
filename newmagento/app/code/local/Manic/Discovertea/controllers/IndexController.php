@@ -275,4 +275,117 @@ class Manic_Discovertea_IndexController extends Mage_Core_Controller_Front_Actio
 
         $this->getResponse()->setBody(Mage::helper('core')->jsonEncode($result));
 	}
+
+	public function loginCustomerAction() {
+		if ($this->getRequest()->isPost()) {
+    
+            $first_name = $this->getRequest()->getParam('first_name', array()); 
+            $last_name = $this->getRequest()->getParam('last_name', array()); 
+            $email = $this->getRequest()->getParam('email', array()); 
+            $gender = $this->getRequest()->getParam('gender', array()); 
+            $dob = $this->getRequest()->getParam('dob', array()); 
+            $_token = $this->getRequest()->getParam('_token', array()); 
+            $website_id = Mage::app()->getWebsite()->getId(); 
+            $store = Mage::app()->getStore();
+            
+            $dob=date('m/j/Y', strtotime($dob));
+
+            if(empty($first_name) || empty($last_name) || empty($email) || empty($_token) || filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+
+            	$result['success']  = false;
+        		$result['error']    = true;
+        		$result['error_messages']    = 'One or more of the required field(s) to sign in is missing or invalid.';
+
+            }else {
+
+            	////
+            	//// Check on fb access token to see if user acutally logged in to facebook
+            	////
+
+	            $graph_url= "https://graph.facebook.com/me";
+				$param = "?access_token=" .$_token;
+
+			    $ch = curl_init($graph_url.$param);
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+				curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+				curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+				$response = curl_exec($ch);
+				$response = json_decode($response, true);
+
+				if($response['email']!==$email) {
+
+				 	$result['success']  = false;
+	        		$result['error']    = true;
+	        		$result['error_messages']    = 'Invalid access token';
+
+				}else {
+
+					$customer = Mage::getModel('customer/customer');
+				    $customer->setWebsiteId($website_id);
+				    $customer->loadByEmail($email);
+				    $session = Mage::getSingleton('customer/session');
+
+				    if ($customer->getId()) {
+
+				    	//// try log customer in if email address is already exist
+
+				        $session->setCustomerAsLoggedIn($customer);
+
+				        $result['success']  = true;
+			        	$result['error']    = false;
+
+				    }else {
+
+				    	//// if email address is new sign up first
+						 
+						$customer = Mage::getModel("customer/customer");
+						$customer   ->setWebsiteId($website_id)
+						            ->setStore($store)
+						            ->setFirstname($first_name)
+						            ->setLastname($last_name)
+						            ->setEmail($email)
+						            ->setGender(
+						            	Mage::getResourceModel('customer/customer')
+							            ->getAttribute('gender')
+							            ->getSource()
+							            ->getOptionId($gender)
+							        )
+							        ->setDob($dob)
+						            ->setPassword('facebook_login')
+						            ->setIsActive(1)
+		    						->setConfirmation(null);
+						 
+						try{
+						    $customer->save();
+
+						    //// once signed up log the user in
+
+						    if($customer->getId()) {
+						    	$session->setCustomerAsLoggedIn($customer);
+						    }
+
+						    $result['success']  = true;
+			        		$result['error']    = false;
+			        		$result['customer_id']    = $customer->getId();
+			        		
+						}
+						catch (Exception $e) {
+						    $result['success']  = false;
+			        		$result['error']    = true;
+			        		$result['error_messages']    = $e->getMessage();
+						}
+
+				    }
+
+				}		
+
+            }   
+		    
+		}else {
+			$result['success']  = false;
+	        $result['error']    = true;
+		}
+
+		$this->getResponse()->setBody(Mage::helper('core')->jsonEncode($result));
+	}
 }

@@ -1363,7 +1363,7 @@ ul.messages {
   content: '';
   width: 20px;
   height: 20px;
-  background: url(../images/icons/dropdown.png) no-repeat 0px 11px;
+  background: url(../images/icons/dropdown.svg) no-repeat 0px 11px;
   position: absolute;
   display: block;
   right: 0px;
@@ -3453,7 +3453,7 @@ div.product .main-product .gift-card-content .inputs .each-input .dropdown-conta
   content: '';
   width: 20px;
   height: 20px;
-  background: url(../images/icons/dropdown.png) no-repeat 0px 11px;
+  background: url(../images/icons/dropdown.svg) no-repeat 0px 11px;
   position: absolute;
   display: block;
   right: 0px;
@@ -5104,6 +5104,15 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
     padding: 7px 25px!important;
   }
 }
+.sign-up .main-content .login-form #ajax_loader_fb_signin {
+  margin-top: 5px;
+  margin-left: 5px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.sign-up .main-content .login-form #ajax_loader_fb_signin img {
+  width: 20px;
+}
 .sign-up .main-content .login-form .sign-in-btn {
   padding: 7px 30px!important;
 }
@@ -6031,7 +6040,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .subscription-form .table-1 .col-1 .certificate-icon,
 .subscription-form .table-2 .col-1 .certificate-icon {
-  background: url(../images/icons/certificate.png) no-repeat;
+  background: url(../images/icons/certificate.svg) no-repeat;
   display: inline-block;
   width: 14px;
   height: 14px;
@@ -6163,7 +6172,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .subscription-form .table-1 .terms-icon,
 .subscription-form .table-2 .terms-icon {
-  background: url(../images/icons/small-certificate.png) no-repeat;
+  background: url(../images/icons/small-certificate.svg) no-repeat;
   display: inline-block;
   width: 10px;
   height: 11px;
@@ -7230,7 +7239,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .cart #cart .table tbody tr td .image-text-container .delete,
 .cart #confirmation .table tbody tr td .image-text-container .delete {
-  background: url(../images/icons/delete.png) no-repeat center;
+  background: url(../images/icons/delete.svg) no-repeat center;
   display: table-cell;
   vertical-align: middle;
   text-align: right;
@@ -7275,7 +7284,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 .cart #cart .table tfoot .btn-empty i.trash,
 .cart #confirmation .table tfoot .btn-empty i.trash {
   color: #ae4e0e;
-  background: url('../images/icons/trash.png') no-repeat;
+  background: url('../images/icons/trash.svg') no-repeat;
   display: inline-block;
   width: 10px;
   height: 12px;
@@ -8132,7 +8141,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   content: '';
   width: 20px;
   height: 20px;
-  background: url(../images/icons/dropdown.png) no-repeat 0px 11px;
+  background: url(../images/icons/dropdown.svg) no-repeat 0px 11px;
   position: absolute;
   display: block;
   right: 0px;
@@ -9067,7 +9076,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   content: '';
   width: 20px;
   height: 20px;
-  background: url(../images/icons/dropdown.png) no-repeat 0px 11px;
+  background: url(../images/icons/dropdown.svg) no-repeat 0px 11px;
   position: absolute;
   display: block;
   right: 0px;
@@ -11222,7 +11231,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   content: '';
   width: 20px;
   height: 20px;
-  background: url(../images/icons/dropdown.png) no-repeat 0px 11px;
+  background: url(../images/icons/dropdown.svg) no-repeat 0px 11px;
   position: absolute;
   display: block;
   right: 0px;
@@ -11260,7 +11269,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   content: '';
   width: 20px;
   height: 20px;
-  background: url(../images/icons/dropdown.png) no-repeat 0px 11px;
+  background: url(../images/icons/dropdown.svg) no-repeat 0px 11px;
   position: absolute;
   display: block;
   right: 0px;
@@ -12699,7 +12708,7 @@ div#footer-wrapper .search span.ajax_msg {
   content: '';
   width: 20px;
   height: 20px;
-  background: url(../images/icons/dropdown.png) no-repeat 0px 11px;
+  background: url(../images/icons/dropdown.svg) no-repeat 0px 11px;
   position: absolute;
   display: block;
   right: 0px;
@@ -13258,7 +13267,7 @@ div#footer-wrapper .search span.ajax_msg {
   content: '';
   width: 20px;
   height: 20px;
-  background: url(../images/icons/dropdown.png) no-repeat 0px 11px;
+  background: url(../images/icons/dropdown.svg) no-repeat 0px 11px;
   position: absolute;
   display: block;
   right: 0px;
