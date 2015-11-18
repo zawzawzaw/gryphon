@@ -5092,7 +5092,7 @@ html{
         color: @dark-grey;
 
         position: absolute;
-        top: 0;
+        top: -4px;
         left: 0;
         width: 100%;
         padding-top: 3px;
@@ -5699,14 +5699,16 @@ html{
       .rewards_point_cart{
         // position: relative;
         position: absolute;
-        top: -20px;
+        top: -60px;
         text-align: left;
-        width: 100%;
+        width: 93%;
         line-height: 35px;
         // border-bottom: 1px solid #ddd;
         // margin-top: -20px;
         // margin-top: -48px;
         margin-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+        padding-left: 6px;
       }
 
       #discount-coupon-form,
@@ -5728,7 +5730,8 @@ html{
       }
 
       #discount-coupon-form{
-        padding-top: 20px;
+        // padding-top: 20px;
+        margin-top: 60px;
       }
       #discount-giftcard-form{
         margin-top: 22px;
@@ -5736,6 +5739,15 @@ html{
         //padding-bottom: 34px;
         //margin-bottom: 34px;
         padding-bottom: 25px;
+      }
+
+      .gift-service-wrapper {
+        margin-top: 25px;
+      }
+
+      textarea {
+        resize:vertical;
+        .placeholder(#777);
       }
     }
 
@@ -6698,7 +6710,7 @@ html{
 
             }
           }
-          tfoot{
+          tfoot{            
             tr{
               td{
                 padding: 0;
@@ -9521,3 +9533,64 @@ html{
   }
 
 }
+
+
+
+
+
+
+//    _____  _    ____  _     _____ _____ 
+//   |_   _|/ \  | __ )| |   | ____|_   _|
+//     | | / _ \ |  _ \| |   |  _|   | |  
+//     | |/ ___ \| |_) | |___| |___  | |  
+//     |_/_/   \_\____/|_____|_____| |_|  
+//                                        
+
+.is-mobile.is-tablet{
+
+  // STORE
+  #content-wrapper.store .main-content .all-products .each-product{
+    width: 33.33%;
+    float: none;
+  }
+
+  // PRODUCT DETAIL
+  #content-wrapper.product .product-collection .image-text-content .col-md-6{
+    height: 260px;
+    width: 33.33333333%;
+    float: left;
+    
+    img{
+      height: 260px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

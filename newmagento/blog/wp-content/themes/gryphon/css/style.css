@@ -10393,6 +10393,10 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   padding-right: 5px;
   color: #c76e09;
 }
+.blog .main-content .image-text-content .post .post-content p a.read-more {
+  display: block;
+  padding-top: 7px;
+}
 .blog .main-content .image-text-content .post .post-content h4 {
   font-family: 'Gotham-Medium', Verdana, sans-serif;
   font-weight: 200;

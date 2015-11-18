@@ -25,9 +25,9 @@
 					$i = 1;
 					foreach ($categories as $key => $category) {
 						if($i==count($categories))
-							echo '<a style="padding-right:5px;display: inline-block;" href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a>';
+							echo '<a style="display: inline-block;" href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a>';
 						else
-							echo '<a style="padding-right:5px;display: inline-block;" href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a> | ';
+							echo '<a style="display: inline-block;" href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a> | ';
 						$i++;
 					}
 					?>
@@ -56,9 +56,7 @@
 						<li><a href="https://twitter.com/share?url=<?php echo urlencode( get_permalink(get_the_ID()) ); ?>&via=gryphontea&text=gryphon%20tea%20company" class="twitter"></a></li>
 						<li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink(get_the_ID()); ?>" class="facebook"></a></li>						
 						<li><a href="https://www.linkedin.com/shareArticle?url=<?php echo urlencode( get_permalink(get_the_ID()) ); ?>&summary=gryphon%20tea%20company" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
-						<li><a href="https://plus.google.com/share?url=<?php echo urlencode( get_permalink(get_the_ID()) ); ?>&hl=en-US" class="google"><i class="fa fa-google-plus"></i></a></li>
-						<li><a href="mailto:?Subject=Gryphon%20Tea%20Company" class="mailto" target="_top"><i class="fa fa-envelope-o"></i></a></li>
-						<li><a href="javascript:window.print()" class="print" target="_top"><i class="fa fa-print"></i></a></li>
+						<li><a href="https://plus.google.com/share?url=<?php echo urlencode( get_permalink(get_the_ID()) ); ?>&hl=en-US" class="google"><i class="fa fa-google-plus"></i></a></li>						
 					</ul>
 				</div>
 			</div>

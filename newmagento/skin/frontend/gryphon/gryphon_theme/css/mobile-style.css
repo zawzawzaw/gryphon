@@ -4110,7 +4110,7 @@ html {
     line-height: 12px;
     color: #252525;
     position: absolute;
-    top: 0;
+    top: -4px;
     left: 0;
     width: 100%;
     padding-top: 3px;
@@ -4631,11 +4631,29 @@ html {
     height: 29px;
   }
   #content-wrapper.cart #confirmation #discount-coupon-form {
-    margin-top: 115px;
+    margin-top: 60px;
   }
   #content-wrapper.cart #confirmation #discount-giftcard-form {
     margin-top: 22px;
     padding-bottom: 25px;
+  }
+  #content-wrapper.cart #confirmation .gift-service-wrapper {
+    margin-top: 25px;
+  }
+  #content-wrapper.cart #confirmation textarea {
+    resize: vertical;
+  }
+  #content-wrapper.cart #confirmation textarea::-webkit-input-placeholder {
+    color: #777777;
+  }
+  #content-wrapper.cart #confirmation textarea:-moz-placeholder {
+    color: #777777;
+  }
+  #content-wrapper.cart #confirmation textarea::-moz-placeholder {
+    color: #777777;
+  }
+  #content-wrapper.cart #confirmation textarea:-ms-input-placeholder {
+    color: #777777;
   }
   #content-wrapper.cart #billing_shipping {
     margin-top: 0;
@@ -5297,13 +5315,6 @@ html {
   }
   #content-wrapper.cart #opc-review .table-responsive .table tbody tr:last-child {
     border-top: none;
-  }
-  #content-wrapper.cart #opc-review .table-responsive .table tfoot {
-    position: absolute;
-    top: 186px;
-    left: 16px;
-    width: 93%;
-    border-bottom: 1px solid #dddddd;
   }
   #content-wrapper.cart #opc-review .table-responsive .table tfoot tr td {
     padding: 0;
@@ -7307,4 +7318,16 @@ html {
     right: 0;
     top: 50px;
   }
+}
+.is-mobile.is-tablet #content-wrapper.store .main-content .all-products .each-product {
+  width: 33.33%;
+  float: none;
+}
+.is-mobile.is-tablet #content-wrapper.product .product-collection .image-text-content .col-md-6 {
+  height: 260px;
+  width: 33.33333333%;
+  float: left;
+}
+.is-mobile.is-tablet #content-wrapper.product .product-collection .image-text-content .col-md-6 img {
+  height: 260px;
 }

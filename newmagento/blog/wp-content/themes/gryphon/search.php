@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
 <?php 
-function new_excerpt_more( $more ) {
+function search_excerpt_more( $more ) {
 	return ' <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">Read More</a>';
 }
-add_filter( 'excerpt_more', 'new_excerpt_more' );
+add_filter( 'excerpt_more', 'search_excerpt_more' );
 ?>
 
 <div id="content-wrapper" class="blog">

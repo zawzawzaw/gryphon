@@ -5092,7 +5092,7 @@ html{
         color: @dark-grey;
 
         position: absolute;
-        top: 0;
+        top: -4px;
         left: 0;
         width: 100%;
         padding-top: 3px;
@@ -5731,7 +5731,7 @@ html{
 
       #discount-coupon-form{
         // padding-top: 20px;
-        margin-top: 115px;
+        margin-top: 60px;
       }
       #discount-giftcard-form{
         margin-top: 22px;
@@ -5739,6 +5739,15 @@ html{
         //padding-bottom: 34px;
         //margin-bottom: 34px;
         padding-bottom: 25px;
+      }
+
+      .gift-service-wrapper {
+        margin-top: 25px;
+      }
+
+      textarea {
+        resize:vertical;
+        .placeholder(#777);
       }
     }
 
@@ -6701,12 +6710,7 @@ html{
 
             }
           }
-          tfoot{
-            position: absolute;
-            top: 186px;
-            left: 16px;
-            width: 93%;
-            border-bottom: 1px solid @border-grey;
+          tfoot{            
             tr{
               td{
                 padding: 0;
