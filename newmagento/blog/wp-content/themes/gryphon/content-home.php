@@ -1,14 +1,14 @@
 <div class="post">
 	<div class="post-content">
 		<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-		<span><?php the_date(); ?></span>
+		<h6><?php the_date(); ?></h6>
 		<hr class="small">
 
 		<?php //the_content(); ?>
 		<?php if ( has_post_thumbnail() ) {
 	        the_post_thumbnail('full');
 	    } ?>
-		<?php the_excerpt(); ?>
+		<?php trim(the_excerpt()); ?>
 
 		<!-- <img src="images/content/blog-1.jpg" class="img-responsive" alt="blog 1"> -->
 		<?php //the_post_thumbnail( 'full', array('class'=>'img-responsive') ); ?>

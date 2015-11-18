@@ -98,3 +98,40 @@ function new_excerpt_more( $more ) {
     return '... <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">Read More</a>';
 }
 add_filter( 'excerpt_more', 'new_excerpt_more' );
+
+//hook into the init action and call create_book_taxonomies when it fires
+add_action( 'init', 'create_topics_hierarchical_taxonomy', 0 );
+
+//create a custom taxonomy name it topics for your posts
+
+function create_topics_hierarchical_taxonomy() {
+
+// Add new taxonomy, make it hierarchical like categories
+//first do the translations part for GUI
+
+  $labels = array(
+    'name' => _x( 'Popular Posts', 'taxonomy general name' ),
+    'singular_name' => _x( 'Popular Post', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Popular Posts' ),
+    'all_items' => __( 'All Popular Posts' ),
+    'parent_item' => __( 'Parent Popular Post' ),
+    'parent_item_colon' => __( 'Parent Popular Post:' ),
+    'edit_item' => __( 'Edit Popular Post' ), 
+    'update_item' => __( 'Update Popular Post' ),
+    'add_new_item' => __( 'Add New Popular Post' ),
+    'new_item_name' => __( 'New Popular Post Name' ),
+    'menu_name' => __( 'Popular Posts' ),
+  );    
+
+// Now register the taxonomy
+
+  register_taxonomy('popular',array('post'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => fa,
+    'show_admin_column' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'topic' ),
+  ));
+
+}

@@ -10182,19 +10182,20 @@ div.product {
           .gotham-book;
           font-size: 12px;
           line-height: 22px;
-          text-align: left!important;
-          span {
+          text-align: left;
+          h6 {
             .gotham-medium;
             font-size: 10px;
             color: @new-grey-2;
             line-height: 16px;
             letter-spacing: 0.03em;
             text-transform: uppercase;
-          }
+          } 
           p {
-            text-align: left!important;
-            // font-size: 14px;
-            // margin-bottom: 20px;           
+            .gotham-book;
+            font-size: 12px;
+            line-height: 22px;
+            text-align: left;       
             a {
               .minion-pro-semibold-italic;
               font-size: 13px;
@@ -10203,26 +10204,40 @@ div.product {
               letter-spacing: 0.03em;
               padding-left: 5px;
               padding-right: 5px;
-              &:hover{
-                color: @dark-orange2;
-              }
+              color: @dark-orange2; 
+              // &:hover{
+              //   color: @dark-orange2;
+              // }
             }
-            em {
-              .minion-pro-italic;
-              font-size: 14px;
-              line-height: 24px;
-            }
-
-
-
+            // em {
+            //   .minion-pro-italic;
+            //   font-size: 14px;
+            //   line-height: 24px;
+            // }
+          }
+          h4 {
+            .gotham-medium;
+            font-size: 12px;
+            text-transform: none;
+          }
+          h3 {
+            .gotham-medium;
+            font-size: 13px;
+            text-transform: none;
+          }
+          h2 {
+            .gotham-medium;
+            font-size: 14px;
+            text-transform: none;
           }
           strong{
             // .gotham-bold;
             .gotham-medium;
           }
           em{
-            .gotham-medium;
-            font-style: italic;
+            // .gotham-medium;
+            .minion-pro-semibold-italic;
+            letter-spacing: 0.03em;
           }
           img {
             margin-top: 30px;

@@ -73,7 +73,14 @@ if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 				$args = array(
     				'numberposts' => 3,
     				'post_type' => 'post',
-    				'post_status' => 'publish'
+    				'post_status' => 'publish',
+    				'tax_query' => array( 
+				        array( 
+				            'taxonomy' => 'popular', //or tag or custom taxonomy
+				            'field' => 'slug', 
+				            'terms' => array('yes') 
+				        ) 
+				    )
     			);
 				$recent_posts = wp_get_recent_posts($args);
 				foreach( $recent_posts as $recent ){

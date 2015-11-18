@@ -10361,9 +10361,9 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-style: normal;
   font-size: 12px;
   line-height: 22px;
-  text-align: left!important;
+  text-align: left;
 }
-.blog .main-content .image-text-content .post .post-content span {
+.blog .main-content .image-text-content .post .post-content h6 {
   font-family: 'Gotham-Medium', Verdana, sans-serif;
   font-weight: 200;
   font-style: normal;
@@ -10374,7 +10374,12 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   text-transform: uppercase;
 }
 .blog .main-content .image-text-content .post .post-content p {
-  text-align: left!important;
+  font-family: 'Gotham-Book', Verdana, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 22px;
+  text-align: left;
 }
 .blog .main-content .image-text-content .post .post-content p a {
   font-family: "minion-pro", Verdana, sans-serif;
@@ -10386,16 +10391,28 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   letter-spacing: 0.03em;
   padding-left: 5px;
   padding-right: 5px;
-}
-.blog .main-content .image-text-content .post .post-content p a:hover {
   color: #c76e09;
 }
-.blog .main-content .image-text-content .post .post-content p em {
-  font-family: "minion-pro", Verdana, sans-serif;
-  font-weight: 400;
-  font-style: italic;
+.blog .main-content .image-text-content .post .post-content h4 {
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 12px;
+  text-transform: none;
+}
+.blog .main-content .image-text-content .post .post-content h3 {
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 13px;
+  text-transform: none;
+}
+.blog .main-content .image-text-content .post .post-content h2 {
+  font-family: 'Gotham-Medium', Verdana, sans-serif;
+  font-weight: 200;
+  font-style: normal;
   font-size: 14px;
-  line-height: 24px;
+  text-transform: none;
 }
 .blog .main-content .image-text-content .post .post-content strong {
   font-family: 'Gotham-Medium', Verdana, sans-serif;
@@ -10403,10 +10420,10 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   font-style: normal;
 }
 .blog .main-content .image-text-content .post .post-content em {
-  font-family: 'Gotham-Medium', Verdana, sans-serif;
-  font-weight: 200;
-  font-style: normal;
+  font-family: "minion-pro", Verdana, sans-serif;
+  font-weight: 600;
   font-style: italic;
+  letter-spacing: 0.03em;
 }
 .blog .main-content .image-text-content .post .post-content img {
   margin-top: 30px;

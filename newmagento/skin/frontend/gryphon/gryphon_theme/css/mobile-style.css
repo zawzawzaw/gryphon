@@ -4609,11 +4609,13 @@ html {
   }
   #content-wrapper.cart #confirmation .rewards_point_cart {
     position: absolute;
-    top: -20px;
+    top: -60px;
     text-align: left;
-    width: 100%;
+    width: 93%;
     line-height: 35px;
     margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-left: 6px;
   }
   #content-wrapper.cart #confirmation #discount-coupon-form label,
   #content-wrapper.cart #confirmation #discount-giftcard-form label {
@@ -4629,7 +4631,7 @@ html {
     height: 29px;
   }
   #content-wrapper.cart #confirmation #discount-coupon-form {
-    padding-top: 20px;
+    margin-top: 115px;
   }
   #content-wrapper.cart #confirmation #discount-giftcard-form {
     margin-top: 22px;
@@ -5295,6 +5297,13 @@ html {
   }
   #content-wrapper.cart #opc-review .table-responsive .table tbody tr:last-child {
     border-top: none;
+  }
+  #content-wrapper.cart #opc-review .table-responsive .table tfoot {
+    position: absolute;
+    top: 186px;
+    left: 16px;
+    width: 93%;
+    border-bottom: 1px solid #dddddd;
   }
   #content-wrapper.cart #opc-review .table-responsive .table tfoot tr td {
     padding: 0;
