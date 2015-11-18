@@ -52,8 +52,10 @@
                 <action method="addItem"><type>skin_js</type><name>js/plugins/slick/slick.min.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/vendors/gsap/plugins/ScrollToPlugin.min.js</name></action>
                 <action method="addItem"><type>skin_js</type><name>js/plugins/gryphon/jquery.gryphon-milestones.js</name></action>                
-                <action method="addItem"><type>skin_js</type><name>js/plugins/textrotator/jquery.simple-text-rotator.js</name></action>                
-                <action method="addItem"><type>skin_js</type><name>js/main.js</name></action>                
+                <action method="addItem"><type>skin_js</type><name>js/plugins/textrotator/jquery.simple-text-rotator.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/plugins/mobile-detect/mobile-detect.min.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/plugins/gryphon/jquery.gryphon-mobile-header.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/main.js</name></action>
 
                 <action method="addJs"><script>lib/jquery/noconflict.js</script></action>
                 <action method="addJs"><script>lib/ccard.js</script></action>
