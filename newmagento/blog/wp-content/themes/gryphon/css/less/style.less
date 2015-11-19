@@ -307,7 +307,7 @@ ul.messages {
         height: 60px;
         vertical-align: bottom;
         opacity: 1;
-        .transition();      
+        .transition();
       }
     }
     
@@ -8776,7 +8776,7 @@ div.product {
       @media (max-width: 991px) {
         #my-rewardpoints-table {
           position: absolute;
-          top: 205px;
+          top: 182px;
 
           p.loyalty-point{
             .minion-pro-regular;
@@ -10208,11 +10208,17 @@ div.product {
 
               &.read-more {
                 display: block;
-                padding-top: 7px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                color: @dark-blue;
+                i {
+                  margin-right: 7px;
+                }
+                &:hover{
+                  color: @dark-orange2;
+                }
               }
-              // &:hover{
-              //   color: @dark-orange2;
-              // }
+              
             }
             // em {
             //   .minion-pro-italic;
@@ -13835,6 +13841,8 @@ div#footer-wrapper {
             margin: 0 auto;
             margin-bottom: 25px;
             display: block;
+            // width: 222px;
+            // height: 148px;
           }
           h4, p {
             text-align: center;

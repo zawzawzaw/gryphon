@@ -291,13 +291,13 @@ class Manic_Discovertea_IndexController extends Mage_Core_Controller_Front_Actio
             
             $dob=date('m/j/Y', strtotime($dob));
 
-            if(empty($first_name) || empty($last_name) || empty($email) || empty($_token) || filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+          //   if(empty($first_name) || empty($last_name) || empty($email) || empty($_token) || filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
 
-            	$result['success']  = false;
-        		$result['error']    = true;
-        		$result['error_messages']    = 'One or more of the required field(s) to sign in is missing or invalid.';
+          //   	$result['success']  = false;
+        		// $result['error']    = true;
+        		// $result['error_messages']    = 'One or more of the required field(s) to sign in is missing or invalid.';
 
-            }else {
+          //   }else {
 
             	////
             	//// Check on fb access token to see if user acutally logged in to facebook
@@ -380,7 +380,7 @@ class Manic_Discovertea_IndexController extends Mage_Core_Controller_Front_Actio
 
 				}		
 
-            }   
+            // }   
 		    
 		}else {
 			$result['success']  = false;

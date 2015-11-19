@@ -8924,7 +8924,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   .account .account-details .image-text-content #my-rewardpoints-table,
   .account .account-details-saved .image-text-content #my-rewardpoints-table {
     position: absolute;
-    top: 205px;
+    top: 182px;
   }
   .account .account-details .image-text-content #my-rewardpoints-table p.loyalty-point,
   .account .account-details-saved .image-text-content #my-rewardpoints-table p.loyalty-point {
@@ -10395,7 +10395,15 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .blog .main-content .image-text-content .post .post-content p a.read-more {
   display: block;
-  padding-top: 7px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #252525;
+}
+.blog .main-content .image-text-content .post .post-content p a.read-more i {
+  margin-right: 7px;
+}
+.blog .main-content .image-text-content .post .post-content p a.read-more:hover {
+  color: #c76e09;
 }
 .blog .main-content .image-text-content .post .post-content h4 {
   font-family: 'Gotham-Medium', Verdana, sans-serif;

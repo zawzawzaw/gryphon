@@ -95,7 +95,7 @@ add_action( 'wp_ajax_nopriv_MyAjaxFunction', 'MyAjaxFunction' );
 add_action( 'wp_ajax_MyAjaxFunction', 'MyAjaxFunction' );
 
 function new_excerpt_more( $more ) {
-    return '... <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">Read More</a>';
+    return '... <a class="read-more" href="'. get_permalink( get_the_ID() ) . '"><i class="my-arrow-right"></i> Read More</a>';    
 }
 add_filter( 'excerpt_more', 'new_excerpt_more' );
 
@@ -134,4 +134,10 @@ function create_topics_hierarchical_taxonomy() {
     'rewrite' => array( 'slug' => 'topic' ),
   ));
 
+}
+
+add_filter( 'get_the_excerpt', 'wpse162725_ltrim_excerpt' );
+
+function wpse162725_ltrim_excerpt( $excerpt ) {
+    return preg_replace( '~^(\s*(?:&nbsp;)?)*~i', '', $excerpt );
 }
