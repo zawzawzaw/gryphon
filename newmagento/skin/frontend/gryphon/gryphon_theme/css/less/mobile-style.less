@@ -6544,6 +6544,8 @@ html{
               width: 33.33%;
               padding-left: 5px;
               padding-right: 5px;
+              margin-left: 0;
+              margin-right: 0;
 
               &:first-child{
                 //padding-left: 0px;
@@ -7419,6 +7421,8 @@ html{
 
             padding-left: 7.5px;
             padding-right: 7.5px;
+            margin-left: 0;
+            margin-right: 0;
 
             h4 {
               font-size: 13px;
@@ -9573,6 +9577,17 @@ html{
 
 .is-mobile.is-tablet{
 
+
+  // GENERAL
+  .container{
+    width: 100%;
+  }
+
+  .img-responsive{
+    max-width: none;
+    width: 100%;
+  }
+
   // STORE
   #content-wrapper.store .main-content .all-products .each-product{
     width: 33.33%;
@@ -9580,15 +9595,181 @@ html{
   }
 
   // PRODUCT DETAIL
-  #content-wrapper.product .product-collection .image-text-content .col-md-6{
-    height: 260px;
-    width: 33.33333333%;
-    float: left;
+  
+  #content-wrapper.product .product-collection .image-text-content{
+
     
-    img{
+
+    &:after{
+      content: "";
+      display: block;
+      position: relative;
+      //margin-left: 15px;
+      //margin-right: 15px;
+      border-bottom: 1px solid @border-grey;
+      padding-bottom: 30px;
+      margin-bottom: 50px;
+    }
+
+
+    .col-md-6{
       height: 260px;
+      width: 33.33333333%;
+      float: left;
+      
+      img{
+        height: 260px;
+      }
+    }
+
+    h1{
+      margin-top: 0px;
+    }
+    .text-content{
+      height: 260px;
+      display: block;
+
+      &:after{
+        display: none;
+      }
+    }
+
+
+  }
+
+
+  // GIFT CARD
+  #content-wrapper.product .main-product .gift-card-img .vcenter2 #gift-design-01 .gifttext, 
+  #content-wrapper.product .main-product .gift-card-img .vcenter2 #gift-design-02 .gifttext{
+    top: 360px;
+    .scale(1.7);
+  }
+
+
+
+  // SUBCRIPTION FORM
+  .subscription-form .first-content .image-text-content .all-products .each-product{
+    width: 33.33%;
+  }
+  .subscription-form .last-content .all-products{
+
+    .row{
+      margin-left: 14.5px;
+      margin-right: 14.5px;
+    }
+
+    .col-md-12{
+      .each-product{
+        margin-left: 7.5px!important;
+        margin-right: 7.5px!important;
+
+        img{
+          width: 100% !important;
+        }
+      }
+      
+      .slick-prev{
+        top: 183px;
+        left: -22px;
+      }
+      .slick-next{
+        top: 183px;
+        right: -22px;
+      }
+      
     }
   }
+
+
+  // COLLECTION
+  .collections .main-content {
+
+    .text-content{
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: none;
+      padding-left: 20px;
+      padding-right: 15px;
+
+    }
+    .collection-row{
+      margin-bottom: 30px;
+
+       .collection-row-text-col{
+          height: 370px;
+          display: table;
+
+          .text-content{
+            display: table-cell;
+            vertical-align: middle;
+            margin-top: 0;
+          }
+       }
+      .collection-row-image-col {
+
+        height: 370px;
+        position: relative;
+        overflow: hidden;
+
+        img {
+          
+          height: 370px;
+          position: absolute;
+          width: auto;
+        }
+      }
+    }
+  }
+
+
+  // TRADE
+  
+  .trade .main-content .image-text-content .center .hotels .hotel, 
+  .trade .main-content .image-text-content .center .awards .hotel{
+    width: 25%;
+  }
+
+  .trade .main-content .image-text-content .center .hotels .award, 
+  .trade .main-content .image-text-content .center .awards .award{
+    width: 33.33%;
+  }
+
+  .trade .main-content .last-content .slick-prev, 
+  .trade .main-content .last-content .slick-next{
+    top: 38%;
+  }
+
+
+  // OUR STORY
+  
+  .our-story .main-content .first-content .milestones ul.circle-container{
+    margin-top: 0 !important;
+  }
+  #content-wrapper.our-story .main-content .first-content .milestones .milestone {
+
+    .opacity(1);
+
+    .milestone-image{
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+    }
+
+  }
+
+  // CAREERS
+  .careers .main-content .third-content #career-display-item-container{
+    font-size: 0;
+
+
+    .career-display-item{
+      width: 50%;
+      display: inline-block;
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-bottom: 0px;
+    }
+  }
+
 }
 
 
