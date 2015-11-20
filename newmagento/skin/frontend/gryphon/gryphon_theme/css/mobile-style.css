@@ -7472,3 +7472,9 @@ html {
   margin-right: 0px;
   margin-bottom: 0px;
 }
+.is-mobile.is-tablet .subscription-form .image-text-content .each-product .all-products {
+  width: 48%;
+}
+.is-mobile.is-tablet #confirmation .each-details {
+  max-width: 100%;
+}

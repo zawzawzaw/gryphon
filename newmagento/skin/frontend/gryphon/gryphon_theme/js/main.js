@@ -304,13 +304,12 @@ var initialLoad = true;
                 slidesToShow: 1,
                 responsive: [
                     {
+                        breakpoint: 700,
+                        settings: { slidesToShow: 1 }
+                    },
+                    {
                         breakpoint: 769,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                            infinite: true,
-                            dots: false
-                        }
+                        settings: { slidesToShow: 2 }
                     }                
                 ]
             });
@@ -327,6 +326,10 @@ var initialLoad = true;
                     {
                         breakpoint: 700,
                         settings: { slidesToShow: 1 }
+                    },
+                    {
+                        breakpoint: 769,
+                        settings: { slidesToShow: 2 }
                     }
                 ]
             });
@@ -339,6 +342,10 @@ var initialLoad = true;
                     {
                         breakpoint: 700,
                         settings: { slidesToShow: 1 }
+                    },
+                    {
+                        breakpoint: 769,
+                        settings: { slidesToShow: 2 }
                     }
                 ]
             });
