@@ -287,7 +287,13 @@ var initialLoad = true;
                 dots: false,
                 infinite: true,
                 speed: 300,
-                slidesToShow: 1,
+                slidesToShow: 2,
+                responsive: [
+                    {
+                        breakpoint: 700,
+                        settings: { slidesToShow: 1 }
+                    }
+                ]
             });
 
             $('.this-is-the-subscription-slick').addClass('slick');
@@ -295,22 +301,41 @@ var initialLoad = true;
                 dots: false,
                 infinite: true,
                 speed: 300,
-                slidesToShow: 1,
+                slidesToShow: 2,
+                responsive: [
+                    {
+                        breakpoint: 700,
+                        settings: { slidesToShow: 1 }
+                    }
+                ]
             });
 
             $('.mobile-gourmet-what-you-get-slider').addClass('slick');
             $('.mobile-artisan-what-you-get-slider').addClass('slick');
+
             $('.mobile-gourmet-what-you-get-slider').slick({
                 dots: false,
                 infinite: true,
                 speed: 300,
-                slidesToShow: 1,
+                slidesToShow: 2,
+                responsive: [
+                    {
+                        breakpoint: 700,
+                        settings: { slidesToShow: 1 }
+                    }
+                ]
             });
             $('.mobile-artisan-what-you-get-slider').slick({
                 dots: false,
                 infinite: true,
                 speed: 300,
-                slidesToShow: 1,
+                slidesToShow: 2,
+                responsive: [
+                    {
+                        breakpoint: 700,
+                        settings: { slidesToShow: 1 }
+                    }
+                ]
             });
 
             
@@ -319,7 +344,13 @@ var initialLoad = true;
                 dots: false,
                 infinite: true,
                 speed: 300,
-                slidesToShow: 1,
+                slidesToShow: 2,
+                responsive: [
+                    {
+                        breakpoint: 700,
+                        settings: { slidesToShow: 1 }
+                    }
+                ]
             });
 
         }
