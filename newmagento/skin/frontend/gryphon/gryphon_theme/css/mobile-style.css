@@ -4539,6 +4539,10 @@ html {
   #content-wrapper.cart #confirmation .each-details .label {
     width: 60% !important;
   }
+  #content-wrapper.cart #cart .each-details:first-child,
+  #content-wrapper.cart #confirmation .each-details:first-child {
+    border-top: 1px solid #dddddd;
+  }
   #content-wrapper.cart #cart .each-details:last-child,
   #content-wrapper.cart #confirmation .each-details:last-child {
     border-bottom: 1px solid #dddddd;
@@ -4609,7 +4613,7 @@ html {
   }
   #content-wrapper.cart #confirmation .rewards_point_cart {
     position: absolute;
-    top: -60px;
+    top: -80px;
     text-align: left;
     width: 93%;
     line-height: 35px;
@@ -4631,11 +4635,10 @@ html {
     height: 29px;
   }
   #content-wrapper.cart #confirmation #discount-coupon-form {
-    margin-top: 60px;
+    margin-top: 80px;
   }
   #content-wrapper.cart #confirmation #discount-giftcard-form {
     margin-top: 22px;
-    padding-bottom: 25px;
   }
   #content-wrapper.cart #confirmation .gift-service-wrapper {
     margin-top: 25px;
@@ -4654,6 +4657,9 @@ html {
   }
   #content-wrapper.cart #confirmation textarea:-ms-input-placeholder {
     color: #777777;
+  }
+  #content-wrapper.cart #confirmation #shopping-cart-totals-table {
+    margin-top: 40px;
   }
   #content-wrapper.cart #billing_shipping {
     margin-top: 0;
@@ -4737,6 +4743,7 @@ html {
   }
   #content-wrapper.cart .action-container .checkout-types li {
     display: block;
+    margin-top: 0px;
   }
   #content-wrapper.cart .action-container .continue {
     margin-bottom: 20px;
@@ -6610,6 +6617,14 @@ html {
   .account .order-history .single-order-item .extra-content-headers {
     padding-bottom: 0 !important;
   }
+  .account .order-history .single-order-item .extra-content-headers .each-details {
+    margin-bottom: 0px!important;
+  }
+  .account .order-history .single-order-item .extra-content-mobile .each-details h2 {
+    font-size: 11px;
+    line-height: 19px;
+    color: #464646;
+  }
   .account .order-history .single-order-item.expanded {
     margin-bottom: -70px;
   }
@@ -6702,10 +6717,10 @@ html {
     padding-left: 5px !important;
   }
   .account #referred-friends-table thead tr th:nth-child(2) {
-    text-align: center;
+    text-align: left;
   }
   .account #referred-friends-table thead tr th:last-child {
-    text-align: right;
+    text-align: left;
     padding-right: 5px !important;
     letter-spacing: -0.05em;
   }
@@ -6717,10 +6732,10 @@ html {
     padding-left: 5px !important;
   }
   .account #referred-friends-table tbody tr td:nth-child(2) {
-    text-align: center;
+    text-align: left;
   }
   .account #referred-friends-table tbody tr td:last-child {
-    text-align: right;
+    text-align: left;
     padding-right: 5px !important;
   }
   .account .col-main .referral-container {
@@ -6869,7 +6884,7 @@ html {
   border-top: 1px solid #dddddd;
   border-bottom: 1px solid #dddddd;
   padding: 10px 20px;
-  text-align: center;
+  text-align: left;
 }
 #mobile-custom-giftcard-view-table thead tr th:first-child {
   padding-left: 7px;

@@ -203,17 +203,17 @@
 
 	  	function openNewWindow(URLtoOpen, windowName, windowFeatures) { newWindow=window.open(URLtoOpen, windowName, windowFeatures); }
 
-	  	$(document).on('click','.facebook', function(e){
+	  	$(document).on('click','.facebook-ico', function(e){
 	    	e.preventDefault();
 	    	var url = $(this).attr('href');
 	    	openNewWindow(url,'sharing','height=600,width=600,toolbar=no,scrollbars=no,resizable=yes');
     	});
-    	$(document).on('click','.twitter', function(e){
+    	$(document).on('click','.twitter-ico', function(e){
 	    	e.preventDefault();
 	    	var url = $(this).attr('href');
 	    	openNewWindow(url,'sharing','height=600,width=600,toolbar=no,scrollbars=no,resizable=yes');
     	});
-    	$(document).on('click','.pintrest', function(e){
+    	$(document).on('click','.pintrest-ico', function(e){
 	    	e.preventDefault();
 	    	var url = $(this).attr('href');
 	    	openNewWindow(url,'sharing','height=600,width=600,toolbar=no,scrollbars=no,resizable=yes');

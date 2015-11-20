@@ -296,6 +296,17 @@ var initialLoad = true;
                 infinite: true,
                 speed: 300,
                 slidesToShow: 1,
+                responsive: [
+                    {
+                        breakpoint: 769,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: false
+                        }
+                    }                
+                ]
             });
 
             $('.mobile-gourmet-what-you-get-slider').addClass('slick');

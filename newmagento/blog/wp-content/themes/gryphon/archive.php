@@ -6,10 +6,10 @@
       <div class="row">
         <div class="col-md-12 caption-container">
           <div class="caption">
-            <!--<h1>The Gryphon Blog</h1> -->
+            <h1>The Gryphon Blog</h1> 
 
-            <?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
-            <?php the_archive_description( '<p">', '</p>' ); ?>
+            <?php //the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
+            <?php //the_archive_description( '<p">', '</p>' ); ?>
 
             <a href="store.html" class="read-more cta">Visit Tea Store</a>
           </div>
@@ -78,42 +78,39 @@
           <div class="posts">
             <div id="all-posts">
 
-
+              <?php global $query_string;
+              query_posts("{$query_string}&posts_per_page=3"); ?>
 
               <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                <?php //the_content(); ?>
-
-                <?php get_template_part( 'content', get_post_format() ); ?>
+                <?php get_template_part( 'content', 'home' ); ?>
               <?php endwhile; ?>
 
               <?php else : ?>
-                <h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-              <?php endif; ?>
+                <?php get_template_part( 'content', 'none' ); ?>
+              <?php endif; ?>              
 
-
-              <div class="row load-more-wrapper">
-                <div class="col-md-12">
-                  <div class="each-load-more">
-                    <hr class="load-more">
-                  </div>
-                  <div class="each-load-more">
-                    <a href="#" class="load-more-btn">load more</a>
-                  </div>
-                  <div class="each-load-more">
-                    <hr class="load-more">
-                  </div>
-                </div>
-              </div>
-
-
-            </div>            
-
-            <div id="pagenav" style="display:none;">
-              <div class="prev-page"><?php previous_posts_link('Previous') ?></div>
-              <div class="next-page"><?php next_posts_link('Next') ?></div>
             </div>
 
-          </div>          
+            <div class="row load-more-wrapper">
+              <div class="col-md-12">
+                <div class="each-load-more">
+                  <hr class="load-more">
+                </div>
+                <div class="each-load-more">
+                  <a href="#" class="load-more-btn">load more</a>
+                </div>
+                <div class="each-load-more">
+                  <hr class="load-more">
+                </div>
+              </div>
+            </div>
+          </div> 
+
+          <div id="pagenav" style="display:none;">
+            <div class="prev-page"><?php previous_posts_link('Previous') ?></div>
+            <div class="next-page"><?php next_posts_link('Next') ?></div>
+          </div>
+
         </div>
         <div class="col-md-3">
           <div class="visible-md-block visible-lg-block">

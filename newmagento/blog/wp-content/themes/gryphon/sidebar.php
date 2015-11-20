@@ -1,6 +1,11 @@
 <?php
 if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 	<div class="sidebar">
+
+		<div class="each-sidebar-content">
+			<?php dynamic_sidebar( 'sidebar-1' ); ?>			
+		</div>
+
 		<?php get_search_form(); ?>
 
 		<div class="each-sidebar-content">
@@ -102,7 +107,7 @@ if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 		<div id="desktop-back-to-top-button">
 			<a href="#"><i class="my-arrow-left"></i>Back to Top</a>
 		</div>
-		<script type="text/javascript" src=""></script>
+		
 		<script type="text/javascript">
 			jQuery(document).ready(function($) {
 
@@ -116,7 +121,7 @@ if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 					// 522 = 120 + 340 + 62
 
 					window_element.scrollTop()
-					(main_container.height() - 522) < 
+					// (main_container.height() - 522) < 
 
 					if(window_element.scrollTop() > 1160){
 						if(body_element.hasClass('has-blog-back-to-top') == false){

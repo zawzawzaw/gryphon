@@ -6296,6 +6296,11 @@ div.product {
       @media all and (max-width: 992px) {          
         width: 100%;
       }    
+      img {
+        @media all and (max-width: 992px) {          
+          margin: 0 auto;
+        }    
+      }
       hr {
       margin-bottom: 20px!important;
       }
@@ -7491,7 +7496,8 @@ div.product {
             }
           }
         }
-      }
+      }      
+
       #giftcard_notice {
         padding-left: 174px!important;
         margin-top: 7px; 
@@ -7507,6 +7513,7 @@ div.product {
         padding-left: 175px;
         @media all and (max-width: 992px) {
           padding-left: 0px;
+          margin-bottom: 10px;
         }
         //color: @dark-orange;
         color: @dark-orange2;
@@ -7538,6 +7545,7 @@ div.product {
         padding-top: 15px;
         height: 128px;
         color: @new-grey;
+        padding-right: 15px;
         .placeholder(@new-grey);
         @media all and (max-width: 992px) {
           width: 100%;
@@ -8776,7 +8784,7 @@ div.product {
       @media (max-width: 991px) {
         #my-rewardpoints-table {
           position: absolute;
-          top: 182px;
+          top: 202px;
 
           p.loyalty-point{
             .minion-pro-regular;
@@ -10279,8 +10287,8 @@ div.product {
 
         padding-left: 21px;
         padding-right: 16px;
-        padding-top: 15px;
-        padding-bottom: 8px;
+        padding-top: 10px;
+        padding-bottom: 10px;
       }
       .post-extra-content {
         margin-top: 15px;
@@ -10301,6 +10309,12 @@ div.product {
             float: right;
             max-width: 200px;
             // padding-top: 5px;
+
+            .pintrest-ico, .twitter-ico, .facebook-ico {
+              &:hover {
+                color: @dark-orange;
+              }
+            }
           }
 
           @media all and (max-width: 1199px) {
@@ -10399,7 +10413,87 @@ div.product {
           color: @dark-orange;
         }
       }
-    }    
+
+      #comments {
+        padding-top: 20px;
+
+        .comment-list {
+          .comment-body {
+            .gotham-book;
+            font-size: 12px;
+            line-height: 22px;
+            text-align: left; 
+            padding: 20px 0px;
+            border-bottom: 1px solid #ddd;
+
+            em {
+              .minion-pro-semibold-italic;
+              letter-spacing: 0.03em;
+            }
+          }  
+        }
+
+        #respond {
+          padding-top: 20px;
+          #reply-title {
+            .gotham-medium;
+            font-size: 13px;
+            text-transform: uppercase;
+          }
+          label {
+            font-size: 10px;
+            line-height: 22px;
+            // width: 135px;
+            // margin-right: 27px;
+            .gotham-medium;
+            color: #777777;
+            text-transform: uppercase;
+            display: block;
+            text-align: left;          
+          }
+          input {
+            .gotham-book;
+            padding-left: 5px;
+            font-size: 11px;
+            line-height: 23px;
+            color: #252525;
+            width: 100%;
+            border: 1px solid #ccc;
+            padding: 5px 0 5px 15px;
+          } 
+
+          textarea {
+            .gotham-book;
+            padding-left: 5px;
+            font-size: 11px;
+            line-height: 23px;
+            color: #252525;
+            width: 100%;
+            border: 1px solid #ccc;
+            padding: 5px 0 5px 15px;
+          }
+          .each-input {
+            margin-top: 10px;
+          }
+          label.error {
+            color: red;
+            text-transform: none;
+          }
+          input[type=submit] {
+            background-color: #252525;
+            padding: 7px 30px;
+            color: #ffffff;
+            border: none;
+            text-transform: none;
+            width: 20%;
+            .gotham-medium;
+            font-size: 11px;
+            line-height: 16px;     
+            margin-top: 20px;     
+          }
+        }
+      }      
+    }  
   }
   .sidebar {
     @media all and (max-width: 992px) {
@@ -10415,6 +10509,12 @@ div.product {
     }  
     .each-sidebar-content {
       margin-bottom: 25px;
+      .textwidget {
+        .gotham-book;
+        font-size: 12px;
+        line-height: 22px;
+        color: @new-grey;
+      }
       h2 {
         font-size: 12px;
         line-height: 19px;

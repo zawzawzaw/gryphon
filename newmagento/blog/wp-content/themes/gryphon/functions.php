@@ -42,6 +42,7 @@ function load_scripts(){
     wp_enqueue_script('raty', THEMEROOT.'/js/plugins/raty/jquery.raty.js', array('$'), '', true);
     wp_enqueue_script('slick', THEMEROOT.'/js/plugins/slick/slick.min.js', array('$'), '', true);    
     wp_enqueue_script('inside-pages', THEMEROOT.'/js/inside-pages.js', array('$'), '', true);    
+    wp_enqueue_script('validate', THEMEROOT.'/js/plugins/jquery.validate.min.js', array('$'), '', true);    
     wp_enqueue_script('mainjs', THEMEROOT.'/js/main.js', array('$'), '', true);    
 
     wp_enqueue_script('gryphon_script_01', THEMEROOT.'/js/plugins/gryphon/jquery.gryphon-mobile-wp-header.js', array('$'), '', true);
@@ -72,15 +73,17 @@ add_filter( 'show_admin_bar', 'hide_admin_bar_from_front_end' );
 
 add_action( 'widgets_init', 'theme_slug_widgets_init' );
 function theme_slug_widgets_init() {
-    register_sidebar( array(
-        'name' => __( 'Main Sidebar', 'theme-slug' ),
-        'id' => 'sidebar-1',
-        'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'theme-slug' ),
-        'before_widget' => '<li id="%1$s" class="widget %2$s">',
-    'after_widget'  => '</li>',
-    'before_title'  => '<h2 class="widgettitle">',
-    'after_title'   => '</h2>',
-    ) );
+    register_sidebar( 
+        array(
+            'name' => __( 'Main Sidebar', 'theme-slug' ),
+            'id' => 'sidebar-1',
+            'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'theme-slug' ),
+            'before_widget' => '<li id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</li>',
+            'before_title'  => '<h2 class="widgettitle">',
+            'after_title'   => '</h2>',
+        )
+    );
 }
 
 function MyAjaxFunction(){
@@ -95,7 +98,7 @@ add_action( 'wp_ajax_nopriv_MyAjaxFunction', 'MyAjaxFunction' );
 add_action( 'wp_ajax_MyAjaxFunction', 'MyAjaxFunction' );
 
 function new_excerpt_more( $more ) {
-    return '... <a class="read-more" href="'. get_permalink( get_the_ID() ) . '"><i class="my-arrow-right"></i> Read More</a>';    
+    return '... <a class="read-more" href="'. get_permalink( get_the_ID() ) . '"><i class="my-arrow-right"></i> Read more</a>';    
 }
 add_filter( 'excerpt_more', 'new_excerpt_more' );
 

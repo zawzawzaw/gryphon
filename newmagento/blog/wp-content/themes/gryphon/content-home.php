@@ -52,9 +52,9 @@
 				<div class="sharing post-extra">
 					<h2>Share</h2>
 					<ul>
-						<li><a href="http://pinterest.com/pin/create/button/?url=<?php echo urlencode( get_permalink(get_the_ID()) ); ?>&media=<?php echo wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>" class="pintrest"></a></li>
-						<li><a href="https://twitter.com/share?url=<?php echo urlencode( get_permalink(get_the_ID()) ); ?>&via=gryphontea&text=gryphon%20tea%20company" class="twitter"></a></li>
-						<li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink(get_the_ID()); ?>" class="facebook"></a></li>						
+						<li><a href="http://pinterest.com/pin/create/button/?url=<?php echo urlencode( get_permalink(get_the_ID()) ); ?>&media=<?php echo wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>" class="pintrest-ico"><i class="fa fa-pinterest"></i></a></li>
+						<li><a href="https://twitter.com/share?url=<?php echo urlencode( get_permalink(get_the_ID()) ); ?>&via=gryphontea&text=gryphon%20tea%20company" class="twitter-ico"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink(get_the_ID()); ?>" class="facebook-ico"><i class="fa fa-facebook"></i></a></li>						
 						<li><a href="https://www.linkedin.com/shareArticle?url=<?php echo urlencode( get_permalink(get_the_ID()) ); ?>&summary=gryphon%20tea%20company" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
 						<li><a href="https://plus.google.com/share?url=<?php echo urlencode( get_permalink(get_the_ID()) ); ?>&hl=en-US" class="google"><i class="fa fa-google-plus"></i></a></li>						
 					</ul>

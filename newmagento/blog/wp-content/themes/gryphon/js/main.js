@@ -187,7 +187,7 @@ var initialLoad = true;
 
             // rating
             $('.stars').raty({
-                path : getBaseUrl()+"skin/frontend/gryphon/gryphon_theme/js/plugins/raty/images/",
+                path : getBaseUrl()+"/skin/frontend/gryphon/gryphon_theme/js/plugins/raty/images/",
                 click: function(score, evt){
                     console.log(score);
                     $('#product-review-table').find('#Price_'+score).trigger('click')
@@ -422,7 +422,9 @@ var initialLoad = true;
 
             var link = $('.next-page a').attr('href');
 
-            if(link!='') {
+            console.log(link);
+
+            if(link) {
                 sendLoadMoreProductsRequestHOMEPAGE(link);       
             }else {
                 $(this).parent().parent().hide();
@@ -661,6 +663,8 @@ var initialLoad = true;
         } catch(e){
             
         }
+
+        $("#commentform").validate();
 
 
     });
