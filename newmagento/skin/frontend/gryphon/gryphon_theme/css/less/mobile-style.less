@@ -5010,18 +5010,23 @@ html{
 //                                                                 
 
 
-@media (max-width: 991px) {
+
+@media only screen
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
   #shopping-cart-table {
-    tbody tr td {      
-      vertical-align: top!important;      
+    tbody tr td {
+      vertical-align: top!important;
     }
   }
 }
 
-
-#content-wrapper.cart #cart .table-responsive .image-text-container-2, 
-#content-wrapper.cart #confirmation .table-responsive .image-text-container-2{
-  display: none;
+@media (max-width: 991px) {
+  #content-wrapper.cart #cart .table-responsive .image-text-container-2, 
+  #content-wrapper.cart #confirmation .table-responsive .image-text-container-2{
+    display: none;
+  }
 }
 
 @media (max-width: 991px) {
@@ -8209,7 +8214,8 @@ html{
 #mobile-blog-sidebar{
   &.sticky-version{
     //margin-top: 125px;
-    margin-top: 45px;
+    // margin-top: 45px;
+    margin-top: 70px;
 
     #mobile-blog-button-container{
       position: fixed;
@@ -8621,7 +8627,7 @@ html{
           text-align: left;
         }
         &:last-child{
-          text-align: left;
+          text-align: center;
           padding-right: 5px !important;
           letter-spacing: -.05em;
         }
@@ -8636,7 +8642,7 @@ html{
           text-align: left;
         }
         &:last-child{
-          text-align: left;
+          text-align: center;
           padding-right: 5px !important;
         }
       }
@@ -9588,11 +9594,48 @@ html{
     width: 100%;
   }
 
+  // HOME 
+  div.home #social .image-text-content .subscription-image, div.home #social .image-text-content .subscription-image-2 {
+    // max-width: 720px;
+  }
+
+  div.home #feature-products .image-text-content .each-feature > a > img {
+    width: 222px;
+    height: 222px;
+  }
+
   // STORE
   #content-wrapper.store .main-content .all-products .each-product{
     width: 33.33%;
     float: none;
   }
+
+  // SIGNUP
+  .sign-up .main-content .sign-up-form .each-input input[type="text"], .sign-up .main-content .sign-up-form {
+    .each-input {
+      .dropdown {
+        margin-right: 9px;
+        float: left;
+        width: 32.5%;
+        &:nth-of-type(3) {
+          margin-right: 0px;
+        }
+      }
+      input[type="text"], input[type="password"] {
+        width: 100%;
+      }
+      input[name="is_subscribed"] {
+        display: block;
+        top: 7px;
+        left: 0px;
+      }
+      label[for=is_subscribed] {
+        width: 100%!important;
+        display: block!important;
+        top: -10px;
+      }
+    }
+  }    
 
   // PRODUCT DETAIL
   
@@ -9643,6 +9686,46 @@ html{
   #content-wrapper.product .main-product .gift-card-img .vcenter2 #gift-design-02 .gifttext{
     top: 360px;
     .scale(1.7);
+
+    .gifttext-intro {
+      font-size: 12px;
+      line-height: 16px;
+      height: 70px;
+    }
+
+    .gifttext-title {
+      font-size: 15px;
+      line-height: 16px;
+    }
+
+    .gifttext-amount {
+      font-size: 35px;
+      line-height: 44px;
+      margin-bottom: 35px;
+    }
+
+    .gifttext-copy {
+      width: 210px;
+      margin: 0 auto;
+      min-height: 130px;
+    }
+
+    .gifttext-code-title {
+      font-size: 8px;
+      line-height: 15px;
+    }
+
+    .gifttext-code {
+      font-size: 9px;
+      line-height: 11px;
+      margin-bottom: 16px;
+    }
+  }
+
+  // CAREERS
+
+  .careers .main-content .forth-content #application-form .mobile_no_2_container {
+    margin-left: -143px;
   }
 
 
@@ -9745,15 +9828,23 @@ html{
   .our-story .main-content .first-content .milestones ul.circle-container{
     margin-top: 0 !important;
   }
-  #content-wrapper.our-story .main-content .first-content .milestones .milestone {
-
-    .opacity(1);
-
-    .milestone-image{
-      margin-left: 0px !important;
-      margin-right: 0px !important;
+  #content-wrapper.our-story {
+    .main-content {
+      .first-content {
+        .milestones {
+          .milestone-image{
+            margin-left: 0px !important;
+            margin-right: 0px !important;
+          }    
+          .milestone {
+            .opacity(1);
+          }
+          .timeline {
+            overflow: hidden!important;
+          }
+        }
+      }
     }
-
   }
 
   // CAREERS
@@ -9770,6 +9861,7 @@ html{
     }
   }
 
+  // SUBSCRIPTION
   .subscription-form {
     .image-text-content {
       .each-product {
@@ -9780,11 +9872,64 @@ html{
     }
   }
 
-  #confirmation {
-    .each-details {
-      max-width: 100%;
+  // ACCOUNT
+  .account .account-details .edit-address-form .each-input .field, .account .account-details-saved .edit-address-form .each-input {
+    #street_2 {
+      margin-top: 55px;
+      display: block;
+    }
+    .field {
+      margin-bottom: 20px;
     }
   }
+
+  // CART
+  #content-wrapper.cart {
+    #cart, #confirmation {
+      .table-responsive {
+        .table {
+          tbody {
+            tr {
+              td:first-child {
+                .image-text-container {
+                  display: block!important;
+                  margin-bottom: 20px;
+                  .delete {
+                    position: absolute;
+                    left: -65px;
+                    top: 60px;
+                  }
+                }
+              }
+              td:last-child {
+                position: absolute;
+                top: 95px;
+                right: 73px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    #confirmation {
+      .each-details {
+        max-width: 100%;
+      }
+      .rewards_point_cart {
+        width: 96%;
+      }
+
+      #rewardFormArea {
+        label {
+          display: block;
+          font-size: 10px;
+          line-height: 17px;
+          margin-bottom: 4px;
+        }
+      }
+    }
+  }  
 
 }
 

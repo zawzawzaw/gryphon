@@ -47,7 +47,8 @@ function isMobile()
     }  
 
     return FALSE;  
-}  
+}
+$isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
 ?>
 <form id="co-billing-form" action="">
     <div class="col2-set row">
@@ -473,7 +474,24 @@ function isMobile()
     jQuery(document).ready(function($){         
 
         <?php if(!$this->isCustomerLoggedIn()): ?>
-            <?php if(isMobile()!==true): ?>
+            <?php if($isiPad): ?>
+                $.blockUI({ 
+                    message: $('#question'),             
+                    css: { 
+                        padding:        '10px', 
+                        margin:         0,
+                        width:          '50.02%',
+                        height:         '280px',
+                        top:            '35%',
+                        left:           '26%',                        
+                        textAlign:      'center', 
+                        color:          '#000', 
+                        border:         '0px', 
+                        backgroundColor:'#fff',
+                        cursor:         'wait',                        
+                    },
+                });
+            <?php elseif(isMobile()!==true): ?>
                 $.blockUI({ 
                     message: $('#question'),             
                     css: { 
@@ -489,7 +507,7 @@ function isMobile()
                         backgroundColor:'#fff',
                         cursor:         'wait' 
                     },
-                });                  
+                });
             <?php else: ?>
                 $.blockUI({ 
                     message: $('#question'),             
@@ -506,7 +524,7 @@ function isMobile()
                         backgroundColor:'#fff',
                         cursor:         'wait' 
                     },
-                });     
+                });    
             <?php endif; ?>
             $('#no').click(function(e) {
                 e.preventDefault();

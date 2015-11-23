@@ -2,7 +2,7 @@
 if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 	<div class="sidebar">
 
-		<div class="each-sidebar-content">
+		<div class="each-sidebar-content blog-intro">
 			<?php dynamic_sidebar( 'sidebar-1' ); ?>			
 		</div>
 

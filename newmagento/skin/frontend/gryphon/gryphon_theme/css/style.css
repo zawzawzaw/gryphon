@@ -8931,7 +8931,7 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
   .account .account-details .image-text-content #my-rewardpoints-table,
   .account .account-details-saved .image-text-content #my-rewardpoints-table {
     position: absolute;
-    top: 202px;
+    top: 183px;
   }
   .account .account-details .image-text-content #my-rewardpoints-table p.loyalty-point,
   .account .account-details-saved .image-text-content #my-rewardpoints-table p.loyalty-point {
@@ -10869,6 +10869,10 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .blog .sidebar .each-sidebar-content .each-popular-post a:hover {
   color: #c76e09;
+}
+.blog .sidebar .blog-intro {
+  border-bottom: 1px solid #dddddd;
+  padding-bottom: 20px;
 }
 .trade {
   margin-top: 60px;

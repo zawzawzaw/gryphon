@@ -47,12 +47,12 @@
 <?php else: ?>
         <?php foreach ($_productCollection as $key => $_product): ?>                
             <?php 
-            $_imgSize = 150;
+            $_imgSize = 600;
             $categoryIds = $_product->getCategoryIds();
             ?>
             <div class="center-text popular">
                 <a href="<?php echo $_product->getProductUrl() ?>" class="product-img">
-                    <img src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail')->resize(300, 300); ?>" alt="tea <?php echo $i ?>">
+                    <img src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail')->resize($_imgSize, $_imgSize); ?>" alt="tea <?php echo $i ?>">
                     <p class="caption"><?php echo $this->htmlEscape($_product->getName()) ?></p>
                     <?php $product_data = $_product->getData(); ?>
                     <!-- <p class="caption-2"><?php //echo Mage::helper('core/string')->truncate($product_data['short_description'], 50); ?></p>         -->

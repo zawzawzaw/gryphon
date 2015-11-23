@@ -6511,6 +6511,11 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
     width: 100%;
   }
 }
+@media all and (max-width: 992px) {
+  .subscription .second-content .center img {
+    margin: 0 auto;
+  }
+}
 .subscription .second-content .center hr {
   margin-bottom: 20px!important;
 }
@@ -10864,6 +10869,10 @@ div.product .product-review .image-text-content .write-review .rating-wrapper .s
 }
 .blog .sidebar .each-sidebar-content .each-popular-post a:hover {
   color: #c76e09;
+}
+.blog .sidebar .blog-intro {
+  border-bottom: 1px solid #dddddd;
+  padding-bottom: 20px;
 }
 .trade {
   margin-top: 60px;

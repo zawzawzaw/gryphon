@@ -112,11 +112,7 @@ if ( post_password_required() ) {
 		    __( 'Your email address will not be published.' ) . ( $req ? $required_text : '' ) .
 		    '</p>',
 
-		  	'comment_notes_after' => '<p class="form-allowed-tags">' .
-		    sprintf(
-		      __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s' ),
-		      ' <code>' . allowed_tags() . '</code>'
-		    ) . '</p>',
+		  	'comment_notes_after' => '',
 
 		  	'fields' => apply_filters( 'comment_form_default_fields', $fields ),
 		);
