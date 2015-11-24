@@ -6726,7 +6726,7 @@ html {
     text-align: left;
   }
   .account #referred-friends-table thead tr th:last-child {
-    text-align: left;
+    text-align: center;
     padding-right: 5px !important;
     letter-spacing: -0.05em;
   }
@@ -6741,7 +6741,7 @@ html {
     text-align: left;
   }
   .account #referred-friends-table tbody tr td:last-child {
-    text-align: left;
+    text-align: center;
     padding-right: 5px !important;
   }
   .account .col-main .referral-container {
@@ -7347,9 +7347,41 @@ html {
   max-width: none;
   width: 100%;
 }
+.is-mobile.is-tablet div.home #feature-products .image-text-content .each-feature > a > img {
+  width: 222px;
+  height: 222px;
+}
 .is-mobile.is-tablet #content-wrapper.store .main-content .all-products .each-product {
   width: 33.33%;
   float: none;
+}
+.is-mobile.is-tablet .sign-up .main-content .sign-up-form .each-input input[type="text"] .each-input .dropdown,
+.is-mobile.is-tablet .sign-up .main-content .sign-up-form .each-input .dropdown {
+  margin-right: 9px;
+  float: left;
+  width: 32.5%;
+}
+.is-mobile.is-tablet .sign-up .main-content .sign-up-form .each-input input[type="text"] .each-input .dropdown:nth-of-type(3),
+.is-mobile.is-tablet .sign-up .main-content .sign-up-form .each-input .dropdown:nth-of-type(3) {
+  margin-right: 0px;
+}
+.is-mobile.is-tablet .sign-up .main-content .sign-up-form .each-input input[type="text"] .each-input input[type="text"],
+.is-mobile.is-tablet .sign-up .main-content .sign-up-form .each-input input[type="text"],
+.is-mobile.is-tablet .sign-up .main-content .sign-up-form .each-input input[type="text"] .each-input input[type="password"],
+.is-mobile.is-tablet .sign-up .main-content .sign-up-form .each-input input[type="password"] {
+  width: 100%;
+}
+.is-mobile.is-tablet .sign-up .main-content .sign-up-form .each-input input[type="text"] .each-input input[name="is_subscribed"],
+.is-mobile.is-tablet .sign-up .main-content .sign-up-form .each-input input[name="is_subscribed"] {
+  display: block;
+  top: 7px;
+  left: 0px;
+}
+.is-mobile.is-tablet .sign-up .main-content .sign-up-form .each-input input[type="text"] .each-input label[for=is_subscribed],
+.is-mobile.is-tablet .sign-up .main-content .sign-up-form .each-input label[for=is_subscribed] {
+  width: 100%!important;
+  display: block!important;
+  top: -10px;
 }
 .is-mobile.is-tablet #content-wrapper.product .product-collection .image-text-content:after {
   content: "";
@@ -7419,6 +7451,9 @@ html {
   font-size: 9px;
   line-height: 11px;
   margin-bottom: 16px;
+}
+.is-mobile.is-tablet .careers .main-content .forth-content #application-form .mobile_no_2_container {
+  margin-left: -143px;
 }
 .is-mobile.is-tablet .subscription-form .first-content .image-text-content .all-products .each-product {
   width: 33.33%;
@@ -7513,6 +7548,15 @@ html {
 }
 .is-mobile.is-tablet .subscription-form .image-text-content .each-product .all-products {
   width: 48%;
+}
+.is-mobile.is-tablet .account .account-details .edit-address-form .each-input .field #street_2,
+.is-mobile.is-tablet .account .account-details-saved .edit-address-form .each-input #street_2 {
+  margin-top: 55px;
+  display: block;
+}
+.is-mobile.is-tablet .account .account-details .edit-address-form .each-input .field .field,
+.is-mobile.is-tablet .account .account-details-saved .edit-address-form .each-input .field {
+  margin-bottom: 20px;
 }
 .is-mobile.is-tablet #content-wrapper.cart #cart .table-responsive .table tbody tr td:first-child .image-text-container,
 .is-mobile.is-tablet #content-wrapper.cart #confirmation .table-responsive .table tbody tr td:first-child .image-text-container {

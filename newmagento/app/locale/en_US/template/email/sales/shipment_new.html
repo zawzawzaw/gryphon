@@ -37,18 +37,40 @@
                                     <!-- COPY -->
                                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                         <tr>
-                                          <td>
-                                              <h2 style="font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; font-size: 14px; font-style:normal; font-weight:normal; line-height:20px; letter-spacing:0.03em; text-align:center; text-transform:uppercase; color: #252525; padding-top: 40px;">Your Order Is On Its Way</h2>
-                                              <hr style="width: 30px;height: 8px;border:none!important;border-bottom: 3px solid #ae4e0e!important;display: block;margin: 0 auto!important;background:none!important;">
+                                            <td style="padding-top: 40px;">
+                                              <h2 style="font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; font-size: 14px; font-style:normal; font-weight:normal; line-height:20px; letter-spacing:0.03em; text-align:center; text-transform:uppercase; color: #252525;">Your Order Is On Its Way</h2>
+                                              <div style="width: 30px;height: 8px;border:none!important;border-bottom: 3px solid #ae4e0e!important;display: block;margin: 0 auto!important;background:none!important;"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding-top: 10px;">
                                               <p style="font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #464646; font-size: 12px; line-height: 19px;text-align:center;">You can track your order by clicking here and keying in your tracking number.</p>
                                               <br />
-                                              <h1 style="font-family:'MinionPro-Medium', Tahoma, Helvetica, Arial, sans-serif; font-size:17px; font-style:normal; font-weight:normal; line-height:26px;letter-spacing:0.1em; text-align:center; border: 1px solid #ae4e0e; color: #ae4e0e;padding:13px;margin: 0 auto;max-width: 330px;">Tracking Number: {{block type='core/template' area='frontend' template='email/order/shipment/track.phtml' shipment=$shipment order=$order}}</h1>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" width="330" style="padding:13px;border: 1px solid #ae4e0e;">
+                                              <h1 style="font-family:'MinionPro-Medium', Tahoma, Helvetica, Arial, sans-serif; font-size:17px; font-style:normal; font-weight:normal; line-height:26px;letter-spacing:0.1em; text-align:center; color: #ae4e0e;margin: 0 auto;">Tracking Number: {{block type='core/template' area='frontend' template='email/order/shipment/track.phtml' shipment=$shipment order=$order}}</h1>
                                               <br />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding-top:15px;">
                                               <p style="font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #464646; font-size: 12px; line-height: 19px;text-align:center;">Don't forget to leave a rating a review of the product or recommend us to your friends <br> to earn more rewards points.</p>
                                               <br />
-                                              <a href="http://www.trackntrace.com.sg" target="_blank" style="display: block;margin: 0 auto;width: 86px;padding: 7px 35px; font-size: 11px; line-height: 16px; font-family:  'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; font-weight: normal; color: #ffffff; text-decoration: none; background-color: #252525;" class="mobile-button">Track My Order</a>
-                                              <br />
-                                          </td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center">
+                                                <table border="0" cellspacing="0" cellpadding="0">
+                                                    <tr>
+                                                        <td align="center" width="156" height="30" style="background-color: #252525;">
+                                                            <a href="http://www.trackntrace.com.sg" target="_blank" style="display: block;margin: 0 auto; font-size: 11px; line-height: 16px; font-family:  'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; font-weight: normal; color: #ffffff; text-decoration: none;padding: 7px 35px;" class="mobile-button">Track My Order</a>
+                                                            <br />
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
                                         </tr>
                                     </table>
                                 </td>
@@ -60,6 +82,7 @@
         </td>
     </tr>
 </table>
+
 <!-- TWO COLUMN SECTION -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
     <tr>

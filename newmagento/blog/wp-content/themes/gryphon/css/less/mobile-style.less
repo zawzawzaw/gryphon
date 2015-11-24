@@ -8627,7 +8627,7 @@ html{
           text-align: left;
         }
         &:last-child{
-          text-align: left;
+          text-align: center;
           padding-right: 5px !important;
           letter-spacing: -.05em;
         }
@@ -8642,7 +8642,7 @@ html{
           text-align: left;
         }
         &:last-child{
-          text-align: left;
+          text-align: center;
           padding-right: 5px !important;
         }
       }
@@ -9594,11 +9594,48 @@ html{
     width: 100%;
   }
 
+  // HOME 
+  div.home #social .image-text-content .subscription-image, div.home #social .image-text-content .subscription-image-2 {
+    // max-width: 720px;
+  }
+
+  div.home #feature-products .image-text-content .each-feature > a > img {
+    width: 222px;
+    height: 222px;
+  }
+
   // STORE
   #content-wrapper.store .main-content .all-products .each-product{
     width: 33.33%;
     float: none;
   }
+
+  // SIGNUP
+  .sign-up .main-content .sign-up-form .each-input input[type="text"], .sign-up .main-content .sign-up-form {
+    .each-input {
+      .dropdown {
+        margin-right: 9px;
+        float: left;
+        width: 32.5%;
+        &:nth-of-type(3) {
+          margin-right: 0px;
+        }
+      }
+      input[type="text"], input[type="password"] {
+        width: 100%;
+      }
+      input[name="is_subscribed"] {
+        display: block;
+        top: 7px;
+        left: 0px;
+      }
+      label[for=is_subscribed] {
+        width: 100%!important;
+        display: block!important;
+        top: -10px;
+      }
+    }
+  }    
 
   // PRODUCT DETAIL
   
@@ -9683,6 +9720,12 @@ html{
       line-height: 11px;
       margin-bottom: 16px;
     }
+  }
+
+  // CAREERS
+
+  .careers .main-content .forth-content #application-form .mobile_no_2_container {
+    margin-left: -143px;
   }
 
 
@@ -9829,6 +9872,16 @@ html{
     }
   }
 
+  // ACCOUNT
+  .account .account-details .edit-address-form .each-input .field, .account .account-details-saved .edit-address-form .each-input {
+    #street_2 {
+      margin-top: 55px;
+      display: block;
+    }
+    .field {
+      margin-bottom: 20px;
+    }
+  }
 
   // CART
   #content-wrapper.cart {

@@ -40,17 +40,34 @@
                                     <!-- COPY -->
                                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                         <tr>
-                                          <td>
-                                              <h2 style="font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; font-size: 14px; font-style:normal; font-weight:normal; line-height:20px; letter-spacing:0.03em; text-align:center; text-transform:uppercase; color: #252525; padding-top: 40px;">Thank you for your order from {{var store.getFrontendName()}}</h2>
-                                              <hr style="width: 30px;height: 8px;border:none;border-bottom: 3px solid #ae4e0e;display: block;margin: 0 auto!important;background:none!important;">
-                                              <p style="font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #464646; font-size: 12px; line-height: 19px;text-align:center;">Once your package ships we will send an email with a link to track your order. <br> Your order summary is below. Thank you again for your business.</p>
-                                              <br />
-                                              <h1 style="font-family:'MinionPro-Medium', Tahoma, Helvetica, Arial, sans-serif; font-size:17px; font-style:normal; font-weight:normal; line-height:26px;letter-spacing:0.1em; text-align:center; border: 1px solid #ae4e0e; color: #ae4e0e;padding:13px;margin: 0 auto;max-width: 330px; text-transform: uppercase;">Your order # is: {{var order.increment_id}}</h1>
-                                              <br />
-                                              <p style="font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #464646; font-size: 12px; line-height: 19px;text-align:center;">Don't forget to leave a rating a review of the product or recommend us to your friends <br> to earn more rewards points.</p>
-                                              <br />
-                                              <!--  -->
-                                          </td>
+                                            <td style="padding-top: 40px;padding-bottom: 10px;">
+                                                <h2 style="font-family: 'Gotham-Medium', Tahoma, Helvetica, Arial, sans-serif; font-size: 14px; font-style:normal; font-weight:normal; line-height:20px; letter-spacing:0.03em; text-align:center; text-transform:uppercase; color: #252525;">Thank you for your order from {{var store.getFrontendName()}}</h2>
+                                                <div style="width: 30px;height: 8px;border:none;border-bottom: 3px solid #ae4e0e;display: block;margin: 0 auto!important;background:none!important;"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p style="font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #464646; font-size: 12px; line-height: 19px;text-align:center;">Once your package ships we will send an email with a link to track your order. <br> Your order summary is below. Thank you again for your business.</p>
+                                                <br />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center">
+                                                <table>
+                                                    <tr>
+                                                        <td width="330" style="border: 1px solid #ae4e0e;padding:13px;">                                                  
+                                                            <h1 style="font-family:'MinionPro-Medium', Tahoma, Helvetica, Arial, sans-serif; font-size:17px; font-style:normal; font-weight:normal; line-height:26px;letter-spacing:0.1em; text-align:center; color: #ae4e0e; margin: 0 auto; text-transform: uppercase;">Your order # is: {{var order.increment_id}}</h1>
+</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <br />
+                                                <p style="font-family: 'Gotham-Book', Tahoma, Helvetica, Arial, sans-serif; color: #464646; font-size: 12px; line-height: 19px;text-align:center;">Don't forget to leave a rating a review of the product or recommend us to your friends <br> to earn more rewards points.</p>
+                                                <br />
+                                            </td>
                                         </tr>
                                     </table>
                                 </td>
