@@ -273,7 +273,11 @@ function nano(template, data) {
     },
 
     is_mobile: function(){
-      return ($(window).width() < 922 );
+      return ($(window).width() < 414 );
+    },
+
+    is_ipad: function(){
+      return ($(window).width() < 922 && $(window).width() > 414 );
     },
 
     next_page: function(){
@@ -336,8 +340,12 @@ function nano(template, data) {
       var target_y = $('.application-form-banner').offset().top - 100 - 45;
 
       if (this.is_mobile() == true){
-        target_y += 30;
+        target_y += 130;
       }
+
+      if (this.is_ipad() == true){
+        target_y += 530;
+      }    
 
       var current_scroll = $(window).scrollTop();
       var target_duration = Math.abs(  (target_y - current_scroll) / 800 );

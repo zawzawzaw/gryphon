@@ -481,6 +481,8 @@
 
       var scroll_top = this.window.scrollTop();
 
+      console.log(scroll_top);
+
       //340 = 257 + 83
 
       //if (scroll_top > 340) { 

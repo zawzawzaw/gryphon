@@ -43,7 +43,8 @@
       this.main_category_button.click(this.on_main_category_button_click.bind(this));
 
 
-      this.window.scroll(this.on_window_scroll.bind(this));
+      // this.window.on('scroll', this.on_window_scroll.bind(this));      
+      this.window.on('scroll touchmove', this.on_window_scroll.bind(this));      
 
       console.log("init");
     },
@@ -131,12 +132,15 @@
       var scroll_top = this.window.scrollTop();
 
       //340 = 257 + 83
+      console.log(scroll_top+'scrolling');
 
       //if (scroll_top > 340) { 
       //if (scroll_top > 257) {
       //if (scroll_top > 227) {
-      if (scroll_top > (277 + 9)) {
       // if (scroll_top > (256)) {
+      // if (scroll_top > (277 + 9)) {
+      if (scroll_top > (257)) {      
+        console.log(scroll_top);
         this.element.addClass('sticky-version');
       } else {
         this.element.removeClass('sticky-version');

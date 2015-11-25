@@ -6426,6 +6426,9 @@ html {
     height: auto;
   }
 }
+#mobile-blog-sidebar {
+  display: block;
+}
 #mobile-blog-sidebar.sticky-version {
   margin-top: 70px;
 }
