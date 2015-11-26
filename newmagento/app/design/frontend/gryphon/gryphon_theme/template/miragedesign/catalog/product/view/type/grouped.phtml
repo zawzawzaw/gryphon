@@ -60,10 +60,10 @@
                 <div class="italic"><?php 
 				
 				$login = Mage::getSingleton( 'customer/session' )->isLoggedIn(); //Check if User is Logged In
+                $groupId = Mage::getSingleton('customer/session')->getCustomerGroupId(); //Get Customers Group ID
+                $groupname = Mage::getModel('customer/group')->load($groupId)->getCustomerGroupCode();
 				if($login)
-				{
-					$groupId = Mage::getSingleton('customer/session')->getCustomerGroupId(); //Get Customers Group ID
-					$groupname = Mage::getModel('customer/group')->load($groupId)->getCustomerGroupCode();
+				{					
 					if($groupname=='Trader-Temp' || $groupname=='Trader-Regular' || $groupname=='Trader-Priority' || $groupname=='Trader-Premium')
 					{
 						echo $_item->getAttributeText('package');

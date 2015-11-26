@@ -298,6 +298,16 @@ endif;
                                 jQuery('.cart-summary-data span').html('<span class="price">'+data.cart_total+'</span> (<span class="count">'+data.cart_qty+'</span>)');
                             }
                         });
+
+                        ga('ec:addProduct', {    
+                             
+                            'id': '<?php echo $_product->getId(); ?>', // Product ID/SKU - Type: string                             
+                            'name': '<?php echo addslashes($_product->getName()); ?>', // Product name - Type: string                             
+                            'category': '<?php echo addslashes(implode("/", $catNames)); ?>',// Product category. Use / as a delimiter to specify up to 5 levels of hierarchy (e.g Men/Shirts/T-Shirts) - Type: string                             
+                            'brand': 'Gryphon',// Product brand - Type: string                                                                                 
+                        });
+                        ga('ec:setAction', 'add'); // send 'add' or 'remove'
+                        ga('newTracker.send', 'event', 'UX', 'click', 'add to cart');     // Send 'add to cart' or 'remove from cart' using an event.                        
                     }
 
                     var productAddToCartForm = new VarienForm('product_addtocart_form');
@@ -512,3 +522,30 @@ endif;
         </div>
     </div>
 </div>
+<?php 
+if($_product->getTypeId()=='grouped'):
+    $associatedProducts = $_product->getTypeInstance(true)->getAssociatedProducts($_product);
+else:
+    $associatedProducts = "";
+endif;
+
+foreach ($associatedProducts as $key => $_item) {
+    $variants[] = $_item->getName();
+};
+?>
+<script>
+ga('ec:addProduct', {    
+     
+    'id': '<?php echo $_product->getId(); ?>', // Product ID/SKU - Type: string
+     
+    'name': '<?php echo addslashes($_product->getName()); ?>', // Product name - Type: string
+     
+    'category': '<?php echo addslashes(implode("/", $catNames)); ?>',// Product category. Use / as a delimiter to specify up to 5 levels of hierarchy (e.g Men/Shirts/T-Shirts) - Type: string
+     
+    'brand': 'Gryphon',// Product brand - Type: string
+     
+    'variant': '<?php echo addslashes(implode(",", $variants)); ?>' // Variant of the product like color, size etc - Type:string    
+ 
+});
+ga('ec:setAction', 'detail');
+</script>

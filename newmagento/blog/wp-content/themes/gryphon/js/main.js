@@ -33,6 +33,12 @@ var initialLoad = true;
             $('html').addClass('load-complete');
             console.log('back to top')
         }, 100);
+
+        window.mobile_detect = new MobileDetect(window.navigator.userAgent);
+        if( window.mobile_detect.tablet() != null ){
+            $('body').addClass('is-tablet');
+            window.is_tablet = true;
+        }
         
 
         // http://stackoverflow.com/questions/11486527/reload-browser-does-not-reset-page-to-top

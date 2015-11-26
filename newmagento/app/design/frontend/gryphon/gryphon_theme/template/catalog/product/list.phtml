@@ -72,7 +72,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="products" id="products_list">
-            <?php foreach ($_productCollection as $_product): 
+            <?php $counter = 1; ?>
+            <?php foreach ($_productCollection as $key => $_product): 
 			
 			if(in_array($_product->getSku(),$locationskuSGPArray))
 			{
@@ -136,8 +137,32 @@
                             <?php endif; ?>
                         <?php endif; ?>
                     </a>
-                </div>
+                    <script>
+                    ga('ec:addImpression', {            // Provide product details in an impressionFieldObject.
+                      'id': '<?php echo $_product->getId(); ?>',                   // Product ID (string).
+                      'name': '<?php echo addslashes($_product->getName()); ?>', // Product name (string).
+                      'category': '<?php echo addslashes($this->helper('catalogcustomiser')->getTypesCategory($_product, $this->getLayer()->getCurrentCategory()->getName())); ?>', // Product category (string).
+                      'brand': 'Gryphon',                // Product brand (string).                
+                      'list': 'Product List',       // Product list (string).
+                      'position': '<?php echo $counter; ?>'                     // Product position (number).
+                    });
+                    ga('ec:addProduct', {               // Provide product details in a productFieldObject.
+                      'id': '<?php echo $_product->getId(); ?>',                   // Product ID (string).
+                      'name': '<?php echo addslashes($_product->getName()); ?>', // Product name (string).
+                      'category': '<?php echo addslashes($this->helper('catalogcustomiser')->getTypesCategory($_product, $this->getLayer()->getCurrentCategory()->getName())); ?>', // Product category (string).
+                      'brand': 'Gryphon',                // Product brand (string).                      
+                      'position': '<?php echo $counter; ?>'                     // Product position (number).
+                    });
+                    </script>
+                </div>        
+                <?php $counter++; ?>        
             <?php endforeach; ?>
+            <script>
+            ga('ec:setAction', 'click', {       // click action.
+              'list': 'Product List'          // Product list (string).
+            });
+            ga('send', 'event', 'UX', 'click', 'Results');
+            </script>
             </div>
         </div>
     </div>

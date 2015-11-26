@@ -1036,6 +1036,14 @@ if (!Array.prototype.indexOf) {
       this.similar_container.slideDown(500);
       this.different_container.slideUp(500);
 
+      if( this.is_mobile() || this.is_ipad() ) {
+        try {
+          this.similar_container.slick('slickGoTo', 0);    
+        }catch(e) {
+          console.log(e)
+        }
+      }
+
       this.results_top_element.find('h1').html('similar to what I’ve been drinking');
 
       if(this.has_no_similar == true){
@@ -1046,6 +1054,15 @@ if (!Array.prototype.indexOf) {
     show_different: function(){
       this.similar_container.slideUp(500);
       this.different_container.slideDown(500);
+
+      if( this.is_mobile() || this.is_ipad() ) {
+        try {
+          this.different_container.slick('slickGoTo', 0);    
+        }catch(e) {
+          console.log(e)
+        }
+                
+      }
 
       this.results_top_element.find('h1').html('different to what I’ve been drinking');
 
@@ -1070,6 +1087,16 @@ if (!Array.prototype.indexOf) {
 
           this.loading_icon.hide(0);
 
+        }else if( this.is_ipad() ) {
+          this.similar_container.addClass('slick');
+          this.similar_container.slick({
+              dots: false,
+              infinite: true,
+              speed: 300,
+              slidesToShow: 1,
+          });
+
+          this.loading_icon.hide(0);
         }
 
       }
@@ -1091,6 +1118,16 @@ if (!Array.prototype.indexOf) {
 
           this.loading_icon.hide(0);
 
+        }else if( this.is_ipad() ) {
+          this.different_container.addClass('slick');
+          this.different_container.slick({
+              dots: false,
+              infinite: true,
+              speed: 300,
+              slidesToShow: 1,
+          });
+
+          this.loading_icon.hide(0);
         }
 
       }

@@ -1720,7 +1720,7 @@
         
         #result-item-container-similar,
         #result-item-container-different{
-          // max-height: 0;
+          max-height: 0;
           overflow: hidden;
           
 
@@ -1830,7 +1830,7 @@
 
   #discover-loading-icon{
 
-    //display: block;
+    display: block;
     // display: inline-block;
 
     padding: 15px 60px;
@@ -9618,6 +9618,12 @@ html{
     float: none;
   }
 
+  // DISCOVER TEA
+
+  .discover .main-content .seventh-content #result-item-container-similar .slick-prev, .discover .main-content .seventh-content #result-item-container-different .slick-prev, .discover .main-content .seventh-content #result-item-container-similar .slick-next, .discover .main-content .seventh-content #result-item-container-different .slick-next {
+    top: 36%!important;  
+  }
+
   // SIGNUP
   .sign-up .main-content .sign-up-form .each-input input[type="text"], .sign-up .main-content .sign-up-form {
     .each-input {
@@ -9644,6 +9650,11 @@ html{
       }
     }
   }    
+
+  .sign-up .main-content .login-form .each-input .forgot-password {
+    float: none!important;
+    vertical-align: top;
+  }
 
   // PRODUCT DETAIL
   
@@ -9730,10 +9741,14 @@ html{
     }
   }
 
+  .giftvoucher-product-info #giftcard-template-show-images {
+    display: block;
+  }
+
   // CAREERS
 
   .careers .main-content .forth-content #application-form .mobile_no_2_container {
-    margin-left: -143px;
+    margin-left: -123px;
   }
 
 
@@ -9804,9 +9819,13 @@ html{
 
         img {
           
-          height: 370px;
+          // height: 370px;
+          // position: absolute;
+          // width: auto;
+
+          height: 210px;
           position: absolute;
-          width: auto;
+          top: 23%;
         }
       }
     }
@@ -9891,6 +9910,23 @@ html{
     }
   }
 
+  // BLOG
+
+  .blog {    
+    .main-content {      
+      .image-text-content {        
+        #comments {          
+          #respond {
+            margin-bottom: 40px!important;
+            input[type=submit] {
+              border-radius: 0px;
+            }
+          }
+        }
+      }      
+    }     
+  }
+
   // CART
   #content-wrapper.cart {
     #cart, #confirmation {
@@ -9901,18 +9937,18 @@ html{
               td:first-child {
                 .image-text-container {
                   display: block!important;
-                  margin-bottom: 20px;
-                  .delete {
-                    position: absolute;
-                    left: -65px;
-                    top: 60px;
-                  }
+                  margin-bottom: 20px;                  
                 }
               }
               td:last-child {
-                position: absolute;
-                top: 95px;
-                right: 73px;
+                // position: absolute;
+                // top: 95px;
+                // right: 73px;
+                .delete {
+                  position: relative;
+                  left: -65px!important;
+                  top: 40px!important;
+                }
               }
             }
           }

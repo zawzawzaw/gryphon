@@ -340,6 +340,10 @@ a:focus {
   .shipping-info .main-content .shipping-col-1 {
     padding-top: 14px;
   }
+  .shipping-info .main-content .table p.title {
+    display: block!important;
+    text-align: left!important;
+  }
   .shipping-info .main-content .table-item {
     margin-bottom: 30px;
     border-bottom: 1px solid #dddddd;
@@ -1443,7 +1447,6 @@ a:focus {
   }
   .discover .main-content .seventh-content #result-item-container-similar,
   .discover .main-content .seventh-content #result-item-container-different {
-    max-height: 0;
     overflow: hidden;
     -webkit-transition: all 2s ease-out 0s;
     -moz-transition: all 2s ease-out 0s;
@@ -1526,7 +1529,6 @@ a:focus {
     width: 100%;
   }
   #discover-loading-icon {
-    display: inline-block;
     padding: 15px 60px;
     background: #fff4e9;
     border: 2px solid #f1af73;
@@ -7455,6 +7457,9 @@ html {
   line-height: 11px;
   margin-bottom: 16px;
 }
+.is-mobile.is-tablet .giftvoucher-product-info #giftcard-template-show-images {
+  display: block;
+}
 .is-mobile.is-tablet .careers .main-content .forth-content #application-form .mobile_no_2_container {
   margin-left: -143px;
 }
@@ -7505,9 +7510,9 @@ html {
   overflow: hidden;
 }
 .is-mobile.is-tablet .collections .main-content .collection-row .collection-row-image-col img {
-  height: 370px;
+  height: 210px;
   position: absolute;
-  width: auto;
+  top: 23%;
 }
 .is-mobile.is-tablet .trade .main-content .image-text-content .center .hotels .hotel,
 .is-mobile.is-tablet .trade .main-content .image-text-content .center .awards .hotel {
@@ -7561,22 +7566,22 @@ html {
 .is-mobile.is-tablet .account .account-details-saved .edit-address-form .each-input .field {
   margin-bottom: 20px;
 }
+.is-mobile.is-tablet .blog .main-content .image-text-content #comments #respond {
+  margin-bottom: 40px!important;
+}
+.is-mobile.is-tablet .blog .main-content .image-text-content #comments #respond input[type=submit] {
+  border-radius: 0px;
+}
 .is-mobile.is-tablet #content-wrapper.cart #cart .table-responsive .table tbody tr td:first-child .image-text-container,
 .is-mobile.is-tablet #content-wrapper.cart #confirmation .table-responsive .table tbody tr td:first-child .image-text-container {
   display: block!important;
   margin-bottom: 20px;
 }
-.is-mobile.is-tablet #content-wrapper.cart #cart .table-responsive .table tbody tr td:first-child .image-text-container .delete,
-.is-mobile.is-tablet #content-wrapper.cart #confirmation .table-responsive .table tbody tr td:first-child .image-text-container .delete {
-  position: absolute;
-  left: -65px;
-  top: 60px;
-}
-.is-mobile.is-tablet #content-wrapper.cart #cart .table-responsive .table tbody tr td:last-child,
-.is-mobile.is-tablet #content-wrapper.cart #confirmation .table-responsive .table tbody tr td:last-child {
-  position: absolute;
-  top: 95px;
-  right: 73px;
+.is-mobile.is-tablet #content-wrapper.cart #cart .table-responsive .table tbody tr td:last-child .delete,
+.is-mobile.is-tablet #content-wrapper.cart #confirmation .table-responsive .table tbody tr td:last-child .delete {
+  position: relative;
+  left: -65px !important;
+  top: 40px!important;
 }
 .is-mobile.is-tablet #content-wrapper.cart #confirmation .each-details {
   max-width: 100%;

@@ -254,6 +254,13 @@ function nano(template, data) {
             var current_scroll = $(window).scrollTop();
             var target_duration = Math.abs(  (target_y - current_scroll) / 800 );
             TweenMax.to($(window), target_duration, {scrollTo:{y:target_y,autoKill: true}, ease:Quad.easeInOut});
+          }else if(this.is_ipad()) {
+            var target_y = this.fullscreen_container.offset().top;
+            target_y -= 60;
+            target_y -= 30;
+            var current_scroll = $(window).scrollTop();
+            var target_duration = Math.abs(  (target_y - current_scroll) / 800 );
+            TweenMax.to($(window), target_duration, {scrollTo:{y:target_y,autoKill: true}, ease:Quad.easeInOut});
           }
 
 
@@ -344,7 +351,7 @@ function nano(template, data) {
       }
 
       if (this.is_ipad() == true){
-        target_y += 530;
+        target_y += 30;
       }    
 
       var current_scroll = $(window).scrollTop();

@@ -231,11 +231,11 @@ endif;
 <div class="giftvoucher-receiver" id="giftvoucher-receiver" style="<?php if (!$_formData->getSendFriend()) echo 'display:none;' ?>">
     <div class="each-input">
         <label for="customer_name"><?php echo $this->__('Sender name (optional):') ?></label>
-        <input type="text" class="input-text" name="customer_name" id="customer_name" value="<?php echo $_formData->getCustomerName() ?>" onchange="changeSenderName(this);" maxlength="30"/>
+        <input type="text" class="input-text" name="customer_name" id="customer_name" value="<?php echo $_formData->getCustomerName() ?>" onchange="changeSenderName(this);" onkeyup="changeSenderName(this);" maxlength="30"/>
     </div>
     <div class="each-input">
         <label for="recipient_name"><?php echo $this->__('Recipient name:') ?></label>
-        <input type="text" class="input-text required-entry" name="recipient_name" id="recipient_name" value="<?php echo $_formData->getRecipientName() ?>"  onchange="changeReceiverName(this);" maxlength="30"/>
+        <input type="text" class="input-text required-entry" name="recipient_name" id="recipient_name" value="<?php echo $_formData->getRecipientName() ?>"  onchange="changeReceiverName(this);" onkeyup="changeReceiverName(this);" maxlength="30"/>
     </div>
     <div class="each-input">
         <label class = "recipient_email" for="recipient_email"><?php echo $this->__('Recipient email:') ?></label>

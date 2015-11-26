@@ -142,6 +142,13 @@
         padding-top: 14px;
       }
 
+      .table {
+        p.title {
+          display: block!important;
+          text-align: left!important;
+        }
+      }
+
 
       .table-item{
         margin-bottom: 30px;
@@ -1713,7 +1720,7 @@
         
         #result-item-container-similar,
         #result-item-container-different{
-          max-height: 0;
+          // max-height: 0;
           overflow: hidden;
           
 
@@ -1824,7 +1831,7 @@
   #discover-loading-icon{
 
     //display: block;
-    display: inline-block;
+    // display: inline-block;
 
     padding: 15px 60px;
     background: #fff4e9;
@@ -9723,6 +9730,10 @@ html{
     }
   }
 
+  .giftvoucher-product-info #giftcard-template-show-images {
+    display: block;
+  }
+
   // CAREERS
 
   .careers .main-content .forth-content #application-form .mobile_no_2_container {
@@ -9797,9 +9808,13 @@ html{
 
         img {
           
-          height: 370px;
+          // height: 370px;
+          // position: absolute;
+          // width: auto;
+
+          height: 210px;
           position: absolute;
-          width: auto;
+          top: 23%;
         }
       }
     }
@@ -9884,6 +9899,23 @@ html{
     }
   }
 
+  // BLOG
+
+  .blog {    
+    .main-content {      
+      .image-text-content {        
+        #comments {          
+          #respond {
+            margin-bottom: 40px!important;
+            input[type=submit] {
+              border-radius: 0px;
+            }
+          }
+        }
+      }      
+    }     
+  }
+
   // CART
   #content-wrapper.cart {
     #cart, #confirmation {
@@ -9894,18 +9926,18 @@ html{
               td:first-child {
                 .image-text-container {
                   display: block!important;
-                  margin-bottom: 20px;
-                  .delete {
-                    position: absolute;
-                    left: -65px;
-                    top: 60px;
-                  }
+                  margin-bottom: 20px;                  
                 }
               }
               td:last-child {
-                position: absolute;
-                top: 95px;
-                right: 73px;
+                // position: absolute;
+                // top: 95px;
+                // right: 73px;
+                .delete {
+                  position: relative;
+                  left: -65px!important;
+                  top: 40px!important;
+                }
               }
             }
           }
