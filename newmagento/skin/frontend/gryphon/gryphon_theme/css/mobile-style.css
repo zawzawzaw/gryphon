@@ -7409,19 +7409,23 @@ html {
   margin-bottom: 50px;
 }
 .is-mobile.is-tablet #content-wrapper.product .product-collection .image-text-content .col-md-6 {
-  height: 260px;
-  width: 33.33333333%;
-  float: left;
+  margin: 0px;
+  height: auto;
+  width: 100%;
 }
 .is-mobile.is-tablet #content-wrapper.product .product-collection .image-text-content .col-md-6 img {
-  height: 260px;
+  width: 100%;
+  position: static;
+  margin: 0px;
+  height: auto;
 }
 .is-mobile.is-tablet #content-wrapper.product .product-collection .image-text-content h1 {
   margin-top: 0px;
 }
 .is-mobile.is-tablet #content-wrapper.product .product-collection .image-text-content .text-content {
-  height: 260px;
+  height: auto;
   display: block;
+  margin-top: 30px;
 }
 .is-mobile.is-tablet #content-wrapper.product .product-collection .image-text-content .text-content:after {
   display: none;
@@ -7470,10 +7474,7 @@ html {
   margin-bottom: 16px;
 }
 .is-mobile.is-tablet .giftvoucher-product-info #giftcard-template-show-images {
-  display: block;
-}
-.is-mobile.is-tablet .careers .main-content .forth-content #application-form .mobile_no_2_container {
-  margin-left: -123px;
+  display: block!important;
 }
 .is-mobile.is-tablet .subscription-form .first-content .image-text-content .all-products .each-product {
   width: 33.33%;
@@ -7497,6 +7498,9 @@ html {
   top: 183px;
   right: -22px;
 }
+.is-mobile.is-tablet .collections .main-content {
+  margin-top: 60px;
+}
 .is-mobile.is-tablet .collections .main-content .text-content {
   padding-bottom: 0;
   margin-bottom: 0;
@@ -7505,26 +7509,20 @@ html {
   padding-right: 15px;
 }
 .is-mobile.is-tablet .collections .main-content .collection-row {
-  margin-bottom: 30px;
-}
-.is-mobile.is-tablet .collections .main-content .collection-row .collection-row-text-col {
-  height: 370px;
-  display: table;
+  margin-bottom: 60px;
 }
 .is-mobile.is-tablet .collections .main-content .collection-row .collection-row-text-col .text-content {
-  display: table-cell;
-  vertical-align: middle;
-  margin-top: 0;
+  width: 70%;
+  margin: 0 auto;
 }
 .is-mobile.is-tablet .collections .main-content .collection-row .collection-row-image-col {
-  height: 370px;
-  position: relative;
-  overflow: hidden;
+  height: 100%;
+  display: block;
+  margin-bottom: 20px;
 }
-.is-mobile.is-tablet .collections .main-content .collection-row .collection-row-image-col img {
-  height: 210px;
-  position: absolute;
-  top: 23%;
+.is-mobile.is-tablet .collections .main-content .collection-row .collection-row-image-col .img-content {
+  width: 70%;
+  margin: 0 auto;
 }
 .is-mobile.is-tablet .trade .main-content .image-text-content .center .hotels .hotel,
 .is-mobile.is-tablet .trade .main-content .image-text-content .center .awards .hotel {
@@ -7541,6 +7539,12 @@ html {
 .is-mobile.is-tablet .our-story .main-content .first-content .milestones ul.circle-container {
   margin-top: 0 !important;
 }
+.is-mobile.is-tablet #content-wrapper.our-story .main-content .first-content .milestones {
+  margin-left: 12px;
+  margin-right: 12px;
+  width: auto !important;
+  margin-bottom: 17px !important;
+}
 .is-mobile.is-tablet #content-wrapper.our-story .main-content .first-content .milestones .milestone-image {
   margin-left: 0px !important;
   margin-right: 0px !important;
@@ -7552,9 +7556,35 @@ html {
   opacity: 1;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
   filter: alpha(opacity=100);
+  margin-right: 0px;
+  border: 10px solid transparent;
 }
 .is-mobile.is-tablet #content-wrapper.our-story .main-content .first-content .milestones .timeline {
   overflow: hidden!important;
+}
+.is-mobile.is-tablet #content-wrapper.our-story .main-content .first-content .milestones .slick-initialized .slick-slide {
+  border: 10px solid transparent;
+}
+.is-mobile.is-tablet #content-wrapper.our-story .main-content .first-content .milestones .slick-prev {
+  left: -19px;
+}
+.is-mobile.is-tablet #content-wrapper.our-story .main-content .first-content .milestones .slick-next {
+  right: -19px;
+}
+.is-mobile.is-tablet #content-wrapper.our-story .main-content .first-content .milestones .slick-prev,
+.is-mobile.is-tablet #content-wrapper.our-story .main-content .first-content .milestones .slick-next {
+  top: 36%;
+}
+.is-mobile.is-tablet #content-wrapper.our-story .main-content .first-content .milestones .slick-prev:before,
+.is-mobile.is-tablet #content-wrapper.our-story .main-content .first-content .milestones .slick-next:before {
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 12px;
+}
+.is-mobile.is-tablet #content-wrapper.our-story .main-content .first-content .milestones .slick-prev:before {
+  content: "\f053";
+}
+.is-mobile.is-tablet #content-wrapper.our-story .main-content .first-content .milestones .slick-next:before {
+  content: "\f054";
 }
 .is-mobile.is-tablet .careers .main-content .third-content #career-display-item-container {
   font-size: 0;

@@ -314,6 +314,26 @@ var initialLoad = true;
                 ]
             });
 
+            $('.this-is-the-milestones-slick').addClass('slick');
+            $('.this-is-the-milestones-slick').slick({
+                dots: false,
+                infinite: true,
+                speed: 1000,
+                slidesToShow: 1,
+                autoplay: true,
+                autoplaySpeed: 4000,
+                responsive: [
+                    {
+                        breakpoint: 700,
+                        settings: { slidesToShow: 1 }
+                    },
+                    {
+                        breakpoint: 769,
+                        settings: { slidesToShow: 2 }
+                    }                
+                ]
+            });
+
             $('.mobile-gourmet-what-you-get-slider').addClass('slick');
             $('.mobile-artisan-what-you-get-slider').addClass('slick');
 

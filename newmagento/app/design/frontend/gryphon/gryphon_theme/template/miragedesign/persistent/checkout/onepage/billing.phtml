@@ -471,6 +471,12 @@ $isiPad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
         <?php endif; ?>
     </div> 
 <script>
+    ga('ec:setAction','checkout', {
+        'step': 2,
+        'option': 'Billing and Shipping Address'
+    });
+</script>
+<script>
     jQuery(document).ready(function($){         
 
         <?php if(!$this->isCustomerLoggedIn()): ?>

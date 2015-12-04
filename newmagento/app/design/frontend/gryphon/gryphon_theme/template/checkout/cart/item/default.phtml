@@ -30,6 +30,15 @@ $isVisibleProduct = $_item->getProduct()->isVisibleInSiteVisibility();
 $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage_Catalog_Model_Product_Attribute_Source_Msrp_Type::TYPE_BEFORE_ORDER_CONFIRM);
 $product_type = $_item->getProductType();
 ?>
+<script>
+    ga('ec:addProduct', {
+      'id': '<?php echo $this->escapeHtml($this->getId()) ?>',
+      'name': '<?php echo $this->escapeHtml($this->getProductName()) ?>',
+      'brand': 'Gryphon',
+      'price': "<?php echo $this->escapeHtml($_item->getCalculationPrice()) ?>",
+      'quantity': '<?php echo $this->getQty(); ?>'
+    });
+</script>
 <tr>
     <td colspan="2">
         <div class="image-text-container">
@@ -103,7 +112,7 @@ $product_type = $_item->getProductType();
                     <?php $helpLinkId = 'cart-msrp-help-' . $_item->getId(); ?>
                     <a id="<?php echo $helpLinkId ?>" href="#" class="map-help-link"><?php echo $this->__("What's this?"); ?></a>
                     <script type="text/javascript">
-                        Catalog.Map.addHelpLink($('<?php echo $helpLinkId ?>'), "<?php echo $this->__("What's this?") ?>");
+                        Catalog.Map.addHelpLink($('<?php echo $helpLinkId ?>'), '<?php echo $this->__("What\'s this?") ?>');
                     </script>
                 </span>
                 </p>

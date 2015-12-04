@@ -229,7 +229,7 @@ if (!Array.prototype.indexOf) {
       for (var i = 0, l = this.question_01_buttons.length; i < l; i++) {
         button_element = $(this.question_01_buttons[i]);
         // button_element.click(this.on_question_01_click.bind(this));
-        $(button_element).on('touchstart click', this.on_question_01_click.bind(this));
+        $(button_element).on('click', this.on_question_01_click.bind(this));
         this.question_01_button_array[i] = button_element;
       }
 
@@ -239,7 +239,7 @@ if (!Array.prototype.indexOf) {
       for (var i = 0, l = this.question_02_buttons.length; i < l; i++) {
         button_element = $(this.question_02_buttons[i]);
         // button_element.click(this.on_question_02_click.bind(this));
-        $(button_element).on('touchstart click', this.on_question_02_click.bind(this));
+        $(button_element).on('click', this.on_question_02_click.bind(this));
         this.question_02_button_array[i] = button_element;
       }
 
@@ -248,7 +248,7 @@ if (!Array.prototype.indexOf) {
       for (var i = 0, l = this.question_03_buttons.length; i < l; i++) {
         button_element = $(this.question_03_buttons[i]);
         // button_element.click(this.on_question_03_click.bind(this));
-        $(button_element).on('touchstart click', this.on_question_03_click.bind(this));
+        $(button_element).on('click', this.on_question_03_click.bind(this));
         this.question_03_button_array[i] = button_element;
       }
 
@@ -258,7 +258,7 @@ if (!Array.prototype.indexOf) {
       for (var i = 0, l = this.question_04_buttons.length; i < l; i++) {
         button_element = $(this.question_04_buttons[i]);
         // button_element.click(this.on_question_04_click.bind(this));
-        $(button_element).on('touchstart click', this.on_question_04_click.bind(this));
+        $(button_element).on('click', this.on_question_04_click.bind(this));
         this.question_04_button_array[i] = button_element;
       }
 
@@ -268,7 +268,7 @@ if (!Array.prototype.indexOf) {
       for (var i = 0, l = this.question_05_buttons.length; i < l; i++) {
         button_element = $(this.question_05_buttons[i]);
         // button_element.click(this.on_question_05_click.bind(this));
-        $(button_element).on('touchstart click', this.on_question_05_click.bind(this));
+        $(button_element).on('click', this.on_question_05_click.bind(this));
         this.question_05_button_array[i] = button_element;
       }
       
@@ -864,7 +864,6 @@ if (!Array.prototype.indexOf) {
         target_y -= 60;        
       }
 
-      console.log("target_y: " + target_y);
       this.scroll_to(target_y);
 
       this.is_question_02_visible = true;
@@ -885,7 +884,6 @@ if (!Array.prototype.indexOf) {
         target_y += 10;        
       }   
 
-      console.log("target_y: " + target_y);
       this.scroll_to(target_y);
     },
     
@@ -939,8 +937,7 @@ if (!Array.prototype.indexOf) {
       var target_y = this.question_04_element.offset().top - header_height - padding_top;
 
       if( this.is_ipad() ){        
-        target_y -= 300;
-        console.log(target_y);
+        target_y -= 150;
       }
 
       this.scroll_to(target_y);
@@ -1006,6 +1003,11 @@ if (!Array.prototype.indexOf) {
 
         //padding_top = 45;
         //padding_top += 60;
+      }
+
+      if( this.is_ipad() ) {
+        target_y += 380;
+        console.log(target_y);
       }
 
       this.scroll_to(target_y);

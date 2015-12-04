@@ -11,11 +11,13 @@ foreach($collection_categories as $collection_category):
 ?>
 	<div class="row collection-row">
 		
-		<div class="col-md-7 col-sm-5 collection-row-image-col">
-			<img src="<?php echo $catimgurl; ?>" class="img-responsive" alt="<?php echo $catname; ?> image">
+		<div class="col-md-7 col-sm-12 collection-row-image-col">
+			<div class="img-content">
+				<img src="<?php echo $catimgurl; ?>" class="img-responsive" alt="<?php echo $catname; ?> image">
+			</div>
 		</div>
 
-		<div class="col-md-5 col-sm-7 collection-row-text-col">
+		<div class="col-md-5 col-sm-12 collection-row-text-col">
 			<div class="text-content">
 				<h1><?php echo $catname; ?></h1>
 				<hr class="small">

@@ -407,6 +407,14 @@ a:focus {
 }
 @media all and (max-width: 992px) {
   .carousel .carousel-inner .bg1 {
+    background: url("../images/content/slider-1.png") no-repeat center bottom;
+    background-size: cover !important;
+    background-position-x: 0 !important;
+    background-position-y: 100% !important;
+  }
+}
+@media all and (max-width: 414px) {
+  .carousel .carousel-inner .bg1 {
     background: url("../images/content/mobile-banner/brand-new-home-mobile-banner.jpg") no-repeat center bottom;
     background-size: cover !important;
     background-position-x: 0 !important;

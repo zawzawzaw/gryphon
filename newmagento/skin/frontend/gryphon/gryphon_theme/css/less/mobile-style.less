@@ -1701,7 +1701,7 @@
           margin-bottom: 20px;
         }
 
-      } // .sixth-content
+      } // .sixth-content      
 
       .seventh-content{
 
@@ -1826,7 +1826,7 @@
 
     } // .main-content
 
-  } // .discover
+  } // .discover  
 
   #discover-loading-icon{
 
@@ -6211,7 +6211,6 @@ html{
             // right: -13px;
             right: -8px;
           }
-
         }
 
 
@@ -9620,8 +9619,18 @@ html{
 
   // DISCOVER TEA
 
-  .discover .main-content .seventh-content #result-item-container-similar .slick-prev, .discover .main-content .seventh-content #result-item-container-different .slick-prev, .discover .main-content .seventh-content #result-item-container-similar .slick-next, .discover .main-content .seventh-content #result-item-container-different .slick-next {
-    top: 36%!important;  
+  .discover {
+    .main-content {
+      .seventh-content{
+        #result-item-container-similar,
+        #result-item-container-different{
+          .slick-prev,
+          .slick-next{
+            top: 36%!important;
+          }
+        }  
+      }
+    }
   }
 
   // SIGNUP
@@ -9675,12 +9684,21 @@ html{
 
 
     .col-md-6{
-      height: 260px;
-      width: 33.33333333%;
-      float: left;
+      // height: 260px;
+      // width: 33.33333333%;
+      // float: left;
       
-      img{
-        height: 260px;
+      // img{
+      //   height: 260px;
+      // }
+      margin: 0px;
+      height: auto;
+      width: 100%;
+      img {
+        width: 100%;
+        position: static;
+        margin: 0px;
+        height: auto;
       }
     }
 
@@ -9688,8 +9706,9 @@ html{
       margin-top: 0px;
     }
     .text-content{
-      height: 260px;
+      height: auto;
       display: block;
+      margin-top: 30px;
 
       &:after{
         display: none;
@@ -9742,13 +9761,13 @@ html{
   }
 
   .giftvoucher-product-info #giftcard-template-show-images {
-    display: block;
+    display: block!important;
   }
 
   // CAREERS
 
   .careers .main-content .forth-content #application-form .mobile_no_2_container {
-    margin-left: -123px;
+    // margin-left: -123px;
   }
 
 
@@ -9790,6 +9809,8 @@ html{
   // COLLECTION
   .collections .main-content {
 
+    margin-top: 60px;
+
     .text-content{
       padding-bottom: 0;
       margin-bottom: 0;
@@ -9799,23 +9820,30 @@ html{
 
     }
     .collection-row{
-      margin-bottom: 30px;
+      margin-bottom: 60px;
 
        .collection-row-text-col{
-          height: 370px;
-          display: table;
+          // height: 370px;
+          // display: table;
 
           .text-content{
-            display: table-cell;
-            vertical-align: middle;
-            margin-top: 0;
+            width: 70%;
+            margin: 0 auto;
           }
        }
       .collection-row-image-col {
 
-        height: 370px;
-        position: relative;
-        overflow: hidden;
+        // height: 370px;
+        // position: relative;
+        // overflow: hidden;
+        height: 100%;
+        display: block;
+        margin-bottom: 20px;
+
+        .img-content {
+          width: 70%;
+          margin: 0 auto;
+        }
 
         img {
           
@@ -9823,9 +9851,9 @@ html{
           // position: absolute;
           // width: auto;
 
-          height: 210px;
-          position: absolute;
-          top: 23%;
+          // height: 210px;
+          // position: absolute;
+          // top: 23%;
         }
       }
     }
@@ -9859,15 +9887,66 @@ html{
     .main-content {
       .first-content {
         .milestones {
+          margin-left: 12px;
+          margin-right: 12px;
+          width: auto !important;
+          margin-bottom: 17px !important;
           .milestone-image{
             margin-left: 0px !important;
             margin-right: 0px !important;
           }    
           .milestone {
             .opacity(1);
+            margin-right: 0px;
+            border: 10px solid transparent;
+
+            &.slick-active {
+              p {
+                // color: #ae4e0e;
+              }
+            }
           }
           .timeline {
             overflow: hidden!important;
+          }
+          .slick-initialized .slick-slide{
+            border: 10px solid transparent;
+          }
+
+          .slick-prev{
+            //left: -5px;
+            //left: -23px;
+            //  left: -13px;
+            left: -13px - 6px;
+          }
+          .slick-next{
+            //right: -5px;
+            //right: -23px;
+            //  right: -13px;
+            right: -13px - 6px;
+          }
+
+          .slick-prev,
+          .slick-next{
+            //top: 66%;
+            //top: 61%;
+            top: 36%;
+
+            &:before{
+              font: normal normal normal 14px/1 FontAwesome;
+              font-size: 12px;
+            }
+          }
+
+          .slick-prev{
+            &:before{
+              content: "\f053";
+            }
+          }
+          .slick-next{
+            &:before{
+              content: "\f054";
+            }
           }
         }
       }

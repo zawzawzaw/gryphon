@@ -127,3 +127,11 @@ foreach($_items as $key => $_item) {
         'event': ''
     });
 </script>
+<script>
+    ga('ec:setAction', 'purchase',{
+     'id': '<?php echo $this->getOrderId(); ?>', // Transaction id - Type: string          
+     'revenue': '<?php echo number_format(abs($order_total),2); ?>', // Total Revenue - Type: numeric     
+     'tax': '<?php echo number_format(abs($order_tax_refunded),2); ?>', // Tax - Type: numeric     
+     'shipping': '<?php echo number_format(abs($order_shipping_cost),2); ?>' // Shipping - Type: numeric          
+    });
+</script>
