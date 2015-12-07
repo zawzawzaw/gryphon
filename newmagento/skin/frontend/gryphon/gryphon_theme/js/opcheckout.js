@@ -423,11 +423,11 @@ Billing.prototype = {
         checkout.setStepResponse(response);
         payment.initWhatIsCvvListeners();
         window.scrollTo(0, 0);
-        ga('ec:setAction','checkout', {
-            'step': 3,            // A value of 1 indicates this action is first checkout step.
-            'option': 'Review'      // Used to specify additional info about a checkout stage, e.g. payment method.
-        })
-        ga('send', 'pageview');
+        // ga('ec:setAction','checkout', {
+        //     'step': 3,            // A value of 1 indicates this action is first checkout step.
+        //     'option': 'Review'      // Used to specify additional info about a checkout stage, e.g. payment method.
+        // })
+        // ga('send', 'pageview');
         // DELETE
         //alert('error: ' + response.error + ' / redirect: ' + response.redirect + ' / shipping_methods_html: ' + response.shipping_methods_html);
         // This moves the accordion panels of one page checkout and updates the checkout progress

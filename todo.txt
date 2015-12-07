@@ -210,3 +210,16 @@ SUPEE-5344 and SUPEE-1533
 SUPEE-5994
 SUPEE-6285
 SUPEE-6482
+
+///////////////
+///////////////
+
+In the following tables:
+1. sales_flat_order:
+Change state and status columns both to ‘processing’
+
+2. sales_flat_order_grid:
+Change status to ‘processing
+
+3. sales_flat_order_status_history
+Change status to ‘processing’

@@ -6,7 +6,7 @@
 			<div class="row">
 				<div class="col-md-12 caption-container">
 					<div class="caption">
-						<h1>The Gryphon Blog</h1>
+						<h1><?php bloginfo('name'); ?></h1>
 						<a href="http://www.gryphontea.com/store.html" class="read-more cta">Visit Tea Store</a>
 					</div>
 				</div>
